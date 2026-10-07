@@ -1,0 +1,3158 @@
+[
+  {
+    "name": "Anti-Gravity Falls",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+2% chance to spawn an anti-gravity area when an enemy dies",
+    "available_on": [
+      "Banjo",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "solo",
+      "coop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Bell Shot",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+5% chance for weakspot hits to summon a healing ghost bell",
+    "available_on": [
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "coop",
+      "solo",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Bouncing Ball",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+15% damage airborne",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Cactus Day",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+3% chance for a Cactus Mino to spawn when an enemy dies",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "solo",
+      "coop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Care Package",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+1 Utility Ammo",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "solo",
+      "coop"
+    ],
+    "droppable": false
+  },
+  {
+    "name": "Chad",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Reveals the position of the Wandering Trader and get a 20% discount. You deserve it",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": false
+  },
+  {
+    "name": "Clutch",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "The last 2 bullets in your magazine are explosive",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Quad Cylinder",
+      "Revolver"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Crackshot",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+7% damage",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Fast Hands",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+20% reload speed",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Fight Or Flight",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Taking HP damage grants +20% melee speed for 3 sec.",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Fist Fight",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 4,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Your melee hits are more powerful",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Frost Bite",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Melee kills on frozen enemies grant 2 shield points",
+    "available_on": [
+      "Banjo",
+      "Knuckles",
+      "Lasso"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Gold Prospector",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Increase your acquired Gold by 20% at the end of a mission",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Hop",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+20% jump height",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Lucky Strike",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+10% chance to deal double damage per shot",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Lunge",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+15% melee range and hitbox size",
+    "available_on": [
+      "Banjo",
+      "Knuckles",
+      "Lasso"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Medicard",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": null,
+    "sell_price": null,
+    "effect": "Picking up a joker heals for a bonus +35HP",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [],
+    "droppable": true
+  },
+  {
+    "name": "Pick Pick",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+5% chance on hit to spawn damaging pickaxes on the target",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "solo",
+      "coop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Precious Rush",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+10% chance for a speed-boosting ring to spawn when an enemy dies",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "coop",
+      "solo",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Prickly Pear",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "When hit, deal the same damage +15 back to the attacker",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Rage",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Upon reaching 25% HP, release a wave that burns nearby enemies (cooldown: 60 sec.)",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Run & Gun",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 6,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+30% move speed when shooting",
+    "available_on": [
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Run & Reload",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 6,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+50% move speed when reloading",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Scout's Honor",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "After 10 sec. without taking damage, your shield is set to a minimum of 10 shield points",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Shroom Grave",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+10% chance for a shroom to spawn when an enemy dies",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "solo",
+      "coop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Slow And Steady",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Gain +25% accuracy, but -10% attack speed",
+    "available_on": [
+      "Dual Revolvers",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Soul Reaper",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Increase your acquired Souls by 20% at the end of a mission",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Soul Siphon",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Increased pick up range and heals +2 HP when picking up a soul",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Speedy Gunzales",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+10% move speed",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Switchshot",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "Your first hit after equipping a weapon deals 30% more damage",
+    "available_on": [
+      "Banjo",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Well Fed",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 2,
+    "buy_price": 300,
+    "sell_price": 150,
+    "effect": "+5 HP",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "All Mighty",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Gain +1% damage per 1 shield point, up to 80%",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Battlemage",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Killing an enemy shortens all ongoing spell cooldowns by 0.5%",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "coop",
+      "solo",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Camper",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": null,
+    "buy_price": null,
+    "sell_price": null,
+    "effect": "50% chance not to consume ammo while standing still",
+    "available_on": [
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "solo",
+      "coop"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Cantrip One-Trick",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Spells with base cooldowns of 35s or less have 20% reduced cooldown",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Cast Away",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Casting a spell decreases the spell cooldown of other spells by 3 sec. to a minimum of 4 sec.",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Coinflip",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Flip a coin every 10 sec. You either deal +100% or -50% weapon damage",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo",
+      "challenge"
+    ],
+    "droppable": false
+  },
+  {
+    "name": "Double Down",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Gain +30% shield points from all sources",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Dwarf",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": null,
+    "buy_price": null,
+    "sell_price": null,
+    "effect": "You are small. Gain Movespeed, Firerate and Lower gravity",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "solo",
+      "coop"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Extra Dash",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": null,
+    "buy_price": null,
+    "sell_price": null,
+    "effect": "+1 Dash",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Giant",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": null,
+    "buy_price": null,
+    "sell_price": null,
+    "effect": "You are big. Gain Health, Weapon Damage and Spell CDR",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Glass Cannon",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 2,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "+40% weapon and melee damage, but -25% HP",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Goliath",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "You are bigger. Gain +25% HP",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Joker Trick",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Gain +7% damage and attack speed for every distinct joker rarity equipped on the weapon",
+    "available_on": [
+      "Banjo",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Machine Gun",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Per mission, the weapon gains +0.3% fire rate for every 50 damage dealt",
+    "available_on": [
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Ricochet",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "The fired bullet ricochets, with a 30% chance to automatically hit a nearby enemy",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Speedster",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Gives increased damage and attack speed the faster you are",
+    "available_on": [
+      "Banjo",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "coop",
+      "solo",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Spell Roulette",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "-20% spell cooldown, but spells are randomized on each cast",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo",
+      "challenge"
+    ],
+    "droppable": false
+  },
+  {
+    "name": "Toolbox",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Utility pickups are disabled. Your utility automatically refills after 90 sec",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Vampire",
+    "rarity": "Legendary",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "The weapon gains +4% lifesteal",
+    "available_on": [
+      "Banjo",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Acid Mastery",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Gain -10% Acid cooldown per equipped Acid spell.",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "challenge",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Cactus Mastery",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Gain -10% Cactus cooldown per equipped Cactus spell",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "challenge",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Cold Blooded",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Your melee attacks freeze enemies, consuming 3 shield points per enemy",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Consumer",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Grants +20% weapon damage, but reloading now wastes unused ammo",
+    "available_on": [
+      "Long Ranger",
+      "Quad Cylinder",
+      "Revolver"
+    ],
+    "obtainable_from": [
+      "shop",
+      "coop",
+      "solo",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Death's Dance",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Your shield decreases 30% less quickly",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Eat-A-Punch",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 2,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Melee kills heal you for 2 HP",
+    "available_on": [
+      "Banjo",
+      "Knuckles",
+      "Lasso"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Elec Mastery",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Gain -10% Elec cooldown per equipped Elec spell",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "challenge",
+      "solo",
+      "coop"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Execute",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Your hits instantly kill enemies below 20% HP, except elites and bosses",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Extra Jump",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 2,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "+1 Jump",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Frost Mastery",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Gain -10% Frost spells cooldown per equipped Frost spell",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "coop",
+      "solo",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Headbang",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Deal +30% damage to weakspots",
+    "available_on": [
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Hit Me",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Heal 0.75 HP per second for 20 seconds after being hit",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Hoarder",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "+15% chance that collecting a Joker makes another random one appear",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "solo",
+      "coop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Joker Dealer",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Gain +1 HP for each active Joker (including weapons)",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Last Stand",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "While at or below 30% HP, reduce all damage taken by -30% and gain 10% melee lifesteal",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Lazy",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": null,
+    "sell_price": null,
+    "effect": "Ammo pickups are disabled. Gain 10% of max ammo every 12 seconds",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [],
+    "droppable": false
+  },
+  {
+    "name": "Life Pact",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 2,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Kills heal you for 2 HP, but max. HP is reduced by 30%",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Moon Gravity",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 2,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "25% lower gravity",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Pyro Mastery",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Gain -10% Pyro cooldown per equipped Pyro spell",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "challenge",
+      "solo",
+      "coop"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Riposte",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 2,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "After your shield absorbs a hit, your next attack deals +100% damage",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Second Wind",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Heal 50 HP instead of dying to a fatal hit (cooldown: 180 sec.)",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "solo",
+      "coop"
+    ],
+    "droppable": false
+  },
+  {
+    "name": "Snack-A-Punch",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Melee kills grant you 1 shield points",
+    "available_on": [
+      "Banjo",
+      "Knuckles",
+      "Lasso"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Thick Skin",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 2,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Reduce all damage taken by 20%, but receive -30% healing",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Tin Man",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Excess healing converts into shield points, up to +15 SP",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Voodoo Mastery",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Gain -10% Voodoo cooldown per equipped Voodoo spell",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "challenge",
+      "solo",
+      "coop"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "West Wizard",
+    "rarity": "Mythic",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 800,
+    "sell_price": 400,
+    "effect": "Gain -30% spell cooldown, but -30% HP",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Bracing",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+5% attack and reload speed",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Chickshot",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+50% chace for bullets to make chicken sounds. Useless!",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Deadly Strong",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "Move faster and deal more damage as a dead ghost",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Free Cocktail",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "When you reload an empty clip, heal for 2 HP",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": false
+  },
+  {
+    "name": "Gold Tooth",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 10,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+10% chance for enemies to drop 1 gold nugget upon death",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "gamba",
+      "coop",
+      "solo",
+      "shop"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Heavy Drinker",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 1,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "Healing bottles are 25% more effective on you",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Heavy Weapon",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+10% damage, but +30% gravity while the weapon is active",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Helping Hand",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "You can revive your allies twice as fast",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Knuckle Down",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 1,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+10% melee damage",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Last Dance",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "While under 30% HP, gain +30% move speed",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Lightweight",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "-5% gravity",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Magic Reload",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 1,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "Automatically reload your weapon after casting a spell",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Panic Attack",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 1,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "When you take HP damage, gain +20% damage for 3 sec.",
+    "available_on": [
+      "Banjo",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Party Shot",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+50% chance for weakspot hits to blow confetti. Useless!",
+    "available_on": [
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Pigshot",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+5% chance to spawn a pig on impact. Shoot them to make them explode",
+    "available_on": [
+      "Banjo",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Quickdraw",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+40% swap speed",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Relentless",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 1,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "While under 30% HP, deal +30% damage",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Rubber Duck",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 1,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "Walking makes rubber duck noises. Useless!",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Shine Bright",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 8,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+50% hero glow. You’re shining! Useless!",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Spare Bullets",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 2,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+10% ammo bag",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Swift Shot",
+    "rarity": "Normal",
+    "slot_cost": 1,
+    "max_equip": 4,
+    "buy_price": 50,
+    "sell_price": 25,
+    "effect": "+10% fire rate when aiming",
+    "available_on": [
+      "Leveredge",
+      "Long Ranger",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Ammo Supply",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+5% chance for enemies to drop an ammo box upon death",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Apprentice",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "-10% spell cooldown",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Avalanche",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+15% damage while shielded",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Berserker",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Gain up to +50% melee damage as your HP gets lower",
+    "available_on": [
+      "Banjo",
+      "Knuckles",
+      "Lasso"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Bloodlust",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Melee kills grant a stacking +5% melee speed for 5 sec., up to +50%",
+    "available_on": [
+      "Banjo",
+      "Knuckles",
+      "Lasso"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Cheapskate",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Gain +1HP for every 20 Gold in your mission inventory",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Chonky",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+20% damage, but +25% gravity",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Destroyer",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "The first 25% of your clip deals +15% damage",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Disgrace",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Gain +30% movement speed. Your horse does not want to be with you",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Explosive Hits (Acid)",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+5% chance to shoot explosive projectiles (Acid)",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Explosive Hits (Elec)",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+5% chance to shoot explosive projectiles (Elec)",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Explosive Hits (Frost)",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+5% chance for your hits to cause an explosion (Frost)",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Explosive Hits (Pyro)",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+5% chance to shoot explosive projectiles(Pyro)",
+    "available_on": [
+      "Banjo",
+      "Boomerang",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Great Wall",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Reduce all damage taken by 10% when shielded",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Healthy Boi",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "While at full HP, gain +20% move speed, reload speed, and fire rate",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Last Bastion",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Upon reaching 25% HP, gain +50 shield (cooldown: 60 sec.)",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Magic Friendship",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Passively regain HP while being near allies",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Pew Pew Pew",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+20% attack speed",
+    "available_on": [
+      "Banjo",
+      "Bow",
+      "Dual Revolvers",
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Rampage",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Gain 5% reload speed on kill for 10 seconds, up to 100%",
+    "available_on": [
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Reload Mastery",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Reloading an empty clip is 50% faster",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Scrub Hit",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Your primary weapon removes elements from enemies to instantly deal 10 damage",
+    "available_on": [
+      "Knuckles",
+      "Lasso",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Sharp Shooter",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+20% weakspot damage",
+    "available_on": [
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Soul Eater",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Picking up a soul grants 20% damage and reload speed for 5s",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Stonks",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+20% chance that opening a chest gives you a random Joker",
+    "available_on": [
+      "Hero"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Weak Link",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 2,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "Weakspot hits do 35% more damage, but regular hits do 35% less damage",
+    "available_on": [
+      "Bow",
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Sheriff Star",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Weakspot Refund",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 4,
+    "buy_price": 500,
+    "sell_price": 250,
+    "effect": "+20% chance to get your bullet back after a weakspot hit",
+    "available_on": [
+      "Dual Revolvers",
+      "Leveredge",
+      "Long Ranger",
+      "Minigun",
+      "Quad Cylinder",
+      "Revolver",
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "shop",
+      "gamba",
+      "coop",
+      "solo"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Aiming Burst",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "+30% weakspot damage and piercing bullets while ADS",
+    "available_on": [
+      "Quad Cylinder"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Bardbarian",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Hold the slam attack longer to release a more powerful blow",
+    "available_on": [
+      "Banjo"
+    ],
+    "obtainable_from": [
+      "shop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Chonky Throw",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": null,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "The boomerang is twice as big and passes through the shields",
+    "available_on": [
+      "Boomerang"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Eagle Lever",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Consecutive shots without missing grant +10% damage, stacking up to +50%",
+    "available_on": [
+      "Leveredge"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Eco Trick",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Reloading no longer wastes ammo",
+    "available_on": [
+      "Dual Revolvers"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Elemental Spin",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "The minigun has a 30% chance to fire a random elemental bullet instead of a regular one",
+    "available_on": [
+      "Minigun"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Fanning Ace",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Fire mid-reload at the right moment to chain-fire all bullets with low accuracy",
+    "available_on": [
+      "Revolver"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Fist Rage",
+    "rarity": "Unique",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Taking damage generates charge and grants +30% attack speed for 2 sec.",
+    "available_on": [
+      "Knuckles"
+    ],
+    "obtainable_from": [
+      "shop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Fist Ro Dah",
+    "rarity": "Unique",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "The charged attack propels you backwards and has a 20% chance to apply Frost to enemies",
+    "available_on": [
+      "Knuckles"
+    ],
+    "obtainable_from": [
+      "shop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Focus Shot",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Every weakspot hit reduces the cooldown of your spells by 2 sec.",
+    "available_on": [
+      "Long Ranger"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Frenzy Spin",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "While your kill counter is above 10, the minigun fires twice as fast",
+    "available_on": [
+      "Minigun"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Homing Burst",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Every 8 bullets fired, shoot 2 homing bullet at nearby enemies",
+    "available_on": [
+      "Quad Cylinder"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Jump Star",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "+2 Jump while holding the Sheriff Stars",
+    "available_on": [
+      "Sheriff Star"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Lingering Throw",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Doubles the lingering time. Combines with Lingering Time upgrade",
+    "available_on": [
+      "Boomerang"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Lullabard",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Gain an extra chord per hit and a wider healing zone, but lose the slam attack",
+    "available_on": [
+      "Banjo"
+    ],
+    "obtainable_from": [
+      "shop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Mark Ace",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Bullets mark enemies for 3s. Marked enemies take +15% damage",
+    "available_on": [
+      "Revolver"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Mindshot",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Weakspot hits cause an explosion",
+    "available_on": [
+      "Long Ranger"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Overblast",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Shoots an extra pellet for every 4 missing shots in the magazine",
+    "available_on": [
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Overdraw",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Charge for 2 seconds to fire 3 arrows in a cone. Bend speed reduces charge time",
+    "available_on": [
+      "Bow"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Rush Blast",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "The first 3 bullets in your magazine have 100% accuracy and shoot further away",
+    "available_on": [
+      "Shotgun"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Scavenger Star",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Gain +100% pickup range. Gain +30% move speed while holding the Sheriff Stars",
+    "available_on": [
+      "Sheriff Star"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Sky Lash",
+    "rarity": "Unique",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "The charged attack grants +50% move speed and lets you fly",
+    "available_on": [
+      "Lasso"
+    ],
+    "obtainable_from": [
+      "shop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Spell Lash",
+    "rarity": "Unique",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Casting a spell instantly fills your charge bar",
+    "available_on": [
+      "Lasso"
+    ],
+    "obtainable_from": [
+      "shop",
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Stacked Lever",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Instantly reload 2 bullets from your reserve ammo on kill",
+    "available_on": [
+      "Leveredge"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Swamp Trick",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Reload explosions now leave puddles on the ground",
+    "available_on": [
+      "Dual Revolvers"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  },
+  {
+    "name": "Ultra Draw",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "effect": "Charge for 4 seconds to fire a massive explosive arrow. Bend speed reduces charge time",
+    "available_on": [
+      "Bow"
+    ],
+    "obtainable_from": [
+      "challenge"
+    ],
+    "droppable": true
+  }
+]

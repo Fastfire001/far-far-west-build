@@ -1,0 +1,9 @@
+#!/bin/sh
+# Updates data/*.json from the wiki, inside the Docker container.
+set -eu
+cd "$(dirname "$0")/.."
+# Both steps share one container: the raw downloads in /tmp/raw are a throwaway cache.
+exec docker compose run --rm --build app sh -c '
+  python3 scripts/fetch_wiki.py /tmp/raw &&
+  python3 scripts/build_data.py /tmp/raw/cargo /tmp/raw/pages data
+'

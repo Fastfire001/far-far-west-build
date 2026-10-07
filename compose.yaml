@@ -1,0 +1,7 @@
+services:
+  app:
+    build: .
+    # Run as the host user so the generated files are not owned by root.
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./data:/app/data
