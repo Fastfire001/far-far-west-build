@@ -1,183 +1,104 @@
 [
   {
-    "name": "Knuckles",
-    "type": "Main Weapon",
-    "primary_damage": 13,
-    "primary_count": 1,
-    "secondary_damage": 30,
-    "secondary_count": 1,
-    "range": 6,
-    "charge_rate": "9.35%",
-    "description": "''Short range, big impact. Requires no ammo, no aim, and no thoughts.''"
-  },
-  {
-    "name": "Lasso",
-    "type": "Main Weapon",
-    "primary_damage": 9,
-    "primary_count": 1,
-    "secondary_damage": 56,
-    "secondary_count": 1,
-    "xp_mult": 0.7,
-    "range": 10,
-    "charge_rate": "9.35%",
-    "description": "Whips enemies fast at a decent reach. Some of them come back for more, and not out of spite."
-  },
-  {
-    "name": "Leveredge",
-    "type": "Main Weapon",
-    "clip_size": 10,
-    "total_ammo": 90,
-    "primary_damage": 30,
-    "primary_count": 1,
-    "weakspot_mult": 1.5,
-    "fire_interval_min": 0.5,
-    "fire_interval_max": 0.5,
-    "description": "''Crisp lever action, flawless presicion, and rugged reloads. Once used to win sickly goldfish at the fair, now wins gunfights.''"
-  },
-  {
-    "name": "Long Ranger",
-    "type": "Main Weapon",
-    "clip_size": 7,
-    "total_ammo": 56,
-    "primary_damage": 50,
-    "primary_count": 1,
-    "weakspot_mult": 1.5,
-    "fire_interval_min": 1.33,
-    "fire_interval_max": 1.33,
-    "description": "''Built for unmatched accuracy and piercing shots, every miss dishonors centuries of craftsmanship. Try not to be disappointing.''"
-  },
-  {
-    "name": "Minigun",
-    "type": "Main Weapon",
-    "clip_size": 300,
-    "total_ammo": 300,
-    "primary_damage": 7,
-    "primary_count": 1,
-    "weakspot_mult": 1.5,
-    "fire_interval_min": 0.08,
-    "fire_interval_max": 1,
-    "description": "''Once it spins up, this thing spews bullets nonstop. Technically stoppable, but you're a full-time bullet-slinger, not some quitter.''"
-  },
-  {
+    "id": "itemQuadCylinder",
     "name": "Quad Cylinder",
-    "type": "Main Weapon",
-    "clip_size": 24,
-    "total_ammo": 216,
-    "primary_damage": 9,
-    "primary_count": 1,
-    "weakspot_mult": 1.5,
-    "fire_interval_min": 0.14,
-    "fire_interval_max": 0.14,
-    "description": "''Shoots fine, feels fine, does fine. A monument to mediocrity, but a very dependable one.''"
+    "type": "main",
+    "description": "Shoots fine, feels fine, does fine. \nA monument to mediocrity, but a very dependable one."
   },
   {
+    "id": "itemShotgun",
     "name": "Shotgun",
-    "type": "Main Weapon",
-    "clip_size": 10,
-    "total_ammo": 80,
-    "primary_damage": 6,
-    "primary_count": 7,
-    "weakspot_mult": 1.5,
-    "fire_interval_min": 0.33,
-    "fire_interval_max": 0.33,
-    "description": "''Weirdly high fire rate for a shotgun, single-shell reloads, and a spread wildfires wish for. At last, a weapon that matches your aim.''"
+    "type": "main",
+    "description": "Weirdly high fire rate for a shotgun, single-shell reloads, and a spread wildfires wish for. At last, a weapon that matches your aim."
   },
   {
-    "name": "Banjo",
-    "type": "Sidearm",
-    "primary_damage": 9,
-    "primary_count": 1,
-    "secondary_damage": 25,
-    "secondary_count": 1,
-    "description": "''Slow and weak attacks, some healing power. Perfect for healing your allies while destroying their eardrums.''"
+    "id": "itemLongRanger",
+    "name": "Long Ranger",
+    "type": "main",
+    "description": "Built for unmatched accuracy and piercing shots, every miss dishonors centuries of craftsmanship. Try not to be disappointing."
   },
   {
-    "name": "Boomerang",
-    "type": "Sidearm",
-    "clip_size": 1,
-    "total_ammo": 1,
-    "primary_damage": 6,
-    "primary_count": 1,
-    "secondary_damage": 6,
-    "secondary_count": 4,
-    "weakspot_mult": 1.5,
-    "xp_mult": 1.2,
-    "fire_interval_min": 1.71,
-    "fire_interval_max": 1.71,
-    "description": "''Flies out, bullies enemies for a while, then swings back for another round. No ammo needed, perfect for an eco-friendly loadout.''"
+    "id": "itemMinigun",
+    "name": "Minigun",
+    "type": "main",
+    "description": "Once it spins up, this thing spews bullets nonstop. Technically stoppable, but you're a full-time bullet-slinger, not some quitter."
   },
   {
-    "name": "Bow",
-    "type": "Sidearm",
-    "clip_size": 1,
-    "total_ammo": 30,
-    "primary_damage": 30,
-    "primary_count": 1,
-    "weakspot_mult": 1.5,
-    "fire_interval_min": 0.6,
-    "fire_interval_max": 1,
-    "description": "''Fires bargain-bin arrows when you quick draw. Bend it like you mean it to drop an explosive banger.''"
+    "id": "itemWinchester",
+    "name": "Leveredge",
+    "type": "main",
+    "description": "Crisp lever action, flawless precision, and rugged reloads. \nOnce used to win sickly goldfish at the fair, now wins gunfights."
   },
   {
-    "name": "Dual Revolvers",
-    "type": "Sidearm",
-    "clip_size": 12,
-    "total_ammo": 96,
-    "primary_damage": 11,
-    "primary_count": 1,
-    "secondary_damage": 16,
-    "secondary_count": 2,
-    "weakspot_mult": 1.5,
-    "fire_interval_min": 0.15,
-    "fire_interval_max": 0.15,
-    "description": "''High fire rate, bad accuracy, yet one reload sends both revolvers soaring into explosive usefulness. A miraculous jump from meh to mayhem.''"
+    "id": "itemKnuckles",
+    "name": "Knuckles",
+    "type": "main",
+    "description": "Short range, big impact.\nRequires no ammo, no aim, and no thoughts."
   },
   {
+    "id": "itemLasso",
+    "name": "Lasso",
+    "type": "main",
+    "description": "Whips enemies fast at a decent reach.\nSome of them come back for more, and not out of spite."
+  },
+  {
+    "id": "itemPistol",
     "name": "Revolver",
-    "type": "Sidearm",
-    "clip_size": 5,
-    "total_ammo": 60,
-    "primary_damage": 13,
-    "primary_count": 1,
-    "weakspot_mult": 1.5,
-    "fire_interval_min": 0.33,
-    "fire_interval_max": 0.33,
-    "description": "''Reliable at all times, average at everything. Peak choice for people who fear commitment.''"
+    "type": "sidearm",
+    "description": "Reliable at all times, average at everything. \nPeak choice for people who fear commitment."
   },
   {
+    "id": "itemBow",
+    "name": "Bow",
+    "type": "sidearm",
+    "description": "Fires bargain-bin arrows when you quick draw. \nBend it like you mean it to drop an explosive banger."
+  },
+  {
+    "id": "itemDualRevolver",
+    "name": "Dual Revolvers",
+    "type": "sidearm",
+    "description": "High fire rate, bad accuracy, yet one reload sends both revolvers soaring into explosive usefulness. A miraculous jump from meh to mayhem."
+  },
+  {
+    "id": "itemBoomerang",
+    "name": "Boomerang",
+    "type": "sidearm",
+    "description": "Flies out, bullies enemies for a while, then swings back for another round. \nNo ammo needed, perfect for an eco-friendly loadout."
+  },
+  {
+    "id": "itemSheriffStar",
     "name": "Sheriff Star",
-    "type": "Sidearm",
-    "clip_size": 15,
-    "primary_damage": 20,
-    "primary_count": 1,
-    "weakspot_mult": 1.5,
-    "xp_mult": 1.2,
-    "fire_interval_min": 0.5,
-    "fire_interval_max": 0.5,
-    "description": "''Launches at high speed and slice enemies. Justice has never been this low-effort.''"
+    "type": "sidearm",
+    "description": "Launches at high speed and slices enemies. \nJustice has never been this low-effort."
   },
   {
+    "id": "itemBanjo",
+    "name": "Banjo",
+    "type": "sidearm",
+    "description": "Slow and weak attacks, some healing power.\nPerfect for healing your allies while destroying their eardrums."
+  },
+  {
+    "id": "itemUtilityAmmo",
     "name": "Ammo Pack",
-    "type": "Utility",
-    "primary_count": 1,
-    "description": "''Explodes into ammo. More players means more bullets. Family gatherings have never been so lucrative.''"
+    "type": "utility",
+    "description": "Explodes into ammo. More players means more bullets. \nFamily gatherings have never been so lucrative."
   },
   {
+    "id": "itemUtilityBottleCrate",
     "name": "Bottle Crate",
-    "type": "Utility",
-    "primary_count": 1,
-    "description": "''Explodes into healing bottles. Guaranteed to make you the most popular cowboy at the saloon.''"
+    "type": "utility",
+    "description": "Explodes into healing bottles.\nGuaranteed to make you the most popular cowboy at the saloon."
   },
   {
+    "id": "itemUtilityHealBottle",
     "name": "Healing Area",
-    "type": "Utility",
-    "primary_count": 1,
-    "description": "''Explodes on impact and creates a healing zone that lasts for a long time. Smells like rotten soup, just like any proper grandma's remedy.''"
+    "type": "utility",
+    "description": "Explodes on impact and creates a healing zone that lasts for a long time. \nSmells like rotten soup, just like any proper grandma's remedy."
   },
   {
+    "id": "itemUtilityImpulse",
     "name": "Impulse Grenade",
-    "type": "Utility",
-    "primary_count": 1,
-    "description": "''Periodically generates shockwaves that push players away. Allows you to reach heights your skill level never will.''"
+    "type": "utility",
+    "description": "Periodically generates shockwaves that push players away. \nAllows you to reach heights your skill level never will."
   }
 ]

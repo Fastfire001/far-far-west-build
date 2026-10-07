@@ -7,10 +7,10 @@
     "max_slots": 5,
     "gold_cost": 40,
     "available_on": [
-      "Minigun",
-      "Shotgun",
-      "Dual Revolvers",
-      "Quad Cylinder"
+      "itemMinigun",
+      "itemShotgun",
+      "itemDualRevolver",
+      "itemQuadCylinder"
     ]
   },
   {
@@ -21,7 +21,7 @@
     "max_slots": 16,
     "gold_cost": 40,
     "available_on": [
-      "Hero"
+      "itemHero"
     ]
   },
   {
@@ -32,9 +32,9 @@
     "max_slots": 16,
     "gold_cost": 40,
     "available_on": [
-      "Dual Revolvers",
-      "Minigun",
-      "Bow"
+      "itemDualRevolver",
+      "itemMinigun",
+      "itemBow"
     ]
   },
   {
@@ -45,13 +45,13 @@
     "max_slots": 16,
     "gold_cost": 40,
     "available_on": [
-      "Quad Cylinder",
-      "Long Ranger",
-      "Shotgun",
-      "Revolver",
-      "Sheriff Star",
-      "Leveredge",
-      "Dual Revolvers"
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemShotgun",
+      "itemPistol",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemDualRevolver"
     ]
   },
   {
@@ -62,10 +62,10 @@
     "max_slots": 8,
     "gold_cost": 40,
     "available_on": [
-      "Minigun",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemMinigun",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ]
   },
   {
@@ -76,7 +76,7 @@
     "max_slots": 8,
     "gold_cost": 40,
     "available_on": [
-      "Bow"
+      "itemBow"
     ]
   },
   {
@@ -87,11 +87,11 @@
     "max_slots": 16,
     "gold_cost": 40,
     "available_on": [
-      "Quad Cylinder",
-      "Long Ranger",
-      "Revolver",
-      "Shotgun",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemPistol",
+      "itemShotgun",
+      "itemWinchester"
     ]
   },
   {
@@ -102,19 +102,19 @@
     "max_slots": 8,
     "gold_cost": 40,
     "available_on": [
-      "Quad Cylinder",
-      "Long Ranger",
-      "Shotgun",
-      "Minigun",
-      "Revolver",
-      "Bow",
-      "Sheriff Star",
-      "Boomerang",
-      "Dual Revolvers",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemShotgun",
+      "itemMinigun",
+      "itemPistol",
+      "itemBow",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemDualRevolver",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ]
   },
   {
@@ -125,19 +125,19 @@
     "max_slots": 3,
     "gold_cost": 40,
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Boomerang",
-      "Sheriff Star",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ]
   },
   {
@@ -148,7 +148,7 @@
     "max_slots": 6,
     "gold_cost": 200,
     "available_on": [
-      "Hero"
+      "itemHero"
     ]
   },
   {
@@ -159,7 +159,7 @@
     "max_slots": 6,
     "gold_cost": 100,
     "available_on": [
-      "Hero"
+      "itemHero"
     ]
   },
   {
@@ -170,11 +170,11 @@
     "max_slots": 5,
     "gold_cost": 100,
     "available_on": [
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Boomerang"
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemBoomerang"
     ]
   },
   {
@@ -185,7 +185,7 @@
     "max_slots": 5,
     "gold_cost": 40,
     "available_on": [
-      "Boomerang"
+      "itemBoomerang"
     ]
   },
   {
@@ -196,7 +196,7 @@
     "max_slots": 10,
     "gold_cost": 40,
     "available_on": [
-      "Sheriff Star"
+      "itemSheriffStar"
     ]
   },
   {
@@ -207,7 +207,7 @@
     "max_slots": 5,
     "gold_cost": 40,
     "available_on": [
-      "Boomerang"
+      "itemBoomerang"
     ]
   },
   {
@@ -218,9 +218,9 @@
     "max_slots": 10,
     "gold_cost": 40,
     "available_on": [
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ]
   },
   {
@@ -231,12 +231,12 @@
     "max_slots": 16,
     "gold_cost": 40,
     "available_on": [
-      "Quad Cylinder",
-      "Long Ranger",
-      "Shotgun",
-      "Revolver",
-      "Dual Revolvers",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemShotgun",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemWinchester"
     ]
   },
   {
@@ -247,7 +247,7 @@
     "max_slots": 6,
     "gold_cost": 200,
     "available_on": [
-      "Hero"
+      "itemHero"
     ]
   },
   {
@@ -258,7 +258,7 @@
     "max_slots": 6,
     "gold_cost": 200,
     "available_on": [
-      "Hero"
+      "itemHero"
     ]
   }
 ]

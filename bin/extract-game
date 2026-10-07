@@ -1,5 +1,5 @@
 #!/bin/sh
-# Updates data/jokers.json, data/upgrades.json and data/progression.json from the local game install.
+# Updates data/*.json from the local game install.
 # The install path is read from FFW_GAME_DIR, set in the environment or in .env (see .env.example).
 set -eu
 cd "$(dirname "$0")/.."
@@ -17,6 +17,10 @@ mkdir -p .cache/game .cache/oodle data
 docker compose run --rm --build extract /paks /out \
   raw:FarFarWest/Content/Progress/DT_PlayerJokers \
   names:FarFarWest/Content/Progress/DT_PlayerJokers \
+  raw:FarFarWest/Content/Progress/DT_PlayerItems \
+  names:FarFarWest/Content/Progress/DT_PlayerItems \
   json:FarFarWest/Content/LocaStringTables/ST_Tweaks \
+  json:FarFarWest/Content/LocaStringTables/ST_Weapons \
+  json:FarFarWest/Content/LocaStringTables/ST_Spells \
   raw:FarFarWest/Content/Interfaces/Equipment/C_UnlockedJokers
 exec docker compose run --rm --build app python3 scripts/build_game_data.py /extract data

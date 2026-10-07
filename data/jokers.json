@@ -9,12 +9,12 @@
     "sell_price": 25,
     "effect": "+5% attack and reload speed",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Dual Revolvers",
-      "Shotgun",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -32,19 +32,19 @@
     "sell_price": 25,
     "effect": "+50% chance for attacks to make chicken sounds. Useless!",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Sheriff Star",
-      "Boomerang",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -62,7 +62,7 @@
     "sell_price": 25,
     "effect": "Move faster and deal more damage as a dead ghost",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -80,12 +80,12 @@
     "sell_price": 25,
     "effect": "When you reload an empty clip, heal for 2 HP",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Shotgun",
-      "Leveredge",
-      "Dual Revolvers"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemShotgun",
+      "itemWinchester",
+      "itemDualRevolver"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -103,19 +103,19 @@
     "sell_price": 25,
     "effect": "+10% chance for enemies to drop 1 gold nugget upon death",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -133,7 +133,7 @@
     "sell_price": 25,
     "effect": "Healing bottles are 25% more effective on you",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -151,18 +151,18 @@
     "sell_price": 25,
     "effect": "+10% damage, but +30% gravity while the weapon is active",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Shotgun",
-      "Leveredge",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Knuckles",
-      "Banjo",
-      "Lasso",
-      "Minigun",
-      "Boomerang"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemShotgun",
+      "itemWinchester",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso",
+      "itemMinigun",
+      "itemBoomerang"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -180,7 +180,7 @@
     "sell_price": 25,
     "effect": "You can revive your allies twice as fast",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -198,7 +198,7 @@
     "sell_price": 25,
     "effect": "+10% melee damage",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -216,7 +216,7 @@
     "sell_price": 25,
     "effect": "While at or below 30% HP, gain +30% move speed",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -234,7 +234,7 @@
     "sell_price": 25,
     "effect": "-5% gravity",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -252,7 +252,7 @@
     "sell_price": 25,
     "effect": "Automatically reload your weapon after casting a spell",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -270,18 +270,18 @@
     "sell_price": 25,
     "effect": "When you take HP damage, gain +20% damage for 3 sec.",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -299,15 +299,15 @@
     "sell_price": 25,
     "effect": "+50% chance for weakspot hits to blow confetti. Useless!",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Sheriff Star",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemSheriffStar",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -325,18 +325,18 @@
     "sell_price": 25,
     "effect": "+5% chance to spawn a pig on impact. Attack them to make them explode",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -354,19 +354,19 @@
     "sell_price": 25,
     "effect": "+40% swap speed",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -384,7 +384,7 @@
     "sell_price": 25,
     "effect": "While at or below 30% HP, deal +30% damage",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -402,7 +402,7 @@
     "sell_price": 25,
     "effect": "Walking makes rubber duck noises. Useless!",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -420,7 +420,7 @@
     "sell_price": 25,
     "effect": "+50% hero glow. You're shining! Useless!",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -438,7 +438,7 @@
     "sell_price": 25,
     "effect": "+10% ammo bag",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -456,11 +456,11 @@
     "sell_price": 25,
     "effect": "+10% attack speed when aiming",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Shotgun",
-      "Leveredge",
-      "Long Ranger"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemShotgun",
+      "itemWinchester",
+      "itemLongRanger"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -478,18 +478,18 @@
     "sell_price": 150,
     "effect": "+2% chance to spawn an anti-gravity area when an enemy dies",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -507,15 +507,15 @@
     "sell_price": 150,
     "effect": "+5% chance for weakspot hits to summon a healing ghost bell",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Sheriff Star",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemSheriffStar",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -533,7 +533,7 @@
     "sell_price": 150,
     "effect": "+15% damage airborne",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -551,19 +551,19 @@
     "sell_price": 150,
     "effect": "+5% chance for a Cactus Mino to spawn when an enemy dies",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -581,7 +581,7 @@
     "sell_price": 150,
     "effect": "+1 Utility Ammo",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -599,7 +599,7 @@
     "sell_price": 150,
     "effect": "Reveals the position of the Wandering Trader and get a 20% discount. You deserve it",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -617,11 +617,11 @@
     "sell_price": 150,
     "effect": "+2 explosive bullets at the end of your magazine",
     "available_on": [
-      "Quad Cylinder",
-      "Long Ranger",
-      "Revolver",
-      "Leveredge",
-      "Dual Revolvers"
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemPistol",
+      "itemWinchester",
+      "itemDualRevolver"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -639,19 +639,19 @@
     "sell_price": 150,
     "effect": "+7% damage",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -669,12 +669,12 @@
     "sell_price": 150,
     "effect": "+20% reload speed",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Dual Revolvers",
-      "Shotgun",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -692,7 +692,7 @@
     "sell_price": 150,
     "effect": "Taking HP damage grants +20% melee speed for 3 sec.",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -710,7 +710,7 @@
     "sell_price": 150,
     "effect": "Your bare hands hits are more powerful",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -728,9 +728,9 @@
     "sell_price": 150,
     "effect": "Melee kills on frozen enemies grant 2 shield points",
     "available_on": [
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -748,7 +748,7 @@
     "sell_price": 150,
     "effect": "Increase your acquired Gold by 20% at the end of a mission",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -766,7 +766,7 @@
     "sell_price": 150,
     "effect": "+20% jump height",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -784,19 +784,19 @@
     "sell_price": 150,
     "effect": "+10% chance to deal double damage per hit",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -814,9 +814,9 @@
     "sell_price": 150,
     "effect": "+15% melee range and hitbox size",
     "available_on": [
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -834,7 +834,7 @@
     "sell_price": 150,
     "effect": "Picking up a joker heals for a bonus +35HP",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -852,19 +852,19 @@
     "sell_price": 150,
     "effect": "+10% chance on hit to spawn damaging pickaxes on the target",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -882,19 +882,19 @@
     "sell_price": 150,
     "effect": "+10% chance for a speed-boosting ring to spawn when an enemy dies",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -912,7 +912,7 @@
     "sell_price": 150,
     "effect": "When HP hit, deal the same damage +15 back to the attacker",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -930,7 +930,7 @@
     "sell_price": 150,
     "effect": "Upon reaching 25% HP, release a wave that burns nearby enemies (cooldown: 60 sec.)",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -948,16 +948,16 @@
     "sell_price": 150,
     "effect": "+30% move speed when shooting",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -975,12 +975,12 @@
     "sell_price": 150,
     "effect": "+50% move speed when reloading",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Dual Revolvers",
-      "Shotgun",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -998,7 +998,7 @@
     "sell_price": 150,
     "effect": "After 10 sec. without taking damage, your shield is set to a minimum of 10 shield points",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1016,19 +1016,19 @@
     "sell_price": 150,
     "effect": "+10% chance for a shroom to spawn when an enemy dies",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -1046,11 +1046,11 @@
     "sell_price": 150,
     "effect": "Gain +25% accuracy, but -10% attack speed",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Dual Revolvers",
-      "Shotgun",
-      "Minigun"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemMinigun"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1068,7 +1068,7 @@
     "sell_price": 150,
     "effect": "Increase your acquired Souls by 20% at the end of a mission",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -1086,7 +1086,7 @@
     "sell_price": 150,
     "effect": "Increased pick up range and heals for +2 HP when picking up a soul",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1104,7 +1104,7 @@
     "sell_price": 150,
     "effect": "+10% move speed",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1122,18 +1122,18 @@
     "sell_price": 150,
     "effect": "Your first hit after equipping a weapon deals 30% more damage",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Bow",
-      "Sheriff Star",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemBow",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1151,7 +1151,7 @@
     "sell_price": 150,
     "effect": "+5 HP",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1169,19 +1169,19 @@
     "sell_price": 250,
     "effect": "+5% chance for enemies to drop an ammo box upon death",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Bow",
-      "Dual Revolvers",
-      "Boomerang",
-      "Sheriff Star",
-      "Leveredge",
-      "Shotgun",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemBow",
+      "itemDualRevolver",
+      "itemBoomerang",
+      "itemSheriffStar",
+      "itemWinchester",
+      "itemShotgun",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1199,7 +1199,7 @@
     "sell_price": 250,
     "effect": "-10% spell cooldown",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1217,19 +1217,19 @@
     "sell_price": 250,
     "effect": "+15% damage while shielded",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Boomerang",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1247,9 +1247,9 @@
     "sell_price": 250,
     "effect": "Gain up to +50% melee damage as your HP gets lower",
     "available_on": [
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1267,9 +1267,9 @@
     "sell_price": 250,
     "effect": "Melee kills grant a stacking +5% melee speed for 5 sec., up to +50%",
     "available_on": [
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1287,7 +1287,7 @@
     "sell_price": 250,
     "effect": "Gain +1 HP for every 20 Gold in your mission inventory, up to +15 HP",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1305,7 +1305,7 @@
     "sell_price": 250,
     "effect": "+20% damage, but +15% gravity",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1323,13 +1323,13 @@
     "sell_price": 250,
     "effect": "The first 25% of your clip deals +20% damage",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Revolver",
-      "Dual Revolvers",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1347,7 +1347,7 @@
     "sell_price": 250,
     "effect": "Gain +30% movement speed. Your horse does not want to be with you",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1365,18 +1365,18 @@
     "sell_price": 250,
     "effect": "+5% chance for your hits to cause an explosion (Acid)",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Bow",
-      "Sheriff Star",
-      "Boomerang",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemBow",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1394,18 +1394,18 @@
     "sell_price": 250,
     "effect": "+5% chance for your hits to cause an explosion (Elec)",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Bow",
-      "Sheriff Star",
-      "Boomerang",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemBow",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1423,18 +1423,18 @@
     "sell_price": 250,
     "effect": "+5% chance for your hits to cause an explosion (Frost)",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Bow",
-      "Sheriff Star",
-      "Boomerang",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemBow",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1452,18 +1452,18 @@
     "sell_price": 250,
     "effect": "+5% chance for your hits to cause an explosion (Pyro)",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Bow",
-      "Sheriff Star",
-      "Boomerang",
-      "Leveredge",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemBow",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1481,7 +1481,7 @@
     "sell_price": 250,
     "effect": "Reduce all damage taken by 10% when shielded",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1499,7 +1499,7 @@
     "sell_price": 250,
     "effect": "While at full HP, gain +20% move speed, reload speed, and attack speed",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1517,7 +1517,7 @@
     "sell_price": 250,
     "effect": "Upon reaching 25% HP, gain +50 shield (cooldown: 60 sec.)",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1535,7 +1535,7 @@
     "sell_price": 250,
     "effect": "Passively regain HP while being near allies",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1553,18 +1553,18 @@
     "sell_price": 250,
     "effect": "+20% attack speed",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1582,12 +1582,12 @@
     "sell_price": 250,
     "effect": "Gain 5% reload speed on kill for 10 sec., up to 100%",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Leveredge",
-      "Revolver",
-      "Dual Revolvers"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemWinchester",
+      "itemPistol",
+      "itemDualRevolver"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1605,12 +1605,12 @@
     "sell_price": 250,
     "effect": "Reloading an empty clip is 50% faster",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Dual Revolvers",
-      "Shotgun",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1628,13 +1628,13 @@
     "sell_price": 250,
     "effect": "Your primary weapon removes elements from enemies to instantly deal 10 damage",
     "available_on": [
-      "Quad Cylinder",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Shotgun",
-      "Knuckles",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemShotgun",
+      "itemKnuckles",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1652,15 +1652,15 @@
     "sell_price": 250,
     "effect": "+20% weakspot damage",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Sheriff Star"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1678,7 +1678,7 @@
     "sell_price": 250,
     "effect": "Picking up a soul grants 20% damage and reload speed for 5 sec.",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1696,7 +1696,7 @@
     "sell_price": 250,
     "effect": "+20% chance that opening a chest gives you a random Joker",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1714,15 +1714,15 @@
     "sell_price": 250,
     "effect": "+35% weakspot damage, but -20% regular hits damage",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Sheriff Star"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1740,13 +1740,13 @@
     "sell_price": 250,
     "effect": "+20% chance to get your ammo back after a weakspot hit",
     "available_on": [
-      "Quad Cylinder",
-      "Revolver",
-      "Long Ranger",
-      "Minigun",
-      "Dual Revolvers",
-      "Shotgun",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemPistol",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemDualRevolver",
+      "itemShotgun",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1764,7 +1764,7 @@
     "sell_price": 800,
     "effect": "Gain -10% Acid spells cooldown per equipped Acid spell",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -1782,7 +1782,7 @@
     "sell_price": 800,
     "effect": "Gain -10% Cactus spells cooldown per equipped Cactus spell",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -1800,7 +1800,7 @@
     "sell_price": 400,
     "effect": "Your melee attacks freeze enemies, consuming 3 shield points per enemy",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1818,9 +1818,9 @@
     "sell_price": 400,
     "effect": "Grants +25% weapon damage, but reloading now wastes unused ammo",
     "available_on": [
-      "Quad Cylinder",
-      "Long Ranger",
-      "Revolver"
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemPistol"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1838,7 +1838,7 @@
     "sell_price": 400,
     "effect": "Your shield decreases 30% less quickly",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1856,9 +1856,9 @@
     "sell_price": 400,
     "effect": "Melee kills heal you for 2 HP",
     "available_on": [
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1876,7 +1876,7 @@
     "sell_price": 800,
     "effect": "Gain -10% Elec spells cooldown per equipped Elec spell",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -1894,19 +1894,19 @@
     "sell_price": 400,
     "effect": "Your hits instantly kill enemies below 20% HP, except elites and bosses",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Knuckles",
-      "Boomerang",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemKnuckles",
+      "itemBoomerang",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1924,7 +1924,7 @@
     "sell_price": 400,
     "effect": "+1 Jump",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1942,7 +1942,7 @@
     "sell_price": 800,
     "effect": "Gain -10% Frost spells cooldown per equipped Frost spell",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -1960,15 +1960,15 @@
     "sell_price": 400,
     "effect": "+30% weakspot damage",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Revolver",
-      "Dual Revolvers",
-      "Bow",
-      "Sheriff Star",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemBow",
+      "itemSheriffStar",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1986,7 +1986,7 @@
     "sell_price": 400,
     "effect": "Heal 0.75 HP per second for 20 sec. after being hit",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2004,7 +2004,7 @@
     "sell_price": 400,
     "effect": "+15% chance that collecting a Joker makes another random one appear",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2022,7 +2022,7 @@
     "sell_price": 400,
     "effect": "Gain +1 HP for each active Joker",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2040,7 +2040,7 @@
     "sell_price": 400,
     "effect": "While at or below 30% HP, reduce all damage taken by -30% and gain 10% melee lifesteal",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2058,7 +2058,7 @@
     "sell_price": 400,
     "effect": "Ammo pickups are disabled. Gain 10% of max ammo every 12 sec.",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2076,7 +2076,7 @@
     "sell_price": 400,
     "effect": "Kills heal you for 2 HP, but max. HP is reduced by 30%",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2094,7 +2094,7 @@
     "sell_price": 400,
     "effect": "-25% gravity",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2112,7 +2112,7 @@
     "sell_price": 800,
     "effect": "Gain -10% Pyro spells cooldown per equipped Pyro spell",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2130,19 +2130,19 @@
     "sell_price": 400,
     "effect": "After your shield absorbs a hit, your next attack deals +100% damage",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Boomerang",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2160,7 +2160,7 @@
     "sell_price": 400,
     "effect": "Heal 50 HP instead of dying to a fatal hit (cooldown: 180 sec.)",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2178,9 +2178,9 @@
     "sell_price": 400,
     "effect": "Melee kills grant you 1 shield points",
     "available_on": [
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2198,7 +2198,7 @@
     "sell_price": 400,
     "effect": "Reduce all damage taken by 20%, but receive -30% healing",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2216,7 +2216,7 @@
     "sell_price": 400,
     "effect": "Excess healing converts into shield points, up to +15 SP",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2234,7 +2234,7 @@
     "sell_price": 800,
     "effect": "Gain -10% Voodoo spells cooldown per equipped Voodoo spell",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2252,7 +2252,7 @@
     "sell_price": 400,
     "effect": "Gain -30% spell cooldown, but -30% HP",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2270,19 +2270,19 @@
     "sell_price": 600,
     "effect": "Gain +1% damage per 1 shield point, up to 80%",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Leveredge",
-      "Revolver",
-      "Bow",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Knuckles",
-      "Boomerang",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemKnuckles",
+      "itemBoomerang",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2300,7 +2300,7 @@
     "sell_price": 600,
     "effect": "Killing an enemy shortens all ongoing spell cooldowns by 0.5%",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2318,15 +2318,15 @@
     "sell_price": 600,
     "effect": "+50% chance not to consume ammo while standing still",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Minigun",
-      "Revolver",
-      "Dual Revolvers",
-      "Bow",
-      "Sheriff Star",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemBow",
+      "itemSheriffStar",
+      "itemWinchester"
     ],
     "can_be_bought": false,
     "can_be_gambled": false,
@@ -2344,7 +2344,7 @@
     "sell_price": 600,
     "effect": "Spells with base cooldowns of 35s or less gain -25% spell cooldown",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2362,7 +2362,7 @@
     "sell_price": 600,
     "effect": "Casting a spell decreases the spell cooldown of other spells by 3 sec. to a minimum of 4 sec.",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2380,7 +2380,7 @@
     "sell_price": 600,
     "effect": "Flip a coin every 10 sec. You either deal +100% or -50% weapon damage",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2398,7 +2398,7 @@
     "sell_price": 600,
     "effect": "Gain +30% shield points from all sources",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2416,7 +2416,7 @@
     "sell_price": 600,
     "effect": "You are small. Gain movespeed, attack speed and lower gravity",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": false,
     "can_be_gambled": false,
@@ -2434,7 +2434,7 @@
     "sell_price": 600,
     "effect": "+1 Dash",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": false,
     "can_be_gambled": false,
@@ -2452,7 +2452,7 @@
     "sell_price": 600,
     "effect": "You are big. Gain health, weapon damage and spell cooldown reduction",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": false,
     "can_be_gambled": false,
@@ -2470,7 +2470,7 @@
     "sell_price": 600,
     "effect": "+40% weapon and melee damage, but -25% HP",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2488,7 +2488,7 @@
     "sell_price": 600,
     "effect": "You are bigger. Gain +25% HP",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2506,17 +2506,17 @@
     "sell_price": 600,
     "effect": "Gain +7% damage and attack speed for every distinct joker rarity equipped on the weapon",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Minigun",
-      "Long Ranger",
-      "Leveredge",
-      "Revolver",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemMinigun",
+      "itemLongRanger",
+      "itemWinchester",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2534,15 +2534,15 @@
     "sell_price": 600,
     "effect": "Per mission, the weapon gains +0.3% attack speed for every 50 damage dealt",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Long Ranger",
-      "Revolver",
-      "Dual Revolvers",
-      "Bow",
-      "Minigun",
-      "Sheriff Star",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemLongRanger",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemBow",
+      "itemMinigun",
+      "itemSheriffStar",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2560,12 +2560,12 @@
     "sell_price": 600,
     "effect": "The fired bullet ricochets, with a 30% chance to automatically hit a nearby enemy",
     "available_on": [
-      "Quad Cylinder",
-      "Long Ranger",
-      "Minigun",
-      "Revolver",
-      "Dual Revolvers",
-      "Leveredge"
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2583,17 +2583,17 @@
     "sell_price": 600,
     "effect": "+1% damage and attack speed per 3% bonus move speed, up to +40%",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Minigun",
-      "Long Ranger",
-      "Leveredge",
-      "Revolver",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemMinigun",
+      "itemLongRanger",
+      "itemWinchester",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2611,7 +2611,7 @@
     "sell_price": 600,
     "effect": "-20% spell cooldown, but spells are randomized on each cast",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2629,7 +2629,7 @@
     "sell_price": 600,
     "effect": "Utility pickups are disabled. Your utility automatically refills after 90 sec.",
     "available_on": [
-      "Hero"
+      "itemHero"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2647,18 +2647,18 @@
     "sell_price": 600,
     "effect": "The weapon gains +4% lifesteal",
     "available_on": [
-      "Quad Cylinder",
-      "Shotgun",
-      "Minigun",
-      "Long Ranger",
-      "Leveredge",
-      "Revolver",
-      "Dual Revolvers",
-      "Sheriff Star",
-      "Bow",
-      "Knuckles",
-      "Banjo",
-      "Lasso"
+      "itemQuadCylinder",
+      "itemShotgun",
+      "itemMinigun",
+      "itemLongRanger",
+      "itemWinchester",
+      "itemPistol",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemBow",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2676,7 +2676,7 @@
     "sell_price": 600,
     "effect": "+30% weakspot damage and piercing bullets while aiming",
     "available_on": [
-      "Quad Cylinder"
+      "itemQuadCylinder"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2694,7 +2694,7 @@
     "sell_price": 600,
     "effect": "Hold the slam attack longer to release a more powerful blow",
     "available_on": [
-      "Banjo"
+      "itemBanjo"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2712,7 +2712,7 @@
     "sell_price": 600,
     "effect": "The boomerang is twice as big and passes through the shields",
     "available_on": [
-      "Boomerang"
+      "itemBoomerang"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2730,7 +2730,7 @@
     "sell_price": 600,
     "effect": "Consecutive shots without missing grant +10% damage, stacking up to +50%",
     "available_on": [
-      "Leveredge"
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2748,7 +2748,7 @@
     "sell_price": 600,
     "effect": "Reloading no longer wastes ammo",
     "available_on": [
-      "Dual Revolvers"
+      "itemDualRevolver"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2766,7 +2766,7 @@
     "sell_price": 600,
     "effect": "The minigun has a 30% chance to fire a random elemental bullet instead of a regular one",
     "available_on": [
-      "Minigun"
+      "itemMinigun"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2784,7 +2784,7 @@
     "sell_price": 600,
     "effect": "Fire mid-reload at the right moment to chain-fire all bullets",
     "available_on": [
-      "Revolver"
+      "itemPistol"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2802,7 +2802,7 @@
     "sell_price": 600,
     "effect": "Taking damage generates charge and grants +30% attack speed for 2 sec.",
     "available_on": [
-      "Knuckles"
+      "itemKnuckles"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2820,7 +2820,7 @@
     "sell_price": 600,
     "effect": "The charged attack propels you backwards and has a 20% chance to apply Frost to enemies",
     "available_on": [
-      "Knuckles"
+      "itemKnuckles"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2838,7 +2838,7 @@
     "sell_price": 600,
     "effect": "Every weakspot hit reduces the cooldown of your spells by 2 sec.",
     "available_on": [
-      "Long Ranger"
+      "itemLongRanger"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2856,7 +2856,7 @@
     "sell_price": 600,
     "effect": "While your kill counter is above 10, the minigun fires twice as fast",
     "available_on": [
-      "Minigun"
+      "itemMinigun"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2874,7 +2874,7 @@
     "sell_price": 600,
     "effect": "Every 8 bullets fired, shoot 2 homing bullets at nearby enemies",
     "available_on": [
-      "Quad Cylinder"
+      "itemQuadCylinder"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2892,7 +2892,7 @@
     "sell_price": 600,
     "effect": "+2 Jumps while holding the Sheriff Stars",
     "available_on": [
-      "Sheriff Star"
+      "itemSheriffStar"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2910,7 +2910,7 @@
     "sell_price": 600,
     "effect": "Doubles the lingering time. Combines with Lingering Time upgrade",
     "available_on": [
-      "Boomerang"
+      "itemBoomerang"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2928,7 +2928,7 @@
     "sell_price": 600,
     "effect": "Gain an extra chord per hit and a wider healing zone, but lose the slam attack",
     "available_on": [
-      "Banjo"
+      "itemBanjo"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2946,7 +2946,7 @@
     "sell_price": 600,
     "effect": "Bullets mark enemies for 5 sec. Marked enemies take +15% damage",
     "available_on": [
-      "Revolver"
+      "itemPistol"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2964,7 +2964,7 @@
     "sell_price": 600,
     "effect": "Weakspot hits cause an explosion",
     "available_on": [
-      "Long Ranger"
+      "itemLongRanger"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -2982,7 +2982,7 @@
     "sell_price": 600,
     "effect": "Shoots an extra pellet for every 4 missing shots in the magazine",
     "available_on": [
-      "Shotgun"
+      "itemShotgun"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -3000,7 +3000,7 @@
     "sell_price": 600,
     "effect": "Charge for 2 sec. to fire 3 arrows in a cone. Attack speed reduces charge time",
     "available_on": [
-      "Bow"
+      "itemBow"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -3018,7 +3018,7 @@
     "sell_price": 600,
     "effect": "The first 3 bullets in your magazine have 100% accuracy and shoot further away",
     "available_on": [
-      "Shotgun"
+      "itemShotgun"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -3036,7 +3036,7 @@
     "sell_price": 600,
     "effect": "Gain +100% pickup range. Gain +30% move speed while holding the Sheriff Stars",
     "available_on": [
-      "Sheriff Star"
+      "itemSheriffStar"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -3054,7 +3054,7 @@
     "sell_price": 600,
     "effect": "The charged attack grants +50% move speed and lets you fly",
     "available_on": [
-      "Lasso"
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -3072,7 +3072,7 @@
     "sell_price": 600,
     "effect": "Casting a spell instantly fills your charge bar",
     "available_on": [
-      "Lasso"
+      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -3090,7 +3090,7 @@
     "sell_price": 600,
     "effect": "Instantly reload 2 bullets from your reserve ammo on kill",
     "available_on": [
-      "Leveredge"
+      "itemWinchester"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -3108,7 +3108,7 @@
     "sell_price": 600,
     "effect": "Reload explosions now leave puddles on the ground",
     "available_on": [
-      "Dual Revolvers"
+      "itemDualRevolver"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -3126,7 +3126,7 @@
     "sell_price": 600,
     "effect": "Charge for 4 sec. to fire a massive explosive arrow. Attack speed reduces charge time",
     "available_on": [
-      "Bow"
+      "itemBow"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
