@@ -25,7 +25,8 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 ## Jokers
 
 - Rareté → **coût en emplacements** (`slot_cost`) : Normal 1, Fine 2, Prime 3, Mythic 4, Legendary 5,
-  Unique 3 à 5 selon la carte.
+  Unique variable selon la carte. Pour les Unique, wiki.gg et wikily.gg se contredisent fortement : voir
+  « Incohérences connues ».
 - Budget par porteur : **14** grâce aux niveaux, **16** avec les 2 emplacements achetés au prestige. Le héros a le
   même budget que les armes.
 - Depuis la mise à jour 644, les emplacements se débloquent entre les niveaux 1 et 100 (avant : 1 à 50).
@@ -46,8 +47,9 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
   wiki (« 1 point par niveau, 20 au niveau 20 ») est obsolète.
 - **+6 points** achetables au prestige → **26 points** par porteur, héros compris.
 - Chaque stat a un `pct_per_slot` et un `max_slots`. Par exemple, Damage : +5 % par point, 8 points au maximum.
-- Héros : Ammo Bag 5 % ×16, Health ×6, Spell CDR 2 % ×6, Speed 4 % ×6, Jump Height 7 % ×6. Le build planner de
-  wikily.gg affiche « Health +30 » au maximum : Health donne probablement +5 PV par point, et non +5 %.
+- Héros : Ammo Bag 5 % ×16, **Health +5 PV fixes** ×6 (et non +5 % comme le dit `hero.json`), Spell CDR 2 % ×6,
+  Speed 4 % ×6, Jump Height 7 % ×6.
+- Chaque point d'upgrade s'achète aussi en or (40 à 300 selon la stat, d'après wikily.gg). Hors périmètre pour l'instant.
 - Lifesteal des sidearms : 1 % par point, 5 points au maximum (+5 %).
 
 ## Prestige
@@ -62,8 +64,9 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 | Point d'upgrade | 2 jetons | 6 | 20 → 26 points |
 | Ticket XP, 500 or, 1000 âmes | 1 jeton | illimité | ressources |
 
-- Un build au maximum demande donc 10 + 12 = 22 jetons, soit **5 prestiges** sur le porteur. Un seul prestige ne
-  paie pas à la fois un emplacement de joker et des points d'upgrade.
+- Chaque prestige (5 jetons) paie donc soit 1 emplacement de joker, soit 2 points d'upgrade, pas les deux.
+  Prestiges nécessaires = emplacements de joker achetés + ⌈points d'upgrade achetés / 2⌉ (formule du build planner
+  de wikily.gg). Un build au maximum demande 2 + 3 = **5 prestiges** sur le porteur.
 
 ## Sorts et combos
 
@@ -77,6 +80,19 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
   l'école correspondante. L'élément de la sidearm ne compte pas.
 
 ## Incohérences connues du wiki
+
+Le build planner de wikily.gg embarque des données qui semblent extraites des fichiers du jeu (identifiants
+internes comme `itemWinchester` pour la Leveredge, `itemPistol` pour le Revolver, `jokerJokheal` pour Medicard).
+Là où il contredit wiki.gg, il a probablement raison, mais rien n'est confirmé en jeu :
+
+- **Coût des jokers Unique** (wiki.gg → wikily) : Eco Trick et Swamp Trick 5 → 2 ; Fanning Ace, Mark Ace,
+  Scavenger Star et Chonky Throw 5 → 3 ; Eagle Lever, Frenzy Spin, Jump Star, Lingering Throw, Rush Blast et
+  Stacked Lever 5 → 4 ; Mindshot 5 → 6 ; Ultra Draw 5 → 7.
+- **Copies maximum** : Bouncing Ball et Clutch, 1 → 2.
+- **Explosive Hits** : quatre jokers chez wiki.gg (Acid, Elec, Frost, Pyro), un seul chez wikily. C'est peut-être
+  un seul joker du jeu qui prend l'élément de l'arme.
+
+Autres incohérences :
 
 - Cooldowns : `Module:Spells/data` est obsolète ; la table Cargo (`spells.json`) est plus récente.
 - Lifesteal : la page Equipment indique 1,25 % ×8, la table Cargo 1 % ×5. Cargo est correct.
@@ -92,8 +108,10 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 - [farfarwest.wiki.gg](https://farfarwest.wiki.gg/) : données de `data/`, éléments des sidearms.
 - [Notes de patch Early Access Update 1 (V644)](https://steamcommunity.com/app/3124540/discussions/0/837250028234942852/) :
   upgrades tous les 2 niveaux, jokers débloqués entre les niveaux 1 et 100, 6 points d'upgrade bonus.
-- [Build planner de wikily.gg](https://wikily.gg/far-far-west/build-planner/3dbea6ae-28bb-4f2a-9e72-6164fa1b6939/edit) :
-  boutique de prestige (coûts et plafonds), 26 points et 16 emplacements par porteur, Lifesteal +5 %, Health +30.
+- [Build planner de wikily.gg](https://wikily.gg/far-far-west/build-planner/new) : boutique de prestige (coûts,
+  plafonds, formule des prestiges requis), 26 points et 16 emplacements par porteur, upgrades (valeurs, plafonds,
+  prix en or), jokers (coûts, copies, armes compatibles). Données embarquées dans le HTML de la page. Licence non
+  précisée : on s'en sert pour recouper, sans copier ses données dans `data/`.
 - [Discussion Steam sur le prestige](https://steamcommunity.com/app/3124540/discussions/0/571540300205508222/) :
   « at least 5 prestiges » pour tout débloquer.
 - [Neonsect, Prestige explained](https://neonsect.com/far-far-west/far-far-west-prestige-explained/) : prestige

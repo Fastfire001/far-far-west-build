@@ -46,17 +46,22 @@ Hors périmètre : **aucune stat calculée** (ni DPS des armes, ni cooldowns fin
 
 ## Questions ouvertes (à vérifier en jeu)
 
-1. **Lazy et Medicard** : s'achètent-ils au Dr. Spark-Twist's Lab ? Le wiki ne leur donne ni source ni prix.
+1. **Le coût des jokers Unique** : wiki.gg et wikily.gg se contredisent sur 15 d'entre eux (voir
+   `docs/game-mechanics.md`). C'est la question la plus urgente, puisque la validation du budget en dépend. Cas
+   faciles à vérifier : Ultra Draw (7 selon wikily ?) et Eco Trick (2 ?). Si wikily a raison, il faudra corriger
+   `scripts/build_data.py` (ou le wiki), sans recopier les données de wikily. Même chose pour les copies maximum de
+   Bouncing Ball et Clutch, et pour Explosive Hits (un joker ou quatre).
+2. **Lazy et Medicard** : s'achètent-ils au Dr. Spark-Twist's Lab ? Le wiki ne leur donne ni source ni prix.
    Exclus par défaut.
-2. **Le barème des emplacements de jokers depuis le patch 644** : combien d'emplacements au niveau 1, et à quels
+3. **Le barème des emplacements de jokers depuis le patch 644** : combien d'emplacements au niveau 1, et à quels
    niveaux se débloquent les suivants entre 1 et 100 ? Nécessaire pour le niveau minimum.
-3. **Les bonus de prestige s'appliquent-ils tout de suite ?** Les emplacements et points achetés sont-ils utilisables
+4. **Les bonus de prestige s'appliquent-ils tout de suite ?** Les emplacements et points achetés sont-ils utilisables
    dès le niveau 1, ou relèvent-ils seulement le plafond qu'il faut atteindre en montant de niveau ?
-4. **Le déblocage des sorts** (niveaux 1, 4, 12, 20, 35) dépend-il du niveau du héros ou d'un niveau de sorts propre ?
+5. **Le déblocage des sorts** (niveaux 1, 4, 12, 20, 35) dépend-il du niveau du héros ou d'un niveau de sorts propre ?
    Une discussion Steam parle de « spells max level » à part du héros, ce qui pencherait pour un niveau de sorts.
-5. **Le niveau du héros limite-t-il les raretés de jokers achetables ?** Les guides se contredisent (pool complet au
+6. **Le niveau du héros limite-t-il les raretés de jokers achetables ?** Les guides se contredisent (pool complet au
    niveau 40 ou 50) et le wiki n'a pas de valeur.
-6. **Les niveaux des jokers Unique** (35/55 pour les armes principales, 30/40 pour les sidearms) sont-ils toujours
+7. **Les niveaux des jokers Unique** (35/55 pour les armes principales, 30/40 pour les sidearms) sont-ils toujours
    valables depuis le patch 644 ?
 
 ## Existant
