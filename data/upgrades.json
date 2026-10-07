@@ -1,0 +1,264 @@
+[
+  {
+    "id": "jokerUpgradeAccuracy",
+    "stat": "Accuracy",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 5,
+    "gold_cost": 40,
+    "available_on": [
+      "Minigun",
+      "Shotgun",
+      "Dual Revolvers",
+      "Quad Cylinder"
+    ]
+  },
+  {
+    "id": "jokerUpgradeTotalAmmoBag",
+    "stat": "Ammo Bag",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 16,
+    "gold_cost": 40,
+    "available_on": [
+      "Hero"
+    ]
+  },
+  {
+    "id": "jokerUpgradeTotalAmmoBagC",
+    "stat": "Ammo Bag",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 16,
+    "gold_cost": 40,
+    "available_on": [
+      "Dual Revolvers",
+      "Minigun",
+      "Bow"
+    ]
+  },
+  {
+    "id": "jokerUpgradeFirerate",
+    "stat": "Attack Speed",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 16,
+    "gold_cost": 40,
+    "available_on": [
+      "Quad Cylinder",
+      "Long Ranger",
+      "Shotgun",
+      "Revolver",
+      "Sheriff Star",
+      "Leveredge",
+      "Dual Revolvers"
+    ]
+  },
+  {
+    "id": "jokerUpgradeFirerateB",
+    "stat": "Attack Speed",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 8,
+    "gold_cost": 40,
+    "available_on": [
+      "Minigun",
+      "Knuckles",
+      "Banjo",
+      "Lasso"
+    ]
+  },
+  {
+    "id": "jokerUpgradeFirerateC",
+    "stat": "Attack Speed",
+    "value": 0.1,
+    "flat": false,
+    "max_slots": 8,
+    "gold_cost": 40,
+    "available_on": [
+      "Bow"
+    ]
+  },
+  {
+    "id": "jokerUpgradeClipSize",
+    "stat": "Clip Size",
+    "value": 0.1,
+    "flat": false,
+    "max_slots": 16,
+    "gold_cost": 40,
+    "available_on": [
+      "Quad Cylinder",
+      "Long Ranger",
+      "Revolver",
+      "Shotgun",
+      "Leveredge"
+    ]
+  },
+  {
+    "id": "jokerUpgradeDamage",
+    "stat": "Damage",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 8,
+    "gold_cost": 40,
+    "available_on": [
+      "Quad Cylinder",
+      "Long Ranger",
+      "Shotgun",
+      "Minigun",
+      "Revolver",
+      "Bow",
+      "Sheriff Star",
+      "Boomerang",
+      "Dual Revolvers",
+      "Leveredge",
+      "Knuckles",
+      "Banjo",
+      "Lasso"
+    ]
+  },
+  {
+    "id": "jokerUpgradeDrawSpeed",
+    "stat": "Draw Speed",
+    "value": 0.3,
+    "flat": false,
+    "max_slots": 3,
+    "gold_cost": 40,
+    "available_on": [
+      "Quad Cylinder",
+      "Shotgun",
+      "Long Ranger",
+      "Minigun",
+      "Leveredge",
+      "Revolver",
+      "Bow",
+      "Dual Revolvers",
+      "Boomerang",
+      "Sheriff Star",
+      "Knuckles",
+      "Banjo",
+      "Lasso"
+    ]
+  },
+  {
+    "id": "jokerUpgradeHeal",
+    "stat": "Health",
+    "value": 5.0,
+    "flat": true,
+    "max_slots": 6,
+    "gold_cost": 200,
+    "available_on": [
+      "Hero"
+    ]
+  },
+  {
+    "id": "jokerUpgradeJumpHeight",
+    "stat": "Jump Height",
+    "value": 0.07,
+    "flat": false,
+    "max_slots": 6,
+    "gold_cost": 100,
+    "available_on": [
+      "Hero"
+    ]
+  },
+  {
+    "id": "jokerUpgradeLifesteal",
+    "stat": "Lifesteal",
+    "value": 0.01,
+    "flat": false,
+    "max_slots": 5,
+    "gold_cost": 100,
+    "available_on": [
+      "Revolver",
+      "Bow",
+      "Dual Revolvers",
+      "Sheriff Star",
+      "Boomerang"
+    ]
+  },
+  {
+    "id": "jokerUpgradeBoomerangLingeringTime",
+    "stat": "Lingering Time",
+    "value": 0.1,
+    "flat": false,
+    "max_slots": 5,
+    "gold_cost": 40,
+    "available_on": [
+      "Boomerang"
+    ]
+  },
+  {
+    "id": "jokerUpgradeSherrifStarPickUpRange",
+    "stat": "Pickup Range",
+    "value": 0.07,
+    "flat": false,
+    "max_slots": 10,
+    "gold_cost": 40,
+    "available_on": [
+      "Sheriff Star"
+    ]
+  },
+  {
+    "id": "jokerUpgradeBoomerangRange",
+    "stat": "Range",
+    "value": 0.15,
+    "flat": false,
+    "max_slots": 5,
+    "gold_cost": 40,
+    "available_on": [
+      "Boomerang"
+    ]
+  },
+  {
+    "id": "jokerUpgradeWeaponMeleeRange",
+    "stat": "Range",
+    "value": 0.04,
+    "flat": false,
+    "max_slots": 10,
+    "gold_cost": 40,
+    "available_on": [
+      "Knuckles",
+      "Banjo",
+      "Lasso"
+    ]
+  },
+  {
+    "id": "jokerUpgradeReloadSpeed",
+    "stat": "Reload Speed",
+    "value": 0.075,
+    "flat": false,
+    "max_slots": 16,
+    "gold_cost": 40,
+    "available_on": [
+      "Quad Cylinder",
+      "Long Ranger",
+      "Shotgun",
+      "Revolver",
+      "Dual Revolvers",
+      "Leveredge"
+    ]
+  },
+  {
+    "id": "jokerUpgradeHeroSpeed",
+    "stat": "Speed",
+    "value": 0.04,
+    "flat": false,
+    "max_slots": 6,
+    "gold_cost": 200,
+    "available_on": [
+      "Hero"
+    ]
+  },
+  {
+    "id": "jokerUpgradeSpellCooldownReduction",
+    "stat": "Spell Cooldown Reduction",
+    "value": 0.02,
+    "flat": false,
+    "max_slots": 6,
+    "gold_cost": 200,
+    "available_on": [
+      "Hero"
+    ]
+  }
+]

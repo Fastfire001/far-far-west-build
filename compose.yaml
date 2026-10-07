@@ -5,3 +5,13 @@ services:
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./data:/app/data
+      - ./.cache/game:/extract:ro
+
+  # Reads assets from the local game install (see bin/extract-game).
+  extract:
+    build: tools/game-extract
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - "${FFW_GAME_DIR:-./.missing-game-dir}/FarFarWest/Content/Paks:/paks:ro"
+      - ./.cache/game:/out
+      - ./.cache/oodle:/cache

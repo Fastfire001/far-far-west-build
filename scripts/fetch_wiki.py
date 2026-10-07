@@ -13,15 +13,12 @@ HEADERS = {"User-Agent": "far-far-west-build/0.1 (build planner data sync)"}
 DELAY = 1.5
 
 CARGO_TABLES = {
-    "jokers.json": ("Jokers", "_pageName=page,title,rarity,buy_price,sell_price,max_equip,effect,"
-                    "obtainable_from,level_requirement,available_on,droppable,slots,sort_order"),
     # Some fields declared in Template:Cargo Equipment (fire intervals, charging speed...) do not exist
     # in the live table and make the query fail; those come from the page infoboxes instead.
     "equipment.json": ("Equipment", "_pageName=page,title,type,accuracy,total_ammo,bend_speed,clip_size,"
                        "primary_damage,primary_count,secondary_damage,secondary_count,weakspot_mult,"
                        "draw_speed,lifesteal,lingering_time,pickup_range,attack_range,reload_speed,"
                        "gold_cost,fragment_cost,xp_mult"),
-    "upgrades.json": ("Equipment_Upgrades", "equipment_title,title,pct_step,max_slots"),
     "spells.json": ("Spells", "_pageName=page,title,type,element,level_requirement,description,duration,"
                     "cooldown,damage_instant,damage_per_tick,tick_rate,radius_min,radius_max,"
                     "xp_multiplier,creates_puddles"),

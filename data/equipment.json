@@ -8,34 +8,7 @@
     "secondary_count": 1,
     "range": 6,
     "charge_rate": "9.35%",
-    "description": "''Short range, big impact. Requires no ammo, no aim, and no thoughts.''",
-    "upgrades": [
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Charging Speed",
-        "pct_per_slot": 15,
-        "max_slots": 4
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Melee Range",
-        "pct_per_slot": 4,
-        "max_slots": 10
-      }
-    ]
+    "description": "''Short range, big impact. Requires no ammo, no aim, and no thoughts.''"
   },
   {
     "name": "Lasso",
@@ -47,34 +20,7 @@
     "xp_mult": 0.7,
     "range": 10,
     "charge_rate": "9.35%",
-    "description": "Whips enemies fast at a decent reach. Some of them come back for more, and not out of spite.",
-    "upgrades": [
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Charging Speed",
-        "pct_per_slot": 15,
-        "max_slots": 4
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Melee Range",
-        "pct_per_slot": 4,
-        "max_slots": 10
-      }
-    ]
+    "description": "Whips enemies fast at a decent reach. Some of them come back for more, and not out of spite."
   },
   {
     "name": "Leveredge",
@@ -86,34 +32,7 @@
     "weakspot_mult": 1.5,
     "fire_interval_min": 0.5,
     "fire_interval_max": 0.5,
-    "description": "''Crisp lever action, flawless presicion, and rugged reloads. Once used to win sickly goldfish at the fair, now wins gunfights.''",
-    "upgrades": [
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Clip Size",
-        "pct_per_slot": 10,
-        "max_slots": 16
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Reload Speed",
-        "pct_per_slot": 7.5,
-        "max_slots": 16
-      }
-    ]
+    "description": "''Crisp lever action, flawless presicion, and rugged reloads. Once used to win sickly goldfish at the fair, now wins gunfights.''"
   },
   {
     "name": "Long Ranger",
@@ -125,34 +44,7 @@
     "weakspot_mult": 1.5,
     "fire_interval_min": 1.33,
     "fire_interval_max": 1.33,
-    "description": "''Built for unmatched accuracy and piercing shots, every miss dishonors centuries of craftsmanship. Try not to be disappointing.''",
-    "upgrades": [
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Clip Size",
-        "pct_per_slot": 10,
-        "max_slots": 16
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Reload Speed",
-        "pct_per_slot": 7.5,
-        "max_slots": 16
-      }
-    ]
+    "description": "''Built for unmatched accuracy and piercing shots, every miss dishonors centuries of craftsmanship. Try not to be disappointing.''"
   },
   {
     "name": "Minigun",
@@ -164,34 +56,7 @@
     "weakspot_mult": 1.5,
     "fire_interval_min": 0.08,
     "fire_interval_max": 1,
-    "description": "''Once it spins up, this thing spews bullets nonstop. Technically stoppable, but you're a full-time bullet-slinger, not some quitter.''",
-    "upgrades": [
-      {
-        "stat": "Accuracy",
-        "pct_per_slot": 5,
-        "max_slots": 5
-      },
-      {
-        "stat": "Ammo Bag",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 5,
-        "max_slots": 3
-      }
-    ]
+    "description": "''Once it spins up, this thing spews bullets nonstop. Technically stoppable, but you're a full-time bullet-slinger, not some quitter.''"
   },
   {
     "name": "Quad Cylinder",
@@ -203,39 +68,7 @@
     "weakspot_mult": 1.5,
     "fire_interval_min": 0.14,
     "fire_interval_max": 0.14,
-    "description": "''Shoots fine, feels fine, does fine. A monument to mediocrity, but a very dependable one.''",
-    "upgrades": [
-      {
-        "stat": "Accuracy",
-        "pct_per_slot": 5,
-        "max_slots": 5
-      },
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Clip Size",
-        "pct_per_slot": 10,
-        "max_slots": 16
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Reload Speed",
-        "pct_per_slot": 7.5,
-        "max_slots": 16
-      }
-    ]
+    "description": "''Shoots fine, feels fine, does fine. A monument to mediocrity, but a very dependable one.''"
   },
   {
     "name": "Shotgun",
@@ -247,39 +80,7 @@
     "weakspot_mult": 1.5,
     "fire_interval_min": 0.33,
     "fire_interval_max": 0.33,
-    "description": "''Weirdly high fire rate for a shotgun, single-shell reloads, and a spread wildfires wish for. At last, a weapon that matches your aim.''",
-    "upgrades": [
-      {
-        "stat": "Accuracy",
-        "pct_per_slot": 5,
-        "max_slots": 5
-      },
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Clip Size",
-        "pct_per_slot": 10,
-        "max_slots": 16
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Reload Speed",
-        "pct_per_slot": 7.5,
-        "max_slots": 16
-      }
-    ]
+    "description": "''Weirdly high fire rate for a shotgun, single-shell reloads, and a spread wildfires wish for. At last, a weapon that matches your aim.''"
   },
   {
     "name": "Banjo",
@@ -288,34 +89,7 @@
     "primary_count": 1,
     "secondary_damage": 25,
     "secondary_count": 1,
-    "description": "''Slow and weak attacks, some healing power. Perfect for healing your allies while destroying their eardrums.''",
-    "upgrades": [
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Chord Capacity",
-        "pct_per_slot": 1,
-        "max_slots": 5
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Melee Range",
-        "pct_per_slot": 4,
-        "max_slots": 10
-      }
-    ]
+    "description": "''Slow and weak attacks, some healing power. Perfect for healing your allies while destroying their eardrums.''"
   },
   {
     "name": "Boomerang",
@@ -330,34 +104,7 @@
     "xp_mult": 1.2,
     "fire_interval_min": 1.71,
     "fire_interval_max": 1.71,
-    "description": "''Flies out, bullies enemies for a while, then swings back for another round. No ammo needed, perfect for an eco-friendly loadout.''",
-    "upgrades": [
-      {
-        "stat": "Boomerang Range",
-        "pct_per_slot": 15,
-        "max_slots": 5
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Lifesteal",
-        "pct_per_slot": 1,
-        "max_slots": 5
-      },
-      {
-        "stat": "Lingering Time",
-        "pct_per_slot": 10,
-        "max_slots": 5
-      }
-    ]
+    "description": "''Flies out, bullies enemies for a while, then swings back for another round. No ammo needed, perfect for an eco-friendly loadout.''"
   },
   {
     "name": "Bow",
@@ -369,34 +116,7 @@
     "weakspot_mult": 1.5,
     "fire_interval_min": 0.6,
     "fire_interval_max": 1,
-    "description": "''Fires bargain-bin arrows when you quick draw. Bend it like you mean it to drop an explosive banger.''",
-    "upgrades": [
-      {
-        "stat": "Ammo Bag",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 10,
-        "max_slots": 8
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Lifesteal",
-        "pct_per_slot": 1,
-        "max_slots": 5
-      }
-    ]
+    "description": "''Fires bargain-bin arrows when you quick draw. Bend it like you mean it to drop an explosive banger.''"
   },
   {
     "name": "Dual Revolvers",
@@ -410,39 +130,7 @@
     "weakspot_mult": 1.5,
     "fire_interval_min": 0.15,
     "fire_interval_max": 0.15,
-    "description": "''High fire rate, bad accuracy, yet one reload sends both revolvers soaring into explosive usefulness. A miraculous jump from meh to mayhem.''",
-    "upgrades": [
-      {
-        "stat": "Accuracy",
-        "pct_per_slot": 5,
-        "max_slots": 5
-      },
-      {
-        "stat": "Ammo Bag",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Lifesteal",
-        "pct_per_slot": 1,
-        "max_slots": 5
-      },
-      {
-        "stat": "Reload Speed",
-        "pct_per_slot": 7.5,
-        "max_slots": 16
-      }
-    ]
+    "description": "''High fire rate, bad accuracy, yet one reload sends both revolvers soaring into explosive usefulness. A miraculous jump from meh to mayhem.''"
   },
   {
     "name": "Revolver",
@@ -454,39 +142,7 @@
     "weakspot_mult": 1.5,
     "fire_interval_min": 0.33,
     "fire_interval_max": 0.33,
-    "description": "''Reliable at all times, average at everything. Peak choice for people who fear commitment.''",
-    "upgrades": [
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Clip Size",
-        "pct_per_slot": 10,
-        "max_slots": 16
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Lifesteal",
-        "pct_per_slot": 1,
-        "max_slots": 5
-      },
-      {
-        "stat": "Reload Speed",
-        "pct_per_slot": 7.5,
-        "max_slots": 16
-      }
-    ]
+    "description": "''Reliable at all times, average at everything. Peak choice for people who fear commitment.''"
   },
   {
     "name": "Sheriff Star",
@@ -498,61 +154,30 @@
     "xp_mult": 1.2,
     "fire_interval_min": 0.5,
     "fire_interval_max": 0.5,
-    "description": "''Launches at high speed and slice enemies. Justice has never been this low-effort.''",
-    "upgrades": [
-      {
-        "stat": "Attack Speed",
-        "pct_per_slot": 5,
-        "max_slots": 16
-      },
-      {
-        "stat": "Damage",
-        "pct_per_slot": 5,
-        "max_slots": 8
-      },
-      {
-        "stat": "Draw Speed",
-        "pct_per_slot": 30,
-        "max_slots": 3
-      },
-      {
-        "stat": "Lifesteal",
-        "pct_per_slot": 1,
-        "max_slots": 5
-      },
-      {
-        "stat": "Pickup Range",
-        "pct_per_slot": 7,
-        "max_slots": 10
-      }
-    ]
+    "description": "''Launches at high speed and slice enemies. Justice has never been this low-effort.''"
   },
   {
     "name": "Ammo Pack",
     "type": "Utility",
     "primary_count": 1,
-    "description": "''Explodes into ammo. More players means more bullets. Family gatherings have never been so lucrative.''",
-    "upgrades": []
+    "description": "''Explodes into ammo. More players means more bullets. Family gatherings have never been so lucrative.''"
   },
   {
     "name": "Bottle Crate",
     "type": "Utility",
     "primary_count": 1,
-    "description": "''Explodes into healing bottles. Guaranteed to make you the most popular cowboy at the saloon.''",
-    "upgrades": []
+    "description": "''Explodes into healing bottles. Guaranteed to make you the most popular cowboy at the saloon.''"
   },
   {
     "name": "Healing Area",
     "type": "Utility",
     "primary_count": 1,
-    "description": "''Explodes on impact and creates a healing zone that lasts for a long time. Smells like rotten soup, just like any proper grandma's remedy.''",
-    "upgrades": []
+    "description": "''Explodes on impact and creates a healing zone that lasts for a long time. Smells like rotten soup, just like any proper grandma's remedy.''"
   },
   {
     "name": "Impulse Grenade",
     "type": "Utility",
     "primary_count": 1,
-    "description": "''Periodically generates shockwaves that push players away. Allows you to reach heights your skill level never will.''",
-    "upgrades": []
+    "description": "''Periodically generates shockwaves that push players away. Allows you to reach heights your skill level never will.''"
   }
 ]

@@ -1,4 +1,6 @@
-"""Builds data/*.json from a farfarwest.wiki.gg dump (Cargo query results + raw page wikitext).
+"""Builds data/equipment.json, data/spells.json and data/spell_combos.json from a farfarwest.wiki.gg dump
+(Cargo query results + raw page wikitext). Jokers and upgrades come from the game files instead
+(scripts/build_game_data.py).
 
 Usage: python3 scripts/build_data.py <cargo_dir> <wiki_ns0_dir> <out_dir>
 """
@@ -39,7 +41,6 @@ def infobox(page, name):
 
 WEAPON_FIELDS = ["clip_size", "total_ammo", "primary_damage", "primary_count", "secondary_damage",
                  "secondary_count", "weakspot_mult", "xp_mult"]
-upgrades = load("upgrades.json")
 equipment = []
 for row in load("equipment.json"):
     if row["type"] == "Melee":
@@ -53,32 +54,7 @@ for row in load("equipment.json"):
     for f in ("fire_interval_min", "fire_interval_max", "range", "charge_rate", "description"):
         if f in box:
             item[f] = box[f] if f in ("charge_rate", "description") else num(box[f])
-    item["upgrades"] = [
-        {"stat": u["title"], "pct_per_slot": num(u["pct step"]), "max_slots": num(u["max slots"])}
-        for u in upgrades if u["equipment title"] == row["title"]
-    ]
     equipment.append(item)
-
-hero = {"upgrades": [
-    {"stat": u["title"], "pct_per_slot": num(u["pct step"]), "max_slots": num(u["max slots"])}
-    for u in upgrades if u["equipment title"] == "Hero"
-]}
-
-jokers = []
-for row in load("jokers.json"):
-    jokers.append({
-        "name": row["title"],
-        "rarity": row["rarity"],
-        "slot_cost": num(row["slots"]),
-        "max_equip": num(row["max equip"]),
-        "buy_price": num(row["buy price"]),
-        "sell_price": num(row["sell price"]),
-        "effect": row["effect"],
-        # "Hero" = equipped on the hero; otherwise the list of weapons it can go on.
-        "available_on": sorted({w.title() for w in split_list(row["available on"])}),
-        "obtainable_from": split_list(row["obtainable from"]),
-        "droppable": row["droppable"] == "1",
-    })
 
 spells = []
 for row in load("spells.json"):
@@ -118,8 +94,6 @@ combos = [{
 
 out = {
     "equipment.json": sorted(equipment, key=lambda e: (e["type"], e["name"])),
-    "hero.json": hero,
-    "jokers.json": sorted(jokers, key=lambda j: (j["rarity"], j["name"])),
     "spells.json": sorted(spells, key=lambda s: (s["element"], s["unlock_level"] or 0)),
     "spell_combos.json": combos,
 }
