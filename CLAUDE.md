@@ -6,11 +6,11 @@ La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne 
 ## Structure
 
 - `data/*.json` : données du jeu. Fichiers **générés** : ne pas les modifier à la main, corriger plutôt le script
-  qui les produit puis regénérer. Jokers, upgrades et progression viennent des fichiers du jeu ; équipement, sorts
-  et combos du wiki.
+  qui les produit puis regénérer. Jokers, upgrades et progression viennent des fichiers du jeu ; équipement et sorts
+  du wiki.
 - `scripts/` : code Python, uniquement la bibliothèque standard.
   - `fetch_wiki.py` télécharge les tables Cargo et les pages du wiki nécessaires ; `build_data.py` en tire
-    `equipment.json`, `spells.json` et `spell_combos.json`.
+    `equipment.json` et `spells.json`.
   - `build_game_data.py` décode les assets extraits du jeu et écrit `jokers.json`, `upgrades.json` et
     `progression.json`.
 - `tools/game-extract/` : extracteur C# (CUE4Parse) qui lit les archives du jeu et écrit les assets bruts dans
@@ -25,7 +25,7 @@ La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne 
 
 Toutes nécessitent Docker (sous WSL, Docker Desktop doit être lancé).
 
-- `bin/update-data` : regénère depuis le wiki `equipment.json`, `spells.json` et `spell_combos.json`.
+- `bin/update-data` : regénère depuis le wiki `equipment.json` et `spells.json`.
 - `bin/extract-game` : regénère depuis le jeu installé `jokers.json`, `upgrades.json` et `progression.json`.
   Nécessite `FFW_GAME_DIR` (dans `.env`, voir `.env.example`). À relancer après chaque mise à jour du jeu.
 

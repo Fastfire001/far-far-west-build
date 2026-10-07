@@ -22,8 +22,6 @@ CARGO_TABLES = {
     "spells.json": ("Spells", "_pageName=page,title,type,element,level_requirement,description,duration,"
                     "cooldown,damage_instant,damage_per_tick,tick_rate,radius_min,radius_max,"
                     "xp_multiplier,creates_puddles"),
-    "combos.json": ("Spell_Combos", "title,description,archetype,target_type,damage_type,duration"),
-    "combo_options.json": ("Spell_Combo_Options", "combo_title,spell_1,spell_2,ordered"),
 }
 
 

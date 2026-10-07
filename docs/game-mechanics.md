@@ -8,7 +8,7 @@ a refondu la progression et rendu obsolètes plusieurs pages du wiki.
 | Fichier de `data/` | Source | Commande |
 |---|---|---|
 | `jokers.json`, `upgrades.json`, `progression.json` | **fichiers du jeu** (installation locale) | `bin/extract-game` |
-| `equipment.json`, `spells.json`, `spell_combos.json` | [farfarwest.wiki.gg](https://farfarwest.wiki.gg/) (tables Cargo + pages) | `bin/update-data` |
+| `equipment.json`, `spells.json` | [farfarwest.wiki.gg](https://farfarwest.wiki.gg/) (tables Cargo + pages) | `bin/update-data` |
 
 Les fichiers du jeu font foi : le wiki est rempli à la main et se trompe sur plusieurs jokers (voir « Incohérences
 connues du wiki »). Le contenu du wiki est sous licence CC BY-SA (à vérifier) : il faut le créditer. Les fichiers
@@ -86,16 +86,15 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 - Ces règles viennent des notes de patch et du build planner de wikily.gg, pas des fichiers du jeu : la logique de
   la boutique est dans un Blueprint (`UI_PrestigeShop`), illisible avec notre méthode d'extraction.
 
-## Sorts et combos
+## Sorts
 
 - `spells.json` : élément, niveau de déblocage (1, 4, 12, 20, 35), cooldown, et si le sort crée des flaques
   (puddles). Les dégâts et la zone d'effet ne sont renseignés que pour certains sorts.
 - Les écoles de sorts ont **leur propre niveau** (les jokers Mastery se débloquent au niveau 50 d'une école). Les
   niveaux de déblocage des sorts sont donc très probablement des niveaux d'école, pas des niveaux du héros.
 - 3 emplacements de sorts (touches Q, E, C) ; le 3e se débloque au niveau 3.
-- `spell_combos.json` : 29 interactions. Chaque combo a des `triggers` `{a, b}` dont les valeurs sont des noms de
-  sorts, un élément (« Elec ») ou une flaque (« Acid Puddle »). L'élément de la **sidearm** peut aussi déclencher un
-  combo : elle applique l'élément à l'impact, et le Bow crée des flaques.
+- Les combos entre sorts (une trentaine sur le wiki : Fire Tornado, Geyser Split…) ne sont pas repris : ils
+  dépendent du placement en jeu et leurs déclencheurs sont mal documentés.
 
 ## Extraction depuis le jeu
 
@@ -152,7 +151,7 @@ Autres, côté données venant encore du wiki :
 ## Sources
 
 - Fichiers du jeu, version 0.2.0.20 : jokers, upgrades, barème des emplacements, défis de déblocage.
-- [farfarwest.wiki.gg](https://farfarwest.wiki.gg/) : équipement, sorts, combos, éléments des sidearms.
+- [farfarwest.wiki.gg](https://farfarwest.wiki.gg/) : équipement, sorts, éléments des sidearms.
 - [Notes de patch Early Access Update 1 (V644)](https://steamcommunity.com/app/3124540/discussions/0/837250028234942852/) :
   upgrades tous les 2 niveaux, jokers débloqués entre les niveaux 1 et 100, 6 points d'upgrade bonus.
 - [Build planner de wikily.gg](https://wikily.gg/far-far-west/build-planner/new) : boutique de prestige (coûts,

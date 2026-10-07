@@ -7,7 +7,7 @@ Planificateur de builds pour [Far Far West](https://store.steampowered.com/app/3
 Les données du jeu (`data/*.json`) ont deux sources :
 
 - **les fichiers du jeu** pour les jokers, les upgrades et la progression ;
-- **le [wiki Far Far West](https://farfarwest.wiki.gg/)** pour l'équipement, les sorts et les combos.
+- **le [wiki Far Far West](https://farfarwest.wiki.gg/)** pour l'équipement et les sorts.
 
 Les mécaniques utiles au planificateur sont décrites dans [docs/game-mechanics.md](docs/game-mechanics.md).
 

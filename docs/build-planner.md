@@ -16,13 +16,16 @@ Le planificateur :
 
 - **valide** le build : points d'upgrade (26 par porteur et plafond par stat), budget de jokers (16 par porteur),
   copies (`max_equip`), compatibilité des jokers avec leur porteur, pas de sort en double ;
-- **affiche les combos actifs**, calculés à partir des sorts et de l'élément de la sidearm ;
 - **affiche le niveau minimum et le nombre de prestiges nécessaires** pour chaque porteur (héros, arme principale,
   arme secondaire), à partir des points d'upgrade et des emplacements de jokers utilisés, et des jokers Unique
   choisis (niveau du défi qui les débloque). Tant qu'une règle utilisée par ce calcul n'est pas confirmée (voir
   les questions ouvertes), le résultat est affiché avec un avertissement.
 
-Hors périmètre : **aucune stat calculée** (ni DPS des armes, ni cooldowns finaux des sorts).
+Hors périmètre :
+
+- **aucune stat calculée** (ni DPS des armes, ni cooldowns finaux des sorts) ;
+- **pas de combos de sorts** : ils dépendent du placement en jeu et leurs déclencheurs sont mal documentés.
+  L'élément de la sidearm reste un choix du build, mais ne déclenche rien dans le planificateur.
 
 ## Règles retenues
 
@@ -31,8 +34,8 @@ Hors périmètre : **aucune stat calculée** (ni DPS des armes, ni cooldowns fin
 - **Les jokers qu'on ne peut pas équiper au lobby sont exclus** : on garde seulement ceux qui ont `can_be_bought`
   ou `can_be_gambled` (aujourd'hui, seuls Camper, Dwarf, Extra Dash et Giant sont exclus). Le filtre se fait dans
   le planificateur, pas dans `data/`, pour qu'un joker devenu achetable apparaisse après un `bin/extract-game`.
-- **Les jokers et les upgrades viennent des fichiers du jeu** (`bin/extract-game`), l'équipement, les sorts et les
-  combos du wiki (`bin/update-data`). Voir `docs/game-mechanics.md`.
+- **Les jokers et les upgrades viennent des fichiers du jeu** (`bin/extract-game`), l'équipement et les sorts du wiki
+  (`bin/update-data`). Voir `docs/game-mechanics.md`.
 - Les règles de progression qui ne sont pas dans `data/progression.json` (points par niveau, boutique de prestige)
   sont regroupées dans un seul fichier de configuration, chacune marquée confirmée ou supposée.
 

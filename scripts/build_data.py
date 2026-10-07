@@ -1,4 +1,4 @@
-"""Builds data/equipment.json, data/spells.json and data/spell_combos.json from a farfarwest.wiki.gg dump
+"""Builds data/equipment.json and data/spells.json from a farfarwest.wiki.gg dump
 (Cargo query results + raw page wikitext). Jokers and upgrades come from the game files instead
 (scripts/build_game_data.py).
 
@@ -18,10 +18,6 @@ def num(v):
         return None
     f = float(v)
     return int(f) if f.is_integer() else f
-
-
-def split_list(v):
-    return [s.strip() for s in (v or "").split(",") if s.strip()]
 
 
 def infobox(page, name):
@@ -75,27 +71,9 @@ for row in load("spells.json"):
     spells.append(spell)
 
 
-def strip_wikitext(s):
-    s = re.sub(r"\[\[File:[^\]]*\]\]", "", s)
-    s = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]*)\]\]", r"\1", s)
-    s = re.sub(r"<[^>]+>", "", s)
-    s = re.sub(r"\{\{[^}]*\}\}", "", s)
-    return re.sub(r"\s+", " ", s).strip()
-
-
-options = load("combo_options.json")
-combos = [{
-    "name": c["title"],
-    "elements": [strip_wikitext(a) for a in split_list(c["archetype"])],
-    "description": strip_wikitext(c["description"]),
-    "triggers": [{"a": split_list(o["spell 1"]), "b": split_list(o["spell 2"])}
-                 for o in options if o["combo title"] == c["title"]],
-} for c in load("combos.json")]
-
 out = {
     "equipment.json": sorted(equipment, key=lambda e: (e["type"], e["name"])),
     "spells.json": sorted(spells, key=lambda s: (s["element"], s["unlock_level"] or 0)),
-    "spell_combos.json": combos,
 }
 os.makedirs(out_dir, exist_ok=True)
 for name, data in out.items():
