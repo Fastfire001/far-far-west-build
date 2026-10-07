@@ -52,6 +52,16 @@ Hors périmètre :
 - À l'import, le build est validé avec les mêmes règles que dans l'éditeur. Un build invalide, ou qui contient un
   identifiant inconnu (joker supprimé par un patch), s'importe quand même avec des avertissements.
 
+## Hébergement
+
+- **GitHub Pages** : un site statique, **aucun serveur à gérer**. Pas de backend, pas de comptes, pas de base de
+  données : l'application est entièrement côté navigateur, et `data/*.json` est servi comme fichier statique.
+- La stack choisie doit donc produire un site statique (HTML/JS/CSS) déployable tel quel sur GitHub Pages.
+- Avec un compte GitHub gratuit, Pages exige un dépôt public ; depuis un dépôt privé, il faut GitHub Pro. Dans les
+  deux cas, **le site lui-même est public**, données du jeu comprises.
+- **Pas de mise en ligne avant l'accord d'Evil Raptor** : le CLUF du jeu interdit la rétro-ingénierie et la
+  distribution de son contenu. En attendant, le planificateur se développe et tourne en local.
+
 ## Questions ouvertes (à vérifier en jeu)
 
 Les autres questions ont été tranchées par les fichiers du jeu le 2026-10-07 (voir `docs/game-mechanics.md`).
