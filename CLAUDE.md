@@ -13,6 +13,7 @@ La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne 
 - `bin/` : commandes à lancer depuis la machine hôte. Chacune exécute le script dans le container Docker
   (service `app` de `compose.yaml`).
 - `docs/game-mechanics.md` : règles du jeu utiles au planificateur, et incohérences connues du wiki.
+- `docs/build-planner.md` : décisions de conception du planificateur et questions encore ouvertes.
 
 ## Commandes
 
@@ -34,7 +35,13 @@ La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne 
 - wiki.gg bloque les clients trop rapides : il répond alors par une page HTML « Blocked » au lieu de JSON.
   Espacer les requêtes, et ne pas télécharger tout le wiki sans raison.
 - Quand le wiki se contredit, documenter le choix fait dans `docs/game-mechanics.md`.
+- Le wiki n'est pas toujours à jour : vérifier les règles de progression dans les notes de patch officielles
+  (discussions Steam de l'app 3124540). Le build planner de wikily.gg est aussi une bonne source de recoupement.
 
 ## Mécaniques du jeu
 
 @docs/game-mechanics.md
+
+## Décisions du planificateur
+
+@docs/build-planner.md
