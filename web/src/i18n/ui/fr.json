@@ -45,5 +45,17 @@
   },
   "picker": {
     "clearsLoadout": "L'équiper retire les jokers et les améliorations de {weapon}."
+  },
+  "customize": {
+    "minLevel": "Niv. min. {level}",
+    "upgradesNeed": "Améliorations : {used} points → niveau {level}",
+    "jokersNeed": "Jokers : {used} emplacements → niveau {level}",
+    "bought": "+ {n} acheté au prestige | + {n} acheté au prestige | + {n} achetés au prestige",
+    "requirements": "Progression requise",
+    "jokerSlots": "{used}/{max} emplacements",
+    "prestigeSlot": "Emplacement acheté au prestige",
+    "addPoint": "Ajouter un point à {name}",
+    "removePoint": "Retirer un point à {name}",
+    "setPoints": "{name} : {n} points"
   }
 }

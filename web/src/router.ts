@@ -3,6 +3,7 @@
 import { createRouter, createWebHashHistory, type RouteLocationNormalized, type RouteLocationRaw } from 'vue-router'
 import BuildHome from './views/BuildHome.vue'
 import ComingSoon from './views/ComingSoon.vue'
+import CustomizeView from './views/CustomizeView.vue'
 import ItemPicker from './views/ItemPicker.vue'
 
 declare module 'vue-router' {
@@ -21,7 +22,7 @@ export const router = createRouter({
     {
       path: '/customize/:carrier(hero|main|sidearm)',
       name: 'customize',
-      component: ComingSoon,
+      component: CustomizeView,
       meta: {
         back: (route) =>
           route.params.carrier === 'hero' ? { name: 'home' } : { name: 'pick', params: { slot: route.params.carrier } },

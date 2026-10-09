@@ -45,5 +45,17 @@
   },
   "picker": {
     "clearsLoadout": "Equipping it removes the jokers and upgrades of {weapon}."
+  },
+  "customize": {
+    "minLevel": "Min. lvl {level}",
+    "upgradesNeed": "Upgrades: {used} points → level {level}",
+    "jokersNeed": "Jokers: {used} slots → level {level}",
+    "bought": "+ {n} bought at the prestige shop | + {n} bought at the prestige shop | + {n} bought at the prestige shop",
+    "requirements": "Required progression",
+    "jokerSlots": "{used}/{max} slots",
+    "prestigeSlot": "Slot bought at the prestige shop",
+    "addPoint": "Add a point to {name}",
+    "removePoint": "Remove a point from {name}",
+    "setPoints": "{name}: {n} points"
   }
 }
