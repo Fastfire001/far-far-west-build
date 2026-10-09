@@ -6,6 +6,8 @@
 //   json:<asset path>   the deserialized exports, as <name>.json
 //   locres:<file path>  localization files (the path may contain a * wildcard), as <culture>.locres.json:
 //                       {namespace: {key: translated string}}
+//   version:<file>      the FileVersion of a Windows executable (a loose file, not in the archives), as
+//                       version.txt
 //
 // The game's assets use unversioned properties and no mappings file is available, so CUE4Parse can only
 // deserialize classes described in Mappings() below. DataTables with Blueprint row structs are decoded
@@ -70,10 +72,33 @@ foreach (var request in args.Skip(2))
                 File.WriteAllText(Path.Combine(outDir, culture + ".locres.json"), JsonConvert.SerializeObject(table, Formatting.Indented));
             }
             break;
+        case "version":
+            File.WriteAllText(Path.Combine(outDir, "version.txt"), FileVersion(File.ReadAllBytes(path)));
+            break;
         default:
             throw new ArgumentException($"unknown request mode '{mode}'");
     }
     Console.WriteLine($"{mode}: {path}");
+}
+
+// Reads the FileVersion string of a PE file's version resource (VS_VERSIONINFO), e.g. "0.2.0.20 - CL 915".
+// FileVersionInfo only reads it on Windows, so the String structure is located by its key: it starts with
+// wLength, wValueLength and wType (1 = text), then the UTF-16 key, then the value aligned on 32 bits.
+static string FileVersion(byte[] exe)
+{
+    var key = System.Text.Encoding.Unicode.GetBytes("FileVersion\0");
+    for (var at = exe.AsSpan().IndexOf(key); at >= 6; )
+    {
+        var (valueLength, type) = (BitConverter.ToUInt16(exe, at - 4), BitConverter.ToUInt16(exe, at - 2));
+        if (type == 1 && valueLength > 0)
+        {
+            var start = (at + key.Length + 3) & ~3;
+            return System.Text.Encoding.Unicode.GetString(exe, start, (valueLength - 1) * 2);
+        }
+        var next = exe.AsSpan(at + 1).IndexOf(key);
+        at = next < 0 ? -1 : at + 1 + next;
+    }
+    throw new InvalidDataException("no FileVersion in the executable's version resource");
 }
 
 // Engine classes whose serialized properties we need to read. They have no non-default tagged properties in

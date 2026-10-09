@@ -7,7 +7,8 @@ Le repo contient les données du jeu (extraites des fichiers du jeu, avec leurs 
 ## Structure
 
 - `data/*.json` : données du jeu, toutes extraites des fichiers du jeu, et `data/i18n/<langue>.json` leurs
-  traductions officielles (15 langues). Fichiers **générés** : ne pas les modifier à la main, corriger plutôt
+  traductions officielles (15 langues) ; `data/i18n/ui/<langue>.json` : libellés des menus du jeu réutilisés par le
+  planificateur. Fichiers **générés** : ne pas les modifier à la main, corriger plutôt
   `scripts/build_game_data.py` puis regénérer.
 - `tools/game-extract/` : extracteur C# (CUE4Parse) qui lit les archives du jeu et écrit les assets bruts dans
   `.cache/game/`.

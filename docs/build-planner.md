@@ -71,8 +71,10 @@ Hors périmètre :
   À défaut d'un texte traduit, il affiche l'anglais.
 - Les textes sont affichés tels que dans le jeu (noms de jokers en majuscules) ; les retours à la ligne des noms
   japonais sont remplacés par un espace à l'affichage.
-- L'interface du planificateur elle-même (boutons, messages de validation) n'existe pas dans le jeu : elle devra
-  être traduite par nos soins, au moins en français et en anglais.
+- L'interface reprend les libellés des menus du jeu quand ils existent (`data/i18n/ui/`, 15 langues : RETOUR,
+  Personnaliser, raretés…), et les noms des langues du jeu pour le sélecteur (`data/i18n/languages.json`).
+- Le reste de l'interface (résumé, messages de validation…) n'existe pas dans le jeu : il est traduit par nos soins,
+  au moins en français et en anglais.
 
 ## Icônes
 

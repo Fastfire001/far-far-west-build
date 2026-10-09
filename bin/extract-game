@@ -14,7 +14,8 @@ export FFW_GAME_DIR
 # Created here so they belong to the host user, not to root.
 mkdir -p .cache/game .cache/oodle data
 
-docker compose run --rm --build extract /paks /out \
+docker compose run --rm --build extract /game/FarFarWest/Content/Paks /out \
+  version:/game/FarFarWest.exe \
   raw:FarFarWest/Content/Progress/DT_PlayerJokers \
   names:FarFarWest/Content/Progress/DT_PlayerJokers \
   raw:FarFarWest/Content/Progress/DT_PlayerItems \
@@ -22,6 +23,7 @@ docker compose run --rm --build extract /paks /out \
   json:FarFarWest/Content/LocaStringTables/ST_Tweaks \
   json:FarFarWest/Content/LocaStringTables/ST_Weapons \
   json:FarFarWest/Content/LocaStringTables/ST_Spells \
+  json:FarFarWest/Content/LocaStringTables/ST_UI \
   raw:FarFarWest/Content/Interfaces/Equipment/C_UnlockedJokers \
   'locres:FarFarWest/Content/Localization/Game/*/Game.locres'
 docker compose run --rm --build app python3 scripts/build_game_data.py /extract data

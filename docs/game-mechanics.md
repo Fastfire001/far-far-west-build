@@ -6,7 +6,8 @@ a refondu la progression et rendu obsolètes plusieurs pages du wiki.
 ## Sources des données
 
 Tout `data/` est extrait des **fichiers du jeu** (installation locale) par `bin/extract-game` : `equipment.json`,
-`spells.json`, `jokers.json`, `upgrades.json`, `progression.json` et les traductions dans `i18n/`. Les fichiers
+`spells.json`, `jokers.json`, `upgrades.json`, `progression.json`, `meta.json` (version du jeu et date d'extraction)
+et les traductions dans `i18n/`. Les fichiers
 extraits restent dans `.cache/` (non versionné) ; seules les valeurs utiles au planificateur vont dans `data/`.
 
 Les textes (noms, descriptions) sont repris **tels qu'affichés dans le jeu**, en anglais dans les fichiers
@@ -121,6 +122,11 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
   ligne (`\n`) pour tenir sur les cartes, et deux jokers allemands portent le même nom (`SEELENERNTER`).
 - Les quatre variantes d'Explosive Hits ont le même nom dans le jeu : on y ajoute le nom traduit de leur école
   (`COUPS EXPLOSIFS (Acide)`), d'après la table `JOKER_VARIANTS` de `build_game_data.py`.
+- `i18n/ui/<langue>.json` : les libellés des menus du jeu que le planificateur réutilise (RETOUR, Personnaliser,
+  Emplacements d'amélioration, noms des raretés…), `{clé: texte}`. La sélection et les clés sont dans la table
+  `UI_TEXTS` de `build_game_data.py`. Les variables restent comme dans le jeu (`Niv. {lvl}`).
+- `i18n/languages.json` : le nom de chaque langue, écrit dans cette langue (« Deutsch », « 日本語 »), identique
+  dans toutes les traductions.
 
 ## Extraction depuis le jeu
 
@@ -140,8 +146,10 @@ Assets lus :
 | `/Game/Progress/DT_PlayerItems` | liste de tous les objets : armes, utilitaires, sorts, écoles (structure `S_PlayerItems`, un seul champ) |
 | `/Game/LocaStringTables/ST_Tweaks` | noms et descriptions affichés des jokers et upgrades |
 | `/Game/LocaStringTables/ST_Weapons`, `ST_Spells` | noms et descriptions affichés des armes, utilitaires, sorts et écoles |
+| `/Game/LocaStringTables/ST_UI` | libellés des menus du jeu et noms des langues |
 | `/Game/Interfaces/Equipment/C_UnlockedJokers` | courbe numéro d'emplacement → niveau requis (arrondi à l'inférieur) |
 | `Localization/Game/<langue>/Game.locres` | traductions : par namespace de table de textes (`ST_Tweaks`, `ST_Skin` pour `ST_Weapons`, `ST_Elements` pour `ST_Spells`), mêmes clés que les textes anglais |
+| `FarFarWest.exe` (hors archives) | version du jeu (`FileVersion` de l'exécutable, « 0.2.0.20 - CL 915 ») |
 
 Le jeu sérialise ses propriétés en mode « unversioned » (sans nom ni type) et ne fournit pas de fichier de
 mappings. CUE4Parse ne peut donc pas décoder la table des jokers : `build_game_data.py` la décode lui-même, avec

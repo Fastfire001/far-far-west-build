@@ -12,7 +12,7 @@ interface GameText {
 }
 type GameTexts = Record<string, GameText>
 
-const loaders = import.meta.glob<GameTexts>('../../../data/i18n/*.json', { import: 'default' })
+const loaders = import.meta.glob<GameTexts>(['../../../data/i18n/*.json', '!../../../data/i18n/languages.json'], { import: 'default' })
 
 const english: GameTexts = Object.fromEntries(
   [...equipment, ...spellSchools, ...spells, ...jokers, ...upgrades].map((item) => [
