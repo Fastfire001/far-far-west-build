@@ -16,3 +16,16 @@ services:
       - "${FFW_GAME_DIR:-./.missing-game-dir}/FarFarWest/Content/Paks:/paks:ro"
       - ./.cache/game:/out
       - ./.cache/oodle:/cache
+
+  # Vue app (web/). The whole repo is mounted: the app reads data/ and assets/icons/ directly.
+  web:
+    build: web
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      # The host user may not exist in the image: keep npm's cache and config inside the repo.
+      HOME: /repo/.cache/home
+      npm_config_cache: /repo/.cache/npm
+    volumes:
+      - .:/repo
+    ports:
+      - "5173:5173"

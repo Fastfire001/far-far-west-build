@@ -1,8 +1,8 @@
 # far-far-west-build
 
 Planificateur de builds pour le jeu Far Far West (FPS coop western-fantasy, Evil Raptor, accès anticipé).
-La stack de l'application n'est pas encore choisie : pour l'instant, le repo contient les données du jeu (extraites
-des fichiers du jeu, avec leurs traductions), les icônes de chaque élément, et les outils qui génèrent les deux.
+Le repo contient les données du jeu (extraites des fichiers du jeu, avec leurs traductions), les icônes de chaque
+élément, les outils qui génèrent les deux, et l'application web (Vue 3 + TypeScript + Vite, site statique).
 
 ## Structure
 
@@ -14,8 +14,14 @@ des fichiers du jeu, avec leurs traductions), les icônes de chaque élément, e
 - `scripts/build_game_data.py` : décode ces assets et écrit `data/` (Python, bibliothèque standard uniquement).
 - `assets/icons/<id>.svg` : une icône par élément de `data/`, **générée** par `scripts/build_icons.py` (dessins
   originaux, voir « Icônes » dans `docs/build-planner.md`). Ne pas modifier les SVG à la main.
+- `web/` : l'application (Vue 3, TypeScript, Vite, Pinia, vue-i18n, tests Vitest). Elle lit directement `data/` (alias
+  `@data`) et `assets/icons/`. `src/domain/` : données typées et règles du build, en TypeScript pur sans Vue, pour
+  être testées seules. `src/stores/` : état partagé (stores Pinia), qui
+  appelle les fonctions de `src/domain/` sans contenir de règles. `src/i18n/` : textes de l'interface
+  (`ui/<langue>.json`, traduits par nos soins) ; les textes du jeu sont chargés à la demande depuis `data/i18n/`
+  par le store `language`.
 - `bin/` : commandes à lancer depuis la machine hôte. Chacune exécute les scripts dans les containers Docker
-  de `compose.yaml` (`app` pour Python, `extract` pour l'extracteur).
+  de `compose.yaml` (`app` pour Python, `extract` pour l'extracteur, `web` pour Node).
 - `.cache/` (non versionné) : assets bruts extraits du jeu et bibliothèque Oodle téléchargée par l'extracteur.
 - `docs/game-mechanics.md` : règles du jeu utiles au planificateur, méthode d'extraction, incohérences du wiki.
 - `docs/build-planner.md` : décisions de conception du planificateur et questions encore ouvertes.
@@ -26,6 +32,10 @@ des fichiers du jeu, avec leurs traductions), les icônes de chaque élément, e
   Docker Desktop doit être lancé) et `FFW_GAME_DIR` (dans `.env`, voir `.env.example`). À relancer après chaque mise
   à jour du jeu.
 - `bin/build-icons` : regénère seulement `assets/icons/` depuis `data/` (pour retoucher les icônes).
+- `bin/dev` : serveur de dev Vite (http://localhost:5173/). `bin/test` : tests unitaires (`bin/test --watch`).
+  `bin/build-site` : vérification des types et build du site dans `web/dist/`.
+- `bin/web <commande>` : lance une commande dans le container Node, par exemple `bin/web npm install <paquet>`.
+  Installe les dépendances npm (`web/node_modules/`) si besoin ; les autres commandes `web` passent par lui.
 
 ## Conventions
 

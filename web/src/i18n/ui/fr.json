@@ -1,0 +1,11 @@
+{
+  "app": { "title": "Planificateur de builds Far Far West" },
+  "language": "Langue",
+  "carrier": {
+    "hero": "Héros",
+    "main": "Arme principale",
+    "sidearm": "Arme secondaire",
+    "utility": "Utilitaire"
+  },
+  "spells": "Sorts"
+}

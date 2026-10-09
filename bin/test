@@ -1,0 +1,4 @@
+#!/bin/sh
+# Runs the unit tests once (Vitest). Extra arguments go to Vitest, e.g. bin/test --watch.
+set -eu
+exec "$(dirname "$0")/web" npm test -- "$@"

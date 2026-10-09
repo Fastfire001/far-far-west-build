@@ -1,6 +1,18 @@
 # Build planner — décisions de conception
 
-Décisions prises le 2026-10-07, avant d'écrire le code. La stack n'est pas encore choisie.
+Décisions prises le 2026-10-07, avant d'écrire le code.
+
+## Stack
+
+Choisie le 2026-10-09 : **Vue 3 + TypeScript + Vite**, Pinia, vue-i18n, tests avec Vitest. L'application est dans `web/`.
+
+- L'état partagé (langue et textes du jeu, build en cours, builds sauvegardés) est dans des stores Pinia
+  (`web/src/stores/`). La logique métier (validation, niveau et prestiges, export) n'y est pas : elle est écrite en
+  fonctions TypeScript pures dans `web/src/domain/`, sans Vue ni Pinia, pour être testée seule.
+- TypeScript reste en 6.x : vue-tsc ne fonctionne pas encore avec TypeScript 7.
+- Les données et les icônes sont lues directement dans `data/` et `assets/icons/` : pas de copie à synchroniser.
+  Chaque fichier `data/i18n/<langue>.json` est un fichier JS séparé, chargé seulement quand on choisit la langue.
+- Les icônes restent des fichiers séparés dans le build (`assetsInlineLimit: 0`), au lieu d'être intégrées au JS.
 
 ## Périmètre (v1)
 
@@ -76,8 +88,12 @@ Hors périmètre :
 ## Hébergement
 
 - **GitHub Pages** : un site statique, **aucun serveur à gérer**. Pas de backend, pas de comptes, pas de base de
-  données : l'application est entièrement côté navigateur, et `data/*.json` est servi comme fichier statique.
-- La stack choisie doit donc produire un site statique (HTML/JS/CSS) déployable tel quel sur GitHub Pages.
+  données : l'application est entièrement côté navigateur, et `data/` est intégré au site au moment du build.
+- `bin/build-site` produit un site statique (`web/dist/`) servi sous `/far-far-west-build/` (`base` de
+  `vite.config.ts`). S'il faut des routes, utiliser le mode hash de vue-router (`/#/…`) : Pages ne sait pas
+  renvoyer `index.html` pour une URL inconnue.
+- Pas encore de workflow de déploiement : il viendra avec l'accord d'Evil Raptor (GitHub Action
+  `actions/deploy-pages`).
 - Avec un compte GitHub gratuit, Pages exige un dépôt public ; depuis un dépôt privé, il faut GitHub Pro. Dans les
   deux cas, **le site lui-même est public**, données du jeu comprises.
 - **Pas de mise en ligne avant l'accord d'Evil Raptor** : le CLUF du jeu interdit la rétro-ingénierie et la

@@ -15,3 +15,13 @@ bin/extract-game
 ```
 
 Le jeu n'est lu qu'en lecture seule ; les fichiers extraits restent dans `.cache/`, non versionné.
+
+## Application
+
+L'application (Vue 3 + TypeScript + Vite) est dans `web/`. Seul Docker est requis :
+
+```sh
+bin/dev          # serveur de dev : http://localhost:5173/
+bin/test         # tests unitaires
+bin/build-site   # site statique dans web/dist/
+```

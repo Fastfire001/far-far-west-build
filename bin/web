@@ -1,0 +1,18 @@
+#!/bin/sh
+# Runs a command in the web container (web/), after installing the npm dependencies if needed.
+# Used by bin/dev, bin/build-site and bin/test; also handy on its own, e.g. bin/web npm install <package>.
+# A leading --service-ports publishes the dev server port (only bin/dev needs it).
+set -eu
+cd "$(dirname "$0")/.."
+# Created here so they belong to the host user, not to root.
+mkdir -p .cache/home .cache/npm
+docker compose build -q web
+if [ ! -d web/node_modules ] || [ web/package-lock.json -nt web/node_modules ]; then
+  docker compose run --rm web npm ci
+fi
+ports=""
+if [ "${1:-}" = --service-ports ]; then
+  ports=--service-ports
+  shift
+fi
+exec docker compose run --rm $ports web "$@"

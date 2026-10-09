@@ -1,0 +1,4 @@
+#!/bin/sh
+# Starts the Vite dev server with hot reload: http://localhost:5173/
+set -eu
+exec "$(dirname "$0")/web" --service-ports npm run dev

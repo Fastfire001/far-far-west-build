@@ -1,0 +1,4 @@
+#!/bin/sh
+# Type-checks the app and builds the static site into web/dist/ (what GitHub Pages will serve).
+set -eu
+exec "$(dirname "$0")/web" npm run build
