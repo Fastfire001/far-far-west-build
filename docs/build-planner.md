@@ -49,6 +49,18 @@ Hors périmètre :
 - L'interface du planificateur elle-même (boutons, messages de validation) n'existe pas dans le jeu : elle devra
   être traduite par nos soins, au moins en français et en anglais.
 
+## Icônes
+
+- Une icône SVG par élément, nommée d'après son id : `assets/icons/<id>.svg` (jokers, upgrades, équipement, écoles,
+  sorts, et `itemHero` pour le héros). L'id étant stable, l'interface trouve l'icône sans table de correspondance.
+- Ce sont des **dessins originaux**, pas les visuels du jeu ni du wiki (qui appartiennent à Evil Raptor). Ils
+  reprennent les codes visuels du jeu : jokers en carte de la couleur de leur rareté avec un point par emplacement
+  coûté, sorts et écoles en pastille de la couleur de l'école, équipement en silhouette, upgrades en hexagone.
+- Générées par `scripts/build_icons.py` à partir d'une bibliothèque de pictogrammes et d'une table id → pictogramme :
+  ne pas modifier les SVG à la main. Un élément sans icône fait échouer la génération.
+- Si le nombre de fichiers pose problème une fois en ligne, on pourra générer en plus un « sprite » SVG unique
+  (un `<symbol>` par id) au moment du build, sans changer le nommage.
+
 ## Sauvegarde et partage
 
 - Les builds sont sauvegardés dans le **localStorage** du navigateur : une liste de builds nommés (ouvrir,

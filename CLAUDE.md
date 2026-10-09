@@ -11,6 +11,8 @@ La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne 
 - `tools/game-extract/` : extracteur C# (CUE4Parse) qui lit les archives du jeu et écrit les assets bruts dans
   `.cache/game/`.
 - `scripts/build_game_data.py` : décode ces assets et écrit `data/` (Python, bibliothèque standard uniquement).
+- `assets/icons/<id>.svg` : une icône par élément de `data/`, **générée** par `scripts/build_icons.py` (dessins
+  originaux, voir « Icônes » dans `docs/build-planner.md`). Ne pas modifier les SVG à la main.
 - `bin/` : commandes à lancer depuis la machine hôte. Chacune exécute les scripts dans les containers Docker
   de `compose.yaml` (`app` pour Python, `extract` pour l'extracteur).
 - `.cache/` (non versionné) : assets bruts extraits du jeu et bibliothèque Oodle téléchargée par l'extracteur.
@@ -19,8 +21,10 @@ La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne 
 
 ## Commandes
 
-- `bin/extract-game` : regénère tout `data/` depuis le jeu installé. Nécessite Docker (sous WSL, Docker Desktop
-  doit être lancé) et `FFW_GAME_DIR` (dans `.env`, voir `.env.example`). À relancer après chaque mise à jour du jeu.
+- `bin/extract-game` : regénère tout `data/` depuis le jeu installé, puis les icônes. Nécessite Docker (sous WSL,
+  Docker Desktop doit être lancé) et `FFW_GAME_DIR` (dans `.env`, voir `.env.example`). À relancer après chaque mise
+  à jour du jeu.
+- `bin/build-icons` : regénère seulement `assets/icons/` depuis `data/` (pour retoucher les icônes).
 
 ## Conventions
 
@@ -30,6 +34,7 @@ La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne 
 - Les fichiers extraits du jeu restent dans `.cache/` : ne jamais les versionner ni les publier. Seules les valeurs
   utiles au planificateur vont dans `data/`.
 - Les objets sont référencés par leur id interne du jeu (`itemPistol`, `jokerCrackShot`), jamais par leur nom affiché.
+- Aucun visuel du jeu ou du wiki dans le repo (icônes, images, textures) : les icônes sont des dessins originaux.
 
 ## Fichiers du jeu
 

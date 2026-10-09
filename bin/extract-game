@@ -1,5 +1,5 @@
 #!/bin/sh
-# Updates data/*.json from the local game install.
+# Updates data/*.json from the local game install, then the icons in assets/icons/.
 # The install path is read from FFW_GAME_DIR, set in the environment or in .env (see .env.example).
 set -eu
 cd "$(dirname "$0")/.."
@@ -24,4 +24,6 @@ docker compose run --rm --build extract /paks /out \
   json:FarFarWest/Content/LocaStringTables/ST_Spells \
   raw:FarFarWest/Content/Interfaces/Equipment/C_UnlockedJokers \
   'locres:FarFarWest/Content/Localization/Game/*/Game.locres'
-exec docker compose run --rm --build app python3 scripts/build_game_data.py /extract data
+docker compose run --rm --build app python3 scripts/build_game_data.py /extract data
+# Icons follow the data (names, rarities, slot costs): a new joker or item must get an icon.
+exec bin/build-icons

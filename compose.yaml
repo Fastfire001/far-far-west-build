@@ -5,6 +5,7 @@ services:
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./data:/app/data
+      - ./assets:/app/assets
       - ./.cache/game:/extract:ro
 
   # Reads assets from the local game install (see bin/extract-game).
