@@ -57,8 +57,11 @@ Hors périmètre :
 - **Niveau des jokers Unique** : le niveau vient de l'id du défi (`challengeLvl35…` ou `challengeLevel35…`, les deux
   orthographes existent), l'arme de `available_on` (un seul porteur par Unique). Ne pas déduire l'arme de l'id du
   défi : la Revolver y est notée `ItemRevolver`, alors que son id est `itemPistol`.
-- **Autres déblocages** (jokers de cooldown au niveau 50 d'une école, défis de kills, zones secrètes…) : simple
-  mention sur la carte (« Débloqué par : Pyro niveau 50 »), sans effet sur le niveau minimum.
+- **On considère tous les jokers débloqués** (décidé le 2026-10-09), sauf les Unique (niveau d'arme, ci-dessus) :
+  - les autres défis (jokers de cooldown au niveau 50 d'une école, kills, zones secrètes…) ne sont ni affichés ni
+    comptés dans le niveau minimum ;
+  - le niveau de héros éventuellement requis pour acheter une rareté de jokers est ignoré (voir
+    `docs/game-mechanics.md`).
 - **Changer d'arme vide les jokers et les upgrades de ce porteur.**
 - **Un nouveau build est vide** : aucune arme, aucun utilitaire, aucun sort choisi.
 

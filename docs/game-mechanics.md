@@ -62,7 +62,10 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
   et 55 ; sidearms : niveaux 30 et 40), puis achetés.
 - **Jokers Mastery** (un par école de sorts) : débloqués au niveau 50 de l'école ; −10 % de cooldown par sort
   équipé de cette école. L'élément de la sidearm ne compte pas.
-- Le jeu n'impose **aucun niveau requis par joker** : la table des jokers n'a pas de champ de niveau.
+- La table des jokers n'a **pas de champ de niveau**. Mais le jeu contient le texte « Your HERO needs to be at least
+  level {minimumLevel} to buy Jokers of this category » (`ST_UI_Tweaks_MinimumLevelBuyJokers`) : il y aurait un
+  niveau de héros minimum pour acheter certaines raretés. Valeurs introuvables dans les fichiers lisibles (sans doute
+  dans un Blueprint, `BP_Manager_Jokers`) ; le planificateur l'ignore.
 
 ## Upgrades de stats (`upgrades.json`)
 

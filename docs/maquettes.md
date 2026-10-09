@@ -167,7 +167,7 @@ Mobile :
 - Filtres par rareté, comme dans le jeu, avec les noms de rareté du jeu (Bon, Supérieur…). En plus du jeu : un
   champ de recherche sur le nom et la description, dans la langue choisie (65 jokers pour le personnage).
 - Cartes au format du jeu : points de coût en haut, « ×N » si équipée, nom, icône, description, « Max N ». On ajoute la
-  condition de déblocage (🔓) quand il y en a une (niveau d'arme pour les Unique, niveau d'école, défi…).
+  niveau d'arme qui débloque les jokers Unique (🔓). Les autres jokers sont considérés comme débloqués.
 - Cliquer sur une carte de la liste ajoute un exemplaire s'il reste de la place ; cliquer sur un joker de la colonne
   de droite le retire.
 - Une carte qui ne rentre pas (trop chère, ou déjà au maximum de copies) a un cadre rouge et n'est pas cliquable.
