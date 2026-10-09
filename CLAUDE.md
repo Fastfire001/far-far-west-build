@@ -1,7 +1,8 @@
 # far-far-west-build
 
 Planificateur de builds pour le jeu Far Far West (FPS coop western-fantasy, Evil Raptor, accès anticipé).
-La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne contient que les données du jeu.
+La stack de l'application n'est pas encore choisie : pour l'instant, le repo contient les données du jeu (extraites
+des fichiers du jeu, avec leurs traductions), les icônes de chaque élément, et les outils qui génèrent les deux.
 
 ## Structure
 
