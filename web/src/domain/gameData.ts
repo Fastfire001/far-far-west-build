@@ -79,3 +79,13 @@ export const progression = progressionJson as Progression
 export function isEquippableInLobby(joker: Joker): boolean {
   return joker.can_be_bought || joker.can_be_gambled
 }
+
+function byId<T extends { id: string }>(items: T[]): ReadonlyMap<string, T> {
+  return new Map(items.map((item) => [item.id, item]))
+}
+
+export const equipmentById = byId(equipment)
+export const spellSchoolById = byId(spellSchools)
+export const spellById = byId(spells)
+export const jokerById = byId(jokers)
+export const upgradeById = byId(upgrades)

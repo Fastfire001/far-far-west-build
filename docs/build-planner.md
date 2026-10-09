@@ -50,7 +50,7 @@ Hors périmètre :
 - **Toutes les données viennent des fichiers du jeu** (`bin/extract-game`), sauf les règles de prestige. Voir
   `docs/game-mechanics.md`.
 - Les règles de progression qui ne sont pas dans `data/progression.json` (points par niveau, boutique de prestige)
-  sont regroupées dans un seul fichier de configuration, chacune marquée confirmée ou supposée.
+  sont regroupées dans `web/src/domain/rules.ts`, chacune marquée confirmée ou supposée, avec sa source.
 - **Niveau minimum et prestiges** (décidé le 2026-10-09) : on n'achète au prestige que ce qui dépasse ce que donnent
   les niveaux (au-delà de 14 emplacements de jokers ou de 20 points d'upgrade) ; le niveau affiché est celui qu'il
   faut atteindre pour le reste. Résultat marqué « supposé » tant que la question ouverte n°1 n'est pas tranchée.

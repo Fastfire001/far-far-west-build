@@ -92,9 +92,10 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 | Point d'upgrade | 2 jetons | 6 | 20 → 26 points |
 | Ticket XP, 500 or, 1000 âmes | 1 jeton | illimité | ressources |
 
-- Chaque prestige (5 jetons) paie donc soit 1 emplacement de joker, soit 2 points d'upgrade, pas les deux.
-  Prestiges nécessaires = emplacements de joker achetés + ⌈points d'upgrade achetés / 2⌉. Un build au maximum
-  demande 2 + 3 = **5 prestiges** sur le porteur.
+- Les jetons s'accumulent d'un prestige à l'autre (le jeu affiche « {amount} Token(s) ») : prestiges nécessaires
+  = ⌈(5 × emplacements de joker achetés + 2 × points d'upgrade achetés) / 5⌉. Par exemple, 5 points (10 jetons)
+  demandent 2 prestiges, pas 3 comme le donnerait « emplacements + ⌈points / 2⌉ ». Un build au maximum demande
+  ⌈(10 + 12) / 5⌉ = **5 prestiges** sur le porteur.
 - Ces règles viennent des notes de patch et du build planner de wikily.gg, pas des fichiers du jeu : la logique de
   la boutique est dans un Blueprint (`UI_PrestigeShop`), illisible avec notre méthode d'extraction.
 
