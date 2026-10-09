@@ -111,12 +111,9 @@ Hors périmètre :
 - `bin/build-site` produit un site statique (`web/dist/`) servi sous `/far-far-west-build/` (`base` de
   `vite.config.ts`). S'il faut des routes, utiliser le mode hash de vue-router (`/#/…`) : Pages ne sait pas
   renvoyer `index.html` pour une URL inconnue.
-- Pas encore de workflow de déploiement : il viendra avec l'accord d'Evil Raptor (GitHub Action
-  `actions/deploy-pages`).
+- Pas encore de workflow de déploiement (GitHub Action `actions/deploy-pages`).
 - Avec un compte GitHub gratuit, Pages exige un dépôt public ; depuis un dépôt privé, il faut GitHub Pro. Dans les
   deux cas, **le site lui-même est public**, données du jeu comprises.
-- **Pas de mise en ligne avant l'accord d'Evil Raptor** : le CLUF du jeu interdit la rétro-ingénierie et la
-  distribution de son contenu. En attendant, le planificateur se développe et tourne en local.
 
 ## Questions ouvertes (à vérifier en jeu)
 
