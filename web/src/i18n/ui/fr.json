@@ -1,5 +1,7 @@
 {
-  "app": { "title": "Far Far West — Build planner" },
+  "app": {
+    "title": "Far Far West — Build planner"
+  },
   "menu": {
     "version": "Jeu v{version} · données du {date}",
     "versionShort": "v{version} · {date}",
@@ -40,5 +42,8 @@
     "upgrade_incompatible": "{name} n'est pas disponible sur {carrier}",
     "upgrade_too_many_points": "{name} : {points}/{max} points",
     "upgrade_points_exceeded": "{carrier} : {used}/{max} points d'amélioration"
+  },
+  "picker": {
+    "clearsLoadout": "L'équiper retire les jokers et les améliorations de {weapon}."
   }
 }

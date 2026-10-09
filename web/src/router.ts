@@ -3,6 +3,7 @@
 import { createRouter, createWebHashHistory, type RouteLocationNormalized, type RouteLocationRaw } from 'vue-router'
 import BuildHome from './views/BuildHome.vue'
 import ComingSoon from './views/ComingSoon.vue'
+import ItemPicker from './views/ItemPicker.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -15,7 +16,7 @@ export const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: BuildHome },
     // Weapon or utility choice.
-    { path: '/pick/:slot(main|sidearm|utility)', name: 'pick', component: ComingSoon, meta: { back: () => ({ name: 'home' }) } },
+    { path: '/pick/:slot(main|sidearm|utility)', name: 'pick', component: ItemPicker, meta: { back: () => ({ name: 'home' }) } },
     // Upgrades and jokers of a carrier.
     {
       path: '/customize/:carrier(hero|main|sidearm)',
