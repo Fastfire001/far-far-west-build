@@ -13,6 +13,7 @@ interface GameText {
 type GameTexts = Record<string, GameText>
 
 const loaders = import.meta.glob<GameTexts>(['../../../data/i18n/*.json', '!../../../data/i18n/languages.json'], { import: 'default' })
+const uiLoaders = import.meta.glob<Record<string, string>>('../../../data/i18n/ui/*.json', { import: 'default' })
 
 const english: GameTexts = Object.fromEntries(
   [...equipment, ...spellSchools, ...spells, ...jokers, ...upgrades].map((item) => [
@@ -27,8 +28,10 @@ export const useLanguageStore = defineStore('language', () => {
 
   async function setLocale(value: Locale): Promise<void> {
     const load = loaders[`../../../data/i18n/${value}.json`]
-    const loaded = load ? await load() : {}
+    const loadUi = uiLoaders[`../../../data/i18n/ui/${value}.json`]
+    const [loaded, ui] = await Promise.all([load ? load() : {}, loadUi ? loadUi() : {}])
     // Switch everything at once, once the game texts are there.
+    i18n.global.mergeLocaleMessage(value, { game: ui })
     texts.value = loaded
     locale.value = value
     i18n.global.locale.value = value

@@ -1,6 +1,9 @@
-// Two kinds of texts: the planner's own interface (src/i18n/ui/, translated by us) and the game texts
-// (data/i18n/, official translations, see stores/language.ts).
+// Two kinds of texts: the planner's own interface (src/i18n/ui/, translated by us, English fallback) and the game
+// texts (official translations from data/i18n/, see stores/language.ts). The game's menu labels (data/i18n/ui/)
+// are merged into the interface messages under the "game" key: t('game.back').
 import { createI18n } from 'vue-i18n'
+import gameUiEn from '@data/i18n/ui/en-US.json'
+import languageNames from '@data/i18n/languages.json'
 import en from './ui/en.json'
 import fr from './ui/fr.json'
 
@@ -13,16 +16,25 @@ export type Locale = (typeof LOCALES)[number]
 
 export const DEFAULT_LOCALE: Locale = 'en-US'
 
-export type UiMessages = typeof en
+/** Name of each language, written in that language (from the game). */
+export const LANGUAGE_NAMES = languageNames as Record<Locale, string>
 
-// Only some languages have interface texts: the others fall back to English.
-const messages: Partial<Record<Locale, UiMessages>> = { 'en-US': en, 'fr-FR': fr }
+export type UiMessages = typeof en & { game: typeof gameUiEn }
+
+// Only some languages have our own interface texts: the others fall back to English.
+const messages: Partial<Record<Locale, UiMessages>> = {
+  'en-US': { ...en, game: gameUiEn },
+  'fr-FR': fr as UiMessages,
+}
 
 export const i18n = createI18n({
   legacy: false,
   locale: DEFAULT_LOCALE as Locale,
   fallbackLocale: DEFAULT_LOCALE,
   messages: messages as Record<Locale, UiMessages>,
+  // Falling back to English is expected for most languages: no console warning.
+  missingWarn: false,
+  fallbackWarn: false,
 })
 
 /** Picks the game language closest to the browser's, English otherwise. */
@@ -34,4 +46,9 @@ export function detectLocale(preferred: readonly string[] = navigator.languages)
     if (sameLanguage) return sameLanguage
   }
   return DEFAULT_LOCALE
+}
+
+/** Keys of the 3 spell slots, as shown by the game: AZERTY keyboards in French, QWERTY otherwise. */
+export function spellKeys(locale: string): string[] {
+  return locale === 'fr-FR' ? ['A', 'E', 'C'] : ['Q', 'E', 'C']
 }

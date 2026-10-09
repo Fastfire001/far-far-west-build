@@ -2,6 +2,7 @@
 // Kept free of Vue so that the build rules can be unit-tested on their own.
 import equipmentJson from '@data/equipment.json'
 import jokersJson from '@data/jokers.json'
+import metaJson from '@data/meta.json'
 import progressionJson from '@data/progression.json'
 import spellsJson from '@data/spells.json'
 import upgradesJson from '@data/upgrades.json'
@@ -68,6 +69,14 @@ export interface Progression {
   joker_slot_levels: number[]
 }
 
+export interface GameMeta {
+  /** Version of the game the data was extracted from, e.g. 0.2.0.20. */
+  game_version: string
+  /** Extraction date (YYYY-MM-DD). */
+  extracted_on: string
+}
+
+export const gameMeta = metaJson as GameMeta
 export const equipment = equipmentJson as Equipment[]
 export const spellSchools = spellsJson.schools as SpellSchool[]
 export const spells = spellsJson.spells as Spell[]

@@ -1,11 +1,44 @@
 {
-  "app": { "title": "Far Far West build planner" },
-  "language": "Language",
-  "carrier": {
-    "hero": "Hero",
-    "main": "Main weapon",
-    "sidearm": "Sidearm",
-    "utility": "Utility"
+  "app": { "title": "Far Far West — Build planner" },
+  "menu": {
+    "version": "Game v{version} · data from {date}",
+    "versionShort": "v{version} · {date}",
+    "builds": "Builds",
+    "soon": "Coming soon",
+    "newBuild": "New build",
+    "myBuilds": "My builds…",
+    "import": "Import…",
+    "export": "Export…"
   },
-  "spells": "Spells"
+  "comingSoon": "This screen is coming soon.",
+  "home": {
+    "untitled": "Untitled build",
+    "rename": "Build name",
+    "chooseMain": "Choose a main weapon",
+    "chooseSidearm": "Choose a sidearm",
+    "chooseUtility": "Choose a utility",
+    "chooseSpells": "Choose spells",
+    "summary": "Summary",
+    "prestiges": "{n} prestiges | {n} prestige | {n} prestiges",
+    "problems": "No problems | 1 problem | {n} problems",
+    "complete": "Build complete and valid",
+    "assumed": "Prestiges: assumed rule (bonuses bought at the prestige shop usable right away)"
+  },
+  "problem": {
+    "missing_weapon_main": "No main weapon chosen",
+    "missing_weapon_sidearm": "No sidearm chosen",
+    "missing_element": "No element chosen for the sidearm",
+    "missing_utility": "No utility chosen",
+    "missing_spell": "Spell slot [{key}] is empty",
+    "unknown_id": "Unknown item {name} (removed from the game?)",
+    "wrong_item": "{name} cannot be used here",
+    "duplicate_spell": "{name} is equipped twice",
+    "joker_incompatible": "{name} cannot be equipped on {carrier}",
+    "joker_not_equippable": "{name} cannot be equipped in the lobby",
+    "joker_too_many_copies": "{name}: {copies} copies, {max} max",
+    "joker_slots_exceeded": "{carrier}: {used}/{max} joker slots",
+    "upgrade_incompatible": "{name} is not available on {carrier}",
+    "upgrade_too_many_points": "{name}: {points}/{max} points",
+    "upgrade_points_exceeded": "{carrier}: {used}/{max} upgrade points"
+  }
 }

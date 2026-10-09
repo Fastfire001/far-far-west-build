@@ -1,11 +1,44 @@
 {
-  "app": { "title": "Planificateur de builds Far Far West" },
-  "language": "Langue",
-  "carrier": {
-    "hero": "Héros",
-    "main": "Arme principale",
-    "sidearm": "Arme secondaire",
-    "utility": "Utilitaire"
+  "app": { "title": "Far Far West — Build planner" },
+  "menu": {
+    "version": "Jeu v{version} · données du {date}",
+    "versionShort": "v{version} · {date}",
+    "builds": "Builds",
+    "soon": "Bientôt",
+    "newBuild": "Nouveau build",
+    "myBuilds": "Mes builds…",
+    "import": "Importer…",
+    "export": "Exporter…"
   },
-  "spells": "Sorts"
+  "comingSoon": "Cet écran arrive bientôt.",
+  "home": {
+    "untitled": "Build sans nom",
+    "rename": "Nom du build",
+    "chooseMain": "Choisir une arme principale",
+    "chooseSidearm": "Choisir une arme secondaire",
+    "chooseUtility": "Choisir un utilitaire",
+    "chooseSpells": "Choisir des sorts",
+    "summary": "Résumé",
+    "prestiges": "{n} prestige | {n} prestige | {n} prestiges",
+    "problems": "Aucun problème | 1 problème | {n} problèmes",
+    "complete": "Build complet et valide",
+    "assumed": "Prestiges : règle supposée (bonus achetés au prestige utilisables tout de suite)"
+  },
+  "problem": {
+    "missing_weapon_main": "Aucune arme principale choisie",
+    "missing_weapon_sidearm": "Aucune arme secondaire choisie",
+    "missing_element": "Aucun élément choisi pour l'arme secondaire",
+    "missing_utility": "Aucun utilitaire choisi",
+    "missing_spell": "L'emplacement de sort [{key}] est vide",
+    "unknown_id": "Objet inconnu {name} (retiré du jeu ?)",
+    "wrong_item": "{name} ne peut pas être utilisé ici",
+    "duplicate_spell": "{name} est équipé deux fois",
+    "joker_incompatible": "{name} ne s'équipe pas sur {carrier}",
+    "joker_not_equippable": "{name} ne s'équipe pas au lobby",
+    "joker_too_many_copies": "{name} : {copies} exemplaires, {max} au maximum",
+    "joker_slots_exceeded": "{carrier} : {used}/{max} emplacements de jokers",
+    "upgrade_incompatible": "{name} n'est pas disponible sur {carrier}",
+    "upgrade_too_many_points": "{name} : {points}/{max} points",
+    "upgrade_points_exceeded": "{carrier} : {used}/{max} points d'amélioration"
+  }
 }
