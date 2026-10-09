@@ -12,7 +12,6 @@
     "import": "Importer…",
     "export": "Exporter…"
   },
-  "comingSoon": "Cet écran arrive bientôt.",
   "home": {
     "untitled": "Build sans nom",
     "rename": "Nom du build",
@@ -65,5 +64,9 @@
     "noRoom": "Pas assez d'emplacements ({cost} requis)",
     "cost": "Coûte {n} emplacement | Coûte 1 emplacement | Coûte {n} emplacements",
     "removeHint": "Cliquez sur un joker équipé pour le retirer"
+  },
+  "spells": {
+    "hint": "Cliquez sur un sort, puis sur un emplacement. Cliquez sur un emplacement pour le vider.",
+    "pickSlot": "Choisissez un emplacement pour {name} (Échap pour annuler)"
   }
 }

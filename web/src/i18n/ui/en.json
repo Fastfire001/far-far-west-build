@@ -12,7 +12,6 @@
     "import": "Import…",
     "export": "Export…"
   },
-  "comingSoon": "This screen is coming soon.",
   "home": {
     "untitled": "Untitled build",
     "rename": "Build name",
@@ -65,5 +64,9 @@
     "noRoom": "Not enough slots ({cost} needed)",
     "cost": "Costs {n} slots | Costs 1 slot | Costs {n} slots",
     "removeHint": "Click an equipped joker to remove it"
+  },
+  "spells": {
+    "hint": "Click a spell, then a slot. Click a slot to empty it.",
+    "pickSlot": "Choose a slot for {name} (Esc to cancel)"
   }
 }
