@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "Acid",
+    "description": "Offensive - Slow enemies and corrode the battlefield"
+  },
+  "itemBanjo": {
+    "name": "Banjo",
+    "description": "Slow and weak attacks, some healing power.\nPerfect for healing your allies while destroying their eardrums."
+  },
+  "itemBoomerang": {
+    "name": "Boomerang",
+    "description": "Flies out, bullies enemies for a while, then swings back for another round. \nNo ammo needed, perfect for an eco-friendly loadout."
+  },
+  "itemBow": {
+    "name": "Bow",
+    "description": "Fires bargain-bin arrows when you quick draw. \nBend it like you mean it to drop an explosive banger."
+  },
+  "itemCactus": {
+    "name": "Cactus",
+    "description": "Utility - Control the battlefield by summoning helpful cacti"
+  },
+  "itemDualRevolver": {
+    "name": "Dual Revolvers",
+    "description": "High fire rate, bad accuracy, yet one reload sends both revolvers soaring into explosive usefulness. A miraculous jump from meh to mayhem."
+  },
+  "itemElec": {
+    "name": "Elec",
+    "description": "Utility - Move fast and strike enemies with lightning"
+  },
+  "itemFire": {
+    "name": "Pyro",
+    "description": "Offensive - Burn enemies and set the ground ablaze"
+  },
+  "itemIce": {
+    "name": "Frost",
+    "description": "Defensive - Freeze enemies and reinforce your shield"
+  },
+  "itemKnuckles": {
+    "name": "Knuckles",
+    "description": "Short range, big impact.\nRequires no ammo, no aim, and no thoughts."
+  },
+  "itemLasso": {
+    "name": "Lasso",
+    "description": "Whips enemies fast at a decent reach.\nSome of them come back for more, and not out of spite."
+  },
+  "itemLongRanger": {
+    "name": "Long Ranger",
+    "description": "Built for unmatched accuracy and piercing shots, every miss dishonors centuries of craftsmanship. Try not to be disappointing."
+  },
+  "itemMinigun": {
+    "name": "Minigun",
+    "description": "Once it spins up, this thing spews bullets nonstop. Technically stoppable, but you're a full-time bullet-slinger, not some quitter."
+  },
+  "itemPistol": {
+    "name": "Revolver",
+    "description": "Reliable at all times, average at everything. \nPeak choice for people who fear commitment."
+  },
+  "itemQuadCylinder": {
+    "name": "Quad Cylinder",
+    "description": "Shoots fine, feels fine, does fine. \nA monument to mediocrity, but a very dependable one."
+  },
+  "itemSheriffStar": {
+    "name": "Sheriff Star",
+    "description": "Launches at high speed and slices enemies. \nJustice has never been this low-effort."
+  },
+  "itemShotgun": {
+    "name": "Shotgun",
+    "description": "Weirdly high fire rate for a shotgun, single-shell reloads, and a spread wildfires wish for. At last, a weapon that matches your aim."
+  },
+  "itemSpellAcidBubble": {
+    "name": "Bubble",
+    "description": "Throw a big acid bubble that bursts on impact and creates multiple acid puddles."
+  },
+  "itemSpellAcidContagion": {
+    "name": "Contagion",
+    "description": "Corrodes all enemies in a wide zone and applies Contagious, causing them to explode on death."
+  },
+  "itemSpellAcidGeyser": {
+    "name": "Geyser",
+    "description": "Summon an acid geyser that erupts on impact."
+  },
+  "itemSpellAcidRain": {
+    "name": "Rain",
+    "description": "Call down a rain of acid that corrodes enemies in a wide area."
+  },
+  "itemSpellAcidThrower": {
+    "name": "Thrower",
+    "description": "Spit jets of acid that leave corrosive puddles on the ground."
+  },
+  "itemSpellCactusBetty": {
+    "name": "Mino",
+    "description": "Summon a cactus mine that explodes when stepped on."
+  },
+  "itemSpellCactusDecoy": {
+    "name": "Decoyo",
+    "description": "Summon a dancing cactus that lures enemies before exploding."
+  },
+  "itemSpellCactusTurret": {
+    "name": "Pistolero",
+    "description": "Summon a cactus turret that fires continuously at nearby enemies."
+  },
+  "itemSpellCactusUlti": {
+    "name": "Bandito",
+    "description": "Summon a powerful cactus golem that fights for you for a while."
+  },
+  "itemSpellCactusWall": {
+    "name": "Wallo",
+    "description": "Summon cactus spikes that damage and slow enemies on contact."
+  },
+  "itemSpellElecPortal": {
+    "name": "Portal",
+    "description": "Spawn up to two portals that teleport players and duplicate spell projectiles."
+  },
+  "itemSpellElecStrike": {
+    "name": "Strikes",
+    "description": "Launch a line of lightning strikes that zap everything in their path."
+  },
+  "itemSpellElecSuperJump": {
+    "name": "Boing",
+    "description": "Instantly jump to escape your enemies."
+  },
+  "itemSpellElecSwap": {
+    "name": "Swap",
+    "description": "Swap positions with an enemy, exploding at both locations."
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "Thunderstrike",
+    "description": "Rise up, then dive down to blast the area and unleash thunder over your enemies."
+  },
+  "itemSpellFireBall": {
+    "name": "Fireball",
+    "description": "Launch a fireball that explodes on impact and leaves the ground burning."
+  },
+  "itemSpellFireBeam": {
+    "name": "Firebeam",
+    "description": "Unleash a giant fire beam that scorches everything."
+  },
+  "itemSpellFireFingergun": {
+    "name": "Finger Guns",
+    "description": "Swap your weapon for fiery fingers that shoot explosive fire bullets."
+  },
+  "itemSpellFireSurcharge": {
+    "name": "Surcharge",
+    "description": "Burn all enemies in a wide zone, detonating those already ablaze."
+  },
+  "itemSpellFireWisp": {
+    "name": "Wisp",
+    "description": "Summon a wisp that deals extra burn damage, jumping to another enemy on kill."
+  },
+  "itemSpellIceBlizzard": {
+    "name": "Blizzard",
+    "description": "Summon a blizzard that follows you, dealing damage to all enemies and shielding allies."
+  },
+  "itemSpellIceBreeze": {
+    "name": "Breeze",
+    "description": "Summon a breeze that freezes enemies in a wide cone."
+  },
+  "itemSpellIceCube": {
+    "name": "Cube",
+    "description": "Turn yourself or an ally into an invulnerable ice cube."
+  },
+  "itemSpellIceGlaze": {
+    "name": "Glaze",
+    "description": "Release a burst, dealing damage to nearby enemies and shielding nearby allies."
+  },
+  "itemSpellIceLance": {
+    "name": "Bridge",
+    "description": "Summon a bridge that shields allies who cross it."
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "Corruption",
+    "description": "Channel a doll to corrupt enemies, making them fight for you."
+  },
+  "itemSpellVoodooDoll": {
+    "name": "Doll",
+    "description": "Summon a doll that grants invincibility and high speed to allies within its zone."
+  },
+  "itemSpellVoodooDrain": {
+    "name": "Drain",
+    "description": "Command your doll to drain an enemy's health."
+  },
+  "itemSpellVoodooHeal": {
+    "name": "Rescue",
+    "description": "Channel your doll's power to heal or revive the nearest ally."
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "Ritual",
+    "description": "Summon a ring of candles that restores the health of allies within its light."
+  },
+  "itemUtilityAmmo": {
+    "name": "Ammo Pack",
+    "description": "Explodes into ammo. More players means more bullets. \nFamily gatherings have never been so lucrative."
+  },
+  "itemUtilityBottleCrate": {
+    "name": "Bottle Crate",
+    "description": "Explodes into healing bottles.\nGuaranteed to make you the most popular cowboy at the saloon."
+  },
+  "itemUtilityHealBottle": {
+    "name": "Healing Area",
+    "description": "Explodes on impact and creates a healing zone that lasts for a long time. \nSmells like rotten soup, just like any proper grandma's remedy."
+  },
+  "itemUtilityImpulse": {
+    "name": "Impulse Grenade",
+    "description": "Periodically generates shockwaves that push players away. \nAllows you to reach heights your skill level never will."
+  },
+  "itemVoodoo": {
+    "name": "Voodoo",
+    "description": "Utility - Drain enemy life and support allies"
+  },
+  "itemWinchester": {
+    "name": "Leveredge",
+    "description": "Crisp lever action, flawless precision, and rugged reloads. \nOnce used to win sickly goldfish at the fair, now wins gunfights."
+  },
+  "jokerAimingBurst": {
+    "name": "AIMING BURST",
+    "description": "+30% weakspot damage and piercing bullets while aiming"
+  },
+  "jokerAllMighty": {
+    "name": "ALL MIGHTY",
+    "description": "Gain +1% damage per 1 shield point, up to 80%"
+  },
+  "jokerAmmoSupply": {
+    "name": "AMMO SUPPLY",
+    "description": "+5% chance for enemies to drop an ammo box upon death"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "ANTI-GRAVITY FALLS",
+    "description": "+2% chance to spawn an anti-gravity area when an enemy dies"
+  },
+  "jokerApprentice": {
+    "name": "APPRENTICE",
+    "description": "-10% spell cooldown"
+  },
+  "jokerAvalanche": {
+    "name": "AVALANCHE",
+    "description": "+15% damage while shielded"
+  },
+  "jokerBardbarian": {
+    "name": "BARDBARIAN",
+    "description": "Hold the slam attack longer to release a more powerful blow"
+  },
+  "jokerBattleMage": {
+    "name": "BATTLEMAGE",
+    "description": "Killing an enemy shortens all ongoing spell cooldowns by 0.5%"
+  },
+  "jokerBellShot": {
+    "name": "BELL SHOT",
+    "description": "+5% chance for weakspot hits to summon a healing ghost bell"
+  },
+  "jokerBerserker": {
+    "name": "BERSERKER",
+    "description": "Gain up to +50% melee damage as your HP gets lower"
+  },
+  "jokerBloodLust": {
+    "name": "BLOODLUST",
+    "description": "Melee kills grant a stacking +5% melee speed for 5 sec., up to +50%"
+  },
+  "jokerBouncingBall": {
+    "name": "BOUNCING BALL",
+    "description": "+15% damage airborne"
+  },
+  "jokerBracing": {
+    "name": "BRACING",
+    "description": "+5% attack and reload speed"
+  },
+  "jokerCactusDay": {
+    "name": "CACTUS DAY",
+    "description": "+5% chance for a Cactus Mino to spawn when an enemy dies"
+  },
+  "jokerCamper": {
+    "name": "CAMPER",
+    "description": "+50% chance not to consume ammo while standing still"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "CANTRIP ONE-TRICK",
+    "description": "Spells with base cooldowns of 35s or less gain -25% spell cooldown"
+  },
+  "jokerCarePackage": {
+    "name": "CARE PACKAGE",
+    "description": "+1 Utility Ammo"
+  },
+  "jokerCastAway": {
+    "name": "CAST AWAY",
+    "description": "Casting a spell decreases the spell cooldown of other spells by 3 sec. to a minimum of 4 sec."
+  },
+  "jokerCdrAcid": {
+    "name": "ACID MASTERY",
+    "description": "Gain -10% Acid spells cooldown per equipped Acid spell"
+  },
+  "jokerCdrCactus": {
+    "name": "CACTUS MASTERY",
+    "description": "Gain -10% Cactus spells cooldown per equipped Cactus spell"
+  },
+  "jokerCdrElec": {
+    "name": "ELEC MASTERY",
+    "description": "Gain -10% Elec spells cooldown per equipped Elec spell"
+  },
+  "jokerCdrFire": {
+    "name": "PYRO MASTERY",
+    "description": "Gain -10% Pyro spells cooldown per equipped Pyro spell"
+  },
+  "jokerCdrFrost": {
+    "name": "FROST MASTERY",
+    "description": "Gain -10% Frost spells cooldown per equipped Frost spell"
+  },
+  "jokerCdrVoodoo": {
+    "name": "VOODOO MASTERY",
+    "description": "Gain -10% Voodoo spells cooldown per equipped Voodoo spell"
+  },
+  "jokerChad": {
+    "name": "CHAD",
+    "description": "Reveals the position of the Wandering Trader and get a 20% discount. You deserve it"
+  },
+  "jokerCheapSkate": {
+    "name": "CHEAPSKATE",
+    "description": "Gain +1 HP for every 20 Gold in your mission inventory, up to +15 HP"
+  },
+  "jokerChickshot": {
+    "name": "CHICKSHOT",
+    "description": "+50% chance for attacks to make chicken sounds. Useless!"
+  },
+  "jokerChonky": {
+    "name": "CHONKY",
+    "description": "+20% damage, but +15% gravity"
+  },
+  "jokerChonkyThrow": {
+    "name": "CHONKY THROW",
+    "description": "The boomerang is twice as big and passes through the shields"
+  },
+  "jokerClutch": {
+    "name": "CLUTCH",
+    "description": "+2 explosive bullets at the end of your magazine"
+  },
+  "jokerCoinFlip": {
+    "name": "COINFLIP",
+    "description": "Flip a coin every 10 sec. You either deal +100% or -50% weapon damage"
+  },
+  "jokerColdBlooded": {
+    "name": "COLD BLOODED",
+    "description": "Your melee attacks freeze enemies, consuming 3 shield points per enemy"
+  },
+  "jokerConsumer": {
+    "name": "CONSUMER",
+    "description": "Grants +25% weapon damage, but reloading now wastes unused ammo"
+  },
+  "jokerCrackShot": {
+    "name": "CRACKSHOT",
+    "description": "+7% damage"
+  },
+  "jokerDeadlyStrong": {
+    "name": "DEADLY STRONG",
+    "description": "Move faster and deal more damage as a dead ghost"
+  },
+  "jokerDeathsDance": {
+    "name": "DEATH'S DANCE",
+    "description": "Your shield decreases 30% less quickly"
+  },
+  "jokerDestroyer": {
+    "name": "DESTROYER",
+    "description": "The first 25% of your clip deals +20% damage"
+  },
+  "jokerDisgrace": {
+    "name": "DISGRACE",
+    "description": "Gain +30% movement speed. Your horse does not want to be with you"
+  },
+  "jokerDoubleDown": {
+    "name": "DOUBLE DOWN",
+    "description": "Gain +30% shield points from all sources"
+  },
+  "jokerDwarf": {
+    "name": "DWARF",
+    "description": "You are small. Gain movespeed, attack speed and lower gravity"
+  },
+  "jokerEagleLever": {
+    "name": "EAGLE LEVER",
+    "description": "Consecutive shots without missing grant +10% damage, stacking up to +50%"
+  },
+  "jokerEatAPunch": {
+    "name": "EAT-A-PUNCH",
+    "description": "Melee kills heal you for 2 HP"
+  },
+  "jokerEcoTrick": {
+    "name": "ECO TRICK",
+    "description": "Reloading no longer wastes ammo"
+  },
+  "jokerElementalSpin": {
+    "name": "ELEMENTAL SPIN",
+    "description": "The minigun has a 30% chance to fire a random elemental bullet instead of a regular one"
+  },
+  "jokerExecute": {
+    "name": "EXECUTE",
+    "description": "Your hits instantly kill enemies below 20% HP, except elites and bosses"
+  },
+  "jokerExplosiveRounds": {
+    "name": "EXPLOSIVE HITS (Pyro)",
+    "description": "+5% chance for your hits to cause an explosion (Pyro)"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "EXPLOSIVE HITS (Acid)",
+    "description": "+5% chance for your hits to cause an explosion (Acid)"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "EXPLOSIVE HITS (Elec)",
+    "description": "+5% chance for your hits to cause an explosion (Elec)"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "EXPLOSIVE HITS (Frost)",
+    "description": "+5% chance for your hits to cause an explosion (Frost)"
+  },
+  "jokerExtraDash": {
+    "name": "EXTRA DASH",
+    "description": "+1 Dash"
+  },
+  "jokerExtraJump": {
+    "name": "EXTRA JUMP",
+    "description": "+1 Jump"
+  },
+  "jokerFanningAce": {
+    "name": "FANNING ACE",
+    "description": "Fire mid-reload at the right moment to chain-fire all bullets"
+  },
+  "jokerFastDraw": {
+    "name": "SWITCHSHOT",
+    "description": "Your first hit after equipping a weapon deals 30% more damage"
+  },
+  "jokerFastHands": {
+    "name": "FAST HANDS",
+    "description": "+20% reload speed"
+  },
+  "jokerFightOrFlight": {
+    "name": "FIGHT OR FLIGHT",
+    "description": "Taking HP damage grants +20% melee speed for 3 sec."
+  },
+  "jokerFistFight": {
+    "name": "FIST FIGHT",
+    "description": "Your bare hands hits are more powerful"
+  },
+  "jokerFistRage": {
+    "name": "FIST RAGE",
+    "description": "Taking damage generates charge and grants +30% attack speed for 2 sec."
+  },
+  "jokerFistRoDah": {
+    "name": "FIST RO DAH",
+    "description": "The charged attack propels you backwards and has a 20% chance to apply Frost to enemies"
+  },
+  "jokerFocusShot": {
+    "name": "FOCUS SHOT",
+    "description": "Every weakspot hit reduces the cooldown of your spells by 2 sec."
+  },
+  "jokerFocusedFeet": {
+    "name": "SWIFT SHOT",
+    "description": "+10% attack speed when aiming"
+  },
+  "jokerFreeCocktail": {
+    "name": "FREE COCKTAIL",
+    "description": "When you reload an empty clip, heal for 2 HP"
+  },
+  "jokerFreezeOver": {
+    "name": "LAST BASTION",
+    "description": "Upon reaching 25% HP, gain +50 shield (cooldown: 60 sec.)"
+  },
+  "jokerFrenzySpin": {
+    "name": "FRENZY SPIN",
+    "description": "While your kill counter is above 10, the minigun fires twice as fast"
+  },
+  "jokerFrostBite": {
+    "name": "FROST BITE",
+    "description": "Melee kills on frozen enemies grant 2 shield points"
+  },
+  "jokerGiant": {
+    "name": "GIANT",
+    "description": "You are big. Gain health, weapon damage and spell cooldown reduction"
+  },
+  "jokerGlassCannon": {
+    "name": "GLASS CANNON",
+    "description": "+40% weapon and melee damage, but -25% HP"
+  },
+  "jokerGoldProspector": {
+    "name": "GOLD PROSPECTOR",
+    "description": "Increase your acquired Gold by 20% at the end of a mission"
+  },
+  "jokerGoldTooth": {
+    "name": "GOLD TOOTH",
+    "description": "+10% chance for enemies to drop 1 gold nugget upon death"
+  },
+  "jokerGoliath": {
+    "name": "GOLIATH",
+    "description": "You are bigger. Gain +25% HP"
+  },
+  "jokerGreatWall": {
+    "name": "GREAT WALL",
+    "description": "Reduce all damage taken by 10% when shielded"
+  },
+  "jokerHeadBang": {
+    "name": "HEADBANG",
+    "description": "+30% weakspot damage"
+  },
+  "jokerHeadshotRefund": {
+    "name": "WEAKSPOT REFUND",
+    "description": "+20% chance to get your ammo back after a weakspot hit"
+  },
+  "jokerHealthyBoi": {
+    "name": "HEALTHY BOI",
+    "description": "While at full HP, gain +20% move speed, reload speed, and attack speed"
+  },
+  "jokerHeavyDrinker": {
+    "name": "HEAVY DRINKER",
+    "description": "Healing bottles are 25% more effective on you"
+  },
+  "jokerHeavyWeapon": {
+    "name": "HEAVY WEAPON",
+    "description": "+10% damage, but +30% gravity while the weapon is active"
+  },
+  "jokerHelpingHand": {
+    "name": "HELPING HAND",
+    "description": "You can revive your allies twice as fast"
+  },
+  "jokerHitMe": {
+    "name": "HIT ME",
+    "description": "Heal 0.75 HP per second for 20 sec. after being hit"
+  },
+  "jokerHoarder": {
+    "name": "HOARDER",
+    "description": "+15% chance that collecting a Joker makes another random one appear"
+  },
+  "jokerHomingBurst": {
+    "name": "HOMING BURST",
+    "description": "Every 8 bullets fired, shoot 2 homing bullets at nearby enemies"
+  },
+  "jokerHop": {
+    "name": "HOP",
+    "description": "+20% jump height"
+  },
+  "jokerJokheal": {
+    "name": "MEDICARD",
+    "description": "Picking up a joker heals for a bonus +35HP"
+  },
+  "jokerJumpStar": {
+    "name": "JUMP STAR",
+    "description": "+2 Jumps while holding the Sheriff Stars"
+  },
+  "jokerKnuckleDown": {
+    "name": "KNUCKLE DOWN",
+    "description": "+10% melee damage"
+  },
+  "jokerLastDance": {
+    "name": "LAST DANCE",
+    "description": "While at or below 30% HP, gain +30% move speed"
+  },
+  "jokerLastStand": {
+    "name": "LAST STAND",
+    "description": "While at or below 30% HP, reduce all damage taken by -30% and gain 10% melee lifesteal"
+  },
+  "jokerLazy": {
+    "name": "LAZY",
+    "description": "Ammo pickups are disabled. Gain 10% of max ammo every 12 sec."
+  },
+  "jokerLifePact": {
+    "name": "LIFE PACT",
+    "description": "Kills heal you for 2 HP, but max. HP is reduced by 30%"
+  },
+  "jokerLightWeight": {
+    "name": "LIGHTWEIGHT",
+    "description": "-5% gravity"
+  },
+  "jokerLingeringThrow": {
+    "name": "LINGERING THROW",
+    "description": "Doubles the lingering time. Combines with Lingering Time upgrade"
+  },
+  "jokerLowGravity": {
+    "name": "MOON GRAVITY",
+    "description": "-25% gravity"
+  },
+  "jokerLuckyStrike": {
+    "name": "LUCKY STRIKE",
+    "description": "+10% chance to deal double damage per hit"
+  },
+  "jokerLullabard": {
+    "name": "LULLABARD",
+    "description": "Gain an extra chord per hit and a wider healing zone, but lose the slam attack"
+  },
+  "jokerLunge": {
+    "name": "LUNGE",
+    "description": "+15% melee range and hitbox size"
+  },
+  "jokerMachineGun": {
+    "name": "MACHINE GUN",
+    "description": "Per mission, the weapon gains +0.3% attack speed for every 50 damage dealt"
+  },
+  "jokerMagicFriendship": {
+    "name": "MAGIC FRIENDSHIP",
+    "description": "Passively regain HP while being near allies"
+  },
+  "jokerMagicReload": {
+    "name": "MAGIC RELOAD",
+    "description": "Automatically reload your weapon after casting a spell"
+  },
+  "jokerMarkAce": {
+    "name": "MARK ACE",
+    "description": "Bullets mark enemies for 5 sec. Marked enemies take +15% damage"
+  },
+  "jokerMindShot": {
+    "name": "MINDSHOT",
+    "description": "Weakspot hits cause an explosion"
+  },
+  "jokerOneTrick": {
+    "name": "JOKER TRICK",
+    "description": "Gain +7% damage and attack speed for every distinct joker rarity equipped on the weapon"
+  },
+  "jokerOverBlast": {
+    "name": "OVERBLAST",
+    "description": "Shoots an extra pellet for every 4 missing shots in the magazine"
+  },
+  "jokerOverDraw": {
+    "name": "OVERDRAW",
+    "description": "Charge for 2 sec. to fire 3 arrows in a cone. Attack speed reduces charge time"
+  },
+  "jokerPanicAttack": {
+    "name": "PANIC ATTACK",
+    "description": "When you take HP damage, gain +20% damage for 3 sec."
+  },
+  "jokerPartyShot": {
+    "name": "PARTY SHOT",
+    "description": "+50% chance for weakspot hits to blow confetti. Useless!"
+  },
+  "jokerPewPewPew": {
+    "name": "PEW PEW PEW",
+    "description": "+20% attack speed"
+  },
+  "jokerPickPick": {
+    "name": "PICK PICK",
+    "description": "+10% chance on hit to spawn damaging pickaxes on the target"
+  },
+  "jokerPigshot": {
+    "name": "PIGSHOT",
+    "description": "+5% chance to spawn a pig on impact. Attack them to make them explode"
+  },
+  "jokerPlasticDuck": {
+    "name": "RUBBER DUCK",
+    "description": "Walking makes rubber duck noises. Useless!"
+  },
+  "jokerPreciousRush": {
+    "name": "PRECIOUS RUSH",
+    "description": "+10% chance for a speed-boosting ring to spawn when an enemy dies"
+  },
+  "jokerPricklyPear": {
+    "name": "PRICKLY PEAR",
+    "description": "When HP hit, deal the same damage +15 back to the attacker"
+  },
+  "jokerQuickDraw": {
+    "name": "QUICKDRAW",
+    "description": "+40% swap speed"
+  },
+  "jokerRage": {
+    "name": "RAGE",
+    "description": "Upon reaching 25% HP, release a wave that burns nearby enemies (cooldown: 60 sec.)"
+  },
+  "jokerRampage": {
+    "name": "RAMPAGE",
+    "description": "Gain 5% reload speed on kill for 10 sec., up to 100%"
+  },
+  "jokerRelentless": {
+    "name": "RELENTLESS",
+    "description": "While at or below 30% HP, deal +30% damage"
+  },
+  "jokerReloadMastery": {
+    "name": "RELOAD MASTERY",
+    "description": "Reloading an empty clip is 50% faster"
+  },
+  "jokerRicochet": {
+    "name": "RICOCHET",
+    "description": "The fired bullet ricochets, with a 30% chance to automatically hit a nearby enemy"
+  },
+  "jokerRiposte": {
+    "name": "RIPOSTE",
+    "description": "After your shield absorbs a hit, your next attack deals +100% damage"
+  },
+  "jokerRunAndGun": {
+    "name": "RUN & GUN",
+    "description": "+30% move speed when shooting"
+  },
+  "jokerRunAndReload": {
+    "name": "RUN & RELOAD",
+    "description": "+50% move speed when reloading"
+  },
+  "jokerRushBlast": {
+    "name": "RUSH BLAST",
+    "description": "The first 3 bullets in your magazine have 100% accuracy and shoot further away"
+  },
+  "jokerScavengerStar": {
+    "name": "SCAVENGER STAR",
+    "description": "Gain +100% pickup range. Gain +30% move speed while holding the Sheriff Stars"
+  },
+  "jokerScoutsHonor": {
+    "name": "SCOUT'S HONOR",
+    "description": "After 10 sec. without taking damage, your shield is set to a minimum of 10 shield points"
+  },
+  "jokerScrubBullet": {
+    "name": "SCRUB HIT",
+    "description": "Your primary weapon removes elements from enemies to instantly deal 10 damage"
+  },
+  "jokerSecondWind": {
+    "name": "SECOND WIND",
+    "description": "Heal 50 HP instead of dying to a fatal hit (cooldown: 180 sec.)"
+  },
+  "jokerSharpShooter": {
+    "name": "SHARP SHOOTER",
+    "description": "+20% weakspot damage"
+  },
+  "jokerShineBright": {
+    "name": "SHINE BRIGHT",
+    "description": "+50% hero glow. You're shining! Useless!"
+  },
+  "jokerShroomGrave": {
+    "name": "SHROOM GRAVE",
+    "description": "+10% chance for a shroom to spawn when an enemy dies"
+  },
+  "jokerSkyLash": {
+    "name": "SKY LASH",
+    "description": "The charged attack grants +50% move speed and lets you fly"
+  },
+  "jokerSlowAndSteady": {
+    "name": "SLOW AND STEADY",
+    "description": "Gain +25% accuracy, but -10% attack speed"
+  },
+  "jokerSnackAPunch": {
+    "name": "SNACK-A-PUNCH",
+    "description": "Melee kills grant you 1 shield points"
+  },
+  "jokerSoulEater": {
+    "name": "SOUL EATER",
+    "description": "Picking up a soul grants 20% damage and reload speed for 5 sec."
+  },
+  "jokerSoulReaper": {
+    "name": "SOUL REAPER",
+    "description": "Increase your acquired Souls by 20% at the end of a mission"
+  },
+  "jokerSoulSiphon": {
+    "name": "SOUL SIPHON",
+    "description": "Increased pick up range and heals for +2 HP when picking up a soul"
+  },
+  "jokerSpareBullets": {
+    "name": "SPARE BULLETS",
+    "description": "+10% ammo bag"
+  },
+  "jokerSpeedster": {
+    "name": "SPEEDSTER",
+    "description": "+1% damage and attack speed per 3% bonus move speed, up to +40%"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "SPEEDY GUNZALES",
+    "description": "+10% move speed"
+  },
+  "jokerSpellLash": {
+    "name": "SPELL LASH",
+    "description": "Casting a spell instantly fills your charge bar"
+  },
+  "jokerSpellRoulette": {
+    "name": "SPELL ROULETTE",
+    "description": "-20% spell cooldown, but spells are randomized on each cast"
+  },
+  "jokerStackedLever": {
+    "name": "STACKED LEVER",
+    "description": "Instantly reload 2 bullets from your reserve ammo on kill"
+  },
+  "jokerStonks": {
+    "name": "STONKS",
+    "description": "+20% chance that opening a chest gives you a random Joker"
+  },
+  "jokerSwampTrick": {
+    "name": "SWAMP TRICK",
+    "description": "Reload explosions now leave puddles on the ground"
+  },
+  "jokerThickSkin": {
+    "name": "THICK SKIN",
+    "description": "Reduce all damage taken by 20%, but receive -30% healing"
+  },
+  "jokerTinMan": {
+    "name": "TIN MAN",
+    "description": "Excess healing converts into shield points, up to +15 SP"
+  },
+  "jokerToolBox": {
+    "name": "TOOLBOX",
+    "description": "Utility pickups are disabled. Your utility automatically refills after 90 sec."
+  },
+  "jokerTweakDealer": {
+    "name": "JOKER DEALER",
+    "description": "Gain +1 HP for each active Joker"
+  },
+  "jokerUltraDraw": {
+    "name": "ULTRA DRAW",
+    "description": "Charge for 4 sec. to fire a massive explosive arrow. Attack speed reduces charge time"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "Accuracy"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "Lingering Time"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "Range"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "Clip Size"
+  },
+  "jokerUpgradeDamage": {
+    "name": "Damage"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "Draw Speed"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "Attack Speed"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "Attack Speed"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "Attack Speed"
+  },
+  "jokerUpgradeHeal": {
+    "name": "Health"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "Speed"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "Jump Height"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "Lifesteal"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "Reload Speed"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "Pickup Range"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "Spell Cooldown Reduction"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "Ammo Bag"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "Ammo Bag"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "Range"
+  },
+  "jokerVampire": {
+    "name": "VAMPIRE",
+    "description": "The weapon gains +4% lifesteal"
+  },
+  "jokerWeakLink": {
+    "name": "WEAK LINK",
+    "description": "+35% weakspot damage, but -20% regular hits damage"
+  },
+  "jokerWellFed": {
+    "name": "WELL FED",
+    "description": "+5 HP"
+  },
+  "jokerWestWizard": {
+    "name": "WEST WIZARD",
+    "description": "Gain -30% spell cooldown, but -30% HP"
+  }
+}

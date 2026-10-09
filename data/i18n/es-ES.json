@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "Ácido",
+    "description": "Ofensiva: ralentiza a los enemigos y corroe el campo de batalla"
+  },
+  "itemBanjo": {
+    "name": "Banyo",
+    "description": "Ataques lentos y débiles con cierta capacidad de sanación.\nIdeal para curar a tus aliados mientras les revientas los tímpanos."
+  },
+  "itemBoomerang": {
+    "name": "Bumerán",
+    "description": "Echa a volar, atiza a los enemigos durante un rato y luego vuelve para que lo lances de nuevo. \nNo requiere munición, así que es ideal para un arsenal ecológico."
+  },
+  "itemBow": {
+    "name": "Arco",
+    "description": "Dispara flechas de baratillo cuando vas rápido. \nTénsalo con ganas para soltar un pepinazo explosivo."
+  },
+  "itemCactus": {
+    "name": "Cactus",
+    "description": "Apoyo: controla el campo de batalla invocando útiles cactus"
+  },
+  "itemDualRevolver": {
+    "name": "Revólveres dobles",
+    "description": "Alta velocidad de disparo y mala precisión, pero una recarga hace que ambos revólveres se vuelvan explosivamente útiles. Un salto milagroso de «bah» a «bombazo»."
+  },
+  "itemElec": {
+    "name": "Electricidad",
+    "description": "Apoyo: te mueves con rapidez y castigas a los enemigos con el poder del rayo"
+  },
+  "itemFire": {
+    "name": "Fuego",
+    "description": "Ofensiva: quema a los enemigos y prende fuego al suelo"
+  },
+  "itemIce": {
+    "name": "Escarcha",
+    "description": "Defensiva: congela a los enemigos y refuerza tu escudo"
+  },
+  "itemKnuckles": {
+    "name": "Puños americanos",
+    "description": "Poco alcance, gran impacto.\nNo requiere munición, puntería ni cerebro."
+  },
+  "itemLasso": {
+    "name": "Lazo",
+    "description": "Golpea a los enemigos rápidamente desde un alcance considerable.\nLos hay que vuelven a por más… y no precisamente por venganza."
+  },
+  "itemLongRanger": {
+    "name": "Long Ranger",
+    "description": "Construido para lograr una precisión inigualable y disparos penetrantes, cada fallo es una deshonra a siglos de artesanía. \nIntenta no decepcionar."
+  },
+  "itemMinigun": {
+    "name": "Minigun",
+    "description": "Una vez en marcha, escupe balas sin parar. \nTécnicamente se puede parar, pero lo tuyo es lanzar balas a tiempo completo, no desertar."
+  },
+  "itemPistol": {
+    "name": "Revólver",
+    "description": "Siempre fiable, mediocre en todo. \nLa mejor opción para aquellos con miedo al compromiso."
+  },
+  "itemQuadCylinder": {
+    "name": "Tetracilíndrica",
+    "description": "Dispara como debe, se maneja con facilidad y funciona bien. \nLa mediocridad hecha arma, aunque muy fiable."
+  },
+  "itemSheriffStar": {
+    "name": "Estrella de sheriff",
+    "description": "Se lanza a gran velocidad y corta a los enemigos. \nNunca había sido tan fácil impartir justicia."
+  },
+  "itemShotgun": {
+    "name": "Escopeta",
+    "description": "Una velocidad de disparo absurdamente elevada para una escopeta, recargas de un solo cartucho y una capacidad de dispersión que ya quisieran los incendios forestales. \nPor fin un arma que está a la altura de tu puntería."
+  },
+  "itemSpellAcidBubble": {
+    "name": "Burbuja",
+    "description": "Lanza una gran burbuja de ácido que estalla al impactar y crea charcos corrosivos."
+  },
+  "itemSpellAcidContagion": {
+    "name": "Contagio",
+    "description": "Corroe a todos los enemigos en una zona amplia y aplica Contagioso, lo que hace que exploten al morir."
+  },
+  "itemSpellAcidGeyser": {
+    "name": "Géiser",
+    "description": "Invoca un géiser de ácido que erupciona al impactar."
+  },
+  "itemSpellAcidRain": {
+    "name": "Lluvia",
+    "description": "Invoca una lluvia ácida que corroe a los enemigos en una zona amplia."
+  },
+  "itemSpellAcidThrower": {
+    "name": "Lanzador",
+    "description": "Escupe chorros de ácido que dejan charcos corrosivos en el suelo."
+  },
+  "itemSpellCactusBetty": {
+    "name": "Explosivo",
+    "description": "Invoca una mina de cactus que explota al pisarla."
+  },
+  "itemSpellCactusDecoy": {
+    "name": "Señuelo",
+    "description": "Invoca un cactus danzante que atrae a los enemigos y explota."
+  },
+  "itemSpellCactusTurret": {
+    "name": "Pistolero",
+    "description": "Invoca una torreta de cactus que dispara continuamente a los enemigos cercanos."
+  },
+  "itemSpellCactusUlti": {
+    "name": "Bandido",
+    "description": "Invoca un poderoso gólem cactus que lucha por ti durante un rato."
+  },
+  "itemSpellCactusWall": {
+    "name": "Muro",
+    "description": "Invoca púas de cactus que dañan y ralentizan a los enemigos al impactar."
+  },
+  "itemSpellElecPortal": {
+    "name": "Portal",
+    "description": "Crea hasta dos portales que permiten teletransportar a los jugadores y duplican los proyectiles de los hechizos."
+  },
+  "itemSpellElecStrike": {
+    "name": "Descarga",
+    "description": "Proyecta una línea de rayos que arrasan todo lo que encuentran a su paso."
+  },
+  "itemSpellElecSuperJump": {
+    "name": "Bote",
+    "description": "Salta al instante para escapar de los enemigos."
+  },
+  "itemSpellElecSwap": {
+    "name": "Teletransporte",
+    "description": "Cambias de posición con un enemigo y causa una explosión en ambos puntos."
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "Rayo",
+    "description": "Elévate y luego baja en picado para arrasar la zona y desatar el poder del rayo sobre tus enemigos."
+  },
+  "itemSpellFireBall": {
+    "name": "Bola de fuego",
+    "description": "Lanza una bola de fuego que explota al impactar y deja el suelo ardiendo."
+  },
+  "itemSpellFireBeam": {
+    "name": "Haz de fuego",
+    "description": "Desata una llamarada gigante que lo abrasa todo."
+  },
+  "itemSpellFireFingergun": {
+    "name": "Disparos con los dedos",
+    "description": "Cambia tu arma por dedos despiadados que disparan balas de fuego explosivas."
+  },
+  "itemSpellFireSurcharge": {
+    "name": "Sobrecarga",
+    "description": "Quema a todos los enemigos en una zona amplia, lo que provocará que los enemigos que ya estén ardiendo exploten."
+  },
+  "itemSpellFireWisp": {
+    "name": "Fuego fatuo",
+    "description": "Invoca un fuego fatuo que inflige daño adicional por quemadura y salta a otro enemigo si muere el anterior."
+  },
+  "itemSpellIceBlizzard": {
+    "name": "Ventisca",
+    "description": "Invoca una ventisca que te sigue, inflige daño a todos los enemigos y otorga escudo a los aliados."
+  },
+  "itemSpellIceBreeze": {
+    "name": "Brisa",
+    "description": "Invoca una brisa que congela a los enemigos en un cono amplio."
+  },
+  "itemSpellIceCube": {
+    "name": "Cubo",
+    "description": "Crea un cubo de escarcha invulnerable alrededor de ti o de un aliado."
+  },
+  "itemSpellIceGlaze": {
+    "name": "Heliclasto",
+    "description": "Libera una explosión que inflige daño a los enemigos cercanos y otorga escudo a los aliados cercanos."
+  },
+  "itemSpellIceLance": {
+    "name": "Puente",
+    "description": "Invoca un puente que otorga un escudo a los aliados que lo cruzan."
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "Corrupción",
+    "description": "Canaliza un muñeco que corrompe a los enemigos y hace que luchen por ti hasta morir."
+  },
+  "itemSpellVoodooDoll": {
+    "name": "Muñeco",
+    "description": "Invoca un muñeco que otorga invencibilidad y alta velocidad a los aliados que están dentro de su alcance."
+  },
+  "itemSpellVoodooDrain": {
+    "name": "Drenaje",
+    "description": "Ordena al muñeco que consuma la salud de un enemigo."
+  },
+  "itemSpellVoodooHeal": {
+    "name": "Rescate",
+    "description": "Canaliza el poder del muñeco para curar o revivir al aliado más cercano."
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "Ritual",
+    "description": "Invoca un círculo de velas que restaura la salud de los aliados a quienes alumbra su luz."
+  },
+  "itemUtilityAmmo": {
+    "name": "Paquete de munición",
+    "description": "Explota y suelta munición. Cuantos más jugadores haya, más balas aparecerán. \nLas reuniones familiares nunca habían resultado tan lucrativas."
+  },
+  "itemUtilityBottleCrate": {
+    "name": "Caja de botellas",
+    "description": "Explota en botellas curativas.\nTe convertirá en el vaquero más popular de la cantina."
+  },
+  "itemUtilityHealBottle": {
+    "name": "Zona de curación",
+    "description": "Explota al impactar y crea una zona de curación de larga duración. \nHuele a sopa podrida, como todos los remedios de la abuela."
+  },
+  "itemUtilityImpulse": {
+    "name": "Granada de impulsos",
+    "description": "Genera periódicamente ondas de choque que repelen a los jugadores. \nTe permite alcanzar cotas a las que tu nivel de habilidad nunca te llevaría."
+  },
+  "itemVoodoo": {
+    "name": "Vudú",
+    "description": "Apoyo: drena la vida de los enemigos y ayuda a los aliados"
+  },
+  "itemWinchester": {
+    "name": "Palancaster",
+    "description": "Mecanismo rápido, precisión impecable y recargas a lo bruto. \nAntes ganaba peces de colores moribundos en la feria. Ahora gana tiroteos."
+  },
+  "jokerAimingBurst": {
+    "name": "RÁFAGA DIRIGIDA",
+    "description": "+30 % de daño a puntos débiles y balas perforantes al apuntar"
+  },
+  "jokerAllMighty": {
+    "name": "TODOPODEROSO",
+    "description": "Ganas +1 % de daño por cada punto de escudo (PE), hasta el 80 %"
+  },
+  "jokerAmmoSupply": {
+    "name": "SUMINISTRO DE MUNICIÓN",
+    "description": "+5 % de probabilidad de que los enemigos dejen caer una caja de munición al morir"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "PESO LIGERO",
+    "description": "+2 % de probabilidad de crear una zona antigravitatoria al morir un enemigo"
+  },
+  "jokerApprentice": {
+    "name": "APRENDIZ",
+    "description": "-10 % de tiempo de recuperación de hechizos"
+  },
+  "jokerAvalanche": {
+    "name": "AVALANCHA",
+    "description": "+15 % de daño mientras tengas escudo"
+  },
+  "jokerBardbarian": {
+    "name": "BÁRBARDO",
+    "description": "Carga el ataque aplastante más tiempo para golpear con más fuerza"
+  },
+  "jokerBattleMage": {
+    "name": "MAGO DE BATALLA",
+    "description": "Al matar a un enemigo, se reduce un 0,5 % el tiempo de recuperación en curso de todos los hechizos"
+  },
+  "jokerBellShot": {
+    "name": "DISPARO CAMPANERO",
+    "description": "+5 % de probabilidad de que los disparos en un punto débil invoquen una campana fantasma curativa"
+  },
+  "jokerBerserker": {
+    "name": "BERSERKER",
+    "description": "Ganas hasta +50 % de daño cuerpo a cuerpo a medida que tus PS bajan"
+  },
+  "jokerBloodLust": {
+    "name": "SED DE SANGRE",
+    "description": "Las bajas en combate cuerpo a cuerpo otorgan +5 % acumulable de velocidad en combate cuerpo a cuerpo durante 5 s, hasta +50 %"
+  },
+  "jokerBouncingBall": {
+    "name": "PELOTA SALTARINA",
+    "description": "+15 % de daño en el aire"
+  },
+  "jokerBracing": {
+    "name": "FIRMEZA",
+    "description": "+5 % de ataque y velocidad de recarga"
+  },
+  "jokerCactusDay": {
+    "name": "DÍA DEL CACTUS",
+    "description": "+5 % de probabilidad de que brote un cactus explosivo al morir un enemigo"
+  },
+  "jokerCamper": {
+    "name": "INMÓVIL",
+    "description": "+50 % de probabilidad de no consumir munición mientras no te muevas"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "HECHIZOS ÁGILES",
+    "description": "Reduce un 25 % el tiempo de recuperación de los hechizos con un tiempo base de 35 s o menos"
+  },
+  "jokerCarePackage": {
+    "name": "PAQUETE DE APOYO",
+    "description": "+1 munición auxiliar"
+  },
+  "jokerCastAway": {
+    "name": "CONJURACIÓN COMPULSIVA",
+    "description": "Conjurar un hechizo reduce 3 s el tiempo de recuperación de los demás hechizos, hasta un mínimo de 4 s"
+  },
+  "jokerCdrAcid": {
+    "name": "MAESTRÍA ÁCIDA",
+    "description": "Obtiene -10 % de tiempo de recuperación de ácido por cada hechizo ácido equipado"
+  },
+  "jokerCdrCactus": {
+    "name": "MAESTRÍA CACTÁCEA",
+    "description": "Obtiene -10 % de tiempo de recuperación de cactus por cada hechizo cactáceo equipado"
+  },
+  "jokerCdrElec": {
+    "name": "MAESTRÍA ELÉCTRICA",
+    "description": "Obtiene -10 % de tiempo de recuperación de electricidad por cada hechizo eléctrico equipado"
+  },
+  "jokerCdrFire": {
+    "name": "MAESTRÍA ÍGNEA",
+    "description": "Obtiene -10 % de tiempo de recuperación de fuego por cada hechizo ígneo equipado"
+  },
+  "jokerCdrFrost": {
+    "name": "MAESTRÍA DE ESCARCHA",
+    "description": "Obtiene -10 % de tiempo de recuperación de escarcha por cada hechizo gélido equipado"
+  },
+  "jokerCdrVoodoo": {
+    "name": "MAESTRÍA VUDÚ",
+    "description": "Obtiene -10 % de tiempo de recuperación de vudú por cada hechizo vudú equipado"
+  },
+  "jokerChad": {
+    "name": "CARISMA",
+    "description": "Revela la posición de la mercader ambulante y te ofrece un 20 % de descuento. ¡Te lo mereces!"
+  },
+  "jokerCheapSkate": {
+    "name": "TACAÑERÍA",
+    "description": "Gana +1 PS por cada 20 de oro en el inventario de misión, hasta +15 PS"
+  },
+  "jokerChickshot": {
+    "name": "DISPARO CACAREANTE",
+    "description": "+50 % de probabilidad de que los ataques suenen como cacareos (no sirve para nada)"
+  },
+  "jokerChonky": {
+    "name": "PESO PESADO",
+    "description": "+20 % de daño, pero +15 % de gravedad"
+  },
+  "jokerChonkyThrow": {
+    "name": "LANZAMIENTO RECHONCHO",
+    "description": "El bumerán es el doble de grande y atraviesa los escudos"
+  },
+  "jokerClutch": {
+    "name": "DÚO EXPLOSIVO",
+    "description": "+2 balas explosivas al final del cargador"
+  },
+  "jokerCoinFlip": {
+    "name": "CARA O CRUZ",
+    "description": "Lanza una moneda cada 10 s. Infliges +100 % o -50 % de daño de arma"
+  },
+  "jokerColdBlooded": {
+    "name": "SANGRE FRÍA",
+    "description": "Tus ataques cuerpo a cuerpo congelan a los enemigos y consumen 3 PE por enemigo"
+  },
+  "jokerConsumer": {
+    "name": "DERROCHADOR",
+    "description": "Concede +25 % de daño de arma, pero al recargar se desperdicia la munición sin usar"
+  },
+  "jokerCrackShot": {
+    "name": "DISPARO CERTERO",
+    "description": "+7 % de daño"
+  },
+  "jokerDeadlyStrong": {
+    "name": "FUERZA MORTAL",
+    "description": "Muévete más rápido e inflige más daño como fantasma"
+  },
+  "jokerDeathsDance": {
+    "name": "DANZA DE LA MUERTE",
+    "description": "Tu escudo se reduce un 30 % más despacio"
+  },
+  "jokerDestroyer": {
+    "name": "DESTRUCTOR",
+    "description": "El primer 25 % de tu cargador inflige +20 % de daño"
+  },
+  "jokerDisgrace": {
+    "name": "DESGRACIA",
+    "description": "Gana +30 % de velocidad de movimiento. Tu caballo no quiere estar contigo"
+  },
+  "jokerDoubleDown": {
+    "name": "DOBLE APUESTA",
+    "description": "Ganas +30 % de puntos de escudo (PE) de todas las fuentes"
+  },
+  "jokerDwarf": {
+    "name": "ENANITO",
+    "description": "Eres algo chiquitito. Ganas velocidad de movimiento y de ataque, y la gravedad te afecta menos"
+  },
+  "jokerEagleLever": {
+    "name": "PALANCA DE ÁGUILA",
+    "description": "Los disparos consecutivos sin fallar otorgan +10 % de daño, acumulable hasta +50 %"
+  },
+  "jokerEatAPunch": {
+    "name": "PUÑETAZO NUTRITIVO",
+    "description": "Las bajas en combate cuerpo a cuerpo curan 2 PS"
+  },
+  "jokerEcoTrick": {
+    "name": "ECONOMIZADOR",
+    "description": "Al recargar ya no se desperdicia munición"
+  },
+  "jokerElementalSpin": {
+    "name": "GIRO ELEMENTAL",
+    "description": "La minigun tiene un 30 % de probabilidad de disparar una bala elemental aleatoria en lugar de una normal"
+  },
+  "jokerExecute": {
+    "name": "EJECUCIÓN",
+    "description": "Tus golpes matan al instante a los enemigos con menos del 20 % de PS, excepto élites y jefes"
+  },
+  "jokerExplosiveRounds": {
+    "name": "GOLPES EXPLOSIVOS (Fuego)",
+    "description": "+5 % de probabilidad de que tus golpes causen una explosión (Fuego)"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "GOLPES EXPLOSIVOS (Ácido)",
+    "description": "+5 % de probabilidad de que tus golpes causen una explosión (Ácido)"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "GOLPES EXPLOSIVOS (Electricidad)",
+    "description": "+5 % de probabilidad de que tus golpes causen una explosión (Eléctrico)"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "GOLPES EXPLOSIVOS (Escarcha)",
+    "description": "+5 % de probabilidad de que tus golpes causen una explosión (Escarcha)"
+  },
+  "jokerExtraDash": {
+    "name": "CARRERA ADICIONAL",
+    "description": "+1 carrera"
+  },
+  "jokerExtraJump": {
+    "name": "SALTO ADICIONAL",
+    "description": "+1 salto"
+  },
+  "jokerFanningAce": {
+    "name": "AS DE LA DISPERSIÓN",
+    "description": "Dispara en el momento justo a media recarga para encadenar todas las balas"
+  },
+  "jokerFastDraw": {
+    "name": "DISPARO CAMBIANTE",
+    "description": "Tu primer disparo tras equipar un arma inflige un 30 % más de daño"
+  },
+  "jokerFastHands": {
+    "name": "MANOS LIGERAS",
+    "description": "+20 % de velocidad de recarga"
+  },
+  "jokerFightOrFlight": {
+    "name": "VALOR O VOLAR",
+    "description": "Recibir daño en tus PS otorga +20 % de velocidad cuerpo a cuerpo durante 3 s"
+  },
+  "jokerFistFight": {
+    "name": "PUÑO POTENTE",
+    "description": "Tus golpes sin armas son más potentes"
+  },
+  "jokerFistRage": {
+    "name": "IRA DE PUÑOS",
+    "description": "Recibir daño genera carga y otorga +30 % de velocidad de ataque durante 2 s"
+  },
+  "jokerFistRoDah": {
+    "name": "PUÑO RO DAH",
+    "description": "El ataque cargado te propulsa hacia atrás y tiene un 20 % de probabilidad de aplicar escarcha a los enemigos"
+  },
+  "jokerFocusShot": {
+    "name": "DISPARO CONCENTRADO",
+    "description": "Cada golpe en un punto débil reduce en 2 s el tiempo de recuperación de los hechizos"
+  },
+  "jokerFocusedFeet": {
+    "name": "DISPARO RÁPIDO",
+    "description": "+10 % de velocidad de ataque al apuntar"
+  },
+  "jokerFreeCocktail": {
+    "name": "CÓCTEL GRATIS",
+    "description": "Cuando recargas un cargador vacío, recuperas 2 PS"
+  },
+  "jokerFreezeOver": {
+    "name": "ÚLTIMO BASTIÓN",
+    "description": "Al alcanzar un 25 % de PS, otorga +50 PE (recuperación: 60 s)"
+  },
+  "jokerFrenzySpin": {
+    "name": "GIRO FRENÉTICO",
+    "description": "Mientras tu contador de bajas esté por encima de 10, la minigun dispara al doble de velocidad"
+  },
+  "jokerFrostBite": {
+    "name": "MORDISCO DE ESCARCHA",
+    "description": "Las bajas en combate cuerpo a cuerpo contra enemigos congelados otorgan 2 PE"
+  },
+  "jokerGiant": {
+    "name": "GIGANTE",
+    "description": "Eres un mastodonte. Ganas salud, tu arma hace más daño y tus hechizos se recuperan antes"
+  },
+  "jokerGlassCannon": {
+    "name": "CAÑÓN DE CRISTAL",
+    "description": "+40 % de daño de arma y cuerpo a cuerpo, pero -25 % de PS"
+  },
+  "jokerGoldProspector": {
+    "name": "BUSCADOR DE ORO",
+    "description": "Al final de una misión, aumenta en un 20 % el oro que has obtenido"
+  },
+  "jokerGoldTooth": {
+    "name": "DIENTE DE ORO",
+    "description": "+10 % de probabilidad de que los enemigos suelten 1 pepita de oro al morir"
+  },
+  "jokerGoliath": {
+    "name": "GOLIAT",
+    "description": "Eres más grande. Ganas +25 % de PS"
+  },
+  "jokerGreatWall": {
+    "name": "GRAN MURALLA",
+    "description": "Reduce un 10 % todo el daño recibido mientras tengas escudo"
+  },
+  "jokerHeadBang": {
+    "name": "IMPACTO VITAL",
+    "description": "Inflige +30 % de daño en los puntos débiles"
+  },
+  "jokerHeadshotRefund": {
+    "name": "RECUPERACIÓN POR PUNTO DÉBIL",
+    "description": "+20 % de probabilidad de recuperar la munición tras un disparo en un punto débil"
+  },
+  "jokerHealthyBoi": {
+    "name": "SANOTE",
+    "description": "Con los PS al máximo, +20 % de velocidad de movimiento, de recarga y de ataque"
+  },
+  "jokerHeavyDrinker": {
+    "name": "HÍGADO DE HIERRO",
+    "description": "Las botellas curativas son un 25 % más eficaces"
+  },
+  "jokerHeavyWeapon": {
+    "name": "ARMA PESADA",
+    "description": "+10 % de daño, pero +30 % de gravedad mientras el arma está activa"
+  },
+  "jokerHelpingHand": {
+    "name": "MANO AMIGA",
+    "description": "Puedes revivir a tus aliados al doble de velocidad"
+  },
+  "jokerHitMe": {
+    "name": "GOLPE SANADOR",
+    "description": "Cura 0,75 PS por segundo durante 20 s tras sufrir un golpe"
+  },
+  "jokerHoarder": {
+    "name": "ACAPARADOR",
+    "description": "+15 % de probabilidad de que, al obtener un comodín, aparezca otro aleatorio"
+  },
+  "jokerHomingBurst": {
+    "name": "RÁFAGA TELEDIRIGIDA",
+    "description": "Por cada 8 balas disparadas, tira 2 balas teledirigidas a los enemigos cercanos"
+  },
+  "jokerHop": {
+    "name": "SALTO",
+    "description": "+20 % de altura de salto"
+  },
+  "jokerJokheal": {
+    "name": "COMODÍN SANITARIO",
+    "description": "Recoger un comodín te cura +35 PS adicionales"
+  },
+  "jokerJumpStar": {
+    "name": "ESTRELLA DEL SALTO",
+    "description": "+2 saltos mientras tengas las estrellas de sheriff"
+  },
+  "jokerKnuckleDown": {
+    "name": "NUDILLOS A LA OBRA",
+    "description": "+10 % de daño cuerpo a cuerpo"
+  },
+  "jokerLastDance": {
+    "name": "ÚLTIMO BAILE",
+    "description": "Mientras tengas el 30 % de los PS o menos, obtienes un 30 % más de velocidad de movimiento"
+  },
+  "jokerLastStand": {
+    "name": "ÚLTIMO ALIENTO",
+    "description": "Mientras tengas el 30 % de los PS o menos, recibes -30 % de daño y ganas un 10 % de robo de vida en combate cuerpo a cuerpo"
+  },
+  "jokerLazy": {
+    "name": "PEREZA",
+    "description": "Se desactiva la recogida de munición. Ganas un 10 % de la munición máxima cada 12 s"
+  },
+  "jokerLifePact": {
+    "name": "PACTO VITAL",
+    "description": "Cada baja te cura 2 PS, pero los PS máximos se reducen un 30 %"
+  },
+  "jokerLightWeight": {
+    "name": "PESO LIGERO",
+    "description": "-5 % de gravedad"
+  },
+  "jokerLingeringThrow": {
+    "name": "LANZAMIENTO PERSISTENTE",
+    "description": "Duplica el tiempo de espera. Se combina con la mejora de tiempo de espera"
+  },
+  "jokerLowGravity": {
+    "name": "GRAVEDAD LUNAR",
+    "description": "-25 % de gravedad"
+  },
+  "jokerLuckyStrike": {
+    "name": "GOLPE DE SUERTE",
+    "description": "+10 % de probabilidad de infligir el doble de daño por golpe"
+  },
+  "jokerLullabard": {
+    "name": "TROVADORMILÓN",
+    "description": "Ganas un acorde extra por golpe y una zona de curación más amplia, pero pierdes el ataque aplastante"
+  },
+  "jokerLunge": {
+    "name": "EMBESTIDA",
+    "description": "+15 % de alcance cuerpo a cuerpo y de tamaño del área de impacto"
+  },
+  "jokerMachineGun": {
+    "name": "AMETRALLADORA",
+    "description": "En cada misión, esta arma gana +0,3 % de velocidad de ataque por cada 50 puntos de daño infligido"
+  },
+  "jokerMagicFriendship": {
+    "name": "AMISTAD MÁGICA",
+    "description": "Recuperas PS pasivamente cuando estás cerca de tus aliados"
+  },
+  "jokerMagicReload": {
+    "name": "RECARGA MÁGICA",
+    "description": "Recarga automáticamente tu arma tras conjurar un hechizo"
+  },
+  "jokerMarkAce": {
+    "name": "AS DE LAS MARCAS",
+    "description": "Las balas marcan a los enemigos durante 5 s. Los enemigos marcados reciben +15 % de daño"
+  },
+  "jokerMindShot": {
+    "name": "DISPARO MENTAL",
+    "description": "Los golpes en un punto débil causan una explosión"
+  },
+  "jokerOneTrick": {
+    "name": "ARTIMAÑA DE COMODINES",
+    "description": "Ganas +7 % de daño y velocidad de ataque por cada rareza de comodín distinta equipada en el arma"
+  },
+  "jokerOverBlast": {
+    "name": "SOBRECARGA",
+    "description": "Dispara una bala adicional por cada 4 disparos que faltan en el cargador"
+  },
+  "jokerOverDraw": {
+    "name": "SOBRETENSADO",
+    "description": "Carga durante 2 s para disparar 3 flechas en un cono. La velocidad de ataque reduce el tiempo de carga"
+  },
+  "jokerPanicAttack": {
+    "name": "ATAQUE DE PÁNICO",
+    "description": "Al sufrir daño en los PS, ganas +20 % de daño durante 3 s"
+  },
+  "jokerPartyShot": {
+    "name": "DISPARO FESTIVO",
+    "description": "+50 % de probabilidad de que los disparos en un punto débil suelten confeti (no sirve para nada)"
+  },
+  "jokerPewPewPew": {
+    "name": "¡PIU, PIU, PIU!",
+    "description": "+20 % de velocidad de ataque"
+  },
+  "jokerPickPick": {
+    "name": "PICOTEO",
+    "description": "+10 % de probabilidad de que al impactar broten picos dañinos sobre el objetivo"
+  },
+  "jokerPigshot": {
+    "name": "DISPARO GORRINO",
+    "description": "+5 % de probabilidad de que aparezca un cerdo al impactar (atácale para que explote)"
+  },
+  "jokerPlasticDuck": {
+    "name": "PATITO DE GOMA",
+    "description": "Al andar, suenan ruiditos de patito de goma (no sirve para nada)"
+  },
+  "jokerPreciousRush": {
+    "name": "TESORO PELIGROSO",
+    "description": "+10 % de probabilidad de que aparezca un anillo de aceleración al morir un enemigo"
+  },
+  "jokerPricklyPear": {
+    "name": "HIGO CHUMBO",
+    "description": "Al sufrir daño en los PS, devuelves el mismo daño +15 al atacante"
+  },
+  "jokerQuickDraw": {
+    "name": "MANO RÁPIDA",
+    "description": "+40 % de velocidad de cambio de arma"
+  },
+  "jokerRage": {
+    "name": "IRA",
+    "description": "Al alcanzar un 25 % de PS, libera una onda que quema a los enemigos cercanos (recuperación: 60 s)"
+  },
+  "jokerRampage": {
+    "name": "MASACRE",
+    "description": "Gana un 5 % de velocidad de recarga por cada baja durante 10 s, hasta un 100 %"
+  },
+  "jokerRelentless": {
+    "name": "INQUEBRANTABLE",
+    "description": "Mientras tengas el 30 % de tus PS máximos o menos, infliges un 30 % más de daño"
+  },
+  "jokerReloadMastery": {
+    "name": "MAESTRÍA DE RECARGA",
+    "description": "Permite recargar un cargador vacío un 50 % más rápido"
+  },
+  "jokerRicochet": {
+    "name": "REBOTE",
+    "description": "La bala rebota con una probabilidad del 30 % de impactar automáticamente en un enemigo cercano"
+  },
+  "jokerRiposte": {
+    "name": "CONTRAATAQUE",
+    "description": "Cuando tu escudo absorbe un golpe, tu siguiente ataque inflige +100 % de daño"
+  },
+  "jokerRunAndGun": {
+    "name": "DISPARO EN CARRERA",
+    "description": "+30 % de velocidad de movimiento al disparar"
+  },
+  "jokerRunAndReload": {
+    "name": "RECARGA EN CARRERA",
+    "description": "+50 % de velocidad de movimiento al recargar"
+  },
+  "jokerRushBlast": {
+    "name": "TIRO ACELERADO",
+    "description": "Las tres primeras balas de tu cargador tienen un 100 % de precisión y llegan más lejos"
+  },
+  "jokerScavengerStar": {
+    "name": "ESTRELLA CARROÑERA",
+    "description": "Obtienes +100 % de alcance de recogida. Gana +30 % de velocidad de movimiento mientras tienes las estrellas de sheriff"
+  },
+  "jokerScoutsHonor": {
+    "name": "HONOR DEL EXPLORADOR",
+    "description": "Tras 10 s sin recibir daño, tu escudo se establece en un mínimo de 10 PE"
+  },
+  "jokerScrubBullet": {
+    "name": "IMPACTO LIMPIADOR",
+    "description": "Tu arma principal elimina elementos de los enemigos para infligir 10 puntos de daño al instante"
+  },
+  "jokerSecondWind": {
+    "name": "SEGUNDA OPORTUNIDAD",
+    "description": "Cura 50 PS en lugar de sufrir un impacto mortal (recuperación: 180 s)"
+  },
+  "jokerSharpShooter": {
+    "name": "FRANCOTIRADOR",
+    "description": "+20 % de daño en puntos débiles"
+  },
+  "jokerShineBright": {
+    "name": "BRILLO REFULGENTE",
+    "description": "+50 % de brillo heroico (brillas con luz propia, pero no sirve para nada)"
+  },
+  "jokerShroomGrave": {
+    "name": "TUMBA DE SETAS",
+    "description": "+10 % de probabilidad de que brote una seta al morir un enemigo"
+  },
+  "jokerSkyLash": {
+    "name": "GOLPE CELESTE",
+    "description": "El ataque cargado otorga +50 % de velocidad de movimiento y te permite volar"
+  },
+  "jokerSlowAndSteady": {
+    "name": "LENTO PERO SEGURO",
+    "description": "Ganas +25 % de precisión, pero -10 % de velocidad de ataque"
+  },
+  "jokerSnackAPunch": {
+    "name": "MÁQUINA DE PUÑETAZOS",
+    "description": "Las bajas en combate cuerpo a cuerpo otorgan +1 PE"
+  },
+  "jokerSoulEater": {
+    "name": "DEVORAALMAS",
+    "description": "Recoger un alma otorga 20 % de daño y velocidad de recarga durante 5 s"
+  },
+  "jokerSoulReaper": {
+    "name": "SEGADOR DE ALMAS",
+    "description": "Al final de una misión, aumenta en un 20 % las almas que has obtenido"
+  },
+  "jokerSoulSiphon": {
+    "name": "SIFÓN DE ALMAS",
+    "description": "Aumenta el rango de recogida y cura +2 PS al recoger un alma"
+  },
+  "jokerSpareBullets": {
+    "name": "BALAS DE SOBRA",
+    "description": "+10 % de bolsa de munición"
+  },
+  "jokerSpeedster": {
+    "name": "VELOCISTA",
+    "description": "+1 % de daño y de velocidad de ataque por cada 3 % de velocidad de movimiento adicional, hasta +40 %"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "CORRECAMINOS",
+    "description": "+10 % de velocidad de movimiento"
+  },
+  "jokerSpellLash": {
+    "name": "GOLPE ARCANO",
+    "description": "Conjurar un hechizo llena al instante tu barra de carga"
+  },
+  "jokerSpellRoulette": {
+    "name": "RULETA DE HECHIZOS",
+    "description": "-20 % de tiempo de recuperación de hechizos, pero estos cambian aleatoriamente al conjurarlos"
+  },
+  "jokerStackedLever": {
+    "name": "PALANCA APILADA",
+    "description": "Al matar, recarga al instante 2 balas de la munición de reserva"
+  },
+  "jokerStonks": {
+    "name": "CHIRIPA",
+    "description": "+20 % de probabilidad de que, al abrir un cofre, obtengas un comodín aleatorio"
+  },
+  "jokerSwampTrick": {
+    "name": "EXPLOSIÓN PANTANOSA",
+    "description": "Las explosiones de recarga ahora dejan charcos en el suelo"
+  },
+  "jokerThickSkin": {
+    "name": "PIEL GRUESA",
+    "description": "Reduce un 20 % todo el daño recibido, pero recibes un 30 % menos de curación"
+  },
+  "jokerTinMan": {
+    "name": "HOMBRE DE HOJALATA",
+    "description": "La curación sobrante se convierte en puntos de escudo, hasta +15 PE"
+  },
+  "jokerToolBox": {
+    "name": "PROVISIONES",
+    "description": "Se desactiva la recogida de granadas y se rellenan automáticamente después de 90 s"
+  },
+  "jokerTweakDealer": {
+    "name": "MANO DE COMODINES",
+    "description": "Ganas +1 PS por cada comodín activo"
+  },
+  "jokerUltraDraw": {
+    "name": "SUPERFLECHA",
+    "description": "Carga durante 4 s para disparar una enorme flecha explosiva. La velocidad de ataque reduce el tiempo de carga"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "Precisión"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "Tiempo de espera"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "Alcance"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "Capacidad del cargador"
+  },
+  "jokerUpgradeDamage": {
+    "name": "Daño"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "Velocidad de saque"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "Velocidad de ataque"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "Velocidad de ataque"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "Velocidad de ataque"
+  },
+  "jokerUpgradeHeal": {
+    "name": "Salud"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "Velocidad"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "Altura del salto"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "Robo de vida"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "Velocidad de recarga"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "Alcance de recogida"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "Reducción del tiempo de recuperación de hechizos"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "Bolsa de munición"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "Bolsa de munición"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "Alcance"
+  },
+  "jokerVampire": {
+    "name": "VAMPIRO",
+    "description": "El arma obtiene +4 % de robo de vida"
+  },
+  "jokerWeakLink": {
+    "name": "ESLABÓN DÉBIL",
+    "description": "Los golpes en un punto débil infligen un 35 % más de daño, pero los disparos normales, un 20 % menos"
+  },
+  "jokerWellFed": {
+    "name": "ENERGÍA EXTRA",
+    "description": "+5 PS"
+  },
+  "jokerWestWizard": {
+    "name": "MAGO DEL OESTE",
+    "description": "Gana -30 % de tiempo de recuperación de hechizos, pero -30 % de PS"
+  }
+}

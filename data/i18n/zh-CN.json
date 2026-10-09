@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "酸蚀",
+    "description": "攻击型 - 减速敌人并腐蚀战场"
+  },
+  "itemBanjo": {
+    "name": "班卓琴",
+    "description": "攻击缓慢且威力偏弱，但附带些许治疗能力。\n非常适合一边治疗队友，一边震碎他们的耳膜。"
+  },
+  "itemBoomerang": {
+    "name": "回旋镖",
+    "description": "飞出去，欺负敌人一会儿，然后飞回来再来一轮。\n无需弹药，环保出装的完美选择。"
+  },
+  "itemBow": {
+    "name": "弓",
+    "description": "速射时射出的是廉价箭矢。\n蓄力拉满就能射出爆炸狠活。"
+  },
+  "itemCactus": {
+    "name": "仙人掌",
+    "description": "辅助型 - 召唤实用仙人掌来控制战场"
+  },
+  "itemDualRevolver": {
+    "name": "双持左轮手枪",
+    "description": "射速快，准度差，但一次换弹就能让两把左轮手枪火力全开，爆发力拉满。\n从平平无奇到肆意乱杀的神奇蜕变。"
+  },
+  "itemElec": {
+    "name": "闪电",
+    "description": "辅助型 - 快速移动并用闪电攻击敌人"
+  },
+  "itemFire": {
+    "name": "火焰",
+    "description": "攻击型 - 灼烧敌人并点燃地面"
+  },
+  "itemIce": {
+    "name": "冰霜",
+    "description": "防御型 - 冻结敌人并强化你的护盾值"
+  },
+  "itemKnuckles": {
+    "name": "指虎",
+    "description": "攻击距离短，但破坏力极强。\n无需弹药，无需瞄准，也无需动脑。"
+  },
+  "itemLasso": {
+    "name": "套索",
+    "description": "攻击距离中等，可快速抽打敌人。\n部分敌人会回来讨抽，而且并非出于怀恨之心。"
+  },
+  "itemLongRanger": {
+    "name": "长程步枪",
+    "description": "专为极致精准和穿透射击而生，每一次脱靶都是对百年工艺的亵渎。\n可别让人失望啊。"
+  },
+  "itemMinigun": {
+    "name": "转轮机枪",
+    "description": "一旦转起来，这玩意儿就能不停地喷射子弹。\n理论上能停下，但你可是全职枪手，绝非半途而废的人。"
+  },
+  "itemPistol": {
+    "name": "左轮手枪",
+    "description": "始终可靠，样样平庸。\n害怕专精的人，首选便是它。"
+  },
+  "itemQuadCylinder": {
+    "name": "四管枪",
+    "description": "射击顺手，手感不错，表现尚可。\n平庸的典范，但绝对可靠。"
+  },
+  "itemSheriffStar": {
+    "name": "警长徽章",
+    "description": "高速发射，干净利落地切开敌人。\n正义从未如此轻松。"
+  },
+  "itemShotgun": {
+    "name": "霰弹枪",
+    "description": "射速高得离谱的霰弹枪，单发装填，散射范围连野火都羡慕。\n终于有把武器配得上你的枪法了。"
+  },
+  "itemSpellAcidBubble": {
+    "name": "气泡",
+    "description": "投掷一个大型酸蚀气泡，命中时爆裂并产生多个酸蚀水洼。"
+  },
+  "itemSpellAcidContagion": {
+    "name": "传染",
+    "description": "腐蚀大范围内的所有敌人并施加传染，使其在死亡时爆炸。"
+  },
+  "itemSpellAcidGeyser": {
+    "name": "喷泉",
+    "description": "召唤一个酸蚀喷泉，撞击后喷发。"
+  },
+  "itemSpellAcidRain": {
+    "name": "酸雨",
+    "description": "召唤酸雨，腐蚀大片区域内的敌人。"
+  },
+  "itemSpellAcidThrower": {
+    "name": "喷射",
+    "description": "喷射酸液，在地面留下腐蚀性水洼。"
+  },
+  "itemSpellCactusBetty": {
+    "name": "米诺",
+    "description": "召唤仙人掌地雷，被踩中时爆炸。"
+  },
+  "itemSpellCactusDecoy": {
+    "name": "诱饵",
+    "description": "召唤跳舞仙人掌，引诱敌人后爆炸。"
+  },
+  "itemSpellCactusTurret": {
+    "name": "炮手",
+    "description": "召唤仙人掌炮塔，持续攻击附近敌人。"
+  },
+  "itemSpellCactusUlti": {
+    "name": "土匪",
+    "description": "召唤一个强大的仙人掌魔像，为你战斗一段时间。"
+  },
+  "itemSpellCactusWall": {
+    "name": "瓦洛",
+    "description": "召唤仙人掌尖刺，接触敌人时对其造成伤害并减速。"
+  },
+  "itemSpellElecPortal": {
+    "name": "传送门",
+    "description": "生成最多两个传送门，可传送玩家并复制法术投射物。"
+  },
+  "itemSpellElecStrike": {
+    "name": "连击",
+    "description": "释放一道闪电，电击路径上的所有目标。"
+  },
+  "itemSpellElecSuperJump": {
+    "name": "弹跳",
+    "description": "瞬间跳跃，躲避敌人。"
+  },
+  "itemSpellElecSwap": {
+    "name": "互换",
+    "description": "与一名敌人互换位置，并在两地引发爆炸。"
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "雷霆一击",
+    "description": "腾空而起，随即俯冲轰击目标区域，向敌人倾泻雷霆之力。"
+  },
+  "itemSpellFireBall": {
+    "name": "火球",
+    "description": "发射一个火球，命中后爆炸并点燃地面。"
+  },
+  "itemSpellFireBeam": {
+    "name": "火焰射线",
+    "description": "释放巨大火焰射线，灼烧一切。"
+  },
+  "itemSpellFireFingergun": {
+    "name": "手指枪",
+    "description": "将武器切换为火焰手指，发射爆炸性火焰子弹。"
+  },
+  "itemSpellFireSurcharge": {
+    "name": "充能",
+    "description": "灼烧大片区域内的所有敌人，引爆已着火的敌人。"
+  },
+  "itemSpellFireWisp": {
+    "name": "火焰精魂",
+    "description": "召唤一个火焰精魂，造成额外灼烧伤害，击杀敌人后精魂跳向下一个目标。"
+  },
+  "itemSpellIceBlizzard": {
+    "name": "暴风雪",
+    "description": "召唤一场跟随你移动的暴风雪，对所有敌人造成伤害并为队友提供护盾值。"
+  },
+  "itemSpellIceBreeze": {
+    "name": "寒风",
+    "description": "召唤一阵寒风，冻结大范围锥形区域内的敌人。"
+  },
+  "itemSpellIceCube": {
+    "name": "冰立方",
+    "description": "将你自己或一名队友变成无敌的冰块。"
+  },
+  "itemSpellIceGlaze": {
+    "name": "冰爆",
+    "description": "释放一次爆发，对附近敌人造成伤害并为附近队友提供护盾值。"
+  },
+  "itemSpellIceLance": {
+    "name": "冰桥",
+    "description": "召唤一座冰桥，为通过的队友附加护盾。"
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "腐化",
+    "description": "引导玩偶腐化敌人，使其在死亡前为你而战。"
+  },
+  "itemSpellVoodooDoll": {
+    "name": "玩偶",
+    "description": "召唤一个玩偶，为范围内队友提供无敌和高速效果。"
+  },
+  "itemSpellVoodooDrain": {
+    "name": "汲取",
+    "description": "命令玩偶汲取敌人的生命值。"
+  },
+  "itemSpellVoodooHeal": {
+    "name": "救援",
+    "description": "引导玩偶之力，治疗或复活最近的队友。"
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "仪式",
+    "description": "召唤一圈蜡烛，为烛光范围内的队友持续恢复生命值。"
+  },
+  "itemUtilityAmmo": {
+    "name": "弹药包",
+    "description": "爆炸后变成弹药。玩家越多，子弹越多。\n家庭聚会从没这么赚过。"
+  },
+  "itemUtilityBottleCrate": {
+    "name": "治疗箱",
+    "description": "爆炸后变成治疗瓶。\n保证让你成为酒馆里最受欢迎的牛仔。"
+  },
+  "itemUtilityHealBottle": {
+    "name": "治疗区域",
+    "description": "命中后爆炸，形成持续较长时间的治疗区域。\n闻着像馊汤，就像奶奶的祖传偏方。"
+  },
+  "itemUtilityImpulse": {
+    "name": "脉冲手雷",
+    "description": "定期生成冲击波将玩家推开。\n让你达到凭自身技术永远达不到的高度。"
+  },
+  "itemVoodoo": {
+    "name": "巫毒",
+    "description": "辅助型 - 汲取敌人生命值并支援队友"
+  },
+  "itemWinchester": {
+    "name": "杠杆步枪",
+    "description": "利落的杠杆击发、极致精准、装填可靠耐用。\n曾用来在集市赢走病弱的金鱼，现在用来决胜枪战"
+  },
+  "jokerAimingBurst": {
+    "name": "瞄准爆发",
+    "description": "瞄准时弱点伤害 +30%，子弹附带穿透效果"
+  },
+  "jokerAllMighty": {
+    "name": "全能强者",
+    "description": "每拥有 1 点护盾值，伤害 +1%，最高 80%"
+  },
+  "jokerAmmoSupply": {
+    "name": "弹药补给",
+    "description": "敌人死亡时掉落弹药的几率 +5%"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "反重力坠落",
+    "description": "敌人死亡时生成反重力区域的几率 +2%"
+  },
+  "jokerApprentice": {
+    "name": "学徒",
+    "description": "法术冷却时间 -10%"
+  },
+  "jokerAvalanche": {
+    "name": "雪崩",
+    "description": "拥有护盾时，伤害 +15%"
+  },
+  "jokerBardbarian": {
+    "name": "吟游蛮人",
+    "description": "长按重砸攻击，可打出更强攻击"
+  },
+  "jokerBattleMage": {
+    "name": "战斗法师",
+    "description": "每击杀 1 名敌人，所有正在冷却的法术冷却时间缩短 0.5%"
+  },
+  "jokerBellShot": {
+    "name": "鸣钟射击",
+    "description": "命中弱点时召唤治疗幽灵钟的几率 +5%"
+  },
+  "jokerBerserker": {
+    "name": "狂战士",
+    "description": "生命值越低，近战攻击伤害最高提升 50%"
+  },
+  "jokerBloodLust": {
+    "name": "嗜血",
+    "description": "近战击杀后获得可叠加的 +5% 近战攻击速度，持续 5 秒，最多叠加至 +50%"
+  },
+  "jokerBouncingBall": {
+    "name": "弹跳弹丸",
+    "description": "空中伤害 +15%"
+  },
+  "jokerBracing": {
+    "name": "持枪稳固",
+    "description": "攻击速度与换弹速度 +5%"
+  },
+  "jokerCactusDay": {
+    "name": "仙人掌节",
+    "description": "敌人死亡时生成仙人掌米诺的几率 +5%"
+  },
+  "jokerCamper": {
+    "name": "蹲守老手",
+    "description": "静止不动时，不消耗弹药的几率 +50%"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "戏法专精",
+    "description": "基础冷却 35 秒及以下的法术，冷却时间缩短 25%"
+  },
+  "jokerCarePackage": {
+    "name": "补给包",
+    "description": "辅助弹药 +1"
+  },
+  "jokerCastAway": {
+    "name": "法术连发",
+    "description": "施放法术后，其余所有法术的冷却时间缩短 3 秒，最短不低于 4 秒"
+  },
+  "jokerCdrAcid": {
+    "name": "酸蚀精通",
+    "description": "每装备一个酸蚀法术，酸蚀冷却时间 -10%"
+  },
+  "jokerCdrCactus": {
+    "name": "仙人掌精通",
+    "description": "每装备一个仙人掌法术，仙人掌冷却时间 -10%"
+  },
+  "jokerCdrElec": {
+    "name": "闪电精通",
+    "description": "每装备一个闪电法术，闪电冷却时间 -10%"
+  },
+  "jokerCdrFire": {
+    "name": "火焰精通",
+    "description": "每装备一个火焰法术，火焰冷却时间 -10%"
+  },
+  "jokerCdrFrost": {
+    "name": "冰霜精通",
+    "description": "每装备一个冰霜法术，冰霜冷却时间 -10%"
+  },
+  "jokerCdrVoodoo": {
+    "name": "巫毒精通",
+    "description": "每装备一个巫毒法术，巫毒冷却时间 -10%"
+  },
+  "jokerChad": {
+    "name": "强者礼遇",
+    "description": "显示流浪商人位置并享受八折优惠。这是你应得的"
+  },
+  "jokerCheapSkate": {
+    "name": "吝啬鬼",
+    "description": "任务库存中每有 20 枚金币，生命值 +1，最多 +15"
+  },
+  "jokerChickshot": {
+    "name": "鸡叫射击",
+    "description": "攻击发出鸡叫的几率 +50%。没啥用！"
+  },
+  "jokerChonky": {
+    "name": "厚实稳重",
+    "description": "伤害 +20%，但重力 +15%"
+  },
+  "jokerChonkyThrow": {
+    "name": "超大号投掷",
+    "description": "回旋镖尺寸翻倍，并可以穿透护盾"
+  },
+  "jokerClutch": {
+    "name": "关键子弹",
+    "description": "弹匣末尾 +2 发爆炸弹"
+  },
+  "jokerCoinFlip": {
+    "name": "硬币赌局",
+    "description": "每 10 秒抛一次硬币，武器伤害要么 +100%，要么 -50%"
+  },
+  "jokerColdBlooded": {
+    "name": "冷血",
+    "description": "近战攻击会冻结敌人，每冻结一名敌人消耗 3 点护盾值"
+  },
+  "jokerConsumer": {
+    "name": "弹药挥霍",
+    "description": "换弹现在会舍弃未使用的弹药，但武器伤害 +25%"
+  },
+  "jokerCrackShot": {
+    "name": "精准射手",
+    "description": "伤害 +7%"
+  },
+  "jokerDeadlyStrong": {
+    "name": "致命强韧",
+    "description": "化为幽灵时移动更快，造成的伤害更高"
+  },
+  "jokerDeathsDance": {
+    "name": "死亡之舞",
+    "description": "你的护盾消耗速度减缓 30%"
+  },
+  "jokerDestroyer": {
+    "name": "毁灭模块",
+    "description": "弹夹前 25% 的子弹伤害 +20%"
+  },
+  "jokerDisgrace": {
+    "name": "耻辱",
+    "description": "移动速度 +30%。你的马不想和你待在一起"
+  },
+  "jokerDoubleDown": {
+    "name": "双倍护盾",
+    "description": "从所有来源获得的护盾值 +30%"
+  },
+  "jokerDwarf": {
+    "name": "短小精悍",
+    "description": "体型缩小。移动速度、攻击速度提升，重力降低"
+  },
+  "jokerEagleLever": {
+    "name": "鹰眼连击",
+    "description": "连续命中可获得 +10% 伤害，最高可叠加至 +50%"
+  },
+  "jokerEatAPunch": {
+    "name": "疗伤之拳",
+    "description": "近战击杀可回复 2 点生命值"
+  },
+  "jokerEcoTrick": {
+    "name": "经济戏法",
+    "description": "换弹不再浪费弹药"
+  },
+  "jokerElementalSpin": {
+    "name": "元素回旋",
+    "description": "转轮机枪有 30% 几率射出随机元素子弹，而非普通子弹"
+  },
+  "jokerExecute": {
+    "name": "处决",
+    "description": "你的攻击可立即处决生命值低于 20% 的敌人，精英和 Boss 除外"
+  },
+  "jokerExplosiveRounds": {
+    "name": "爆炸命中 (火焰)",
+    "description": "命中引发爆炸 (火焰) 的几率 +5%"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "爆炸命中 (酸蚀)",
+    "description": "命中引发爆炸 (酸蚀) 的几率 +5%"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "爆炸命中 (闪电)",
+    "description": "命中引发爆炸 (闪电) 的几率 +5%"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "爆炸命中 (冰霜)",
+    "description": "命中引发爆炸 (冰霜) 的几率 +5%"
+  },
+  "jokerExtraDash": {
+    "name": "额外冲刺",
+    "description": "冲刺次数 +1"
+  },
+  "jokerExtraJump": {
+    "name": "额外跳跃",
+    "description": "跳跃次数 +1"
+  },
+  "jokerFanningAce": {
+    "name": "扇击王牌",
+    "description": "在换弹中途找准时机开火，连续射出所有子弹"
+  },
+  "jokerFastDraw": {
+    "name": "首发重击",
+    "description": "装备武器后的首次攻击伤害增加 30%"
+  },
+  "jokerFastHands": {
+    "name": "迅捷之手",
+    "description": "换弹速度 +20%"
+  },
+  "jokerFightOrFlight": {
+    "name": "或战或逃",
+    "description": "生命值受到伤害时，近战攻击速度 +20%，持续 3 秒"
+  },
+  "jokerFistFight": {
+    "name": "拳来拳往",
+    "description": "徒手攻击威力提高"
+  },
+  "jokerFistRage": {
+    "name": "狂怒之拳",
+    "description": "受到伤害时积攒蓄力，攻击速度 +30%，持续 2 秒"
+  },
+  "jokerFistRoDah": {
+    "name": "重拳撼击",
+    "description": "蓄力攻击会将你向后击退，并有 20% 几率对敌人施加冰霜效果"
+  },
+  "jokerFocusShot": {
+    "name": "专注射击",
+    "description": "每次命中弱点减少 2 秒法术冷却时间"
+  },
+  "jokerFocusedFeet": {
+    "name": "迅捷射击",
+    "description": "瞄准状态下攻击速度 +10%"
+  },
+  "jokerFreeCocktail": {
+    "name": "免费特调",
+    "description": "空弹夹换弹时，恢复 2 点生命值"
+  },
+  "jokerFreezeOver": {
+    "name": "最后堡垒",
+    "description": "生命值降至 25% 时，获得 +50 点护盾值 (冷却时间：60 秒)"
+  },
+  "jokerFrenzySpin": {
+    "name": "狂暴回旋",
+    "description": "击杀数超过 10 时，转轮机枪射速翻倍"
+  },
+  "jokerFrostBite": {
+    "name": "冰霜噬咬",
+    "description": "近战击杀冰封敌人后获得 2 点护盾值"
+  },
+  "jokerGiant": {
+    "name": "威猛巨人",
+    "description": "你的体型变大。生命值、武器伤害提升并缩短法术冷却"
+  },
+  "jokerGlassCannon": {
+    "name": "玻璃炮",
+    "description": "武器和近战攻击伤害 +40%，但生命值 -25%"
+  },
+  "jokerGoldProspector": {
+    "name": "淘金者",
+    "description": "任务结束时，获得的金币增加 20%"
+  },
+  "jokerGoldTooth": {
+    "name": "金牙",
+    "description": "敌人死亡时掉落 1 块金块的几率 +10%"
+  },
+  "jokerGoliath": {
+    "name": "巨人之躯",
+    "description": "你的体型变大。生命值 +25%"
+  },
+  "jokerGreatWall": {
+    "name": "坚壁长城",
+    "description": "拥有护盾时，受到的所有伤害降低 10%"
+  },
+  "jokerHeadBang": {
+    "name": "重击要害",
+    "description": "对弱点造成的伤害 +30%"
+  },
+  "jokerHeadshotRefund": {
+    "name": "弱点返还",
+    "description": "命中弱点后回收弹药的几率 +20%"
+  },
+  "jokerHealthyBoi": {
+    "name": "元气满满",
+    "description": "满血状态下，移动速度、换弹速度和攻击速度 +20%"
+  },
+  "jokerHeavyDrinker": {
+    "name": "豪饮者",
+    "description": "治疗瓶对你的治疗效果提升 25%"
+  },
+  "jokerHeavyWeapon": {
+    "name": "重型武器",
+    "description": "伤害 +10%，但武器激活时重力 +30%"
+  },
+  "jokerHelpingHand": {
+    "name": "援助之手",
+    "description": "复活友军的速度翻倍"
+  },
+  "jokerHitMe": {
+    "name": "打我呀",
+    "description": "被击中后，每秒回复 0.75 点生命值，持续 20 秒"
+  },
+  "jokerHoarder": {
+    "name": "囤积者",
+    "description": "收集奇术卡时有 +15% 几率随机出现另一张奇术卡"
+  },
+  "jokerHomingBurst": {
+    "name": "追踪爆发",
+    "description": "每发射 8 发子弹，额外向附近敌人发射 2 发追踪弹"
+  },
+  "jokerHop": {
+    "name": "跳跃",
+    "description": "跳跃高度 +20%"
+  },
+  "jokerJokheal": {
+    "name": "医疗卡片",
+    "description": "拾取奇术卡可额外回复 35 点生命值"
+  },
+  "jokerJumpStar": {
+    "name": "跳跃之星",
+    "description": "持有警长徽章时跳跃次数 +2"
+  },
+  "jokerKnuckleDown": {
+    "name": "指劲十足",
+    "description": "近战攻击伤害 +10%"
+  },
+  "jokerLastDance": {
+    "name": "最后一舞",
+    "description": "当生命值低于或等于最大生命值的 30% 时，移动速度 +30%"
+  },
+  "jokerLastStand": {
+    "name": "背水一战",
+    "description": "当生命值低于或等于最大生命值的 30% 时，受到的伤害 -30%，并获得 10% 近战攻击生命偷取"
+  },
+  "jokerLazy": {
+    "name": "懒散",
+    "description": "弹药拾取功能已禁用。每 12 秒恢复 10% 的最大弹药量"
+  },
+  "jokerLifePact": {
+    "name": "生命契约",
+    "description": "击杀敌人可恢复 2 点生命值，但最大生命值降低 30%"
+  },
+  "jokerLightWeight": {
+    "name": "轻盈体态",
+    "description": "重力 -5%"
+  },
+  "jokerLingeringThrow": {
+    "name": "余韵投掷",
+    "description": "持续时长翻倍。可与“持续时长”升级版叠加"
+  },
+  "jokerLowGravity": {
+    "name": "月球重力",
+    "description": "重力 -25%"
+  },
+  "jokerLuckyStrike": {
+    "name": "幸运一击",
+    "description": "每次命中造成双倍伤害的几率 +10%"
+  },
+  "jokerLullabard": {
+    "name": "催眠诗人",
+    "description": "每次命中额外获得一个和弦，治疗范围扩大，但无法使用重砸攻击"
+  },
+  "jokerLunge": {
+    "name": "突刺",
+    "description": "近战攻击范围与判定范围 +15%"
+  },
+  "jokerMachineGun": {
+    "name": "机枪好手",
+    "description": "单个任务中，该武器每造成 50 点伤害，攻击速度 +0.3%"
+  },
+  "jokerMagicFriendship": {
+    "name": "魔法友谊",
+    "description": "在盟友附近时被动回复生命值"
+  },
+  "jokerMagicReload": {
+    "name": "魔法换弹",
+    "description": "施放法术后自动为武器换弹"
+  },
+  "jokerMarkAce": {
+    "name": "标记王牌",
+    "description": "子弹标记敌人，持续 5 秒。被标记的敌人受到伤害 +15%"
+  },
+  "jokerMindShot": {
+    "name": "意念射击",
+    "description": "命中弱点时引发爆炸"
+  },
+  "jokerOneTrick": {
+    "name": "奇术卡戏法",
+    "description": "武器上每装备一种不同稀有度的奇术卡，伤害与攻击速度 +7%"
+  },
+  "jokerOverBlast": {
+    "name": "超载射击",
+    "description": "弹匣中每缺失 4 发弹药，额外发射一枚弹丸"
+  },
+  "jokerOverDraw": {
+    "name": "超额拉弓",
+    "description": "蓄力 2 秒后朝锥形区域射出 3 支箭。攻击速度可缩短蓄力时间"
+  },
+  "jokerPanicAttack": {
+    "name": "恐慌攻击",
+    "description": "生命值受到伤害时，伤害 +20%，持续 3 秒"
+  },
+  "jokerPartyShot": {
+    "name": "派对射击",
+    "description": "命中弱点时爆出彩纸的几率 +50%。没啥用！"
+  },
+  "jokerPewPewPew": {
+    "name": "极速连射",
+    "description": "攻击速度 +20%"
+  },
+  "jokerPickPick": {
+    "name": "镐镐出击",
+    "description": "命中时在目标位置生成伤害性矿镐的几率 +10%"
+  },
+  "jokerPigshot": {
+    "name": "生猪射击",
+    "description": "命中时生成一只猪的几率 +5%。攻击猪可使其爆炸"
+  },
+  "jokerPlasticDuck": {
+    "name": "橡皮鸭",
+    "description": "行走时发出橡皮鸭叫声。没啥用！"
+  },
+  "jokerPreciousRush": {
+    "name": "珍宝狂奔",
+    "description": "敌人死亡时生成加速圆环的几率 +10%"
+  },
+  "jokerPricklyPear": {
+    "name": "尖刺反伤",
+    "description": "生命值受到伤害时，向攻击者反弹等额伤害 +15"
+  },
+  "jokerQuickDraw": {
+    "name": "神速拔枪",
+    "description": "切换速度 +40%"
+  },
+  "jokerRage": {
+    "name": "狂怒波动",
+    "description": "生命值降至 25% 时，释放火焰冲击波灼烧附近敌人 (冷却时间：60 秒)"
+  },
+  "jokerRampage": {
+    "name": "狂暴",
+    "description": "每次击杀获得 5% 换弹速度，持续 10 秒，最高可达 100%"
+  },
+  "jokerRelentless": {
+    "name": "不屈不挠",
+    "description": "生命值等于或低于最大生命值的 30% 时，伤害 +30%"
+  },
+  "jokerReloadMastery": {
+    "name": "换弹精通",
+    "description": "空弹夹换弹速度提升 50%"
+  },
+  "jokerRicochet": {
+    "name": "弹射高手",
+    "description": "射出的子弹会弹射，并有 30% 几率自动击中一名附近敌人"
+  },
+  "jokerRiposte": {
+    "name": "格挡反击",
+    "description": "护盾吸收一次攻击后，你的下一次攻击伤害 +100%"
+  },
+  "jokerRunAndGun": {
+    "name": "边走边射击",
+    "description": "射击时移动速度 +30%"
+  },
+  "jokerRunAndReload": {
+    "name": "边走边换弹",
+    "description": "换弹时移动速度 +50%"
+  },
+  "jokerRushBlast": {
+    "name": "急速爆发",
+    "description": "弹匣内的前 3 发子弹拥有 100% 精准度且射程更远"
+  },
+  "jokerScavengerStar": {
+    "name": "拾荒之星",
+    "description": "拾取范围 +100%。持有警长徽章时移动速度 +30%"
+  },
+  "jokerScoutsHonor": {
+    "name": "斥候荣誉",
+    "description": "10 秒未受到伤害后，护盾值至少保持在 10 点"
+  },
+  "jokerScrubBullet": {
+    "name": "净化打击",
+    "description": "你的主武器会移除敌人身上附着的元素，并立即造成 10 点伤害"
+  },
+  "jokerSecondWind": {
+    "name": "重整旗鼓",
+    "description": "遭受致命伤害时恢复 50 点生命值而非死亡（冷却时间：180秒）"
+  },
+  "jokerSharpShooter": {
+    "name": "神射手",
+    "description": "弱点伤害 +20%"
+  },
+  "jokerShineBright": {
+    "name": "闪耀夺目",
+    "description": "英雄发光效果 +50%。你在闪闪发光！没啥用！"
+  },
+  "jokerShroomGrave": {
+    "name": "蘑菇坟冢",
+    "description": "敌人死亡时生成蘑菇的几率 +10%"
+  },
+  "jokerSkyLash": {
+    "name": "凌空之袭",
+    "description": "蓄力攻击时移动速度 +50%，且可以飞行"
+  },
+  "jokerSlowAndSteady": {
+    "name": "稳扎稳打",
+    "description": "获得 +25% 精准度，但 -10% 攻击速度"
+  },
+  "jokerSnackAPunch": {
+    "name": "拳下加餐",
+    "description": "近战击杀后获得 1 点护盾值"
+  },
+  "jokerSoulEater": {
+    "name": "噬魂者",
+    "description": "拾取灵魂后，获得 20% 伤害与换弹速度，持续 5 秒"
+  },
+  "jokerSoulReaper": {
+    "name": "灵魂收割",
+    "description": "任务结束时，获得的灵魂增加 20%"
+  },
+  "jokerSoulSiphon": {
+    "name": "灵魂虹吸",
+    "description": "扩大拾取范围，拾取灵魂时恢复 +2 点生命"
+  },
+  "jokerSpareBullets": {
+    "name": "备用弹药",
+    "description": "弹药袋 +10%"
+  },
+  "jokerSpeedster": {
+    "name": "疾行者",
+    "description": "每获得 3% 额外移动速度，伤害与攻击速度 +1%，最高 +40%"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "神速枪手",
+    "description": "移动速度 +10%"
+  },
+  "jokerSpellLash": {
+    "name": "法术之袭",
+    "description": "施放法术会瞬间填满蓄力条"
+  },
+  "jokerSpellRoulette": {
+    "name": "法术轮盘",
+    "description": "法术冷却时间 -20%，但每次随机施放法术"
+  },
+  "jokerStackedLever": {
+    "name": "叠加杠杆",
+    "description": "击杀敌人后立即从备用弹药中装填 2 发子弹"
+  },
+  "jokerStonks": {
+    "name": "财富好运",
+    "description": "开启宝箱时获得随机奇术卡的几率 +20%"
+  },
+  "jokerSwampTrick": {
+    "name": "沼泽戏法",
+    "description": "换弹爆炸现在会在地面留下水坑"
+  },
+  "jokerThickSkin": {
+    "name": "皮糙肉厚",
+    "description": "受到的所有伤害降低 20%，但受到的治疗效果 -30%"
+  },
+  "jokerTinMan": {
+    "name": "铁皮之躯",
+    "description": "超出的治疗量会转化为护盾值，最多 +15 点"
+  },
+  "jokerToolBox": {
+    "name": "工具箱",
+    "description": "辅助道具拾取功能已禁用。辅助道具会在 90 秒后自动补充"
+  },
+  "jokerTweakDealer": {
+    "name": "奇术卡商人",
+    "description": "每激活 1 张奇术卡，生命值 +1"
+  },
+  "jokerUltraDraw": {
+    "name": "极限拉弓",
+    "description": "蓄力 4 秒后射出巨型爆炸箭。攻击速度可缩短蓄力时间"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "精准"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "持续时长"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "范围"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "弹夹容量"
+  },
+  "jokerUpgradeDamage": {
+    "name": "伤害值"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "拔出速度"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "攻击速度"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "攻击速度"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "攻击速度"
+  },
+  "jokerUpgradeHeal": {
+    "name": "生命值"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "速度"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "跳跃高度"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "生命偷取"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "换弹速度"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "拾取范围"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "法术冷却时间减少"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "弹药袋"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "弹药袋"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "范围"
+  },
+  "jokerVampire": {
+    "name": "吸血猎手",
+    "description": "该武器的生命偷取 +4%"
+  },
+  "jokerWeakLink": {
+    "name": "薄弱环节",
+    "description": "弱点命中伤害增加 35%，但普通命中伤害减少 20%"
+  },
+  "jokerWellFed": {
+    "name": "强健体魄",
+    "description": "生命值 +5"
+  },
+  "jokerWestWizard": {
+    "name": "西部巫师",
+    "description": "法术冷却时间 -30%，但生命值 -30%"
+  }
+}

@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "산성",
+    "description": "공격 - 적을 느리게 하고 전장을 부식시킵니다"
+  },
+  "itemBanjo": {
+    "name": "밴조",
+    "description": "공격은 느리고 약하지만, 약간의 치유 능력이 있다.\n아군을 치유하면서도 적의 고막을 찢어놓기에 안성맞춤이다."
+  },
+  "itemBoomerang": {
+    "name": "부메랑",
+    "description": "날아가서 잠깐 적을 괴롭힌 후 다시 돌아오면서 한 번 더 공격합니다. \n탄약이 필요 없기 때문에 친환경 무장을 할 수 있습니다."
+  },
+  "itemBow": {
+    "name": "활",
+    "description": "빠르게 당기면 위력 낮은 화살을 발사하지만, \n활을 제대로 당기면 폭발적인 위력을 자랑합니다."
+  },
+  "itemCactus": {
+    "name": "선인장",
+    "description": "유틸리티 - 유용한 선인장을 소환하여 전장을 지배합니다"
+  },
+  "itemDualRevolver": {
+    "name": "듀얼 리볼버",
+    "description": "발사 속도가 빠른 대신 명중률이 낮습니다. 하지만 한 번의 재장전으로 리볼버 두 개를 모두 발사할 수 있는 폭발적인 유용성을 가지고 있습니다. \n존재감 없던 놈이 대혼란으로, 엄청난 변화입니다."
+  },
+  "itemElec": {
+    "name": "전기",
+    "description": "유틸리티 - 빠르게 이동해 번개로 공격합니다"
+  },
+  "itemFire": {
+    "name": "화염",
+    "description": "공격 - 적과 지면을 불태웁니다"
+  },
+  "itemIce": {
+    "name": "서리",
+    "description": "방어 - 적을 얼리고 보호막을 강화합니다"
+  },
+  "itemKnuckles": {
+    "name": "너클",
+    "description": "사거리는 짧지만 위력은 확실하다.\n탄약도 조준도 필요없고, 생각할 필요도 없다."
+  },
+  "itemLasso": {
+    "name": "올가미",
+    "description": "적당한 사거리에서 적을 빠르게 채찍질한다.\n일부는 다시 맞으러 찾아오기도 하는데, 악의로 그러는 건 아닌 것 같다."
+  },
+  "itemLongRanger": {
+    "name": "롱 레인저",
+    "description": "타의 추종을 불허하는 명중률과 관통력을 지닐 수 있도록 설계된 총으로, 한 발이라도 빗나가면 수 세기에 걸친 장인 정신에 찬물을 끼얹는 것과 다름없습니다. \n실망시키지 마세요."
+  },
+  "itemMinigun": {
+    "name": "미니건",
+    "description": "한번 회전을 시작하면 총알을 미친 듯이 쏟아냅니다. \n엄밀히 말하자면 멈출 수 있긴 하지만, 당신은 전업 총잡이지 쉽게 포기하는 사람이 아니잖아요."
+  },
+  "itemPistol": {
+    "name": "리볼버",
+    "description": "모든 면에서 평균 능력치를 가지고 있어 언제나 신뢰할 수 있습니다. \n책임을 두려워하는 자를 위한 최고의 선택입니다."
+  },
+  "itemQuadCylinder": {
+    "name": "쿼드 실린더",
+    "description": "사격감도 좋고 느낌도 좋고 성능도 좋습니다. \n평범함의 표본이지만 그만큼 신뢰할 수 있는 기념비적인 무기입니다."
+  },
+  "itemSheriffStar": {
+    "name": "보안관 별",
+    "description": "빠른 속도로 발사되어 적을 베어버립니다. \n정의가 이렇게 손쉬웠던 적은 없었죠."
+  },
+  "itemShotgun": {
+    "name": "산탄총",
+    "description": "산탄총치고는 이상할 정도로 빠른 발사 속도, 단일 탄피 재장전, 산불이 좋아할 만한 넓은 확산 범위가 특징입니다. \n마침내 목표에 맞는 무기를 찾았습니다."
+  },
+  "itemSpellAcidBubble": {
+    "name": "거품",
+    "description": "큰 산성 거품을 던집니다. 거품은 충격과 동시에 터지며 여러 개의 산성 웅덩이를 생성합니다."
+  },
+  "itemSpellAcidContagion": {
+    "name": "전염병",
+    "description": "넓은 구역의 모든 적을 부식시키고 전염 상태를 부여하여 사망 시 폭발하게 합니다."
+  },
+  "itemSpellAcidGeyser": {
+    "name": "간헐천",
+    "description": "충격을 입으면 분출하는 산성 간헐천을 소환합니다."
+  },
+  "itemSpellAcidRain": {
+    "name": "비",
+    "description": "넓은 범위의 적을 부식시키는 산성비를 내립니다."
+  },
+  "itemSpellAcidThrower": {
+    "name": "투척기",
+    "description": "산성 액체를 뿜어 지면에 부식 웅덩이를 남깁니다."
+  },
+  "itemSpellCactusBetty": {
+    "name": "지뢰선인장",
+    "description": "밟으면 폭발하는 선인장 지뢰를 소환합니다."
+  },
+  "itemSpellCactusDecoy": {
+    "name": "유인선인장",
+    "description": "춤추는 선인장을 소환하여 적을 유인한 후 폭발시킵니다."
+  },
+  "itemSpellCactusTurret": {
+    "name": "피스톨선인장",
+    "description": "주변 적에게 지속적으로 사격을 가하는 선인장 포탑을 소환합니다."
+  },
+  "itemSpellCactusUlti": {
+    "name": "도적",
+    "description": "잠깐 같은 편으로 싸워 주는 강력한 선인장 골렘을 소환합니다."
+  },
+  "itemSpellCactusWall": {
+    "name": "벽선인장",
+    "description": "접촉 시 적에게 피해를 입히고 둔화시키는 선인장 가시를 소환합니다."
+  },
+  "itemSpellElecPortal": {
+    "name": "포털",
+    "description": "주문 발사체를 복제하며 플레이어를 순간 이동할 수 있는 포털을 최대 두 개까지 생성합니다."
+  },
+  "itemSpellElecStrike": {
+    "name": "스트라이크",
+    "description": "번개를 연속으로 발사하여 경로에 있는 모든 것을 파괴합니다."
+  },
+  "itemSpellElecSuperJump": {
+    "name": "껑충",
+    "description": "즉시 점프하여 적에게서 탈출합니다."
+  },
+  "itemSpellElecSwap": {
+    "name": "순간 이동",
+    "description": "적과 위치를 바꾼 뒤, 두 위치 모두에 폭발 공격을 가합니다."
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "낙뢰",
+    "description": "솟아오른 다음 급강하하며 주변을 폭파하고 적에게 천둥을 퍼붓습니다."
+  },
+  "itemSpellFireBall": {
+    "name": "파이어볼",
+    "description": "충격 시 폭발하여 지면을 불태우는 불덩이를 발사합니다."
+  },
+  "itemSpellFireBeam": {
+    "name": "파이어빔",
+    "description": "모든 것을 불태우는 거대한 화염 광선을 발사합니다."
+  },
+  "itemSpellFireFingergun": {
+    "name": "손가락 총",
+    "description": "무기를 불꽃 손가락으로 바꿔 폭발하는 화염탄을 발사합니다."
+  },
+  "itemSpellFireSurcharge": {
+    "name": "과부하",
+    "description": "넓은 구역 내 모든 적을 불태웁니다. 이미 불이 붙은 적은 폭발합니다."
+  },
+  "itemSpellFireWisp": {
+    "name": "도깨비불",
+    "description": "추가 화상 피해를 입히는 정령을 소환합니다. 정령은 적이 죽으면 다른 적에게로 점프합니다."
+  },
+  "itemSpellIceBlizzard": {
+    "name": "눈보라",
+    "description": "자신을 따라다니는 눈보라를 소환하여 모든 적에게 피해를 주고 아군에게 보호막을 부여합니다."
+  },
+  "itemSpellIceBreeze": {
+    "name": "산들바람",
+    "description": "넓은 원뿔 범위의 적을 얼리는 미풍을 소환합니다."
+  },
+  "itemSpellIceCube": {
+    "name": "큐브",
+    "description": "자신 또는 아군을 무적의 서리 큐브로 변신시킵니다."
+  },
+  "itemSpellIceGlaze": {
+    "name": "살얼음",
+    "description": "냉기를 터뜨려 근처 적에게 피해를 주고 근처 아군에게 보호막을 부여합니다."
+  },
+  "itemSpellIceLance": {
+    "name": "다리",
+    "description": "아군이 건너가면 보호막을 부여하는 다리를 소환합니다."
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "부패",
+    "description": "인형에 정신을 집중해 적들을 타락시키고 플레이어를 위해 싸우게 합니다."
+  },
+  "itemSpellVoodooDoll": {
+    "name": "인형",
+    "description": "구역 내 아군에게 무적과 빠른 속도를 부여하는 인형을 소환합니다."
+  },
+  "itemSpellVoodooDrain": {
+    "name": "흡수",
+    "description": "인형에게 명령하여 적의 체력을 흡수합니다."
+  },
+  "itemSpellVoodooHeal": {
+    "name": "구조",
+    "description": "인형의 힘을 사용하여 가장 가까운 아군을 치유하거나 부활시킵니다."
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "의식",
+    "description": "촛불 고리를 소환하여 그 빛 안에 있는 아군의 체력을 회복시킵니다."
+  },
+  "itemUtilityAmmo": {
+    "name": "탄약 팩",
+    "description": "터지면 탄약이 쏟아집니다. 플레이어가 많다는 것은 탄약도 많다는 뜻이지요. \n가족 모임이 이렇게까지 즐거울 줄은 몰랐네요."
+  },
+  "itemUtilityBottleCrate": {
+    "name": "물약 상자",
+    "description": "회복 물약으로 폭발합니다.\n술집에서 가장 인기 있는 카우보이가 될 수 있도록 보장합니다."
+  },
+  "itemUtilityHealBottle": {
+    "name": "치유 영역",
+    "description": "충격 시 폭발하여 오랫동안 치유 구역을 생성합니다. \n할머니표 민간요법처럼 썩은 수프 냄새가 납니다."
+  },
+  "itemUtilityImpulse": {
+    "name": "임펄스 수류탄",
+    "description": "주기적으로 충격파를 생성하여 플레이어를 밀어냅니다. \n자신의 실력 수준으로는 절대 도달할 수 없는 높이에 도달할 수 있습니다."
+  },
+  "itemVoodoo": {
+    "name": "부두",
+    "description": "유틸리티 - 적의 체력을 흡수하고 아군을 지원합니다"
+  },
+  "itemWinchester": {
+    "name": "레버렛지",
+    "description": "깔끔한 레버액션, 완벽한 정밀도, 확실한 재장전. \n한때는 축제에서 죽어가는 금붕어를 따는 데나 썼지만, 이제는 총격전도 쉽습니다."
+  },
+  "jokerAimingBurst": {
+    "name": "조준 폭파",
+    "description": "조준 시 약점 피해 +30%, 관통하는 총알 효과 적용"
+  },
+  "jokerAllMighty": {
+    "name": "전능한 힘",
+    "description": "보호막 포인트 1당 주는 피해 +1%, 최대 80%까지"
+  },
+  "jokerAmmoSupply": {
+    "name": "탄약 공급",
+    "description": "적 사망 시 탄약 상자 드롭 확률 +5%"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "반중력 투하",
+    "description": "적 사망 시 반중력 지역이 생성될 확률 +2%"
+  },
+  "jokerApprentice": {
+    "name": "견습생",
+    "description": "주문 재사용 대기시간 -10%"
+  },
+  "jokerAvalanche": {
+    "name": "눈사태",
+    "description": "보호막이 있는 동안 주는 피해 +15%"
+  },
+  "jokerBardbarian": {
+    "name": "야만적인 음유시인",
+    "description": "내려찍기 공격을 길게 누를수록 더 강력한 일격 발동"
+  },
+  "jokerBattleMage": {
+    "name": "배틀메이지",
+    "description": "적 처치 시 진행 중인 모든 주문 재사용 대기시간 0.5% 감소"
+  },
+  "jokerBellShot": {
+    "name": "종 샷",
+    "description": "약점 타격으로 치유의 유령 종을 소환할 확률 +5%"
+  },
+  "jokerBerserker": {
+    "name": "버서커",
+    "description": "체력이 낮아질수록 근접 피해 증가, 최대 +50%까지"
+  },
+  "jokerBloodLust": {
+    "name": "피의 갈망",
+    "description": "근접 공격으로 처치 시 5초 동안 근접 공격 속도 +5% 중첩, 최대 +50%까지"
+  },
+  "jokerBouncingBall": {
+    "name": "튀어오르는 공",
+    "description": "공중 피해 +15%"
+  },
+  "jokerBracing": {
+    "name": "만반의 대비",
+    "description": "공격 속도 및 재장전 속도 +5%"
+  },
+  "jokerCactusDay": {
+    "name": "선인장의 날",
+    "description": "적 사망 시 지뢰선인장이 생성될 확률 +5%"
+  },
+  "jokerCamper": {
+    "name": "캠퍼",
+    "description": "가만히 서 있는 동안 탄약을 소모하지 않을 확률 +50%"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "자잘한 속임수",
+    "description": "기본 재사용 대기시간 35초 이하 주문 재사용 대기시간 25% 감소"
+  },
+  "jokerCarePackage": {
+    "name": "구호품",
+    "description": "유틸리티 탄약 +1"
+  },
+  "jokerCastAway": {
+    "name": "연속 시전",
+    "description": "주문을 시전하면 다른 주문의 재사용 대기시간 3초 감소 (최소 4초)"
+  },
+  "jokerCdrAcid": {
+    "name": "산성 마스터",
+    "description": "장착한 산성 주문 개수당 산성 재사용 대기시간 -10%"
+  },
+  "jokerCdrCactus": {
+    "name": "선인장 마스터",
+    "description": "장착한 선인장 주문 개수당 선인장 재사용 대기시간 -10%"
+  },
+  "jokerCdrElec": {
+    "name": "전기 마스터",
+    "description": "장착한 전기 주문 개수당 전기 재사용 대기시간 -10%"
+  },
+  "jokerCdrFire": {
+    "name": "화염 마스터",
+    "description": "장착한 화염 주문 개수당 화염 재사용 대기시간 -10%"
+  },
+  "jokerCdrFrost": {
+    "name": "서리 마스터",
+    "description": "장착한 서리 주문 개수당 서리 재사용 대기시간 -10%"
+  },
+  "jokerCdrVoodoo": {
+    "name": "부두 마스터",
+    "description": "장착한 부두 주문 개수당 부두 재사용 대기시간 -10%"
+  },
+  "jokerChad": {
+    "name": "상남자",
+    "description": "떠돌이 상인 위치 공개 시 20% 할인. 정당한 보상"
+  },
+  "jokerCheapSkate": {
+    "name": "구두쇠",
+    "description": "임무 인벤토리에 있는 골드 20당 체력 +1 획득, 최대 +15까지"
+  },
+  "jokerChickshot": {
+    "name": "닭샷",
+    "description": "공격 시 닭 울음소리가 날 확률 +50%. 쓸모없음!"
+  },
+  "jokerChonky": {
+    "name": "똥똥",
+    "description": "피해 +20%, 대신 중력 +15%"
+  },
+  "jokerChonkyThrow": {
+    "name": "통통한 던지기",
+    "description": "부메랑의 크기가 두 배 더 크며 보호막을 통과함"
+  },
+  "jokerClutch": {
+    "name": "막판 뒤집기",
+    "description": "탄창 마지막에 폭발성 총알 +2발"
+  },
+  "jokerCoinFlip": {
+    "name": "동전 던지기",
+    "description": "10초마다 동전을 던짐. 무기 피해 +100% 또는 -50%"
+  },
+  "jokerColdBlooded": {
+    "name": "냉혈한",
+    "description": "근접 공격으로 적을 얼림 (적 1명당 보호막 포인트 3 소모)"
+  },
+  "jokerConsumer": {
+    "name": "소비자",
+    "description": "무기 피해 +25%, 대신 재장전 시 사용하지 않은 탄약 버림"
+  },
+  "jokerCrackShot": {
+    "name": "백발백중",
+    "description": "피해 +7%"
+  },
+  "jokerDeadlyStrong": {
+    "name": "뒤지게 강함",
+    "description": "죽은 유령 상태 이동 속도 증가 및 피해량 증가"
+  },
+  "jokerDeathsDance": {
+    "name": "죽음의 무도",
+    "description": "보호막이 줄어드는 속도 30% 감소"
+  },
+  "jokerDestroyer": {
+    "name": "파괴자",
+    "description": "클립의 처음 25%는 피해 +20%"
+  },
+  "jokerDisgrace": {
+    "name": "불명예",
+    "description": "이동 속도 +30% 증가. 말의 동행 거부 상태"
+  },
+  "jokerDoubleDown": {
+    "name": "더블 다운",
+    "description": "모든 경로에서 얻는 보호막 포인트 +30%"
+  },
+  "jokerDwarf": {
+    "name": "드워프",
+    "description": "크기가 작아지며 이동 속도 및 공격 속도가 증가하고 중력이 감소함"
+  },
+  "jokerEagleLever": {
+    "name": "이글 레버",
+    "description": "빗맞히지 않고 연속 사격 시 피해 +10%, 최대 +50% 중첩"
+  },
+  "jokerEatAPunch": {
+    "name": "주먹 냠냠",
+    "description": "근접 공격으로 처치 시 체력 2 회복"
+  },
+  "jokerEcoTrick": {
+    "name": "에코 트릭",
+    "description": "재장전 시 탄약이 낭비되지 않음"
+  },
+  "jokerElementalSpin": {
+    "name": "원소의 스핀",
+    "description": "미니건이 30% 확률로 일반 총알 대신 무작위 원소 총알 발사"
+  },
+  "jokerExecute": {
+    "name": "처형",
+    "description": "체력 20% 미만의 적을 공격하여 즉시 처치 (정예 및 보스 제외)"
+  },
+  "jokerExplosiveRounds": {
+    "name": "폭발성 공격 (화염)",
+    "description": "적중 시 폭발(화염)을 일으킬 확률 +5%"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "폭발성 공격 (산성)",
+    "description": "적중 시 폭발(산성)을 일으킬 확률 +5%"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "폭발성 공격 (전기)",
+    "description": "적중 시 폭발(전기)을 일으킬 확률 +5%"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "폭발성 공격 (서리)",
+    "description": "적중 시 폭발(서리)을 일으킬 확률 +5%"
+  },
+  "jokerExtraDash": {
+    "name": "추가 대시",
+    "description": "대시 +1"
+  },
+  "jokerExtraJump": {
+    "name": "추가 점프",
+    "description": "점프 +1"
+  },
+  "jokerFanningAce": {
+    "name": "연속 발사 에이스",
+    "description": "재장전 도중 적절한 순간에 모든 탄환을 연쇄 발사함"
+  },
+  "jokerFastDraw": {
+    "name": "스위치샷",
+    "description": "무기를 장착한 후 첫 공격 적중 시 피해 +30%"
+  },
+  "jokerFastHands": {
+    "name": "신속한 손길",
+    "description": "재장전 속도 +20%"
+  },
+  "jokerFightOrFlight": {
+    "name": "생존 반응",
+    "description": "피해를 받고 체력이 깎이면 3초 동안 근접 공격 속도 +20%"
+  },
+  "jokerFistFight": {
+    "name": "주먹싸움",
+    "description": "맨손 공격의 위력이 더 강해짐"
+  },
+  "jokerFistRage": {
+    "name": "분노의 주먹",
+    "description": "피해를 받으면 충전이 쌓여 2초 동안 공격 속도 +30%"
+  },
+  "jokerFistRoDah": {
+    "name": "주먹 로 다",
+    "description": "충전 공격이 플레이어를 뒤로 밀어내고, 20% 확률로 적에게 서리를 적용함"
+  },
+  "jokerFocusShot": {
+    "name": "포커스 샷",
+    "description": "약점을 타격할 때마다 주문 재사용 대기시간 2초 감소"
+  },
+  "jokerFocusedFeet": {
+    "name": "속사",
+    "description": "조준 시 공격 속도 +10%"
+  },
+  "jokerFreeCocktail": {
+    "name": "공짜 칵테일",
+    "description": "빈 클립 재장전 시 체력 2 회복"
+  },
+  "jokerFreezeOver": {
+    "name": "최후의 보루",
+    "description": "체력이 25%에 도달하면, 보호막 +50 부여 (재사용 대기시간: 60초)"
+  },
+  "jokerFrenzySpin": {
+    "name": "광란의 스핀",
+    "description": "처치 카운터 10 초과 시 미니건 두 배 빠르게 발사"
+  },
+  "jokerFrostBite": {
+    "name": "동상",
+    "description": "얼어붙은 적을 근접 공격으로 처치 시 보호막 포인트 2 획득"
+  },
+  "jokerGiant": {
+    "name": "거인",
+    "description": "거대한 몸으로 변신. 체력, 무기 피해 증가 및 주문 재사용 대기시간 감소"
+  },
+  "jokerGlassCannon": {
+    "name": "유리 대포",
+    "description": "무기 및 근접 피해 +40%, 대신 체력 -25%"
+  },
+  "jokerGoldProspector": {
+    "name": "금 탐사자",
+    "description": "임무 종료 시 획득 골드 20% 증가"
+  },
+  "jokerGoldTooth": {
+    "name": "금니",
+    "description": "적 사망 시 금덩어리 1개 드롭 확률 +10%"
+  },
+  "jokerGoliath": {
+    "name": "골리앗",
+    "description": "몸집이 커집니다. 체력 +25%"
+  },
+  "jokerGreatWall": {
+    "name": "만리장성",
+    "description": "보호막이 있는 동안 받는 모든 피해 10% 감소"
+  },
+  "jokerHeadBang": {
+    "name": "헤드뱅잉",
+    "description": "약점에 대한 피해 +30%"
+  },
+  "jokerHeadshotRefund": {
+    "name": "약점 타격 회수",
+    "description": "약점 타격 후 탄약을 되찾을 확률 +20%"
+  },
+  "jokerHealthyBoi": {
+    "name": "체력 만땅",
+    "description": "체력이 최대일 때 이동 속도, 재장전 속도, 공격 속도 +20%"
+  },
+  "jokerHeavyDrinker": {
+    "name": "술고래",
+    "description": "회복 물약 효과가 25% 증가"
+  },
+  "jokerHeavyWeapon": {
+    "name": "중화기",
+    "description": "피해 +10%, 대신 무기가 활성화된 동안 중력 +30%"
+  },
+  "jokerHelpingHand": {
+    "name": "도움의 손길",
+    "description": "아군을 두 배 빠르게 부활 가능"
+  },
+  "jokerHitMe": {
+    "name": "때려 봐",
+    "description": "피격 후 20초 동안 초당 0.75 체력 회복"
+  },
+  "jokerHoarder": {
+    "name": "호더",
+    "description": "조커 수집 시 또 다른 무작위 조커가 나타날 확률 +15%"
+  },
+  "jokerHomingBurst": {
+    "name": "유탄 발사",
+    "description": "총알을 8발 발사할 때마다 주변 적에게 유도 탄환 2발 발사"
+  },
+  "jokerHop": {
+    "name": "깡총",
+    "description": "점프 높이 +20%"
+  },
+  "jokerJokheal": {
+    "name": "메디카드",
+    "description": "조커 획득 시 추가로 체력 +35 치유"
+  },
+  "jokerJumpStar": {
+    "name": "점프 스타",
+    "description": "보안관 별을 들고 있을 때 점프 +2"
+  },
+  "jokerKnuckleDown": {
+    "name": "주먹 불끈",
+    "description": "근접 피해 +10%"
+  },
+  "jokerLastDance": {
+    "name": "라스트 댄스",
+    "description": "최대 체력의 30% 이하일 때 이동 속도 +30%"
+  },
+  "jokerLastStand": {
+    "name": "최후의 저항",
+    "description": "최대 체력의 30% 이하일 때 받는 피해 -30% 및 근접 생명력 흡수 10% 증가"
+  },
+  "jokerLazy": {
+    "name": "게으름",
+    "description": "탄약 픽업 비활성화. 12초마다 최대 탄약의 10% 회복"
+  },
+  "jokerLifePact": {
+    "name": "생명의 대가",
+    "description": "처치 시 체력이 2 회복되지만 최대 체력 30% 감소"
+  },
+  "jokerLightWeight": {
+    "name": "가벼운 몸",
+    "description": "중력 -5%"
+  },
+  "jokerLingeringThrow": {
+    "name": "시간 끌어 던지기",
+    "description": "잔류 시간을 두 배로 늘립니다. 잔류 시간 업그레이드와 결합됩니다"
+  },
+  "jokerLowGravity": {
+    "name": "달의 중력",
+    "description": "중력 -25%"
+  },
+  "jokerLuckyStrike": {
+    "name": "행운의 일격",
+    "description": "적중 시마다 두 배의 피해를 줄 확률 +10%"
+  },
+  "jokerLullabard": {
+    "name": "잠재우는 음유시인",
+    "description": "적중 시마다 선율 1개 추가 획득 및 회복 범위 확대, 대신 내려찍기 공격 상실"
+  },
+  "jokerLunge": {
+    "name": "런지",
+    "description": "근접 공격 범위 및 히트박스 크기 +15%"
+  },
+  "jokerMachineGun": {
+    "name": "기관총",
+    "description": "매 임무에서 50 피해를 줄 때마다 무기의 공격 속도 +0.3%"
+  },
+  "jokerMagicFriendship": {
+    "name": "마법의 우정",
+    "description": "아군 근처에 있는 동안 지속적으로 체력 회복"
+  },
+  "jokerMagicReload": {
+    "name": "마법 재장전",
+    "description": "주문 시전한 후 자동으로 무기 재장전"
+  },
+  "jokerMarkAce": {
+    "name": "마크 에이스",
+    "description": "총알이 5초 동안 적에게 표식을 남기며, 표식이 있는 적이 받는 피해 +15%"
+  },
+  "jokerMindShot": {
+    "name": "마인드샷",
+    "description": "약점 적중 시 폭발함"
+  },
+  "jokerOneTrick": {
+    "name": "조커 트릭",
+    "description": "무기에 장착된 조커의 희귀도 종류 1개당 피해 및 공격 속도 +7%"
+  },
+  "jokerOverBlast": {
+    "name": "오버블라스트",
+    "description": "탄창에 탄환이 4발 빠질 때마다 추가 펠릿 1발 발사"
+  },
+  "jokerOverDraw": {
+    "name": "오버드로",
+    "description": "2초 동안 충전하여 부채꼴 모양으로 화살 3발 발사. 공격 속도에 따라 충전 시간 감소"
+  },
+  "jokerPanicAttack": {
+    "name": "패닉 공격",
+    "description": "체력 피해를 받으면 3초 동안 주는 피해 +20%"
+  },
+  "jokerPartyShot": {
+    "name": "파티 샷",
+    "description": "약점 타격으로 색종이 조각을 날릴 확률 +50%. 쓸모없음!"
+  },
+  "jokerPewPewPew": {
+    "name": "뿅뿅뿅",
+    "description": "공격 속도 +20%"
+  },
+  "jokerPickPick": {
+    "name": "곡괭이 소환",
+    "description": "적중 시 대상에게 피해를 주는 곡괭이를 생성할 확률 +10%"
+  },
+  "jokerPigshot": {
+    "name": "돼지샷",
+    "description": "적중 시 돼지를 생성할 확률 +5%. 돼지를 공격하면 폭발함"
+  },
+  "jokerPlasticDuck": {
+    "name": "고무 오리",
+    "description": "걸으면 고무 오리 소리 발생. 쓸모없음!"
+  },
+  "jokerPreciousRush": {
+    "name": "귀중품 러시",
+    "description": "적 사망 시 이동 속도를 높여 주는 고리가 생성될 확률 +10%"
+  },
+  "jokerPricklyPear": {
+    "name": "선인장 열매",
+    "description": "체력 피해를 받으면 공격자에게 같은 피해 +15를 되돌려 줌"
+  },
+  "jokerQuickDraw": {
+    "name": "빨리 뽑기",
+    "description": "교체 속도 +40%"
+  },
+  "jokerRage": {
+    "name": "분노",
+    "description": "체력이 25%에 도달하면, 근처 적을 태우는 파동 방출 (재사용 대기시간: 60초)"
+  },
+  "jokerRampage": {
+    "name": "광분",
+    "description": "처치 시 10초 동안 재장전 속도 +5%, 최대 100%까지"
+  },
+  "jokerRelentless": {
+    "name": "불굴",
+    "description": "최대 체력의 30% 이하일 때 피해 +30%"
+  },
+  "jokerReloadMastery": {
+    "name": "재장전 마스터",
+    "description": "빈 클립 재장전 속도 50% 증가"
+  },
+  "jokerRicochet": {
+    "name": "유탄",
+    "description": "발사된 총알이 튕겨 나가 30% 확률로 근처 적에게 자동 명중"
+  },
+  "jokerRiposte": {
+    "name": "반격",
+    "description": "보호막이 공격을 흡수한 후 다음 공격 피해 +100%"
+  },
+  "jokerRunAndGun": {
+    "name": "런 앤 건",
+    "description": "사격 시 이동 속도 +30%"
+  },
+  "jokerRunAndReload": {
+    "name": "런 앤 리로드",
+    "description": "재장전 시 이동 속도 +50%"
+  },
+  "jokerRushBlast": {
+    "name": "돌진 발사",
+    "description": "탄창에서 처음 발사하는 3발의 총알은 100% 명중률로 더 멀리 날아감"
+  },
+  "jokerScavengerStar": {
+    "name": "스캐빈저 스타",
+    "description": "집기 범위 +100%. 보안관 별을 들고 있을 때 이동 속도 +30%"
+  },
+  "jokerScoutsHonor": {
+    "name": "명예를 걸고",
+    "description": "10초 동안 피해를 받지 않으면 보호막이 최소 10포인트로 유지됨"
+  },
+  "jokerScrubBullet": {
+    "name": "정화 타격",
+    "description": "주무기가 적의 원소를 제거하여 즉시 10의 피해 적용"
+  },
+  "jokerSecondWind": {
+    "name": "원기 회복",
+    "description": "치명타 적중 시 죽는 대신 체력 50 회복 (재사용 대기시간: 180초)"
+  },
+  "jokerSharpShooter": {
+    "name": "명사수",
+    "description": "약점 피해 +20%"
+  },
+  "jokerShineBright": {
+    "name": "자체발광",
+    "description": "영웅 광채 +50%. 빛나는 상태! 쓸모없음!"
+  },
+  "jokerShroomGrave": {
+    "name": "버섯 무덤",
+    "description": "적 사망 시 버섯이 생성될 확률 +10%"
+  },
+  "jokerSkyLash": {
+    "name": "하늘 후리기",
+    "description": "충전 공격이 이동 속도를 50% 증가시키고 하늘을 날 수 있게 함"
+  },
+  "jokerSlowAndSteady": {
+    "name": "느려도 확실하게",
+    "description": "명중률 +25%, 대신 공격 속도 -10%"
+  },
+  "jokerSnackAPunch": {
+    "name": "주먹 간식",
+    "description": "근접 공격으로 처치 시 보호막 포인트 1 획득"
+  },
+  "jokerSoulEater": {
+    "name": "소울 이터",
+    "description": "영혼 획득 시 5초 동안 피해 및 재장전 속도 +20%"
+  },
+  "jokerSoulReaper": {
+    "name": "소울 리퍼",
+    "description": "임무 종료 시 획득 영혼 20% 증가"
+  },
+  "jokerSoulSiphon": {
+    "name": "영혼 흡수",
+    "description": "집기 거리 증가, 영혼을 집을 때 체력 +2 치유"
+  },
+  "jokerSpareBullets": {
+    "name": "여분 탄약",
+    "description": "탄약 가방 +10%"
+  },
+  "jokerSpeedster": {
+    "name": "스피드스터",
+    "description": "보너스 이동 속도 3%당 피해 및 공격 속도 +1%, 최대 +40%까지"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "재빠른 건잘레스",
+    "description": "이동 속도 +10%"
+  },
+  "jokerSpellLash": {
+    "name": "주문 후리기",
+    "description": "주문을 시전하면 충전 게이지가 즉시 가득 참"
+  },
+  "jokerSpellRoulette": {
+    "name": "주문 룰렛",
+    "description": "주문 재사용 대기시간 -20%, 대신 주문을 시전할 때마다 무작위로 선택됨"
+  },
+  "jokerStackedLever": {
+    "name": "누적 레버",
+    "description": "처치 시 예비 탄약 2발을 즉시 장전합니다"
+  },
+  "jokerStonks": {
+    "name": "개이득",
+    "description": "상자를 열 때 무작위 조커 획득 확률 +20%"
+  },
+  "jokerSwampTrick": {
+    "name": "늪 트릭",
+    "description": "재장전 폭발이 지면에 웅덩이를 남김"
+  },
+  "jokerThickSkin": {
+    "name": "두꺼운 가죽",
+    "description": "받는 모든 피해 -20%, 회복량 -30%"
+  },
+  "jokerTinMan": {
+    "name": "양철 인간",
+    "description": "초과 회복량이 보호막 포인트로 전환됨, 최대 보호막 포인트 +15까지"
+  },
+  "jokerToolBox": {
+    "name": "도구 상자",
+    "description": "유틸리티 집기 비활성화. 90초 후 유틸리티가 자동으로 재충전됨"
+  },
+  "jokerTweakDealer": {
+    "name": "조커 딜러",
+    "description": "활성화된 조커 하나당 체력 +1 획득"
+  },
+  "jokerUltraDraw": {
+    "name": "울트라 드로",
+    "description": "4초 동안 충전하여 거대한 폭발 화살 발사. 공격 속도에 따라 충전 시간 감소"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "명중률"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "잔류 시간"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "범위 공격"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "클립 크기"
+  },
+  "jokerUpgradeDamage": {
+    "name": "피해"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "장비 준비 속도"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "공격 속도"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "공격 속도"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "공격 속도"
+  },
+  "jokerUpgradeHeal": {
+    "name": "체력"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "속도"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "점프 높이"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "생명력 흡수"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "재장전 속도"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "집기 범위"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "주문 재사용 대기시간 감소"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "탄약 가방"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "탄약 가방"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "범위 공격"
+  },
+  "jokerVampire": {
+    "name": "흡혈귀",
+    "description": "무기에 생명력 흡수 +4% 적용"
+  },
+  "jokerWeakLink": {
+    "name": "약점",
+    "description": "약점 공격 피해 +35%, 대신 일반 공격 피해 -20%"
+  },
+  "jokerWellFed": {
+    "name": "포식",
+    "description": "체력 +5"
+  },
+  "jokerWestWizard": {
+    "name": "서쪽 마법사",
+    "description": "주문 재사용 대기시간 -30%, 대신 체력 -30%"
+  }
+}

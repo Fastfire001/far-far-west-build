@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "Acide",
+    "description": "Offensif - Ralentissez les ennemis et corrodez le champ de bataille"
+  },
+  "itemBanjo": {
+    "name": "Banjo",
+    "description": "Attaques lentes et faibles, avec un pouvoir de soin.\nParfait pour soigner vos alliés tout en leur explosant les tympans."
+  },
+  "itemBoomerang": {
+    "name": "Boomerang",
+    "description": "Il part, il harcèle, il revient. \nPas de munitions, juste de la violence écoresponsable."
+  },
+  "itemBow": {
+    "name": "Arc",
+    "description": "Des flèches en carton en tir rapide, une ogive en tir chargé. \nParfait pour compenser votre manque de talent par de grosses explosions."
+  },
+  "itemCactus": {
+    "name": "Cactus",
+    "description": "Utilitaire - Contrôlez le champ de bataille en invoquant des cactus"
+  },
+  "itemDualRevolver": {
+    "name": "Revolvers doubles",
+    "description": "Cadence folle, précision zéro. \nHeureusement, leur rechargement transforme ces deux babioles en feux d'artifice du 14 juillet."
+  },
+  "itemElec": {
+    "name": "Élec",
+    "description": "Utilitaire - Déplacez-vous vite et foudroyez les ennemis"
+  },
+  "itemFire": {
+    "name": "Pyro",
+    "description": "Offensif - Brûlez les ennemis et embrasez le sol"
+  },
+  "itemIce": {
+    "name": "Givre",
+    "description": "Défensif - Gelez les ennemis et renforcez votre bouclier"
+  },
+  "itemKnuckles": {
+    "name": "Poings américains",
+    "description": "Courte portée, gros impact.\nNe nécessite ni munitions, ni visée, ni réflexion."
+  },
+  "itemLasso": {
+    "name": "Lasso",
+    "description": "Fouette rapidement les ennemis, avec une portée correcte.\nCertains en redemandent, et pas par rancune."
+  },
+  "itemLongRanger": {
+    "name": "Long Ranger",
+    "description": "Précision chirurgicale et balles perforantes. \nSi vous ratez, c'est l'honneur de toute une lignée d'armuriers que vous piétinez. Pas de pression."
+  },
+  "itemMinigun": {
+    "name": "Minigun",
+    "description": "Crache des balles en continu. \nC'est comme la raclette : une fois qu'on a commencé, c'est lâche de s'arrêter avant la fin."
+  },
+  "itemPistol": {
+    "name": "Revolver",
+    "description": "Fiable partout, excellent nulle part. \nUne arme qui se contente du minimum syndical, pile au niveau de votre ambition."
+  },
+  "itemQuadCylinder": {
+    "name": "Quad Barillet",
+    "description": "L'excellence de la banalité. \nIl fait son travail avec une telle régularité que ça rend vos échecs personnels d'autant plus visibles."
+  },
+  "itemSheriffStar": {
+    "name": "Étoile de Shérif",
+    "description": "Se lance à grande vitesse et tranche net les ennemis. \nLa justice n'a jamais demandé aussi peu d'efforts."
+  },
+  "itemShotgun": {
+    "name": "Fusil à pompe",
+    "description": "Une cadence record, un rechargement cartouche par cartouche et une dispersion digne d'un arrosoir. \nEnfin une arme qui s'adapte à votre précision !"
+  },
+  "itemSpellAcidBubble": {
+    "name": "Bubulle",
+    "description": "Lancez une grosse bulle d'acide qui éclate à l'impact et crée plusieurs flaques d'acide."
+  },
+  "itemSpellAcidContagion": {
+    "name": "Contagion",
+    "description": "Corrodez tous les ennemis dans une large zone et appliquez Contagion, les faisant exploser à leur mort."
+  },
+  "itemSpellAcidGeyser": {
+    "name": "Geyser",
+    "description": "Invoquez un geyser d'acide qui jaillit à l'impact."
+  },
+  "itemSpellAcidRain": {
+    "name": "Pluie",
+    "description": "Faites tomber une pluie d'acide qui corrode les ennemis dans une large zone."
+  },
+  "itemSpellAcidThrower": {
+    "name": "Pulvérisateur",
+    "description": "Crachez des jets d'acide qui laissent des flaques corrosives au sol."
+  },
+  "itemSpellCactusBetty": {
+    "name": "Mino",
+    "description": "Invoquez une mine cactus qui explose au contact."
+  },
+  "itemSpellCactusDecoy": {
+    "name": "Leurro",
+    "description": "Invoquez un cactus dansant qui attire les ennemis avant d'exploser."
+  },
+  "itemSpellCactusTurret": {
+    "name": "Pistolero",
+    "description": "Invoquez une tourelle cactus qui tire en continu sur les ennemis proches."
+  },
+  "itemSpellCactusUlti": {
+    "name": "Bandito",
+    "description": "Invoquez un puissant golem-cactus qui combat pour vous pendant un certain temps."
+  },
+  "itemSpellCactusWall": {
+    "name": "Muro",
+    "description": "Invoquez des épines de cactus qui blessent et ralentissent les ennemis au contact."
+  },
+  "itemSpellElecPortal": {
+    "name": "Portail",
+    "description": "Faites apparaître jusqu'à deux portails qui téléportent les joueurs et dupliquent les projectiles de sorts."
+  },
+  "itemSpellElecStrike": {
+    "name": "Éclairs",
+    "description": "Lancez une ligne d'éclairs qui foudroie tout sur son passage."
+  },
+  "itemSpellElecSuperJump": {
+    "name": "Boing",
+    "description": "Bondissez instantanément pour échapper à vos ennemis."
+  },
+  "itemSpellElecSwap": {
+    "name": "Permutation",
+    "description": "Permutez avec un ennemi et déclenchez une explosion aux deux positions."
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "Frappe foudroyante",
+    "description": "Élancez-vous, puis plongez pour exploser la zone et déchaîner les éclairs sur vos ennemis."
+  },
+  "itemSpellFireBall": {
+    "name": "Boule de feu",
+    "description": "Lancez une boule de feu qui explose à l'impact et enflamme le sol."
+  },
+  "itemSpellFireBeam": {
+    "name": "Rayon de feu",
+    "description": "Déchaînez un immense rayon de feu qui brûle tout."
+  },
+  "itemSpellFireFingergun": {
+    "name": "Doigts pistolets",
+    "description": "Remplacez votre arme par des doigts enflammés qui tirent des balles de feu explosives."
+  },
+  "itemSpellFireSurcharge": {
+    "name": "Surchauffe",
+    "description": "Brûlez tous les ennemis dans une large zone et faites exploser ceux déjà en feu."
+  },
+  "itemSpellFireWisp": {
+    "name": "Feu follet",
+    "description": "Invoquez un feu follet qui inflige des dégâts de feu bonus, puis saute sur une autre cible quand la première meurt."
+  },
+  "itemSpellIceBlizzard": {
+    "name": "Blizzard",
+    "description": "Invoquez un blizzard qui vous suit, inflige des dégâts à tous les ennemis et octroie un bouclier aux alliés."
+  },
+  "itemSpellIceBreeze": {
+    "name": "Brise",
+    "description": "Invoquez une brise qui gèle les ennemis dans un large cône."
+  },
+  "itemSpellIceCube": {
+    "name": "Cube",
+    "description": "Transformez un allié ou vous-même en cube de givre invulnérable."
+  },
+  "itemSpellIceGlaze": {
+    "name": "Glaçage",
+    "description": "Libérez une déflagration qui inflige des dégâts aux ennemis proches et octroie un bouclier aux alliés proches."
+  },
+  "itemSpellIceLance": {
+    "name": "Pont",
+    "description": "Invoquez un pont qui octroie un bouclier aux alliés qui le traversent."
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "Corruption",
+    "description": "Canalisez une poupée qui corrompt les ennemis et les fait se battre pour vous."
+  },
+  "itemSpellVoodooDoll": {
+    "name": "Poupée",
+    "description": "Invoquez une poupée qui confère invincibilité et grande vitesse aux alliés dans sa zone."
+  },
+  "itemSpellVoodooDrain": {
+    "name": "Drain",
+    "description": "Ordonnez à votre poupée de drainer la vie d'un ennemi."
+  },
+  "itemSpellVoodooHeal": {
+    "name": "Rescousse",
+    "description": "Canalisez le pouvoir de votre poupée pour soigner ou réanimer l'allié le plus proche."
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "Rituel",
+    "description": "Invoquez un cercle de bougies qui restaure la santé des alliés qu'il illumine."
+  },
+  "itemUtilityAmmo": {
+    "name": "Pack de munitions",
+    "description": "Explose et libère des munitions. \nPlus de joueurs veut dire plus de balles, c'est donc la meilleure façon de rentabiliser une cousinade."
+  },
+  "itemUtilityBottleCrate": {
+    "name": "Caisse de bouteilles",
+    "description": "Explose en bouteilles de soin.\nDe quoi faire de vous le cowboy le plus populaire du saloon."
+  },
+  "itemUtilityHealBottle": {
+    "name": "Zone de soin",
+    "description": "Explose à l'impact et crée une zone de soin. \nSent la vieille soupe rance, comme tout bon remède de grand-mère."
+  },
+  "itemUtilityImpulse": {
+    "name": "Grenade à impulsion",
+    "description": "Génère périodiquement des ondes de choc qui repoussent les joueurs. \nVous permet d'atteindre des sommets que votre niveau de jeu n'atteindra jamais."
+  },
+  "itemVoodoo": {
+    "name": "Vaudou",
+    "description": "Utilitaire - Drainez la vie des ennemis et soutenez les alliés"
+  },
+  "itemWinchester": {
+    "name": "Carabine",
+    "description": "Carabine à levier vive et précise, avec recharges à l'ancienne. \nAutrefois utilisée pour gagner des poissons rouges maladifs à la kermesse, elle remporte aujourd'hui des fusillades."
+  },
+  "jokerAimingBurst": {
+    "name": "RAFALE PRÉCISE",
+    "description": "+30 % de dégâts aux points faibles et balles perforantes en mode visée"
+  },
+  "jokerAllMighty": {
+    "name": "TOUT-PUISSANT",
+    "description": "Gagnez +1 % de dégâts par PB, jusqu'à 80 %"
+  },
+  "jokerAmmoSupply": {
+    "name": "RAVITAILLEMENT",
+    "description": "+5 % de chances d'obtenir une boîte de munitions à la mort des ennemis"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "ANTIGRAVITÉ",
+    "description": "+2 % de chances d'invoquer une zone d'antigravité quand un ennemi meurt"
+  },
+  "jokerApprentice": {
+    "name": "APPRENTI",
+    "description": "-10 % de temps de recharge des sorts"
+  },
+  "jokerAvalanche": {
+    "name": "AVALANCHE",
+    "description": "+15 % de dégâts tant que vous avez un bouclier"
+  },
+  "jokerBardbarian": {
+    "name": "BARBARDE",
+    "description": "Maintenez l'attaque au sol plus longtemps pour asséner un coup plus puissant"
+  },
+  "jokerBattleMage": {
+    "name": "MAGE BARBARE",
+    "description": "Tuer un ennemi réduit de 0,5 % tous les temps de recharge des sorts en cours"
+  },
+  "jokerBellShot": {
+    "name": "CLOCHE DE SECOURS",
+    "description": "+5 % de chances d'invoquer une cloche fantôme curative lors d'un tir sur un point faible"
+  },
+  "jokerBerserker": {
+    "name": "BERSERKER",
+    "description": "Gagnez jusqu'à +50 % de dégâts de corps à corps à mesure que vos PV diminuent"
+  },
+  "jokerBloodLust": {
+    "name": "SOIF DE SANG",
+    "description": "Les éliminations au corps à corps confèrent +5 % de vitesse de frappe cumulables pendant 5 sec., jusqu'à +50 %"
+  },
+  "jokerBouncingBall": {
+    "name": "BALLE REBONDISSANTE",
+    "description": "+15 % de dégâts dans les airs"
+  },
+  "jokerBracing": {
+    "name": "TONIFIANT",
+    "description": "+5 % de vitesse d'attaque et de rechargement"
+  },
+  "jokerCactusDay": {
+    "name": "JOUR DU CACTUS",
+    "description": "+5 % de chances qu'un Cactus Mino apparaisse quand un ennemi meurt"
+  },
+  "jokerCamper": {
+    "name": "CAMPOUZE",
+    "description": "+50 % de chances de ne pas consommer de munition en restant immobile"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "FAN DE SORTILÈGES",
+    "description": "Les sorts avec un temps de recharge de base de 35 s ou moins gagnent -25 % de temps de recharge"
+  },
+  "jokerCarePackage": {
+    "name": "COLIS STRATÉGIQUE",
+    "description": "+1 munition utilitaire"
+  },
+  "jokerCastAway": {
+    "name": "CADENCE ARCANE",
+    "description": "Lancer un sort réduit le temps de recharge des autres sorts de 3 sec., jusqu'à un minimum de 4 sec."
+  },
+  "jokerCdrAcid": {
+    "name": "MAÎTRISE DE L'ACIDE",
+    "description": "-10 % de temps de recharge d'Acide par sort d'Acide équipé"
+  },
+  "jokerCdrCactus": {
+    "name": "MAÎTRISE DU CACTUS",
+    "description": "-10 % de temps de recharge de Cactus par sort de Cactus équipé"
+  },
+  "jokerCdrElec": {
+    "name": "MAÎTRISE DE L'ÉLEC",
+    "description": "-10 % de temps de recharge d'Élec par sort d'Élec équipé"
+  },
+  "jokerCdrFire": {
+    "name": "MAÎTRISE DU PYRO",
+    "description": "-10 % de temps de recharge de Pyro par sort de Pyro équipé"
+  },
+  "jokerCdrFrost": {
+    "name": "MAÎTRISE DU GIVRE",
+    "description": "-10 % de temps de recharge de Givre par sort de Givre équipé"
+  },
+  "jokerCdrVoodoo": {
+    "name": "MAÎTRISE DU VAUDOU",
+    "description": "-10 % de temps de recharge de Vaudou par sort de Vaudou équipé"
+  },
+  "jokerChad": {
+    "name": "CHAD",
+    "description": "Révèle la position de la Marchande itinérante et vous accorde 20 % de réduction. Vous le méritez"
+  },
+  "jokerCheapSkate": {
+    "name": "GROS RADIN",
+    "description": "Gagnez +1 PV tous les 20 or dans votre inventaire de mission, jusqu'à +15 PV"
+  },
+  "jokerChickshot": {
+    "name": "TIR DE POULET",
+    "description": "+50 % de chances que vos attaques fassent des bruits de poulet. Inutile !"
+  },
+  "jokerChonky": {
+    "name": "SAC À PATATES",
+    "description": "+20 % de dégâts, mais +15 % de gravité"
+  },
+  "jokerChonkyThrow": {
+    "name": "JET RONDELET",
+    "description": "Le boomerang est deux fois plus grand et traverse les boucliers"
+  },
+  "jokerClutch": {
+    "name": "CLUTCH",
+    "description": "+2 balles explosives à la fin de votre chargeur"
+  },
+  "jokerCoinFlip": {
+    "name": "PILE OU FACE",
+    "description": "Lancez une pièce toutes les 10 sec. Vous infligez +100 % ou -50 % de dégâts d'arme"
+  },
+  "jokerColdBlooded": {
+    "name": "SANG-FROID",
+    "description": "Vos coups de corps à corps gèlent les ennemis et consomment 3 PB par ennemi"
+  },
+  "jokerConsumer": {
+    "name": "GOINFRE",
+    "description": "Confère +25 % de dégâts d'arme, mais recharger gaspille désormais les munitions non utilisées"
+  },
+  "jokerCrackShot": {
+    "name": "BON PETIT TIREUR",
+    "description": "+7 % de dégâts"
+  },
+  "jokerDeadlyStrong": {
+    "name": "MORTELLEMENT FORT",
+    "description": "Déplacez-vous plus vite et infligez plus de dégâts en tant que fantôme"
+  },
+  "jokerDeathsDance": {
+    "name": "DANSE MACABRE",
+    "description": "Votre bouclier se vide 30 % moins vite"
+  },
+  "jokerDestroyer": {
+    "name": "DÉMOLISSEUR",
+    "description": "Les premiers 25 % de votre chargeur infligent +20 % de dégâts"
+  },
+  "jokerDisgrace": {
+    "name": "DÉSHONNEUR",
+    "description": "Gagnez +30 % de vitesse de déplacement. Votre cheval ne veut pas de vous"
+  },
+  "jokerDoubleDown": {
+    "name": "DOUBLE MISE",
+    "description": "Recevez +30 % de PB, toutes sources confondues"
+  },
+  "jokerDwarf": {
+    "name": "GNOME",
+    "description": "Vous êtes petit. Gagnez de la vitesse de déplacement, de la vitesse d'attaque et une gravité réduite"
+  },
+  "jokerEagleLever": {
+    "name": "LEVIER PRÉCIS",
+    "description": "Les tirs consécutifs sans rater confèrent +10 % de dégâts, cumulables jusqu'à +50 %"
+  },
+  "jokerEatAPunch": {
+    "name": "MANGE-BEIGNE",
+    "description": "Les éliminations au corps à corps vous soignent de 2 PV"
+  },
+  "jokerEcoTrick": {
+    "name": "ASTUCE RATUS",
+    "description": "Recharger ne gaspille plus les munitions"
+  },
+  "jokerElementalSpin": {
+    "name": "VRILLE COCKTAIL",
+    "description": "Le minigun a 30 % de chances de tirer une balle élémentaire aléatoire au lieu d'une balle normale"
+  },
+  "jokerExecute": {
+    "name": "GUILLOTINAGE",
+    "description": "Vos coups tuent instantanément les ennemis sous 20 % de PV, sauf les élites et les boss"
+  },
+  "jokerExplosiveRounds": {
+    "name": "COUPS EXPLOSIFS (Pyro)",
+    "description": "+5 % de chances que vos coups provoquent une explosion (Pyro)"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "COUPS EXPLOSIFS (Acide)",
+    "description": "+5 % de chances que vos coups provoquent une explosion (Acide)"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "COUPS EXPLOSIFS (Élec)",
+    "description": "+5 % de chances que vos coups provoquent une explosion (Élec)"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "COUPS EXPLOSIFS (Givre)",
+    "description": "+5 % de chances que vos coups provoquent une explosion (Givre)"
+  },
+  "jokerExtraDash": {
+    "name": "RUÉE BONUS",
+    "description": "+1 ruée"
+  },
+  "jokerExtraJump": {
+    "name": "SAUT BONUS",
+    "description": "+1 saut"
+  },
+  "jokerFanningAce": {
+    "name": "AS ROULETTE",
+    "description": "Tirez au bon moment pendant le rechargement pour enchaîner toutes vos balles"
+  },
+  "jokerFastDraw": {
+    "name": "TIR DE RELÈVE",
+    "description": "Votre premier tir après avoir équipé une arme inflige 30 % de dégâts en plus"
+  },
+  "jokerFastHands": {
+    "name": "MAINS RAPIDES",
+    "description": "+20 % de vitesse de rechargement"
+  },
+  "jokerFightOrFlight": {
+    "name": "INSTINCT DE SURVIE",
+    "description": "Subir des dégâts sur vos PV confère +20 % de vitesse de frappe pendant 3 sec."
+  },
+  "jokerFistFight": {
+    "name": "POING-BOUCHE",
+    "description": "Vos coups de poing sont plus puissants"
+  },
+  "jokerFistRage": {
+    "name": "POING ENRAGÉ",
+    "description": "Subir des dégâts génère de la charge et confère +30 % de vitesse d'attaque pendant 2 sec."
+  },
+  "jokerFistRoDah": {
+    "name": "POING RO DAH",
+    "description": "L'attaque chargée vous propulse en arrière et a 20 % de chances d'appliquer Givre aux ennemis"
+  },
+  "jokerFocusShot": {
+    "name": "TIR SORCIER",
+    "description": "Chaque tir sur un point faible réduit le temps de recharge de vos sorts de 2 sec."
+  },
+  "jokerFocusedFeet": {
+    "name": "PIEDS CALÉS",
+    "description": "+10 % de vitesse d'attaque en visant"
+  },
+  "jokerFreeCocktail": {
+    "name": "COCKTAIL OFFERT",
+    "description": "Recharger un chargeur vide vous soigne de 2 PV"
+  },
+  "jokerFreezeOver": {
+    "name": "DERNIER REMPART",
+    "description": "En atteignant 25 % PV, recevez +50 PB (recharge : 60 s)"
+  },
+  "jokerFrenzySpin": {
+    "name": "VRILLE FRÉNÉSIE",
+    "description": "Lorsque votre décompte de victimes dépasse 10, le minigun tire deux fois plus vite"
+  },
+  "jokerFrostBite": {
+    "name": "MORSURE DE GIVRE",
+    "description": "Les éliminations au corps à corps sur des ennemis gelés confèrent 2 PB"
+  },
+  "jokerGiant": {
+    "name": "GÉANT",
+    "description": "Vous êtes grand. Gagnez de la santé, des dégâts d'arme et de la réduction du temps de recharge des sorts"
+  },
+  "jokerGlassCannon": {
+    "name": "CANON DE VERRE",
+    "description": "+40 % de dégâts d'arme et de corps à corps, mais -25 % de PV"
+  },
+  "jokerGoldProspector": {
+    "name": "PLEIN LES POCHES",
+    "description": "Augmente l'or obtenu de 20 % à la fin d'une mission"
+  },
+  "jokerGoldTooth": {
+    "name": "DENT EN OR",
+    "description": "+10 % de chances d'obtenir 1 pépite d'or à la mort des ennemis"
+  },
+  "jokerGoliath": {
+    "name": "GOLIATH",
+    "description": "Vous êtes plus grand. Gagnez +25 % de PV"
+  },
+  "jokerGreatWall": {
+    "name": "GRANDE MURAILLE",
+    "description": "Réduisez tous les dégâts subis de 10 % quand vous avez un bouclier"
+  },
+  "jokerHeadBang": {
+    "name": "BOURRE-PIF",
+    "description": "Infligez +30 % de dégâts aux points faibles"
+  },
+  "jokerHeadshotRefund": {
+    "name": "EXPLOITATION DE FAIBLESSE",
+    "description": "+20 % de chances de récupérer votre balle lors d'un tir sur un point faible"
+  },
+  "jokerHealthyBoi": {
+    "name": "SOLIDE GAILLARD",
+    "description": "À PV max, gagnez +20 % de vitesse de déplacement, de vitesse de rechargement et de vitesse d'attaque"
+  },
+  "jokerHeavyDrinker": {
+    "name": "PILIER DE BAR",
+    "description": "Les bouteilles de soin sont 25 % plus efficaces sur vous"
+  },
+  "jokerHeavyWeapon": {
+    "name": "ARME LOURDE",
+    "description": "+10 % de dégâts, mais +30 % de gravité tant que l'arme est active"
+  },
+  "jokerHelpingHand": {
+    "name": "COUP DE POUCE",
+    "description": "Vous réanimez vos alliés deux fois plus vite"
+  },
+  "jokerHitMe": {
+    "name": "FRAPPE-MOI",
+    "description": "Subir des dégâts vous soigne de 0,75 PV par seconde pendant 20 sec."
+  },
+  "jokerHoarder": {
+    "name": "ASPIRALOOT",
+    "description": "+15 % de chances que ramasser un joker fasse apparaître un autre joker aléatoire"
+  },
+  "jokerHomingBurst": {
+    "name": "RAFALE CHERCHEUSE",
+    "description": "Tous les 8 tirs, tirez 2 balles autoguidées sur les ennemis proches"
+  },
+  "jokerHop": {
+    "name": "P'TIT BOND",
+    "description": "+20 % de hauteur de saut"
+  },
+  "jokerJokheal": {
+    "name": "MEDICARTE",
+    "description": "Ramasser un joker restaure +35 PV supplémentaires"
+  },
+  "jokerJumpStar": {
+    "name": "ÉTOILE MONTANTE",
+    "description": "+2 sauts en tenant les étoiles de Shérif"
+  },
+  "jokerKnuckleDown": {
+    "name": "POING FINAL",
+    "description": "+10 % de dégâts de corps à corps"
+  },
+  "jokerLastDance": {
+    "name": "DERNIÈRE DANSE",
+    "description": "À 30 % ou moins de vos PV max, gagnez +30 % de vitesse de déplacement"
+  },
+  "jokerLastStand": {
+    "name": "BAROUD D'HONNEUR",
+    "description": "À 30 % ou moins de vos PV max, subissez -30 % de dégâts et gagnez 10 % de vol de vie au corps à corps"
+  },
+  "jokerLazy": {
+    "name": "FEIGNASSE",
+    "description": "Impossible de ramasser des munitions. Regagnez 10 % des munitions max toutes les 12 sec."
+  },
+  "jokerLifePact": {
+    "name": "PACTE SACRIFICIEL",
+    "description": "Tuer un ennemi vous soigne de 2 PV, mais les PV max sont réduits de 30 %"
+  },
+  "jokerLightWeight": {
+    "name": "POIDS PLUME",
+    "description": "-5 % de gravité"
+  },
+  "jokerLingeringThrow": {
+    "name": "JET STAGNANT",
+    "description": "Double le temps sur place. Se combine avec l'amélioration de temps sur place"
+  },
+  "jokerLowGravity": {
+    "name": "GRAVITÉ LUNAIRE",
+    "description": "-25 % de gravité"
+  },
+  "jokerLuckyStrike": {
+    "name": "COUP DE BOL",
+    "description": "+10 % de chances d'infliger des dégâts doublés par tir"
+  },
+  "jokerLullabard": {
+    "name": "BARDOUDOU",
+    "description": "Gagnez un accord supplémentaire par coup et une zone de soin plus large, mais perdez l'attaque au sol"
+  },
+  "jokerLunge": {
+    "name": "FENTE AVANT",
+    "description": "+15 % de portée de corps à corps et de taille de hitbox"
+  },
+  "jokerMachineGun": {
+    "name": "MACHINE DE GUERRE",
+    "description": "Par mission, l'arme gagne +0,3 % de vitesse d'attaque tous les 50 points de dégâts infligés"
+  },
+  "jokerMagicFriendship": {
+    "name": "POUVOIR DE L'AMITIÉ",
+    "description": "Récupérez passivement des PV en restant près d'un allié"
+  },
+  "jokerMagicReload": {
+    "name": "RECHARGE MAGIQUE",
+    "description": "Recharge automatiquement votre arme après avoir lancé un sort"
+  },
+  "jokerMarkAce": {
+    "name": "AS MARQUÉ",
+    "description": "Les balles marquent les ennemis pendant 5 sec. Les ennemis marqués reçoivent +15 % de dégâts"
+  },
+  "jokerMindShot": {
+    "name": "TIR PASTÈQUE",
+    "description": "Les tirs sur les points faibles provoquent une explosion"
+  },
+  "jokerOneTrick": {
+    "name": "TOUR DE PASSE-JOKER",
+    "description": "Gagnez +7 % de dégâts et de vitesse d'attaque pour chaque rareté de joker différente équipée sur l'arme"
+  },
+  "jokerOverBlast": {
+    "name": "BLAST YOLO",
+    "description": "Tire un plomb supplémentaire toutes les 4 munitions manquantes dans le chargeur"
+  },
+  "jokerOverDraw": {
+    "name": "CORDE HÉRISSON",
+    "description": "Chargez pendant 2 sec. pour tirer 3 flèches en cône. La vitesse d'attaque réduit le temps de charge"
+  },
+  "jokerPanicAttack": {
+    "name": "CRISE DE PANIQUE",
+    "description": "Quand vous perdez des PV, gagnez +20 % de dégâts pendant 3 sec."
+  },
+  "jokerPartyShot": {
+    "name": "TIR CONFETTI",
+    "description": "+50 % de chances de faire jaillir des confettis lors d'un tir sur un point faible. Inutile !"
+  },
+  "jokerPewPewPew": {
+    "name": "PAN PAN PAN",
+    "description": "+20 % de vitesse d'attaque"
+  },
+  "jokerPickPick": {
+    "name": "PIOCHE EXPRESS",
+    "description": "+10 % de chances par coup de générer des pioches de dégâts sur la cible"
+  },
+  "jokerPigshot": {
+    "name": "TIR DE GROUIN",
+    "description": "+5 % de chances de générer un cochon à l'impact. Attaquez-les pour les faire exploser"
+  },
+  "jokerPlasticDuck": {
+    "name": "COIN-COIN",
+    "description": "Marcher fait des bruits de canard en plastique. Inutile !"
+  },
+  "jokerPreciousRush": {
+    "name": "RUÉE DU PRÉCIEUX",
+    "description": "+10 % de chances qu'un anneau de vitesse apparaisse quand un ennemi meurt"
+  },
+  "jokerPricklyPear": {
+    "name": "FIGUE DE BARBARIE",
+    "description": "Quand vous perdez des PV, renvoyez les mêmes dégâts +15 à l'attaquant"
+  },
+  "jokerQuickDraw": {
+    "name": "MAIN LESTE",
+    "description": "+40 % de vitesse de changement d'arme"
+  },
+  "jokerRage": {
+    "name": "RAGEUX",
+    "description": "En atteignant 25 % PV, libérez une onde qui brûle les ennemis proches (recharge : 60 s)"
+  },
+  "jokerRampage": {
+    "name": "CARNAGE",
+    "description": "Gagnez 5 % de vitesse de rechargement à chaque élimination pendant 10 sec., jusqu'à 100 %"
+  },
+  "jokerRelentless": {
+    "name": "ACHARNÉ",
+    "description": "À 30 % ou moins de vos PV max, infligez +30 % de dégâts"
+  },
+  "jokerReloadMastery": {
+    "name": "DOIGTS DE FÉE",
+    "description": "Recharger à vide est 50 % plus rapide"
+  },
+  "jokerRicochet": {
+    "name": "RICOCHET",
+    "description": "La balle tirée ricoche, avec 30 % de chances de toucher automatiquement un ennemi proche"
+  },
+  "jokerRiposte": {
+    "name": "RIPOSTE",
+    "description": "Quand votre bouclier absorbe un coup, votre prochaine attaque inflige +100 % de dégâts"
+  },
+  "jokerRunAndGun": {
+    "name": "TIR AU VOL",
+    "description": "+30 % de vitesse de déplacement en tirant"
+  },
+  "jokerRunAndReload": {
+    "name": "RECHARGE AU VOL",
+    "description": "+50 % de vitesse de déplacement en rechargeant"
+  },
+  "jokerRushBlast": {
+    "name": "BLAST TGV",
+    "description": "Les 3 premières balles du chargeur ont 100 % de précision et tirent plus loin"
+  },
+  "jokerScavengerStar": {
+    "name": "ÉTOILE CHAROGNARDE",
+    "description": "+100 % de portée de collecte. +30 % de vitesse de déplacement en tenant l'étoile de Shérif"
+  },
+  "jokerScoutsHonor": {
+    "name": "PAROLE DE SCOUT",
+    "description": "Après 10 sec. sans subir de dégâts, votre bouclier remonte à 10 PB minimum"
+  },
+  "jokerScrubBullet": {
+    "name": "BALLE NETTOYANTE",
+    "description": "Votre arme principale retire les éléments des ennemis pour infliger instantanément 10 dégâts"
+  },
+  "jokerSecondWind": {
+    "name": "SECOND SOUFFLE",
+    "description": "Soigne 50 PV au lieu de mourir d'un coup fatal (temps de recharge : 180 sec.)"
+  },
+  "jokerSharpShooter": {
+    "name": "FRANC-TIREUR",
+    "description": "+20 % de dégâts aux points faibles"
+  },
+  "jokerShineBright": {
+    "name": "MONSIEUR PROPRE",
+    "description": "+50 % de brillance de héros. Tu rayonnes ! Inutile !"
+  },
+  "jokerShroomGrave": {
+    "name": "TOMBE FONGIQUE",
+    "description": "+10 % de chances qu'un champignon apparaisse quand un ennemi meurt"
+  },
+  "jokerSkyLash": {
+    "name": "LASSO HÉLICO",
+    "description": "L'attaque chargée confère +50 % de vitesse de déplacement et vous permet de voler"
+  },
+  "jokerSlowAndSteady": {
+    "name": "TIR DE PRÉCISION",
+    "description": "Gagnez +25 % de précision, mais -10 % de vitesse d'attaque"
+  },
+  "jokerSnackAPunch": {
+    "name": "GRIGNOTE-BEIGNE",
+    "description": "Les éliminations au corps à corps vous confèrent 1 PB"
+  },
+  "jokerSoulEater": {
+    "name": "SOUL EATER",
+    "description": "Ramasser une âme octroie 20 % de dégâts et de vitesse de rechargement pendant 5 sec."
+  },
+  "jokerSoulReaper": {
+    "name": "MOISSONNEUR",
+    "description": "Augmente les âmes obtenues de 20 % à la fin d'une mission"
+  },
+  "jokerSoulSiphon": {
+    "name": "SIPHON SPIRITUEL",
+    "description": "Portée de collecte accrue et restaure +2 PV par âme collectée"
+  },
+  "jokerSpareBullets": {
+    "name": "BALLES DE RÉSERVE",
+    "description": "+10 % de réserve de munitions"
+  },
+  "jokerSpeedster": {
+    "name": "BOLIDE",
+    "description": "+1 % de dégâts et de vitesse d'attaque par tranche de 3 % de vitesse de déplacement bonus, jusqu'à +40 %"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "BIP BIP COWBOY",
+    "description": "+10 % de vitesse de déplacement"
+  },
+  "jokerSpellLash": {
+    "name": "LASSO MERLIN",
+    "description": "Lancer un sort remplit instantanément votre jauge de charge"
+  },
+  "jokerSpellRoulette": {
+    "name": "ROULETTE DE SORTS",
+    "description": "-20 % de temps de recharge des sorts, mais les sorts sont aléatoires à chaque lancement"
+  },
+  "jokerStackedLever": {
+    "name": "LEVIER CHARGÉ",
+    "description": "Rechargez instantanément 2 balles depuis votre réserve après une élimination"
+  },
+  "jokerStonks": {
+    "name": "STONKS",
+    "description": "+20 % de chances qu'ouvrir un coffre vous donne un joker aléatoire"
+  },
+  "jokerSwampTrick": {
+    "name": "ASTUCE GADOUE",
+    "description": "Les explosions de rechargement laissent désormais des flaques au sol"
+  },
+  "jokerThickSkin": {
+    "name": "PEAU DURE",
+    "description": "Réduisez tous les dégâts subis de 20 %, mais recevez -30 % de soins"
+  },
+  "jokerTinMan": {
+    "name": "BOÎTE DE CONSERVE",
+    "description": "Les soins excédentaires sont convertis en PB, jusqu'à +15 PB"
+  },
+  "jokerToolBox": {
+    "name": "BOÎTE À OUTILS",
+    "description": "Impossible de ramasser des utilitaires. Votre utilitaire se recharge automatiquement au bout de 90 sec."
+  },
+  "jokerTweakDealer": {
+    "name": "CROUPIER",
+    "description": "Gagnez +1 PV pour chaque joker actif"
+  },
+  "jokerUltraDraw": {
+    "name": "CORDE PÉTARD",
+    "description": "Chargez pendant 4 sec. pour tirer une flèche explosive massive. La vitesse d'attaque réduit le temps de charge"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "Précision"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "Temps sur place"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "Portée"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "Taille du chargeur"
+  },
+  "jokerUpgradeDamage": {
+    "name": "Dégâts"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "Vitesse de dégainage"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "Vitesse d'attaque"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "Vitesse d'attaque"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "Vitesse d'attaque"
+  },
+  "jokerUpgradeHeal": {
+    "name": "Santé"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "Vitesse"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "Hauteur de saut"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "Vol de vie"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "Vitesse de rechargement"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "Portée de collecte"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "Vitesse de recharge des sorts"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "Stock de munitions"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "Stock de munitions"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "Portée"
+  },
+  "jokerVampire": {
+    "name": "VAMPIRE",
+    "description": "L'arme gagne +4 % de vol de vie"
+  },
+  "jokerWeakLink": {
+    "name": "MAILLON FAIBLE",
+    "description": "Les tirs sur des points faibles infligent 35 % de dégâts en plus, mais les tirs normaux infligent 20 % de dégâts en moins"
+  },
+  "jokerWellFed": {
+    "name": "BIEN NOURRI",
+    "description": "+5 PV"
+  },
+  "jokerWestWizard": {
+    "name": "MAGE DE L'OUEST",
+    "description": "-30 % de temps de recharge des sorts, mais -30 % de PV"
+  }
+}

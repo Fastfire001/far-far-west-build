@@ -22,5 +22,6 @@ docker compose run --rm --build extract /paks /out \
   json:FarFarWest/Content/LocaStringTables/ST_Tweaks \
   json:FarFarWest/Content/LocaStringTables/ST_Weapons \
   json:FarFarWest/Content/LocaStringTables/ST_Spells \
-  raw:FarFarWest/Content/Interfaces/Equipment/C_UnlockedJokers
+  raw:FarFarWest/Content/Interfaces/Equipment/C_UnlockedJokers \
+  'locres:FarFarWest/Content/Localization/Game/*/Game.locres'
 exec docker compose run --rm --build app python3 scripts/build_game_data.py /extract data

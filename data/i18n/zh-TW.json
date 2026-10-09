@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "酸蝕",
+    "description": "進攻型：緩速敵人並腐蝕戰場"
+  },
+  "itemBanjo": {
+    "name": "班卓琴",
+    "description": "攻擊又慢又弱，但有些許治療能力。\n非常適合一邊治療戰友，一邊摧毀他們的耳膜。"
+  },
+  "itemBoomerang": {
+    "name": "迴力鏢",
+    "description": "飛出去修理敵人一頓，再繞回來修理第二頓。\n不使用彈藥，是環保配裝的不二選擇。"
+  },
+  "itemBow": {
+    "name": "弓箭",
+    "description": "迅速拉弓可射出粗製箭矢。\n認真彎弓可射出威力強大的爆炸箭。"
+  },
+  "itemCactus": {
+    "name": "仙人掌",
+    "description": "戰術型：召喚有用的仙人掌來控制戰場"
+  },
+  "itemDualRevolver": {
+    "name": "左輪雙槍",
+    "description": "射速高，精準度不佳，但只要裝填一次，兩把左輪手槍便能瞬間爆發，威力驚人。\n從平平無奇到殺戮利器，彷彿奇蹟。"
+  },
+  "itemElec": {
+    "name": "閃電",
+    "description": "戰術型：迅速移動並用閃電攻擊敵人"
+  },
+  "itemFire": {
+    "name": "火焰",
+    "description": "進攻型：灼燒敵人並點燃地面"
+  },
+  "itemIce": {
+    "name": "冰霜",
+    "description": "防禦型：凍結敵人並強化你的護盾"
+  },
+  "itemKnuckles": {
+    "name": "指虎",
+    "description": "距離短，衝擊強。\n不需要彈藥、不需要瞄準，也不需要動腦。"
+  },
+  "itemLasso": {
+    "name": "套索",
+    "description": "能從不錯的距離快速鞭打敵人。\n有些敵人還會被拉回來再挨一下，這可不是因為記仇。"
+  },
+  "itemLongRanger": {
+    "name": "獨行狙擊槍",
+    "description": "追求無與倫比的精準度與穿透力，每次失誤都將使傳承數百年的精湛工藝蒙羞。\n盡量別讓大家失望。"
+  },
+  "itemMinigun": {
+    "name": "迷你砲",
+    "description": "這好傢伙一轉起來，子彈便會瘋狂傾瀉而出。\n理論上停得下來，但你可是全職射手，字典裡沒有半途而廢。"
+  },
+  "itemPistol": {
+    "name": "左輪手槍",
+    "description": "時時可靠，樣樣不精。\n承諾恐懼症患者的首選。"
+  },
+  "itemQuadCylinder": {
+    "name": "四管步槍",
+    "description": "射擊穩、手感順、表現佳。\n堪稱平庸的代表，但相當值得信賴。"
+  },
+  "itemSheriffStar": {
+    "name": "警長之星",
+    "description": "高速射出，切開敵人。\n行使正義不費吹灰之力。"
+  },
+  "itemShotgun": {
+    "name": "霰彈槍",
+    "description": "這把霰彈槍射速高得誇張，一次裝填一發，論散射範圍，連野火都比不上。\n終於，有一把配得上你槍法的武器。"
+  },
+  "itemSpellAcidBubble": {
+    "name": "氣泡",
+    "description": "投擲大型酸液氣泡，撞擊後會破裂，形成多個酸液池。"
+  },
+  "itemSpellAcidContagion": {
+    "name": "擴散",
+    "description": "腐蝕大範圍內的所有敵人並施加傳染，使其在死亡時爆炸。"
+  },
+  "itemSpellAcidGeyser": {
+    "name": "噴泉",
+    "description": "召喚一座酸液噴泉，撞擊後會噴發。"
+  },
+  "itemSpellAcidRain": {
+    "name": "酸雨",
+    "description": "召喚一場酸雨，大範圍腐蝕敵人。"
+  },
+  "itemSpellAcidThrower": {
+    "name": "噴射",
+    "description": "噴射酸液，減緩敵人速度，並在地面留下腐蝕酸液池。"
+  },
+  "itemSpellCactusBetty": {
+    "name": "米諾",
+    "description": "召喚一個一踩到就引爆的仙人掌地雷。"
+  },
+  "itemSpellCactusDecoy": {
+    "name": "誘餌",
+    "description": "召喚跳舞仙人掌，在吸引敵人後爆炸。"
+  },
+  "itemSpellCactusTurret": {
+    "name": "砲手",
+    "description": "召喚仙人掌砲塔，持續對附近敵人開火。"
+  },
+  "itemSpellCactusUlti": {
+    "name": "大盜",
+    "description": "召喚一個強大的仙人掌魔像，暫時為你而戰。"
+  },
+  "itemSpellCactusWall": {
+    "name": "瓦洛",
+    "description": "召喚仙人掌尖刺，接觸敵人時造成傷害並緩速。"
+  },
+  "itemSpellElecPortal": {
+    "name": "傳送門",
+    "description": "生成最多兩道傳送門，讓玩家可以瞬間移動，並複製法術投射物。"
+  },
+  "itemSpellElecStrike": {
+    "name": "閃電連擊",
+    "description": "降下一連串閃電，電焦沿途的敵人。"
+  },
+  "itemSpellElecSuperJump": {
+    "name": "彈跳",
+    "description": "瞬間從敵人身旁跳開。"
+  },
+  "itemSpellElecSwap": {
+    "name": "瞬移",
+    "description": "與一名敵人交換位置，並於兩處位置引發爆炸。"
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "雷擊",
+    "description": "躍到半空中，然後俯衝而下，爆破周圍區域，向敵人釋放雷霆之力。"
+  },
+  "itemSpellFireBall": {
+    "name": "火球",
+    "description": "射出一顆火球，撞擊後會爆炸，並使地面著火。"
+  },
+  "itemSpellFireBeam": {
+    "name": "熱炎射線",
+    "description": "釋放巨大熱炎射線灼燒一切。"
+  },
+  "itemSpellFireFingergun": {
+    "name": "手指槍",
+    "description": "把你的武器換成能發射爆炸火焰彈的火手指。"
+  },
+  "itemSpellFireSurcharge": {
+    "name": "爆炎",
+    "description": "大範圍灼燒所有敵人，並引爆原本已著火的敵人。"
+  },
+  "itemSpellFireWisp": {
+    "name": "鬼火",
+    "description": "召喚鬼火來造成額外灼燒傷害，並於消滅敵人後轉移至另一目標身上。"
+  },
+  "itemSpellIceBlizzard": {
+    "name": "暴風雪",
+    "description": "召喚一場跟隨你的暴風雪，對所有敵人造成傷害，並為戰友提供護盾。"
+  },
+  "itemSpellIceBreeze": {
+    "name": "寒風",
+    "description": "召喚一陣寒風，凍結寬廣錐形範圍內的敵人。"
+  },
+  "itemSpellIceCube": {
+    "name": "冰塊",
+    "description": "將自己或戰友變成無敵的冰塊。"
+  },
+  "itemSpellIceGlaze": {
+    "name": "結凍",
+    "description": "釋放一道爆發，對附近敵人造成傷害，並為附近戰友提供護盾。"
+  },
+  "itemSpellIceLance": {
+    "name": "冰橋",
+    "description": "召喚一座冰橋，為過橋的戰友提供護盾。"
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "蠱惑",
+    "description": "釋放一個人偶蠱惑敵人，讓對方死亡前倒戈為你而戰。"
+  },
+  "itemSpellVoodooDoll": {
+    "name": "人偶",
+    "description": "召喚一個人偶，賦予區域內的戰友無敵和高速移動狀態。"
+  },
+  "itemSpellVoodooDrain": {
+    "name": "吸取",
+    "description": "操控人偶吸取敵人生命值。"
+  },
+  "itemSpellVoodooHeal": {
+    "name": "援護",
+    "description": "灌注人偶的力量，治療或復活最近的戰友。"
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "儀式",
+    "description": "召喚一圈蠟燭，回復光芒範圍內的戰友生命值。"
+  },
+  "itemUtilityAmmo": {
+    "name": "彈藥包",
+    "description": "爆炸後會變出彈藥。玩家越多，炸出的子彈越多。\n家庭聚會變得特別有賺頭。"
+  },
+  "itemUtilityBottleCrate": {
+    "name": "治療箱",
+    "description": "爆炸後化為治療藥水。\n保證讓你成為酒館裡最靚的牛仔。"
+  },
+  "itemUtilityHealBottle": {
+    "name": "治療區域",
+    "description": "撞擊後會爆炸，形成能持續很久的治療區域。\n聞起來像壞掉的湯，正宗阿嬤秘方。"
+  },
+  "itemUtilityImpulse": {
+    "name": "脈衝手榴彈",
+    "description": "定時產生衝擊波推開玩家。\n能讓你達到你現有法術永遠無法企及的境界。"
+  },
+  "itemVoodoo": {
+    "name": "巫毒",
+    "description": "戰術型：吸取敵人生命值並支援戰友"
+  },
+  "itemWinchester": {
+    "name": "槓桿式步槍",
+    "description": "槓桿操控俐落，準度完美無瑕，裝填紮實有力。\n以前贏的是園遊會養不活的金魚，現在贏的是槍戰。"
+  },
+  "jokerAimingBurst": {
+    "name": "瞄準連發",
+    "description": "瞄準時弱點傷害 +30%，且子彈可穿透敵人"
+  },
+  "jokerAllMighty": {
+    "name": "全能至尊",
+    "description": "每有 1 點護盾值，造成的傷害便 +1%，最高 +80%"
+  },
+  "jokerAmmoSupply": {
+    "name": "彈藥補給",
+    "description": "敵人死亡時，掉落彈藥箱的機率 +5%"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "反重力瀑布",
+    "description": "敵人死亡時，生成反重力區域的機率 +2%"
+  },
+  "jokerApprentice": {
+    "name": "學徒",
+    "description": "法術冷卻時間 -10%"
+  },
+  "jokerAvalanche": {
+    "name": "雪崩",
+    "description": "擁有護盾時，造成的傷害 +15%"
+  },
+  "jokerBardbarian": {
+    "name": "吟遊蠻人",
+    "description": "下砸攻擊蓄力越久，釋放的一擊威力就越強"
+  },
+  "jokerBattleMage": {
+    "name": "戰鬥法師",
+    "description": "擊殺敵人時，使所有冷卻中的法術冷卻時間縮短 0.5%"
+  },
+  "jokerBellShot": {
+    "name": "敲鐘爆頭",
+    "description": "擊中弱點時召喚鬼魂療癒鐘的機率 +5%"
+  },
+  "jokerBerserker": {
+    "name": "狂戰士",
+    "description": "生命值越低，近戰傷害越高，最多 +50%"
+  },
+  "jokerBloodLust": {
+    "name": "嗜血",
+    "description": "以近戰攻擊擊殺敵人時，近戰攻擊速度 +5%，持續 5 秒。此效果可疊加，最高 +50%"
+  },
+  "jokerBouncingBall": {
+    "name": "彈跳球",
+    "description": "空中傷害 +15%"
+  },
+  "jokerBracing": {
+    "name": "穩如磐石",
+    "description": "攻擊速度和裝填速度 +5%"
+  },
+  "jokerCactusDay": {
+    "name": "仙人掌日",
+    "description": "敵人死亡時，生成仙人掌米諾的機率 +5%"
+  },
+  "jokerCamper": {
+    "name": "蹲點玩家",
+    "description": "靜止不動時，不消耗彈藥的機率 +50%"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "基礎法術專精",
+    "description": "法術基礎冷卻時間如在 35 秒以下，冷卻時間減少 25%"
+  },
+  "jokerCarePackage": {
+    "name": "補給包裹",
+    "description": "戰術彈藥 +1"
+  },
+  "jokerCastAway": {
+    "name": "施法連發",
+    "description": "施放法術時，其他法術的冷卻時間縮短 3 秒，最低降至 4 秒"
+  },
+  "jokerCdrAcid": {
+    "name": "酸蝕精通",
+    "description": "每配備一個酸蝕法術，酸蝕冷卻時間縮短 10%"
+  },
+  "jokerCdrCactus": {
+    "name": "仙人掌精通",
+    "description": "每配備一個仙人掌法術，仙人掌冷卻時間縮短 10%"
+  },
+  "jokerCdrElec": {
+    "name": "閃電精通",
+    "description": "每配備一個閃電法術，閃電冷卻時間縮短 10%"
+  },
+  "jokerCdrFire": {
+    "name": "火焰精通",
+    "description": "每配備一個火焰法術，火焰冷卻時間縮短 10%"
+  },
+  "jokerCdrFrost": {
+    "name": "冰霜精通",
+    "description": "每配備一個冰霜法術，冰霜冷卻時間縮短 10%"
+  },
+  "jokerCdrVoodoo": {
+    "name": "巫毒精通",
+    "description": "每配備一個巫毒法術，巫毒冷卻時間縮短 10%"
+  },
+  "jokerChad": {
+    "name": "人帥真好",
+    "description": "揭曉流浪商人的位置並享受八折優惠。你值得擁有"
+  },
+  "jokerCheapSkate": {
+    "name": "小氣巴拉",
+    "description": "委託物品欄中每有 20 枚金幣，生命值便 +1，最多 +15"
+  },
+  "jokerChickshot": {
+    "name": "小雞射擊",
+    "description": "攻擊時發出雞叫聲的機率 +50%。沒啥用！"
+  },
+  "jokerChonky": {
+    "name": "重量壓制",
+    "description": "傷害 +20%，但重力 +15%"
+  },
+  "jokerChonkyThrow": {
+    "name": "超大號投擲",
+    "description": "迴力鏢變成兩倍大，還能穿透護盾"
+  },
+  "jokerClutch": {
+    "name": "生死關頭",
+    "description": "彈匣最後增加 2 發爆炸彈"
+  },
+  "jokerCoinFlip": {
+    "name": "擲硬幣",
+    "description": "每 10 秒擲一次硬幣，使武器傷害 +100% 或 -50%"
+  },
+  "jokerColdBlooded": {
+    "name": "冷血",
+    "description": "近戰攻擊會凍結敵人，每凍結一名敵人消耗 3 點護盾值"
+  },
+  "jokerConsumer": {
+    "name": "出手闊綽",
+    "description": "武器傷害 +25%，但裝填會浪費未使用彈藥"
+  },
+  "jokerCrackShot": {
+    "name": "精準射手",
+    "description": "傷害 +7%"
+  },
+  "jokerDeadlyStrong": {
+    "name": "死了都要礙",
+    "description": "成為死亡鬼魂時的移動速度更快，造成的傷害更高"
+  },
+  "jokerDeathsDance": {
+    "name": "死亡之舞",
+    "description": "護盾流失速度減緩 30%"
+  },
+  "jokerDestroyer": {
+    "name": "火力壓榨",
+    "description": "彈匣中的前 25% 彈藥可造成 +20% 傷害"
+  },
+  "jokerDisgrace": {
+    "name": "恥辱",
+    "description": "移動速度提升 30%，連你的馬都嫌你太快，不想跟你混"
+  },
+  "jokerDoubleDown": {
+    "name": "雙倍下注",
+    "description": "從所有來源獲得的護盾值 +30%"
+  },
+  "jokerDwarf": {
+    "name": "短小精悍",
+    "description": "變成小不點，並獲得額外移動速度、攻擊速度和低重力"
+  },
+  "jokerEagleLever": {
+    "name": "鷹式連擊",
+    "description": "連續射擊且不失手可獲得 +10% 傷害，最高疊加至 +50%"
+  },
+  "jokerEatAPunch": {
+    "name": "大快朵拳",
+    "description": "以近戰攻擊擊殺敵人時，回復 2 點生命值"
+  },
+  "jokerEcoTrick": {
+    "name": "環保戲法",
+    "description": "裝填不再浪費彈藥"
+  },
+  "jokerElementalSpin": {
+    "name": "元素迴旋",
+    "description": "迷你砲有 30% 機率發射隨機元素子彈，而非普通子彈"
+  },
+  "jokerExecute": {
+    "name": "處決",
+    "description": "你的攻擊可立即處決生命值低於 20% 的非精英、非首領敵人"
+  },
+  "jokerExplosiveRounds": {
+    "name": "爆炸打擊 (火焰)",
+    "description": "命中時引發爆炸 (火焰) 的機率 +5%"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "爆炸打擊 (酸蝕)",
+    "description": "命中時引發爆炸 (酸蝕) 的機率 +5%"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "爆炸打擊 (閃電)",
+    "description": "命中時引發爆炸 (閃電) 的機率 +5%"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "爆炸打擊 (冰霜)",
+    "description": "命中時引發爆炸 (冰霜) 的機率 +5%"
+  },
+  "jokerExtraDash": {
+    "name": "額外衝刺",
+    "description": "衝刺 +1"
+  },
+  "jokerExtraJump": {
+    "name": "額外跳躍",
+    "description": "跳躍 +1"
+  },
+  "jokerFanningAce": {
+    "name": "連射王",
+    "description": "在裝填途中看準時機開火，即可一口氣射出所有子彈"
+  },
+  "jokerFastDraw": {
+    "name": "首發重擊",
+    "description": "裝備武器後首次命中時，造成的傷害提高 30%"
+  },
+  "jokerFastHands": {
+    "name": "迅捷之手",
+    "description": "裝填速度 +20%"
+  },
+  "jokerFightOrFlight": {
+    "name": "戰或逃",
+    "description": "生命值受到傷害時，近戰攻擊速度 +20%，持續 3 秒"
+  },
+  "jokerFistFight": {
+    "name": "拳來拳往",
+    "description": "徒手攻擊的威力提升"
+  },
+  "jokerFistRage": {
+    "name": "怒火之拳",
+    "description": "受到傷害時會累積蓄力值，並使攻擊速度 +30%，持續 2 秒"
+  },
+  "jokerFistRoDah": {
+    "name": "拳斯羅達",
+    "description": "蓄力攻擊會將你向後彈，並有 20% 機率對命中的敵人施加冰霜效果"
+  },
+  "jokerFocusShot": {
+    "name": "凝神射擊",
+    "description": "每次命中弱點時，法術冷卻時間縮短 2 秒"
+  },
+  "jokerFocusedFeet": {
+    "name": "快速射擊",
+    "description": "瞄準時攻擊速度 +10%"
+  },
+  "jokerFreeCocktail": {
+    "name": "免費雞尾酒",
+    "description": "空彈匣裝填時，回復 2 點生命值"
+  },
+  "jokerFreezeOver": {
+    "name": "最終堡壘",
+    "description": "生命值達 25% 時，獲得 +50 點護盾值 (冷卻時間：60 秒)"
+  },
+  "jokerFrenzySpin": {
+    "name": "瘋狂迴旋",
+    "description": "消滅敵人數量超過 10 個時，迷你砲射速加倍"
+  },
+  "jokerFrostBite": {
+    "name": "冰霜之噬",
+    "description": "近戰擊殺凍結的敵人可給予 2 點護盾值"
+  },
+  "jokerGiant": {
+    "name": "高大威武",
+    "description": "把你的體型變大，獲得額外生命值、武器傷害和法術冷卻時間縮短"
+  },
+  "jokerGlassCannon": {
+    "name": "玻璃大砲",
+    "description": "武器和近戰傷害 +40%，但生命值 -25%"
+  },
+  "jokerGoldProspector": {
+    "name": "淘金者",
+    "description": "委託結束時，獲得的金幣增加 20%"
+  },
+  "jokerGoldTooth": {
+    "name": "貪婪金牙",
+    "description": "敵人死亡時，掉落 1 個金塊的機率 +10%"
+  },
+  "jokerGoliath": {
+    "name": "巨人之軀",
+    "description": "你的體型變得更大。生命值 +25%"
+  },
+  "jokerGreatWall": {
+    "name": "長城",
+    "description": "擁有護盾時，受到的所有傷害減少 10%"
+  },
+  "jokerHeadBang": {
+    "name": "重擊要害",
+    "description": "對弱點造成 +30% 傷害"
+  },
+  "jokerHeadshotRefund": {
+    "name": "弱點回溯",
+    "description": "擊中弱點後拿回子彈的機率 +20%"
+  },
+  "jokerHealthyBoi": {
+    "name": "頭好壯壯",
+    "description": "生命值全滿時，移動速度、裝填速度和攻擊速度 +20%"
+  },
+  "jokerHeavyDrinker": {
+    "name": "我超勇超會喝",
+    "description": "治療藥水對自己的效果提升 25%"
+  },
+  "jokerHeavyWeapon": {
+    "name": "重型武器",
+    "description": "傷害 +10%，但武器啟用時重力 +30%"
+  },
+  "jokerHelpingHand": {
+    "name": "伸出援手",
+    "description": "復活戰友的速度翻倍"
+  },
+  "jokerHitMe": {
+    "name": "打我啊笨蛋",
+    "description": "受到攻擊後，每秒回復 0.75 生命值，持續 20 秒"
+  },
+  "jokerHoarder": {
+    "name": "收藏癖",
+    "description": "收集一張鬼牌後，有 15% 機率出現另一張隨機鬼牌"
+  },
+  "jokerHomingBurst": {
+    "name": "追蹤連發",
+    "description": "每發射 8 發子彈，就向附近的敵人發射 2 發追蹤子彈"
+  },
+  "jokerHop": {
+    "name": "蹦跳",
+    "description": "跳躍高度 +20%"
+  },
+  "jokerJokheal": {
+    "name": "醫療卡",
+    "description": "拾取鬼牌時，回復額外 +35 點生命值"
+  },
+  "jokerJumpStar": {
+    "name": "跳躍之星",
+    "description": "持有警長之星時，跳躍次數 +2"
+  },
+  "jokerKnuckleDown": {
+    "name": "拳拳到肉",
+    "description": "近戰傷害 +10%"
+  },
+  "jokerLastDance": {
+    "name": "最後一舞",
+    "description": "生命值低於或等於生命值上限的 30% 時，移動速度 +30%"
+  },
+  "jokerLastStand": {
+    "name": "背水一戰",
+    "description": "生命值低於或等於生命值上限的 30% 時，受到的傷害減少 30%，並獲得 10% 近戰吸血"
+  },
+  "jokerLazy": {
+    "name": "超懶",
+    "description": "彈藥拾取功能會停用。每 12 秒補充彈藥上限 10% 的彈藥"
+  },
+  "jokerLifePact": {
+    "name": "生命契約",
+    "description": "擊殺回復 2 點生命值，但最大生命值降低 30%"
+  },
+  "jokerLightWeight": {
+    "name": "輕盈身姿",
+    "description": "重力 -5%"
+  },
+  "jokerLingeringThrow": {
+    "name": "餘韻投擲",
+    "description": "滯留時間加倍。結合滯留時間升級"
+  },
+  "jokerLowGravity": {
+    "name": "月球重力",
+    "description": "重力 -25%"
+  },
+  "jokerLuckyStrike": {
+    "name": "好運出擊",
+    "description": "每次命中時造成雙倍傷害的機率 +10%"
+  },
+  "jokerLullabard": {
+    "name": "夢遊詩人",
+    "description": "每次命中時額外獲得一個和弦，並擴大治療範圍，但會失去下砸攻擊"
+  },
+  "jokerLunge": {
+    "name": "突進",
+    "description": "近戰距離和判定範圍 +15%"
+  },
+  "jokerMachineGun": {
+    "name": "機槍連發",
+    "description": "每個委託中，此武器每造成 50 點傷害，攻擊速度 +0.3%"
+  },
+  "jokerMagicFriendship": {
+    "name": "友誼魔法",
+    "description": "在戰友附近時，會被動回復生命值"
+  },
+  "jokerMagicReload": {
+    "name": "魔法裝填",
+    "description": "施放法術後，自動裝填武器"
+  },
+  "jokerMarkAce": {
+    "name": "標記王",
+    "description": "子彈會標記敵人 5 秒。被標記的敵人所受傷害 +15%"
+  },
+  "jokerMindShot": {
+    "name": "震撼爆頭",
+    "description": "命中弱點時會引發爆炸"
+  },
+  "jokerOneTrick": {
+    "name": "鬼牌戲法",
+    "description": "武器每裝備一種不同稀有度的鬼牌，傷害與攻擊速度便 +7%"
+  },
+  "jokerOverBlast": {
+    "name": "狂射爆破",
+    "description": "彈匣中每缺少 4 發彈藥，額外發射一枚彈丸"
+  },
+  "jokerOverDraw": {
+    "name": "蓄力拉弓",
+    "description": "蓄力 2 秒，朝錐形範圍發射 3 支箭。攻擊速度會縮短蓄力時間"
+  },
+  "jokerPanicAttack": {
+    "name": "恐慌攻擊",
+    "description": "生命值受到傷害時，造成的傷害 +20%，持續 3 秒"
+  },
+  "jokerPartyShot": {
+    "name": "爆頭派對",
+    "description": "擊中弱點時噴出彩帶的機率 +50%。沒啥用！"
+  },
+  "jokerPewPewPew": {
+    "name": "咻咻咻",
+    "description": "攻擊速度 +20%"
+  },
+  "jokerPickPick": {
+    "name": "鎬來鎬去",
+    "description": "命中目標時，生成傷害十字鎬的機率 +10%"
+  },
+  "jokerPigshot": {
+    "name": "小豬射擊",
+    "description": "命中時，生成一頭豬的機率 +5%。攻擊牠們就會爆炸"
+  },
+  "jokerPlasticDuck": {
+    "name": "橡皮小鴨",
+    "description": "走路會發出橡皮小鴨的聲音。沒啥用！"
+  },
+  "jokerPreciousRush": {
+    "name": "寶貝快閃",
+    "description": "敵人死亡時，生成加速戒指的機率 +10%"
+  },
+  "jokerPricklyPear": {
+    "name": "仙人掌果",
+    "description": "生命值受到傷害時，對攻擊者反彈等量傷害，再額外造成 15 點傷害"
+  },
+  "jokerQuickDraw": {
+    "name": "快速換槍",
+    "description": "武器切換速度 +40%"
+  },
+  "jokerRage": {
+    "name": "怒火燎原",
+    "description": "生命值達 25% 時，釋放一道衝擊波，灼燒附近敵人 (冷卻時間：60 秒)"
+  },
+  "jokerRampage": {
+    "name": "狂暴",
+    "description": "每次擊殺獲得 5% 裝填速度，持續 10 秒，最高可達 100%"
+  },
+  "jokerRelentless": {
+    "name": "百折不撓",
+    "description": "生命值等於或低於最大生命值的 30% 時，造成傷害 +30%"
+  },
+  "jokerReloadMastery": {
+    "name": "裝填精通",
+    "description": "空彈匣裝填速度提升 50%"
+  },
+  "jokerRicochet": {
+    "name": "彈跳子彈",
+    "description": "射出的子彈會彈跳，有 30% 機率自動擊中附近的敵人"
+  },
+  "jokerRiposte": {
+    "name": "反擊",
+    "description": "護盾吸收一次攻擊後，你的下一次攻擊造成 +100% 傷害"
+  },
+  "jokerRunAndGun": {
+    "name": "機動射手",
+    "description": "射擊時移動速度 +30%"
+  },
+  "jokerRunAndReload": {
+    "name": "機動裝填",
+    "description": "裝填時移動速度 +50%"
+  },
+  "jokerRushBlast": {
+    "name": "疾速爆破",
+    "description": "彈匣中的前 3 發子彈具有 100% 準確度，且射程更遠"
+  },
+  "jokerScavengerStar": {
+    "name": "拾荒之星",
+    "description": "拾取範圍 +100%。持有警長之星時，移動速度 +30%"
+  },
+  "jokerScoutsHonor": {
+    "name": "童軍榮譽",
+    "description": "連續 10 秒未受到傷害後，至少會保有 10 點護盾值"
+  },
+  "jokerScrubBullet": {
+    "name": "淨化打擊",
+    "description": "主武器可移除敵人身上的元素，並立即造成 10 點傷害"
+  },
+  "jokerSecondWind": {
+    "name": "重獲新生",
+    "description": "受到致命傷害時死裡逃生，並回復 50 點生命值（冷卻時間：180秒）"
+  },
+  "jokerSharpShooter": {
+    "name": "神射手",
+    "description": "弱點傷害 +20%"
+  },
+  "jokerShineBright": {
+    "name": "光芒四射",
+    "description": "英雄光芒 +50%。渾身亮晶晶！沒啥用！"
+  },
+  "jokerShroomGrave": {
+    "name": "蘑菇墳墓",
+    "description": "敵人死亡時，生成蘑菇的機率 +10%"
+  },
+  "jokerSkyLash": {
+    "name": "一揮沖天",
+    "description": "蓄力攻擊會使移動速度 +50%，並讓你飛上天空"
+  },
+  "jokerSlowAndSteady": {
+    "name": "穩紮穩打",
+    "description": "獲得 +25% 命中率，但 -10% 攻擊速度"
+  },
+  "jokerSnackAPunch": {
+    "name": "拳頭點心",
+    "description": "近戰擊殺可給予 1 點護盾值"
+  },
+  "jokerSoulEater": {
+    "name": "靈魂吞噬者",
+    "description": "拾取靈魂可使傷害和裝填速度 +20%，持續 5 秒"
+  },
+  "jokerSoulReaper": {
+    "name": "靈魂收割者",
+    "description": "委託結束時，獲得的靈魂增加 20%"
+  },
+  "jokerSoulSiphon": {
+    "name": "靈魂吸取",
+    "description": "拾取靈魂時，拾取範圍增加，回復 +2 點生命值"
+  },
+  "jokerSpareBullets": {
+    "name": "備用子彈",
+    "description": "彈藥袋 +10%"
+  },
+  "jokerSpeedster": {
+    "name": "快手快腳",
+    "description": "每 3% 額外移動速度提供 +1% 傷害與攻擊速度，最高 +40%"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "飛毛腿槍手",
+    "description": "移動速度 +10%"
+  },
+  "jokerSpellLash": {
+    "name": "法術奔湧",
+    "description": "施放法術時，立即填滿蓄力條"
+  },
+  "jokerSpellRoulette": {
+    "name": "法術輪盤",
+    "description": "法術冷卻時間 -20%，但每次施放皆為隨機法術"
+  },
+  "jokerStackedLever": {
+    "name": "堆疊操縱桿",
+    "description": "消滅敵人後，彈藥儲備立即裝填 2 發子彈"
+  },
+  "jokerStonks": {
+    "name": "一夕爆富",
+    "description": "打開寶箱時，獲得隨機鬼牌的機率 +20%"
+  },
+  "jokerSwampTrick": {
+    "name": "浸水戲法",
+    "description": "裝填爆炸會在地上留下水坑"
+  },
+  "jokerThickSkin": {
+    "name": "皮粗肉厚",
+    "description": "受到的所有傷害減少 20%，但受到的治療效果 -30%"
+  },
+  "jokerTinMan": {
+    "name": "人形罐頭",
+    "description": "多餘的治療量會轉化為護盾值，最多 +15 點"
+  },
+  "jokerToolBox": {
+    "name": "工具箱",
+    "description": "戰術拾取功能會停用。戰術會在 90 秒後自動恢復。"
+  },
+  "jokerTweakDealer": {
+    "name": "鬼牌莊家",
+    "description": "每使用 1 張鬼牌，生命值 +1"
+  },
+  "jokerUltraDraw": {
+    "name": "極限拉弓",
+    "description": "蓄力 4 秒，發射一支巨型爆炸箭。攻擊速度會縮短蓄力時間"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "精準度"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "滯留時間"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "範圍"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "彈匣容量"
+  },
+  "jokerUpgradeDamage": {
+    "name": "傷害"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "裝備速度"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "攻擊速度"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "攻擊速度"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "攻擊速度"
+  },
+  "jokerUpgradeHeal": {
+    "name": "生命值"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "速度"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "跳躍高度"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "生命偷取"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "裝填速度"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "拾取範圍"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "法術冷卻時間縮短"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "彈藥袋"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "彈藥袋"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "範圍"
+  },
+  "jokerVampire": {
+    "name": "吸血鬼",
+    "description": "此武器的吸血效果 +4%"
+  },
+  "jokerWeakLink": {
+    "name": "弱點",
+    "description": "命中弱點時傷害增加 35%，但普通攻擊傷害降低 20%"
+  },
+  "jokerWellFed": {
+    "name": "酒足飯飽",
+    "description": "生命值 +5"
+  },
+  "jokerWestWizard": {
+    "name": "西部巫師",
+    "description": "法術冷卻時間 -30%，但生命值 -30%"
+  }
+}

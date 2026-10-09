@@ -5,8 +5,9 @@ La stack de l'application n'est pas encore choisie : pour l'instant, le repo ne 
 
 ## Structure
 
-- `data/*.json` : données du jeu, toutes extraites des fichiers du jeu. Fichiers **générés** : ne pas les modifier à
-  la main, corriger plutôt `scripts/build_game_data.py` puis regénérer.
+- `data/*.json` : données du jeu, toutes extraites des fichiers du jeu, et `data/i18n/<langue>.json` leurs
+  traductions officielles (15 langues). Fichiers **générés** : ne pas les modifier à la main, corriger plutôt
+  `scripts/build_game_data.py` puis regénérer.
 - `tools/game-extract/` : extracteur C# (CUE4Parse) qui lit les archives du jeu et écrit les assets bruts dans
   `.cache/game/`.
 - `scripts/build_game_data.py` : décode ces assets et écrit `data/` (Python, bibliothèque standard uniquement).

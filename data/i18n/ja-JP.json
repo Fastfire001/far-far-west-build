@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "アシッド",
+    "description": "攻撃系 - 敵を減速させ、戦場を腐食させる。"
+  },
+  "itemBanjo": {
+    "name": "バンジョー",
+    "description": "攻撃は遅く弱いが、多少の回復力あり。\n仲間の鼓膜を破壊しながら回復させるのに最適。"
+  },
+  "itemBoomerang": {
+    "name": "ブーメラン",
+    "description": "飛び出してしばらく敵をいたぶり、また戻ってくるのを繰り返す。\n弾薬不要で、省エネ志向の装備に最適。"
+  },
+  "itemBow": {
+    "name": "弓",
+    "description": "クイックドローではショボい矢を放つ。\n本気で引き絞れば強烈な一発を叩き込める。"
+  },
+  "itemCactus": {
+    "name": "サボテン",
+    "description": "補助系 ― 便利なサボテンを召喚して戦場を制御する。"
+  },
+  "itemDualRevolver": {
+    "name": "デュアルリボルバー",
+    "description": "連射は速いが命中率は最悪。\nそれでも、たった一回のリロードで両手のリボルバーが破壊力抜群の戦力へと豹変する。"
+  },
+  "itemElec": {
+    "name": "エレキ",
+    "description": "補助系 - 高速で移動し、電撃で敵を攻撃する。"
+  },
+  "itemFire": {
+    "name": "パイロ",
+    "description": "攻撃系 - 敵と地面を炎上させる。"
+  },
+  "itemIce": {
+    "name": "フロスト",
+    "description": "防御系 - 敵を凍らせ、SPを強化する。"
+  },
+  "itemKnuckles": {
+    "name": "ナックル",
+    "description": "射程は短いが、威力は絶大。\n弾薬も、狙いも、思考も必要なし。"
+  },
+  "itemLasso": {
+    "name": "投げ縄",
+    "description": "そこそこの間合いから、素早く敵を打てる。\n中にはもっと欲しがって戻ってくるやつもいる。恨みからではない。"
+  },
+  "itemLongRanger": {
+    "name": "ロングレンジャー",
+    "description": "圧倒的な精度と貫通力を誇る。弾を外すということは、何代にも渡って受け継がれてきた匠の顔に泥を塗ることになる。\n恥をかかせないように。"
+  },
+  "itemMinigun": {
+    "name": "ミニガン",
+    "description": "一度回り始めたら、弾丸をとめどなく吐き出す代物。\n理屈の上では止められるが、君の本業は弾をぶっ放すことだ。"
+  },
+  "itemPistol": {
+    "name": "リボルバー",
+    "description": "常に安定していて、すべてが平凡。\n決断を恐れる人にとっては最高の選択肢。"
+  },
+  "itemQuadCylinder": {
+    "name": "クアッドシリンダー",
+    "description": "ちゃんと撃てて、手応えもまあまあ。\n結果も良好。平凡を絵に描いたようだが、信頼性は抜群。"
+  },
+  "itemSheriffStar": {
+    "name": "保安官の星",
+    "description": "高速で発射し、敵をぶった斬る。\n正義をこんなに手軽に執行できるとは。"
+  },
+  "itemShotgun": {
+    "name": "ショットガン",
+    "description": "ショットガンにしては妙に高い連射速度、単発装填、そして山火事と見紛うほどの拡散。\nついに、君のエイムでも扱える武器が登場だ。"
+  },
+  "itemSpellAcidBubble": {
+    "name": "バブル",
+    "description": "巨大な酸の泡を投げ、着弾時に破裂して大きな酸の水たまりを作る。"
+  },
+  "itemSpellAcidContagion": {
+    "name": "伝染",
+    "description": "広範囲のすべての敵を腐食させて伝染を付与し、死亡時に爆発させる。"
+  },
+  "itemSpellAcidGeyser": {
+    "name": "間欠泉",
+    "description": "着弾時に噴出する酸の間欠泉を召喚する。"
+  },
+  "itemSpellAcidRain": {
+    "name": "レイン",
+    "description": "酸の雨を降らせ、広範囲の敵を腐食させる。"
+  },
+  "itemSpellAcidThrower": {
+    "name": "投擲",
+    "description": "酸を勢いよく吐き出し、敵を鈍足状態にし、腐食性の水たまりを残す。"
+  },
+  "itemSpellCactusBetty": {
+    "name": "ミノ",
+    "description": "踏むと爆発するサボテン地雷を召喚する。"
+  },
+  "itemSpellCactusDecoy": {
+    "name": "デコヨ",
+    "description": "敵を誘い爆発するダンスサボテンを召喚する。"
+  },
+  "itemSpellCactusTurret": {
+    "name": "ピストレロ",
+    "description": "近くの敵を継続攻撃するサボテンタレットを召喚する。"
+  },
+  "itemSpellCactusUlti": {
+    "name": "バンディート",
+    "description": "自分のために戦ってくれる強力なサボテンゴーレムを召喚する。"
+  },
+  "itemSpellCactusWall": {
+    "name": "ワロ",
+    "description": "接触した敵にダメージと速度低下を付与するサボテンの棘を召喚する。"
+  },
+  "itemSpellElecPortal": {
+    "name": "ポータル",
+    "description": "プレイヤーがテレポートでき、スペル弾を複製可能なポータルを最大2つ生成する。"
+  },
+  "itemSpellElecStrike": {
+    "name": "ストライク",
+    "description": "一直線に雷撃を放ち、進路上のすべてを焼き払う。"
+  },
+  "itemSpellElecSuperJump": {
+    "name": "ピョンピョン",
+    "description": "敵から逃げるため瞬時にジャンプする。"
+  },
+  "itemSpellElecSwap": {
+    "name": "テレポート",
+    "description": "敵と位置を入れ替え、両地点で爆発する。"
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "サンダーストライク",
+    "description": "跳び上がってから急降下して一帯を吹き飛ばし、敵に雷撃を放つ。"
+  },
+  "itemSpellFireBall": {
+    "name": "ファイアボール",
+    "description": "着弾時に爆発し、地面を炎上させる火球を放つ。"
+  },
+  "itemSpellFireBeam": {
+    "name": "ファイアビーム",
+    "description": "すべてを焼き尽くす巨大な炎のビームを放つ。"
+  },
+  "itemSpellFireFingergun": {
+    "name": "フィンガーガン",
+    "description": "武器を炎の指に変え、爆発する火弾を撃つ。"
+  },
+  "itemSpellFireSurcharge": {
+    "name": "過負荷",
+    "description": "広範囲の敵を炎上させ、既に炎上している敵を爆発させる。"
+  },
+  "itemSpellFireWisp": {
+    "name": "ウィスプ",
+    "description": "炎上ダメージを追加で与え、倒すと別の敵へ飛び移るウィスプを召喚する。"
+  },
+  "itemSpellIceBlizzard": {
+    "name": "ブリザード",
+    "description": "自分についてくるブリザードを召喚し、すべての敵にダメージを与え、味方にSPを付与する。"
+  },
+  "itemSpellIceBreeze": {
+    "name": "ブリーズ",
+    "description": "広い扇状の範囲の敵を凍らせるブリーズを召喚する。"
+  },
+  "itemSpellIceCube": {
+    "name": "キューブ",
+    "description": "自分または味方を無敵のフロストキューブに変える。"
+  },
+  "itemSpellIceGlaze": {
+    "name": "グレイズ",
+    "description": "バーストを放ち、周囲の敵にダメージを与え、周囲の味方にSPを付与する。"
+  },
+  "itemSpellIceLance": {
+    "name": "ブリッジ",
+    "description": "渡った味方にシールドを付与しする。"
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "腐敗",
+    "description": "人形の力で敵を堕落させ、死ぬまで味方として戦わせる。"
+  },
+  "itemSpellVoodooDoll": {
+    "name": "人形",
+    "description": "範囲内の味方に無敵と高速移動を付与する人形を召喚する。"
+  },
+  "itemSpellVoodooDrain": {
+    "name": "吸収",
+    "description": "人形に命じ、敵のHPを吸い取らせる。"
+  },
+  "itemSpellVoodooHeal": {
+    "name": "救出",
+    "description": "人形の力で、一番近くにいる味方を回復または復活させる。"
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "儀式",
+    "description": "光の中にいる味方のHPを回復するロウソクの輪を召喚する。"
+  },
+  "itemUtilityAmmo": {
+    "name": "弾薬パック",
+    "description": "爆発して弾薬になる。プレイヤーが多いほど弾も増える。\n家族の集まりがこれほど儲かるとは。"
+  },
+  "itemUtilityBottleCrate": {
+    "name": "ボトルの箱",
+    "description": "爆発して回復ボトルへと変わる。\n酒場で一番人気のカウボーイになれること請け合いだ。"
+  },
+  "itemUtilityHealBottle": {
+    "name": "回復エリア",
+    "description": "衝突で爆発し、長時間持続する回復ゾーンを生成する。\n腐ったスープの匂い、まさにお祖母ちゃんがくれる妙薬の味。"
+  },
+  "itemUtilityImpulse": {
+    "name": "インパルスグレネード",
+    "description": "定期的に衝撃波を発生させ、プレイヤーを押し出す。\n本来では届かない高さへ到達できる。"
+  },
+  "itemVoodoo": {
+    "name": "ブードゥー",
+    "description": "補助系 - 敵のHPを吸収し、味方の支援を行う。"
+  },
+  "itemWinchester": {
+    "name": "レバレッジ",
+    "description": "キレのあるレバーアクション、完璧な精度、無骨なリロード。\nかつては縁日の弱った金魚をすくい上げるために使われ、今は銃撃戦を制する。"
+  },
+  "jokerAimingBurst": {
+    "name": "エイムバースト",
+    "description": "エイム中に弱点ダメージが+30%。弾が貫通する"
+  },
+  "jokerAllMighty": {
+    "name": "オールマイティ",
+    "description": "シールドポイント1につき、ダメージ +1%（最大80%）"
+  },
+  "jokerAmmoSupply": {
+    "name": "弾薬補給",
+    "description": "倒した敵が弾薬箱を落とす確率 +5%"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "反重力ゾーン",
+    "description": "敵が死亡すると、反重力エリアが出現する確率 +2%"
+  },
+  "jokerApprentice": {
+    "name": "アプレンティス",
+    "description": "スペルのクールダウン -10%"
+  },
+  "jokerAvalanche": {
+    "name": "アバランチ",
+    "description": "シールド中、ダメージ +15%"
+  },
+  "jokerBardbarian": {
+    "name": "バードバリアン",
+    "description": "スラム攻撃を長く溜めるほど、より強力な一撃を放てる"
+  },
+  "jokerBattleMage": {
+    "name": "バトルメイジ",
+    "description": "敵を倒すたび、進行中のすべてのスペルのクールダウンが0.5%短縮される"
+  },
+  "jokerBellShot": {
+    "name": "ベルショット",
+    "description": "弱点命中時に回復するゴーストベルを召喚する確率 +5%"
+  },
+  "jokerBerserker": {
+    "name": "バーサーカー",
+    "description": "HPが低くなるほど、近接ダメージが増加する（最大+50%）"
+  },
+  "jokerBloodLust": {
+    "name": "ブラッドラスト",
+    "description": "近接キルで3秒間、近接速度 +5%がスタックする（最大 +50%）"
+  },
+  "jokerBouncingBall": {
+    "name": "バウンドボール",
+    "description": "空中ダメージ +15%"
+  },
+  "jokerBracing": {
+    "name": "ブレーシング",
+    "description": "攻撃速度とリロード速度 +5%"
+  },
+  "jokerCactusDay": {
+    "name": "サボテンデー",
+    "description": "敵が死亡した際にサボテン・ミノが出現する確率 +5%"
+  },
+  "jokerCamper": {
+    "name": "キャンパー",
+    "description": "その場で立っていると50%の確率で弾薬を消費しなくなる。"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "キャントリップ\nワントリック",
+    "description": "基本クールダウンが35秒以下のスペルのクールダウンが25%減少する"
+  },
+  "jokerCarePackage": {
+    "name": "ケアパッケージ",
+    "description": "ユーティリティ弾薬 +1"
+  },
+  "jokerCastAway": {
+    "name": "キャスト\nアウェイ",
+    "description": "スペルを詠唱すると、他のスペルのクールダウンが3秒減少する（最短4秒まで）"
+  },
+  "jokerCdrAcid": {
+    "name": "アシッドマスタリ",
+    "description": "装備中のアシッドスペル1つにつきアシッドクールダウン -10%"
+  },
+  "jokerCdrCactus": {
+    "name": "サボテン\nマスタリ",
+    "description": "装備しているサボテンスペル1つにつき、サボテンのクールダウンが -10%"
+  },
+  "jokerCdrElec": {
+    "name": "エレキマスタリ",
+    "description": "装備中のエレキスペル1つにつきエレキクールダウン -10%"
+  },
+  "jokerCdrFire": {
+    "name": "パイロマスタリ",
+    "description": "装備中のパイロスペル1つにつきパイロクールダウン -10%"
+  },
+  "jokerCdrFrost": {
+    "name": "フロスト\nマスタリ",
+    "description": "装備しているフロストスペル1つにつき、フロストクールダウンが10%短縮される"
+  },
+  "jokerCdrVoodoo": {
+    "name": "ブードゥーマスタリ",
+    "description": "装備中のブードゥースペル1つにつきブードゥークールダウン -10%"
+  },
+  "jokerChad": {
+    "name": "チャド",
+    "description": "行商人の位置を表示し、20%割引が受けられる。当然の報酬だ"
+  },
+  "jokerCheapSkate": {
+    "name": "チープスケート",
+    "description": "ミッションインベントリのゴールド20につきHP +1（最大+15）"
+  },
+  "jokerChickshot": {
+    "name": "チキンショット",
+    "description": "攻撃がニワトリの鳴き声になる確率 +50%。使えねえ！"
+  },
+  "jokerChonky": {
+    "name": "チョンキー",
+    "description": "与ダメージが20%だが、重力も+15%"
+  },
+  "jokerChonkyThrow": {
+    "name": "むっちりスロー",
+    "description": "ブーメランの大きさが2倍になり、シールドを貫通する"
+  },
+  "jokerClutch": {
+    "name": "クラッチ",
+    "description": "マガジンの最後に爆発弾 +2"
+  },
+  "jokerCoinFlip": {
+    "name": "コインフリップ",
+    "description": "10秒ごとにコインを投げる。武器ダメージが+100%か-50%になる"
+  },
+  "jokerColdBlooded": {
+    "name": "コールドブラッド",
+    "description": "近接攻撃が敵を凍らせ、敵1体につきSPを3消費する"
+  },
+  "jokerConsumer": {
+    "name": "コンシューマー",
+    "description": "武器ダメージが25%増加するが、リロード時に未使用の弾薬を消費する"
+  },
+  "jokerCrackShot": {
+    "name": "クラック\nショット",
+    "description": "ダメージ +7%"
+  },
+  "jokerDeadlyStrong": {
+    "name": "デッドリー・ストロング",
+    "description": "デッドゴーストとしてより速く移動し、より多くのダメージを与える"
+  },
+  "jokerDeathsDance": {
+    "name": "デスダンス",
+    "description": "シールドの減少が30%遅くなる"
+  },
+  "jokerDestroyer": {
+    "name": "デストロイヤー",
+    "description": "マガジンの最初の25%の弾ダメージ +20%"
+  },
+  "jokerDisgrace": {
+    "name": "不名誉",
+    "description": "移動速度 +30%。君は馬に嫌われている"
+  },
+  "jokerDoubleDown": {
+    "name": "ダブルダウン",
+    "description": "すべての供給源から得るシールドポイント +30%"
+  },
+  "jokerDwarf": {
+    "name": "ドワーフ",
+    "description": "小さくなる。移動速度と攻撃速度が上昇し、重力が低下する"
+  },
+  "jokerEagleLever": {
+    "name": "イーグルレバー",
+    "description": "連続で命中させるたび与ダメージ +10%（最大+50%）"
+  },
+  "jokerEatAPunch": {
+    "name": "イート・ア・パンチ",
+    "description": "近接キルでHPを2回復する"
+  },
+  "jokerEcoTrick": {
+    "name": "エコトリック",
+    "description": "リロード時に弾薬が無駄にならない"
+  },
+  "jokerElementalSpin": {
+    "name": "エレメンタルスピン",
+    "description": "ミニガンが30%の確率で通常弾の代わりにランダムに属性弾を発射する"
+  },
+  "jokerExecute": {
+    "name": "エグゼキュート",
+    "description": "攻撃がHP20%未満の強敵以外の敵を即死させる"
+  },
+  "jokerExplosiveRounds": {
+    "name": "爆発ヒット (パイロ)",
+    "description": "ヒット時に爆発する確率 +5%（パイロ）"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "爆発ヒット (アシッド)",
+    "description": "ヒット時に爆発する確率 +5%（アシッド）"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "爆発ヒット (エレキ)",
+    "description": "ヒット時に爆発する確率 +5%（エレキ）"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "爆発ヒット (フロスト)",
+    "description": "ヒット時に爆発する確率 +5%（フロスト）"
+  },
+  "jokerExtraDash": {
+    "name": "追加ダッシュ",
+    "description": "ダッシュ +1"
+  },
+  "jokerExtraJump": {
+    "name": "追加ジャンプ",
+    "description": "ジャンプ +1"
+  },
+  "jokerFanningAce": {
+    "name": "ファニング\nエース",
+    "description": "リロード中の適切なタイミングで発射すると全弾連射する"
+  },
+  "jokerFastDraw": {
+    "name": "スイッチ\nショット",
+    "description": "武器を装備してからの最初の一撃のダメージが30%増加する"
+  },
+  "jokerFastHands": {
+    "name": "ファストハンズ",
+    "description": "リロード速度 +20%"
+  },
+  "jokerFightOrFlight": {
+    "name": "ファイト・オア・フライト",
+    "description": "HPにダメージを受けると、3秒間、近接攻撃速度が20%上昇する"
+  },
+  "jokerFistFight": {
+    "name": "拳闘",
+    "description": "素手の威力が増す"
+  },
+  "jokerFistRage": {
+    "name": "フィストレイジ",
+    "description": "ダメージを受けるとチャージを生成し、2秒間、攻撃速度 +30%が付与される"
+  },
+  "jokerFistRoDah": {
+    "name": "拳・ロ・ダー",
+    "description": "チャージ攻撃で後方へ飛び、20%の確率で敵にフロストを付与する"
+  },
+  "jokerFocusShot": {
+    "name": "フォーカスショット",
+    "description": "弱点命中ごとにスペルのクールダウンが2秒短縮する。"
+  },
+  "jokerFocusedFeet": {
+    "name": "スウィフトショット",
+    "description": "エイム時の攻撃速度 +10%"
+  },
+  "jokerFreeCocktail": {
+    "name": "フリーカクテル",
+    "description": "空のクリップをリロードすると、HPが2回復する"
+  },
+  "jokerFreezeOver": {
+    "name": "最後の砦",
+    "description": "HPが25%に減った時、SPを50付与する（クールダウン：60秒）"
+  },
+  "jokerFrenzySpin": {
+    "name": "フレンジー\nスピン",
+    "description": "キルカウンターが10以上のとき、ミニガンの射撃速度が2倍になる"
+  },
+  "jokerFrostBite": {
+    "name": "フロストバイト",
+    "description": "凍った敵を近接攻撃で倒すとSPを2付与する"
+  },
+  "jokerGiant": {
+    "name": "ジャイアント",
+    "description": "大きくなる。HPと武器ダメージが増加し、スペルのクールダウンが短縮する"
+  },
+  "jokerGlassCannon": {
+    "name": "ガラスキャノン",
+    "description": "武器と近接攻撃の与ダメージが40%増加するが、HPが25%減少"
+  },
+  "jokerGoldProspector": {
+    "name": "黄金採掘者",
+    "description": "ミッション終了時の獲得ゴールドが20%増加する"
+  },
+  "jokerGoldTooth": {
+    "name": "金歯",
+    "description": "敵が死亡した際にゴールドの欠片1個を落とす確率 +10%"
+  },
+  "jokerGoliath": {
+    "name": "ゴライアス",
+    "description": "大きくなる。HP +25%"
+  },
+  "jokerGreatWall": {
+    "name": "グレート\nウォール",
+    "description": "シールド中、すべての被ダメージを10%軽減する"
+  },
+  "jokerHeadBang": {
+    "name": "ヘドバン",
+    "description": "弱点ダメージ +30%"
+  },
+  "jokerHeadshotRefund": {
+    "name": "弱点返還",
+    "description": "弱点命中時に弾薬が返還される確率 +20%"
+  },
+  "jokerHealthyBoi": {
+    "name": "ヘルシーボーイ",
+    "description": "HP満タン時、移動速度、リロード速度、攻撃速度が20%上昇する"
+  },
+  "jokerHeavyDrinker": {
+    "name": "ヘビー\nドリンカー",
+    "description": "回復ボトルの効果が 25% アップする"
+  },
+  "jokerHeavyWeapon": {
+    "name": "ヘビーウェポン",
+    "description": "ダメージ +10%。ただし、武器の使用中は重力 +30%"
+  },
+  "jokerHelpingHand": {
+    "name": "ヘルピング\nハンド",
+    "description": "味方を2倍速で復活できる"
+  },
+  "jokerHitMe": {
+    "name": "ヒットミー",
+    "description": "被弾後20秒間、HPを毎秒0.75回復する"
+  },
+  "jokerHoarder": {
+    "name": "ホーダー",
+    "description": "ジョーカー取得時に15%の確率でランダムにジョーカーが出現する"
+  },
+  "jokerHomingBurst": {
+    "name": "ホーミングバースト",
+    "description": "8発撃つたび近くの敵へ追尾弾を2発放つ"
+  },
+  "jokerHop": {
+    "name": "ホップ",
+    "description": "ジャンプの高さ +20%"
+  },
+  "jokerJokheal": {
+    "name": "メディカード",
+    "description": "ジョーカーを拾うとHPを追加で35回復する"
+  },
+  "jokerJumpStar": {
+    "name": "ジャンプスター",
+    "description": "保安官の星を所持中、ジャンプ +2"
+  },
+  "jokerKnuckleDown": {
+    "name": "ナックルダウン",
+    "description": "近接ダメージ +10%"
+  },
+  "jokerLastDance": {
+    "name": "ラストダンス",
+    "description": "現在のHPが最大HPの30%以下の場合、移動速度が30%増加する"
+  },
+  "jokerLastStand": {
+    "name": "ラストスタンド",
+    "description": "最大HPの30%以下の間、被ダメージ -30%と近接ライフスティール10%が付与される"
+  },
+  "jokerLazy": {
+    "name": "レイジー",
+    "description": "弾薬のピックアップは無効になる。12秒ごとに最大弾薬数の10%を回復"
+  },
+  "jokerLifePact": {
+    "name": "生命の契約",
+    "description": "キル時にHPが2回復するが、最大HPが30%減少する"
+  },
+  "jokerLightWeight": {
+    "name": "ライトウェイト",
+    "description": "重力 -5%"
+  },
+  "jokerLingeringThrow": {
+    "name": "リンガリングスロー",
+    "description": "持続時間が2倍になる。持続時間アップグレードと併用"
+  },
+  "jokerLowGravity": {
+    "name": "月の重力",
+    "description": "重力 -25%"
+  },
+  "jokerLuckyStrike": {
+    "name": "ラッキーストライク",
+    "description": "1ヒットあたりの与ダメージが2倍になる確率 +10%"
+  },
+  "jokerLullabard": {
+    "name": "ララバード",
+    "description": "命中ごとにコードが1つ多く得られ、回復範囲も広がるが、スラム攻撃を失う"
+  },
+  "jokerLunge": {
+    "name": "ランジ",
+    "description": "近接射程とヒットボックスのサイズ +15%"
+  },
+  "jokerMachineGun": {
+    "name": "マシンガン",
+    "description": "この武器は1回のミッションで50ダメージごとに攻撃速度が0.3%上昇する"
+  },
+  "jokerMagicFriendship": {
+    "name": "マジックフレンドシップ",
+    "description": "味方の近くにいると、HPが徐々に回復する"
+  },
+  "jokerMagicReload": {
+    "name": "マジック\nリロード",
+    "description": "スペルを詠唱したあと、武器を自動でリロードする"
+  },
+  "jokerMarkAce": {
+    "name": "マークエース",
+    "description": "弾が敵を5秒間マークする。マークされた敵は被ダメージ +15%"
+  },
+  "jokerMindShot": {
+    "name": "マインド\nショット",
+    "description": "弱点命中時に爆発を引き起こす"
+  },
+  "jokerOneTrick": {
+    "name": "ジョーカートリック",
+    "description": "武器に装備しているジョーカーのレア度の種類1つにつき、ダメージ +7%と攻撃速度 +7%が付与される"
+  },
+  "jokerOverBlast": {
+    "name": "オーバー\nブラスト",
+    "description": "マガジン内で不足している弾4発につき、追加のペレットを1発発射する"
+  },
+  "jokerOverDraw": {
+    "name": "オーバードロー",
+    "description": "2秒チャージして、扇形状に3本矢を発射する。攻撃速度でチャージ時間が短縮する"
+  },
+  "jokerPanicAttack": {
+    "name": "パニック\nアタック",
+    "description": "HPにダメージを受けると、3秒間ダメージ +20%が付与される"
+  },
+  "jokerPartyShot": {
+    "name": "パーティ\nショット",
+    "description": "弱点命中時に紙吹雪が舞う確率 +50%。何の意味もない！"
+  },
+  "jokerPewPewPew": {
+    "name": "ピューピューピュー",
+    "description": "攻撃速度 +20%"
+  },
+  "jokerPickPick": {
+    "name": "ピックピック",
+    "description": "命中時に対象へダメージを与えるツルハシが出現する確率 +10%"
+  },
+  "jokerPigshot": {
+    "name": "ピッグショット",
+    "description": "着弾時にブタが出現する確率 +5%。ブタを攻撃すると爆発する"
+  },
+  "jokerPlasticDuck": {
+    "name": "ラバーダック",
+    "description": "歩くとラバーダックの音がする。何の意味もない！"
+  },
+  "jokerPreciousRush": {
+    "name": "プレシャスラッシュ",
+    "description": "敵が死亡した際に加速リングが出現する確率 +10%"
+  },
+  "jokerPricklyPear": {
+    "name": "プリックリー\nペア",
+    "description": "HPにダメージを受けると、同じダメージ +15を攻撃者に跳ね返す"
+  },
+  "jokerQuickDraw": {
+    "name": "クイックドロー",
+    "description": "切り替え速度 +40%"
+  },
+  "jokerRage": {
+    "name": "レイジ",
+    "description": "HPが25%に減った時、近くの敵を炎上させる衝撃波を放つ（クールダウン：60秒）"
+  },
+  "jokerRampage": {
+    "name": "ランページ",
+    "description": "キル時に10秒間リロード速度が+5%上昇（最大100%）"
+  },
+  "jokerRelentless": {
+    "name": "不屈",
+    "description": "最大HPの30%以下の間、与ダメージ +30%"
+  },
+  "jokerReloadMastery": {
+    "name": "リロード\nマスタリ",
+    "description": "空のマガジンをリロードする速度が50%上昇する"
+  },
+  "jokerRicochet": {
+    "name": "リコシェ",
+    "description": "発射した弾が跳ね返り、30%の確率で近くの敵に自動的に命中する"
+  },
+  "jokerRiposte": {
+    "name": "リポスト",
+    "description": "シールドが攻撃を吸収した後、次の攻撃の与ダメージ +100%"
+  },
+  "jokerRunAndGun": {
+    "name": "走り撃ち",
+    "description": "射撃中の移動速度 +30%"
+  },
+  "jokerRunAndReload": {
+    "name": "走りリロード",
+    "description": "リロード中の移動速度 +50%"
+  },
+  "jokerRushBlast": {
+    "name": "ラッシュ\nブラスト",
+    "description": "マガジンの最初の3発が精度100%でより遠くまで飛ぶ"
+  },
+  "jokerScavengerStar": {
+    "name": "スカベンジャースター",
+    "description": "取得範囲 +100%。保安官の星を所持中、移動速度 +30%"
+  },
+  "jokerScoutsHonor": {
+    "name": "名誉にかけて",
+    "description": "10秒間ダメージを受けないと、シールドが最低でもSP10になる"
+  },
+  "jokerScrubBullet": {
+    "name": "クリーンヒット",
+    "description": "メイン武器が敵から属性を取り除き、即座に10ダメージを与える"
+  },
+  "jokerSecondWind": {
+    "name": "セカンド\nウィンド",
+    "description": "致命傷を受けても倒れずHPが50回復する（クールダウン：180秒）"
+  },
+  "jokerSharpShooter": {
+    "name": "シャープシューター",
+    "description": "弱点ダメージ +20%"
+  },
+  "jokerShineBright": {
+    "name": "シャイン\nブライト",
+    "description": "ヒーローの発光量 +50%。ピカピカ！何の意味もない！"
+  },
+  "jokerShroomGrave": {
+    "name": "キノコの墓",
+    "description": "敵が死亡した際にキノコが出現する確率 +10%"
+  },
+  "jokerSkyLash": {
+    "name": "スカイラッシュ",
+    "description": "チャージ攻撃で移動速度 +50%が付与され、飛行できるようになる"
+  },
+  "jokerSlowAndSteady": {
+    "name": "スローアンドステディ",
+    "description": "精度 +25%、ただし攻撃速度 -10%"
+  },
+  "jokerSnackAPunch": {
+    "name": "スナック・ア・パンチ",
+    "description": "近接キルでSPを1付与する"
+  },
+  "jokerSoulEater": {
+    "name": "ソウルイーター",
+    "description": "ソウルを拾うと5秒間、ダメージとリロード速度が20%上昇する"
+  },
+  "jokerSoulReaper": {
+    "name": "ソウルリーパー",
+    "description": "ミッション終了時の獲得ソウルが20%増加する"
+  },
+  "jokerSoulSiphon": {
+    "name": "ソウル\nサイフォン",
+    "description": "ソウルの取得範囲が広がり、取得時にHPを2回復する"
+  },
+  "jokerSpareBullets": {
+    "name": "スペアバレット",
+    "description": "弾薬バッグ +10%"
+  },
+  "jokerSpeedster": {
+    "name": "スピードスター",
+    "description": "移動速度ボーナス3%につきダメージと攻撃速度 +1%（最大+40%）"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "スピーディガンザレス",
+    "description": "移動速度 +10%"
+  },
+  "jokerSpellLash": {
+    "name": "スペルラッシュ",
+    "description": "呪文を唱えると、チャージが即座に満タンになる"
+  },
+  "jokerSpellRoulette": {
+    "name": "スペルルーレット",
+    "description": "スペルのクールダウン -20%。ただし、スペルは詠唱ごとにランダム化される"
+  },
+  "jokerStackedLever": {
+    "name": "スタックレバー",
+    "description": "敵撃破時に予備弾から即座に2発リロード"
+  },
+  "jokerStonks": {
+    "name": "ストンクス",
+    "description": "木箱を開けたときにランダムにジョーカーを取得する確率 +20%"
+  },
+  "jokerSwampTrick": {
+    "name": "スワンプ\nトリック",
+    "description": "リロード時の爆発で地面に水たまりを生成する"
+  },
+  "jokerThickSkin": {
+    "name": "分厚い皮",
+    "description": "すべての被ダメージを20%軽減するが、受ける回復量が30%減少する"
+  },
+  "jokerTinMan": {
+    "name": "ティンマン",
+    "description": "超過した回復量がSPに変換される（最大+15SP）"
+  },
+  "jokerToolBox": {
+    "name": "ツールボックス",
+    "description": "補助系のピックアップは無効。補助系は90秒後に自動的に補充される"
+  },
+  "jokerTweakDealer": {
+    "name": "ジョーカーディーラー",
+    "description": "有効なジョーカー1つにつきHP +1を獲得する"
+  },
+  "jokerUltraDraw": {
+    "name": "ウルトラドロー",
+    "description": "4秒チャージして、大爆発する矢を発射する。攻撃速度でチャージ時間が短縮する"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "命中"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "持続時間"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "射程"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "装弾数"
+  },
+  "jokerUpgradeDamage": {
+    "name": "ダメージ"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "装備速度"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "攻撃速度"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "攻撃速度"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "攻撃速度"
+  },
+  "jokerUpgradeHeal": {
+    "name": "HP"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "速度"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "ジャンプ高度"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "ライフスティール"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "リロード速度"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "取得範囲"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "スペルのクールダウン短縮"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "弾薬バッグ"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "弾薬バッグ"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "射程"
+  },
+  "jokerVampire": {
+    "name": "ヴァンパイア",
+    "description": "武器にライフスティール +4%が付与される"
+  },
+  "jokerWeakLink": {
+    "name": "ウィークリンク",
+    "description": "弱点命中時のダメージが +35%、通常ダメージが -20%"
+  },
+  "jokerWellFed": {
+    "name": "ウェルフェッド",
+    "description": "HP +5"
+  },
+  "jokerWestWizard": {
+    "name": "西の魔術師",
+    "description": "スペルのクールダウンが30%短縮するが、HPが30%減少"
+  }
+}

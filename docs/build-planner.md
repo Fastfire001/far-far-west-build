@@ -40,6 +40,15 @@ Hors périmètre :
 - Les règles de progression qui ne sont pas dans `data/progression.json` (points par niveau, boutique de prestige)
   sont regroupées dans un seul fichier de configuration, chacune marquée confirmée ou supposée.
 
+## Langues
+
+- Le planificateur est disponible dans les **15 langues du jeu**, avec les textes officiels du jeu (`data/i18n/`).
+  À défaut d'un texte traduit, il affiche l'anglais.
+- Les textes sont affichés tels que dans le jeu (noms de jokers en majuscules) ; les retours à la ligne des noms
+  japonais sont remplacés par un espace à l'affichage.
+- L'interface du planificateur elle-même (boutons, messages de validation) n'existe pas dans le jeu : elle devra
+  être traduite par nos soins, au moins en français et en anglais.
+
 ## Sauvegarde et partage
 
 - Les builds sont sauvegardés dans le **localStorage** du navigateur : une liste de builds nommés (ouvrir,

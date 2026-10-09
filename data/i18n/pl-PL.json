@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "Kwas",
+    "description": "Ofensywa – spowalniaj wrogów i wyniszczaj pole bitwy"
+  },
+  "itemBanjo": {
+    "name": "Banjo",
+    "description": "Powolne i słabe ataki, trochę mocy leczniczej.\nIdealne do leczenia sojuszników i niszczenia im błon bębenkowych."
+  },
+  "itemBoomerang": {
+    "name": "Bumerang",
+    "description": "Wylatuje, przez chwilę nęka wrogów, po czym wraca na kolejną rundę. \nNie wymaga amunicji, idealny do ekologicznego wyposażenia."
+  },
+  "itemBow": {
+    "name": "Łuk",
+    "description": "Wystrzeliwuje strzały z wyprzedaży, gdy szybko wyciągasz broń. \nWyginaj śmiało ciało i stwórz wybuchowy hicior."
+  },
+  "itemCactus": {
+    "name": "Kaktus",
+    "description": "Użytkowy – kontroluj pole bitwy, przywołując pomocne kaktusy"
+  },
+  "itemDualRevolver": {
+    "name": "Podwójne rewolwery",
+    "description": "Wysoka szybkostrzelność, słaba celność, ale jedno przeładowanie sprawia, że oba rewolwery stają się wybuchowo użyteczne. Cudowny skok od rozwagi do rozwałki."
+  },
+  "itemElec": {
+    "name": "Prąd",
+    "description": "Użytkowy – poruszaj się szybko i raź wrogów błyskawicami"
+  },
+  "itemFire": {
+    "name": "Piro",
+    "description": "Ofensywa – spalaj wrogów i podpalaj ziemię"
+  },
+  "itemIce": {
+    "name": "Mróz",
+    "description": "Defensywny – zamrażaj wrogów i wzmacniaj swoją tarczę"
+  },
+  "itemKnuckles": {
+    "name": "Kastet",
+    "description": "Krótki zasięg, wielki efekt.\nNie potrzebujesz amunicji, nie musisz celować ani się nad tym zastanawiać."
+  },
+  "itemLasso": {
+    "name": "Lasso",
+    "description": "Szybko biczuje wrogów z niezłego zasięgu.\nNiektórzy z nich wracają po więcej, i to nie złośliwie."
+  },
+  "itemLongRanger": {
+    "name": "Long Ranger",
+    "description": "Zbudowany z myślą o niezrównanej celności i przeszywających strzałach. Każde chybienie hańbi wieki szlifowania kunsztu. Postaraj się nie rozczarować."
+  },
+  "itemMinigun": {
+    "name": "Minigun",
+    "description": "Gdy się rozkręci, bez przerwy wyrzuca z siebie pociski. Zasadniczo można cię powstrzymać, ale jesteś pełnoetatowym miotaczem pocisków, a nie kimś, kto się poddaje."
+  },
+  "itemPistol": {
+    "name": "Rewolwer",
+    "description": "Niezawodny przez cały czas, przeciętny we wszystkim. \nNajlepszy wybór dla osób, które obawiają się zaangażowania."
+  },
+  "itemQuadCylinder": {
+    "name": "Czterorurka",
+    "description": "Strzela okej, w ręce siedzi okej, działa okej. \nPomnik przeciętności, ale bardzo niezawodny."
+  },
+  "itemSheriffStar": {
+    "name": "Gwiazda szeryfa",
+    "description": "Wystrzeliwuje z dużą prędkością i przecina wrogów. \nSprawiedliwość nigdy nie była tak prosta."
+  },
+  "itemShotgun": {
+    "name": "Strzelba",
+    "description": "Dziwnie wysoka szybkostrzelność jak na strzelbę, przeładowanie nabój po naboju i beznadziejna trafność. Nareszcie broń, która pasuje do twojego celu."
+  },
+  "itemSpellAcidBubble": {
+    "name": "Bańka",
+    "description": "Rzuć dużą bańkę kwasu, która pęka przy uderzeniu i tworzy wiele kałuż kwasu."
+  },
+  "itemSpellAcidContagion": {
+    "name": "Zarażenie",
+    "description": "Razi wszystkich wrogów w szerokiej strefie i nakłada na nich zarażenie, powodując ich eksplozję po śmierci."
+  },
+  "itemSpellAcidGeyser": {
+    "name": "Gejzer",
+    "description": "Przywołaj gejzer kwasu, który wybucha przy uderzeniu."
+  },
+  "itemSpellAcidRain": {
+    "name": "Deszcz",
+    "description": "Przywołaj deszcz kwasu, który niszczy wrogów na dużym obszarze."
+  },
+  "itemSpellAcidThrower": {
+    "name": "Rzucający",
+    "description": "Wypluwaj strumienie kwasu, które pozostawiają żrące kałuże na ziemi."
+  },
+  "itemSpellCactusBetty": {
+    "name": "Mino",
+    "description": "Przywołaj kaktusową minę, która wybucha po nadepnięciu."
+  },
+  "itemSpellCactusDecoy": {
+    "name": "Wabiko",
+    "description": "Przywołaj tańczącego kaktusa, który wabi wrogów, a następnie wybucha."
+  },
+  "itemSpellCactusTurret": {
+    "name": "Pistolero",
+    "description": "Przywołaj kaktusową wieżyczkę, która prowadzi ciągły ostrzał pobliskich wrogów."
+  },
+  "itemSpellCactusUlti": {
+    "name": "Bandito",
+    "description": "Przywołaj potężnego kaktusowego golema, który będzie walczył dla ciebie przez pewien czas."
+  },
+  "itemSpellCactusWall": {
+    "name": "Ściano",
+    "description": "Przywołaj kolce kaktusa, które zadają obrażenia i spowalniają wrogów, kiedy się z nimi zetkną."
+  },
+  "itemSpellElecPortal": {
+    "name": "Portal",
+    "description": "Stwórz maksymalnie dwa portale, które przenoszą graczy i powielają magiczne pociski."
+  },
+  "itemSpellElecStrike": {
+    "name": "Uderzenia",
+    "description": "Wystrzel linię piorunów, które porażą wszystko na swojej drodze."
+  },
+  "itemSpellElecSuperJump": {
+    "name": "Hop",
+    "description": "Błyskawicznie skacz, by uciec przed wrogami."
+  },
+  "itemSpellElecSwap": {
+    "name": "Zamiana",
+    "description": "Zamień się pozycjami z wrogiem, eksplodując w obu miejscach."
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "Uderzenie pioruna",
+    "description": "Wznieś się w górę, a następnie zanurkuj w dół, aby wysadzić obszar i rozpętać burzę nad wrogami."
+  },
+  "itemSpellFireBall": {
+    "name": "Kulka ognia",
+    "description": "Wystrzel kulę ognia, która eksploduje przy uderzeniu i pozostawia płonącą ziemię."
+  },
+  "itemSpellFireBeam": {
+    "name": "Ognisty promień",
+    "description": "Uwolnij olbrzymi promień ognia, który spala wszystko na swojej drodze."
+  },
+  "itemSpellFireFingergun": {
+    "name": "Strzelające palce",
+    "description": "Zamień swoją broń na ogniste palce strzelające wybuchowymi pociskami."
+  },
+  "itemSpellFireSurcharge": {
+    "name": "Dopłata",
+    "description": "Spal wszystkich wrogów w szerokiej strefie, detonując tych, którzy już płoną."
+  },
+  "itemSpellFireWisp": {
+    "name": "Ognik",
+    "description": "Przywołaj ognik, który zadaje dodatkowe obrażenia od poparzeń, a po zabiciu przeskakuje na innego wroga."
+  },
+  "itemSpellIceBlizzard": {
+    "name": "Zamieć",
+    "description": "Przywołaj zamieć, która podąża za tobą, zadając obrażenia wszystkim wrogom i dając tarczę sojusznikom."
+  },
+  "itemSpellIceBreeze": {
+    "name": "Bryza",
+    "description": "Przywołaj bryzę, która zamraża wrogów w szerokim stożku."
+  },
+  "itemSpellIceCube": {
+    "name": "Kostka",
+    "description": "Zamień siebie lub sojusznika w niewrażliwą na obrażenia kostkę lodu."
+  },
+  "itemSpellIceGlaze": {
+    "name": "Szron",
+    "description": "Uwolnij podmuch, który zadaje obrażenia pobliskim wrogom i daje tarczę pobliskim sojusznikom."
+  },
+  "itemSpellIceLance": {
+    "name": "Most",
+    "description": "Przywołuje most, który daje tarczę przechodzącym po nim sojusznikom."
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "Skażenie",
+    "description": "Wywołaj lalkę, aby skazić wrogów i zmusić ich przed śmiercią do walki po twojej stronie."
+  },
+  "itemSpellVoodooDoll": {
+    "name": "Lalka",
+    "description": "Przywołaj lalkę, która zapewnia nieśmiertelność i dużą prędkość sojusznikom w swojej strefie."
+  },
+  "itemSpellVoodooDrain": {
+    "name": "Wyssanie",
+    "description": "Rozkaż swojej lalce, aby wysysała zdrowie wroga."
+  },
+  "itemSpellVoodooHeal": {
+    "name": "Ratunek",
+    "description": "Wywołaj moc swojej lalki, aby uleczyć lub ożywić najbliższego sojusznika."
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "Rytuał",
+    "description": "Przywołaj pierścień świec, który przywraca zdrowie sojusznikom znajdującym się w jego świetle."
+  },
+  "itemUtilityAmmo": {
+    "name": "Pakiet amunicji",
+    "description": "Wybucha amunicją. Więcej graczy oznacza więcej pocisków. \nSpotkania rodzinne jeszcze nigdy nie były tak dochodowe."
+  },
+  "itemUtilityBottleCrate": {
+    "name": "Skrzynka na butelki",
+    "description": "Eksploduje i rozsypuje butelki lecznicze.\nGwarantujemy, że staniesz się najpopularniejszym kowbojem w saloonie."
+  },
+  "itemUtilityHealBottle": {
+    "name": "Obszar leczniczy",
+    "description": "Wybucha przy uderzeniu i tworzy strefę leczenia. \nZalatuje skisłą zupą, jak każde babcine lekarstwo."
+  },
+  "itemUtilityImpulse": {
+    "name": "Granat impulsowy",
+    "description": "Okresowo generuje fale uderzeniowe, które odpychają graczy. \nPozwala ci osiągnąć wyżyny, na jakie twój poziom nigdy by nie pozwolił."
+  },
+  "itemVoodoo": {
+    "name": "Voodoo",
+    "description": "Użytkowy – wysysaj życie wroga i wspieraj sojuszników"
+  },
+  "itemWinchester": {
+    "name": "Popychacz",
+    "description": "Wyraźny spust, bezbłędna precyzja i niezawodne przeładowanie. \nKiedyś wygrywał śnięte złote rybki na jarmarkach, teraz wygrywa pojedynki."
+  },
+  "jokerAimingBurst": {
+    "name": "WYMIERZONA SERIA",
+    "description": "+30% obrażeń przeciwko słabym punktom i przebijające pociski podczas celowania"
+  },
+  "jokerAllMighty": {
+    "name": "WSZECHMOCNY",
+    "description": "Zyskujesz +1% obrażeń za każdy 1 punkt tarczy, aż do 80%"
+  },
+  "jokerAmmoSupply": {
+    "name": "ZAPAS AMUNICJI",
+    "description": "+5% szans, że wrogowie upuszczą skrzynkę z amunicją po śmierci"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "WODOGRZMOTY DUŻE",
+    "description": "+2% szans na utworzenie obszaru antygrawitacyjnego po śmierci wroga"
+  },
+  "jokerApprentice": {
+    "name": "UCZEŃ",
+    "description": "-10% czasu odnowienia zaklęć"
+  },
+  "jokerAvalanche": {
+    "name": "LAWINA",
+    "description": "+15% obrażeń, gdy masz tarczę"
+  },
+  "jokerBardbarian": {
+    "name": "BARDBARZYŃCA",
+    "description": "Przytrzymaj dłużej uderzenie z góry, aby wyprowadzić potężniejszy cios."
+  },
+  "jokerBattleMage": {
+    "name": "MAG BITEWNY",
+    "description": "Zabicie wroga skraca czas odnowienia wszystkich zaklęć o 0,5%"
+  },
+  "jokerBellShot": {
+    "name": "STRZAŁ W DZWON",
+    "description": "+5% szansy na przywołanie uzdrawiającego dzwonka przy trafieniu w słaby punkt"
+  },
+  "jokerBerserker": {
+    "name": "BERSERKER",
+    "description": "Zyskujesz do +50% obrażeń w walce wręcz, im mniej masz PŻ"
+  },
+  "jokerBloodLust": {
+    "name": "ŻĄDZA KRWI",
+    "description": "Zabójstwa w walce wręcz dają kumulujące się +5% do szybkości walki wręcz na 5 sek., aż do +50%."
+  },
+  "jokerBouncingBall": {
+    "name": "KOZŁUJĄCA PIŁKA",
+    "description": "+15% obrażeń w powietrzu"
+  },
+  "jokerBracing": {
+    "name": "OPARCIE",
+    "description": "+5% szybkości ataku i przeładowania."
+  },
+  "jokerCactusDay": {
+    "name": "DZIEŃ KAKTUSA",
+    "description": "+5% szans na pojawienie się kaktusa Mino po śmierci wroga."
+  },
+  "jokerCamper": {
+    "name": "CAMPER",
+    "description": "+50% szans, że nie zużyjesz amunicji, stojąc w miejscu."
+  },
+  "jokerCantRipOneTrick": {
+    "name": "ZNANA SZTUCZKA",
+    "description": "Twoje zaklęcia o bazowym czasie odnowienia 35 sekund lub krótszym mają czas odnowienia skrócony o 25%"
+  },
+  "jokerCarePackage": {
+    "name": "PAKIET PIELĘGNACYJNY",
+    "description": "+1 amunicja użytkowa"
+  },
+  "jokerCastAway": {
+    "name": "ODRZUCONY",
+    "description": "Rzucenie zaklęcia skraca czas odnowienia pozostałych zaklęć o 3 sek., ale nie poniżej 4 sek."
+  },
+  "jokerCdrAcid": {
+    "name": "MISTRZOSTWO KWASU",
+    "description": "Zyskujesz -10% czasu odnowienia kwasu za każde zaklęcie kwasu dodane do wyposażenia"
+  },
+  "jokerCdrCactus": {
+    "name": "MISTRZOSTWO KAKTUSÓW",
+    "description": "Zyskujesz -10% czasu odnowienia kaktusa za każde zaklęcie kaktusa dodane do wyposażenia"
+  },
+  "jokerCdrElec": {
+    "name": "MISTRZOSTWO PRĄDU",
+    "description": "Zyskujesz -10% czasu odnowienia prądu za każde zaklęcie prądu dodane do wyposażenia"
+  },
+  "jokerCdrFire": {
+    "name": "MISTRZOSTWO PIRO",
+    "description": "Zyskujesz -10% czasu odnowienia piro za każde zaklęcie piro dodane do wyposażenia"
+  },
+  "jokerCdrFrost": {
+    "name": "MISTRZOSTWO MROZU",
+    "description": "Zyskujesz -10% czasu odnowienia mrozu za każde zaklęcie mrozu dodane do wyposażenia"
+  },
+  "jokerCdrVoodoo": {
+    "name": "MISTRZOSTWO VOODOO",
+    "description": "Zyskujesz -10% czasu odnowienia voodoo za każde zaklęcie voodoo dodane do wyposażenia"
+  },
+  "jokerChad": {
+    "name": "CHAD",
+    "description": "Ujawnij pozycję wędrownej handlarki i otrzymaj 20% zniżki. Zasługujesz na to"
+  },
+  "jokerCheapSkate": {
+    "name": "DUSIGROSZ",
+    "description": "Zyskujesz +1 PŻ za każde 20 sztuk złota w ekwipunku misji, aż do +15 PŻ."
+  },
+  "jokerChickshot": {
+    "name": "STRZAŁ W KURAKA",
+    "description": "+50% szans na to, że ataki będą wydawać odgłosy kur. Bezużyteczne!"
+  },
+  "jokerChonky": {
+    "name": "CHONKY",
+    "description": "+20% obrażeń, ale +15% siły grawitacji."
+  },
+  "jokerChonkyThrow": {
+    "name": "TŁUSTY RZUT",
+    "description": "Bumerang jest dwa razy większy i przechodzi przez tarcze"
+  },
+  "jokerClutch": {
+    "name": "SPRZĘGŁO",
+    "description": "+2 wybuchowe pociski na końcu magazynka."
+  },
+  "jokerCoinFlip": {
+    "name": "RZUT MONETĄ",
+    "description": "Co 10 sek. rzucasz monetą. Zadajesz +100% albo -50% obrażeń od broni"
+  },
+  "jokerColdBlooded": {
+    "name": "ZIMNA KREW",
+    "description": "Twoje ataki w walce wręcz zamrażają wrogów, zużywając 3 punkty tarczy na wroga"
+  },
+  "jokerConsumer": {
+    "name": "KONSUMENT",
+    "description": "Zapewnia +25% obrażeń od broni, ale przeładowywanie marnuje teraz niewykorzystaną amunicję."
+  },
+  "jokerCrackShot": {
+    "name": "CELNE OKO",
+    "description": "+7% obrażeń"
+  },
+  "jokerDeadlyStrong": {
+    "name": "ŚMIERTELNA SIŁA",
+    "description": "Poruszaj się szybciej i zadawaj więcej obrażeń jako martwy duch"
+  },
+  "jokerDeathsDance": {
+    "name": "TANIEC ŚMIERCI",
+    "description": "Twoja tarcza wyczerpuje się o 30% wolniej"
+  },
+  "jokerDestroyer": {
+    "name": "NISZCZYCIEL",
+    "description": "Pierwsze 25% twojego magazynka zadaje +20% obrażeń."
+  },
+  "jokerDisgrace": {
+    "name": "HAŃBA",
+    "description": "Zyskujesz +30% szybkości ruchu. Twój koń nie chce z tobą przebywać"
+  },
+  "jokerDoubleDown": {
+    "name": "PODWÓJNA STAWKA",
+    "description": "Zyskujesz +30% punktów tarczy ze wszystkich źródeł"
+  },
+  "jokerDwarf": {
+    "name": "KARZEŁ",
+    "description": "Jesteś maluchem. Zyskujesz szybkość ruchu, ataku i mniejszą siłę grawitacji."
+  },
+  "jokerEagleLever": {
+    "name": "SOKOLA DŹWIGNIA",
+    "description": "Kolejne strzały bez chybienia zadają +10% obrażeń, kumulując się do +50%"
+  },
+  "jokerEatAPunch": {
+    "name": "PIĄCHOPIRYNA",
+    "description": "Zabójstwa w walce wręcz przywracają 2 PŻ"
+  },
+  "jokerEcoTrick": {
+    "name": "SZTUCZKA EKO",
+    "description": "Przeładowywanie nie marnuje już amunicji"
+  },
+  "jokerElementalSpin": {
+    "name": "ŻYWIOŁOWY OBRÓT",
+    "description": "Minigun ma 30% szans na wykorzystanie losowego efektu żywiołów zamiast wystrzelenia zwykłego pocisku"
+  },
+  "jokerExecute": {
+    "name": "EGZEKUCJA",
+    "description": "Twoje trafienia natychmiast zabijają wrogów poniżej 20% PŻ, z wyjątkiem elit i bossów"
+  },
+  "jokerExplosiveRounds": {
+    "name": "WYBUCHOWE TRAFIENIA (Piro)",
+    "description": "+5% szans na wywołanie eksplozji przez trafienie (piro)."
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "WYBUCHOWE TRAFIENIA (Kwas)",
+    "description": "+5% szans na wywołanie eksplozji przez trafienie (kwas)."
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "WYBUCHOWE TRAFIENIA (Prąd)",
+    "description": "+5% szans na wywołanie eksplozji przez trafienie (prąd)."
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "WYBUCHOWE TRAFIENIA (Mróz)",
+    "description": "+5% szans na wywołanie eksplozji przez trafienie (mróz)."
+  },
+  "jokerExtraDash": {
+    "name": "DODATKOWY PĘD",
+    "description": "+1 pęd"
+  },
+  "jokerExtraJump": {
+    "name": "DODATKOWY SKOK",
+    "description": "+1 skok"
+  },
+  "jokerFanningAce": {
+    "name": "WACHLARZ ASÓW",
+    "description": "Oddaj strzał w odpowiednim momencie przeładowania, aby wystrzelić wszystkie pociski."
+  },
+  "jokerFastDraw": {
+    "name": "ZMIANOSTRZAŁ",
+    "description": "Pierwsze trafienie po wyposażeniu broni zadaje o 30% więcej obrażeń"
+  },
+  "jokerFastHands": {
+    "name": "SZYBKIE RĘCE",
+    "description": "+20% prędkości przeładowania"
+  },
+  "jokerFightOrFlight": {
+    "name": "WALCZ LUB UCIEKAJ",
+    "description": "Ubytek PŻ daje +20% do szybkości walki wręcz na 3 sek."
+  },
+  "jokerFistFight": {
+    "name": "WALKA NA PIĘŚCI",
+    "description": "Twoje trafienia gołymi rękami są silniejsze."
+  },
+  "jokerFistRage": {
+    "name": "FURIA PIĘŚCI",
+    "description": "Otrzymywanie obrażeń generuje ładunek i daje +30% szybkości ataku na 2 sek."
+  },
+  "jokerFistRoDah": {
+    "name": "PIĘŚĆ RO DAH",
+    "description": "Naładowany atak odrzuca cię do tyłu i ma 20% szans na nałożenie mrozu na wrogów"
+  },
+  "jokerFocusShot": {
+    "name": "SKUPIONY STRZAŁ",
+    "description": "Każde trafienie w słaby punkt skraca czas odnowienia twoich zaklęć o 2 sek."
+  },
+  "jokerFocusedFeet": {
+    "name": "ZWINNY STRZAŁ",
+    "description": "+10% do szybkości ataku podczas celowania."
+  },
+  "jokerFreeCocktail": {
+    "name": "DARMOWY KOKTAJL",
+    "description": "Gdy przeładowujesz pusty magazynek, odzyskujesz 2 PŻ."
+  },
+  "jokerFreezeOver": {
+    "name": "OSTATNI BASTION",
+    "description": "Po osiągnięciu 25% PŻ zyskujesz +50 punktów tarczy (czas odnowienia: 60 sek.)"
+  },
+  "jokerFrenzySpin": {
+    "name": "SZALEŃCZY OBRÓT",
+    "description": "Gdy twój licznik zabójstw przekracza 10, minigun strzela dwa razy szybciej"
+  },
+  "jokerFrostBite": {
+    "name": "ODMROŻENIE",
+    "description": "Zabójstwa zamrożonych wrogów w walce wręcz dają 2 punkty tarczy"
+  },
+  "jokerGiant": {
+    "name": "OLBRZYM",
+    "description": "Jesteś olbrzymem. Zyskujesz zdrowie, obrażenia od broni i skrócenie czasu odnowienia zaklęć"
+  },
+  "jokerGlassCannon": {
+    "name": "SZKLANA ARMATA",
+    "description": "+40% obrażeń od broni i w walce wręcz, ale -25% PŻ"
+  },
+  "jokerGoldProspector": {
+    "name": "POSZUKIWACZ ZŁOTA",
+    "description": "Zwiększa ilość zdobytego złota o 20% na koniec misji"
+  },
+  "jokerGoldTooth": {
+    "name": "ZŁOTY ZĄB",
+    "description": "+10% szans, że wrogowie upuszczą 1 złoty samorodek po śmierci"
+  },
+  "jokerGoliath": {
+    "name": "GOLIAT",
+    "description": "Jesteś większy. Zyskujesz +25% PŻ"
+  },
+  "jokerGreatWall": {
+    "name": "WIELKI MUR",
+    "description": "Zmniejsza wszystkie otrzymywane obrażenia o 10%, gdy masz tarczę"
+  },
+  "jokerHeadBang": {
+    "name": "MACHANIE GRZYWĄ",
+    "description": "Zadajesz +30% obrażeń słabym punktom"
+  },
+  "jokerHeadshotRefund": {
+    "name": "ZWROT ZA SŁABY PUNKT",
+    "description": "+20% szans na odzyskanie amunicji po trafieniu w słaby punkt"
+  },
+  "jokerHealthyBoi": {
+    "name": "ZDROWY CHŁOP",
+    "description": "Gdy masz pełne zdrowie, zyskujesz +20% do szybkości ruchu, przeładowania i ataku."
+  },
+  "jokerHeavyDrinker": {
+    "name": "PIJACZYSKO",
+    "description": "Butelki lecznicze są dla ciebie o 25% skuteczniejsze"
+  },
+  "jokerHeavyWeapon": {
+    "name": "CIĘŻKA BROŃ",
+    "description": "+10% obrażeń, ale +30% siły grawitacji, gdy broń jest aktywna"
+  },
+  "jokerHelpingHand": {
+    "name": "POMOCNA DŁOŃ",
+    "description": "Możesz ożywiać sojuszników dwa razy szybciej"
+  },
+  "jokerHitMe": {
+    "name": "UDERZ MNIE",
+    "description": "Leczysz się o 0,75 PŻ na sekundę przez 20 sek. po otrzymaniu trafienia"
+  },
+  "jokerHoarder": {
+    "name": "ZBIERACZ",
+    "description": "+15% szans, że zebranie jokera spowoduje pojawienie się kolejnego losowego jokera"
+  },
+  "jokerHomingBurst": {
+    "name": "NAPROWADZANA SERIA",
+    "description": "Co 8 wystrzelonych pocisków wystrzeliwuje 2 kule naprowadzające się na pobliskich wrogów"
+  },
+  "jokerHop": {
+    "name": "SKOK",
+    "description": "+20% wysokości skoku"
+  },
+  "jokerJokheal": {
+    "name": "KARTA ZDROWIA",
+    "description": "Podniesienie jokera przywraca dodatkowe +35 PŻ"
+  },
+  "jokerJumpStar": {
+    "name": "SKACZĄCA GWIAZDA",
+    "description": "+2 skoki podczas trzymania gwiazd szeryfa"
+  },
+  "jokerKnuckleDown": {
+    "name": "ŚWIERZBIĄCE PIĘŚCI",
+    "description": "+10% do obrażeń w walce wręcz"
+  },
+  "jokerLastDance": {
+    "name": "OSTATNI TANIEC",
+    "description": "Gdy masz 30% maks. PŻ lub mniej, zyskujesz +30% do szybkości ruchu"
+  },
+  "jokerLastStand": {
+    "name": "OSTATNI BASTION",
+    "description": "Gdy masz 30% maks. PŻ lub mniej, otrzymujesz -30% obrażeń i zyskujesz 10% kradzieży życia w walce wręcz"
+  },
+  "jokerLazy": {
+    "name": "LENIUCH",
+    "description": "Nie możesz zbierać amunicji. Co 12 sek. zyskujesz 10% maksymalnej amunicji."
+  },
+  "jokerLifePact": {
+    "name": "CYROGRAF",
+    "description": "Zabójstwa leczą cię o 2 PŻ, ale maksymalnie. PŻ zmniejszone o 30%"
+  },
+  "jokerLightWeight": {
+    "name": "WAGA PIÓRKOWA",
+    "description": "-5% siły grawitacji."
+  },
+  "jokerLingeringThrow": {
+    "name": "ZAWIESZONY RZUT",
+    "description": "Podwaja czas zawieszenia. Łączy się z ulepszeniem „Czas zawieszenia”"
+  },
+  "jokerLowGravity": {
+    "name": "PRZYCIĄGANIE KSIĘŻYCA",
+    "description": "-25% siły grawitacji."
+  },
+  "jokerLuckyStrike": {
+    "name": "SZCZĘŚLIWY TRAF",
+    "description": "+10% szans na zadanie podwójnych obrażeń na trafienie."
+  },
+  "jokerLullabard": {
+    "name": "KOŁYBARD",
+    "description": "Zyskujesz dodatkowy akord za trafienie i szerszą strefę leczenia, ale tracisz uderzenie z góry."
+  },
+  "jokerLunge": {
+    "name": "WYPAD",
+    "description": "+15% zasięgu w walce wręcz i wielkości pola trafień"
+  },
+  "jokerMachineGun": {
+    "name": "KARABIN MASZYNOWY",
+    "description": "Na czas misji ta broń zyskuje +0,3% do szybkości ataku za każde zadane 50 pkt. obrażeń."
+  },
+  "jokerMagicFriendship": {
+    "name": "MAGICZNA PRZYJAŹŃ",
+    "description": "Pasywnie odzyskujesz PŻ, gdy znajdujesz się w pobliżu sojuszników"
+  },
+  "jokerMagicReload": {
+    "name": "MAGICZNE PRZEŁADOWANIE",
+    "description": "Automatycznie przeładowuje broń po rzuceniu zaklęcia"
+  },
+  "jokerMarkAce": {
+    "name": "AS STRZELECKI",
+    "description": "Pociski oznaczają wrogów na 5 sek. Oznaczeni wrogowie otrzymują +15% obrażeń"
+  },
+  "jokerMindShot": {
+    "name": "UMYSŁOWY STRZAŁ",
+    "description": "Trafienia w słaby punkt wywołują eksplozję."
+  },
+  "jokerOneTrick": {
+    "name": "SZTUCZKA JOKERA",
+    "description": "Zyskujesz +7% obrażeń i szybkości ataku za każdą różną rzadkość jokerów w broni"
+  },
+  "jokerOverBlast": {
+    "name": "NADWYBUCH",
+    "description": "Wystrzeliwuje dodatkowy śrut za każde 4 brakujące pociski w magazynku"
+  },
+  "jokerOverDraw": {
+    "name": "PRZECIAGNIĘCIE",
+    "description": "Ładuj przez 2 sek., aby wystrzelić 3 strzały w stożku. Szybkość ataku skraca czas ładowania"
+  },
+  "jokerPanicAttack": {
+    "name": "ATAK PANIKI",
+    "description": "Gdy stracisz PŻ, zyskujesz +20% obrażeń na 3 sek."
+  },
+  "jokerPartyShot": {
+    "name": "POPISOWY STRZAŁ",
+    "description": "+50% szans, że trafienie w słaby punkt spowoduje wybuch konfetti. Bezużyteczne!"
+  },
+  "jokerPewPewPew": {
+    "name": "PIU PIU PIU",
+    "description": "+20% szybkości ataku."
+  },
+  "jokerPickPick": {
+    "name": "KILO-KILOF",
+    "description": "+10% szans przy trafieniu na przywołanie kilofów zadających obrażenia celowi."
+  },
+  "jokerPigshot": {
+    "name": "STRZAŁ W ŚWINIAKA",
+    "description": "+5% szans na pojawienie się świni przy uderzeniu. Atakuj je, aby eksplodowały."
+  },
+  "jokerPlasticDuck": {
+    "name": "GUMOWA KACZKA",
+    "description": "Kroki wydają odgłosy gumowej kaczki. Bezużyteczne!"
+  },
+  "jokerPreciousRush": {
+    "name": "GORĄCZKA SKARBU",
+    "description": "+10% szans na pojawienie się pierścienia zwiększającego prędkość po śmierci wroga."
+  },
+  "jokerPricklyPear": {
+    "name": "OPUNCJA",
+    "description": "Gdy stracisz PŻ, zadajesz atakującemu te same obrażenia +15"
+  },
+  "jokerQuickDraw": {
+    "name": "BŁYSKAWICZNE DOBYCIE",
+    "description": "+40% do szybkości zmiany broni"
+  },
+  "jokerRage": {
+    "name": "WŚCIEKŁOŚĆ",
+    "description": "Po osiągnięciu 25% PŻ wypuszczasz falę, która spala pobliskich wrogów (czas odnowienia: 60 sek.)"
+  },
+  "jokerRampage": {
+    "name": "SZAŁ",
+    "description": "Za każde zabójstwo zyskujesz 5% szybkości przeładowania na 10 sek., do 100%"
+  },
+  "jokerRelentless": {
+    "name": "NIEUSTĘPLIWOŚĆ",
+    "description": "Gdy masz 30% maks. PŻ lub mniej, zadajesz +30% obrażeń"
+  },
+  "jokerReloadMastery": {
+    "name": "MISTRZOSTWO PRZEŁADOWANIA",
+    "description": "Przeładowanie pustego magazynka jest o 50% szybsze"
+  },
+  "jokerRicochet": {
+    "name": "RYKOSZET",
+    "description": "Wystrzelony pocisk rykoszetuje z 30% szansą na automatyczne trafienie pobliskiego wroga"
+  },
+  "jokerRiposte": {
+    "name": "RIPOSTA",
+    "description": "Gdy twoja tarcza pochłonie trafienie, twój następny atak zadaje +100% obrażeń"
+  },
+  "jokerRunAndGun": {
+    "name": "KANONADA W BIEGU",
+    "description": "+30% prędkości ruchu podczas strzelania"
+  },
+  "jokerRunAndReload": {
+    "name": "PRZEŁADOWANIE W BIEGU",
+    "description": "+50% szybkości ruchu podczas przeładowywania"
+  },
+  "jokerRushBlast": {
+    "name": "SZYBKA SALWA",
+    "description": "Pierwsze 3 pociski w twoim magazynku mają 100% celności i większy zasięg"
+  },
+  "jokerScavengerStar": {
+    "name": "GWIAZDA ZŁOMIARZY",
+    "description": "Zyskujesz +100% zasięgu zbierania. Podczas trzymania gwiazd szeryfa zyskujesz +30% szybkości ruchu."
+  },
+  "jokerScoutsHonor": {
+    "name": "SŁOWO HARCERZA",
+    "description": "Po 10 sek. bez otrzymywania obrażeń twoja tarcza ma co najmniej 10 PT"
+  },
+  "jokerScrubBullet": {
+    "name": "CZYSZCZĄCE TRAFIENIE",
+    "description": "Twoja podstawowa broń usuwa żywioły z wrogów, zadając natychmiast 10 obrażeń"
+  },
+  "jokerSecondWind": {
+    "name": "DRUGI ODDECH",
+    "description": "Leczy 50 PŻ zamiast w wyniku śmiertelnego trafienia (czas odnowienia: 180 sek.)"
+  },
+  "jokerSharpShooter": {
+    "name": "STRZELEC WYBOROWY",
+    "description": "+20% obrażeń od trafień w słaby punkt"
+  },
+  "jokerShineBright": {
+    "name": "JASNE ŚWIATŁO",
+    "description": "+50% blasku bohatera. Błyszczysz! Bezużyteczne!"
+  },
+  "jokerShroomGrave": {
+    "name": "GRZYBOWY GRÓB",
+    "description": "+10% szans na pojawienie się grzyba po śmierci wroga"
+  },
+  "jokerSkyLash": {
+    "name": "PODNIEBNE SMAGNIĘCIE",
+    "description": "Naładowany atak daje +50% szybkości ruchu i pozwala latać"
+  },
+  "jokerSlowAndSteady": {
+    "name": "POWOLI, ALE PEWNIE",
+    "description": "Zyskujesz +25% celności, ale -10% szybkości ataku"
+  },
+  "jokerSnackAPunch": {
+    "name": "PIĄCHA NA PRZEKĄSKĘ",
+    "description": "Zabójstwa w walce wręcz dają ci 1 punkt tarczy"
+  },
+  "jokerSoulEater": {
+    "name": "POŻERACZ DUSZ",
+    "description": "Zebranie duszy zapewnia 20% obrażeń i prędkości przeładowania na 5 sek."
+  },
+  "jokerSoulReaper": {
+    "name": "ŻNIWIARZ DUSZ",
+    "description": "Zwiększa liczbę zdobytych dusz o 20% na koniec misji"
+  },
+  "jokerSoulSiphon": {
+    "name": "SYFON DUSZ",
+    "description": "Zwiększa zasięg zbierania i przywraca +2 PŻ po podniesieniu duszy"
+  },
+  "jokerSpareBullets": {
+    "name": "ZAPASOWE NABOJE",
+    "description": "+10% do zapasu amunicji"
+  },
+  "jokerSpeedster": {
+    "name": "ŚCIGACZ",
+    "description": "+1% obrażeń i szybkości ataku za każde 3% premii do prędkości ruchu, do +40%"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "SPEEDY GUNZALES",
+    "description": "+10% prędkości ruchu"
+  },
+  "jokerSpellLash": {
+    "name": "ZAKLĘTE SMAGNIĘCIE",
+    "description": "Rzucenie zaklęcia natychmiast wypełnia pasek ładowania."
+  },
+  "jokerSpellRoulette": {
+    "name": "RULETKA ZAKLĘĆ",
+    "description": "-20% czasu odnowienia zaklęć, ale zaklęcia są losowane przy każdym rzucie."
+  },
+  "jokerStackedLever": {
+    "name": "SPIĘTRZONA DŹWIGNIA",
+    "description": "Zabicie wroga powoduje automatyczne przeładowanie 2 pocisków z rezerwy amunicji"
+  },
+  "jokerStonks": {
+    "name": "AKCJE",
+    "description": "+20% szans, że otwarcie skrzyni da ci losowego jokera."
+  },
+  "jokerSwampTrick": {
+    "name": "BAGIENNA SZTUCZKA",
+    "description": "Eksplozje przeładowania pozostawiają teraz kałuże na ziemi"
+  },
+  "jokerThickSkin": {
+    "name": "GRUBA SKÓRA",
+    "description": "Zmniejsza wszystkie otrzymywane obrażenia o 20%, ale otrzymujesz -30% leczenia"
+  },
+  "jokerTinMan": {
+    "name": "BLASZANY DRWAL",
+    "description": "Nadmiarowe leczenie zamienia się w punkty tarczy, do +15 PT"
+  },
+  "jokerToolBox": {
+    "name": "SKRZYNKA NARZĘDZIOWA",
+    "description": "Nie możesz podnosić narzędzi. Twoje narzędzia automatycznie uzupełnią się po 90 sekundach."
+  },
+  "jokerTweakDealer": {
+    "name": "DILER JOKERÓW",
+    "description": "Zyskujesz +1 PŻ za każdego aktywnego jokera."
+  },
+  "jokerUltraDraw": {
+    "name": "ULTRA NACIĄGNIĘCIE",
+    "description": "Ładuj przez 4 sek., aby wystrzelić potężną wybuchową strzałę. Szybkość ataku skraca czas ładowania"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "Celność"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "Czas zawieszenia"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "Zasięg"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "Wielkość magazynka"
+  },
+  "jokerUpgradeDamage": {
+    "name": "Uszkodzenia"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "Prędkość dobywania"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "Szybkość ataku"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "Szybkość ataku"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "Szybkość ataku"
+  },
+  "jokerUpgradeHeal": {
+    "name": "Zdrowie"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "Prędkość"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "Wysokość skoku"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "Kradzież życia"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "Prędkość przeładowania"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "Zasięg zbierania"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "Redukcja czasu odnowienia zaklęć"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "Worek amunicji"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "Worek amunicji"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "Zasięg"
+  },
+  "jokerVampire": {
+    "name": "WAMPIR",
+    "description": "Broń zyskuje +4% kradzieży życia."
+  },
+  "jokerWeakLink": {
+    "name": "SŁABE OGNIWO",
+    "description": "Trafienia w słaby punkt zadają 35% więcej obrażeń, ale zwykłe trafienia zadają 20% mniej obrażeń"
+  },
+  "jokerWellFed": {
+    "name": "WYPASIONY",
+    "description": "+5 PŻ"
+  },
+  "jokerWestWizard": {
+    "name": "CZARODZIEJ Z ZACHODU",
+    "description": "Zyskujesz -30% czasu odnowienia zaklęcia, ale -30% PŻ."
+  }
+}

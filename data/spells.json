@@ -2,27 +2,33 @@
   "schools": [
     {
       "id": "itemFire",
-      "name": "Pyro"
+      "name": "Pyro",
+      "description": "Offensive - Burn enemies and set the ground ablaze"
     },
     {
       "id": "itemElec",
-      "name": "Elec"
+      "name": "Elec",
+      "description": "Utility - Move fast and strike enemies with lightning"
     },
     {
       "id": "itemAcid",
-      "name": "Acid"
+      "name": "Acid",
+      "description": "Offensive - Slow enemies and corrode the battlefield"
     },
     {
       "id": "itemVoodoo",
-      "name": "Voodoo"
+      "name": "Voodoo",
+      "description": "Utility - Drain enemy life and support allies"
     },
     {
       "id": "itemCactus",
-      "name": "Cactus"
+      "name": "Cactus",
+      "description": "Utility - Control the battlefield by summoning helpful cacti"
     },
     {
       "id": "itemIce",
-      "name": "Frost"
+      "name": "Frost",
+      "description": "Defensive - Freeze enemies and reinforce your shield"
     }
   ],
   "spells": [

@@ -1,5 +1,5 @@
-"""Builds data/*.json (equipment, spells, jokers, upgrades, progression) from assets extracted from the game by
-tools/game-extract (see bin/extract-game).
+"""Builds data/*.json (equipment, spells, jokers, upgrades, progression) and their translations (data/i18n/) from
+assets extracted from the game by tools/game-extract (see bin/extract-game).
 
 Usage: python3 scripts/build_game_data.py <extract_dir> <out_dir>
 
@@ -9,7 +9,7 @@ they come from the Blueprint structs /Game/Progress/S_PlayerJokers and S_PlayerI
 those structs, decoding stops with an error and the layouts must be updated (see docs/game-mechanics.md,
 "Extraction depuis le jeu"). The same goes for a new item: it must be added to EQUIPMENT, SPELLS or IGNORED_ITEMS.
 """
-import json, os, re, struct, sys
+import glob, json, os, re, struct, sys
 
 extract_dir, out_dir = sys.argv[1:3]
 
@@ -198,26 +198,34 @@ def evaluate_curve(keys, x):
     raise ValueError(f"{x} is outside the curve")
 
 
-def title(name):
-    """CRACKSHOT → Crackshot, SCOUT'S HONOR → Scout's Honor, EAT-A-PUNCH → Eat-A-Punch."""
-    return re.sub(r"[A-Za-z][^\s-]*", lambda m: m.group(0)[0].upper() + m.group(0)[1:].lower(), name)
-
-
 def string_table(name):
-    return json.load(open(os.path.join(extract_dir, name + ".json")))[0]["StringTable"]["KeysToEntries"]
+    return json.load(open(os.path.join(extract_dir, name + ".json")))[0]["StringTable"]
 
 
-tweak_strings, weapon_strings, spell_strings = string_table("ST_Tweaks"), string_table("ST_Weapons"), string_table("ST_Spells")
+# English source texts, by string table. Translations are indexed by the table's namespace and the same keys.
+STRING_TABLES = {name: string_table(name) for name in ("ST_Tweaks", "ST_Weapons", "ST_Spells")}
+# Text keys of every item: {id: {"name": (table, key), "description": (table, key)}}.
+text_keys = {}
 
 
-def lookup(table, key):
-    if key not in table:
-        raise SystemExit(f"string {key} not found: the game's text keys have changed")
-    return table[key].replace("\r\n", "\n")
+def text(item_id, field, table, key):
+    """Records the text key of an item's field and returns its English text."""
+    if key not in STRING_TABLES[table]["KeysToEntries"]:
+        raise SystemExit(f"string {key} not found in {table}: the game's text keys have changed")
+    text_keys.setdefault(item_id, {})[field] = (table, key)
+    return clean(STRING_TABLES[table]["KeysToEntries"][key])
 
 
-def resolve(text):
-    return tweak_strings.get(text["key"], "") if isinstance(text, dict) else text or ""
+def clean(value):
+    return value.replace("\r\n", "\n")
+
+
+def row_text(item_id, field, value):
+    """Text of a DataTable row field: an FText pointing to a string table entry."""
+    if not isinstance(value, dict):
+        return value or ""
+    table = next(t for t, st in STRING_TABLES.items() if value["table"].endswith("." + t))
+    return text(item_id, field, table, value["key"])
 
 
 item_ids = set(decode_data_table("DT_PlayerItems", "item", ITEM_ROW))
@@ -228,17 +236,21 @@ if unknown or missing:
 
 equipment = [{
     "id": key,
-    "name": lookup(weapon_strings, prefix + "_Name"),
+    "name": text(key, "name", "ST_Weapons", prefix + "_Name"),
     "type": kind,  # main, sidearm or utility
-    "description": lookup(weapon_strings, prefix + "_Description"),
+    "description": text(key, "description", "ST_Weapons", prefix + "_Description"),
 } for key, (kind, prefix) in EQUIPMENT.items()]
 
-spell_schools = [{"id": key, "name": lookup(spell_strings, name_key)} for key, name_key in SCHOOLS.items()]
+spell_schools = [{
+    "id": key,
+    "name": text(key, "name", "ST_Spells", name_key),
+    "description": text(key, "description", "ST_Spells", name_key + "_Description"),
+} for key, name_key in SCHOOLS.items()]
 spells = [{
     "id": key,
-    "name": lookup(spell_strings, prefix + "_Name"),
+    "name": text(key, "name", "ST_Spells", prefix + "_Name"),
     "school": school,
-    "description": lookup(spell_strings, prefix + "_Description"),
+    "description": text(key, "description", "ST_Spells", prefix + "_Description"),
 } for key, (school, prefix) in SPELLS.items()]
 
 
@@ -258,7 +270,7 @@ for key, row in rows.items():
         if row["availableOnItems"]:  # rows without items are unused leftovers
             upgrades.append({
                 "id": key,
-                "stat": resolve(row["name"]),
+                "name": row_text(key, "name", row["name"]),
                 "value": row["value"],
                 # true: value is a flat amount (e.g. +5 HP); false: a fraction (0.05 = +5 %).
                 "flat": bool(row["displayValueAsFlat"]),
@@ -267,16 +279,16 @@ for key, row in rows.items():
                 "available_on": items(row["availableOnItems"]),
             })
         continue
-    description = resolve(row["description"])
     jokers.append({
         "id": key,
-        "name": title(resolve(row["name"])),
+        # As displayed in the game: joker names are upper case in every language.
+        "name": row_text(key, "name", row["name"]),
         "rarity": RARITIES[row["rarity"] or 0],
         "slot_cost": row["requiredAmountSlots"] or 0,
         "max_equip": row["maxAvailable"] or 0,
         "buy_price": row["buyPrice"] or 0,
         "sell_price": row["sellPrice"] or 0,
-        "effect": description,
+        "description": row_text(key, "description", row["description"]),
         # ["itemHero"] for a hero joker, otherwise the ids of the weapons it can be equipped on.
         "available_on": items(row["availableOnItems"] or []),
         "can_be_bought": bool(row["canBeBought"]),
@@ -287,14 +299,46 @@ for key, row in rows.items():
         "droppable": bool(row["canBeDroppedInGame"]),
     })
 
-# Jokers sharing a display name (the Explosive Hits variants) are told apart by the element in their effect.
-duplicates = {name for name in (j["name"] for j in jokers) if sum(j["name"] == name for j in jokers) > 1}
+
+# Jokers that share their name in the game: the Explosive Hits variants, one per element. They are told apart by
+# appending the name of their spell school, in each language: EXPLOSIVE HITS (Acid), COUPS EXPLOSIFS (Acide)...
+# Other name collisions that only exist in a translation (e.g. two German jokers named SEELENERNTER) are left as
+# in the game.
+JOKER_VARIANTS = {
+    "jokerExplosiveRounds": "itemFire", "jokerExplosiveRoundsAcid": "itemAcid",
+    "jokerExplosiveRoundsElec": "itemElec", "jokerExplosiveRoundsFrost": "itemIce",
+}
+school_names = {school["id"]: school["name"] for school in spell_schools}
+shared = {j["id"] for j in jokers if sum(k["name"] == j["name"] for k in jokers) > 1}
+if shared != JOKER_VARIANTS.keys():
+    raise SystemExit(f"jokers sharing a name changed: {sorted(shared ^ JOKER_VARIANTS.keys())}, update JOKER_VARIANTS")
 for joker in jokers:
-    if joker["name"] in duplicates:
-        element = re.search(r"\((\w+)\)\s*$", joker["effect"])
-        if not element:
-            raise SystemExit(f"cannot disambiguate joker {joker['id']} ({joker['name']})")
-        joker["name"] += f" ({element.group(1)})"
+    if joker["id"] in JOKER_VARIANTS:
+        joker["name"] += f" ({school_names[JOKER_VARIANTS[joker['id']]]})"
+
+# Translations: one file per language found by the extractor (<culture>.locres.json), id → {name, description}.
+translations = {}
+for path in sorted(glob.glob(os.path.join(extract_dir, "*.locres.json"))):
+    culture = os.path.basename(path).split(".")[0]
+    locres = json.load(open(path))
+    entries, missing_count = {}, 0
+    for item_id, fields in text_keys.items():
+        for field, (table, key) in fields.items():
+            translated = locres.get(STRING_TABLES[table]["TableNamespace"], {}).get(key)
+            if translated is None:
+                missing_count += 1  # the planner falls back to the English text
+            else:
+                entries.setdefault(item_id, {})[field] = clean(translated)
+    for joker_id, school_id in JOKER_VARIANTS.items():
+        name = entries.get(joker_id, {}).get("name")
+        school = entries.get(school_id, {}).get("name", school_names[school_id])
+        if name:
+            entries[joker_id]["name"] = f"{name} ({school})"
+    translations[culture] = entries
+    if missing_count:
+        print(f"{culture}: {missing_count} missing translations", file=sys.stderr)
+if not translations:
+    raise SystemExit("no localization file found in the extract directory")
 
 slot_curve = decode_curve("C_UnlockedJokers")
 max_slots = int(slot_curve[-1][1])
@@ -307,13 +351,14 @@ out = {
     "equipment.json": equipment,
     "spells.json": {"schools": spell_schools, "spells": spells},
     "jokers.json": sorted(jokers, key=lambda j: (RARITIES.index(j["rarity"]), j["name"])),
-    "upgrades.json": sorted(upgrades, key=lambda u: (u["stat"], u["id"])),
+    "upgrades.json": sorted(upgrades, key=lambda u: (u["name"], u["id"])),
     "progression.json": progression,
 }
-os.makedirs(out_dir, exist_ok=True)
+out.update({f"i18n/{culture}.json": dict(sorted(entries.items())) for culture, entries in translations.items()})
+os.makedirs(os.path.join(out_dir, "i18n"), exist_ok=True)
 for name, data in out.items():
     with open(os.path.join(out_dir, name), "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
 print(f"equipment.json {len(equipment)}, spells.json {len(spells)}, jokers.json {len(jokers)}, upgrades.json {len(upgrades)}, "
-      f"joker slot levels {progression['joker_slot_levels']}")
+      f"joker slot levels {progression['joker_slot_levels']}, translations {sorted(translations)}")

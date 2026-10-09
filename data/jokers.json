@@ -1,13 +1,13 @@
 [
   {
     "id": "jokerBracing",
-    "name": "Bracing",
+    "name": "BRACING",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+5% attack and reload speed",
+    "description": "+5% attack and reload speed",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -24,13 +24,13 @@
   },
   {
     "id": "jokerChickshot",
-    "name": "Chickshot",
+    "name": "CHICKSHOT",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+50% chance for attacks to make chicken sounds. Useless!",
+    "description": "+50% chance for attacks to make chicken sounds. Useless!",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -54,13 +54,13 @@
   },
   {
     "id": "jokerDeadlyStrong",
-    "name": "Deadly Strong",
+    "name": "DEADLY STRONG",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "Move faster and deal more damage as a dead ghost",
+    "description": "Move faster and deal more damage as a dead ghost",
     "available_on": [
       "itemHero"
     ],
@@ -72,13 +72,13 @@
   },
   {
     "id": "jokerFreeCocktail",
-    "name": "Free Cocktail",
+    "name": "FREE COCKTAIL",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "When you reload an empty clip, heal for 2 HP",
+    "description": "When you reload an empty clip, heal for 2 HP",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -95,13 +95,13 @@
   },
   {
     "id": "jokerGoldTooth",
-    "name": "Gold Tooth",
+    "name": "GOLD TOOTH",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 10,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+10% chance for enemies to drop 1 gold nugget upon death",
+    "description": "+10% chance for enemies to drop 1 gold nugget upon death",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -125,13 +125,13 @@
   },
   {
     "id": "jokerHeavyDrinker",
-    "name": "Heavy Drinker",
+    "name": "HEAVY DRINKER",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 1,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "Healing bottles are 25% more effective on you",
+    "description": "Healing bottles are 25% more effective on you",
     "available_on": [
       "itemHero"
     ],
@@ -143,13 +143,13 @@
   },
   {
     "id": "jokerHeavyWeapon",
-    "name": "Heavy Weapon",
+    "name": "HEAVY WEAPON",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+10% damage, but +30% gravity while the weapon is active",
+    "description": "+10% damage, but +30% gravity while the weapon is active",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -172,13 +172,13 @@
   },
   {
     "id": "jokerHelpingHand",
-    "name": "Helping Hand",
+    "name": "HELPING HAND",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "You can revive your allies twice as fast",
+    "description": "You can revive your allies twice as fast",
     "available_on": [
       "itemHero"
     ],
@@ -190,13 +190,13 @@
   },
   {
     "id": "jokerKnuckleDown",
-    "name": "Knuckle Down",
+    "name": "KNUCKLE DOWN",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 1,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+10% melee damage",
+    "description": "+10% melee damage",
     "available_on": [
       "itemHero"
     ],
@@ -208,13 +208,13 @@
   },
   {
     "id": "jokerLastDance",
-    "name": "Last Dance",
+    "name": "LAST DANCE",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "While at or below 30% HP, gain +30% move speed",
+    "description": "While at or below 30% HP, gain +30% move speed",
     "available_on": [
       "itemHero"
     ],
@@ -226,13 +226,13 @@
   },
   {
     "id": "jokerLightWeight",
-    "name": "Lightweight",
+    "name": "LIGHTWEIGHT",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "-5% gravity",
+    "description": "-5% gravity",
     "available_on": [
       "itemHero"
     ],
@@ -244,13 +244,13 @@
   },
   {
     "id": "jokerMagicReload",
-    "name": "Magic Reload",
+    "name": "MAGIC RELOAD",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 1,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "Automatically reload your weapon after casting a spell",
+    "description": "Automatically reload your weapon after casting a spell",
     "available_on": [
       "itemHero"
     ],
@@ -262,13 +262,13 @@
   },
   {
     "id": "jokerPanicAttack",
-    "name": "Panic Attack",
+    "name": "PANIC ATTACK",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 1,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "When you take HP damage, gain +20% damage for 3 sec.",
+    "description": "When you take HP damage, gain +20% damage for 3 sec.",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -291,13 +291,13 @@
   },
   {
     "id": "jokerPartyShot",
-    "name": "Party Shot",
+    "name": "PARTY SHOT",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+50% chance for weakspot hits to blow confetti. Useless!",
+    "description": "+50% chance for weakspot hits to blow confetti. Useless!",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -317,13 +317,13 @@
   },
   {
     "id": "jokerPigshot",
-    "name": "Pigshot",
+    "name": "PIGSHOT",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+5% chance to spawn a pig on impact. Attack them to make them explode",
+    "description": "+5% chance to spawn a pig on impact. Attack them to make them explode",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -346,13 +346,13 @@
   },
   {
     "id": "jokerQuickDraw",
-    "name": "Quickdraw",
+    "name": "QUICKDRAW",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+40% swap speed",
+    "description": "+40% swap speed",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -376,13 +376,13 @@
   },
   {
     "id": "jokerRelentless",
-    "name": "Relentless",
+    "name": "RELENTLESS",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 1,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "While at or below 30% HP, deal +30% damage",
+    "description": "While at or below 30% HP, deal +30% damage",
     "available_on": [
       "itemHero"
     ],
@@ -394,13 +394,13 @@
   },
   {
     "id": "jokerPlasticDuck",
-    "name": "Rubber Duck",
+    "name": "RUBBER DUCK",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 1,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "Walking makes rubber duck noises. Useless!",
+    "description": "Walking makes rubber duck noises. Useless!",
     "available_on": [
       "itemHero"
     ],
@@ -412,13 +412,13 @@
   },
   {
     "id": "jokerShineBright",
-    "name": "Shine Bright",
+    "name": "SHINE BRIGHT",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 8,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+50% hero glow. You're shining! Useless!",
+    "description": "+50% hero glow. You're shining! Useless!",
     "available_on": [
       "itemHero"
     ],
@@ -430,13 +430,13 @@
   },
   {
     "id": "jokerSpareBullets",
-    "name": "Spare Bullets",
+    "name": "SPARE BULLETS",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 2,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+10% ammo bag",
+    "description": "+10% ammo bag",
     "available_on": [
       "itemHero"
     ],
@@ -448,13 +448,13 @@
   },
   {
     "id": "jokerFocusedFeet",
-    "name": "Swift Shot",
+    "name": "SWIFT SHOT",
     "rarity": "Normal",
     "slot_cost": 1,
     "max_equip": 4,
     "buy_price": 50,
     "sell_price": 25,
-    "effect": "+10% attack speed when aiming",
+    "description": "+10% attack speed when aiming",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -470,13 +470,13 @@
   },
   {
     "id": "jokerAntiGravityFalls",
-    "name": "Anti-Gravity Falls",
+    "name": "ANTI-GRAVITY FALLS",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+2% chance to spawn an anti-gravity area when an enemy dies",
+    "description": "+2% chance to spawn an anti-gravity area when an enemy dies",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -499,13 +499,13 @@
   },
   {
     "id": "jokerBellShot",
-    "name": "Bell Shot",
+    "name": "BELL SHOT",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+5% chance for weakspot hits to summon a healing ghost bell",
+    "description": "+5% chance for weakspot hits to summon a healing ghost bell",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -525,13 +525,13 @@
   },
   {
     "id": "jokerBouncingBall",
-    "name": "Bouncing Ball",
+    "name": "BOUNCING BALL",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+15% damage airborne",
+    "description": "+15% damage airborne",
     "available_on": [
       "itemHero"
     ],
@@ -543,13 +543,13 @@
   },
   {
     "id": "jokerCactusDay",
-    "name": "Cactus Day",
+    "name": "CACTUS DAY",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+5% chance for a Cactus Mino to spawn when an enemy dies",
+    "description": "+5% chance for a Cactus Mino to spawn when an enemy dies",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -573,13 +573,13 @@
   },
   {
     "id": "jokerCarePackage",
-    "name": "Care Package",
+    "name": "CARE PACKAGE",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+1 Utility Ammo",
+    "description": "+1 Utility Ammo",
     "available_on": [
       "itemHero"
     ],
@@ -591,13 +591,13 @@
   },
   {
     "id": "jokerChad",
-    "name": "Chad",
+    "name": "CHAD",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Reveals the position of the Wandering Trader and get a 20% discount. You deserve it",
+    "description": "Reveals the position of the Wandering Trader and get a 20% discount. You deserve it",
     "available_on": [
       "itemHero"
     ],
@@ -609,13 +609,13 @@
   },
   {
     "id": "jokerClutch",
-    "name": "Clutch",
+    "name": "CLUTCH",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+2 explosive bullets at the end of your magazine",
+    "description": "+2 explosive bullets at the end of your magazine",
     "available_on": [
       "itemQuadCylinder",
       "itemLongRanger",
@@ -631,13 +631,13 @@
   },
   {
     "id": "jokerCrackShot",
-    "name": "Crackshot",
+    "name": "CRACKSHOT",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+7% damage",
+    "description": "+7% damage",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -661,13 +661,13 @@
   },
   {
     "id": "jokerFastHands",
-    "name": "Fast Hands",
+    "name": "FAST HANDS",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+20% reload speed",
+    "description": "+20% reload speed",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -684,13 +684,13 @@
   },
   {
     "id": "jokerFightOrFlight",
-    "name": "Fight Or Flight",
+    "name": "FIGHT OR FLIGHT",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Taking HP damage grants +20% melee speed for 3 sec.",
+    "description": "Taking HP damage grants +20% melee speed for 3 sec.",
     "available_on": [
       "itemHero"
     ],
@@ -702,13 +702,13 @@
   },
   {
     "id": "jokerFistFight",
-    "name": "Fist Fight",
+    "name": "FIST FIGHT",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 4,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Your bare hands hits are more powerful",
+    "description": "Your bare hands hits are more powerful",
     "available_on": [
       "itemHero"
     ],
@@ -720,13 +720,13 @@
   },
   {
     "id": "jokerFrostBite",
-    "name": "Frost Bite",
+    "name": "FROST BITE",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Melee kills on frozen enemies grant 2 shield points",
+    "description": "Melee kills on frozen enemies grant 2 shield points",
     "available_on": [
       "itemKnuckles",
       "itemBanjo",
@@ -740,13 +740,13 @@
   },
   {
     "id": "jokerGoldProspector",
-    "name": "Gold Prospector",
+    "name": "GOLD PROSPECTOR",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Increase your acquired Gold by 20% at the end of a mission",
+    "description": "Increase your acquired Gold by 20% at the end of a mission",
     "available_on": [
       "itemHero"
     ],
@@ -758,13 +758,13 @@
   },
   {
     "id": "jokerHop",
-    "name": "Hop",
+    "name": "HOP",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+20% jump height",
+    "description": "+20% jump height",
     "available_on": [
       "itemHero"
     ],
@@ -776,13 +776,13 @@
   },
   {
     "id": "jokerLuckyStrike",
-    "name": "Lucky Strike",
+    "name": "LUCKY STRIKE",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+10% chance to deal double damage per hit",
+    "description": "+10% chance to deal double damage per hit",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -806,13 +806,13 @@
   },
   {
     "id": "jokerLunge",
-    "name": "Lunge",
+    "name": "LUNGE",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+15% melee range and hitbox size",
+    "description": "+15% melee range and hitbox size",
     "available_on": [
       "itemKnuckles",
       "itemBanjo",
@@ -826,13 +826,13 @@
   },
   {
     "id": "jokerJokheal",
-    "name": "Medicard",
+    "name": "MEDICARD",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Picking up a joker heals for a bonus +35HP",
+    "description": "Picking up a joker heals for a bonus +35HP",
     "available_on": [
       "itemHero"
     ],
@@ -844,13 +844,13 @@
   },
   {
     "id": "jokerPickPick",
-    "name": "Pick Pick",
+    "name": "PICK PICK",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+10% chance on hit to spawn damaging pickaxes on the target",
+    "description": "+10% chance on hit to spawn damaging pickaxes on the target",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -874,13 +874,13 @@
   },
   {
     "id": "jokerPreciousRush",
-    "name": "Precious Rush",
+    "name": "PRECIOUS RUSH",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+10% chance for a speed-boosting ring to spawn when an enemy dies",
+    "description": "+10% chance for a speed-boosting ring to spawn when an enemy dies",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -904,13 +904,13 @@
   },
   {
     "id": "jokerPricklyPear",
-    "name": "Prickly Pear",
+    "name": "PRICKLY PEAR",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "When HP hit, deal the same damage +15 back to the attacker",
+    "description": "When HP hit, deal the same damage +15 back to the attacker",
     "available_on": [
       "itemHero"
     ],
@@ -922,13 +922,13 @@
   },
   {
     "id": "jokerRage",
-    "name": "Rage",
+    "name": "RAGE",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Upon reaching 25% HP, release a wave that burns nearby enemies (cooldown: 60 sec.)",
+    "description": "Upon reaching 25% HP, release a wave that burns nearby enemies (cooldown: 60 sec.)",
     "available_on": [
       "itemHero"
     ],
@@ -940,13 +940,13 @@
   },
   {
     "id": "jokerRunAndGun",
-    "name": "Run & Gun",
+    "name": "RUN & GUN",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 6,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+30% move speed when shooting",
+    "description": "+30% move speed when shooting",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -967,13 +967,13 @@
   },
   {
     "id": "jokerRunAndReload",
-    "name": "Run & Reload",
+    "name": "RUN & RELOAD",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 6,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+50% move speed when reloading",
+    "description": "+50% move speed when reloading",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -990,13 +990,13 @@
   },
   {
     "id": "jokerScoutsHonor",
-    "name": "Scout's Honor",
+    "name": "SCOUT'S HONOR",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "After 10 sec. without taking damage, your shield is set to a minimum of 10 shield points",
+    "description": "After 10 sec. without taking damage, your shield is set to a minimum of 10 shield points",
     "available_on": [
       "itemHero"
     ],
@@ -1008,13 +1008,13 @@
   },
   {
     "id": "jokerShroomGrave",
-    "name": "Shroom Grave",
+    "name": "SHROOM GRAVE",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+10% chance for a shroom to spawn when an enemy dies",
+    "description": "+10% chance for a shroom to spawn when an enemy dies",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1038,13 +1038,13 @@
   },
   {
     "id": "jokerSlowAndSteady",
-    "name": "Slow And Steady",
+    "name": "SLOW AND STEADY",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Gain +25% accuracy, but -10% attack speed",
+    "description": "Gain +25% accuracy, but -10% attack speed",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1060,13 +1060,13 @@
   },
   {
     "id": "jokerSoulReaper",
-    "name": "Soul Reaper",
+    "name": "SOUL REAPER",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Increase your acquired Souls by 20% at the end of a mission",
+    "description": "Increase your acquired Souls by 20% at the end of a mission",
     "available_on": [
       "itemHero"
     ],
@@ -1078,13 +1078,13 @@
   },
   {
     "id": "jokerSoulSiphon",
-    "name": "Soul Siphon",
+    "name": "SOUL SIPHON",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Increased pick up range and heals for +2 HP when picking up a soul",
+    "description": "Increased pick up range and heals for +2 HP when picking up a soul",
     "available_on": [
       "itemHero"
     ],
@@ -1096,13 +1096,13 @@
   },
   {
     "id": "jokerSpeedyGunzales",
-    "name": "Speedy Gunzales",
+    "name": "SPEEDY GUNZALES",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+10% move speed",
+    "description": "+10% move speed",
     "available_on": [
       "itemHero"
     ],
@@ -1114,13 +1114,13 @@
   },
   {
     "id": "jokerFastDraw",
-    "name": "Switchshot",
+    "name": "SWITCHSHOT",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "Your first hit after equipping a weapon deals 30% more damage",
+    "description": "Your first hit after equipping a weapon deals 30% more damage",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1143,13 +1143,13 @@
   },
   {
     "id": "jokerWellFed",
-    "name": "Well Fed",
+    "name": "WELL FED",
     "rarity": "Fine",
     "slot_cost": 2,
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "effect": "+5 HP",
+    "description": "+5 HP",
     "available_on": [
       "itemHero"
     ],
@@ -1161,13 +1161,13 @@
   },
   {
     "id": "jokerAmmoSupply",
-    "name": "Ammo Supply",
+    "name": "AMMO SUPPLY",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+5% chance for enemies to drop an ammo box upon death",
+    "description": "+5% chance for enemies to drop an ammo box upon death",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1191,13 +1191,13 @@
   },
   {
     "id": "jokerApprentice",
-    "name": "Apprentice",
+    "name": "APPRENTICE",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "-10% spell cooldown",
+    "description": "-10% spell cooldown",
     "available_on": [
       "itemHero"
     ],
@@ -1209,13 +1209,13 @@
   },
   {
     "id": "jokerAvalanche",
-    "name": "Avalanche",
+    "name": "AVALANCHE",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+15% damage while shielded",
+    "description": "+15% damage while shielded",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -1239,13 +1239,13 @@
   },
   {
     "id": "jokerBerserker",
-    "name": "Berserker",
+    "name": "BERSERKER",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Gain up to +50% melee damage as your HP gets lower",
+    "description": "Gain up to +50% melee damage as your HP gets lower",
     "available_on": [
       "itemKnuckles",
       "itemBanjo",
@@ -1259,13 +1259,13 @@
   },
   {
     "id": "jokerBloodLust",
-    "name": "Bloodlust",
+    "name": "BLOODLUST",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Melee kills grant a stacking +5% melee speed for 5 sec., up to +50%",
+    "description": "Melee kills grant a stacking +5% melee speed for 5 sec., up to +50%",
     "available_on": [
       "itemKnuckles",
       "itemBanjo",
@@ -1279,13 +1279,13 @@
   },
   {
     "id": "jokerCheapSkate",
-    "name": "Cheapskate",
+    "name": "CHEAPSKATE",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Gain +1 HP for every 20 Gold in your mission inventory, up to +15 HP",
+    "description": "Gain +1 HP for every 20 Gold in your mission inventory, up to +15 HP",
     "available_on": [
       "itemHero"
     ],
@@ -1297,13 +1297,13 @@
   },
   {
     "id": "jokerChonky",
-    "name": "Chonky",
+    "name": "CHONKY",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+20% damage, but +15% gravity",
+    "description": "+20% damage, but +15% gravity",
     "available_on": [
       "itemHero"
     ],
@@ -1315,13 +1315,13 @@
   },
   {
     "id": "jokerDestroyer",
-    "name": "Destroyer",
+    "name": "DESTROYER",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "The first 25% of your clip deals +20% damage",
+    "description": "The first 25% of your clip deals +20% damage",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -1339,13 +1339,13 @@
   },
   {
     "id": "jokerDisgrace",
-    "name": "Disgrace",
+    "name": "DISGRACE",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Gain +30% movement speed. Your horse does not want to be with you",
+    "description": "Gain +30% movement speed. Your horse does not want to be with you",
     "available_on": [
       "itemHero"
     ],
@@ -1357,13 +1357,13 @@
   },
   {
     "id": "jokerExplosiveRoundsAcid",
-    "name": "Explosive Hits (Acid)",
+    "name": "EXPLOSIVE HITS (Acid)",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+5% chance for your hits to cause an explosion (Acid)",
+    "description": "+5% chance for your hits to cause an explosion (Acid)",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1386,13 +1386,13 @@
   },
   {
     "id": "jokerExplosiveRoundsElec",
-    "name": "Explosive Hits (Elec)",
+    "name": "EXPLOSIVE HITS (Elec)",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+5% chance for your hits to cause an explosion (Elec)",
+    "description": "+5% chance for your hits to cause an explosion (Elec)",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1415,13 +1415,13 @@
   },
   {
     "id": "jokerExplosiveRoundsFrost",
-    "name": "Explosive Hits (Frost)",
+    "name": "EXPLOSIVE HITS (Frost)",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+5% chance for your hits to cause an explosion (Frost)",
+    "description": "+5% chance for your hits to cause an explosion (Frost)",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1444,13 +1444,13 @@
   },
   {
     "id": "jokerExplosiveRounds",
-    "name": "Explosive Hits (Pyro)",
+    "name": "EXPLOSIVE HITS (Pyro)",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+5% chance for your hits to cause an explosion (Pyro)",
+    "description": "+5% chance for your hits to cause an explosion (Pyro)",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1473,13 +1473,13 @@
   },
   {
     "id": "jokerGreatWall",
-    "name": "Great Wall",
+    "name": "GREAT WALL",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Reduce all damage taken by 10% when shielded",
+    "description": "Reduce all damage taken by 10% when shielded",
     "available_on": [
       "itemHero"
     ],
@@ -1491,13 +1491,13 @@
   },
   {
     "id": "jokerHealthyBoi",
-    "name": "Healthy Boi",
+    "name": "HEALTHY BOI",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "While at full HP, gain +20% move speed, reload speed, and attack speed",
+    "description": "While at full HP, gain +20% move speed, reload speed, and attack speed",
     "available_on": [
       "itemHero"
     ],
@@ -1509,13 +1509,13 @@
   },
   {
     "id": "jokerFreezeOver",
-    "name": "Last Bastion",
+    "name": "LAST BASTION",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Upon reaching 25% HP, gain +50 shield (cooldown: 60 sec.)",
+    "description": "Upon reaching 25% HP, gain +50 shield (cooldown: 60 sec.)",
     "available_on": [
       "itemHero"
     ],
@@ -1527,13 +1527,13 @@
   },
   {
     "id": "jokerMagicFriendship",
-    "name": "Magic Friendship",
+    "name": "MAGIC FRIENDSHIP",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Passively regain HP while being near allies",
+    "description": "Passively regain HP while being near allies",
     "available_on": [
       "itemHero"
     ],
@@ -1545,13 +1545,13 @@
   },
   {
     "id": "jokerPewPewPew",
-    "name": "Pew Pew Pew",
+    "name": "PEW PEW PEW",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+20% attack speed",
+    "description": "+20% attack speed",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -1574,13 +1574,13 @@
   },
   {
     "id": "jokerRampage",
-    "name": "Rampage",
+    "name": "RAMPAGE",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Gain 5% reload speed on kill for 10 sec., up to 100%",
+    "description": "Gain 5% reload speed on kill for 10 sec., up to 100%",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -1597,13 +1597,13 @@
   },
   {
     "id": "jokerReloadMastery",
-    "name": "Reload Mastery",
+    "name": "RELOAD MASTERY",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Reloading an empty clip is 50% faster",
+    "description": "Reloading an empty clip is 50% faster",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1620,13 +1620,13 @@
   },
   {
     "id": "jokerScrubBullet",
-    "name": "Scrub Hit",
+    "name": "SCRUB HIT",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Your primary weapon removes elements from enemies to instantly deal 10 damage",
+    "description": "Your primary weapon removes elements from enemies to instantly deal 10 damage",
     "available_on": [
       "itemQuadCylinder",
       "itemLongRanger",
@@ -1644,13 +1644,13 @@
   },
   {
     "id": "jokerSharpShooter",
-    "name": "Sharp Shooter",
+    "name": "SHARP SHOOTER",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+20% weakspot damage",
+    "description": "+20% weakspot damage",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -1670,13 +1670,13 @@
   },
   {
     "id": "jokerSoulEater",
-    "name": "Soul Eater",
+    "name": "SOUL EATER",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "Picking up a soul grants 20% damage and reload speed for 5 sec.",
+    "description": "Picking up a soul grants 20% damage and reload speed for 5 sec.",
     "available_on": [
       "itemHero"
     ],
@@ -1688,13 +1688,13 @@
   },
   {
     "id": "jokerStonks",
-    "name": "Stonks",
+    "name": "STONKS",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+20% chance that opening a chest gives you a random Joker",
+    "description": "+20% chance that opening a chest gives you a random Joker",
     "available_on": [
       "itemHero"
     ],
@@ -1706,13 +1706,13 @@
   },
   {
     "id": "jokerWeakLink",
-    "name": "Weak Link",
+    "name": "WEAK LINK",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+35% weakspot damage, but -20% regular hits damage",
+    "description": "+35% weakspot damage, but -20% regular hits damage",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -1732,13 +1732,13 @@
   },
   {
     "id": "jokerHeadshotRefund",
-    "name": "Weakspot Refund",
+    "name": "WEAKSPOT REFUND",
     "rarity": "Prime",
     "slot_cost": 3,
     "max_equip": 4,
     "buy_price": 500,
     "sell_price": 250,
-    "effect": "+20% chance to get your ammo back after a weakspot hit",
+    "description": "+20% chance to get your ammo back after a weakspot hit",
     "available_on": [
       "itemQuadCylinder",
       "itemPistol",
@@ -1756,13 +1756,13 @@
   },
   {
     "id": "jokerCdrAcid",
-    "name": "Acid Mastery",
+    "name": "ACID MASTERY",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 800,
-    "effect": "Gain -10% Acid spells cooldown per equipped Acid spell",
+    "description": "Gain -10% Acid spells cooldown per equipped Acid spell",
     "available_on": [
       "itemHero"
     ],
@@ -1774,13 +1774,13 @@
   },
   {
     "id": "jokerCdrCactus",
-    "name": "Cactus Mastery",
+    "name": "CACTUS MASTERY",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 800,
-    "effect": "Gain -10% Cactus spells cooldown per equipped Cactus spell",
+    "description": "Gain -10% Cactus spells cooldown per equipped Cactus spell",
     "available_on": [
       "itemHero"
     ],
@@ -1792,13 +1792,13 @@
   },
   {
     "id": "jokerColdBlooded",
-    "name": "Cold Blooded",
+    "name": "COLD BLOODED",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Your melee attacks freeze enemies, consuming 3 shield points per enemy",
+    "description": "Your melee attacks freeze enemies, consuming 3 shield points per enemy",
     "available_on": [
       "itemHero"
     ],
@@ -1810,13 +1810,13 @@
   },
   {
     "id": "jokerConsumer",
-    "name": "Consumer",
+    "name": "CONSUMER",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Grants +25% weapon damage, but reloading now wastes unused ammo",
+    "description": "Grants +25% weapon damage, but reloading now wastes unused ammo",
     "available_on": [
       "itemQuadCylinder",
       "itemLongRanger",
@@ -1830,13 +1830,13 @@
   },
   {
     "id": "jokerDeathsDance",
-    "name": "Death's Dance",
+    "name": "DEATH'S DANCE",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Your shield decreases 30% less quickly",
+    "description": "Your shield decreases 30% less quickly",
     "available_on": [
       "itemHero"
     ],
@@ -1848,13 +1848,13 @@
   },
   {
     "id": "jokerEatAPunch",
-    "name": "Eat-A-Punch",
+    "name": "EAT-A-PUNCH",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 2,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Melee kills heal you for 2 HP",
+    "description": "Melee kills heal you for 2 HP",
     "available_on": [
       "itemKnuckles",
       "itemBanjo",
@@ -1868,13 +1868,13 @@
   },
   {
     "id": "jokerCdrElec",
-    "name": "Elec Mastery",
+    "name": "ELEC MASTERY",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 800,
-    "effect": "Gain -10% Elec spells cooldown per equipped Elec spell",
+    "description": "Gain -10% Elec spells cooldown per equipped Elec spell",
     "available_on": [
       "itemHero"
     ],
@@ -1886,13 +1886,13 @@
   },
   {
     "id": "jokerExecute",
-    "name": "Execute",
+    "name": "EXECUTE",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Your hits instantly kill enemies below 20% HP, except elites and bosses",
+    "description": "Your hits instantly kill enemies below 20% HP, except elites and bosses",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -1916,13 +1916,13 @@
   },
   {
     "id": "jokerExtraJump",
-    "name": "Extra Jump",
+    "name": "EXTRA JUMP",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 2,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "+1 Jump",
+    "description": "+1 Jump",
     "available_on": [
       "itemHero"
     ],
@@ -1934,13 +1934,13 @@
   },
   {
     "id": "jokerCdrFrost",
-    "name": "Frost Mastery",
+    "name": "FROST MASTERY",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 800,
-    "effect": "Gain -10% Frost spells cooldown per equipped Frost spell",
+    "description": "Gain -10% Frost spells cooldown per equipped Frost spell",
     "available_on": [
       "itemHero"
     ],
@@ -1952,13 +1952,13 @@
   },
   {
     "id": "jokerHeadBang",
-    "name": "Headbang",
+    "name": "HEADBANG",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "+30% weakspot damage",
+    "description": "+30% weakspot damage",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -1978,13 +1978,13 @@
   },
   {
     "id": "jokerHitMe",
-    "name": "Hit Me",
+    "name": "HIT ME",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Heal 0.75 HP per second for 20 sec. after being hit",
+    "description": "Heal 0.75 HP per second for 20 sec. after being hit",
     "available_on": [
       "itemHero"
     ],
@@ -1996,13 +1996,13 @@
   },
   {
     "id": "jokerHoarder",
-    "name": "Hoarder",
+    "name": "HOARDER",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "+15% chance that collecting a Joker makes another random one appear",
+    "description": "+15% chance that collecting a Joker makes another random one appear",
     "available_on": [
       "itemHero"
     ],
@@ -2014,13 +2014,13 @@
   },
   {
     "id": "jokerTweakDealer",
-    "name": "Joker Dealer",
+    "name": "JOKER DEALER",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Gain +1 HP for each active Joker",
+    "description": "Gain +1 HP for each active Joker",
     "available_on": [
       "itemHero"
     ],
@@ -2032,13 +2032,13 @@
   },
   {
     "id": "jokerLastStand",
-    "name": "Last Stand",
+    "name": "LAST STAND",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "While at or below 30% HP, reduce all damage taken by -30% and gain 10% melee lifesteal",
+    "description": "While at or below 30% HP, reduce all damage taken by -30% and gain 10% melee lifesteal",
     "available_on": [
       "itemHero"
     ],
@@ -2050,13 +2050,13 @@
   },
   {
     "id": "jokerLazy",
-    "name": "Lazy",
+    "name": "LAZY",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Ammo pickups are disabled. Gain 10% of max ammo every 12 sec.",
+    "description": "Ammo pickups are disabled. Gain 10% of max ammo every 12 sec.",
     "available_on": [
       "itemHero"
     ],
@@ -2068,13 +2068,13 @@
   },
   {
     "id": "jokerLifePact",
-    "name": "Life Pact",
+    "name": "LIFE PACT",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 2,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Kills heal you for 2 HP, but max. HP is reduced by 30%",
+    "description": "Kills heal you for 2 HP, but max. HP is reduced by 30%",
     "available_on": [
       "itemHero"
     ],
@@ -2086,13 +2086,13 @@
   },
   {
     "id": "jokerLowGravity",
-    "name": "Moon Gravity",
+    "name": "MOON GRAVITY",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 2,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "-25% gravity",
+    "description": "-25% gravity",
     "available_on": [
       "itemHero"
     ],
@@ -2104,13 +2104,13 @@
   },
   {
     "id": "jokerCdrFire",
-    "name": "Pyro Mastery",
+    "name": "PYRO MASTERY",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 800,
-    "effect": "Gain -10% Pyro spells cooldown per equipped Pyro spell",
+    "description": "Gain -10% Pyro spells cooldown per equipped Pyro spell",
     "available_on": [
       "itemHero"
     ],
@@ -2122,13 +2122,13 @@
   },
   {
     "id": "jokerRiposte",
-    "name": "Riposte",
+    "name": "RIPOSTE",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 2,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "After your shield absorbs a hit, your next attack deals +100% damage",
+    "description": "After your shield absorbs a hit, your next attack deals +100% damage",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -2152,13 +2152,13 @@
   },
   {
     "id": "jokerSecondWind",
-    "name": "Second Wind",
+    "name": "SECOND WIND",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Heal 50 HP instead of dying to a fatal hit (cooldown: 180 sec.)",
+    "description": "Heal 50 HP instead of dying to a fatal hit (cooldown: 180 sec.)",
     "available_on": [
       "itemHero"
     ],
@@ -2170,13 +2170,13 @@
   },
   {
     "id": "jokerSnackAPunch",
-    "name": "Snack-A-Punch",
+    "name": "SNACK-A-PUNCH",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Melee kills grant you 1 shield points",
+    "description": "Melee kills grant you 1 shield points",
     "available_on": [
       "itemKnuckles",
       "itemBanjo",
@@ -2190,13 +2190,13 @@
   },
   {
     "id": "jokerThickSkin",
-    "name": "Thick Skin",
+    "name": "THICK SKIN",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 2,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Reduce all damage taken by 20%, but receive -30% healing",
+    "description": "Reduce all damage taken by 20%, but receive -30% healing",
     "available_on": [
       "itemHero"
     ],
@@ -2208,13 +2208,13 @@
   },
   {
     "id": "jokerTinMan",
-    "name": "Tin Man",
+    "name": "TIN MAN",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Excess healing converts into shield points, up to +15 SP",
+    "description": "Excess healing converts into shield points, up to +15 SP",
     "available_on": [
       "itemHero"
     ],
@@ -2226,13 +2226,13 @@
   },
   {
     "id": "jokerCdrVoodoo",
-    "name": "Voodoo Mastery",
+    "name": "VOODOO MASTERY",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 800,
-    "effect": "Gain -10% Voodoo spells cooldown per equipped Voodoo spell",
+    "description": "Gain -10% Voodoo spells cooldown per equipped Voodoo spell",
     "available_on": [
       "itemHero"
     ],
@@ -2244,13 +2244,13 @@
   },
   {
     "id": "jokerWestWizard",
-    "name": "West Wizard",
+    "name": "WEST WIZARD",
     "rarity": "Mythic",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
-    "effect": "Gain -30% spell cooldown, but -30% HP",
+    "description": "Gain -30% spell cooldown, but -30% HP",
     "available_on": [
       "itemHero"
     ],
@@ -2262,13 +2262,13 @@
   },
   {
     "id": "jokerAllMighty",
-    "name": "All Mighty",
+    "name": "ALL MIGHTY",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Gain +1% damage per 1 shield point, up to 80%",
+    "description": "Gain +1% damage per 1 shield point, up to 80%",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -2292,13 +2292,13 @@
   },
   {
     "id": "jokerBattleMage",
-    "name": "Battlemage",
+    "name": "BATTLEMAGE",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Killing an enemy shortens all ongoing spell cooldowns by 0.5%",
+    "description": "Killing an enemy shortens all ongoing spell cooldowns by 0.5%",
     "available_on": [
       "itemHero"
     ],
@@ -2310,13 +2310,13 @@
   },
   {
     "id": "jokerCamper",
-    "name": "Camper",
+    "name": "CAMPER",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "+50% chance not to consume ammo while standing still",
+    "description": "+50% chance not to consume ammo while standing still",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -2336,13 +2336,13 @@
   },
   {
     "id": "jokerCantRipOneTrick",
-    "name": "Cantrip One-Trick",
+    "name": "CANTRIP ONE-TRICK",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Spells with base cooldowns of 35s or less gain -25% spell cooldown",
+    "description": "Spells with base cooldowns of 35s or less gain -25% spell cooldown",
     "available_on": [
       "itemHero"
     ],
@@ -2354,13 +2354,13 @@
   },
   {
     "id": "jokerCastAway",
-    "name": "Cast Away",
+    "name": "CAST AWAY",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Casting a spell decreases the spell cooldown of other spells by 3 sec. to a minimum of 4 sec.",
+    "description": "Casting a spell decreases the spell cooldown of other spells by 3 sec. to a minimum of 4 sec.",
     "available_on": [
       "itemHero"
     ],
@@ -2372,13 +2372,13 @@
   },
   {
     "id": "jokerCoinFlip",
-    "name": "Coinflip",
+    "name": "COINFLIP",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Flip a coin every 10 sec. You either deal +100% or -50% weapon damage",
+    "description": "Flip a coin every 10 sec. You either deal +100% or -50% weapon damage",
     "available_on": [
       "itemHero"
     ],
@@ -2390,13 +2390,13 @@
   },
   {
     "id": "jokerDoubleDown",
-    "name": "Double Down",
+    "name": "DOUBLE DOWN",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Gain +30% shield points from all sources",
+    "description": "Gain +30% shield points from all sources",
     "available_on": [
       "itemHero"
     ],
@@ -2408,13 +2408,13 @@
   },
   {
     "id": "jokerDwarf",
-    "name": "Dwarf",
+    "name": "DWARF",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "You are small. Gain movespeed, attack speed and lower gravity",
+    "description": "You are small. Gain movespeed, attack speed and lower gravity",
     "available_on": [
       "itemHero"
     ],
@@ -2426,13 +2426,13 @@
   },
   {
     "id": "jokerExtraDash",
-    "name": "Extra Dash",
+    "name": "EXTRA DASH",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "+1 Dash",
+    "description": "+1 Dash",
     "available_on": [
       "itemHero"
     ],
@@ -2444,13 +2444,13 @@
   },
   {
     "id": "jokerGiant",
-    "name": "Giant",
+    "name": "GIANT",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "You are big. Gain health, weapon damage and spell cooldown reduction",
+    "description": "You are big. Gain health, weapon damage and spell cooldown reduction",
     "available_on": [
       "itemHero"
     ],
@@ -2462,13 +2462,13 @@
   },
   {
     "id": "jokerGlassCannon",
-    "name": "Glass Cannon",
+    "name": "GLASS CANNON",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 2,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "+40% weapon and melee damage, but -25% HP",
+    "description": "+40% weapon and melee damage, but -25% HP",
     "available_on": [
       "itemHero"
     ],
@@ -2480,13 +2480,13 @@
   },
   {
     "id": "jokerGoliath",
-    "name": "Goliath",
+    "name": "GOLIATH",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "You are bigger. Gain +25% HP",
+    "description": "You are bigger. Gain +25% HP",
     "available_on": [
       "itemHero"
     ],
@@ -2498,13 +2498,13 @@
   },
   {
     "id": "jokerOneTrick",
-    "name": "Joker Trick",
+    "name": "JOKER TRICK",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Gain +7% damage and attack speed for every distinct joker rarity equipped on the weapon",
+    "description": "Gain +7% damage and attack speed for every distinct joker rarity equipped on the weapon",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -2526,13 +2526,13 @@
   },
   {
     "id": "jokerMachineGun",
-    "name": "Machine Gun",
+    "name": "MACHINE GUN",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Per mission, the weapon gains +0.3% attack speed for every 50 damage dealt",
+    "description": "Per mission, the weapon gains +0.3% attack speed for every 50 damage dealt",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -2552,13 +2552,13 @@
   },
   {
     "id": "jokerRicochet",
-    "name": "Ricochet",
+    "name": "RICOCHET",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "The fired bullet ricochets, with a 30% chance to automatically hit a nearby enemy",
+    "description": "The fired bullet ricochets, with a 30% chance to automatically hit a nearby enemy",
     "available_on": [
       "itemQuadCylinder",
       "itemLongRanger",
@@ -2575,13 +2575,13 @@
   },
   {
     "id": "jokerSpeedster",
-    "name": "Speedster",
+    "name": "SPEEDSTER",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "+1% damage and attack speed per 3% bonus move speed, up to +40%",
+    "description": "+1% damage and attack speed per 3% bonus move speed, up to +40%",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -2603,13 +2603,13 @@
   },
   {
     "id": "jokerSpellRoulette",
-    "name": "Spell Roulette",
+    "name": "SPELL ROULETTE",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "-20% spell cooldown, but spells are randomized on each cast",
+    "description": "-20% spell cooldown, but spells are randomized on each cast",
     "available_on": [
       "itemHero"
     ],
@@ -2621,13 +2621,13 @@
   },
   {
     "id": "jokerToolBox",
-    "name": "Toolbox",
+    "name": "TOOLBOX",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Utility pickups are disabled. Your utility automatically refills after 90 sec.",
+    "description": "Utility pickups are disabled. Your utility automatically refills after 90 sec.",
     "available_on": [
       "itemHero"
     ],
@@ -2639,13 +2639,13 @@
   },
   {
     "id": "jokerVampire",
-    "name": "Vampire",
+    "name": "VAMPIRE",
     "rarity": "Legendary",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "The weapon gains +4% lifesteal",
+    "description": "The weapon gains +4% lifesteal",
     "available_on": [
       "itemQuadCylinder",
       "itemShotgun",
@@ -2668,13 +2668,13 @@
   },
   {
     "id": "jokerAimingBurst",
-    "name": "Aiming Burst",
+    "name": "AIMING BURST",
     "rarity": "Unique",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "+30% weakspot damage and piercing bullets while aiming",
+    "description": "+30% weakspot damage and piercing bullets while aiming",
     "available_on": [
       "itemQuadCylinder"
     ],
@@ -2686,13 +2686,13 @@
   },
   {
     "id": "jokerBardbarian",
-    "name": "Bardbarian",
+    "name": "BARDBARIAN",
     "rarity": "Unique",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Hold the slam attack longer to release a more powerful blow",
+    "description": "Hold the slam attack longer to release a more powerful blow",
     "available_on": [
       "itemBanjo"
     ],
@@ -2704,13 +2704,13 @@
   },
   {
     "id": "jokerChonkyThrow",
-    "name": "Chonky Throw",
+    "name": "CHONKY THROW",
     "rarity": "Unique",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "The boomerang is twice as big and passes through the shields",
+    "description": "The boomerang is twice as big and passes through the shields",
     "available_on": [
       "itemBoomerang"
     ],
@@ -2722,13 +2722,13 @@
   },
   {
     "id": "jokerEagleLever",
-    "name": "Eagle Lever",
+    "name": "EAGLE LEVER",
     "rarity": "Unique",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Consecutive shots without missing grant +10% damage, stacking up to +50%",
+    "description": "Consecutive shots without missing grant +10% damage, stacking up to +50%",
     "available_on": [
       "itemWinchester"
     ],
@@ -2740,13 +2740,13 @@
   },
   {
     "id": "jokerEcoTrick",
-    "name": "Eco Trick",
+    "name": "ECO TRICK",
     "rarity": "Unique",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Reloading no longer wastes ammo",
+    "description": "Reloading no longer wastes ammo",
     "available_on": [
       "itemDualRevolver"
     ],
@@ -2758,13 +2758,13 @@
   },
   {
     "id": "jokerElementalSpin",
-    "name": "Elemental Spin",
+    "name": "ELEMENTAL SPIN",
     "rarity": "Unique",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "The minigun has a 30% chance to fire a random elemental bullet instead of a regular one",
+    "description": "The minigun has a 30% chance to fire a random elemental bullet instead of a regular one",
     "available_on": [
       "itemMinigun"
     ],
@@ -2776,13 +2776,13 @@
   },
   {
     "id": "jokerFanningAce",
-    "name": "Fanning Ace",
+    "name": "FANNING ACE",
     "rarity": "Unique",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Fire mid-reload at the right moment to chain-fire all bullets",
+    "description": "Fire mid-reload at the right moment to chain-fire all bullets",
     "available_on": [
       "itemPistol"
     ],
@@ -2794,13 +2794,13 @@
   },
   {
     "id": "jokerFistRage",
-    "name": "Fist Rage",
+    "name": "FIST RAGE",
     "rarity": "Unique",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Taking damage generates charge and grants +30% attack speed for 2 sec.",
+    "description": "Taking damage generates charge and grants +30% attack speed for 2 sec.",
     "available_on": [
       "itemKnuckles"
     ],
@@ -2812,13 +2812,13 @@
   },
   {
     "id": "jokerFistRoDah",
-    "name": "Fist Ro Dah",
+    "name": "FIST RO DAH",
     "rarity": "Unique",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "The charged attack propels you backwards and has a 20% chance to apply Frost to enemies",
+    "description": "The charged attack propels you backwards and has a 20% chance to apply Frost to enemies",
     "available_on": [
       "itemKnuckles"
     ],
@@ -2830,13 +2830,13 @@
   },
   {
     "id": "jokerFocusShot",
-    "name": "Focus Shot",
+    "name": "FOCUS SHOT",
     "rarity": "Unique",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Every weakspot hit reduces the cooldown of your spells by 2 sec.",
+    "description": "Every weakspot hit reduces the cooldown of your spells by 2 sec.",
     "available_on": [
       "itemLongRanger"
     ],
@@ -2848,13 +2848,13 @@
   },
   {
     "id": "jokerFrenzySpin",
-    "name": "Frenzy Spin",
+    "name": "FRENZY SPIN",
     "rarity": "Unique",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "While your kill counter is above 10, the minigun fires twice as fast",
+    "description": "While your kill counter is above 10, the minigun fires twice as fast",
     "available_on": [
       "itemMinigun"
     ],
@@ -2866,13 +2866,13 @@
   },
   {
     "id": "jokerHomingBurst",
-    "name": "Homing Burst",
+    "name": "HOMING BURST",
     "rarity": "Unique",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Every 8 bullets fired, shoot 2 homing bullets at nearby enemies",
+    "description": "Every 8 bullets fired, shoot 2 homing bullets at nearby enemies",
     "available_on": [
       "itemQuadCylinder"
     ],
@@ -2884,13 +2884,13 @@
   },
   {
     "id": "jokerJumpStar",
-    "name": "Jump Star",
+    "name": "JUMP STAR",
     "rarity": "Unique",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "+2 Jumps while holding the Sheriff Stars",
+    "description": "+2 Jumps while holding the Sheriff Stars",
     "available_on": [
       "itemSheriffStar"
     ],
@@ -2902,13 +2902,13 @@
   },
   {
     "id": "jokerLingeringThrow",
-    "name": "Lingering Throw",
+    "name": "LINGERING THROW",
     "rarity": "Unique",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Doubles the lingering time. Combines with Lingering Time upgrade",
+    "description": "Doubles the lingering time. Combines with Lingering Time upgrade",
     "available_on": [
       "itemBoomerang"
     ],
@@ -2920,13 +2920,13 @@
   },
   {
     "id": "jokerLullabard",
-    "name": "Lullabard",
+    "name": "LULLABARD",
     "rarity": "Unique",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Gain an extra chord per hit and a wider healing zone, but lose the slam attack",
+    "description": "Gain an extra chord per hit and a wider healing zone, but lose the slam attack",
     "available_on": [
       "itemBanjo"
     ],
@@ -2938,13 +2938,13 @@
   },
   {
     "id": "jokerMarkAce",
-    "name": "Mark Ace",
+    "name": "MARK ACE",
     "rarity": "Unique",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Bullets mark enemies for 5 sec. Marked enemies take +15% damage",
+    "description": "Bullets mark enemies for 5 sec. Marked enemies take +15% damage",
     "available_on": [
       "itemPistol"
     ],
@@ -2956,13 +2956,13 @@
   },
   {
     "id": "jokerMindShot",
-    "name": "Mindshot",
+    "name": "MINDSHOT",
     "rarity": "Unique",
     "slot_cost": 6,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Weakspot hits cause an explosion",
+    "description": "Weakspot hits cause an explosion",
     "available_on": [
       "itemLongRanger"
     ],
@@ -2974,13 +2974,13 @@
   },
   {
     "id": "jokerOverBlast",
-    "name": "Overblast",
+    "name": "OVERBLAST",
     "rarity": "Unique",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Shoots an extra pellet for every 4 missing shots in the magazine",
+    "description": "Shoots an extra pellet for every 4 missing shots in the magazine",
     "available_on": [
       "itemShotgun"
     ],
@@ -2992,13 +2992,13 @@
   },
   {
     "id": "jokerOverDraw",
-    "name": "Overdraw",
+    "name": "OVERDRAW",
     "rarity": "Unique",
     "slot_cost": 5,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Charge for 2 sec. to fire 3 arrows in a cone. Attack speed reduces charge time",
+    "description": "Charge for 2 sec. to fire 3 arrows in a cone. Attack speed reduces charge time",
     "available_on": [
       "itemBow"
     ],
@@ -3010,13 +3010,13 @@
   },
   {
     "id": "jokerRushBlast",
-    "name": "Rush Blast",
+    "name": "RUSH BLAST",
     "rarity": "Unique",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "The first 3 bullets in your magazine have 100% accuracy and shoot further away",
+    "description": "The first 3 bullets in your magazine have 100% accuracy and shoot further away",
     "available_on": [
       "itemShotgun"
     ],
@@ -3028,13 +3028,13 @@
   },
   {
     "id": "jokerScavengerStar",
-    "name": "Scavenger Star",
+    "name": "SCAVENGER STAR",
     "rarity": "Unique",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Gain +100% pickup range. Gain +30% move speed while holding the Sheriff Stars",
+    "description": "Gain +100% pickup range. Gain +30% move speed while holding the Sheriff Stars",
     "available_on": [
       "itemSheriffStar"
     ],
@@ -3046,13 +3046,13 @@
   },
   {
     "id": "jokerSkyLash",
-    "name": "Sky Lash",
+    "name": "SKY LASH",
     "rarity": "Unique",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "The charged attack grants +50% move speed and lets you fly",
+    "description": "The charged attack grants +50% move speed and lets you fly",
     "available_on": [
       "itemLasso"
     ],
@@ -3064,13 +3064,13 @@
   },
   {
     "id": "jokerSpellLash",
-    "name": "Spell Lash",
+    "name": "SPELL LASH",
     "rarity": "Unique",
     "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Casting a spell instantly fills your charge bar",
+    "description": "Casting a spell instantly fills your charge bar",
     "available_on": [
       "itemLasso"
     ],
@@ -3082,13 +3082,13 @@
   },
   {
     "id": "jokerStackedLever",
-    "name": "Stacked Lever",
+    "name": "STACKED LEVER",
     "rarity": "Unique",
     "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Instantly reload 2 bullets from your reserve ammo on kill",
+    "description": "Instantly reload 2 bullets from your reserve ammo on kill",
     "available_on": [
       "itemWinchester"
     ],
@@ -3100,13 +3100,13 @@
   },
   {
     "id": "jokerSwampTrick",
-    "name": "Swamp Trick",
+    "name": "SWAMP TRICK",
     "rarity": "Unique",
     "slot_cost": 2,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Reload explosions now leave puddles on the ground",
+    "description": "Reload explosions now leave puddles on the ground",
     "available_on": [
       "itemDualRevolver"
     ],
@@ -3118,13 +3118,13 @@
   },
   {
     "id": "jokerUltraDraw",
-    "name": "Ultra Draw",
+    "name": "ULTRA DRAW",
     "rarity": "Unique",
     "slot_cost": 7,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "effect": "Charge for 4 sec. to fire a massive explosive arrow. Attack speed reduces charge time",
+    "description": "Charge for 4 sec. to fire a massive explosive arrow. Attack speed reduces charge time",
     "available_on": [
       "itemBow"
     ],

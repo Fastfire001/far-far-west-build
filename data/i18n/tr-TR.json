@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "Asit",
+    "description": "Saldırı - Düşmanları yavaşlatır ve savaş alanını aşındırır"
+  },
+  "itemBanjo": {
+    "name": "Banjo",
+    "description": "Yavaş ve güçsüz saldırıların üzerine bir tutam da iyileştirme gücü ekler.\nMüttefiklerinin yaralarını iyileştirirken kulak zarlarını patlatmak için biçilmiş kaftan diyebiliriz."
+  },
+  "itemBoomerang": {
+    "name": "Bumerang",
+    "description": "Gider, düşmanları bir süre rahatsız eder, sonra da tekrar atman için geri döner. \nCephane gerektirmediği için çevre dostu bir ekipmandır."
+  },
+  "itemBow": {
+    "name": "Yay",
+    "description": "Hızlı çekildiğinde ucuz, dandik oklar fırlatır. \nEtkileyici bir atış istiyorsan kirişi var gücünle germelisin."
+  },
+  "itemCactus": {
+    "name": "Kaktüs",
+    "description": "Destek - Yardımcı kaktüsler çağırarak savaş alanının kontrolünü sağla"
+  },
+  "itemDualRevolver": {
+    "name": "İkili Altıpatlar",
+    "description": "Atış hızı yüksek, isabet oranı kötü fakat bir kez dolduruldu mu ikili bir ölüm makinesi. Bir silahın nesi var, iki silahın sesi var demişler."
+  },
+  "itemElec": {
+    "name": "Akım",
+    "description": "Destek - Hızlı hareket etmeyi sağlar ve düşmanlara yıldırımla saldırır"
+  },
+  "itemFire": {
+    "name": "Ateş",
+    "description": "Saldırı - Düşmanları yakar ve zemini ateşe verir"
+  },
+  "itemIce": {
+    "name": "Buz",
+    "description": "Savunma - Düşmanları dondurur ve kalkanını güçlendirir"
+  },
+  "itemKnuckles": {
+    "name": "Muşta",
+    "description": "Kısa menzil, büyük etki.\nNe cephaneye ne nişan almaya ne de düşünmeye gerek var."
+  },
+  "itemLasso": {
+    "name": "Kement",
+    "description": "Düşmanları makul bir menzilden hızlıca kırbaçlar.\nKimilerini küplere bindirir, kimilerini de müptelası eder."
+  },
+  "itemLongRanger": {
+    "name": "Uzun Tüfek",
+    "description": "Eşsiz isabet oranı ve hedefi delip geçen oklarıyla bilinir. Iskalanan her hedef, yüzyılların işçiliği üzerinde kara bir lekedir. Onları hayal kırıklığına uğratmamaya çalış."
+  },
+  "itemMinigun": {
+    "name": "Makineli Tüfek",
+    "description": "Bir kez dönmeye başladı mı mermi yağmurunu durdurabilene aşk olsun... Yani teknik olarak durdurabilirsin tabii de senin gibi bir silahşora yakışmaz öyle işler."
+  },
+  "itemPistol": {
+    "name": "Altıpatlar",
+    "description": "Her zaman güvenilir, her bakımdan vasat. \nBağlanma sorunları olanlar için ideal bir seçim."
+  },
+  "itemQuadCylinder": {
+    "name": "Dört Silindirli",
+    "description": "Atışı iyi, hissiyatı da iyi. Yani genel olarak iyi diyelim. \nSıradanlığın kitabını yazmış ama onu da iyi yazmış."
+  },
+  "itemSheriffStar": {
+    "name": "Şerif Yıldızı",
+    "description": "Yüksek bir hızda fırlatılır ve düşmanları kesip biçer. \nAdaleti sağlama işi hiç bu kadar zahmetsiz olmamıştı."
+  },
+  "itemShotgun": {
+    "name": "Pompalı Tüfek",
+    "description": "Bildiğimiz pompalı tüfeklerden beklenmeyecek kadar yüksek atış hızına, tek fişekli şarjöre ve yangın çıkarmaya elverişli bir saçma yayılmasına sahip. Nihayet nişan yeteneğine uyan bir silah çıktı karşına."
+  },
+  "itemSpellAcidBubble": {
+    "name": "Baloncuk",
+    "description": "Çarpma anında patlayan ve birden çok asit havuzu oluşturan büyük bir asit baloncuğu fırlat."
+  },
+  "itemSpellAcidContagion": {
+    "name": "Bulaşıcı",
+    "description": "Geniş bir alanda bulunan tüm düşmanları aşındır ve Bulaşıcı etkisi uygulayarak öldüklerinde patlamalarını sağla."
+  },
+  "itemSpellAcidGeyser": {
+    "name": "Gayzer",
+    "description": "Çarpma anında patlayan bir asit gayzeri oluştur."
+  },
+  "itemSpellAcidRain": {
+    "name": "Yağmur",
+    "description": "Geniş bir alandaki düşmanları aşındıran bir asit yağmuru yağdır."
+  },
+  "itemSpellAcidThrower": {
+    "name": "Fırlatıcı",
+    "description": "Asit püskürt ve yerde aşındırıcı asit havuzları oluştur."
+  },
+  "itemSpellCactusBetty": {
+    "name": "Mayıno",
+    "description": "Üzerine basıldığında patlayan bir kaktüs mayını çağır."
+  },
+  "itemSpellCactusDecoy": {
+    "name": "Tuzako",
+    "description": "Düşmanları dans ederek cezbedip sonra patlayan bir kaktüs çağır."
+  },
+  "itemSpellCactusTurret": {
+    "name": "Tareto",
+    "description": "Yakındaki düşmanlara sürekli ateş eden bir kaktüs tareti çağır."
+  },
+  "itemSpellCactusUlti": {
+    "name": "Hayduto",
+    "description": "Bir süreliğine senin için savaşan güçlü bir kaktüs golemi çağır."
+  },
+  "itemSpellCactusWall": {
+    "name": "Dikeno",
+    "description": "Temas halinde düşmanlara hasar veren ve yavaşlatan kaktüs dikenleri çağır."
+  },
+  "itemSpellElecPortal": {
+    "name": "Portal",
+    "description": "Oyuncuları ışınlayan ve fırlattığın büyüleri çoğaltabilen en fazla iki portal oluştur."
+  },
+  "itemSpellElecStrike": {
+    "name": "Seri Şimşek",
+    "description": "Yoluna çıkan her şeyi çarpıp geçen yıldırımlar fırlat."
+  },
+  "itemSpellElecSuperJump": {
+    "name": "Zıpzıp",
+    "description": "Düşmanlarından kaçmak istediğin anda zıpla."
+  },
+  "itemSpellElecSwap": {
+    "name": "Değiş Tokuş",
+    "description": "Bir düşmanla konumunu değiştir ve her iki konumda da patlama yarat."
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "Yıldırım Saldırısı",
+    "description": "Yüksel, sonra da aşağıya dalarak alanı havaya uçur ve düşmanlarının üstüne yıldırım yağdır. "
+  },
+  "itemSpellFireBall": {
+    "name": "Ateş Topu",
+    "description": "Çarpma anında patlayan ve düştüğü yeri yakan bir ateş topu fırlat."
+  },
+  "itemSpellFireBeam": {
+    "name": "Ateş Işını",
+    "description": "Her şeyi yakıp kavuran dev bir ateş ışını yolla."
+  },
+  "itemSpellFireFingergun": {
+    "name": "Parmak Tabanca",
+    "description": "Silahını ateşli patlayıcı mermiler ateşleyen ateşli parmaklarla değiştir."
+  },
+  "itemSpellFireSurcharge": {
+    "name": "Aşırı Yükleme",
+    "description": "Geniş bir alandaki tüm düşmanları yak, zaten yanmakta olanları da patlat."
+  },
+  "itemSpellFireWisp": {
+    "name": "Kıvılcım",
+    "description": "Fazladan yakıcı hasar veren ve bir düşman ölünce diğer düşmana zıplayan bir kıvılcım yolla."
+  },
+  "itemSpellIceBlizzard": {
+    "name": "Fırtına",
+    "description": "Seni takip eden, tüm düşmanlara hasar veren ve müttefiklere kalkan sağlayan bir tipi çağır."
+  },
+  "itemSpellIceBreeze": {
+    "name": "Esinti",
+    "description": "Geniş bir koni içindeki düşmanları donduran bir esinti çağır."
+  },
+  "itemSpellIceCube": {
+    "name": "Küp",
+    "description": "Kendini veya bir müttefiğini dokunulmaz bir buz küpüne dönüştür."
+  },
+  "itemSpellIceGlaze": {
+    "name": "Ayaz",
+    "description": "Yakındaki düşmanlara hasar veren ve yakındaki müttefiklere kalkan sağlayan bir patlama yay."
+  },
+  "itemSpellIceLance": {
+    "name": "Köprü",
+    "description": "Üzerinden geçen müttefiklere kalkan sağlayan bir köprü çağır."
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "Yozlaşma",
+    "description": "Bir oyuncak bebek çağırıp gücünü kullanarak düşmanları yozlaştır ve senin tarafında savaşmalarını sağla."
+  },
+  "itemSpellVoodooDoll": {
+    "name": "Oyuncak Bebek",
+    "description": "Alanı içerisinde bulunan müttefiklerin hızını artıran ve hasar almalarını engelleyen bir oyuncak bebek çağır."
+  },
+  "itemSpellVoodooDrain": {
+    "name": "Soğurucu",
+    "description": "Oyuncak bebeğine bir düşmanın SP'sini soğurmasını emret."
+  },
+  "itemSpellVoodooHeal": {
+    "name": "Kurtarış",
+    "description": "En yakınındaki müttefiki iyileştirmek veya canlandırmak için oyuncak bebeğinin gücünü kullan."
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "Ayin",
+    "description": "Verdiği ışığın menzilindeki müttefikleri iyileştiren, mumlardan oluşan bir çember oluştur."
+  },
+  "itemUtilityAmmo": {
+    "name": "Cephane Paketi",
+    "description": "Patlayarak cephaneye dönüşür. Daha fazla oyuncu, daha fazla mermi demektir. \nAile toplantılarından hiç bu kadar kârlı çıkmamıştık doğrusu."
+  },
+  "itemUtilityBottleCrate": {
+    "name": "Şişe Kasası",
+    "description": "Patlayarak şifalı şişelere dönüşür.\nBununla mekânın en gözde kovboyu olacağın garanti."
+  },
+  "itemUtilityHealBottle": {
+    "name": "İyileşme Alanı",
+    "description": "Çarpma anında patlayarak uzun süre devam eden bir iyileşme alanı oluşturur. \nÇürük çorbaya benzeyen kokusuyla kocakarı ilaçlarını hatırlatır."
+  },
+  "itemUtilityImpulse": {
+    "name": "Şok Bombası",
+    "description": "Oyuncuları geriye ittiren periyodik şok dalgaları üretir. \nHayatın boyunca uğraşsan da gelemeyeceğin kadar yüksek konumlara ulaşmanı sağlar."
+  },
+  "itemVoodoo": {
+    "name": "Vudu",
+    "description": "Destek - Düşmanların canını soğurur ve müttefiklere destek olur"
+  },
+  "itemWinchester": {
+    "name": "Levyeli Tüfek",
+    "description": "Tertemiz bir çekme levyesi, kusursuz bir hassasiyet, sağlam bir dolum mekanizması. \nEskiden lunaparklarda ayıcık kazanmak için kullanılırdı, şimdiyse silahlı çatışmaları kazandırıyor."
+  },
+  "jokerAimingBurst": {
+    "name": "TAM ON İKİDEN",
+    "description": "Nişan alırken zayıf nokta hasarı %30 artar ve yollanan mermiler zırhı deler"
+  },
+  "jokerAllMighty": {
+    "name": "YÜCELER YÜCESİ",
+    "description": "Her 1 kalkan puanı için verdiğin hasar %1 artar (en fazla %80'e kadar birikebilir)"
+  },
+  "jokerAmmoSupply": {
+    "name": "CEPHANE TEDARİKİ",
+    "description": "Ölen düşmanların cephane kutusu düşürme şansı +%5"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "YERÇEKMEZ",
+    "description": "Bir düşman öldüğünde yerçekimsiz bir alan oluşturma şansı +%2"
+  },
+  "jokerApprentice": {
+    "name": "ÇIRAK",
+    "description": "Büyü bekleme süresi -%10"
+  },
+  "jokerAvalanche": {
+    "name": "ÇIĞ",
+    "description": "Kalkanın varken +%15 hasar"
+  },
+  "jokerBardbarian": {
+    "name": "BARBOZAN",
+    "description": "Yere çakma saldırısını daha uzun basılı tutarak daha güçlü bir darbe indirebilirsin"
+  },
+  "jokerBattleMage": {
+    "name": "SAVAŞÇI BÜYÜCÜ",
+    "description": "Bir düşmanı öldürmek, beklemedeki tüm büyülerin bekleme sürelerini %0,5 kısaltır"
+  },
+  "jokerBellShot": {
+    "name": "ÇAN VURUŞU",
+    "description": "Zayıf nokta vuruşu sonrasında şifalı hayalet çanının ortaya çıkma şansı +%5"
+  },
+  "jokerBerserker": {
+    "name": "GÖZÜ DÖNMÜŞ",
+    "description": "SP azaldıkça +%50'ye varan yakın dövüş hasarı elde edersin"
+  },
+  "jokerBloodLust": {
+    "name": "KANA SUSAMIŞ",
+    "description": "Yakın dövüşle öldürmeler 5 sn. boyunca +%5 birikimli yakın dövüş hızı kazandırır, bu etki en fazla +%50'ye kadar birikebilir"
+  },
+  "jokerBouncingBall": {
+    "name": "HAVADAR VURUŞ",
+    "description": "Havadayken hasar %15 artar"
+  },
+  "jokerBracing": {
+    "name": "SAĞLAM DURUŞ",
+    "description": "Saldırı hızı ve cephane doldurma hızı +%5"
+  },
+  "jokerCactusDay": {
+    "name": "KAKTÜS GÜNÜ",
+    "description": "Bir düşman öldüğünde Kaktüs Mayıno'nun ortaya çıkma şansı +%5"
+  },
+  "jokerCamper": {
+    "name": "KAMPÇI",
+    "description": "Hareket etmiyorken cephane tüketmeme şansı +%50"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "BASİT BÜYÜ BAĞIMLISI",
+    "description": "Temel bekleme süresi 35 saniye veya daha az olan büyülerin bekleme süreleri %25 azalır"
+  },
+  "jokerCarePackage": {
+    "name": "YARDIM PAKETİ",
+    "description": "+1 Destek Cephanesi"
+  },
+  "jokerCastAway": {
+    "name": "SERİ BÜYÜCÜ",
+    "description": "Bir büyü kullanmak, diğer büyülerin bekleme süresini en az 4 sn. kalacak şekilde 3 sn. azaltır"
+  },
+  "jokerCdrAcid": {
+    "name": "ASİT USTALIĞI",
+    "description": "Kuşanılan her Asit büyüsü için Asit bekleme süresi -%10"
+  },
+  "jokerCdrCactus": {
+    "name": "KAKTÜS USTALIĞI",
+    "description": "Kuşanılan her Kaktüs büyüsü için Kaktüs bekleme süresi -%10"
+  },
+  "jokerCdrElec": {
+    "name": "AKIM USTALIĞI",
+    "description": "Kuşanılan her Akım büyüsü için Akım bekleme süresi -%10"
+  },
+  "jokerCdrFire": {
+    "name": "ATEŞ USTALIĞI",
+    "description": "Kuşanılan her Ateş büyüsü için Ateş bekleme süresi -%10"
+  },
+  "jokerCdrFrost": {
+    "name": "BUZ USTALIĞI",
+    "description": "Kuşanılan her Buz büyüsü için Buz bekleme süresi -%10"
+  },
+  "jokerCdrVoodoo": {
+    "name": "VUDU USTALIĞI",
+    "description": "Kuşanılan her Vudu büyüsü için Vudu bekleme süresi -%10"
+  },
+  "jokerChad": {
+    "name": "KARİZMATİK",
+    "description": "Gezgin Tüccarın konumunu ortaya çıkarır ve sana %20 indirim kazandırır. Zira bunu hak ediyorsun"
+  },
+  "jokerCheapSkate": {
+    "name": "VARYEMEZ",
+    "description": "Serüven envanterindeki her 20 altın için +1 SP elde edersin, bu artış en fazla +15 SP olabilir"
+  },
+  "jokerChickshot": {
+    "name": "GIT GIT GIDAK",
+    "description": "Saldırılarının tavuk sesi çıkarma şansı. +%50 Gereksiz mi gereksiz bir özellik!"
+  },
+  "jokerChonky": {
+    "name": "TOSUN PAŞA",
+    "description": "Hasar %20 artar fakat yerçekimi de %15 artar"
+  },
+  "jokerChonkyThrow": {
+    "name": "CÜSSELİ BUMERANG",
+    "description": "Bumerang iki kat daha büyük olur ve kalkanların içinden geçer"
+  },
+  "jokerClutch": {
+    "name": "SON ÇARE",
+    "description": "Şarjörün en dibine 2 patlayıcı mermi eklenir"
+  },
+  "jokerCoinFlip": {
+    "name": "YAZI TURA",
+    "description": "Her 10 saniyede bir yazı tura atılır. Sonuca göre ya +%100 ya da -%50 silah hasarı verirsin"
+  },
+  "jokerColdBlooded": {
+    "name": "SOĞUKKANLI",
+    "description": "Yakın dövüş vuruşların düşmanları dondurur ve düşman başına 3 kalkan puanı harcar"
+  },
+  "jokerConsumer": {
+    "name": "SAVURGAN",
+    "description": "Silah hasarı %25 artar fakat cephane dolumu sırasında artık kullanılmamış cephane boşa gider"
+  },
+  "jokerCrackShot": {
+    "name": "USTA NİŞANCI",
+    "description": "+%7 hasar"
+  },
+  "jokerDeadlyStrong": {
+    "name": "ÖLÜM TEHLİKESİ",
+    "description": "Ölü bir hayalet olarak daha hızlı hareket eder ve daha fazla hasar verirsin"
+  },
+  "jokerDeathsDance": {
+    "name": "ÖLÜM DANSI",
+    "description": "Kalkanın %30 daha yavaş azalır"
+  },
+  "jokerDestroyer": {
+    "name": "TERMİNATÖR",
+    "description": "Şarjörünün ilk %25'indeki mermilerin verdiği hasar %20 artar"
+  },
+  "jokerDisgrace": {
+    "name": "YÜZ KARASI",
+    "description": "+%30 hareket hızı kazanırsın. Atın senin yüzüne bile bakmak istemiyor"
+  },
+  "jokerDoubleDown": {
+    "name": "KAT KAT KALKAN",
+    "description": "Tüm kaynaklardan +%30 kalkan puanı kazanırsın"
+  },
+  "jokerDwarf": {
+    "name": "CÜCE",
+    "description": "Artık mini minnacıksın. Hareket hızın ve saldırı hızın artar, yerçekimi gücü azalır"
+  },
+  "jokerEagleLever": {
+    "name": "KARTAL LEVYE",
+    "description": "Iskalamadan art arda yapılan atışlar %10 daha fazla hasar verir, bu etki en fazla %50'ye kadar birikebilir"
+  },
+  "jokerEatAPunch": {
+    "name": "DOYURUCU YUMRUK",
+    "description": "Yakın dövüşle yapılan öldürmeler seni 2 SP iyileştirir"
+  },
+  "jokerEcoTrick": {
+    "name": "HESAPLI TEKNİK",
+    "description": "Cephane doldurmak artık cephane israfına neden olmaz"
+  },
+  "jokerElementalSpin": {
+    "name": "ELEMENT RULETİ",
+    "description": "Makineli tüfeğin %30 ihtimalle normal mermi yerine rastgele bir element mermisi ateşler"
+  },
+  "jokerExecute": {
+    "name": "İNFAZ",
+    "description": "Vuruşların, SP'si %20'nin altındaki düşmanları anında öldürür; seçkinler ve patronlar hariç"
+  },
+  "jokerExplosiveRounds": {
+    "name": "PATLAYICI VURUŞLAR (Ateş)",
+    "description": "İsabetli vuruşların patlamaya neden olma şansı +%5 (Ateş)"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "PATLAYICI VURUŞLAR (Asit)",
+    "description": "İsabetli vuruşların patlamaya neden olma şansı +%5 (Asit)"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "PATLAYICI VURUŞLAR (Akım)",
+    "description": "İsabetli vuruşların patlamaya neden olma şansı +%5 (Akım)"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "PATLAYICI VURUŞLAR (Buz)",
+    "description": "İsabetli vuruşların patlamaya neden olma şansı +%5 (Buz)"
+  },
+  "jokerExtraDash": {
+    "name": "EKSTRA ATILMA",
+    "description": "+1 İleri Atılma"
+  },
+  "jokerExtraJump": {
+    "name": "EKSTRA ZIPLAMA",
+    "description": "+1 Zıplama"
+  },
+  "jokerFanningAce": {
+    "name": "SERİ TETİK",
+    "description": "Cephane doldururken doğru anda ateş ederek tüm mermileri seri ateşleyebilirsin"
+  },
+  "jokerFastDraw": {
+    "name": "DEĞİŞVUR",
+    "description": "Bir silah kuşandıktan sonraki ilk vuruşun %30 daha fazla hasar verir"
+  },
+  "jokerFastHands": {
+    "name": "HIZLI ELLER",
+    "description": "+%20 cephane dolum hızı"
+  },
+  "jokerFightOrFlight": {
+    "name": "YA SAVAŞ YA KAÇ",
+    "description": "SP'ni eksilten bir hasar aldığında 3 saniyeliğine +%20 yakın dövüş hızı sağlar"
+  },
+  "jokerFistFight": {
+    "name": "DEMİR YUMRUK",
+    "description": "Yumrukların artık daha güçlü olur"
+  },
+  "jokerFistRage": {
+    "name": "ÖFKELİ YUMRUK",
+    "description": "Hasar almak, yükü artırır ve 2 sn. boyunca +%30 saldırı hızı sağlar"
+  },
+  "jokerFistRoDah": {
+    "name": "YUMRUK RO DAH",
+    "description": "Yüklü saldırı seni geriye doğru fırlatır ve düşmanlara %20 ihtimalle Buz etkisi uygular"
+  },
+  "jokerFocusShot": {
+    "name": "ODAK VURUŞU",
+    "description": "Her zayıf nokta vuruşu, büyülerinin bekleme süresini 2 sn. azaltır"
+  },
+  "jokerFocusedFeet": {
+    "name": "ÇEVİK VURUŞ",
+    "description": "Nişan alırken saldırı hızı +%10"
+  },
+  "jokerFreeCocktail": {
+    "name": "BELEŞ KOKTEYL",
+    "description": "Boş bir şarjörü doldurduğunda 2 SP iyileşirsin"
+  },
+  "jokerFreezeOver": {
+    "name": "SON KALE",
+    "description": "%25 SP'ye ulaştığında +50 kalkan puanı kazanırsın (Bekleme süresi: 60 sn)"
+  },
+  "jokerFrenzySpin": {
+    "name": "ÇILGIN DÖNÜŞ",
+    "description": "Öldürme sayacın 10'un üzerindeyken makineli tüfek iki kat daha hızlı ateş eder"
+  },
+  "jokerFrostBite": {
+    "name": "BUZ ISIRIĞI",
+    "description": "Donmuş düşmanları yakın dövüşle öldürmek 2 kalkan puanı kazandırır"
+  },
+  "jokerGiant": {
+    "name": "DEV",
+    "description": "Artık çam yarması derler sana. Sağlık, silah hasarı ve büyü bekleme süresi azaltımı kazanırsın"
+  },
+  "jokerGlassCannon": {
+    "name": "CAMDAN GÜLLE",
+    "description": "Silah ve yakın dövüş hasarı %40 artar ama SP %25 azalır"
+  },
+  "jokerGoldProspector": {
+    "name": "ALTIN ARAYICISI",
+    "description": "Bir serüvenin sonunda kazandığın altın sayısı %20 artar"
+  },
+  "jokerGoldTooth": {
+    "name": "ALTIN DİŞ",
+    "description": "Öldürülen düşmanların 1 altın parçası düşürme şansı +%10"
+  },
+  "jokerGoliath": {
+    "name": "DEV",
+    "description": "Daha irisin. SP +%25"
+  },
+  "jokerGreatWall": {
+    "name": "BÜYÜK SET",
+    "description": "Kalkanın varken aldığın tüm hasar %10 azalır"
+  },
+  "jokerHeadBang": {
+    "name": "BAM TELİ",
+    "description": "Zayıf noktalara verilen hasar %30 artar"
+  },
+  "jokerHeadshotRefund": {
+    "name": "ZAYIF NOKTA İADESİ",
+    "description": "Zayıf nokta vuruşu sonrasında cephaneyi geri kazanma şansı +%20"
+  },
+  "jokerHealthyBoi": {
+    "name": "TURP GİBİ",
+    "description": "SP tamamen doluyken +%20 hareket hızı, cephane doldurma hızı ve saldırı hızı elde edersin"
+  },
+  "jokerHeavyDrinker": {
+    "name": "MÜPTELA",
+    "description": "Şifalı şişeler sana %25 daha fazla etki eder"
+  },
+  "jokerHeavyWeapon": {
+    "name": "AĞIR SİLAH",
+    "description": "Silah aktifken hasar %10 artar fakat yerçekimi de %30 artar"
+  },
+  "jokerHelpingHand": {
+    "name": "YARDIM ELİ",
+    "description": "Müttefiklerini iki kat daha hızlı canlandırabilirsin"
+  },
+  "jokerHitMe": {
+    "name": "VUR BANA",
+    "description": "Darbe aldıktan sonraki 20 sn. boyunca saniyede 0,75 SP iyileşirsin"
+  },
+  "jokerHoarder": {
+    "name": "İSTİFÇİ",
+    "description": "Bir Joker topladığında +%15 şansla rastgele bir tane daha ortaya çıkar"
+  },
+  "jokerHomingBurst": {
+    "name": "GÜDÜMLÜ SERİ",
+    "description": "Ateşlenen her 8 mermide bir, yakındaki düşmanlara 2 güdümlü mermi ateşlenir"
+  },
+  "jokerHop": {
+    "name": "HOPLAMATİK",
+    "description": "+%20 zıplama yüksekliği"
+  },
+  "jokerJokheal": {
+    "name": "MEDİKART",
+    "description": "Bir Joker almak ekstra +35 SP yeniler"
+  },
+  "jokerJumpStar": {
+    "name": "ZIPLAMA YILDIZI",
+    "description": "Şerif Yıldızlarını tutarken +2 zıplama hakkın olur"
+  },
+  "jokerKnuckleDown": {
+    "name": "SIKI MUŞTA",
+    "description": "Yakın dövüş hasarı +%10"
+  },
+  "jokerLastDance": {
+    "name": "SON DANS",
+    "description": "Maks. SP'nin %30'unda veya daha altındayken hareket hızın %30 artar"
+  },
+  "jokerLastStand": {
+    "name": "SON DİRENİŞ",
+    "description": "Maks. SP'nin %30'unda veya daha altındayken %30 daha az hasar alırsın ve %10 yakın dövüş can çalma etkisi kazanırsın"
+  },
+  "jokerLazy": {
+    "name": "ÜŞENGEÇ",
+    "description": "Cephane toplama devre dışı bırakıldı. Her 12 saniyede bir maks. cephanenin %10'una denk cephane kazanırsın"
+  },
+  "jokerLifePact": {
+    "name": "YAŞAM PAKTI",
+    "description": "Her öldürme seni 2 SP iyileştirir fakat maks. SP %30 azalır"
+  },
+  "jokerLightWeight": {
+    "name": "TÜYSIKLET",
+    "description": "Yerçekimi -%5"
+  },
+  "jokerLingeringThrow": {
+    "name": "OYALANMALI FIRLATIŞ",
+    "description": "Bumerangın oyalanma süresini iki katına çıkarır. Oyalanma Süresi yükseltmesi ile birleştirilir"
+  },
+  "jokerLowGravity": {
+    "name": "AYDA YÜRÜME",
+    "description": "Yerçekimi -%25"
+  },
+  "jokerLuckyStrike": {
+    "name": "ŞANSLI VURUŞ",
+    "description": "Vuruş başına iki kat hasar verme şansı +%10"
+  },
+  "jokerLullabard": {
+    "name": "NİNNOZAN",
+    "description": "Her isabetli vuruşta fazladan bir akor kazanıp iyileştirme alanını genişletirsin ama yere çakma saldırını kaybedersin"
+  },
+  "jokerLunge": {
+    "name": "HAMLE",
+    "description": "Yakın dövüş menzili ve vuruş alanı boyutu +%15"
+  },
+  "jokerMachineGun": {
+    "name": "TARAMALI SİLAH",
+    "description": "Serüven başına verilen her 50 hasar için silahın saldırı hızı %0,3 artar"
+  },
+  "jokerMagicFriendship": {
+    "name": "SİHİRLİ DOSTLUK",
+    "description": "Müttefiklerinin yanındayken pasif olarak SP kazanırsın"
+  },
+  "jokerMagicReload": {
+    "name": "SİHİRLİ DOLUM",
+    "description": "Bir büyü kullandıktan sonra silahın otomatik olarak doldurulur"
+  },
+  "jokerMarkAce": {
+    "name": "KURŞUN İŞARETİ",
+    "description": "Mermiler düşmanları 5 sn. boyunca işaretler. İşaretlenmiş düşmanlar +%15 hasar alır"
+  },
+  "jokerMindShot": {
+    "name": "CANEVİNDEN VURUŞ",
+    "description": "Yaptığın zayıf nokta vuruşları patlamaya neden olur"
+  },
+  "jokerOneTrick": {
+    "name": "JOKER TEKNİĞİ",
+    "description": "Silahta takılı olan her farklı Joker nadirliği için +%7 hasar ve saldırı hızı elde edersin"
+  },
+  "jokerOverBlast": {
+    "name": "EKSTRA SAÇMA",
+    "description": "Şarjörde eksik olan her 4 mermi için fazladan bir saçma ateşlenir"
+  },
+  "jokerOverDraw": {
+    "name": "GERME GÜCÜ",
+    "description": "Yayını 2 sn. boyunca gererek bir koni içerisinde 3 ok atabilirsin. Saldırı hızı, yüklenme süresini kısaltır"
+  },
+  "jokerPanicAttack": {
+    "name": "PANİK ATAK",
+    "description": "SP hasarı aldıktan sonraki 3 saniye boyunca verdiğin hasar %20 artar"
+  },
+  "jokerPartyShot": {
+    "name": "PARTİ VURUŞU",
+    "description": "Zayıf nokta vuruşlarının etrafa konfeti saçma şansı +%50. Gereksiz mi gereksiz!"
+  },
+  "jokerPewPewPew": {
+    "name": "DIKŞIN DIKŞIN",
+    "description": "Saldırı hızı +%20"
+  },
+  "jokerPickPick": {
+    "name": "KAZDIM KUYUNU",
+    "description": "İsabet sonrasında hedefe hasar veren kazmaların ortaya çıkma şansı +%10"
+  },
+  "jokerPigshot": {
+    "name": "DOMUZ ŞOKU",
+    "description": "İndirilen darbe sonrasında ortaya bir domuz çıkma şansı +%5. Domuzlara saldırarak onları patlatabilirsin"
+  },
+  "jokerPlasticDuck": {
+    "name": "LASTİK ÖRDEK",
+    "description": "Yürürken lastik ördek sesleri çıkarırsın. Gereksiz mi gereksiz!"
+  },
+  "jokerPreciousRush": {
+    "name": "KIYMETLİ AKIN",
+    "description": "Düşman öldürdüğünde hız artıran bir yüzüğün ortaya çıkma şansı +%10"
+  },
+  "jokerPricklyPear": {
+    "name": "DİKENLİ BELA",
+    "description": "SP hasarı aldığında aynı hasarı +15 fazlalıkla saldırgana iade edersin"
+  },
+  "jokerQuickDraw": {
+    "name": "ATİK ÇEKİŞ",
+    "description": "Silah değiştirme hızı +%40"
+  },
+  "jokerRage": {
+    "name": "ÖFKE",
+    "description": "%25 SP'ye ulaştığında yakındaki düşmanları yakan bir ateş dalgası yayılır (Bekleme süresi: 60 sn)"
+  },
+  "jokerRampage": {
+    "name": "SERİ KATİL",
+    "description": "Her öldürmede 10 sn. boyunca %5 cephane dolum hızı kazanırsın, en fazla %100"
+  },
+  "jokerRelentless": {
+    "name": "AMANSIZ",
+    "description": "Maks. SP'nin %30'unda veya altındayken +%30 hasar verirsin"
+  },
+  "jokerReloadMastery": {
+    "name": "DOLUM USTALIĞI",
+    "description": "Boş bir şarjör %50 daha hızlı doldurulur"
+  },
+  "jokerRicochet": {
+    "name": "SEKMELİ VURUŞ",
+    "description": "Ateşlenen mermi sekerek %30 ihtimalle yakındaki bir düşmanı vurur"
+  },
+  "jokerRiposte": {
+    "name": "KONTRA ATAK",
+    "description": "Kalkanın bir darbeyi emdikten sonra sıradaki saldırın +%100 hasar verir"
+  },
+  "jokerRunAndGun": {
+    "name": "KOŞARAK VURMACA",
+    "description": "Ateş ederken hareket hızı +%30"
+  },
+  "jokerRunAndReload": {
+    "name": "KOŞARAK DOLDURMACA",
+    "description": "Cephane dolumu yaparken hareket hızı +%50"
+  },
+  "jokerRushBlast": {
+    "name": "HIZLI VE İSABETLİ",
+    "description": "Şarjöründeki ilk 3 mermi %100 isabet oranına sahiptir ve ateşlendiğinde daha uzağa gider"
+  },
+  "jokerScavengerStar": {
+    "name": "YAĞMACI YILDIZ",
+    "description": "Toplama menzili %100 oranda artar. Şerif Yıldızlarını tutarken %30 daha fazla hareket hızı kazanırsın"
+  },
+  "jokerScoutsHonor": {
+    "name": "İZCİ SÖZÜ",
+    "description": "10 sn. boyunca hasar almadığında kalkanın en az 10 KP'ye tamamlanır"
+  },
+  "jokerScrubBullet": {
+    "name": "TEMİZLEYİCİ VURUŞ",
+    "description": "Ana silahın, düşmanların üzerindeki elementleri kaldırarak anında 10 hasar verir"
+  },
+  "jokerSecondWind": {
+    "name": "İKİNCİ BAHAR",
+    "description": "Aldığın ölümcül bir darbede ölmek yerine 50 SP iyileşirsin (Bekleme süresi: 180 sn)"
+  },
+  "jokerSharpShooter": {
+    "name": "KESKİN NİŞANCI",
+    "description": "+%20 zayıf nokta hasarı"
+  },
+  "jokerShineBright": {
+    "name": "IŞIL IŞIL",
+    "description": "Karakter parıltısı +%50. Bugün yine ışıl ışılsın! Gereksiz mi gereksiz!"
+  },
+  "jokerShroomGrave": {
+    "name": "MANTAR MEZAR",
+    "description": "Düşman öldürdüğünde mantar ortaya çıkma şansı +%10"
+  },
+  "jokerSkyLash": {
+    "name": "GÖK KEMENDİ",
+    "description": "Yüklü saldırı +%50 hareket hızı verir ve uçabilmeni sağlar"
+  },
+  "jokerSlowAndSteady": {
+    "name": "YAVAŞ AMA EMİN",
+    "description": "+%25 isabet kazanırsın ama -%10 saldırı hızı"
+  },
+  "jokerSnackAPunch": {
+    "name": "ÇEREZLİK YUMRUK",
+    "description": "Yakın dövüşle yapılan öldürmeler sana 1 kalkan puanı kazandırır"
+  },
+  "jokerSoulEater": {
+    "name": "RUH YİYİCİ",
+    "description": "Ruh topladığında 5 sn. boyunca %20 hasar ve cephane dolum hızı kazanırsın"
+  },
+  "jokerSoulReaper": {
+    "name": "RUH TOPTANCISI",
+    "description": "Bir serüvenin sonunda edindiğin ruh sayısı %20 artar"
+  },
+  "jokerSoulSiphon": {
+    "name": "RUH SOĞURMA",
+    "description": "Ruh alma menzili artar ve toplanan her ruh +2 SP iyileşme sağlar"
+  },
+  "jokerSpareBullets": {
+    "name": "YEDEK MERMİ",
+    "description": "Cephane çantası +%10"
+  },
+  "jokerSpeedster": {
+    "name": "HIZ TUTKUNU",
+    "description": "Her %3 bonus hareket hızı için +%1 hasar ve saldırı hızı kazanırsın, en fazla +%40"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "ZİBİDİ GONZALES",
+    "description": "Hareket hızı +%10"
+  },
+  "jokerSpellLash": {
+    "name": "BÜYÜ KEMENDİ",
+    "description": "Bir büyü yapmak, yük çubuğunu anında doldurur"
+  },
+  "jokerSpellRoulette": {
+    "name": "BÜYÜ RULETİ",
+    "description": "Büyü bekleme süresi %20 azalır fakat büyüler her kullanımda rastgele belirlenir"
+  },
+  "jokerStackedLever": {
+    "name": "İSTİFLİ LEVYE",
+    "description": "Bir düşman öldürdüğünde yedek cephanenden anında 2 mermi doldurursun"
+  },
+  "jokerStonks": {
+    "name": "VURGUN",
+    "description": "Sandıkların rastgele bir Joker verme şansı +%20"
+  },
+  "jokerSwampTrick": {
+    "name": "BATAKLIK TEKNİĞİ",
+    "description": "Cephaneyi doldururken olan patlamalar artık yerde birikinti oluşturur"
+  },
+  "jokerThickSkin": {
+    "name": "KALIN DERİ",
+    "description": "Aldığın tüm hasar %20 azalır fakat iyileşme miktarın %30 düşer"
+  },
+  "jokerTinMan": {
+    "name": "TENEKE ADAM",
+    "description": "Fazla iyileşme kalkan puanına dönüşür (en fazla +15 KP)"
+  },
+  "jokerToolBox": {
+    "name": "ALET KUTUSU",
+    "description": "Destek toplama devre dışı bırakıldı. Destek ekipmanı kullanıldıktan 90 sn. sonra yenilenir"
+  },
+  "jokerTweakDealer": {
+    "name": "JOKER JONGLÖRÜ",
+    "description": "Aktif olan her Joker için +1 SP kazanırsın"
+  },
+  "jokerUltraDraw": {
+    "name": "AŞIRI GERME",
+    "description": "Yayını 4 sn. boyunca gererek devasa bir patlayıcı ok atabilirsin. Saldırı hızı, yüklenme süresini kısaltır"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "İsabet Oranı"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "Oyalanma Süresi"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "Menzil"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "Şarjör Boyutu"
+  },
+  "jokerUpgradeDamage": {
+    "name": "Hasar"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "Çekme Hızı"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "Saldırı Hızı"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "Saldırı Hızı"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "Saldırı Hızı"
+  },
+  "jokerUpgradeHeal": {
+    "name": "Sağlık"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "Hız"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "Zıplama Yüksekliği"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "Can Çalma"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "Cephane Doldurma Hızı"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "Toplama Menzili"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "Büyü Bekleme Süresi Azaltımı"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "Cephane Çantası"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "Cephane Çantası"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "Menzil"
+  },
+  "jokerVampire": {
+    "name": "VAMPİR",
+    "description": "Silahın can çalma etkisi +%4"
+  },
+  "jokerWeakLink": {
+    "name": "ZAYIF HALKA",
+    "description": "Zayıf nokta vuruşları %35 daha fazla hasar verir fakat normal vuruşların verdiği hasar %20 azalır"
+  },
+  "jokerWellFed": {
+    "name": "KARNI TOK, SIRTI PEK",
+    "description": "+5 SP"
+  },
+  "jokerWestWizard": {
+    "name": "BATI BÜYÜCÜSÜ",
+    "description": "Büyü bekleme süresi %30 azalır ama SP de %30 azalır"
+  }
+}

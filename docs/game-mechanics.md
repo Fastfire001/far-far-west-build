@@ -6,8 +6,11 @@ a refondu la progression et rendu obsolètes plusieurs pages du wiki.
 ## Sources des données
 
 Tout `data/` est extrait des **fichiers du jeu** (installation locale) par `bin/extract-game` : `equipment.json`,
-`spells.json`, `jokers.json`, `upgrades.json` et `progression.json`. Les fichiers extraits restent dans `.cache/`
-(non versionné) ; seules les valeurs utiles au planificateur vont dans `data/`.
+`spells.json`, `jokers.json`, `upgrades.json`, `progression.json` et les traductions dans `i18n/`. Les fichiers
+extraits restent dans `.cache/` (non versionné) ; seules les valeurs utiles au planificateur vont dans `data/`.
+
+Les textes (noms, descriptions) sont repris **tels qu'affichés dans le jeu**, en anglais dans les fichiers
+principaux : les noms de jokers sont donc en majuscules (`CRACKSHOT`), comme sur les cartes du jeu.
 
 Tous les objets sont identifiés par leur **`id` interne du jeu** (`itemPistol`, `itemSpellFireBall`,
 `jokerCrackShot`…), et les références entre fichiers utilisent ces ids (par exemple `available_on` d'un joker).
@@ -33,7 +36,8 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 
 ## Jokers (`jokers.json`)
 
-- `id` : identifiant interne du jeu (`jokerCrackShot`), stable même si le nom affiché change. `name` : nom affiché.
+- `id` : identifiant interne du jeu (`jokerCrackShot`), stable même si le nom affiché change. `name` : nom affiché
+  (en majuscules, comme dans le jeu). `description` : effet du joker.
 - `slot_cost` : coût en emplacements. Normal 1, Fine 2, Prime 3, Mythic 4, Legendary 5 ; les Unique coûtent
   de 2 à 7 selon la carte (Ultra Draw 7, Mindshot 6, Eco Trick et Swamp Trick 2…).
 - `max_equip` : nombre maximum de copies du même joker sur un porteur.
@@ -64,8 +68,9 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 
 - **1 point tous les 2 niveaux** depuis la mise à jour 644, jusqu'à **20 points au niveau 40**.
 - **+6 points** achetables au prestige → **26 points** par porteur, héros compris.
-- Chaque upgrade a une valeur par point (`value`), un nombre maximum de points (`max_slots`), un prix en or par
-  point (`gold_cost`, hors périmètre pour l'instant) et les ids des porteurs qui y ont accès (`available_on`).
+- Chaque upgrade a un nom (`name`), une valeur par point (`value`), un nombre maximum de points (`max_slots`),
+  un prix en or par point (`gold_cost`, hors périmètre pour l'instant) et les ids des porteurs qui y ont accès
+  (`available_on`).
 - `flat` : `true` si la valeur est un montant fixe (Health : +5 PV par point ; Chord Capacity : +1 accord par point),
   `false` si c'est une fraction (`0.05` = +5 %).
 - Une même stat peut exister en plusieurs variantes selon l'arme : par exemple Attack Speed vaut +5 % ×16 sur les
@@ -102,6 +107,18 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 - Les combos entre sorts (une trentaine sur le wiki : Fire Tornado, Geyser Split…) ne sont pas repris : ils
   dépendent du placement en jeu et leurs déclencheurs sont mal documentés.
 
+## Traductions (`i18n/`)
+
+- Le jeu est traduit dans **15 langues** : de-DE, en-US, es-419, es-ES, fr-FR, it-IT, ja-JP, ko-KR, pl-PL, pt-BR,
+  ru-RU, tr-TR, uk-UA, zh-CN, zh-TW. Couverture complète : chaque nom et description de `data/` a sa traduction.
+- Un fichier par langue, `i18n/<langue>.json` : `{id: {name, description}}` pour l'équipement, les écoles, les
+  sorts, les jokers et les upgrades (les upgrades n'ont qu'un nom). `en-US.json` reprend les textes des fichiers
+  principaux. Une traduction manquante est simplement absente : le planificateur retombe alors sur l'anglais.
+- Les textes sont tels que dans le jeu, y compris ses particularités : 23 noms japonais contiennent un retour à la
+  ligne (`\n`) pour tenir sur les cartes, et deux jokers allemands portent le même nom (`SEELENERNTER`).
+- Les quatre variantes d'Explosive Hits ont le même nom dans le jeu : on y ajoute le nom traduit de leur école
+  (`COUPS EXPLOSIFS (Acide)`), d'après la table `JOKER_VARIANTS` de `build_game_data.py`.
+
 ## Extraction depuis le jeu
 
 `bin/extract-game` lit l'installation locale du jeu, en lecture seule (chemin dans `FFW_GAME_DIR`, voir
@@ -121,6 +138,7 @@ Assets lus :
 | `/Game/LocaStringTables/ST_Tweaks` | noms et descriptions affichés des jokers et upgrades |
 | `/Game/LocaStringTables/ST_Weapons`, `ST_Spells` | noms et descriptions affichés des armes, utilitaires, sorts et écoles |
 | `/Game/Interfaces/Equipment/C_UnlockedJokers` | courbe numéro d'emplacement → niveau requis (arrondi à l'inférieur) |
+| `Localization/Game/<langue>/Game.locres` | traductions : par namespace de table de textes (`ST_Tweaks`, `ST_Skin` pour `ST_Weapons`, `ST_Elements` pour `ST_Spells`), mêmes clés que les textes anglais |
 
 Le jeu sérialise ses propriétés en mode « unversioned » (sans nom ni type) et ne fournit pas de fichier de
 mappings. CUE4Parse ne peut donc pas décoder la table des jokers : `build_game_data.py` la décode lui-même, avec

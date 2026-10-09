@@ -1,0 +1,867 @@
+{
+  "itemAcid": {
+    "name": "Säure",
+    "description": "Offensiv – Verlangsame Gegner und bringe das Schlachtfeld zum Korrodieren"
+  },
+  "itemBanjo": {
+    "name": "Banjo",
+    "description": "Langsame und schwache Angriffe. Etwas Heilkraft.\nPerfekt, um Verbündete zu heilen und ihnen gleichzeitig die Trommelfelle zu zerreißen."
+  },
+  "itemBoomerang": {
+    "name": "Bumerang",
+    "description": "Fliegt los, tyrannisiert Gegner für eine Weile und fliegt dann für eine weitere Runde zurück. \nDu brauchst keine Munition. Das Ding ist perfekt für eine umweltfreundliche Ausrüstung."
+  },
+  "itemBow": {
+    "name": "Bogen",
+    "description": "Feuert billige Pfeile ab, wenn du schnell ziehst. \nAber wenn du ihn richtig biegst, feuert er einen ganz schön explosiven Knaller ab."
+  },
+  "itemCactus": {
+    "name": "Kaktus",
+    "description": "Support – Kontrolliere das Schlachtfeld, indem du hilfreiche Kakteen beschwörst"
+  },
+  "itemDualRevolver": {
+    "name": "Doppelrevolver",
+    "description": "Hohe Feuerrate und schlechte Genauigkeit – aber ein einziges Nachladen lässt beide Revolver zu explosiver Nützlichkeit aufsteigen. \nWas für ein wundersamer Unterschied doch zwischen „Geht so!\" und „Das geht so richtig ab!“ liegt."
+  },
+  "itemElec": {
+    "name": "Elek",
+    "description": "Support – Bewege dich schnell und triff Gegner mit Blitzen"
+  },
+  "itemFire": {
+    "name": "Pyro",
+    "description": "Offensiv – Verbrenne Gegner und setze den Boden in Brand"
+  },
+  "itemIce": {
+    "name": "Frost",
+    "description": "Defensiv – Friere Feinde ein und verstärke deinen Schild"
+  },
+  "itemKnuckles": {
+    "name": "Schlagring",
+    "description": "Kleine Reichweite, große Wirkung.\nMan braucht keine Muni, muss nicht zielen und nicht nachdenken."
+  },
+  "itemLasso": {
+    "name": "Lasso",
+    "description": "Peitscht Gegner schnell und mit brauchbarer Reichweite aus.\nManche von ihnen kommen wieder, um mehr zu bekommen. Und das nicht aus Boshaftigkeit."
+  },
+  "itemLongRanger": {
+    "name": "Langflinte",
+    "description": "Jeder Fehlschuss entehrt die jahrhundertealte Handwerkskunst, die für unübertroffene Genauigkeit und durchdringende Schüsse entwickelt wurde. \nVersuche also, nicht zu sehr zu versagen, okay?"
+  },
+  "itemMinigun": {
+    "name": "Minigun",
+    "description": "Sobald es sich erstmal dreht, spuckt dieses Ding ununterbrochen Kugeln. \nTechnisch gesehen *könnte* es gestoppt werden. Aber du bist ein Vollzeit-Revolverheld und kein Drückeberger."
+  },
+  "itemPistol": {
+    "name": "Revolver",
+    "description": "Stets zuverlässig, aber in allem durchschnittlich. \nDie beste Wahl für Leute, die Angst vor Verpflichtungen haben."
+  },
+  "itemQuadCylinder": {
+    "name": "Vierertrommel",
+    "description": "Schießt gut, fühlt sich gut an, tut gut. \nEin Monument der Mittelmäßigkeit, aber ein sehr zuverlässiges."
+  },
+  "itemSheriffStar": {
+    "name": "Sheriffstern",
+    "description": "Wird mit hoher Geschwindigkeit abgefeuert und zerschneidet Gegner. \nGerechtigkeit war noch nie so mühelos."
+  },
+  "itemShotgun": {
+    "name": "Schrotflinte",
+    "description": "Besitzt eine ungewöhnlich hohe Feuerrate für eine Schrotflinte. Weist ferner Einzel-Patronen-Nachladungen und mehr Streuung auf als jeder Winterdienst. \nEndlich mal eine Waffe, die deiner Unfähigkeit als Schütze entgegenkommt."
+  },
+  "itemSpellAcidBubble": {
+    "name": "Blase",
+    "description": "Wirf eine große Säureblase, die beim Aufprall zerplatzt und mehrere Säurepfützen erzeugt."
+  },
+  "itemSpellAcidContagion": {
+    "name": "Verseuchung",
+    "description": "Korrodiert alle Gegner in einem weiten Bereich und belegt sie mit Ansteckend, was sie bei ihrem Tod explodieren lässt."
+  },
+  "itemSpellAcidGeyser": {
+    "name": "Geysir",
+    "description": "Beschwöre einen Säuregeysir, der beim Aufprall ausbricht."
+  },
+  "itemSpellAcidRain": {
+    "name": "Regen",
+    "description": "Rufe einen Säureregen herbei, der Gegner in einem weiten Gebiet verätzt."
+  },
+  "itemSpellAcidThrower": {
+    "name": "Säurespucke",
+    "description": "Spucke Säurestrahlen, die Gegner verlangsamen und ätzende Pfützen auf dem Boden hinterlassen."
+  },
+  "itemSpellCactusBetty": {
+    "name": "Mino",
+    "description": "Beschwöre eine Kaktusmine, die explodiert, wenn jemand drauftritt."
+  },
+  "itemSpellCactusDecoy": {
+    "name": "Täuschero",
+    "description": "Beschwöre einen tanzenden Kaktus, der Gegner anlockt, bevor er explodiert."
+  },
+  "itemSpellCactusTurret": {
+    "name": "Pistolero",
+    "description": "Beschwöre ein Kaktusgeschütz, das kontinuierlich auf Gegner in der Nähe feuert."
+  },
+  "itemSpellCactusUlti": {
+    "name": "Bandito",
+    "description": "Beschwöre einen mächtigen Kaktusgolem, der eine Zeit lang für dich kämpft."
+  },
+  "itemSpellCactusWall": {
+    "name": "Wando",
+    "description": "Beschwöre Kaktusstacheln, die Gegnern bei Kontakt Schaden zufügen und sie verlangsamen."
+  },
+  "itemSpellElecPortal": {
+    "name": "Portal",
+    "description": "Erzeuge bis zu zwei Portale, die Spieler teleportieren und Zauberprojektile duplizieren können."
+  },
+  "itemSpellElecStrike": {
+    "name": "Blitzschläge",
+    "description": "Schleudere eine Reihe von Blitzen, die alles in ihrem Weg wegbrutzeln."
+  },
+  "itemSpellElecSuperJump": {
+    "name": "Hüpfball",
+    "description": "Springe sofort, um deinen Gegnern zu entkommen."
+  },
+  "itemSpellElecSwap": {
+    "name": "Teleportation",
+    "description": "Tausche die Positionen mit einem Gegner, explodiere an beiden Standorten."
+  },
+  "itemSpellElecThunderstrike": {
+    "name": "Donnerschlag",
+    "description": "Schwinge dich in die Lüfte und stürze dich dann herab, um im Gebiet zu explodieren und Blitz und Donner über deine Gegner herabregnen zu lassen."
+  },
+  "itemSpellFireBall": {
+    "name": "Feuerball",
+    "description": "Schieß einen Feuerball ab, der beim Aufprall explodiert und den Boden in Brand setzt."
+  },
+  "itemSpellFireBeam": {
+    "name": "Feuerstrahl",
+    "description": "Entfessle einen riesigen Feuerstrahl, der alles versengt."
+  },
+  "itemSpellFireFingergun": {
+    "name": "Fingerpistolen",
+    "description": "Ersetze deine Waffe durch feurige Finger, die explosive Feuerkugeln verschießen."
+  },
+  "itemSpellFireSurcharge": {
+    "name": "Flammenwoge",
+    "description": "Verbrenne Gegner in einem weiten Bereich – wer bereits brennt, explodiert stattdessen."
+  },
+  "itemSpellFireWisp": {
+    "name": "Irrlicht",
+    "description": "Beschwöre ein Irrlicht, das zusätzlichen Verbrennungsschaden verursacht und nach dem Kill auf ein anderes Ziel überspringt."
+  },
+  "itemSpellIceBlizzard": {
+    "name": "Blizzard",
+    "description": "Beschwöre einen Blizzard, der dir folgt, allen Feinden Schaden zufügt und Verbündeten Schildpunkte gewährt."
+  },
+  "itemSpellIceBreeze": {
+    "name": "Brise",
+    "description": "Beschwöre eine Brise, die Feinde in einem breiten Kegel einfriert."
+  },
+  "itemSpellIceCube": {
+    "name": "Würfel",
+    "description": "Verwandle dich selbst oder einen Verbündeten in einen unverwundbaren Frostwürfel."
+  },
+  "itemSpellIceGlaze": {
+    "name": "Glatteis",
+    "description": "Entfessle eine Druckwelle, die Feinden in der Nähe Schaden zufügt und Verbündeten in der Nähe Schildpunkte gewährt."
+  },
+  "itemSpellIceLance": {
+    "name": "Brücke",
+    "description": "Beschwöre eine Brücke, die überquerenden Verbündeten Schildpunkte gewährt."
+  },
+  "itemSpellVoodooCorruption": {
+    "name": "Verderbnis",
+    "description": "Kanalisiere eine Puppe, die Gegner verdirbt und sie für dich kämpfen lässt."
+  },
+  "itemSpellVoodooDoll": {
+    "name": "Puppe",
+    "description": "Beschwöre eine Puppe, die Verbündeten in ihrem Bereich Unverwundbarkeit und hohes Tempo gewährt."
+  },
+  "itemSpellVoodooDrain": {
+    "name": "Entziehen",
+    "description": "Befiehl deiner Puppe, einem Gegner die Gesundheit zu entziehen."
+  },
+  "itemSpellVoodooHeal": {
+    "name": "Rettung",
+    "description": "Kanalisiere die Kraft deiner Puppe, um den nächsten Verbündeten zu heilen oder wiederzubeleben."
+  },
+  "itemSpellVoodooHealArea": {
+    "name": "Ritual",
+    "description": "Beschwöre einen Ring aus Kerzen, der die Gesundheit von Verbündeten in seinem Licht wiederherstellt."
+  },
+  "itemUtilityAmmo": {
+    "name": "Munitionspaket",
+    "description": "Explodiert und wird zu Munition. Mehr Spieler bedeuten mehr Kugeln. \nFamilienfeiern waren noch nie so lukrativ."
+  },
+  "itemUtilityBottleCrate": {
+    "name": "Flaschenkiste",
+    "description": "Explodiert in Heilflaschen.\nDamit wirst du garantiert der beliebteste Cowboy im Salon."
+  },
+  "itemUtilityHealBottle": {
+    "name": "Heilungsgebiet",
+    "description": "Explodiert beim Aufprall und schafft eine Heilungszone, die lange anhält.\nRiecht wie verfaulte Suppe, genau wie jedes gute Hausmittelchen von Oma."
+  },
+  "itemUtilityImpulse": {
+    "name": "Impulsgranate",
+    "description": "Erzeugt regelmäßig Schockwellen, die Spieler wegstoßen. \nErmöglicht es dir, in Höhen vorzustoßen, die du mit deinem Können gar nicht erreichen würdest."
+  },
+  "itemVoodoo": {
+    "name": "Voodoo",
+    "description": "Support – Entziehe Gegnern das Leben und unterstütze deine Verbündeten"
+  },
+  "itemWinchester": {
+    "name": "Verhandlungsflinte",
+    "description": "Knackiger Ladehebel, makellose Präzision und markantes Nachladen. \nHat früher hässliche Kuschelviecher an Schießbuden abgestaubt – und lässt nun bei Schießereien andere in den Staub sinken."
+  },
+  "jokerAimingBurst": {
+    "name": "ZIEL-EXPLOSION",
+    "description": "+30 % Schwachpunktschaden und durchdringende Kugeln beim Zielen"
+  },
+  "jokerAllMighty": {
+    "name": "ALLMÄCHTIG",
+    "description": "Erhalte +1 % Schaden pro Schildpunkt, bis zu 80 %"
+  },
+  "jokerAmmoSupply": {
+    "name": "MUNITIONSVERSORGUNG",
+    "description": "+5 % Chance, dass Feinde beim Tod eine Munitionskiste fallen lassen"
+  },
+  "jokerAntiGravityFalls": {
+    "name": "ANTI-SCHWERKRAFT-FÄLLE",
+    "description": "+2 % Chance, einen Anti-Schwerkraft-Bereich zu erzeugen, wenn ein Feind stirbt"
+  },
+  "jokerApprentice": {
+    "name": "LEHRLING",
+    "description": "-10 % Zauber-Abklingzeit"
+  },
+  "jokerAvalanche": {
+    "name": "LAWINE",
+    "description": "+15 % Schaden, solange du einen Schild hast"
+  },
+  "jokerBardbarian": {
+    "name": "BARDBARENANGRIFF",
+    "description": "Halte Schmetterangriff gedrückt, um einen wuchtigeren Schlag auszulösen"
+  },
+  "jokerBattleMage": {
+    "name": "KAMPFMAGIER",
+    "description": "Töten eines Gegners verkürzt die Abklingzeit aller laufenden Zauber um 0,5 %"
+  },
+  "jokerBellShot": {
+    "name": "GLOCKENSCHUSS",
+    "description": "+5 % Chance, bei Schwachpunkttreffern eine heilende Geisterglocke zu beschwören"
+  },
+  "jokerBerserker": {
+    "name": "BERSERKER",
+    "description": "Erhalte bis zu +50 % Nahkampfschaden, je niedriger deine TP sind"
+  },
+  "jokerBloodLust": {
+    "name": "BLUTDURST",
+    "description": "Nahkampfkills gewähren stapelbar +5 % Nahkampftempo für 5 Sek. (bis zu +50 % stapelbar)"
+  },
+  "jokerBouncingBall": {
+    "name": "FLUMMI",
+    "description": "+15 % Schaden in der Luft"
+  },
+  "jokerBracing": {
+    "name": "VOLLES TEMPO",
+    "description": "+5 % Angriffs- und Nachladetempo"
+  },
+  "jokerCactusDay": {
+    "name": "KAKTUS-TAG",
+    "description": "+5 % Chance, einen Kaktus-Mino zu erzeugen, wenn ein Gegner stirbt"
+  },
+  "jokerCamper": {
+    "name": "CAMPER",
+    "description": "+50 % Chance, keine Munition zu verbrauchen, wenn du stillstehst"
+  },
+  "jokerCantRipOneTrick": {
+    "name": "EINMAL-ZAUBER",
+    "description": "Deine Zauber mit einer Basisabklingzeit von 35 Sek. oder weniger haben eine um 25 % verringerte Abklingzeit"
+  },
+  "jokerCarePackage": {
+    "name": "PFLEGEPAKET",
+    "description": "+1 Support-Munition"
+  },
+  "jokerCastAway": {
+    "name": "DURCHZAUBERN",
+    "description": "Das Wirken eines Zaubers verringert die Abklingzeit anderer Zauber um 3 Sek., bis zu einem Minimum von 4 Sek."
+  },
+  "jokerCdrAcid": {
+    "name": "SÄUREMEISTERSCHAFT",
+    "description": "-10 % Säure-Abklingzeit pro ausgerüstetem Säurezauber"
+  },
+  "jokerCdrCactus": {
+    "name": "KAKTUSMEISTERSCHAFT",
+    "description": "Erhalte -10 % Kaktus-Abklingzeit pro ausgerüstetem Kaktus-Zauber"
+  },
+  "jokerCdrElec": {
+    "name": "ELEKMEISTERSCHAFT",
+    "description": "-10 % Elek-Abklingzeit pro ausgerüstetem Elekzauber"
+  },
+  "jokerCdrFire": {
+    "name": "PYROMEISTERSCHAFT",
+    "description": "-10 % Pyro-Abklingzeit pro ausgerüstetem Pyrozauber"
+  },
+  "jokerCdrFrost": {
+    "name": "FROSTMEISTERSCHAFT",
+    "description": "-10 % Frost-Abklingzeit pro ausgerüstetem Frostzauber"
+  },
+  "jokerCdrVoodoo": {
+    "name": "VOODOOMEISTERSCHAFT",
+    "description": "-10 % Voodoo-Abklingzeit pro ausgerüstetem Voodoozauber"
+  },
+  "jokerChad": {
+    "name": "CHAD",
+    "description": "Offenbart den Standort der Reisenden Händlerin. Gewährt dir einen Rabatt von 20 % – du hast es dir verdient"
+  },
+  "jokerCheapSkate": {
+    "name": "GEIZHALS",
+    "description": "Erhalte +1 TP für je 20 Gold in deinem Missionsinventar (bis zu +15 TP stapelbar)"
+  },
+  "jokerChickshot": {
+    "name": "KÜKENSCHUSS",
+    "description": "+50 % Chance für Angriffe, Hühnergeräusche zu machen. Nutzlos!"
+  },
+  "jokerChonky": {
+    "name": "MOLLIG",
+    "description": "+20 % Schaden, aber +15 % Schwerkraft"
+  },
+  "jokerChonkyThrow": {
+    "name": "MOPSIGER WURF",
+    "description": "Der Bumerang ist doppelt so groß und passiert Schilde"
+  },
+  "jokerClutch": {
+    "name": "EXPLOSIVES FINALE",
+    "description": "+2 explosive Kugeln am Ende deines Magazins"
+  },
+  "jokerCoinFlip": {
+    "name": "MÜNZWURF",
+    "description": "Wirf alle 10 Sek. eine Münze. Du verursachst entweder +100 % oder -50 % Waffenschaden"
+  },
+  "jokerColdBlooded": {
+    "name": "KALTBLÜTIG",
+    "description": "Deine Nahkampfangriffe frieren Feinde ein und verbrauchen dabei 3 Schildpunkte pro Feind"
+  },
+  "jokerConsumer": {
+    "name": "ABFALL",
+    "description": "Gewährt +25 % Waffenschaden, aber Nachladen verschwendet jetzt ungenutzte Munition"
+  },
+  "jokerCrackShot": {
+    "name": "MEISTERSCHÜTZE",
+    "description": "+7 % Schaden"
+  },
+  "jokerDeadlyStrong": {
+    "name": "TOD, ABER TÖDLICHER",
+    "description": "Bewege dich schneller und verursache mehr Schaden als toter Geist"
+  },
+  "jokerDeathsDance": {
+    "name": "TANZ DES TODES",
+    "description": "Dein Schild schwindet 30 % langsamer"
+  },
+  "jokerDestroyer": {
+    "name": "ZERSTÖRER",
+    "description": "Die ersten 25 % deines Magazins verursachen +20 % Schaden"
+  },
+  "jokerDisgrace": {
+    "name": "SCHANDE",
+    "description": "Erhalte +30 % Bewegungstempo. Dein Pferd will nicht mit dir zusammen sein"
+  },
+  "jokerDoubleDown": {
+    "name": "DOPPELT ODER NICHTS",
+    "description": "Erhalte +30 % Schildpunkte aus allen Quellen"
+  },
+  "jokerDwarf": {
+    "name": "ZWERG",
+    "description": "Du bist klein. Du erhältst Bewegungstempo, Angriffstempo und geringere Schwerkraft"
+  },
+  "jokerEagleLever": {
+    "name": "ADLERHEBEL",
+    "description": "Aufeinanderfolgende Schüsse ohne Fehlschuss gewähren +10 % Schaden (bis zu +50 % stapelbar)"
+  },
+  "jokerEatAPunch": {
+    "name": "FAUSTFUTTER",
+    "description": "Nahkampfkills heilen dich um 2 TP"
+  },
+  "jokerEcoTrick": {
+    "name": "ÖKO-TRICK",
+    "description": "Nachladen verschwendet keine Munition mehr"
+  },
+  "jokerElementalSpin": {
+    "name": "ELEMENTDREHUNG",
+    "description": "Die Minigun hat eine Chance von 30 %, anstatt eines normalen Geschosses ein zufälliges Elementgeschoss abzufeuern"
+  },
+  "jokerExecute": {
+    "name": "HINRICHTUNG",
+    "description": "Deine Treffer töten Gegner unter 20 % TP sofort, ausgenommen Elite-Feinde und Bosse"
+  },
+  "jokerExplosiveRounds": {
+    "name": "EXPLOSIONSTREFFER (Pyro)",
+    "description": "+5 % Chance, bei Treffern eine Explosion zu erzeugen (Pyro)"
+  },
+  "jokerExplosiveRoundsAcid": {
+    "name": "EXPLOSIONSTREFFER (Säure)",
+    "description": "+5 % Chance, bei Treffern eine Explosion zu erzeugen (Säure)"
+  },
+  "jokerExplosiveRoundsElec": {
+    "name": "EXPLOSIONSTREFFER (Elek)",
+    "description": "+5 % Chance, bei Treffern eine Explosion zu erzeugen (Elek)"
+  },
+  "jokerExplosiveRoundsFrost": {
+    "name": "EXPLOSIONSTREFFER (Frost)",
+    "description": "+5 % Chance, bei Treffern eine Explosion zu erzeugen (Frost)"
+  },
+  "jokerExtraDash": {
+    "name": "EXTRA-SPRINTEN",
+    "description": "+1 Sprinten"
+  },
+  "jokerExtraJump": {
+    "name": "EXTRA-SPRUNG",
+    "description": "+1 Sprung"
+  },
+  "jokerFanningAce": {
+    "name": "SCHNELLFEUER-ASS",
+    "description": "Feuere im richtigen Moment während des Nachladens, um sämtliche Kugeln in Folge zu verschießen."
+  },
+  "jokerFastDraw": {
+    "name": "WECHSELSCHUSS",
+    "description": "Dein erster Schuss nach dem Ausrüsten einer Waffe verursacht 30 % mehr Schaden."
+  },
+  "jokerFastHands": {
+    "name": "FLINKE HÄNDE",
+    "description": "+20 % Nachladetempo"
+  },
+  "jokerFightOrFlight": {
+    "name": "KAMPF ODER FLUCHT",
+    "description": "Erlittener TP-Schaden gewährt 3 Sek. lang +20 % Nahkampftempo"
+  },
+  "jokerFistFight": {
+    "name": "FAUSTKAMPF",
+    "description": "Deine Treffer mit bloßen Händen sind stärker"
+  },
+  "jokerFistRage": {
+    "name": "FAUSTZORN",
+    "description": "Erlittener Schaden erzeugt Aufladung und gewährt 2 Sek. lang +30 % Angriffstempo"
+  },
+  "jokerFistRoDah": {
+    "name": "FAUST RO DAH",
+    "description": "Der aufgeladene Angriff schleudert dich nach hinten und hat eine Chance von 20 %, Gegner mit Frost zu belegen"
+  },
+  "jokerFocusShot": {
+    "name": "FOKUSSCHUSS",
+    "description": "Jeder Schwachpunkttreffer verringert die Abklingzeit deiner Zauber um 2 Sek."
+  },
+  "jokerFocusedFeet": {
+    "name": "SCHNELLER SCHUSS",
+    "description": "+10 % Angriffstempo beim Anvisieren"
+  },
+  "jokerFreeCocktail": {
+    "name": "GRATIS-COCKTAIL",
+    "description": "Wenn du ein leeres Magazin nachlädst, heilst du 2 TP"
+  },
+  "jokerFreezeOver": {
+    "name": "LETZTE BASTION",
+    "description": "Beim Erreichen von 25 % TP erhältst du +50 Schildpunkte (Abklingzeit: 60 Sek.)"
+  },
+  "jokerFrenzySpin": {
+    "name": "RASEREIDREHUNG",
+    "description": "Solange dein Kill-Zähler über 10 ist, feuert die Minigun doppelt so schnell"
+  },
+  "jokerFrostBite": {
+    "name": "FROSTBEULE",
+    "description": "Nahkampfkills an eingefrorenen Feinden gewähren 2 Schildpunkte"
+  },
+  "jokerGiant": {
+    "name": "RIESE",
+    "description": "Du bist groß. Du erhältst Trefferpunkte, Waffenschaden und Zauber-Abklingzeitverringerung"
+  },
+  "jokerGlassCannon": {
+    "name": "GLASKANONE",
+    "description": "+40 % Waffen- und Nahkampfschaden, aber -25 % TP"
+  },
+  "jokerGoldProspector": {
+    "name": "GOLDSCHÜRFER",
+    "description": "Erhöhe dein erworbenes Gold am Ende einer Mission um 20 %"
+  },
+  "jokerGoldTooth": {
+    "name": "GOLDZÄHNCHEN",
+    "description": "+10 % Chance, dass Feinde beim Tod 1 Goldklumpen fallen lassen"
+  },
+  "jokerGoliath": {
+    "name": "GOLIATH",
+    "description": "Du bist größer. Erhalte +25 % TP"
+  },
+  "jokerGreatWall": {
+    "name": "GROSSE MAUER",
+    "description": "Verringert sämtlichen erlittenen Schaden um 10 %, solange du einen Schild hast"
+  },
+  "jokerHeadBang": {
+    "name": "HEADBANGEN",
+    "description": "Verursache +30 % Schaden an Schwachpunkten"
+  },
+  "jokerHeadshotRefund": {
+    "name": "SCHWACHPUNKT-ERSTATTUNG",
+    "description": "+20 % Chance, deine Munition nach einem Schwachpunkttreffer zurückzubekommen"
+  },
+  "jokerHealthyBoi": {
+    "name": "TOPFIT",
+    "description": "Wenn du volle TP hast, erhältst du +20 % Bewegungstempo, Nachladetempo und Angriffstempo"
+  },
+  "jokerHeavyDrinker": {
+    "name": "STARKER TRINKER",
+    "description": "Heilflaschen sind für dich 25 % effektiver"
+  },
+  "jokerHeavyWeapon": {
+    "name": "SCHWERE WAFFE",
+    "description": "+10 % Schaden, aber +30 % Schwerkraft, solange die Waffe aktiv ist"
+  },
+  "jokerHelpingHand": {
+    "name": "HELFENDE HAND",
+    "description": "Du kannst deine Verbündeten doppelt so schnell wiederbeleben"
+  },
+  "jokerHitMe": {
+    "name": "TRIFF MICH",
+    "description": "Heile dich 20 Sek. lang um 0,75 TP pro Sekunde, nachdem du getroffen wurdest"
+  },
+  "jokerHoarder": {
+    "name": "HORTER",
+    "description": "+15 % Chance, dass beim Sammeln eines Jokers ein anderer zufälliger erscheint"
+  },
+  "jokerHomingBurst": {
+    "name": "ZIELSUCH-SCHUB",
+    "description": "Verschieße je 8 abgefeuerte Kugeln 2 Zielsuchkugeln auf Gegner in der Nähe"
+  },
+  "jokerHop": {
+    "name": "HÜPFER",
+    "description": "+20 % Sprunghöhe"
+  },
+  "jokerJokheal": {
+    "name": "MEDI-KARTE",
+    "description": "Das Aufheben eines Jokers stellt zusätzliche +35 TP wieder her."
+  },
+  "jokerJumpStar": {
+    "name": "SPRUNGSTERN",
+    "description": "+2 Sprünge, während du die Sheriffsterne hältst"
+  },
+  "jokerKnuckleDown": {
+    "name": "NIEDERKNÖCHELN",
+    "description": "+10 % Nahkampfschaden"
+  },
+  "jokerLastDance": {
+    "name": "LETZTER TANZ",
+    "description": "Wenn du 30 % oder weniger TP hast, erhalte +30 % Bewegungstempo"
+  },
+  "jokerLastStand": {
+    "name": "LETZTES GEFECHT",
+    "description": "Wenn du 30 % oder weniger TP hast, erleidest du -30 % Schaden und erhältst 10 % Nahkampf-Lebensraub"
+  },
+  "jokerLazy": {
+    "name": "FAULPELZ",
+    "description": "Das Aufnehmen von Munition ist deaktiviert. Du erhältst alle 12 Sek. 10 % der maximalen Munition"
+  },
+  "jokerLifePact": {
+    "name": "LEBENSPAKT",
+    "description": "Kills heilen dich für 2 TP, aber die max. TP werden um 30 % verringert"
+  },
+  "jokerLightWeight": {
+    "name": "LEICHTGEWICHT",
+    "description": "-5 % Schwerkraft"
+  },
+  "jokerLingeringThrow": {
+    "name": "WURF MIT NACHWIRKUNG",
+    "description": "Verdoppelt die Verweilzeit. Lässt sich mit dem Upgrade „Verweilzeit“ kombinieren"
+  },
+  "jokerLowGravity": {
+    "name": "MONDSCHWERKRAFT",
+    "description": "-25 % Schwerkraft"
+  },
+  "jokerLuckyStrike": {
+    "name": "GLÜCKSSCHUSS",
+    "description": "+10 % Chance, pro Treffer doppelten Schaden zu verursachen"
+  },
+  "jokerLullabard": {
+    "name": "SCHLUMMERBARDE",
+    "description": "Du erhältst pro Treffer einen Extraakkord und einen größeren Heilbereich, verlierst aber Schmetterangriff"
+  },
+  "jokerLunge": {
+    "name": "AUSFALLSCHRITT",
+    "description": "+15 % Nahkampfreichweite und Hitbox-Größe"
+  },
+  "jokerMachineGun": {
+    "name": "MASCHINENGEWEHR",
+    "description": "Pro Mission erhält diese Waffe +0,3 % Angriffstempo für jeweils 50 verursachten Schaden"
+  },
+  "jokerMagicFriendship": {
+    "name": "MAGISCHE FREUNDSCHAFT",
+    "description": "Erhalte passiv TP zurück, wenn du in der Nähe von Verbündeten bist"
+  },
+  "jokerMagicReload": {
+    "name": "MAGISCHES NACHLADEN",
+    "description": "Lädt deine Waffe nach dem Wirken eines Zaubers automatisch nach"
+  },
+  "jokerMarkAce": {
+    "name": "MARKIER-ASS",
+    "description": "Kugeln markieren 5 Sek. lang Gegner. Markierte Gegner erleiden +15 % Schaden"
+  },
+  "jokerMindShot": {
+    "name": "GEDANKENSCHUSS",
+    "description": "Schwachpunkttreffer verursachen eine Explosion"
+  },
+  "jokerOneTrick": {
+    "name": "JOKER-TRICK",
+    "description": "Erhalte +7 % Schaden und Angriffstempo für jede mit der Waffe ausgerüstete unterschiedliche Joker-Seltenheit"
+  },
+  "jokerOverBlast": {
+    "name": "ÜBERLASTEN",
+    "description": "Feuert ein zusätzliches Kügelchen für jeweils 4 fehlende Schüsse im Magazin ab"
+  },
+  "jokerOverDraw": {
+    "name": "ÜBERZIEHEN",
+    "description": "Lade 2 Sek. lang auf, um 3 Pfeile in einem Kegel abzuschießen. Angriffstempo verringert die Aufladezeit"
+  },
+  "jokerPanicAttack": {
+    "name": "PANIKATTACKE",
+    "description": "Wenn du TP-Schaden erleidest, erhältst du 3 Sek. lang +20 % Schaden"
+  },
+  "jokerPartyShot": {
+    "name": "PARTYSCHUSS",
+    "description": "+50 % Chance bei Schwachpunkttreffern, Konfetti zu verwehen – nutzlos!"
+  },
+  "jokerPewPewPew": {
+    "name": "BÄM BÄM BÄM",
+    "description": "+20 % Angriffstempo"
+  },
+  "jokerPickPick": {
+    "name": "PICK-PICK",
+    "description": "+10 % Chance, bei einem Treffer schädliche Spitzhacken auf dem Ziel zu erzeugen"
+  },
+  "jokerPigshot": {
+    "name": "SCHWEINESCHUSS",
+    "description": "+5 % Chance, beim Aufprall ein Schwein zu erzeugen. Greif es an, damit es hochgeht"
+  },
+  "jokerPlasticDuck": {
+    "name": "GUMMIENTE",
+    "description": "Laufen macht Gummientengeräusche – nutzlos!"
+  },
+  "jokerPreciousRush": {
+    "name": "SCHATZ-RAUSCH",
+    "description": "+10 % Chance, einen temposteigernden Kreis zu erzeugen, wenn ein Gegner stirbt"
+  },
+  "jokerPricklyPear": {
+    "name": "KAKTUSFEIGE",
+    "description": "Wenn du TP-Schaden erleidest, fügst du dem Angreifer denselben Schaden +15 zu"
+  },
+  "jokerQuickDraw": {
+    "name": "SCHNELLWECHSEL",
+    "description": "+40 % Wechseltempo"
+  },
+  "jokerRage": {
+    "name": "RAGE",
+    "description": "Beim Erreichen von 25 % TP entfesselst du eine Welle, die Feinde in der Nähe verbrennt (Abklingzeit: 60 Sek.)"
+  },
+  "jokerRampage": {
+    "name": "RANDALE",
+    "description": "Erhalte 5 % Nachladetempo pro Kill für 10 Sek., bis zu 100 %"
+  },
+  "jokerRelentless": {
+    "name": "UNERBITTLICH",
+    "description": "Wenn du 30 % oder weniger deiner max. TP hast, verursachst du +30 % Schaden"
+  },
+  "jokerReloadMastery": {
+    "name": "NACHLADEMEISTERSCHAFT",
+    "description": "Das Nachladen eines leeren Magazins geht 50 % schneller"
+  },
+  "jokerRicochet": {
+    "name": "ABPRALLEN",
+    "description": "Das abgefeuerte Geschoss prallt ab und hat eine Chance von 30 %, automatisch einen Feind in der Nähe zu treffen"
+  },
+  "jokerRiposte": {
+    "name": "RIPOSTE",
+    "description": "Nachdem dein Schild einen Treffer absorbiert hat, verursacht dein nächster Angriff +100 % Schaden"
+  },
+  "jokerRunAndGun": {
+    "name": "RENNEN & SCHIESSEN",
+    "description": "+30 % Bewegungstempo beim Schießen"
+  },
+  "jokerRunAndReload": {
+    "name": "LAUFEN & NACHLADEN",
+    "description": "+50 % Bewegungstempo beim Nachladen"
+  },
+  "jokerRushBlast": {
+    "name": "EXPLOSIVER ANSTURM",
+    "description": "Die ersten 3 Geschosse in deinem Magazin haben 100 % Genauigkeit und schießen auf weitere Entfernung"
+  },
+  "jokerScavengerStar": {
+    "name": "PLÜNDERSTERN",
+    "description": "Erhalte +100 % Aufhebenreichweite. Erhalte +30 % Bewegungstempo, während du Sheriffsterne hältst."
+  },
+  "jokerScoutsHonor": {
+    "name": "PFADFINDEREHRE",
+    "description": "Nach 10 Sek. ohne erlittenen Schaden wird dein Schild auf mindestens 10 Schildpunkte gesetzt"
+  },
+  "jokerScrubBullet": {
+    "name": "PUTZFRAU",
+    "description": "Deine Primärwaffe entfernt Elemente von Gegnern und verursacht sofort 10 Schaden"
+  },
+  "jokerSecondWind": {
+    "name": "ZWEITER VERSUCH",
+    "description": "Heilt 50 TP, anstatt durch einen tödlichen Treffer zu sterben (Abklingzeit: 180 Sek.)"
+  },
+  "jokerSharpShooter": {
+    "name": "SCHARFSCHÜTZE",
+    "description": "+20 % Schwachpunktschaden"
+  },
+  "jokerShineBright": {
+    "name": "STRAHLENDER HELD",
+    "description": "+50 % Heldenglanz, du leuchtest – nutzlos!"
+  },
+  "jokerShroomGrave": {
+    "name": "PILZGRAB",
+    "description": "+10 % Chance, einen Pilz zu erzeugen, wenn ein Feind stirbt"
+  },
+  "jokerSkyLash": {
+    "name": "HIMMELSPEITSCHE",
+    "description": "Der aufgeladene Angriff gewährt +50 % Bewegungstempo und lässt dich fliegen"
+  },
+  "jokerSlowAndSteady": {
+    "name": "LANGSAM, ABER SICHER",
+    "description": "Erhalte +25 % Genauigkeit, aber -10 % Angriffstempo"
+  },
+  "jokerSnackAPunch": {
+    "name": "FAUSTSNACK",
+    "description": "Nahkampfkills gewähren dir 1 Schildpunkt"
+  },
+  "jokerSoulEater": {
+    "name": "SEELENERNTER",
+    "description": "Das Aufheben einer Seele gewährt 20 % Schaden und Nachladetempo für 5 Sek."
+  },
+  "jokerSoulReaper": {
+    "name": "SEELENERNTER",
+    "description": "Erhöhe deine erworbenen Seelen am Ende einer Mission um 20 %"
+  },
+  "jokerSoulSiphon": {
+    "name": "SEELENABSAUGEN",
+    "description": "Erhöht die Aufhebenreichweite und heilt um +2 TP beim Seelenaufheben"
+  },
+  "jokerSpareBullets": {
+    "name": "ERSATZMUNITION",
+    "description": "+10 % Munitionstasche"
+  },
+  "jokerSpeedster": {
+    "name": "FLITZBOLD",
+    "description": "+1 % Schaden und Angriffstempo pro 3 % Bonus-Bewegungstempo, bis zu +40 %"
+  },
+  "jokerSpeedyGunzales": {
+    "name": "SCHNELLES GUN-PLAY",
+    "description": "+10 % Bewegungstempo"
+  },
+  "jokerSpellLash": {
+    "name": "ZAUBERPEITSCHE",
+    "description": "Jeder gewirkte Zauber füllt sofort deine Aufladeleiste auf"
+  },
+  "jokerSpellRoulette": {
+    "name": "ZAUBER-ROULETTE",
+    "description": "-20 % Zauber-Abklingzeit, aber Zauber werden bei jedem Wirken zufallsbestimmt"
+  },
+  "jokerStackedLever": {
+    "name": "GESPANNTER HEBEL",
+    "description": "Lade bei einem Kill sofort 2 Kugeln deiner Reservemunition nach"
+  },
+  "jokerStonks": {
+    "name": "STONKS",
+    "description": "+20 % Chance, beim Truhenöffnen einen zufälligen Joker zu erhalten"
+  },
+  "jokerSwampTrick": {
+    "name": "SUMPFTRICK",
+    "description": "Nachladenexplosionen hinterlassen jetzt Pfützen auf dem Boden"
+  },
+  "jokerThickSkin": {
+    "name": "DICKES FELL",
+    "description": "Verringert sämtlichen erlittenen Schaden um 20 %, aber du erhältst 30 % weniger Heilung"
+  },
+  "jokerTinMan": {
+    "name": "BLECHMANN",
+    "description": "Überschüssige Heilung wird in bis zu +15 Schildpunkte umgewandelt"
+  },
+  "jokerToolBox": {
+    "name": "WERKZEUGKASTEN",
+    "description": "Support-Aufhebungen sind deaktiviert. Dein Support wird nach 90 Sek. automatisch aufgefüllt"
+  },
+  "jokerTweakDealer": {
+    "name": "JOKER-HÄNDLER",
+    "description": "Erhalte +1 TP für jeden aktiven Joker"
+  },
+  "jokerUltraDraw": {
+    "name": "ULTRAZIEHEN",
+    "description": "Lade 4 Sek. lang auf, um einen starken explosiven Pfeil abzuschießen. Angriffstempo verringert die Aufladezeit"
+  },
+  "jokerUpgradeAccuracy": {
+    "name": "Genauigkeit"
+  },
+  "jokerUpgradeBoomerangLingeringTime": {
+    "name": "Verweilzeit"
+  },
+  "jokerUpgradeBoomerangRange": {
+    "name": "Reichweite"
+  },
+  "jokerUpgradeClipSize": {
+    "name": "Magazingröße"
+  },
+  "jokerUpgradeDamage": {
+    "name": "Schaden"
+  },
+  "jokerUpgradeDrawSpeed": {
+    "name": "Ziehtempo"
+  },
+  "jokerUpgradeFirerate": {
+    "name": "Angriffstempo"
+  },
+  "jokerUpgradeFirerateB": {
+    "name": "Angriffstempo"
+  },
+  "jokerUpgradeFirerateC": {
+    "name": "Angriffstempo"
+  },
+  "jokerUpgradeHeal": {
+    "name": "Gesundheit"
+  },
+  "jokerUpgradeHeroSpeed": {
+    "name": "Tempo"
+  },
+  "jokerUpgradeJumpHeight": {
+    "name": "Sprunghöhe"
+  },
+  "jokerUpgradeLifesteal": {
+    "name": "Lebensraub"
+  },
+  "jokerUpgradeReloadSpeed": {
+    "name": "Nachladetempo"
+  },
+  "jokerUpgradeSherrifStarPickUpRange": {
+    "name": "Aufhebenreichweite"
+  },
+  "jokerUpgradeSpellCooldownReduction": {
+    "name": "Zauber-Abklingzeitverringerung"
+  },
+  "jokerUpgradeTotalAmmoBag": {
+    "name": "Munitionstasche"
+  },
+  "jokerUpgradeTotalAmmoBagC": {
+    "name": "Munitionstasche"
+  },
+  "jokerUpgradeWeaponMeleeRange": {
+    "name": "Reichweite"
+  },
+  "jokerVampire": {
+    "name": "VAMPIR",
+    "description": "Die Waffe erhält +4 % Lebensraub"
+  },
+  "jokerWeakLink": {
+    "name": "SCHWACHES GLIED",
+    "description": "Schwachpunkttreffer verursachen 35 % mehr Schaden, aber normale Treffer 20 % weniger Schaden"
+  },
+  "jokerWellFed": {
+    "name": "WOHLGENÄHRT",
+    "description": "+5 TP"
+  },
+  "jokerWestWizard": {
+    "name": "WESTERNZAUBERER",
+    "description": "Erhalte -30 % Zauber-Abklingzeit, aber -30 % TP"
+  }
+}
