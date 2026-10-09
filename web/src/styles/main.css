@@ -1,0 +1,72 @@
+/* Look of the game's menus (dark slate background, wooden planks, condensed capitals), drawn from scratch:
+   no texture or image from the game. */
+:root {
+  --bg: #1d272d;
+  --bg-deep: #10171b;
+  --panel: rgb(0 0 0 / 28%);
+  --line: rgb(255 255 255 / 12%);
+  --text: #f2ead9;
+  --text-muted: #a9b1b4;
+  --accent: #f4b52f;
+  --danger: #ee6a4e;
+  --plank: #d7a35c;
+  --plank-light: #ecc68c;
+  --plank-dark: #8d5c2c;
+  --plank-text: #2b211b;
+  --font-title: 'Oswald Variable', 'Arial Narrow', sans-serif;
+  --font-body: system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgb(255 255 255 / 6%), transparent 60%),
+    radial-gradient(ellipse at 80% 90%, rgb(0 0 0 / 35%), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+select,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 1rem 1.5rem 3rem;
+}
+
+@media (max-width: 40rem) {
+  .page {
+    padding: 0.75rem 1rem 2rem;
+  }
+}

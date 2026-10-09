@@ -1,11 +1,98 @@
 {
-  "app": { "title": "Planificateur de builds Far Far West" },
-  "language": "Langue",
-  "carrier": {
-    "hero": "Héros",
-    "main": "Arme principale",
-    "sidearm": "Arme secondaire",
-    "utility": "Utilitaire"
+  "app": {
+    "title": "Far Far West — Build planner"
   },
-  "spells": "Sorts"
+  "menu": {
+    "version": "Jeu v{version} · données du {date}",
+    "versionShort": "v{version} · {date}",
+    "builds": "Builds",
+    "newBuild": "Nouveau build",
+    "myBuilds": "Mes builds…",
+    "import": "Importer…",
+    "export": "Exporter…",
+    "unavailable": "Sauvegarde indisponible"
+  },
+  "home": {
+    "untitled": "Build sans nom",
+    "rename": "Nom du build",
+    "chooseMain": "Choisir une arme principale",
+    "chooseSidearm": "Choisir une arme secondaire",
+    "chooseUtility": "Choisir un utilitaire",
+    "chooseSpells": "Choisir des sorts",
+    "summary": "Résumé",
+    "prestiges": "{n} prestige | {n} prestige | {n} prestiges",
+    "problems": "Aucun problème | 1 problème | {n} problèmes",
+    "complete": "Build complet et valide",
+    "assumed": "Prestiges : règle supposée (bonus achetés au prestige utilisables tout de suite)"
+  },
+  "problem": {
+    "missing_weapon_main": "Aucune arme principale choisie",
+    "missing_weapon_sidearm": "Aucune arme secondaire choisie",
+    "missing_element": "Aucun élément choisi pour l'arme secondaire",
+    "missing_utility": "Aucun utilitaire choisi",
+    "missing_spell": "L'emplacement de sort [{key}] est vide",
+    "unknown_id": "Objet inconnu {name} (retiré du jeu ?)",
+    "wrong_item": "{name} ne peut pas être utilisé ici",
+    "duplicate_spell": "{name} est équipé deux fois",
+    "joker_incompatible": "{name} ne s'équipe pas sur {carrier}",
+    "joker_not_equippable": "{name} ne s'équipe pas au lobby",
+    "joker_too_many_copies": "{name} : {copies} exemplaires, {max} au maximum",
+    "joker_slots_exceeded": "{carrier} : {used}/{max} emplacements de jokers",
+    "upgrade_incompatible": "{name} n'est pas disponible sur {carrier}",
+    "upgrade_too_many_points": "{name} : {points}/{max} points",
+    "upgrade_points_exceeded": "{carrier} : {used}/{max} points d'amélioration"
+  },
+  "picker": {
+    "clearsLoadout": "L'équiper retire les jokers et les améliorations de {weapon}."
+  },
+  "customize": {
+    "minLevel": "Niv. min. {level}",
+    "upgradesNeed": "Améliorations : {used} points → niveau {level}",
+    "jokersNeed": "Jokers : {used} emplacements → niveau {level}",
+    "bought": "+ {n} acheté au prestige | + {n} acheté au prestige | + {n} achetés au prestige",
+    "requirements": "Progression requise",
+    "jokerSlots": "{used}/{max} emplacements",
+    "prestigeSlot": "Emplacement acheté au prestige",
+    "addPoint": "Ajouter un point à {name}",
+    "removePoint": "Retirer un point à {name}",
+    "setPoints": "{name} : {n} points"
+  },
+  "jokers": {
+    "rarity": "Rareté",
+    "search": "Chercher un nom ou un effet…",
+    "noResult": "Aucun joker ne correspond.",
+    "noRoom": "Pas assez d'emplacements ({cost} requis)",
+    "cost": "Coûte {n} emplacement | Coûte 1 emplacement | Coûte {n} emplacements",
+    "removeHint": "Cliquez sur un joker équipé pour le retirer"
+  },
+  "spells": {
+    "hint": "Cliquez sur un sort, puis sur un emplacement. Cliquez sur un emplacement pour le vider.",
+    "pickSlot": "Choisissez un emplacement pour {name} (Échap pour annuler)"
+  },
+  "dialog": {
+    "close": "Fermer",
+    "exportTitle": "Exporter le build",
+    "exportHelp": "Copiez ce texte et partagez-le : n'importe qui peut l'importer dans le planificateur.",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "importTitle": "Importer un build",
+    "importHelp": "Collez le texte d'un build exporté (il commence par FFW1:). Il est ajouté à vos builds.",
+    "import": "Importer",
+    "importError": {
+      "prefix": "Ce n'est pas un build exporté : le texte doit commencer par FFW1:.",
+      "encoding": "Le texte est incomplet ou abîmé.",
+      "format": "Le texte ne contient pas de build.",
+      "version": "Ce build vient d'une version plus récente du planificateur."
+    }
+  },
+  "builds": {
+    "title": "Mes builds",
+    "current": "En cours",
+    "updated": "Modifié le {date}",
+    "duplicate": "Dupliquer",
+    "delete": "Supprimer",
+    "copyName": "{name} (copie)",
+    "confirmDelete": "Supprimer le build « {name} » ? C'est définitif.",
+    "unavailable": "Votre navigateur ne permet pas la sauvegarde : les builds seront perdus à la fermeture de la page."
+  }
 }

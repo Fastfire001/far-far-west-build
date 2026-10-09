@@ -13,7 +13,7 @@ services:
     build: tools/game-extract
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
-      - "${FFW_GAME_DIR:-./.missing-game-dir}/FarFarWest/Content/Paks:/paks:ro"
+      - "${FFW_GAME_DIR:-./.missing-game-dir}:/game:ro"
       - ./.cache/game:/out
       - ./.cache/oodle:/cache
 

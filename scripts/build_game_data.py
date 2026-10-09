@@ -1,5 +1,6 @@
-"""Builds data/*.json (equipment, spells, jokers, upgrades, progression) and their translations (data/i18n/) from
-assets extracted from the game by tools/game-extract (see bin/extract-game).
+"""Builds data/*.json (equipment, spells, jokers, upgrades, progression, meta) and their translations (data/i18n/)
+from assets extracted from the game by tools/game-extract (see bin/extract-game). Also writes the game's own menu
+labels that the planner reuses (data/i18n/ui/) and the name of each language (data/i18n/languages.json).
 
 Usage: python3 scripts/build_game_data.py <extract_dir> <out_dir>
 
@@ -9,7 +10,7 @@ they come from the Blueprint structs /Game/Progress/S_PlayerJokers and S_PlayerI
 those structs, decoding stops with an error and the layouts must be updated (see docs/game-mechanics.md,
 "Extraction depuis le jeu"). The same goes for a new item: it must be added to EQUIPMENT, SPELLS or IGNORED_ITEMS.
 """
-import glob, json, os, re, struct, sys
+import datetime, glob, json, os, re, struct, sys
 
 extract_dir, out_dir = sys.argv[1:3]
 
@@ -69,6 +70,30 @@ SPELLS = {
 }
 # Items of DT_PlayerItems that are not build choices.
 IGNORED_ITEMS = {"itemHero", "itemAxe", "itemDefaultGun", "itemMelee"}
+# Menu labels of the game reused by the planner: planner key → key in the ST_UI string table. Placeholders such as
+# {level} are kept as in the game.
+UI_TEXTS = {
+    "back": "ST_UI_Equipment_Back", "loadout": "ST_UI_Equipment_Loadout", "hero": "ST_UI_Leaderboard_Hero",
+    "main_weapon": "ST_UI_Equipment_MainWeapon", "sidearm": "ST_UI_WeaponFragment_Sidearm",
+    "utility": "ST_UI_WeaponFragment_Utility", "spells": "ST_UI_Lobby_Spells", "equip": "ST_UI_Equipment_Equip",
+    "already_equipped": "ST_UI_Equipment_AlreadyEquipped", "customize": "ST_UI_Equipment_Customize",
+    "upgrades": "ST_UI_Upgrades", "upgrade_slots": "ST_UI_UpgradeSlot", "element_damage": "ST_UI_Equipment_ProjectileElement",
+    "jokers": "ST_UI_Equipment_JOKERS", "joker_slot": "ST_UI_JokerSlot", "prestige": "ST_UI_Equipment_Prestige_Name",
+    "all": "ST_UI_Journal_All", "empty": "ST_UI_Spell_Empty", "locked": "ST_UI_Equipment_Locked",
+    "limit_reached": "ST_UI_Joker_LimitReached", "max_amount": "ST_UI_Tweak_AmountMax", "level_short": "ST_UI_Equipment_LvlLvl",
+    "unlocked_at_level": "ST_UI_Equipment_UnlockedAtLvl", "unlocked_at_weapon_level": "ST_Equipment_UnlockedAtWeaponLevel",
+    "language": "ST_UI_Language",
+    **{f"rarity_{r.lower()}": f"ST_UI_Equipment_Rarity_{r}" for r in ["Normal", "Fine", "Prime", "Mythic", "Legendary", "Unique"]},
+}
+# Name of each language, written in that language (the same in every translation): culture → key in ST_UI.
+LANGUAGE_NAMES = {
+    "de-DE": "ST_UI_Language_German", "en-US": "ST_UI_Language_English", "es-419": "ST_UI_Language_SpanishLatinAmerica",
+    "es-ES": "ST_UI_Language_Spanish", "fr-FR": "ST_UI_Language_French", "it-IT": "ST_UI_Language_Italian",
+    "ja-JP": "ST_UI_Language_Japanese", "ko-KR": "ST_UI_Language_Korean", "pl-PL": "ST_UI_Language_Polish",
+    "pt-BR": "ST_UI_Language_Portuguese", "ru-RU": "ST_UI_Language_Russian", "tr-TR": "ST_UI_Language_Turkish",
+    "uk-UA": "ST_UI_Language_Ukrainian", "zh-CN": "ST_UI_Language_ChineseSimplified",
+    "zh-TW": "ST_UI_Language_ChineseTraditional",
+}
 
 
 def read(name):
@@ -203,7 +228,7 @@ def string_table(name):
 
 
 # English source texts, by string table. Translations are indexed by the table's namespace and the same keys.
-STRING_TABLES = {name: string_table(name) for name in ("ST_Tweaks", "ST_Weapons", "ST_Spells")}
+STRING_TABLES = {name: string_table(name) for name in ("ST_Tweaks", "ST_Weapons", "ST_Spells", "ST_UI")}
 # Text keys of every item: {id: {"name": (table, key), "description": (table, key)}}.
 text_keys = {}
 
@@ -340,6 +365,28 @@ for path in sorted(glob.glob(os.path.join(extract_dir, "*.locres.json"))):
 if not translations:
     raise SystemExit("no localization file found in the extract directory")
 
+# Menu labels, by language: English from the string table, the others from the localization files.
+ui_table = STRING_TABLES["ST_UI"]
+missing_keys = sorted(k for k in [*UI_TEXTS.values(), *LANGUAGE_NAMES.values()] if k not in ui_table["KeysToEntries"])
+if missing_keys:
+    raise SystemExit(f"strings {missing_keys} not found in ST_UI: the game's text keys have changed")
+if set(LANGUAGE_NAMES) != set(translations):
+    raise SystemExit(f"languages changed: {sorted(set(LANGUAGE_NAMES) ^ set(translations))}, update LANGUAGE_NAMES")
+ui_texts = {}
+for path in sorted(glob.glob(os.path.join(extract_dir, "*.locres.json"))):
+    culture = os.path.basename(path).split(".")[0]
+    localized = json.load(open(path)).get(ui_table["TableNamespace"], {})
+    ui_texts[culture] = {key: clean(localized[st_key]) for key, st_key in UI_TEXTS.items() if st_key in localized}
+ui_texts["en-US"] = {key: clean(ui_table["KeysToEntries"][st_key]) for key, st_key in UI_TEXTS.items()}
+language_names = {culture: ui_table["KeysToEntries"][key] for culture, key in LANGUAGE_NAMES.items()}
+
+# Version of the game the data comes from, e.g. "0.2.0.20 - CL 915" in the executable → "0.2.0.20".
+raw_version = open(os.path.join(extract_dir, "version.txt")).read().strip()
+version = re.match(r"\d+(\.\d+)+", raw_version)
+if not version:
+    raise SystemExit(f"unexpected game version {raw_version!r}")
+meta = {"game_version": version.group(), "extracted_on": datetime.date.today().isoformat()}
+
 slot_curve = decode_curve("C_UnlockedJokers")
 max_slots = int(slot_curve[-1][1])
 progression = {
@@ -353,12 +400,16 @@ out = {
     "jokers.json": sorted(jokers, key=lambda j: (RARITIES.index(j["rarity"]), j["name"])),
     "upgrades.json": sorted(upgrades, key=lambda u: (u["name"], u["id"])),
     "progression.json": progression,
+    "meta.json": meta,
+    "i18n/languages.json": language_names,
 }
 out.update({f"i18n/{culture}.json": dict(sorted(entries.items())) for culture, entries in translations.items()})
-os.makedirs(os.path.join(out_dir, "i18n"), exist_ok=True)
+out.update({f"i18n/ui/{culture}.json": texts for culture, texts in ui_texts.items()})
+os.makedirs(os.path.join(out_dir, "i18n", "ui"), exist_ok=True)
 for name, data in out.items():
     with open(os.path.join(out_dir, name), "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
 print(f"equipment.json {len(equipment)}, spells.json {len(spells)}, jokers.json {len(jokers)}, upgrades.json {len(upgrades)}, "
-      f"joker slot levels {progression['joker_slot_levels']}, translations {sorted(translations)}")
+      f"joker slot levels {progression['joker_slot_levels']}, translations {sorted(translations)}, "
+      f"ui texts {len(UI_TEXTS)}, game version {meta['game_version']}")

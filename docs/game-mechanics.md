@@ -6,7 +6,8 @@ a refondu la progression et rendu obsolètes plusieurs pages du wiki.
 ## Sources des données
 
 Tout `data/` est extrait des **fichiers du jeu** (installation locale) par `bin/extract-game` : `equipment.json`,
-`spells.json`, `jokers.json`, `upgrades.json`, `progression.json` et les traductions dans `i18n/`. Les fichiers
+`spells.json`, `jokers.json`, `upgrades.json`, `progression.json`, `meta.json` (version du jeu et date d'extraction)
+et les traductions dans `i18n/`. Les fichiers
 extraits restent dans `.cache/` (non versionné) ; seules les valeurs utiles au planificateur vont dans `data/`.
 
 Les textes (noms, descriptions) sont repris **tels qu'affichés dans le jeu**, en anglais dans les fichiers
@@ -62,7 +63,10 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
   et 55 ; sidearms : niveaux 30 et 40), puis achetés.
 - **Jokers Mastery** (un par école de sorts) : débloqués au niveau 50 de l'école ; −10 % de cooldown par sort
   équipé de cette école. L'élément de la sidearm ne compte pas.
-- Le jeu n'impose **aucun niveau requis par joker** : la table des jokers n'a pas de champ de niveau.
+- La table des jokers n'a **pas de champ de niveau**. Mais le jeu contient le texte « Your HERO needs to be at least
+  level {minimumLevel} to buy Jokers of this category » (`ST_UI_Tweaks_MinimumLevelBuyJokers`) : il y aurait un
+  niveau de héros minimum pour acheter certaines raretés. Valeurs introuvables dans les fichiers lisibles (sans doute
+  dans un Blueprint, `BP_Manager_Jokers`) ; le planificateur l'ignore.
 
 ## Upgrades de stats (`upgrades.json`)
 
@@ -88,9 +92,10 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
 | Point d'upgrade | 2 jetons | 6 | 20 → 26 points |
 | Ticket XP, 500 or, 1000 âmes | 1 jeton | illimité | ressources |
 
-- Chaque prestige (5 jetons) paie donc soit 1 emplacement de joker, soit 2 points d'upgrade, pas les deux.
-  Prestiges nécessaires = emplacements de joker achetés + ⌈points d'upgrade achetés / 2⌉. Un build au maximum
-  demande 2 + 3 = **5 prestiges** sur le porteur.
+- Les jetons s'accumulent d'un prestige à l'autre (le jeu affiche « {amount} Token(s) ») : prestiges nécessaires
+  = ⌈(5 × emplacements de joker achetés + 2 × points d'upgrade achetés) / 5⌉. Par exemple, 5 points (10 jetons)
+  demandent 2 prestiges, pas 3 comme le donnerait « emplacements + ⌈points / 2⌉ ». Un build au maximum demande
+  ⌈(10 + 12) / 5⌉ = **5 prestiges** sur le porteur.
 - Ces règles viennent des notes de patch et du build planner de wikily.gg, pas des fichiers du jeu : la logique de
   la boutique est dans un Blueprint (`UI_PrestigeShop`), illisible avec notre méthode d'extraction.
 
@@ -118,6 +123,11 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
   ligne (`\n`) pour tenir sur les cartes, et deux jokers allemands portent le même nom (`SEELENERNTER`).
 - Les quatre variantes d'Explosive Hits ont le même nom dans le jeu : on y ajoute le nom traduit de leur école
   (`COUPS EXPLOSIFS (Acide)`), d'après la table `JOKER_VARIANTS` de `build_game_data.py`.
+- `i18n/ui/<langue>.json` : les libellés des menus du jeu que le planificateur réutilise (RETOUR, Personnaliser,
+  Emplacements d'amélioration, noms des raretés…), `{clé: texte}`. La sélection et les clés sont dans la table
+  `UI_TEXTS` de `build_game_data.py`. Les variables restent comme dans le jeu (`Niv. {lvl}`).
+- `i18n/languages.json` : le nom de chaque langue, écrit dans cette langue (« Deutsch », « 日本語 »), identique
+  dans toutes les traductions.
 
 ## Extraction depuis le jeu
 
@@ -137,8 +147,10 @@ Assets lus :
 | `/Game/Progress/DT_PlayerItems` | liste de tous les objets : armes, utilitaires, sorts, écoles (structure `S_PlayerItems`, un seul champ) |
 | `/Game/LocaStringTables/ST_Tweaks` | noms et descriptions affichés des jokers et upgrades |
 | `/Game/LocaStringTables/ST_Weapons`, `ST_Spells` | noms et descriptions affichés des armes, utilitaires, sorts et écoles |
+| `/Game/LocaStringTables/ST_UI` | libellés des menus du jeu et noms des langues |
 | `/Game/Interfaces/Equipment/C_UnlockedJokers` | courbe numéro d'emplacement → niveau requis (arrondi à l'inférieur) |
 | `Localization/Game/<langue>/Game.locres` | traductions : par namespace de table de textes (`ST_Tweaks`, `ST_Skin` pour `ST_Weapons`, `ST_Elements` pour `ST_Spells`), mêmes clés que les textes anglais |
+| `FarFarWest.exe` (hors archives) | version du jeu (`FileVersion` de l'exécutable, « 0.2.0.20 - CL 915 ») |
 
 Le jeu sérialise ses propriétés en mode « unversioned » (sans nom ni type) et ne fournit pas de fichier de
 mappings. CUE4Parse ne peut donc pas décoder la table des jokers : `build_game_data.py` la décode lui-même, avec

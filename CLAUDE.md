@@ -7,7 +7,8 @@ Le repo contient les données du jeu (extraites des fichiers du jeu, avec leurs 
 ## Structure
 
 - `data/*.json` : données du jeu, toutes extraites des fichiers du jeu, et `data/i18n/<langue>.json` leurs
-  traductions officielles (15 langues). Fichiers **générés** : ne pas les modifier à la main, corriger plutôt
+  traductions officielles (15 langues) ; `data/i18n/ui/<langue>.json` : libellés des menus du jeu réutilisés par le
+  planificateur. Fichiers **générés** : ne pas les modifier à la main, corriger plutôt
   `scripts/build_game_data.py` puis regénérer.
 - `tools/game-extract/` : extracteur C# (CUE4Parse) qui lit les archives du jeu et écrit les assets bruts dans
   `.cache/game/`.
@@ -17,9 +18,11 @@ Le repo contient les données du jeu (extraites des fichiers du jeu, avec leurs 
 - `web/` : l'application (Vue 3, TypeScript, Vite, Pinia, vue-i18n, tests Vitest). Elle lit directement `data/` (alias
   `@data`) et `assets/icons/`. `src/domain/` : données typées et règles du build, en TypeScript pur sans Vue, pour
   être testées seules. `src/stores/` : état partagé (stores Pinia), qui
-  appelle les fonctions de `src/domain/` sans contenir de règles. `src/i18n/` : textes de l'interface
-  (`ui/<langue>.json`, traduits par nos soins) ; les textes du jeu sont chargés à la demande depuis `data/i18n/`
-  par le store `language`.
+  appelle les fonctions de `src/domain/` sans contenir de règles. `src/views/` : un écran par route de
+  `src/router.ts` (vue-router en mode hash, écrans de `docs/maquettes.md`) ; `src/components/` : éléments communs
+  (barre de menu, bouton RETOUR, planche de bois). `src/i18n/` : textes de l'interface
+  (`ui/<langue>.json`, traduits par nos soins), complétés par les libellés du jeu (`data/i18n/ui/`, clé `game`) ;
+  les textes du jeu sont chargés à la demande depuis `data/i18n/` par le store `language`.
 - `bin/` : commandes à lancer depuis la machine hôte. Chacune exécute les scripts dans les containers Docker
   de `compose.yaml` (`app` pour Python, `extract` pour l'extracteur, `web` pour Node).
 - `.cache/` (non versionné) : assets bruts extraits du jeu et bibliothèque Oodle téléchargée par l'extracteur.

@@ -50,15 +50,18 @@ Hors périmètre :
 - **Toutes les données viennent des fichiers du jeu** (`bin/extract-game`), sauf les règles de prestige. Voir
   `docs/game-mechanics.md`.
 - Les règles de progression qui ne sont pas dans `data/progression.json` (points par niveau, boutique de prestige)
-  sont regroupées dans un seul fichier de configuration, chacune marquée confirmée ou supposée.
+  sont regroupées dans `web/src/domain/rules.ts`, chacune marquée confirmée ou supposée, avec sa source.
 - **Niveau minimum et prestiges** (décidé le 2026-10-09) : on n'achète au prestige que ce qui dépasse ce que donnent
   les niveaux (au-delà de 14 emplacements de jokers ou de 20 points d'upgrade) ; le niveau affiché est celui qu'il
   faut atteindre pour le reste. Résultat marqué « supposé » tant que la question ouverte n°1 n'est pas tranchée.
 - **Niveau des jokers Unique** : le niveau vient de l'id du défi (`challengeLvl35…` ou `challengeLevel35…`, les deux
   orthographes existent), l'arme de `available_on` (un seul porteur par Unique). Ne pas déduire l'arme de l'id du
   défi : la Revolver y est notée `ItemRevolver`, alors que son id est `itemPistol`.
-- **Autres déblocages** (jokers de cooldown au niveau 50 d'une école, défis de kills, zones secrètes…) : simple
-  mention sur la carte (« Débloqué par : Pyro niveau 50 »), sans effet sur le niveau minimum.
+- **On considère tous les jokers débloqués** (décidé le 2026-10-09), sauf les Unique (niveau d'arme, ci-dessus) :
+  - les autres défis (jokers de cooldown au niveau 50 d'une école, kills, zones secrètes…) ne sont ni affichés ni
+    comptés dans le niveau minimum ;
+  - le niveau de héros éventuellement requis pour acheter une rareté de jokers est ignoré (voir
+    `docs/game-mechanics.md`).
 - **Changer d'arme vide les jokers et les upgrades de ce porteur.**
 - **Un nouveau build est vide** : aucune arme, aucun utilitaire, aucun sort choisi.
 
@@ -68,8 +71,10 @@ Hors périmètre :
   À défaut d'un texte traduit, il affiche l'anglais.
 - Les textes sont affichés tels que dans le jeu (noms de jokers en majuscules) ; les retours à la ligne des noms
   japonais sont remplacés par un espace à l'affichage.
-- L'interface du planificateur elle-même (boutons, messages de validation) n'existe pas dans le jeu : elle devra
-  être traduite par nos soins, au moins en français et en anglais.
+- L'interface reprend les libellés des menus du jeu quand ils existent (`data/i18n/ui/`, 15 langues : RETOUR,
+  Personnaliser, raretés…), et les noms des langues du jeu pour le sélecteur (`data/i18n/languages.json`).
+- Le reste de l'interface (résumé, messages de validation…) n'existe pas dans le jeu : il est traduit par nos soins,
+  au moins en français et en anglais.
 
 ## Icônes
 
@@ -86,7 +91,11 @@ Hors périmètre :
 ## Sauvegarde et partage
 
 - Les builds sont sauvegardés dans le **localStorage** du navigateur : une liste de builds nommés (ouvrir,
-  dupliquer, supprimer).
+  dupliquer, supprimer), écran « Mes builds » et menu Builds.
+- **Sauvegarde automatique** : le build en cours est enregistré à chaque modification, sans bouton. Un build resté
+  vide (sans nom ni choix) est supprimé quand on en ouvre un autre. Sans localStorage (stockage bloqué), tout
+  fonctionne sans sauvegarde, et le menu le signale.
+- Un build **importé** est ajouté à la liste comme nouveau build : il n'écrase pas celui en cours.
 - Boutons **Exporter / Importer** : le build est un JSON encodé en base64, avec un préfixe (`FFW1:…`).
 - Le JSON contient un **numéro de version de format** (`"v": 1`), pour pouvoir convertir les anciens builds.
 - Tous les objets (équipement, sorts, jokers, upgrades) sont identifiés par leur **`id` interne du jeu**
