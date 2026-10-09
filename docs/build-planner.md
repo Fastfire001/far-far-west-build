@@ -111,7 +111,9 @@ Hors périmètre :
 - `bin/build-site` produit un site statique (`web/dist/`) servi sous `/far-far-west-build/` (`base` de
   `vite.config.ts`). S'il faut des routes, utiliser le mode hash de vue-router (`/#/…`) : Pages ne sait pas
   renvoyer `index.html` pour une URL inconnue.
-- Pas encore de workflow de déploiement (GitHub Action `actions/deploy-pages`).
+- **Déploiement** : `.github/workflows/deploy.yml` construit `web/` à chaque push sur `main` (tests compris : un test
+  qui échoue bloque la mise en ligne) et publie `web/dist/` avec `actions/deploy-pages`. Dans les réglages du dépôt,
+  la source de Pages doit être « GitHub Actions ». Adresse : https://fastfire001.github.io/far-far-west-build/
 - Avec un compte GitHub gratuit, Pages exige un dépôt public ; depuis un dépôt privé, il faut GitHub Pro. Dans les
   deux cas, **le site lui-même est public**, données du jeu comprises.
 

@@ -25,3 +25,6 @@ bin/dev          # serveur de dev : http://localhost:5173/
 bin/test         # tests unitaires
 bin/build-site   # site statique dans web/dist/
 ```
+
+Chaque push sur `main` déploie le site sur GitHub Pages (`.github/workflows/deploy.yml`) :
+https://fastfire001.github.io/far-far-west-build/
