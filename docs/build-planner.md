@@ -51,6 +51,16 @@ Hors périmètre :
   `docs/game-mechanics.md`.
 - Les règles de progression qui ne sont pas dans `data/progression.json` (points par niveau, boutique de prestige)
   sont regroupées dans un seul fichier de configuration, chacune marquée confirmée ou supposée.
+- **Niveau minimum et prestiges** (décidé le 2026-10-09) : on n'achète au prestige que ce qui dépasse ce que donnent
+  les niveaux (au-delà de 14 emplacements de jokers ou de 20 points d'upgrade) ; le niveau affiché est celui qu'il
+  faut atteindre pour le reste. Résultat marqué « supposé » tant que la question ouverte n°1 n'est pas tranchée.
+- **Niveau des jokers Unique** : le niveau vient de l'id du défi (`challengeLvl35…` ou `challengeLevel35…`, les deux
+  orthographes existent), l'arme de `available_on` (un seul porteur par Unique). Ne pas déduire l'arme de l'id du
+  défi : la Revolver y est notée `ItemRevolver`, alors que son id est `itemPistol`.
+- **Autres déblocages** (jokers de cooldown au niveau 50 d'une école, défis de kills, zones secrètes…) : simple
+  mention sur la carte (« Débloqué par : Pyro niveau 50 »), sans effet sur le niveau minimum.
+- **Changer d'arme vide les jokers et les upgrades de ce porteur.**
+- **Un nouveau build est vide** : aucune arme, aucun utilitaire, aucun sort choisi.
 
 ## Langues
 

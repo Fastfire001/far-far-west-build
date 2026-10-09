@@ -25,6 +25,7 @@ Le repo contient les données du jeu (extraites des fichiers du jeu, avec leurs 
 - `.cache/` (non versionné) : assets bruts extraits du jeu et bibliothèque Oodle téléchargée par l'extracteur.
 - `docs/game-mechanics.md` : règles du jeu utiles au planificateur, méthode d'extraction, incohérences du wiki.
 - `docs/build-planner.md` : décisions de conception du planificateur et questions encore ouvertes.
+- `docs/maquettes.md` : maquettes ASCII des écrans (UX des menus du jeu).
 
 ## Commandes
 
