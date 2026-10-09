@@ -2,6 +2,7 @@
 // path, so URLs look like /#/customize/main. Each screen names the one its BACK button returns to (meta.back).
 import { createRouter, createWebHashHistory, type RouteLocationNormalized, type RouteLocationRaw } from 'vue-router'
 import BuildHome from './views/BuildHome.vue'
+import BuildsView from './views/BuildsView.vue'
 import CustomizeView from './views/CustomizeView.vue'
 import ItemPicker from './views/ItemPicker.vue'
 import JokersView from './views/JokersView.vue'
@@ -35,6 +36,7 @@ export const router = createRouter({
       component: JokersView,
       meta: { back: (route) => ({ name: 'customize', params: { carrier: route.params.carrier } }) },
     },
+    { path: '/builds', name: 'builds', component: BuildsView, meta: { back: () => ({ name: 'home' }) } },
     { path: '/spells', name: 'spells', component: SpellsView, meta: { back: () => ({ name: 'home' }) } },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],

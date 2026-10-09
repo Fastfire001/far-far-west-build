@@ -6,11 +6,11 @@
     "version": "Game v{version} · data from {date}",
     "versionShort": "v{version} · {date}",
     "builds": "Builds",
-    "soon": "Coming soon",
     "newBuild": "New build",
     "myBuilds": "My builds…",
     "import": "Import…",
-    "export": "Export…"
+    "export": "Export…",
+    "unavailable": "Saving unavailable"
   },
   "home": {
     "untitled": "Untitled build",
@@ -68,5 +68,31 @@
   "spells": {
     "hint": "Click a spell, then a slot. Click a slot to empty it.",
     "pickSlot": "Choose a slot for {name} (Esc to cancel)"
+  },
+  "dialog": {
+    "close": "Close",
+    "exportTitle": "Export the build",
+    "exportHelp": "Copy this text and share it: anyone can import it into the planner.",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "importTitle": "Import a build",
+    "importHelp": "Paste the text of an exported build (it starts with FFW1:). It is added to your builds.",
+    "import": "Import",
+    "importError": {
+      "prefix": "This is not an exported build: the text must start with FFW1:.",
+      "encoding": "The text is incomplete or damaged.",
+      "format": "The text does not contain a build.",
+      "version": "This build comes from a newer version of the planner."
+    }
+  },
+  "builds": {
+    "title": "My builds",
+    "current": "Being edited",
+    "updated": "Changed {date}",
+    "duplicate": "Duplicate",
+    "delete": "Delete",
+    "copyName": "{name} (copy)",
+    "confirmDelete": "Delete the build “{name}”? This cannot be undone.",
+    "unavailable": "Your browser does not allow saving: builds will be lost when the page is closed."
   }
 }

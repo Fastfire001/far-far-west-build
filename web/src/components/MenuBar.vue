@@ -3,13 +3,38 @@
 // menus on the right.
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 import { gameMeta } from '@/domain/gameData'
 import { LANGUAGE_NAMES, LOCALES, type Locale } from '@/i18n'
 import { useLanguageStore } from '@/stores/language'
+import { useLibraryStore } from '@/stores/library'
+import BuildTextDialogs from './BuildTextDialogs.vue'
 
 const { t } = useI18n()
+const router = useRouter()
 const language = useLanguageStore()
+const library = useLibraryStore()
 const buildsOpen = ref(false)
+const exportOpen = ref(false)
+const importOpen = ref(false)
+
+const buildsMenu = ref<HTMLElement>()
+
+/** Closes the builds menu when the focus leaves it (not when it moves to one of its entries). */
+function onFocusOut(event: FocusEvent) {
+  if (!buildsMenu.value?.contains(event.relatedTarget as Node | null)) buildsOpen.value = false
+}
+
+/** Runs a builds menu entry and closes the menu. */
+function menu(action: () => void) {
+  buildsOpen.value = false
+  action()
+}
+
+function newBuild() {
+  library.newBuild()
+  router.push({ name: 'home' })
+}
 
 const extractedOn = computed(() =>
   new Intl.DateTimeFormat(language.locale, { dateStyle: 'short' }).format(new Date(`${gameMeta.extracted_on}T00:00:00`)),
@@ -34,20 +59,23 @@ function onLocaleChange(event: Event) {
           <option v-for="l in LOCALES" :key="l" :value="l">{{ LANGUAGE_NAMES[l] }}</option>
         </select>
       </label>
-      <div class="builds" @focusout="buildsOpen = false">
+      <div ref="buildsMenu" class="builds" @focusout="onFocusOut" @keydown.esc="buildsOpen = false">
         <button type="button" :aria-expanded="buildsOpen" :aria-label="t('menu.builds')" @click="buildsOpen = !buildsOpen">
           <span class="long">{{ t('menu.builds') }} ▾</span>
           <span class="short" aria-hidden="true">☰</span>
         </button>
         <ul v-if="buildsOpen" class="builds-menu">
-          <li class="soon">{{ t('menu.soon') }}</li>
-          <li><button type="button" disabled>{{ t('menu.newBuild') }}</button></li>
-          <li><button type="button" disabled>{{ t('menu.myBuilds') }}</button></li>
-          <li><button type="button" disabled>{{ t('menu.import') }}</button></li>
-          <li><button type="button" disabled>{{ t('menu.export') }}</button></li>
+          <li v-if="!library.available" class="unavailable">{{ t('menu.unavailable') }}</li>
+          <li><button type="button" @click="menu(newBuild)">{{ t('menu.newBuild') }}</button></li>
+          <li>
+            <button type="button" @click="menu(() => router.push({ name: 'builds' }))">{{ t('menu.myBuilds') }}</button>
+          </li>
+          <li><button type="button" @click="menu(() => (importOpen = true))">{{ t('menu.import') }}</button></li>
+          <li><button type="button" @click="menu(() => (exportOpen = true))">{{ t('menu.export') }}</button></li>
         </ul>
       </div>
     </div>
+    <BuildTextDialogs v-model:export="exportOpen" v-model:import="importOpen" />
   </header>
 </template>
 
@@ -108,12 +136,12 @@ select option {
   text-align: left;
   width: 100%;
 }
-.builds-menu button:disabled {
-  color: var(--text-muted);
-  cursor: not-allowed;
-}
-.soon {
+.builds-menu button:hover {
+  background: var(--panel);
   color: var(--accent);
+}
+.unavailable {
+  color: var(--danger);
   font-size: 0.8rem;
   padding: 0.2rem 0.9rem;
 }

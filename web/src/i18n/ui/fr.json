@@ -6,11 +6,11 @@
     "version": "Jeu v{version} · données du {date}",
     "versionShort": "v{version} · {date}",
     "builds": "Builds",
-    "soon": "Bientôt",
     "newBuild": "Nouveau build",
     "myBuilds": "Mes builds…",
     "import": "Importer…",
-    "export": "Exporter…"
+    "export": "Exporter…",
+    "unavailable": "Sauvegarde indisponible"
   },
   "home": {
     "untitled": "Build sans nom",
@@ -68,5 +68,31 @@
   "spells": {
     "hint": "Cliquez sur un sort, puis sur un emplacement. Cliquez sur un emplacement pour le vider.",
     "pickSlot": "Choisissez un emplacement pour {name} (Échap pour annuler)"
+  },
+  "dialog": {
+    "close": "Fermer",
+    "exportTitle": "Exporter le build",
+    "exportHelp": "Copiez ce texte et partagez-le : n'importe qui peut l'importer dans le planificateur.",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "importTitle": "Importer un build",
+    "importHelp": "Collez le texte d'un build exporté (il commence par FFW1:). Il est ajouté à vos builds.",
+    "import": "Importer",
+    "importError": {
+      "prefix": "Ce n'est pas un build exporté : le texte doit commencer par FFW1:.",
+      "encoding": "Le texte est incomplet ou abîmé.",
+      "format": "Le texte ne contient pas de build.",
+      "version": "Ce build vient d'une version plus récente du planificateur."
+    }
+  },
+  "builds": {
+    "title": "Mes builds",
+    "current": "En cours",
+    "updated": "Modifié le {date}",
+    "duplicate": "Dupliquer",
+    "delete": "Supprimer",
+    "copyName": "{name} (copie)",
+    "confirmDelete": "Supprimer le build « {name} » ? C'est définitif.",
+    "unavailable": "Votre navigateur ne permet pas la sauvegarde : les builds seront perdus à la fermeture de la page."
   }
 }

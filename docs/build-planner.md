@@ -91,7 +91,11 @@ Hors périmètre :
 ## Sauvegarde et partage
 
 - Les builds sont sauvegardés dans le **localStorage** du navigateur : une liste de builds nommés (ouvrir,
-  dupliquer, supprimer).
+  dupliquer, supprimer), écran « Mes builds » et menu Builds.
+- **Sauvegarde automatique** : le build en cours est enregistré à chaque modification, sans bouton. Un build resté
+  vide (sans nom ni choix) est supprimé quand on en ouvre un autre. Sans localStorage (stockage bloqué), tout
+  fonctionne sans sauvegarde, et le menu le signale.
+- Un build **importé** est ajouté à la liste comme nouveau build : il n'écrase pas celui en cours.
 - Boutons **Exporter / Importer** : le build est un JSON encodé en base64, avec un préfixe (`FFW1:…`).
 - Le JSON contient un **numéro de version de format** (`"v": 1`), pour pouvoir convertir les anciens builds.
 - Tous les objets (équipement, sorts, jokers, upgrades) sont identifiés par leur **`id` interne du jeu**

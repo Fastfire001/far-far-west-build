@@ -6,7 +6,9 @@ import App from './App.vue'
 import { detectLocale, i18n } from './i18n'
 import { router } from './router'
 import { useLanguageStore } from './stores/language'
+import { useLibraryStore } from './stores/library'
 
 const app = createApp(App).use(createPinia()).use(i18n).use(router)
+useLibraryStore().init()
 await useLanguageStore().setLocale(detectLocale())
 app.mount('#app')

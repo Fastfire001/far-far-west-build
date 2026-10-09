@@ -13,7 +13,7 @@ export class BuildImportError extends Error {
 }
 
 export function encodeBuild(build: Build): string {
-  const bytes = new TextEncoder().encode(JSON.stringify({ v: FORMAT_VERSION, ...build }))
+  const bytes = new TextEncoder().encode(JSON.stringify(storedBuild(build)))
   // btoa() only takes Latin-1 characters: encode the UTF-8 bytes, one character per byte.
   return EXPORT_PREFIX + btoa(Array.from(bytes, (b) => String.fromCharCode(b)).join(''))
 }
@@ -29,6 +29,16 @@ export function decodeBuild(text: string): Build {
   } catch {
     throw new BuildImportError('encoding')
   }
+  return restoreBuild(data)
+}
+
+/** Build as stored (export, local saves): the build with its format version. */
+export function storedBuild(build: Build): Record<string, unknown> {
+  return { v: FORMAT_VERSION, ...build }
+}
+
+/** Reads a stored build (see storedBuild). Throws a BuildImportError if it is not one. */
+export function restoreBuild(data: unknown): Build {
   if (!isObject(data)) throw new BuildImportError('format')
   if (data.v !== FORMAT_VERSION) throw new BuildImportError('version')
   return normalize(data)
