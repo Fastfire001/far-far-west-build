@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// The carrier's joker slots, like the game's: circles in 2 columns, read row by row, a joker taking as many
+// The carrier's joker slots, like the game's: circles in rows (2 columns by default), a joker taking as many
 // circles as it costs, linked together (an SVG layer behind the circles draws the links). Unused circles show the
 // level that unlocks them, or P for the slots bought at the prestige shop.
 import { computed } from 'vue'
@@ -11,7 +11,15 @@ import { iconUrl } from '@/icons'
 import { useLanguageStore } from '@/stores/language'
 import { RARITY_COLORS } from '@/ui/colors'
 
-const props = defineProps<{ loadout: Loadout }>()
+const props = withDefaults(
+  defineProps<{
+    loadout: Loadout
+    columns?: number
+    /** Circle size, in tenths of rem. */
+    size?: number
+  }>(),
+  { columns: 2, size: 36 },
+)
 /** A click on a joker's circle (with its id) or on an unused one (null). */
 const emit = defineEmits<{ select: [joker: string | null] }>()
 
@@ -30,14 +38,12 @@ interface Circle {
   title: string
 }
 
-// Geometry of the grid, in tenths of rem (see the CSS): circle size and gaps.
-const SIZE = 36
-const COLUMN_GAP = 12.5
-const ROW_GAP = 7.5
-const center = (row: number, column: number) => ({
-  x: SIZE / 2 + column * (SIZE + COLUMN_GAP),
-  y: SIZE / 2 + row * (SIZE + ROW_GAP),
-})
+// Geometry of the grid, in tenths of rem: circle size and gaps (applied to the grid as CSS variables).
+const geometry = computed(() => ({ size: props.size, columnGap: props.size * 0.35, rowGap: props.size * 0.2 }))
+const center = (row: number, column: number) => {
+  const { size, columnGap, rowGap } = geometry.value
+  return { x: size / 2 + column * (size + columnGap), y: size / 2 + row * (size + rowGap) }
+}
 
 const circles = computed<Circle[]>(() => {
   const owners: { joker: string; copy: number }[] = []
@@ -47,15 +53,15 @@ const circles = computed<Circle[]>(() => {
   }
   const levels = RULES.jokerSlotLevels.value
   // Over-budget builds (imports) show every joker: add rows as needed.
-  const count = Math.max(MAX_JOKER_SLOTS, owners.length + (owners.length % 2))
+  const count = Math.max(MAX_JOKER_SLOTS, Math.ceil(owners.length / props.columns) * props.columns)
   return Array.from({ length: count }, (_, index) => {
     const owner = owners[index]
     const next = owners[index + 1]
     const level = levels[index]
     return {
       index,
-      row: Math.floor(index / 2),
-      column: index % 2,
+      row: Math.floor(index / props.columns),
+      column: index % props.columns,
       joker: owner?.joker ?? null,
       rarity: owner ? jokerById.get(owner.joker)?.rarity : undefined,
       linked: Boolean(owner && next && next.joker === owner.joker && next.copy === owner.copy),
@@ -69,7 +75,7 @@ const circles = computed<Circle[]>(() => {
   })
 })
 const firstFree = computed(() => circles.value.find((c) => !c.joker)?.index)
-const rows = computed(() => Math.ceil(circles.value.length / 2))
+const rows = computed(() => Math.ceil(circles.value.length / props.columns))
 const links = computed(() =>
   circles.value
     .filter((c) => c.linked)
@@ -80,12 +86,20 @@ const links = computed(() =>
       return { key: c.index, x1: from.x, y1: from.y, x2: to.x, y2: to.y, color: RARITY_COLORS[c.rarity!] }
     }),
 )
-const width = 2 * SIZE + COLUMN_GAP
-const height = computed(() => rows.value * SIZE + (rows.value - 1) * ROW_GAP)
+const width = computed(() => props.columns * geometry.value.size + (props.columns - 1) * geometry.value.columnGap)
+const height = computed(() => rows.value * geometry.value.size + (rows.value - 1) * geometry.value.rowGap)
 </script>
 
 <template>
-  <div class="slots">
+  <div
+    class="slots"
+    :style="{
+      '--size': `${geometry.size / 10}rem`,
+      '--column-gap': `${geometry.columnGap / 10}rem`,
+      '--row-gap': `${geometry.rowGap / 10}rem`,
+      gridTemplateColumns: `repeat(${columns}, var(--size))`,
+    }"
+  >
     <svg
       class="links"
       :viewBox="`0 0 ${width} ${height}`"
@@ -100,7 +114,7 @@ const height = computed(() => rows.value * SIZE + (rows.value - 1) * ROW_GAP)
         :x2="l.x2"
         :y2="l.y2"
         :stroke="l.color"
-        stroke-width="6"
+        :stroke-width="size / 6"
         stroke-linecap="round"
       />
     </svg>
@@ -122,14 +136,11 @@ const height = computed(() => rows.value * SIZE + (rows.value - 1) * ROW_GAP)
 </template>
 
 <style scoped>
-/* Keep in sync with SIZE, COLUMN_GAP and ROW_GAP (tenths of rem). */
 .slots {
-  --size: 3.6rem;
   display: grid;
-  gap: 0.75rem 1.25rem;
-  position: relative;
+  gap: var(--row-gap) var(--column-gap);
   grid-auto-rows: var(--size);
-  grid-template-columns: repeat(2, var(--size));
+  position: relative;
 }
 .circle {
   align-items: center;
@@ -137,7 +148,7 @@ const height = computed(() => rows.value * SIZE + (rows.value - 1) * ROW_GAP)
   cursor: pointer;
   display: flex;
   font-family: var(--font-title);
-  font-size: 1.1rem;
+  font-size: calc(var(--size) * 0.3);
   height: var(--size);
   justify-content: center;
   overflow: hidden;
@@ -164,7 +175,7 @@ const height = computed(() => rows.value * SIZE + (rows.value - 1) * ROW_GAP)
 .free.next {
   border-color: var(--accent);
   color: var(--accent);
-  font-size: 1.8rem;
+  font-size: calc(var(--size) * 0.5);
 }
 .free.prestige {
   border-style: dashed;
@@ -174,6 +185,7 @@ const height = computed(() => rows.value * SIZE + (rows.value - 1) * ROW_GAP)
 }
 .links {
   left: 0;
+  pointer-events: none;
   position: absolute;
   top: 0;
   z-index: 0;

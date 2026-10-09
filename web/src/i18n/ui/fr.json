@@ -57,5 +57,13 @@
     "addPoint": "Ajouter un point à {name}",
     "removePoint": "Retirer un point à {name}",
     "setPoints": "{name} : {n} points"
+  },
+  "jokers": {
+    "rarity": "Rareté",
+    "search": "Chercher un nom ou un effet…",
+    "noResult": "Aucun joker ne correspond.",
+    "noRoom": "Pas assez d'emplacements ({cost} requis)",
+    "cost": "Coûte {n} emplacement | Coûte 1 emplacement | Coûte {n} emplacements",
+    "removeHint": "Cliquez sur un joker équipé pour le retirer"
   }
 }

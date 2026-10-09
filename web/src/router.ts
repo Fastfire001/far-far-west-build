@@ -5,6 +5,7 @@ import BuildHome from './views/BuildHome.vue'
 import ComingSoon from './views/ComingSoon.vue'
 import CustomizeView from './views/CustomizeView.vue'
 import ItemPicker from './views/ItemPicker.vue'
+import JokersView from './views/JokersView.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -31,7 +32,7 @@ export const router = createRouter({
     {
       path: '/customize/:carrier(hero|main|sidearm)/jokers',
       name: 'jokers',
-      component: ComingSoon,
+      component: JokersView,
       meta: { back: (route) => ({ name: 'customize', params: { carrier: route.params.carrier } }) },
     },
     { path: '/spells', name: 'spells', component: ComingSoon, meta: { back: () => ({ name: 'home' }) } },

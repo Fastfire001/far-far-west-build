@@ -57,5 +57,13 @@
     "addPoint": "Add a point to {name}",
     "removePoint": "Remove a point from {name}",
     "setPoints": "{name}: {n} points"
+  },
+  "jokers": {
+    "rarity": "Rarity",
+    "search": "Search a name or an effect…",
+    "noResult": "No joker matches.",
+    "noRoom": "Not enough slots ({cost} needed)",
+    "cost": "Costs {n} slots | Costs 1 slot | Costs {n} slots",
+    "removeHint": "Click an equipped joker to remove it"
   }
 }
