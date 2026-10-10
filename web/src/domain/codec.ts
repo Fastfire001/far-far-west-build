@@ -1,5 +1,6 @@
 // Export and import of a build as text: "FFW1:" + base64 of the UTF-8 JSON, with a format version ("v": 1) to
 // convert old builds later. Ids are kept as they are, even unknown ones: validation reports them.
+// Share links carry the same JSON, compressed (deflate) and in URL-safe base64, to keep links short.
 import { emptyBuild, type Build, type Loadout } from './build'
 import { RULES } from './rules'
 
@@ -13,9 +14,7 @@ export class BuildImportError extends Error {
 }
 
 export function encodeBuild(build: Build): string {
-  const bytes = new TextEncoder().encode(JSON.stringify(storedBuild(build)))
-  // btoa() only takes Latin-1 characters: encode the UTF-8 bytes, one character per byte.
-  return EXPORT_PREFIX + btoa(Array.from(bytes, (b) => String.fromCharCode(b)).join(''))
+  return EXPORT_PREFIX + toBase64(new TextEncoder().encode(JSON.stringify(storedBuild(build))))
 }
 
 export function decodeBuild(text: string): Build {
@@ -23,13 +22,48 @@ export function decodeBuild(text: string): Build {
   if (!trimmed.startsWith(EXPORT_PREFIX)) throw new BuildImportError('prefix')
   let data: unknown
   try {
-    const binary = atob(trimmed.slice(EXPORT_PREFIX.length))
-    const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0))
-    data = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes))
+    data = parseJson(fromBase64(trimmed.slice(EXPORT_PREFIX.length)))
   } catch {
     throw new BuildImportError('encoding')
   }
   return restoreBuild(data)
+}
+
+/** Code of a share link (/#/share/<code>): the stored build, deflated, in URL-safe base64 without padding. */
+export async function encodeShareCode(build: Build): Promise<string> {
+  const json = new TextEncoder().encode(JSON.stringify(storedBuild(build)))
+  const packed = await pipe(json, new CompressionStream('deflate-raw'))
+  return toBase64(packed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+}
+
+/** Reads the code of a share link. Throws a BuildImportError if it is not one. */
+export async function decodeShareCode(code: string): Promise<Build> {
+  let data: unknown
+  try {
+    const packed = fromBase64(code.trim().replace(/-/g, '+').replace(/_/g, '/'))
+    data = parseJson(await pipe(packed, new DecompressionStream('deflate-raw')))
+  } catch {
+    throw new BuildImportError('encoding')
+  }
+  return restoreBuild(data)
+}
+
+// btoa() and atob() only handle Latin-1 characters: one character per byte.
+function toBase64(bytes: Uint8Array): string {
+  return btoa(Array.from(bytes, (b) => String.fromCharCode(b)).join(''))
+}
+
+function fromBase64(text: string): Uint8Array {
+  return Uint8Array.from(atob(text), (c) => c.charCodeAt(0))
+}
+
+function parseJson(bytes: Uint8Array): unknown {
+  return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes))
+}
+
+async function pipe(bytes: Uint8Array, stream: CompressionStream | DecompressionStream): Promise<Uint8Array> {
+  const output = new Blob([bytes as Uint8Array<ArrayBuffer>]).stream().pipeThrough(stream)
+  return new Uint8Array(await new Response(output).arrayBuffer())
 }
 
 /** Build as stored (export, local saves): the build with its format version. */

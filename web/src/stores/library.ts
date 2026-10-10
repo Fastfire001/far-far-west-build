@@ -143,5 +143,13 @@ export const useLibraryStore = defineStore('library', () => {
     switchTo(add(decodeBuild(text)))
   }
 
-  return { builds, currentId, available, init, newBuild, open, duplicate, remove, importText }
+  /** Opens a build received by a share link: the saved copy if one is identical, otherwise a new saved build. */
+  function openShared(build: Build) {
+    // Compared in their stored form, where the keys always come in the same order.
+    const key = (b: Build) => JSON.stringify(restoreBuild(storedBuild(b)))
+    const json = key(build)
+    switchTo(builds.value.find((b) => key(b.build) === json) ?? add(build))
+  }
+
+  return { builds, currentId, available, init, newBuild, open, duplicate, remove, importText, openShared }
 })

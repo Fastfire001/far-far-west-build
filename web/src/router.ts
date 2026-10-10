@@ -7,6 +7,7 @@ import BuildsView from './views/BuildsView.vue'
 import CustomizeView from './views/CustomizeView.vue'
 import ItemPicker from './views/ItemPicker.vue'
 import JokersView from './views/JokersView.vue'
+import ShareView from './views/ShareView.vue'
 import SpellsView from './views/SpellsView.vue'
 
 declare module 'vue-router' {
@@ -39,6 +40,8 @@ export const router = createRouter({
     },
     { path: '/builds', name: 'builds', component: BuildsView, meta: { back: () => ({ name: 'home' }) } },
     { path: '/spells', name: 'spells', component: SpellsView, meta: { back: () => ({ name: 'home' }) } },
+    // Share link: opens the build it carries (see encodeShareCode).
+    { path: '/share/:code', name: 'share', component: ShareView, meta: { back: () => ({ name: 'home' }) } },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
   scrollBehavior: () => ({ top: 0 }),

@@ -1,6 +1,7 @@
 import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { nextTick } from 'vue'
+import { emptyBuild } from '@/domain/build'
 import { useBuildStore } from './build'
 import { STORAGE_KEY, useLibraryStore } from './library'
 
@@ -61,6 +62,21 @@ describe('library store', () => {
     library.importText(text)
     expect(library.builds).toHaveLength(2)
     expect(() => library.importText('nope')).toThrow()
+  })
+
+  it('opens a shared build once, then reopens the same copy', async () => {
+    const { library, editor } = reload()
+    editor.rename('Mine')
+    await nextTick()
+    const mineId = library.currentId
+    const shared = { ...emptyBuild('Shared'), utility: 'itemUtilityAmmo' }
+    library.openShared(shared)
+    const sharedId = library.currentId
+    expect(editor.build).toEqual(shared)
+    library.open(mineId)
+    library.openShared({ ...shared })
+    expect(library.currentId).toBe(sharedId)
+    expect(library.builds).toHaveLength(2)
   })
 
   it('works without storage', () => {

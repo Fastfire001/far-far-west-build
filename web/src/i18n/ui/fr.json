@@ -9,7 +9,7 @@
     "newBuild": "Nouveau build",
     "myBuilds": "Mes builds…",
     "import": "Importer…",
-    "export": "Exporter…",
+    "export": "Partager…",
     "unavailable": "Sauvegarde indisponible"
   },
   "home": {
@@ -71,9 +71,11 @@
   },
   "dialog": {
     "close": "Fermer",
-    "exportTitle": "Exporter le build",
-    "exportHelp": "Copiez ce texte et partagez-le : n'importe qui peut l'importer dans le planificateur.",
+    "exportTitle": "Partager le build",
+    "linkHelp": "Envoyez ce lien : il ouvre le build dans le planificateur, qui l'ajoute aux builds de la personne qui l'ouvre.",
+    "exportHelp": "Ou copiez ce texte, à coller dans le planificateur avec Importer.",
     "copy": "Copier",
+    "copyLink": "Copier le lien",
     "copied": "Copié !",
     "importTitle": "Importer un build",
     "importHelp": "Collez le texte d'un build exporté (il commence par FFW1:). Il est ajouté à vos builds.",
@@ -94,5 +96,8 @@
     "copyName": "{name} (copie)",
     "confirmDelete": "Supprimer le build « {name} » ? C'est définitif.",
     "unavailable": "Votre navigateur ne permet pas la sauvegarde : les builds seront perdus à la fermeture de la page."
+  },
+  "share": {
+    "invalidTitle": "Lien de partage invalide"
   }
 }

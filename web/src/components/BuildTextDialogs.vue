@@ -1,9 +1,9 @@
 <script setup lang="ts">
-// Export and import of a build as text ("FFW1:..."), from the builds menu.
+// Sharing of a build (link, or text to import: "FFW1:...") and import of a text, from the builds menu.
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
-import { BuildImportError } from '@/domain/codec'
+import { BuildImportError, encodeShareCode } from '@/domain/codec'
 import { useBuildStore } from '@/stores/build'
 import { useLibraryStore } from '@/stores/library'
 import AppDialog from './AppDialog.vue'
@@ -17,20 +17,30 @@ const editor = useBuildStore()
 const library = useLibraryStore()
 
 const exported = computed(() => (exportOpen.value ? editor.exportText() : ''))
-const copied = ref(false)
+const link = ref('')
+const copied = ref<'link' | 'text' | null>(null)
+const linkField = ref<HTMLInputElement>()
 const exportField = ref<HTMLTextAreaElement>()
 
-async function copy() {
+watch(exportOpen, async (open) => {
+  copied.value = null
+  if (!open) return
+  link.value = ''
+  const code = await encodeShareCode(editor.build)
+  link.value = new URL(router.resolve({ name: 'share', params: { code } }).href, location.href).href
+})
+
+async function copy(what: 'link' | 'text') {
+  const field = what === 'link' ? linkField.value : exportField.value
   try {
-    await navigator.clipboard.writeText(exported.value)
+    await navigator.clipboard.writeText(what === 'link' ? link.value : exported.value)
   } catch {
     // No clipboard API (non-secure origin): copy the selected text instead.
-    exportField.value?.select()
+    field?.select()
     document.execCommand('copy')
   }
-  copied.value = true
+  copied.value = what
 }
-watch(exportOpen, () => (copied.value = false))
 
 const pasted = ref('')
 const importError = ref('')
@@ -52,11 +62,17 @@ function importBuild() {
 
 <template>
   <AppDialog v-model="exportOpen" :title="t('dialog.exportTitle')">
-    <p>{{ t('dialog.exportHelp') }}</p>
-    <textarea ref="exportField" class="text" readonly :value="exported" rows="5" @focus="exportField?.select()" />
+    <p>{{ t('dialog.linkHelp') }}</p>
+    <input ref="linkField" class="text" readonly :value="link" @focus="linkField?.select()" />
     <div class="actions">
-      <span v-if="copied" class="ok" aria-live="polite">{{ t('dialog.copied') }}</span>
-      <button type="button" class="action" @click="copy">{{ t('dialog.copy') }}</button>
+      <span v-if="copied === 'link'" class="ok" aria-live="polite">{{ t('dialog.copied') }}</span>
+      <button type="button" class="action" :disabled="!link" @click="copy('link')">{{ t('dialog.copyLink') }}</button>
+    </div>
+    <p class="second">{{ t('dialog.exportHelp') }}</p>
+    <textarea ref="exportField" class="text" readonly :value="exported" rows="4" @focus="exportField?.select()" />
+    <div class="actions">
+      <span v-if="copied === 'text'" class="ok" aria-live="polite">{{ t('dialog.copied') }}</span>
+      <button type="button" class="action" @click="copy('text')">{{ t('dialog.copy') }}</button>
     </div>
   </AppDialog>
 
@@ -73,6 +89,11 @@ function importBuild() {
 <style scoped>
 p {
   margin: 0 0 0.75rem;
+}
+.second {
+  border-top: 1px solid var(--line);
+  margin-top: 1.25rem;
+  padding-top: 1rem;
 }
 .text {
   background: var(--panel);
