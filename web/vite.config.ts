@@ -1,11 +1,12 @@
 import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vitest/config'
+import { contentPages } from './vite-plugin-content-pages.ts'
 
 export default defineConfig(({ command }) => ({
   // GitHub Pages serves the site under /<repo>/, not at the domain root.
   base: command === 'build' ? '/far-far-west-build/' : '/',
-  plugins: [vue()],
+  plugins: [vue(), contentPages()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

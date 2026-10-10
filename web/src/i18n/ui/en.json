@@ -99,5 +99,12 @@
   },
   "share": {
     "invalidTitle": "Invalid share link"
+  },
+  "guides": {
+    "label": "Game guides",
+    "jokers": "All jokers",
+    "weapons": "Weapons and their jokers",
+    "spells": "Spells and cooldowns",
+    "progression": "Joker slots and prestige"
   }
 }

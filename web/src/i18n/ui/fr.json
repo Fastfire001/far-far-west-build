@@ -99,5 +99,12 @@
   },
   "share": {
     "invalidTitle": "Lien de partage invalide"
+  },
+  "guides": {
+    "label": "Guides du jeu",
+    "jokers": "Tous les jokers",
+    "weapons": "Armes et leurs jokers",
+    "spells": "Sorts et temps de recharge",
+    "progression": "Emplacements de jokers et prestige"
   }
 }
