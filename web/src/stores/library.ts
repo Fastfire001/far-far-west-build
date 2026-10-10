@@ -1,4 +1,4 @@
-// The saved builds, in the browser's localStorage (docs/build-planner.md, "Sauvegarde et partage"). The build being
+// The saved builds, in the browser's localStorage (docs/build-planner.md, "Saving and sharing"). The build being
 // edited is saved on every change: there is no save button. A build left blank is dropped when another one is
 // opened. If localStorage is not available (blocked storage, some private modes), everything works without saving.
 import { defineStore } from 'pinia'

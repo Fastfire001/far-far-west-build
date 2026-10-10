@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// Home of a build (docs/maquettes.md, "Accueil d'un build"): one plank per part of the build, and a summary of the
-// requirements and problems where the game shows the character.
+// Home of a build: one plank per part of the build, and a summary of the requirements and problems where the game shows
+// the character.
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { CARRIERS } from '@/domain/build'

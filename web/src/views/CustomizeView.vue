@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// Customize a carrier (docs/maquettes.md, "Personnaliser"): upgrades, the sidearm's element, the joker slots and the
-// progression this needs. A weapon carrier without a weapon goes back to the weapon choice.
+// Customize a carrier: upgrades, the sidearm's element, the joker slots and the progression this needs. A weapon
+// carrier without a weapon goes back to the weapon choice.
 import { computed, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'

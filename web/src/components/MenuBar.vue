@@ -1,6 +1,5 @@
 <script setup lang="ts">
-// Top bar (docs/maquettes.md, "Barre de menu"): game version on the left, title in the middle, language and builds
-// menus on the right.
+// Top bar: game version on the left, title in the middle, language and builds menus on the right.
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'

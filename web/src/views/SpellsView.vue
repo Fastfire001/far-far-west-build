@@ -1,7 +1,7 @@
 <script setup lang="ts">
-// Spells (docs/maquettes.md, "Sorts"): the schools on the left, the spells of the chosen school in the middle, the
-// 3 spell slots on the right. Clicking a spell highlights the slots, then clicking a slot puts the spell there.
-// Clicking an occupied slot (with no spell pending) empties it.
+// Spells: the schools on the left, the spells of the chosen school in the middle, the 3 spell slots on the right.
+// Clicking a spell highlights the slots, then clicking a slot puts the spell there. Clicking an occupied slot (with no
+// spell pending) empties it.
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { spellById, spellCooldown, spells, spellSchools } from '@/domain/gameData'

@@ -8,7 +8,7 @@ The game's assets use unversioned property serialization: values are written wit
 order of the row struct's fields. That order and the field types are hard-coded in JOKER_ROW and ITEM_ROW below;
 they come from the Blueprint structs /Game/Progress/S_PlayerJokers and S_PlayerItems. If a game update changes
 those structs, decoding stops with an error and the layouts must be updated (see docs/game-mechanics.md,
-"Extraction depuis le jeu"). The same goes for a new item: it must be added to EQUIPMENT, SPELLS or IGNORED_ITEMS.
+"Extraction from the game"). The same goes for a new item: it must be added to EQUIPMENT, SPELLS or IGNORED_ITEMS.
 """
 import datetime, glob, json, os, re, struct, sys
 

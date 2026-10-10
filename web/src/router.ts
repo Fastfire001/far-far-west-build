@@ -1,5 +1,6 @@
-// Screens of the planner (see docs/maquettes.md). Hash history: GitHub Pages cannot serve index.html for an unknown
-// path, so URLs look like /#/customize/main. Each screen names the one its BACK button returns to (meta.back).
+// Screens of the planner (see "Screens" in docs/build-planner.md). Hash history: GitHub Pages cannot serve index.html
+// for an unknown path, so URLs look like /#/customize/main. Each screen names the one its BACK button returns to
+// (meta.back).
 import { createRouter, createWebHashHistory, type RouteLocationNormalized, type RouteLocationRaw } from 'vue-router'
 import BuildHome from './views/BuildHome.vue'
 import BuildsView from './views/BuildsView.vue'

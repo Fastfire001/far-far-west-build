@@ -1,133 +1,140 @@
-# Build planner — décisions de conception
-
-Décisions prises le 2026-10-07, avant d'écrire le code.
+# Build planner — design decisions
 
 ## Stack
 
-Choisie le 2026-10-09 : **Vue 3 + TypeScript + Vite**, Pinia, vue-i18n, tests avec Vitest. L'application est dans `web/`.
+**Vue 3 + TypeScript + Vite**, Pinia, vue-i18n, tests with Vitest. The application lives in `web/`.
 
-- L'état partagé (langue et textes du jeu, build en cours, builds sauvegardés) est dans des stores Pinia
-  (`web/src/stores/`). La logique métier (validation, niveau et prestiges, export) n'y est pas : elle est écrite en
-  fonctions TypeScript pures dans `web/src/domain/`, sans Vue ni Pinia, pour être testée seule.
-- TypeScript reste en 6.x : vue-tsc ne fonctionne pas encore avec TypeScript 7.
-- Les données et les icônes sont lues directement dans `data/` et `assets/icons/` : pas de copie à synchroniser.
-  Chaque fichier `data/i18n/<langue>.json` est un fichier JS séparé, chargé seulement quand on choisit la langue.
-- Les icônes restent des fichiers séparés dans le build (`assetsInlineLimit: 0`), au lieu d'être intégrées au JS.
+- Shared state (language and game texts, build being edited, saved builds) is in Pinia stores (`web/src/stores/`).
+  Business logic (validation, level and prestiges, export) is not: it is written as pure TypeScript functions in
+  `web/src/domain/`, without Vue or Pinia, so that it can be tested on its own.
+- TypeScript stays on 6.x: vue-tsc does not work with TypeScript 7 yet.
+- Data and icons are read directly from `data/` and `assets/icons/`: no copy to keep in sync. Each
+  `data/i18n/<language>.json` file becomes a separate JS chunk, loaded only when that language is picked.
+- Icons stay separate files in the build (`assetsInlineLimit: 0`) instead of being inlined in the JS.
 
-## Périmètre (v1)
+## Scope (v1)
 
-Un build contient :
+A build contains:
 
-- **Héros** : upgrades (points par stat) + jokers.
-- **3 sorts**, sans doublon.
-- **Arme principale** : l'arme + upgrades + jokers.
-- **Arme secondaire** : l'arme + **son élément** (Acid, Pyro, Elec, Frost) + upgrades + jokers.
-- **Utilitaire**.
+- **Hero**: upgrades (points per stat) + jokers.
+- **3 spells**, no duplicates.
+- **Main weapon**: the weapon + upgrades + jokers.
+- **Sidearm**: the weapon + **its element** (Acid, Pyro, Elec, Frost) + upgrades + jokers.
+- **Utility**.
 
-Le planificateur :
+The planner:
 
-- **valide** le build : points d'upgrade (26 par porteur et plafond par stat), budget de jokers (16 par porteur),
-  copies (`max_equip`), compatibilité des jokers avec leur porteur, pas de sort en double ;
-- **affiche le niveau minimum et le nombre de prestiges nécessaires** pour chaque porteur (héros, arme principale,
-  arme secondaire), à partir des points d'upgrade et des emplacements de jokers utilisés, et des jokers Unique
-  choisis (niveau du défi qui les débloque). Tant qu'une règle utilisée par ce calcul n'est pas confirmée (voir
-  les questions ouvertes), le résultat est affiché avec un avertissement.
+- **validates** the build: upgrade points (26 per carrier and a cap per stat), joker budget (16 per carrier), copies
+  (`max_equip`), joker compatibility with their carrier, no duplicate spell;
+- **shows the minimum level and the number of prestiges needed** for each carrier (hero, main weapon, sidearm), from
+  the upgrade points and joker slots used, and the Unique jokers chosen (level of the challenge that unlocks them).
+  As long as a rule used by this computation is not confirmed (see "Open questions"), the result is shown with a
+  warning;
+- **shows the base cooldown of each spell** (hand-entered, see `docs/game-mechanics.md`).
 
-Hors périmètre :
+Out of scope:
 
-- **aucune stat calculée** (ni DPS des armes, ni cooldowns finaux des sorts) ;
-- **pas de combos de sorts** : ils dépendent du placement en jeu et leurs déclencheurs sont mal documentés.
-  L'élément de la sidearm reste un choix du build, mais ne déclenche rien dans le planificateur.
+- **no computed stats** (neither weapon DPS nor final spell cooldowns);
+- **no spell combos**: they depend on in-game placement and their triggers are poorly documented. The sidearm's
+  element is still part of the build, but triggers nothing in the planner.
 
-## Règles retenues
+## Screens
 
-- **On planifie au niveau maximum** : 26 points d'upgrade et 16 emplacements de jokers par porteur, tous les sorts
-  et tous les jokers Unique disponibles. Les sorts n'entrent pas dans le calcul du niveau minimum : leurs niveaux
-  de déblocage ne sont pas extraits du jeu (voir `docs/game-mechanics.md`).
-- **Les jokers qu'on ne peut pas équiper au lobby sont exclus** : on garde seulement ceux qui ont `can_be_bought`
-  ou `can_be_gambled` (aujourd'hui, seuls Camper, Dwarf, Extra Dash et Giant sont exclus). Le filtre se fait dans
-  le planificateur, pas dans `data/`, pour qu'un joker devenu achetable apparaisse après un `bin/extract-game`.
-- **Toutes les données viennent des fichiers du jeu** (`bin/extract-game`), sauf les règles de prestige. Voir
-  `docs/game-mechanics.md`.
-- Les règles de progression qui ne sont pas dans `data/progression.json` (points par niveau, boutique de prestige)
-  sont regroupées dans `web/src/domain/rules.ts`, chacune marquée confirmée ou supposée, avec sa source.
-- **Niveau minimum et prestiges** (décidé le 2026-10-09) : on n'achète au prestige que ce qui dépasse ce que donnent
-  les niveaux (au-delà de 14 emplacements de jokers ou de 20 points d'upgrade) ; le niveau affiché est celui qu'il
-  faut atteindre pour le reste. Résultat marqué « supposé » tant que la question ouverte n°1 n'est pas tranchée.
-- **Niveau des jokers Unique** : le niveau vient de l'id du défi (`challengeLvl35…` ou `challengeLevel35…`, les deux
-  orthographes existent), l'arme de `available_on` (un seul porteur par Unique). Ne pas déduire l'arme de l'id du
-  défi : la Revolver y est notée `ItemRevolver`, alors que son id est `itemPistol`.
-- **On considère tous les jokers débloqués** (décidé le 2026-10-09), sauf les Unique (niveau d'arme, ci-dessus) :
-  - les autres défis (jokers de cooldown au niveau 50 d'une école, kills, zones secrètes…) ne sont ni affichés ni
-    comptés dans le niveau minimum ;
-  - le niveau de héros éventuellement requis pour acheter une rareté de jokers est ignoré (voir
-    `docs/game-mechanics.md`).
-- **Changer d'arme vide les jokers et les upgrades de ce porteur.**
-- **Un nouveau build est vide** : aucune arme, aucun utilitaire, aucun sort choisi.
+The interface mimics the game's menus (wooden planks, upgrade bars, joker cards, spell schools), without the
+character or the 3D models: where the game shows them, the planner shows information useful to the build. Every
+screen has the menu bar (game version and extraction date, language, builds menu) and a BACK button, as in the game.
+Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
 
-## Langues
+- **Build home**: one plank per part of the build (hero, main weapon, sidearm, spells, utility); in place of the
+  character, a summary with the minimum level and prestiges per carrier, then the validation problems (each links to
+  the screen that fixes it).
+- **Item picker**: weapons or utilities as planks, the selected one in detail with EQUIP and CUSTOMIZE.
+- **Customize** (hero, main weapon, sidearm): upgrades with the game's bars, the sidearm's element, the joker slots
+  (one circle per slot, a locked slot shows the level that unlocks it, the last 2 are the prestige slots) and the
+  progression needed. The game's "Confirm for X gold" is left out: gold is out of scope.
+- **Jokers**: rarity tabs named as in the game, plus a search on the name and description in the current language;
+  cards in the game's format. Clicking a card adds a copy if it fits; a card that does not fit has a red frame.
+- **Spells**: the 6 schools, the spells of the chosen school with their cooldown, and the 3 slots. Keys under the
+  slots follow the game: [A] [E] [C] in French (AZERTY), [Q] [E] [C] in the other languages.
+- **My builds**: the saved builds (open, duplicate, delete).
 
-- Le planificateur est disponible dans les **15 langues du jeu**, avec les textes officiels du jeu (`data/i18n/`).
-  À défaut d'un texte traduit, il affiche l'anglais.
-- Au premier lancement, la langue est celle du navigateur (l'anglais si le jeu ne la propose pas). La langue choisie
-  dans le menu est retenue dans le localStorage pour les visites suivantes.
-- Les textes sont affichés tels que dans le jeu (noms de jokers en majuscules) ; les retours à la ligne des noms
-  japonais sont remplacés par un espace à l'affichage.
-- L'interface reprend les libellés des menus du jeu quand ils existent (`data/i18n/ui/`, 15 langues : RETOUR,
-  Personnaliser, raretés…), et les noms des langues du jeu pour le sélecteur (`data/i18n/languages.json`).
-- Le reste de l'interface (résumé, messages de validation…) n'existe pas dans le jeu : il est traduit par nos soins,
-  au moins en français et en anglais.
+## Rules
 
-## Icônes
+- **We plan at max level**: 26 upgrade points and 16 joker slots per carrier, all spells and all Unique jokers
+  available. Spells are not part of the minimum level: their unlock levels are not extracted from the game (see
+  `docs/game-mechanics.md`).
+- **Jokers that cannot be equipped in the lobby are left out**: only those with `can_be_bought` or `can_be_gambled`
+  are kept (today only Camper, Dwarf, Extra Dash and Giant are left out). The filter is in the planner, not in
+  `data/`, so that a joker that becomes buyable shows up after a `bin/extract-game`.
+- **All data comes from the game files** (`bin/extract-game`), except the prestige rules and the hand-entered
+  `data/manual.json`. See `docs/game-mechanics.md`.
+- Progression rules that are not in `data/progression.json` (points per level, prestige shop) are grouped in
+  `web/src/domain/rules.ts`, each marked confirmed or assumed, with its source.
+- **Minimum level and prestiges**: only what levels cannot give is bought at the prestige shop (beyond 14 joker slots
+  or 20 upgrade points); the level shown is the one needed for the rest. The result is marked "assumed" until open
+  question 1 is settled.
+- **Level of Unique jokers**: the level comes from the challenge id (`challengeLvl35…` or `challengeLevel35…`, both
+  spellings exist), the weapon from `available_on` (a single carrier per Unique). Do not derive the weapon from the
+  challenge id: the Revolver is written `ItemRevolver` there, while its id is `itemPistol`.
+- **All jokers are considered unlocked**, except Unique ones (weapon level, above):
+  - other challenges (cooldown jokers at school level 50, kills, secret areas…) are neither shown nor counted in the
+    minimum level;
+  - the hero level that may be needed to buy a joker rarity is ignored (see `docs/game-mechanics.md`).
+- **Changing weapons empties that carrier's jokers and upgrades.**
+- **A new build is empty**: no weapon, utility or spell chosen.
 
-- Une icône SVG par élément, nommée d'après son id : `assets/icons/<id>.svg` (jokers, upgrades, équipement, écoles,
-  sorts, et `itemHero` pour le héros). L'id étant stable, l'interface trouve l'icône sans table de correspondance.
-- Ce sont des **dessins originaux**, pas les visuels du jeu ni du wiki (qui appartiennent à Evil Raptor). Ils
-  reprennent les codes visuels du jeu : jokers en carte de la couleur de leur rareté avec un point par emplacement
-  coûté, sorts et écoles en pastille de la couleur de l'école, équipement en silhouette, upgrades en hexagone.
-- Générées par `scripts/build_icons.py` à partir d'une bibliothèque de pictogrammes et d'une table id → pictogramme :
-  ne pas modifier les SVG à la main. Un élément sans icône fait échouer la génération.
-- Si le nombre de fichiers pose problème une fois en ligne, on pourra générer en plus un « sprite » SVG unique
-  (un `<symbol>` par id) au moment du build, sans changer le nommage.
+## Languages
 
-## Sauvegarde et partage
+- The planner is available in the **15 languages of the game**, with the game's official texts (`data/i18n/`).
+  When a text is not translated, it shows the English one.
+- On the first visit, the language is the browser's (English if the game does not have it). The language picked in
+  the menu is remembered in localStorage for the next visits.
+- Texts are shown as in the game (joker names in upper case); line breaks in Japanese names are shown as spaces.
+- The interface reuses the game's menu labels when they exist (`data/i18n/ui/`, 15 languages: BACK, Customize,
+  rarities…), and the game's language names for the picker (`data/i18n/languages.json`).
+- The rest of the interface (summary, validation messages…) does not exist in the game: it is translated by us in
+  `web/src/i18n/ui/` (English and French for now). A missing key falls back to English.
 
-- Les builds sont sauvegardés dans le **localStorage** du navigateur : une liste de builds nommés (ouvrir,
-  dupliquer, supprimer), écran « Mes builds » et menu Builds.
-- **Sauvegarde automatique** : le build en cours est enregistré à chaque modification, sans bouton. Un build resté
-  vide (sans nom ni choix) est supprimé quand on en ouvre un autre. Sans localStorage (stockage bloqué), tout
-  fonctionne sans sauvegarde, et le menu le signale.
-- Un build **importé** est ajouté à la liste comme nouveau build : il n'écrase pas celui en cours.
-- Boutons **Exporter / Importer** : le build est un JSON encodé en base64, avec un préfixe (`FFW1:…`).
-- Le JSON contient un **numéro de version de format** (`"v": 1`), pour pouvoir convertir les anciens builds.
-- Tous les objets (équipement, sorts, jokers, upgrades) sont identifiés par leur **`id` interne du jeu**
-  (`itemPistol`, `jokerCrackShot`…), qui ne change pas si le jeu renomme l'objet.
-- Encodage base64 en UTF-8 (`TextEncoder`), pas `btoa()` directement, qui plante sur les caractères accentués.
-- À l'import, le build est validé avec les mêmes règles que dans l'éditeur. Un build invalide, ou qui contient un
-  identifiant inconnu (joker supprimé par un patch), s'importe quand même avec des avertissements.
+## Icons
 
-## Hébergement
+- One SVG icon per item, named after its id: `assets/icons/<id>.svg` (jokers, upgrades, equipment, schools, spells,
+  and `itemHero` for the hero). Since the id is stable, the interface finds the icon without a lookup table.
+- They are **original drawings**, not the game's or the wiki's art (which belongs to Evil Raptor). They follow the
+  game's visual codes: jokers as cards in their rarity color with one dot per slot, spells and schools as badges in
+  the school color, equipment as silhouettes, upgrades as hexagons.
+- Generated by `scripts/build_icons.py` from a library of pictograms and an id → pictogram table: do not edit the SVGs
+  by hand. An item without an icon makes the generation fail.
+- If the number of files becomes a problem online, a single SVG sprite (one `<symbol>` per id) can be generated at
+  build time, without changing the naming.
 
-- **GitHub Pages** : un site statique, **aucun serveur à gérer**. Pas de backend, pas de comptes, pas de base de
-  données : l'application est entièrement côté navigateur, et `data/` est intégré au site au moment du build.
-- `bin/build-site` produit un site statique (`web/dist/`) servi sous `/far-far-west-build/` (`base` de
-  `vite.config.ts`). S'il faut des routes, utiliser le mode hash de vue-router (`/#/…`) : Pages ne sait pas
-  renvoyer `index.html` pour une URL inconnue.
-- **Déploiement** : `.github/workflows/deploy.yml` construit `web/` à chaque push sur `main` (tests compris : un test
-  qui échoue bloque la mise en ligne) et publie `web/dist/` avec `actions/deploy-pages`. Dans les réglages du dépôt,
-  la source de Pages doit être « GitHub Actions ». Adresse : https://fastfire001.github.io/far-far-west-build/
-- Avec un compte GitHub gratuit, Pages exige un dépôt public ; depuis un dépôt privé, il faut GitHub Pro. Dans les
-  deux cas, **le site lui-même est public**, données du jeu comprises.
+## Saving and sharing
 
-## Questions ouvertes (à vérifier en jeu)
+- Builds are saved in the browser's **localStorage**: a list of named builds (open, duplicate, delete), the "My
+  builds" screen and the Builds menu.
+- **Autosave**: the build being edited is saved on every change, with no button. A build left blank (no name and no
+  choice) is dropped when another one is opened. Without localStorage (blocked storage), everything works without
+  saving, and the menu says so.
+- An **imported** build is added to the list as a new build: it does not overwrite the current one.
+- **Export / Import** buttons: the build is JSON encoded in base64, with a prefix (`FFW1:…`).
+- The JSON has a **format version number** (`"v": 1`), so that old builds can be converted.
+- Every item (equipment, spells, jokers, upgrades) is identified by its **internal game `id`** (`itemPistol`,
+  `jokerCrackShot`…), which does not change if the game renames the item.
+- Base64 is encoded from UTF-8 (`TextEncoder`), not with `btoa()` directly, which fails on non-ASCII characters.
+- On import, the build is validated with the same rules as in the editor. An invalid build, or one with an unknown id
+  (joker removed by a patch), is still imported, with warnings.
 
-Les autres questions ont été tranchées par les fichiers du jeu le 2026-10-07 (voir `docs/game-mechanics.md`).
+## Hosting
 
-1. **Les bonus de prestige s'appliquent-ils tout de suite ?** Les emplacements et points achetés sont-ils utilisables
-   dès le niveau 1, ou relèvent-ils seulement le plafond qu'il faut atteindre en montant de niveau ? La logique est
-   dans le Blueprint `UI_PrestigeShop`, illisible avec notre méthode d'extraction.
+- **GitHub Pages**: a static site, **no server to run**. No backend, no accounts, no database: the application runs
+  entirely in the browser, and `data/` is bundled into the site at build time.
+- `bin/build-site` produces a static site (`web/dist/`) served under `/far-far-west-build/` (`base` in
+  `vite.config.ts`). Routes use vue-router's hash mode (`/#/…`): Pages cannot serve `index.html` for an unknown URL.
+- **Deployment**: `.github/workflows/deploy.yml` builds `web/` on every push to `main` (tests included: a failing
+  test blocks the release) and publishes `web/dist/` with `actions/deploy-pages`. In the repository settings, the
+  Pages source must be "GitHub Actions". Address: https://fastfire001.github.io/far-far-west-build/
 
-## Existant
+## Open questions (to check in game)
 
-wikily.gg propose déjà un build planner pour Far Far West (jokers par porteur, upgrades, sorts, prestige, partage
-de builds en ligne). À regarder avant de commencer, pour voir ce qu'il fait bien et ce qu'il fait moins bien.
+1. **Do prestige bonuses apply right away?** Can the bought slots and points be used from level 1, or do they only
+   raise the cap that has to be reached by leveling up? The logic is in the `UI_PrestigeShop` Blueprint, which we
+   cannot read with our extraction method.

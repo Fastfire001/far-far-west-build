@@ -1,82 +1,80 @@
 # far-far-west-build
 
-Planificateur de builds pour le jeu Far Far West (FPS coop western-fantasy, Evil Raptor, accès anticipé).
-Le repo contient les données du jeu (extraites des fichiers du jeu, avec leurs traductions), les icônes de chaque
-élément, les outils qui génèrent les deux, et l'application web (Vue 3 + TypeScript + Vite, site statique).
+Build planner for the game Far Far West (co-op western-fantasy FPS by Evil Raptor, early access).
+The repo holds the game data (extracted from the game files, with their translations), an icon for each item, the
+tools that generate both, and the web application (Vue 3 + TypeScript + Vite, static site).
 
-## Structure
+## Layout
 
-- `data/*.json` : données du jeu, toutes extraites des fichiers du jeu, et `data/i18n/<langue>.json` leurs
-  traductions officielles (15 langues) ; `data/i18n/ui/<langue>.json` : libellés des menus du jeu réutilisés par le
-  planificateur. Fichiers **générés** : ne pas les modifier à la main, corriger plutôt
-  `scripts/build_game_data.py` puis regénérer. Exception : `data/manual.json`, saisi à la main (cooldowns des sorts,
-  repris des wikis) et jamais regénéré : à revérifier à la main après chaque mise à jour du jeu.
-- `tools/game-extract/` : extracteur C# (CUE4Parse) qui lit les archives du jeu et écrit les assets bruts dans
+- `data/*.json`: game data, all extracted from the game files, and `data/i18n/<language>.json` their official
+  translations (15 languages); `data/i18n/ui/<language>.json`: game menu labels reused by the planner. **Generated**
+  files: do not edit them by hand, fix `scripts/build_game_data.py` and regenerate instead. Exception:
+  `data/manual.json`, entered by hand (spell cooldowns, from the wikis) and never regenerated: check it by hand
+  after each game update.
+- `tools/game-extract/`: C# extractor (CUE4Parse) that reads the game archives and writes the raw assets to
   `.cache/game/`.
-- `scripts/build_game_data.py` : décode ces assets et écrit `data/` (Python, bibliothèque standard uniquement).
-- `assets/icons/<id>.svg` : une icône par élément de `data/`, **générée** par `scripts/build_icons.py` (dessins
-  originaux, voir « Icônes » dans `docs/build-planner.md`). Ne pas modifier les SVG à la main.
-- `web/` : l'application (Vue 3, TypeScript, Vite, Pinia, vue-i18n, tests Vitest). Elle lit directement `data/` (alias
-  `@data`) et `assets/icons/`. `src/domain/` : données typées et règles du build, en TypeScript pur sans Vue, pour
-  être testées seules. `src/stores/` : état partagé (stores Pinia), qui
-  appelle les fonctions de `src/domain/` sans contenir de règles. `src/views/` : un écran par route de
-  `src/router.ts` (vue-router en mode hash, écrans de `docs/maquettes.md`) ; `src/components/` : éléments communs
-  (barre de menu, bouton RETOUR, planche de bois). `src/i18n/` : textes de l'interface
-  (`ui/<langue>.json`, traduits par nos soins), complétés par les libellés du jeu (`data/i18n/ui/`, clé `game`) ;
-  les textes du jeu sont chargés à la demande depuis `data/i18n/` par le store `language`.
-- `.github/workflows/deploy.yml` : déploiement du site sur GitHub Pages à chaque push sur `main`.
-- `bin/` : commandes à lancer depuis la machine hôte. Chacune exécute les scripts dans les containers Docker
-  de `compose.yaml` (`app` pour Python, `extract` pour l'extracteur, `web` pour Node).
-- `.cache/` (non versionné) : assets bruts extraits du jeu et bibliothèque Oodle téléchargée par l'extracteur.
-- `docs/game-mechanics.md` : règles du jeu utiles au planificateur, méthode d'extraction, incohérences du wiki.
-- `docs/build-planner.md` : décisions de conception du planificateur et questions encore ouvertes.
-- `docs/maquettes.md` : maquettes ASCII des écrans (UX des menus du jeu).
+- `scripts/build_game_data.py`: decodes these assets and writes `data/` (Python, standard library only).
+- `assets/icons/<id>.svg`: one icon per item of `data/`, **generated** by `scripts/build_icons.py` (original
+  drawings, see "Icons" in `docs/build-planner.md`). Do not edit the SVGs by hand.
+- `web/`: the application (Vue 3, TypeScript, Vite, Pinia, vue-i18n, Vitest tests). It reads `data/` (alias `@data`)
+  and `assets/icons/` directly. `src/domain/`: typed data and build rules, in plain TypeScript without Vue, so they
+  can be tested on their own. `src/stores/`: shared state (Pinia stores), which calls the functions of
+  `src/domain/` without holding rules. `src/views/`: one screen per route of `src/router.ts` (vue-router in hash
+  mode, see "Screens" in `docs/build-planner.md`); `src/components/`: shared pieces (menu bar, BACK button, wooden
+  plank). `src/i18n/`: interface texts (`ui/<language>.json`, our own translations), completed by the game's labels
+  (`data/i18n/ui/`, key `game`); the game texts are loaded on demand from `data/i18n/` by the `language` store.
+- `.github/workflows/deploy.yml`: deploys the site to GitHub Pages on every push to `main`.
+- `bin/`: commands to run from the host. Each one runs its script in a Docker container from `compose.yaml` (`app`
+  for Python, `extract` for the extractor, `web` for Node).
+- `.cache/` (not versioned): raw assets extracted from the game and the Oodle library downloaded by the extractor.
+- `docs/game-mechanics.md`: game rules used by the planner, extraction method, wiki errors.
+- `docs/build-planner.md`: design decisions of the planner and open questions.
 
-## Commandes
+## Commands
 
-- `bin/extract-game` : regénère tout `data/` depuis le jeu installé, puis les icônes. Nécessite Docker (sous WSL,
-  Docker Desktop doit être lancé) et `FFW_GAME_DIR` (dans `.env`, voir `.env.example`). À relancer après chaque mise
-  à jour du jeu.
-- `bin/build-icons` : regénère seulement `assets/icons/` depuis `data/` (pour retoucher les icônes).
-- `bin/dev` : serveur de dev Vite (http://localhost:5173/). `bin/test` : tests unitaires (`bin/test --watch`).
-  `bin/build-site` : vérification des types et build du site dans `web/dist/`.
-- `bin/web <commande>` : lance une commande dans le container Node, par exemple `bin/web npm install <paquet>`.
-  Installe les dépendances npm (`web/node_modules/`) si besoin ; les autres commandes `web` passent par lui.
+- `bin/extract-game`: regenerates all of `data/` from the installed game, then the icons. Needs Docker (under WSL,
+  Docker Desktop must be running) and `FFW_GAME_DIR` (in `.env`, see `.env.example`). Run it again after each game
+  update.
+- `bin/build-icons`: regenerates only `assets/icons/` from `data/` (to tweak the icons).
+- `bin/dev`: Vite dev server (http://localhost:5173/). `bin/test`: unit tests (`bin/test --watch`).
+  `bin/build-site`: type check and build of the site into `web/dist/`.
+- `bin/web <command>`: runs a command in the Node container, for instance `bin/web npm install <package>`. Installs
+  the npm dependencies (`web/node_modules/`) if needed; the other `web` commands go through it.
 
 ## Conventions
 
-- Tout nouveau script se lance via une entrée dans `bin/` qui l'exécute dans un container, comme `bin/extract-game`.
-- Les containers tournent avec l'utilisateur de l'hôte : les fichiers générés ne doivent pas appartenir à root.
-- Documentation et README en français ; code et commentaires en anglais.
-- Les fichiers extraits du jeu restent dans `.cache/` : ne jamais les versionner ni les publier. Seules les valeurs
-  utiles au planificateur vont dans `data/`.
-- Les objets sont référencés par leur id interne du jeu (`itemPistol`, `jokerCrackShot`), jamais par leur nom affiché.
-- Aucun visuel du jeu ou du wiki dans le repo (icônes, images, textures) : les icônes sont des dessins originaux.
+- Every new script is run through an entry in `bin/` that runs it in a container, like `bin/extract-game`.
+- Containers run as the host user: generated files must not belong to root.
+- Everything in English: documentation, README, code and comments. Only the French interface translation
+  (`web/src/i18n/ui/fr.json`) and the game's translations are in other languages.
+- Files extracted from the game stay in `.cache/`: never version or publish them. Only the values the planner needs
+  go into `data/`.
+- Items are referenced by their internal game id (`itemPistol`, `jokerCrackShot`), never by their displayed name.
+- No art from the game or the wiki in the repo (icons, images, textures): icons are original drawings.
 
-## Fichiers du jeu
+## Game files
 
-- Unique source des données. Le jeu est en Unreal Engine 5.6, archives IoStore non chiffrées, compression Oodle.
-- Pas de fichier de mappings, et on a décidé de ne pas en générer avec un dumper (injection dans le jeu) : les
-  DataTables à structure Blueprint sont décodées à la main dans `build_game_data.py` (voir « Extraction depuis le
-  jeu » dans `docs/game-mechanics.md`). Les valeurs stockées dans les Blueprints (stats des armes, cooldowns et
-  niveaux de déblocage des sorts) sont hors de portée.
-- Si l'extraction échoue après une mise à jour du jeu : soit une structure (`S_PlayerJokers`) a changé, soit un objet
-  a été ajouté à `DT_PlayerItems` et doit être ajouté à `EQUIPMENT`, `SPELLS`, `SCHOOLS` ou `IGNORED_ITEMS`.
-- `Manifest_UFSFiles_Win64.txt`, à la racine de l'installation, liste tous les assets du jeu : pratique pour
-  trouver la source d'une donnée.
+- The only data source. The game uses Unreal Engine 5.6, unencrypted IoStore archives, Oodle compression.
+- No mappings file, and we decided not to generate one with a dumper (injection into the game): DataTables with a
+  Blueprint struct are decoded by hand in `build_game_data.py` (see "Extraction from the game" in
+  `docs/game-mechanics.md`). Values stored in Blueprints (weapon stats, spell cooldowns and unlock levels) are out
+  of reach.
+- If extraction fails after a game update: either a struct (`S_PlayerJokers`) changed, or an item was added to
+  `DT_PlayerItems` and must be added to `EQUIPMENT`, `SPELLS`, `SCHOOLS` or `IGNORED_ITEMS`.
+- `Manifest_UFSFiles_Win64.txt`, at the root of the install, lists every game asset: handy to find where a value
+  comes from.
 
-## Autres sources
+## Other sources
 
-- Le wiki (https://farfarwest.wiki.gg/) n'est plus une source de données (sauf `data/manual.json`), mais reste
-  utile pour se documenter. Il bloque les clients trop rapides (page HTML « Blocked » au lieu de JSON) : espacer
-  les requêtes.
-- Règles de progression absentes des fichiers lisibles (boutique de prestige…) : notes de patch officielles
-  (discussions Steam de l'app 3124540) et build planner de wikily.gg.
+- The wiki (https://farfarwest.wiki.gg/) is no longer a data source (except for `data/manual.json`), but is still
+  useful background. It blocks clients that are too fast (a "Blocked" HTML page instead of JSON): space out requests.
+- Progression rules missing from the readable files (prestige shop…): official patch notes (Steam discussions of app
+  3124540) and the wikily.gg build planner.
 
-## Mécaniques du jeu
+## Game mechanics
 
 @docs/game-mechanics.md
 
-## Décisions du planificateur
+## Planner decisions
 
 @docs/build-planner.md

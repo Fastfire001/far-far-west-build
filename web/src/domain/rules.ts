@@ -1,5 +1,5 @@
 // Progression rules that are not in data/progression.json, each marked confirmed or assumed with its source
-// (see docs/game-mechanics.md, "Prestige", and docs/build-planner.md, "Questions ouvertes").
+// (see docs/game-mechanics.md, "Prestige", and docs/build-planner.md, "Open questions").
 import { progression } from './gameData'
 
 export type RuleStatus = 'confirmed' | 'assumed'

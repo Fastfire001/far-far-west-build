@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// Weapon or utility choice (docs/maquettes.md, "Choix d'une arme ou de l'utilitaire"): the items as planks on the
-// left, the selected one in detail on the right with EQUIP and CUSTOMIZE.
+// Weapon or utility choice: the items as planks on the left, the selected one in detail on the right with EQUIP and
+// CUSTOMIZE.
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'

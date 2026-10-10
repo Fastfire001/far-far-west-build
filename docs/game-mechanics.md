@@ -1,220 +1,210 @@
-# Far Far West — mécaniques utiles au planificateur de builds
+# Far Far West — game mechanics used by the build planner
 
-Règles vérifiées le 2026-10-07, pour la version 0.2.0.20 du jeu (accès anticipé). La mise à jour 644 du 2026-05-14
-a refondu la progression et rendu obsolètes plusieurs pages du wiki.
+Rules checked on 2026-10-07 for game version 0.2.0.20 (early access). Update 644 (2026-05-14) reworked progression
+and made several wiki pages outdated.
 
-## Sources des données
+## Data sources
 
-Tout `data/` est extrait des **fichiers du jeu** (installation locale) par `bin/extract-game` : `equipment.json`,
-`spells.json`, `jokers.json`, `upgrades.json`, `progression.json`, `meta.json` (version du jeu et date d'extraction)
-et les traductions dans `i18n/`. Les fichiers
-extraits restent dans `.cache/` (non versionné) ; seules les valeurs utiles au planificateur vont dans `data/`.
-Seule exception : `data/manual.json`, saisi à la main (voir « Données saisies à la main »).
+All of `data/` is extracted from the **game files** (local install) by `bin/extract-game`: `equipment.json`,
+`spells.json`, `jokers.json`, `upgrades.json`, `progression.json`, `meta.json` (game version and extraction date)
+and the translations in `i18n/`. The extracted files stay in `.cache/` (not versioned); only the values the planner
+needs go into `data/`. The one exception is `data/manual.json`, entered by hand (see "Hand-entered data").
 
-Les textes (noms, descriptions) sont repris **tels qu'affichés dans le jeu**, en anglais dans les fichiers
-principaux : les noms de jokers sont donc en majuscules (`CRACKSHOT`), comme sur les cartes du jeu.
+Texts (names, descriptions) are kept **as displayed in the game**, in English in the main files: joker names are
+upper case (`CRACKSHOT`), as on the game's cards.
 
-Tous les objets sont identifiés par leur **`id` interne du jeu** (`itemPistol`, `itemSpellFireBall`,
-`jokerCrackShot`…), et les références entre fichiers utilisent ces ids (par exemple `available_on` d'un joker).
+Every item is identified by its **internal game `id`** (`itemPistol`, `itemSpellFireBall`, `jokerCrackShot`…), and
+references between files use these ids (for instance a joker's `available_on`).
 
-Les règles de prestige ne sont pas dans les fichiers lisibles du jeu : elles viennent des notes de patch et du build
-planner de wikily.gg (voir « Prestige »). Le [wiki](https://farfarwest.wiki.gg/) n'est plus une source de
-données ; il reste utile pour se documenter, mais se trompe sur plusieurs points (voir « Incohérences connues du
-wiki »).
+The prestige rules are not in the readable game files: they come from the patch notes and the wikily.gg build
+planner (see "Prestige"). The [wiki](https://farfarwest.wiki.gg/) is no longer a data source (except for
+`manual.json`); it is still useful background, but it is wrong on several points (see "Known wiki errors").
 
-## Ce qui compose un build
+## What makes a build
 
-| Élément | Choix | Données |
+| Part | Choice | Data |
 |---|---|---|
-| Arme principale | 1 parmi 7 (Quad Cylinder, Shotgun, Long Ranger, Minigun, Leveredge, Knuckles, Lasso) | `equipment.json`, `type: main` |
-| Arme secondaire (sidearm) | 1 parmi 6 (Revolver, Bow, Dual Revolvers, Boomerang, Sheriff Star, Banjo) + **un élément** appliqué à l'impact : Acid, Pyro, Elec ou Frost, les 4 étant disponibles sur toutes les sidearms (d'après le wiki) | `equipment.json`, `type: sidearm` |
-| Utilitaire | 1 parmi 4 (Ammo Pack, Bottle Crate, Healing Area, Impulse Grenade) | `equipment.json`, `type: utility` |
-| Sorts | 3 maximum, parmi 30 sorts répartis en 6 écoles : Pyro, Elec, Acid, Voodoo, Cactus, Frost | `spells.json` |
-| Upgrades de stats | Héros, arme principale, sidearm : des points répartis par stat | `upgrades.json` |
-| Jokers | Héros, arme principale, sidearm : chacun a son propre budget d'emplacements | `jokers.json` |
+| Main weapon | 1 of 7 (Quad Cylinder, Shotgun, Long Ranger, Minigun, Leveredge, Knuckles, Lasso) | `equipment.json`, `type: main` |
+| Sidearm | 1 of 6 (Revolver, Bow, Dual Revolvers, Boomerang, Sheriff Star, Banjo) + **an element** applied on hit: Acid, Pyro, Elec or Frost, all 4 available on every sidearm (according to the wiki) | `equipment.json`, `type: sidearm` |
+| Utility | 1 of 4 (Ammo Pack, Bottle Crate, Healing Area, Impulse Grenade) | `equipment.json`, `type: utility` |
+| Spells | up to 3, out of 30 spells in 6 schools: Pyro, Elec, Acid, Voodoo, Cactus, Frost | `spells.json` |
+| Stat upgrades | Hero, main weapon, sidearm: points spread over stats | `upgrades.json` |
+| Jokers | Hero, main weapon, sidearm: each has its own slot budget | `jokers.json` |
 
-Les « porteurs » (héros, arme principale, sidearm) ont chacun leur niveau (1 à 100), leurs prestiges, leurs
-points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
+The "carriers" (hero, main weapon, sidearm) each have their own level (1 to 100), prestiges, upgrade points and
+joker budget. The utility has neither upgrades nor jokers.
 
 ## Jokers (`jokers.json`)
 
-- `id` : identifiant interne du jeu (`jokerCrackShot`), stable même si le nom affiché change. `name` : nom affiché
-  (en majuscules, comme dans le jeu). `description` : effet du joker.
-- `slot_cost` : coût en emplacements. Normal 1, Fine 2, Prime 3, Mythic 4, Legendary 5 ; les Unique coûtent
-  de 2 à 7 selon la carte (Ultra Draw 7, Mindshot 6, Eco Trick et Swamp Trick 2…).
-- `max_equip` : nombre maximum de copies du même joker sur un porteur.
-- `available_on` : `["itemHero"]` pour un joker de héros, sinon les ids des armes compatibles.
-- **Obtention** :
-  - `can_be_bought` / `can_be_gambled` : achetable au lobby, ou obtenable à la machine à sous (gamba) ;
-  - `unlocked_by` : défi qui débloque le joker (ex. `challengeLvl40ItemBow` = Bow niveau 40) ;
-  - `can_drop_in_mission` : peut tomber en mission.
+- `id`: internal game id (`jokerCrackShot`), stable even if the displayed name changes. `name`: displayed name (upper
+  case, as in the game). `description`: the joker's effect.
+- `slot_cost`: cost in slots. Normal 1, Fine 2, Prime 3, Mythic 4, Legendary 5; Unique jokers cost 2 to 7 depending
+  on the card (Ultra Draw 7, Mindshot 6, Eco Trick and Swamp Trick 2…).
+- `max_equip`: maximum number of copies of the same joker on a carrier.
+- `available_on`: `["itemHero"]` for a hero joker, otherwise the ids of the compatible weapons.
+- **How to get them**:
+  - `can_be_bought` / `can_be_gambled`: can be bought in the lobby, or won at the slot machine (gamba);
+  - `unlocked_by`: challenge that unlocks the joker (e.g. `challengeLvl40ItemBow` = Bow level 40);
+  - `can_drop_in_mission`: can drop during a mission.
 
-  Un joker qui n'est ni achetable ni gamblable ne s'équipe pas au lobby : Camper, Dwarf, Extra Dash et Giant.
-  En mission, les jokers trouvés ne comptent pas dans les limites d'emplacements et disparaissent à la fin.
-- Budget par porteur : **14** emplacements grâce aux niveaux, **16** avec les 2 emplacements achetés au prestige.
-  Le héros a le même budget que les armes.
-- **Déblocage des emplacements** (`progression.json`, `joker_slot_levels`) : l'emplacement n se débloque au
-  niveau indiqué.
+  A joker that can be neither bought nor gambled cannot be equipped in the lobby: Camper, Dwarf, Extra Dash and
+  Giant. Jokers found during a mission do not count against the slot limits and disappear at the end.
+- Budget per carrier: **14** slots from levels, **16** with the 2 slots bought at the prestige shop. The hero has the
+  same budget as the weapons.
+- **Slot unlocks** (`progression.json`, `joker_slot_levels`): slot n unlocks at the level shown.
 
-| Emplacement | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
+| Slot | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Niveau | 1 | 4 | 8 | 12 | 16 | 21 | 26 | 32 | 40 | 48 | 58 | 70 | 84 | 100 |
+| Level | 1 | 4 | 8 | 12 | 16 | 21 | 26 | 32 | 40 | 48 | 58 | 70 | 84 | 100 |
 
-- **Jokers Unique** : propres à une arme, débloqués par un défi de niveau de l'arme (armes principales : niveaux 35
-  et 55 ; sidearms : niveaux 30 et 40), puis achetés.
-- **Jokers Mastery** (un par école de sorts) : débloqués au niveau 50 de l'école ; −10 % de cooldown par sort
-  équipé de cette école. L'élément de la sidearm ne compte pas.
-- La table des jokers n'a **pas de champ de niveau**. Mais le jeu contient le texte « Your HERO needs to be at least
-  level {minimumLevel} to buy Jokers of this category » (`ST_UI_Tweaks_MinimumLevelBuyJokers`) : il y aurait un
-  niveau de héros minimum pour acheter certaines raretés. Valeurs introuvables dans les fichiers lisibles (sans doute
-  dans un Blueprint, `BP_Manager_Jokers`) ; le planificateur l'ignore.
+- **Unique jokers**: specific to one weapon, unlocked by a weapon level challenge (main weapons: levels 35 and 55;
+  sidearms: levels 30 and 40), then bought.
+- **Mastery jokers** (one per spell school): unlocked at school level 50; −10% cooldown per equipped spell of that
+  school. The sidearm's element does not count.
+- The joker table has **no level field**. But the game contains the text "Your HERO needs to be at least level
+  {minimumLevel} to buy Jokers of this category" (`ST_UI_Tweaks_MinimumLevelBuyJokers`): there may be a minimum hero
+  level to buy some rarities. The values are not in the readable files (probably in a Blueprint,
+  `BP_Manager_Jokers`); the planner ignores this.
 
-## Upgrades de stats (`upgrades.json`)
+## Stat upgrades (`upgrades.json`)
 
-- **1 point tous les 2 niveaux** depuis la mise à jour 644, jusqu'à **20 points au niveau 40**.
-- **+6 points** achetables au prestige → **26 points** par porteur, héros compris.
-- Chaque upgrade a un nom (`name`), une valeur par point (`value`), un nombre maximum de points (`max_slots`),
-  un prix en or par point (`gold_cost`, hors périmètre pour l'instant) et les ids des porteurs qui y ont accès
-  (`available_on`).
-- `flat` : `true` si la valeur est un montant fixe (Health : +5 PV par point ; Chord Capacity : +1 accord par point),
-  `false` si c'est une fraction (`0.05` = +5 %).
-- Une même stat peut exister en plusieurs variantes selon l'arme : par exemple Attack Speed vaut +5 % ×16 sur les
-  armes à feu, +5 % ×8 sur la Minigun et les armes de mêlée, +10 % ×8 sur le Bow.
+- **1 point every 2 levels** since update 644, up to **20 points at level 40**.
+- **+6 points** can be bought at the prestige shop → **26 points** per carrier, hero included.
+- Each upgrade has a name (`name`), a value per point (`value`), a maximum number of points (`max_slots`), a gold
+  price per point (`gold_cost`, out of scope for now) and the ids of the carriers that have it (`available_on`).
+- `flat`: `true` if the value is a fixed amount (Health: +5 HP per point; Chord Capacity: +1 chord per point),
+  `false` if it is a fraction (`0.05` = +5%).
+- The same stat can come in several variants depending on the weapon: for instance Attack Speed is +5% ×16 on
+  firearms, +5% ×8 on the Minigun and melee weapons, +10% ×8 on the Bow.
 
 ## Prestige
 
-- Possible au niveau 100, jusqu'à **15 prestiges** par porteur (héros et chaque arme ont leur propre compteur).
-- Remet le niveau à 1. Les achats de la boutique de prestige sont permanents.
-- Chaque prestige donne **5 jetons**. Boutique :
+- Available at level 100, up to **15 prestiges** per carrier (the hero and each weapon have their own counter).
+- Resets the level to 1. Purchases from the prestige shop are permanent.
+- Each prestige gives **5 tokens**. Shop:
 
-| Achat | Coût | Achats possibles | Effet total |
+| Purchase | Cost | Max purchases | Total effect |
 |---|---|---|---|
-| Emplacement de joker | 5 jetons | 2 | budget 14 → 16 |
-| Point d'upgrade | 2 jetons | 6 | 20 → 26 points |
-| Ticket XP, 500 or, 1000 âmes | 1 jeton | illimité | ressources |
+| Joker slot | 5 tokens | 2 | budget 14 → 16 |
+| Upgrade point | 2 tokens | 6 | 20 → 26 points |
+| XP ticket, 500 gold, 1000 souls | 1 token | unlimited | resources |
 
-- Les jetons s'accumulent d'un prestige à l'autre (le jeu affiche « {amount} Token(s) ») : prestiges nécessaires
-  = ⌈(5 × emplacements de joker achetés + 2 × points d'upgrade achetés) / 5⌉. Par exemple, 5 points (10 jetons)
-  demandent 2 prestiges, pas 3 comme le donnerait « emplacements + ⌈points / 2⌉ ». Un build au maximum demande
-  ⌈(10 + 12) / 5⌉ = **5 prestiges** sur le porteur.
-- Ces règles viennent des notes de patch et du build planner de wikily.gg, pas des fichiers du jeu : la logique de
-  la boutique est dans un Blueprint (`UI_PrestigeShop`), illisible avec notre méthode d'extraction.
+- Tokens carry over from one prestige to the next (the game shows "{amount} Token(s)"): prestiges needed =
+  ⌈(5 × joker slots bought + 2 × upgrade points bought) / 5⌉. For instance, 5 points (10 tokens) need 2 prestiges,
+  not 3 as "slots + ⌈points / 2⌉" would give. A maxed-out build needs ⌈(10 + 12) / 5⌉ = **5 prestiges** on the
+  carrier.
+- These rules come from the patch notes and the wikily.gg build planner, not from the game files: the shop logic is
+  in a Blueprint (`UI_PrestigeShop`) we cannot read with our extraction method.
 
-## Sorts
+## Spells
 
-- `spells.json` : les 6 écoles (`schools`, ids `itemFire`, `itemIce`…) et les 30 sorts (`spells`), avec leur
-  école, leur nom et leur description.
-- Les écoles de sorts ont **leur propre niveau** : ce sont des objets à part entière dans le jeu, et les jokers
-  Mastery se débloquent au niveau 50 d'une école.
-- **Pas de niveau de déblocage ni de cooldown dans les fichiers lisibles** : ces valeurs sont dans les Blueprints
-  des sorts, illisibles sans fichier de mappings. Les cooldowns sont saisis à la main dans `data/manual.json` (voir
-  « Données saisies à la main »). Pour mémoire, le wiki donne pour chaque école
-  des sorts débloqués aux niveaux 1, 4, 12, 20 et 35.
-- 3 emplacements de sorts (touches Q, E, C) ; le 3e se débloque au niveau 3.
-- Les combos entre sorts (une trentaine sur le wiki : Fire Tornado, Geyser Split…) ne sont pas repris : ils
-  dépendent du placement en jeu et leurs déclencheurs sont mal documentés.
+- `spells.json`: the 6 schools (`schools`, ids `itemFire`, `itemIce`…) and the 30 spells (`spells`), with their
+  school, name and description.
+- Spell schools have **their own level**: they are items of their own in the game, and Mastery jokers unlock at
+  level 50 of a school.
+- **No unlock level and no cooldown in the readable files**: these values are in the spells' Blueprints, which
+  cannot be read without a mappings file. Cooldowns are entered by hand in `data/manual.json` (see "Hand-entered
+  data"). For the record, the wiki gives spells unlocked at levels 1, 4, 12, 20 and 35 in each school.
+- 3 spell slots (keys Q, E, C); the 3rd one unlocks at level 3.
+- Combos between spells (about thirty on the wiki: Fire Tornado, Geyser Split…) are not included: they depend on
+  in-game placement and their triggers are poorly documented.
 
-## Données saisies à la main (`manual.json`)
+## Hand-entered data (`manual.json`)
 
-Valeurs introuvables dans les fichiers lisibles du jeu, recopiées à la main depuis le wiki.gg et wikily.gg.
-`bin/extract-game` n'y touche pas : à revérifier à la main après chaque mise à jour du jeu (`checked_for_version`).
+Values that are not in the readable game files, copied by hand from wiki.gg and wikily.gg. `bin/extract-game`
+never touches this file: check it by hand after each game update (`checked_for_version`).
 
-- `spell_cooldowns` : cooldown de base de chaque sort en secondes, par id de sort (`null` si inconnu). Affiché à
-  côté de chaque sort, avec le libellé du jeu (« Temps de recharge : {sec} s », `ST_UI_Spell_SecondsCooldown`).
-- Désaccords relevés le 2026-10-10 entre les deux sites (wiki.gg / wikily.gg) : Fireball 20 / 15 s,
-  Firebeam 80 / 60 s, Surcharge 60 / 50 s, Finger Guns 120 / 80 s, Mino 10 / 7 s. Valeurs à vérifier en jeu.
+- `spell_cooldowns`: base cooldown of each spell in seconds, by spell id (`null` if unknown). Shown next to each
+  spell, with the game's own label ("{sec}-second cooldown", `ST_UI_Spell_SecondsCooldown`).
+- Disagreements found on 2026-10-10 between the two sites (wiki.gg / wikily.gg): Fireball 20 / 15 s,
+  Firebeam 80 / 60 s, Surcharge 60 / 50 s, Finger Guns 120 / 80 s, Mino 10 / 7 s. Values to check in game.
 
-## Traductions (`i18n/`)
+## Translations (`i18n/`)
 
-- Le jeu est traduit dans **15 langues** : de-DE, en-US, es-419, es-ES, fr-FR, it-IT, ja-JP, ko-KR, pl-PL, pt-BR,
-  ru-RU, tr-TR, uk-UA, zh-CN, zh-TW. Couverture complète : chaque nom et description de `data/` a sa traduction.
-- Un fichier par langue, `i18n/<langue>.json` : `{id: {name, description}}` pour l'équipement, les écoles, les
-  sorts, les jokers et les upgrades (les upgrades n'ont qu'un nom). `en-US.json` reprend les textes des fichiers
-  principaux. Une traduction manquante est simplement absente : le planificateur retombe alors sur l'anglais.
-- Les textes sont tels que dans le jeu, y compris ses particularités : 23 noms japonais contiennent un retour à la
-  ligne (`\n`) pour tenir sur les cartes, et deux jokers allemands portent le même nom (`SEELENERNTER`).
-- Les quatre variantes d'Explosive Hits ont le même nom dans le jeu : on y ajoute le nom traduit de leur école
-  (`COUPS EXPLOSIFS (Acide)`), d'après la table `JOKER_VARIANTS` de `build_game_data.py`.
-- `i18n/ui/<langue>.json` : les libellés des menus du jeu que le planificateur réutilise (RETOUR, Personnaliser,
-  Emplacements d'amélioration, noms des raretés…), `{clé: texte}`. La sélection et les clés sont dans la table
-  `UI_TEXTS` de `build_game_data.py`. Les variables restent comme dans le jeu (`Niv. {lvl}`).
-- `i18n/languages.json` : le nom de chaque langue, écrit dans cette langue (« Deutsch », « 日本語 »), identique
-  dans toutes les traductions.
+- The game is translated into **15 languages**: de-DE, en-US, es-419, es-ES, fr-FR, it-IT, ja-JP, ko-KR, pl-PL,
+  pt-BR, ru-RU, tr-TR, uk-UA, zh-CN, zh-TW. Full coverage: every name and description in `data/` is translated.
+- One file per language, `i18n/<language>.json`: `{id: {name, description}}` for equipment, schools, spells, jokers
+  and upgrades (upgrades only have a name). `en-US.json` repeats the texts of the main files. A missing translation
+  is simply absent: the planner then falls back to English.
+- Texts are kept as in the game, quirks included: 23 Japanese names contain a line break (`\n`) to fit on the cards,
+  and two German jokers have the same name (`SEELENERNTER`).
+- The four Explosive Hits variants have the same name in the game: we append the translated name of their school
+  (`COUPS EXPLOSIFS (Acide)`), from the `JOKER_VARIANTS` table in `build_game_data.py`.
+- `i18n/ui/<language>.json`: the game's menu labels that the planner reuses (BACK, Customize, Upgrade slots, rarity
+  names…), as `{key: text}`. The selection and the keys are in the `UI_TEXTS` table of `build_game_data.py`.
+  Variables are kept as in the game (`Lvl. {lvl}`).
+- `i18n/languages.json`: the name of each language, written in that language ("Deutsch", "日本語"), the same in every
+  translation.
 
-## Extraction depuis le jeu
+## Extraction from the game
 
-`bin/extract-game` lit l'installation locale du jeu, en lecture seule (chemin dans `FFW_GAME_DIR`, voir
-`.env.example`), en deux étapes :
+`bin/extract-game` reads the local game install, read-only (path in `FFW_GAME_DIR`, see `.env.example`), in two
+steps:
 
-1. `tools/game-extract` (C#, bibliothèque [CUE4Parse](https://github.com/FabianFG/CUE4Parse)) lit les archives
-   IoStore du jeu (Unreal Engine 5.6, compression Oodle, sans chiffrement) et écrit les assets bruts dans
-   `.cache/game/`.
-2. `scripts/build_game_data.py` les décode et écrit `data/`.
+1. `tools/game-extract` (C#, [CUE4Parse](https://github.com/FabianFG/CUE4Parse) library) reads the game's IoStore
+   archives (Unreal Engine 5.6, Oodle compression, no encryption) and writes the raw assets to `.cache/game/`.
+2. `scripts/build_game_data.py` decodes them and writes `data/`.
 
-Assets lus :
+Assets read:
 
-| Asset | Contenu |
+| Asset | Content |
 |---|---|
-| `/Game/Progress/DT_PlayerJokers` | table de tous les jokers **et** des upgrades (lignes `jokerUpgrade*`), structure de ligne `S_PlayerJokers` |
-| `/Game/Progress/DT_PlayerItems` | liste de tous les objets : armes, utilitaires, sorts, écoles (structure `S_PlayerItems`, un seul champ) |
-| `/Game/LocaStringTables/ST_Tweaks` | noms et descriptions affichés des jokers et upgrades |
-| `/Game/LocaStringTables/ST_Weapons`, `ST_Spells` | noms et descriptions affichés des armes, utilitaires, sorts et écoles |
-| `/Game/LocaStringTables/ST_UI` | libellés des menus du jeu et noms des langues |
-| `/Game/Interfaces/Equipment/C_UnlockedJokers` | courbe numéro d'emplacement → niveau requis (arrondi à l'inférieur) |
-| `Localization/Game/<langue>/Game.locres` | traductions : par namespace de table de textes (`ST_Tweaks`, `ST_Skin` pour `ST_Weapons`, `ST_Elements` pour `ST_Spells`), mêmes clés que les textes anglais |
-| `FarFarWest.exe` (hors archives) | version du jeu (`FileVersion` de l'exécutable, « 0.2.0.20 - CL 915 ») |
+| `/Game/Progress/DT_PlayerJokers` | table of all jokers **and** upgrades (`jokerUpgrade*` rows), row struct `S_PlayerJokers` |
+| `/Game/Progress/DT_PlayerItems` | list of all items: weapons, utilities, spells, schools (struct `S_PlayerItems`, a single field) |
+| `/Game/LocaStringTables/ST_Tweaks` | displayed names and descriptions of jokers and upgrades |
+| `/Game/LocaStringTables/ST_Weapons`, `ST_Spells` | displayed names and descriptions of weapons, utilities, spells and schools |
+| `/Game/LocaStringTables/ST_UI` | game menu labels and language names |
+| `/Game/Interfaces/Equipment/C_UnlockedJokers` | curve slot number → required level (rounded down) |
+| `Localization/Game/<language>/Game.locres` | translations: by string table namespace (`ST_Tweaks`, `ST_Skin` for `ST_Weapons`, `ST_Elements` for `ST_Spells`), same keys as the English texts |
+| `FarFarWest.exe` (outside the archives) | game version (the executable's `FileVersion`, "0.2.0.20 - CL 915") |
 
-Le jeu sérialise ses propriétés en mode « unversioned » (sans nom ni type) et ne fournit pas de fichier de
-mappings. CUE4Parse ne peut donc pas décoder la table des jokers : `build_game_data.py` la décode lui-même, avec
-l'ordre et le type des champs de `S_PlayerJokers` écrits en dur (`JOKER_ROW`). Si une mise à jour du jeu change
-cette structure, le script s'arrête avec une erreur. Pour retrouver le nouvel ordre : les champs sont sérialisés
-dans `S_PlayerJokers.uasset` sous forme de paires de FNames (type, nom) qu'on peut relire avec la name map du
-package (mode `names:` de l'extracteur).
+The game serializes its properties in "unversioned" mode (no names or types) and ships no mappings file. CUE4Parse
+therefore cannot decode the joker table: `build_game_data.py` decodes it itself, with the order and type of the
+`S_PlayerJokers` fields hard-coded (`JOKER_ROW`). If a game update changes this struct, the script stops with an
+error. To find the new order: the fields are serialized in `S_PlayerJokers.uasset` as pairs of FNames (type, name),
+which can be read back with the package's name map (the extractor's `names:` mode).
 
-La correspondance entre les objets et leurs textes est écrite à la main dans `build_game_data.py` (`EQUIPMENT`,
-`SPELLS`, `SCHOOLS`), parce que les noms internes diffèrent souvent des noms affichés : `itemWinchester` =
-Leveredge, `itemSpellCactusUlti` = Bandito, `itemSpellElecSuperJump` = Boing… `itemSpellIceLance` = Bridge est
-déduit par élimination (seul id et seul nom Frost restants). Un objet ajouté par une mise à jour fait échouer le
-script tant qu'il n'est pas ajouté à `EQUIPMENT`, `SPELLS`, `SCHOOLS` ou `IGNORED_ITEMS`. Les tables de textes
-contiennent aussi des objets absents de `DT_PlayerItems` (Dynamite, Elder Pickaxe) : ils ne font pas partie du
-jeu actuel.
+The mapping between items and their texts is written by hand in `build_game_data.py` (`EQUIPMENT`, `SPELLS`,
+`SCHOOLS`), because internal names often differ from displayed ones: `itemWinchester` = Leveredge,
+`itemSpellCactusUlti` = Bandito, `itemSpellElecSuperJump` = Boing… `itemSpellIceLance` = Bridge is deduced by
+elimination (the only Frost id and name left). An item added by an update makes the script fail until it is added
+to `EQUIPMENT`, `SPELLS`, `SCHOOLS` or `IGNORED_ITEMS`. The string tables also contain items missing from
+`DT_PlayerItems` (Dynamite, Elder Pickaxe): they are not part of the current game.
 
-Contrôles qui valident la méthode : les 176 lignes de la table se lisent jusqu'à la fin exacte de l'export ;
-Crackshot correspond au wiki ; l'ancienne courbe `C_UnlockedJokers_BeforeRemapTo100Levels` redonne exactement
-l'ancien barème du wiki (4, 6, 8, 10, 13, 16, 19, 24, 29, 35, 42, 50) ; les 149 noms de jokers actifs sont
-identiques à ceux du wiki.
+Checks that validate the method: the table's 176 rows read up to the exact end of the export; Crackshot matches the
+wiki; the old curve `C_UnlockedJokers_BeforeRemapTo100Levels` gives back exactly the wiki's old schedule (4, 6, 8,
+10, 13, 16, 19, 24, 29, 35, 42, 50); the 149 active joker names are identical to the wiki's.
 
-## Incohérences connues du wiki
+## Known wiki errors
 
-Corrigées par les fichiers du jeu :
+Corrected by the game files:
 
-- **Coût des jokers Unique** (wiki → jeu) : Eco Trick et Swamp Trick 5 → 2 ; Fanning Ace, Mark Ace,
-  Scavenger Star et Chonky Throw 5 → 3 ; Eagle Lever, Frenzy Spin, Jump Star, Lingering Throw, Rush Blast et
-  Stacked Lever 5 → 4 ; Mindshot 5 → 6 ; Ultra Draw 5 → 7.
-- **Copies maximum** : Bouncing Ball et Clutch, 1 → 2.
-- **Lazy et Medicard** : sans source d'obtention sur le wiki ; ils s'achètent (800 et 300 or).
-- **Rampage** : pas disponible sur le Bow ni la Minigun.
-- **Health** (upgrade du héros) : +5 PV fixes par point, pas +5 %.
-- **Lifesteal** des sidearms : 1 % ×5 (la page Equipment dit 1,25 % ×8).
-- **Barème des emplacements de jokers** : celui du wiki date d'avant le patch 644. 1 seul emplacement au niveau 1.
+- **Unique joker costs** (wiki → game): Eco Trick and Swamp Trick 5 → 2; Fanning Ace, Mark Ace, Scavenger Star and
+  Chonky Throw 5 → 3; Eagle Lever, Frenzy Spin, Jump Star, Lingering Throw, Rush Blast and Stacked Lever 5 → 4;
+  Mindshot 5 → 6; Ultra Draw 5 → 7.
+- **Max copies**: Bouncing Ball and Clutch, 1 → 2.
+- **Lazy and Medicard**: no source on the wiki; they can be bought (800 and 300 gold).
+- **Rampage**: not available on the Bow or the Minigun.
+- **Health** (hero upgrade): +5 flat HP per point, not +5%.
+- Sidearm **Lifesteal**: 1% ×5 (the Equipment page says 1.25% ×8).
+- **Joker slot schedule**: the wiki's dates from before patch 644. Only 1 slot at level 1.
 
-Autres :
+Others:
 
-- Points d'upgrade : la page Equipment dit « 1 point par niveau, 20 au niveau 20 », obsolète depuis le patch 644.
-- Page Prestige : ne donne ni les coûts ni les plafonds de la boutique.
+- Upgrade points: the Equipment page says "1 point per level, 20 at level 20", outdated since patch 644.
+- Prestige page: gives neither the costs nor the caps of the shop.
 
 ## Sources
 
-- Fichiers du jeu, version 0.2.0.20 : tout `data/`.
-- [farfarwest.wiki.gg](https://farfarwest.wiki.gg/) : éléments disponibles sur les sidearms, niveaux de déblocage
-  des sorts (non repris), cooldowns des sorts (`manual.json`, recoupés avec wikily.gg).
-- [Notes de patch Early Access Update 1 (V644)](https://steamcommunity.com/app/3124540/discussions/0/837250028234942852/) :
-  upgrades tous les 2 niveaux, jokers débloqués entre les niveaux 1 et 100, 6 points d'upgrade bonus.
-- [Pages des sorts de wikily.gg](https://wikily.gg/far-far-west/spells/) : cooldowns des sorts (`manual.json`).
-- [Build planner de wikily.gg](https://wikily.gg/far-far-west/build-planner/new) : boutique de prestige (coûts,
-  plafonds, formule des prestiges requis). Licence non précisée : on s'en sert pour recouper, sans copier ses
-  données dans `data/`.
-- [Discussion Steam sur le prestige](https://steamcommunity.com/app/3124540/discussions/0/571540300205508222/) :
-  « at least 5 prestiges » pour tout débloquer.
-- [Neonsect, Prestige explained](https://neonsect.com/far-far-west/far-far-west-prestige-explained/) : prestige
-  jusqu'à 15.
+- Game files, version 0.2.0.20: all of `data/` except `manual.json`.
+- [farfarwest.wiki.gg](https://farfarwest.wiki.gg/): elements available on sidearms, spell unlock levels (not
+  used), spell cooldowns (`manual.json`, cross-checked with wikily.gg).
+- [Early Access Update 1 patch notes (V644)](https://steamcommunity.com/app/3124540/discussions/0/837250028234942852/):
+  upgrades every 2 levels, jokers unlocked between levels 1 and 100, 6 bonus upgrade points.
+- [wikily.gg spell pages](https://wikily.gg/far-far-west/spells/): spell cooldowns (`manual.json`).
+- [wikily.gg build planner](https://wikily.gg/far-far-west/build-planner/new): prestige shop (costs, caps, formula
+  for the prestiges needed). License not stated: used to cross-check, its data is not copied into `data/`.
+- [Steam discussion on prestige](https://steamcommunity.com/app/3124540/discussions/0/571540300205508222/):
+  "at least 5 prestiges" to unlock everything.
+- [Neonsect, Prestige explained](https://neonsect.com/far-far-west/far-far-west-prestige-explained/): prestige up
+  to 15.

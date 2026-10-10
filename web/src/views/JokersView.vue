@@ -1,7 +1,6 @@
 <script setup lang="ts">
-// Jokers of a carrier (docs/maquettes.md, "Jokers"): rarity tabs and a search, the cards of the jokers available on
-// the carrier, and its slots on the right. Clicking a card adds a copy if there is room; clicking an equipped joker
-// in the slots removes a copy.
+// Jokers of a carrier: rarity tabs and a search, the cards of the jokers available on the carrier, and its slots on the
+// right. Clicking a card adds a copy if there is room; clicking an equipped joker in the slots removes a copy.
 import { computed, ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'

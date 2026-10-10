@@ -1,5 +1,5 @@
 {
-  "_comment": "Hand-entered values that cannot be extracted from the game files. Not touched by bin/extract-game: check and update them by hand after each game update. See 'Données saisies à la main' in docs/game-mechanics.md.",
+  "_comment": "Hand-entered values that cannot be extracted from the game files. Not touched by bin/extract-game: check and update them by hand after each game update. See \"Hand-entered data\" in docs/game-mechanics.md.",
   "checked_for_version": "0.2.0.20",
   "spell_cooldowns": {
     "_comment": "Cooldown in seconds, before any reduction (jokers, upgrades). null = unknown.",

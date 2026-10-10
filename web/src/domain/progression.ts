@@ -1,6 +1,6 @@
-// Minimum level and prestiges needed by a carrier for its upgrades and jokers (see docs/build-planner.md,
-// "Règles retenues"). Only what levels cannot give is bought at the prestige shop; the level is the one needed for
-// the rest, after the last prestige.
+// Minimum level and prestiges needed by a carrier for its upgrades and jokers (see docs/build-planner.md, "Rules").
+// Only what levels cannot give is bought at the prestige shop; the level is the one needed for the rest, after the last
+// prestige.
 import { jokerSlotsUsed, upgradePointsUsed, type Loadout } from './build'
 import { jokerById, type Joker } from './gameData'
 import { RULES } from './rules'

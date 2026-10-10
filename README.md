@@ -1,30 +1,43 @@
 # far-far-west-build
 
-Planificateur de builds pour [Far Far West](https://store.steampowered.com/app/3124540/Far_Far_West).
+Build planner for [Far Far West](https://store.steampowered.com/app/3124540/Far_Far_West): plan the hero, weapons,
+jokers, upgrades and spells of a build, check that it is valid, and see the level and prestiges it needs. Available
+in the game's 15 languages.
 
-## Données
+Live site: https://fastfire001.github.io/far-far-west-build/
 
-Les données du jeu (`data/*.json`) sont extraites des fichiers du jeu installé. Les mécaniques utiles au
-planificateur sont décrites dans [docs/game-mechanics.md](docs/game-mechanics.md).
+Fan project, not affiliated with Evil Raptor. Icons are original drawings; no game art is included.
 
-Pour les mettre à jour (seul Docker est requis) :
+## Development
+
+Only Docker is required: every command runs in a container.
 
 ```sh
-cp .env.example .env   # une seule fois, puis renseigner FFW_GAME_DIR (dossier d'installation du jeu)
+bin/dev          # dev server: http://localhost:5173/
+bin/test         # unit tests (bin/test --watch)
+bin/build-site   # type check and static site in web/dist/
+bin/web <cmd>    # any command in the Node container, e.g. bin/web npm install <package>
+```
+
+The application (Vue 3 + TypeScript + Vite) is in `web/`. Every push to `main` deploys the site to GitHub Pages
+(`.github/workflows/deploy.yml`).
+
+## Game data
+
+The game data (`data/*.json`) is extracted from the installed game files; the icons (`assets/icons/`) are generated
+from it. Both are committed, so you only need the game to update them after a game update:
+
+```sh
+cp .env.example .env   # once, then set FFW_GAME_DIR (game install folder)
 bin/extract-game
 ```
 
-Le jeu n'est lu qu'en lecture seule ; les fichiers extraits restent dans `.cache/`, non versionné.
+The game is only read; the extracted files stay in `.cache/`, which is not versioned. `data/manual.json` is the
+exception: values that cannot be extracted (spell cooldowns), entered by hand.
 
-## Application
+## Documentation
 
-L'application (Vue 3 + TypeScript + Vite) est dans `web/`. Seul Docker est requis :
-
-```sh
-bin/dev          # serveur de dev : http://localhost:5173/
-bin/test         # tests unitaires
-bin/build-site   # site statique dans web/dist/
-```
-
-Chaque push sur `main` déploie le site sur GitHub Pages (`.github/workflows/deploy.yml`) :
-https://fastfire001.github.io/far-far-west-build/
+- [docs/game-mechanics.md](docs/game-mechanics.md): game rules used by the planner, where each value comes from,
+  extraction method.
+- [docs/build-planner.md](docs/build-planner.md): design decisions and open questions.
+- [CLAUDE.md](CLAUDE.md): repository layout and conventions.
