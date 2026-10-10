@@ -41,3 +41,13 @@ exception: values that cannot be extracted (spell cooldowns), entered by hand.
   extraction method.
 - [docs/build-planner.md](docs/build-planner.md): design decisions and open questions.
 - [CLAUDE.md](CLAUDE.md): repository layout and conventions.
+
+Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+The code, the documentation and the icons (`assets/icons/`) are under the [MIT License](LICENSE).
+
+The game texts in `data/` (item names and descriptions, menu labels and their official translations) belong to
+Evil Raptor and are **not** covered by this license: they are included only so that the planner can show what the
+game shows. Far Far West is a trademark of its owners.

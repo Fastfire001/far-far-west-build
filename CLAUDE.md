@@ -29,6 +29,8 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 - `.cache/` (not versioned): raw assets extracted from the game and the Oodle library downloaded by the extractor.
 - `docs/game-mechanics.md`: game rules used by the planner, extraction method, wiki errors.
 - `docs/build-planner.md`: design decisions of the planner and open questions.
+- `CONTRIBUTING.md`: rules for contributors. `LICENSE`: MIT, for the code, docs and icons only: the game texts in
+  `data/` belong to Evil Raptor (see "License" in the README).
 
 ## Commands
 
