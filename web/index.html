@@ -3,10 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Far Far West Build</title>
+    <title>Far Far West Build Planner – Jokers, Weapons, Spells &amp; Upgrades</title>
+    <meta
+      name="description"
+      content="Free build planner for Far Far West: pick your weapons, jokers, upgrades and spells, check the build is valid and see the level and prestiges it needs. Data from the game, in 15 languages."
+    />
+    <link rel="canonical" href="https://fastfire001.github.io/far-far-west-build/" />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/itemHero.svg" />
+    <meta name="theme-color" content="#1d272d" />
+
+    <!-- Link previews (Discord, Reddit, Steam, X). -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Far Far West Build Planner" />
+    <meta property="og:title" content="Far Far West Build Planner" />
+    <meta
+      property="og:description"
+      content="Plan your Far Far West build: weapons, jokers, upgrades and spells, with the level and prestiges it needs."
+    />
+    <meta property="og:url" content="https://fastfire001.github.io/far-far-west-build/" />
+    <meta name="twitter:card" content="summary" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Far Far West Build Planner",
+        "url": "https://fastfire001.github.io/far-far-west-build/",
+        "description": "Build planner for the game Far Far West: weapons, jokers, upgrades and spells, with build validation and the level and prestiges needed.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any (web browser)",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "inLanguage": ["en-US", "de-DE", "es-419", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pl-PL", "pt-BR", "ru-RU", "tr-TR", "uk-UA", "zh-CN", "zh-TW"],
+        "about": { "@type": "VideoGame", "name": "Far Far West", "url": "https://store.steampowered.com/app/3124540/Far_Far_West" }
+      }
+    </script>
   </head>
   <body>
-    <div id="app"></div>
+    <!-- Replaced by the app when it mounts; read by crawlers and link previews that do not run JavaScript. -->
+    <div id="app">
+      <h1>Far Far West Build Planner</h1>
+      <p>
+        Plan your Far Far West build: main weapon, sidearm and its element, utility, three spells, stat upgrades and
+        jokers for the hero and each weapon. The planner checks the build (upgrade points, joker slots, copies) and
+        shows the minimum level and the prestiges each part needs. All data is extracted from the game files, in the
+        game's 15 languages.
+      </p>
+      <noscript>This planner needs JavaScript.</noscript>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

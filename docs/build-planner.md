@@ -132,6 +132,11 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
 - **Deployment**: `.github/workflows/deploy.yml` builds `web/` on every push to `main` (tests included: a failing
   test blocks the release) and publishes `web/dist/` with `actions/deploy-pages`. In the repository settings, the
   Pages source must be "GitHub Actions". Address: https://fastfire001.github.io/far-far-west-build/
+- **Search engines**: `web/index.html` holds the title, description, canonical URL, link previews (Open Graph) and
+  JSON-LD data, plus a short static text in `#app` (replaced when the app mounts) for crawlers that do not run
+  JavaScript. `web/public/sitemap.xml` lists only the root URL: hash routes are ignored by search engines. A
+  `robots.txt` would have to be at the domain root (`fastfire001.github.io`), so the sitemap is submitted in Google
+  Search Console instead.
 
 ## Open questions (to check in game)
 
