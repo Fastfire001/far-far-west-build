@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Only the root URL: the planner's screens are hash routes (/#/…), which search engines ignore. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://fastfire001.github.io/far-far-west-build/</loc>
-  </url>
-</urlset>

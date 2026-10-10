@@ -23,6 +23,8 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
   mode, see "Screens" in `docs/build-planner.md`); `src/components/`: shared pieces (menu bar, BACK button, wooden
   plank). `src/i18n/`: interface texts (`ui/<language>.json`, our own translations), completed by the game's labels
   (`data/i18n/ui/`, key `game`); the game texts are loaded on demand from `data/i18n/` by the `language` store.
+  `src/pages/`: the static content pages (jokers, weapons, spells, progression, in 15 languages), rendered to HTML
+  at build time by `vite-plugin-content-pages.ts` (see "Content pages" in `docs/build-planner.md`).
 - `.github/workflows/deploy.yml`: deploys the site to GitHub Pages on every push to `main`.
 - `bin/`: commands to run from the host. Each one runs its script in a Docker container from `compose.yaml` (`app`
   for Python, `extract` for the extractor, `web` for Node).

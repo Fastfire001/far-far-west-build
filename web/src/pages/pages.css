@@ -1,0 +1,400 @@
+/* Content pages (src/pages/). Published as pages/style.css after src/styles/main.css, whose colors and fonts it
+   uses: see vite-plugin-content-pages.ts. */
+@font-face {
+  font-display: swap;
+  font-family: 'Oswald Variable';
+  font-style: normal;
+  font-weight: 200 700;
+  src: url(oswald.woff2) format('woff2');
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  align-items: center;
+  background: var(--bg-deep);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0.6rem 1.5rem;
+}
+.brand {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+.sections a,
+.breadcrumbs a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.sections a {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.sections a:hover,
+.sections a[aria-current],
+.breadcrumbs a:hover {
+  color: var(--accent);
+}
+.languages {
+  margin-left: auto;
+  position: relative;
+}
+.languages summary {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+}
+.languages ul {
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0.3rem 0;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+.languages a {
+  display: block;
+  padding: 0.25rem 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.languages a:hover,
+.languages a[aria-current] {
+  color: var(--accent);
+}
+
+.plank-button {
+  background: linear-gradient(180deg, var(--plank-light), var(--plank));
+  border: 2px solid var(--plank-dark);
+  color: var(--plank-text);
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.3rem 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.plank-button:hover {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.content {
+  flex: 1;
+  line-height: 1.5;
+  max-width: 64rem;
+  width: 100%;
+}
+.content h1 {
+  font-size: 2.4rem;
+  margin: 0.25rem 0 1rem;
+}
+.content h2 {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  font-size: 1.5rem;
+  gap: 0.5rem;
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+}
+.content h3 {
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.content a {
+  color: var(--text);
+}
+.content a:hover {
+  color: var(--accent);
+}
+.intro {
+  color: var(--text);
+  font-size: 1.1rem;
+  max-width: 50rem;
+}
+.note,
+.muted {
+  color: var(--text-muted);
+}
+.note {
+  font-size: 0.9rem;
+}
+.game-text {
+  white-space: pre-line;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumbs li + li::before {
+  color: var(--text-muted);
+  content: '›';
+  padding: 0 0.5rem;
+}
+
+.icon {
+  flex: none;
+  vertical-align: middle;
+}
+.icon.small {
+  height: 1.8rem;
+  width: auto;
+}
+.icon.medium {
+  height: 3.5rem;
+  width: auto;
+}
+.icon.large {
+  height: 9rem;
+  width: auto;
+}
+
+.item-head {
+  align-items: flex-start;
+  display: flex;
+  gap: 1.5rem;
+}
+.item-head p {
+  margin: 0 0 0.75rem;
+}
+.effect {
+  font-size: 1.15rem;
+}
+
+.rarity {
+  border-left: 4px solid var(--rarity);
+  color: var(--text);
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-left: 0.5rem;
+  text-transform: uppercase;
+}
+.count {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.tag {
+  border: 1px solid var(--danger);
+  border-radius: 3px;
+  color: var(--danger);
+  font-size: 0.75rem;
+  padding: 0 0.3rem;
+  white-space: nowrap;
+}
+
+.facts {
+  display: grid;
+  gap: 0.5rem 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  margin: 1.5rem 0 0;
+}
+.facts div {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.75rem;
+}
+.facts dt {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.facts dd {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+.content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.content th,
+.content td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+.content th {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.content .num {
+  text-align: right;
+  white-space: nowrap;
+}
+.content table.grid {
+  width: auto;
+}
+.content .grid td,
+.content .grid th {
+  text-align: center;
+}
+.jokers tbody tr {
+  box-shadow: inset 4px 0 0 var(--rarity);
+}
+.joker-name {
+  min-width: 12rem;
+}
+.joker-name,
+.joker-name a {
+  align-items: center;
+  display: inline-flex;
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+td.joker-name {
+  display: table-cell;
+}
+td.joker-name > .icon,
+td.joker-name > span {
+  vertical-align: middle;
+}
+td.joker-name > .icon {
+  margin-right: 0.5rem;
+}
+.carriers {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.item-link {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  display: inline-flex;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem 0.25rem 0.3rem;
+  text-decoration: none;
+}
+.item-link:hover {
+  border-color: var(--accent);
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  list-style: none;
+  padding: 0;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 0.25rem 1rem;
+  grid-template-columns: auto 1fr;
+  height: 100%;
+  padding: 0.75rem;
+  text-decoration: none;
+}
+.card:hover {
+  border-color: var(--accent);
+}
+.card .icon {
+  grid-row: span 2;
+}
+.card-title {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.schools > li {
+  border-top: 3px solid var(--school);
+}
+.schools .card {
+  height: auto;
+}
+.spell-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+}
+.spell-list li {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.15rem 0;
+}
+.spell-list a {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 1rem 1.5rem;
+}
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 40rem) {
+  .site-header {
+    padding: 0.5rem 1rem;
+  }
+  .languages {
+    margin-left: 0;
+  }
+  .content h1 {
+    font-size: 1.8rem;
+  }
+  .item-head {
+    flex-direction: column;
+  }
+  .icon.large {
+    height: 6rem;
+  }
+  .site-footer {
+    padding: 1rem;
+  }
+}

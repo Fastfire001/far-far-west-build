@@ -97,6 +97,29 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
 - The rest of the interface (summary, validation messages…) does not exist in the game: it is translated by us in
   `web/src/i18n/ui/` (English and French for now). A missing key falls back to English.
 
+## Content pages
+
+Static HTML pages, without JavaScript, for search engines and players looking for game data: what the hash routes of
+the planner cannot offer. Code in `web/src/pages/`, rendered at build time by the Vite plugin
+`web/vite-plugin-content-pages.ts` (and on request by `bin/dev`).
+
+- **Pages**: `jokers/` (all jokers by rarity) and `jokers/<joker>/`; `weapons/` (hero, weapons, utilities),
+  `weapons/<weapon>/` (upgrades, Unique jokers with their level, all compatible jokers, elements of a sidearm),
+  `hero/`, `utilities/<utility>/`; `spells/` and `spells/<school>/` (spells, cooldowns, Mastery joker);
+  `progression/` (joker slots by level, upgrade points, prestige shop, prestiges needed, from `src/domain/rules.ts`).
+- **URLs from the English name** (`jokers/crackshot/`, `weapons/leveredge/`), not the internal id: they contain the
+  words players search for. If the game renames an item, its URL changes. The tests check that every slug is unique
+  and that every internal link leads to a page.
+- **15 languages**: English at the root, the others under a prefix (`fr/`, `es-419/`, `pt-br/`…, `LOCALE_PREFIXES`
+  in `src/pages/routes.ts`), linked together with `hreflang`. Names and descriptions come from the game's
+  translations; the page texts (`src/pages/i18n/`) are ours, English and French for now, English elsewhere.
+- Rendered with the planner's own data and rules (`src/domain/`), the game's menu labels (rarity names), the
+  generated icons (copied to `icons/<id>.svg`) and the planner's stylesheet (`src/styles/main.css`, followed by
+  `src/pages/pages.css`, published as `pages/style.css`).
+- Each page links to the planner. Weapon and utility pages open it on a build with that item, through a share link.
+  The planner links back to the pages in its footer, in the current language.
+- About 180 pages per language, so about 2,700 files (60 MB) in the built site.
+
 ## Icons
 
 - One SVG icon per item, named after its id: `assets/icons/<id>.svg` (jokers, upgrades, equipment, schools, spells,
@@ -140,10 +163,11 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   test blocks the release) and publishes `web/dist/` with `actions/deploy-pages`. In the repository settings, the
   Pages source must be "GitHub Actions". Address: https://fastfire001.github.io/far-far-west-build/
 - **Search engines**: `web/index.html` holds the title, description, canonical URL, link previews (Open Graph) and
-  JSON-LD data, plus a short static text in `#app` (replaced when the app mounts) for crawlers that do not run
-  JavaScript. `web/public/sitemap.xml` lists only the root URL: hash routes are ignored by search engines. A
-  `robots.txt` would have to be at the domain root (`fastfire001.github.io`), so the sitemap is submitted in Google
-  Search Console instead.
+  JSON-LD data, plus a short static text in `#app` (replaced when the app mounts) with links to the content pages,
+  for crawlers that do not run JavaScript. The planner's screens are hash routes, ignored by search engines: what
+  can rank are the content pages (see "Content pages"). `sitemap.xml` is generated at build time with the planner
+  and every content page. A `robots.txt` would have to be at the domain root (`fastfire001.github.io`), so the
+  sitemap is submitted in Google Search Console instead.
 
 ## Open questions (to check in game)
 
