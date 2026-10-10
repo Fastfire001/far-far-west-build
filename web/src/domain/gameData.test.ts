@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { equipment, HERO_ID, isEquippableInLobby, jokers, spells, spellSchools, upgrades } from './gameData'
+import { equipment, HERO_ID, isEquippableInLobby, jokers, spellCooldown, spells, spellSchools, upgrades } from './gameData'
 
 const carrierIds = new Set([HERO_ID, ...equipment.filter((e) => e.type !== 'utility').map((e) => e.id)])
 
@@ -13,6 +13,10 @@ describe('game data', () => {
   it('only references known spell schools', () => {
     const schoolIds = new Set(spellSchools.map((s) => s.id))
     for (const spell of spells) expect(schoolIds).toContain(spell.school)
+  })
+
+  it('has a cooldown for every spell', () => {
+    for (const spell of spells) expect(spellCooldown(spell.id), spell.id).toBeGreaterThan(0)
   })
 
   it('excludes the jokers that cannot be equipped in the lobby', () => {

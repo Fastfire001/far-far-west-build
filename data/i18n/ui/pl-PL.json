@@ -17,6 +17,7 @@
   "prestige": "PRESTIŻ",
   "all": "Wszystkie",
   "empty": "Puste",
+  "spell_cooldown": "Czas odnowienia {sec} sek.",
   "locked": "Zablokowane",
   "limit_reached": "Osiągnięto limit",
   "max_amount": "Maks. {amount}",

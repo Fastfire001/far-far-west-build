@@ -80,6 +80,7 @@ UI_TEXTS = {
     "upgrades": "ST_UI_Upgrades", "upgrade_slots": "ST_UI_UpgradeSlot", "element_damage": "ST_UI_Equipment_ProjectileElement",
     "jokers": "ST_UI_Equipment_JOKERS", "joker_slot": "ST_UI_JokerSlot", "prestige": "ST_UI_Equipment_Prestige_Name",
     "all": "ST_UI_Journal_All", "empty": "ST_UI_Spell_Empty", "locked": "ST_UI_Equipment_Locked",
+    "spell_cooldown": "ST_UI_Spell_SecondsCooldown",
     "limit_reached": "ST_UI_Joker_LimitReached", "max_amount": "ST_UI_Tweak_AmountMax", "level_short": "ST_UI_Equipment_LvlLvl",
     "unlocked_at_level": "ST_UI_Equipment_UnlockedAtLvl", "unlocked_at_weapon_level": "ST_Equipment_UnlockedAtWeaponLevel",
     "language": "ST_UI_Language",

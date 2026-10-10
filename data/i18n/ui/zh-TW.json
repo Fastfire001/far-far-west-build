@@ -17,6 +17,7 @@
   "prestige": "聲望",
   "all": "全部",
   "empty": "空",
+  "spell_cooldown": "{sec} 秒冷卻時間",
   "locked": "未解鎖",
   "limit_reached": "已達上限",
   "max_amount": "最多 {amount} 張",

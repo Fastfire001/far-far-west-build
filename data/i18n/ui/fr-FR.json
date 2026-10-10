@@ -17,6 +17,7 @@
   "prestige": "PRESTIGE",
   "all": "Tout",
   "empty": "Vide",
+  "spell_cooldown": "Temps de recharge : {sec} s",
   "locked": "Verrouillé",
   "limit_reached": "Limite atteinte",
   "max_amount": "Max {amount}",

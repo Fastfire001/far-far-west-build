@@ -17,6 +17,7 @@
   "prestige": "声望",
   "all": "全部",
   "empty": "空",
+  "spell_cooldown": "{sec} 秒冷却时间",
   "locked": "已锁定",
   "limit_reached": "已达上限",
   "max_amount": "最大值 {amount}",

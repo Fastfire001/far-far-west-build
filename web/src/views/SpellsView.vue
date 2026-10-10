@@ -4,7 +4,7 @@
 // Clicking an occupied slot (with no spell pending) empties it.
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { spellById, spells, spellSchools } from '@/domain/gameData'
+import { spellById, spellCooldown, spells, spellSchools } from '@/domain/gameData'
 import { spellKeys } from '@/i18n'
 import { iconUrl } from '@/icons'
 import { useBuildStore } from '@/stores/build'
@@ -87,6 +87,9 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
           >
             <img :src="iconUrl(spell.id)" alt="" />
             <span class="name">{{ language.gameName(spell.id) }}</span>
+            <span v-if="spellCooldown(spell.id) !== null" class="cooldown">
+              {{ t('game.spell_cooldown', { sec: spellCooldown(spell.id) }) }}
+            </span>
             <span class="description">{{ language.gameDescription(spell.id) }}</span>
             <span class="key">
               <template v-if="slotOf(spell.id) >= 0">✔ [{{ keys[slotOf(spell.id)] }}]</template>
@@ -194,8 +197,8 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
   cursor: pointer;
   display: grid;
   gap: 0.25rem 1rem;
-  grid-template-areas: 'icon name key' 'icon description key';
-  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  grid-template-areas: 'icon name cooldown key' 'icon description description key';
+  grid-template-columns: 3rem minmax(0, 1fr) auto auto;
   padding: 0.6rem 1rem 0.6rem 0.75rem;
   text-align: left;
   width: 100%;
@@ -212,6 +215,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
   grid-area: name;
   line-height: 1.1;
   text-transform: uppercase;
+}
+.cooldown {
+  color: var(--school);
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  grid-area: cooldown;
+  white-space: nowrap;
 }
 .description {
   color: var(--text-muted);
@@ -356,7 +366,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
     font-size: 0.95rem;
   }
   .spell {
-    grid-template-areas: 'icon name' 'icon description' 'icon key';
+    grid-template-areas: 'icon name' 'icon cooldown' 'icon description' 'icon key';
     grid-template-columns: 2.5rem minmax(0, 1fr);
   }
   .spell img {

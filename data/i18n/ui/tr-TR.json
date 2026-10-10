@@ -17,6 +17,7 @@
   "prestige": "PRESTİJ",
   "all": "Tümü",
   "empty": "Boş",
+  "spell_cooldown": "{sec} saniye bekleme süresi",
   "locked": "Kilitli",
   "limit_reached": "Sınıra ulaşıldı",
   "max_amount": "En Fazla {amount}",

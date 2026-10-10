@@ -17,6 +17,7 @@
   "prestige": "명성",
   "all": "모두",
   "empty": "비어 있음",
+  "spell_cooldown": "재사용 대기시간 {sec}초",
   "locked": "잠겨 있음",
   "limit_reached": "한도 도달",
   "max_amount": "최대 {amount}",

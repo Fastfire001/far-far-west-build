@@ -17,6 +17,7 @@
   "prestige": "PRESTIGE",
   "all": "Alles",
   "empty": "Leer",
+  "spell_cooldown": "{sec} Sek. Abklingzeit",
   "locked": "Abgeschlossen",
   "limit_reached": "Limit erreicht",
   "max_amount": "Max. {amount}",

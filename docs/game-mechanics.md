@@ -9,6 +9,7 @@ Tout `data/` est extrait des **fichiers du jeu** (installation locale) par `bin/
 `spells.json`, `jokers.json`, `upgrades.json`, `progression.json`, `meta.json` (version du jeu et date d'extraction)
 et les traductions dans `i18n/`. Les fichiers
 extraits restent dans `.cache/` (non versionné) ; seules les valeurs utiles au planificateur vont dans `data/`.
+Seule exception : `data/manual.json`, saisi à la main (voir « Données saisies à la main »).
 
 Les textes (noms, descriptions) sont repris **tels qu'affichés dans le jeu**, en anglais dans les fichiers
 principaux : les noms de jokers sont donc en majuscules (`CRACKSHOT`), comme sur les cartes du jeu.
@@ -105,12 +106,23 @@ points d'upgrade et leur budget de jokers. L'utilitaire n'a ni upgrade ni joker.
   école, leur nom et leur description.
 - Les écoles de sorts ont **leur propre niveau** : ce sont des objets à part entière dans le jeu, et les jokers
   Mastery se débloquent au niveau 50 d'une école.
-- **Pas de niveau de déblocage ni de cooldown** : ces valeurs sont dans les Blueprints des sorts, illisibles sans
-  fichier de mappings. On y a renoncé : elles ne servent pas à la v1. Pour mémoire, le wiki donne pour chaque école
+- **Pas de niveau de déblocage ni de cooldown dans les fichiers lisibles** : ces valeurs sont dans les Blueprints
+  des sorts, illisibles sans fichier de mappings. Les cooldowns sont saisis à la main dans `data/manual.json` (voir
+  « Données saisies à la main »). Pour mémoire, le wiki donne pour chaque école
   des sorts débloqués aux niveaux 1, 4, 12, 20 et 35.
 - 3 emplacements de sorts (touches Q, E, C) ; le 3e se débloque au niveau 3.
 - Les combos entre sorts (une trentaine sur le wiki : Fire Tornado, Geyser Split…) ne sont pas repris : ils
   dépendent du placement en jeu et leurs déclencheurs sont mal documentés.
+
+## Données saisies à la main (`manual.json`)
+
+Valeurs introuvables dans les fichiers lisibles du jeu, recopiées à la main depuis le wiki.gg et wikily.gg.
+`bin/extract-game` n'y touche pas : à revérifier à la main après chaque mise à jour du jeu (`checked_for_version`).
+
+- `spell_cooldowns` : cooldown de base de chaque sort en secondes, par id de sort (`null` si inconnu). Affiché à
+  côté de chaque sort, avec le libellé du jeu (« Temps de recharge : {sec} s », `ST_UI_Spell_SecondsCooldown`).
+- Désaccords relevés le 2026-10-10 entre les deux sites (wiki.gg / wikily.gg) : Fireball 20 / 15 s,
+  Firebeam 80 / 60 s, Surcharge 60 / 50 s, Finger Guns 120 / 80 s, Mino 10 / 7 s. Valeurs à vérifier en jeu.
 
 ## Traductions (`i18n/`)
 
@@ -195,9 +207,10 @@ Autres :
 
 - Fichiers du jeu, version 0.2.0.20 : tout `data/`.
 - [farfarwest.wiki.gg](https://farfarwest.wiki.gg/) : éléments disponibles sur les sidearms, niveaux de déblocage
-  des sorts (non repris).
+  des sorts (non repris), cooldowns des sorts (`manual.json`, recoupés avec wikily.gg).
 - [Notes de patch Early Access Update 1 (V644)](https://steamcommunity.com/app/3124540/discussions/0/837250028234942852/) :
   upgrades tous les 2 niveaux, jokers débloqués entre les niveaux 1 et 100, 6 points d'upgrade bonus.
+- [Pages des sorts de wikily.gg](https://wikily.gg/far-far-west/spells/) : cooldowns des sorts (`manual.json`).
 - [Build planner de wikily.gg](https://wikily.gg/far-far-west/build-planner/new) : boutique de prestige (coûts,
   plafonds, formule des prestiges requis). Licence non précisée : on s'en sert pour recouper, sans copier ses
   données dans `data/`.

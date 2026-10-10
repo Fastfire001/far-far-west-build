@@ -17,6 +17,7 @@
   "prestige": "PRESTIGE",
   "all": "All",
   "empty": "Empty",
+  "spell_cooldown": "{sec}-second cooldown",
   "locked": "Locked",
   "limit_reached": "Limit reached",
   "max_amount": "Max. {amount}",

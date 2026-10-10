@@ -17,6 +17,7 @@
   "prestige": "ПРЕСТИЖ",
   "all": "Все",
   "empty": "Пусто",
+  "spell_cooldown": "Перезагрузка: {sec} сек.",
   "locked": "Закрыто",
   "limit_reached": "Достигнут предел",
   "max_amount": "Макс. {amount}",

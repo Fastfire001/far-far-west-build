@@ -17,6 +17,7 @@
   "prestige": "PRESTIGIO",
   "all": "Todo",
   "empty": "Vacío",
+  "spell_cooldown": "{sec} segundos de recarga",
   "locked": "Cerrado",
   "limit_reached": "Se alcanzó el límite",
   "max_amount": "Máx. {amount}",

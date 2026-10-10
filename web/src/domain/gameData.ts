@@ -2,6 +2,7 @@
 // Kept free of Vue so that the build rules can be unit-tested on their own.
 import equipmentJson from '@data/equipment.json'
 import jokersJson from '@data/jokers.json'
+import manualJson from '@data/manual.json'
 import metaJson from '@data/meta.json'
 import progressionJson from '@data/progression.json'
 import spellsJson from '@data/spells.json'
@@ -83,6 +84,14 @@ export const spells = spellsJson.spells as Spell[]
 export const jokers = jokersJson as Joker[]
 export const upgrades = upgradesJson as Upgrade[]
 export const progression = progressionJson as Progression
+
+/** Base cooldown of each spell in seconds, hand-entered from the wikis (data/manual.json): may be missing. */
+const spellCooldowns = manualJson.spell_cooldowns as Record<string, number | null | string>
+
+export function spellCooldown(spellId: string): number | null {
+  const cooldown = spellCooldowns[spellId]
+  return typeof cooldown === 'number' ? cooldown : null
+}
 
 /** Jokers that can be equipped in the lobby: the others only drop in missions (Camper, Giant…). */
 export function isEquippableInLobby(joker: Joker): boolean {

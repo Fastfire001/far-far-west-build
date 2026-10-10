@@ -17,6 +17,7 @@
   "prestige": "プレステージ",
   "all": "すべて",
   "empty": "空",
+  "spell_cooldown": "クールダウン{sec}秒",
   "locked": "ロック中",
   "limit_reached": "上限に達しました",
   "max_amount": "最大 {amount}",
