@@ -9,7 +9,7 @@
     "newBuild": "New build",
     "myBuilds": "My builds…",
     "import": "Import…",
-    "export": "Export…",
+    "export": "Share…",
     "unavailable": "Saving unavailable"
   },
   "home": {
@@ -71,9 +71,11 @@
   },
   "dialog": {
     "close": "Close",
-    "exportTitle": "Export the build",
-    "exportHelp": "Copy this text and share it: anyone can import it into the planner.",
+    "exportTitle": "Share the build",
+    "linkHelp": "Send this link: it opens the build in the planner, which adds it to the builds of whoever opens it.",
+    "exportHelp": "Or copy this text, to paste in the planner with Import.",
     "copy": "Copy",
+    "copyLink": "Copy the link",
     "copied": "Copied!",
     "importTitle": "Import a build",
     "importHelp": "Paste the text of an exported build (it starts with FFW1:). It is added to your builds.",
@@ -94,5 +96,8 @@
     "copyName": "{name} (copy)",
     "confirmDelete": "Delete the build “{name}”? This cannot be undone.",
     "unavailable": "Your browser does not allow saving: builds will be lost when the page is closed."
+  },
+  "share": {
+    "invalidTitle": "Invalid share link"
   }
 }

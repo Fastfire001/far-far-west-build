@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { addJoker, emptyBuild, setWeapon } from './build'
-import { BuildImportError, decodeBuild, encodeBuild } from './codec'
+import { BuildImportError, decodeBuild, decodeShareCode, encodeBuild, encodeShareCode } from './codec'
 
 describe('build export', () => {
   it('round-trips a build, accents and all', () => {
@@ -30,5 +30,22 @@ describe('build export', () => {
     expect(reason('FFW1:%%%')).toBe('encoding')
     expect(reason('FFW1:' + btoa('[]'))).toBe('format')
     expect(reason('FFW1:' + btoa('{"v":2}'))).toBe('version')
+  })
+})
+
+describe('share links', () => {
+  it('round-trips a build with a URL-safe code shorter than the export', async () => {
+    let build = setWeapon(emptyBuild('Pistolero à l’ancienne 🤠'), 'sidearm', 'itemPistol')
+    for (const joker of ['jokerCrackShot', 'jokerBracing', 'jokerBracing']) build = addJoker(build, 'sidearm', joker)
+    const code = await encodeShareCode(build)
+    expect(code).toMatch(/^[A-Za-z0-9_-]+$/)
+    expect(code.length).toBeLessThan(encodeBuild(build).length)
+    expect(await decodeShareCode(code)).toEqual(build)
+  })
+
+  it('rejects a damaged code', async () => {
+    const code = await encodeShareCode(emptyBuild('x'))
+    await expect(decodeShareCode(code.slice(0, -4))).rejects.toMatchObject({ reason: 'encoding' })
+    await expect(decodeShareCode('%%%')).rejects.toMatchObject({ reason: 'encoding' })
   })
 })

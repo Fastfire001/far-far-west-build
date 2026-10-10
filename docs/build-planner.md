@@ -57,6 +57,8 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
 - **Spells**: the 6 schools, the spells of the chosen school with their cooldown, and the 3 slots. Keys under the
   slots follow the game: [A] [E] [C] in French (AZERTY), [Q] [E] [C] in the other languages.
 - **My builds**: the saved builds (open, duplicate, delete).
+- **Share link** (`/#/share/<code>`): opens the build carried by the link, then goes to its home (see "Saving and
+  sharing").
 
 ## Rules
 
@@ -115,7 +117,12 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   choice) is dropped when another one is opened. Without localStorage (blocked storage), everything works without
   saving, and the menu says so.
 - An **imported** build is added to the list as a new build: it does not overwrite the current one.
-- **Export / Import** buttons: the build is JSON encoded in base64, with a prefix (`FFW1:…`).
+- **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the same JSON as the export,
+  compressed (`deflate-raw`, `CompressionStream`) and in URL-safe base64: about 400 characters for a full build,
+  against 1,700 for the export text. Opening a link adds the build to the saved builds, or reopens the saved copy if
+  an identical one exists, then replaces the URL with the build home, so a reload does not add it again.
+- **Export / Import** (text to copy, in the same dialog as the link): the build is JSON encoded in base64, with a
+  prefix (`FFW1:…`).
 - The JSON has a **format version number** (`"v": 1`), so that old builds can be converted.
 - Every item (equipment, spells, jokers, upgrades) is identified by its **internal game `id`** (`itemPistol`,
   `jokerCrackShot`…), which does not change if the game renames the item.
