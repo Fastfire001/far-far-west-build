@@ -69,6 +69,8 @@ Hors périmètre :
 
 - Le planificateur est disponible dans les **15 langues du jeu**, avec les textes officiels du jeu (`data/i18n/`).
   À défaut d'un texte traduit, il affiche l'anglais.
+- Au premier lancement, la langue est celle du navigateur (l'anglais si le jeu ne la propose pas). La langue choisie
+  dans le menu est retenue dans le localStorage pour les visites suivantes.
 - Les textes sont affichés tels que dans le jeu (noms de jokers en majuscules) ; les retours à la ligne des noms
   japonais sont remplacés par un espace à l'affichage.
 - L'interface reprend les libellés des menus du jeu quand ils existent (`data/i18n/ui/`, 15 langues : RETOUR,

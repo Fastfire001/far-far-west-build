@@ -41,7 +41,7 @@ const extractedOn = computed(() =>
 )
 
 function onLocaleChange(event: Event) {
-  language.setLocale((event.target as HTMLSelectElement).value as Locale)
+  language.chooseLocale((event.target as HTMLSelectElement).value as Locale)
 }
 </script>
 
