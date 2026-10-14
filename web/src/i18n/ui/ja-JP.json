@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Far Far West — ビルドプランナー"
+  },
+  "menu": {
+    "version": "ゲーム v{version} · {date} のデータ",
+    "versionShort": "v{version} · {date}",
+    "builds": "ビルド",
+    "newBuild": "新規ビルド",
+    "myBuilds": "マイビルド…",
+    "import": "インポート…",
+    "export": "共有…",
+    "unavailable": "保存できません"
+  },
+  "home": {
+    "untitled": "無題のビルド",
+    "rename": "ビルド名",
+    "chooseMain": "メイン武器を選択",
+    "chooseSidearm": "サブ武器を選択",
+    "chooseUtility": "補助系を選択",
+    "chooseSpells": "スペルを選択",
+    "summary": "概要",
+    "prestiges": "プレステージ {n} | プレステージ {n} | プレステージ {n}",
+    "problems": "問題なし | 問題 1 件 | 問題 {n} 件",
+    "complete": "ビルドは完成しており有効です",
+    "assumed": "プレステージ：推定ルール（プレステージ・ショップで購入したボーナスはすぐに使用可能とみなす）"
+  },
+  "problem": {
+    "missing_weapon_main": "メイン武器が選択されていません",
+    "missing_weapon_sidearm": "サブ武器が選択されていません",
+    "missing_element": "サブ武器の属性が選択されていません",
+    "missing_utility": "補助系が選択されていません",
+    "missing_spell": "スペルスロット [{key}] が空です",
+    "unknown_id": "不明なアイテム {name}（ゲームから削除された？）",
+    "wrong_item": "{name} はここでは使用できません",
+    "duplicate_spell": "{name} が2回装備されています",
+    "joker_incompatible": "{name} は{carrier}に装備できません",
+    "joker_not_equippable": "{name} はロビーで装備できません",
+    "joker_too_many_copies": "{name}：{copies} 枚（最大 {max}）",
+    "joker_slots_exceeded": "{carrier}：ジョーカースロット {used}/{max}",
+    "upgrade_incompatible": "{name} は{carrier}では使用できません",
+    "upgrade_too_many_points": "{name}：{points}/{max} ポイント",
+    "upgrade_points_exceeded": "{carrier}：アップグレードポイント {used}/{max}"
+  },
+  "picker": {
+    "clearsLoadout": "装備すると、{weapon}のジョーカーとアップグレードが外れます。"
+  },
+  "customize": {
+    "minLevel": "最低レベル {level}",
+    "upgradesNeed": "アップグレード：{used} ポイント → レベル {level}",
+    "jokersNeed": "ジョーカー：{used} スロット → レベル {level}",
+    "bought": "+ プレステージ・ショップで {n} 購入 | + プレステージ・ショップで {n} 購入 | + プレステージ・ショップで {n} 購入",
+    "requirements": "必要な進行度",
+    "jokerSlots": "{used}/{max} スロット",
+    "prestigeSlot": "プレステージ・ショップで購入したスロット",
+    "addPoint": "{name}にポイントを追加",
+    "removePoint": "{name}からポイントを削除",
+    "setPoints": "{name}：{n} ポイント"
+  },
+  "jokers": {
+    "rarity": "レア度",
+    "search": "名前や効果で検索…",
+    "noResult": "該当するジョーカーはありません。",
+    "noRoom": "スロットが足りません（{cost} 必要）",
+    "cost": "{n} スロット消費 | 1 スロット消費 | {n} スロット消費",
+    "removeHint": "装備中のジョーカーをクリックすると外せます"
+  },
+  "spells": {
+    "hint": "スペルをクリックしてから、スロットをクリックします。スロットをクリックすると空にできます。",
+    "pickSlot": "{name}のスロットを選択（Esc でキャンセル）"
+  },
+  "dialog": {
+    "close": "閉じる",
+    "exportTitle": "ビルドを共有",
+    "linkHelp": "このリンクを送ってください。開いた人のプランナーでビルドが表示され、その人のビルドに追加されます。",
+    "exportHelp": "または、このテキストをコピーして、プランナーの「インポート」で貼り付けてください。",
+    "copy": "コピー",
+    "copyLink": "リンクをコピー",
+    "copied": "コピーしました！",
+    "importTitle": "ビルドをインポート",
+    "importHelp": "エクスポートしたビルドのテキスト（FFW1: で始まる）を貼り付けてください。ビルドに追加されます。",
+    "import": "インポート",
+    "importError": {
+      "prefix": "エクスポートされたビルドではありません。テキストは FFW1: で始まる必要があります。",
+      "encoding": "テキストが不完全か、破損しています。",
+      "format": "テキストにビルドが含まれていません。",
+      "version": "このビルドは新しいバージョンのプランナーで作成されています。"
+    }
+  },
+  "builds": {
+    "title": "マイビルド",
+    "current": "編集中",
+    "updated": "{date} に更新",
+    "duplicate": "複製",
+    "delete": "削除",
+    "copyName": "{name}（コピー）",
+    "confirmDelete": "ビルド「{name}」を削除しますか？元に戻せません。",
+    "unavailable": "お使いのブラウザでは保存できません。ページを閉じるとビルドは失われます。"
+  },
+  "share": {
+    "invalidTitle": "無効な共有リンク"
+  },
+  "guides": {
+    "label": "ゲームガイド",
+    "jokers": "全ジョーカー",
+    "weapons": "武器とジョーカー",
+    "spells": "スペルとクールダウン",
+    "progression": "ジョーカースロットとプレステージ"
+  }
+}

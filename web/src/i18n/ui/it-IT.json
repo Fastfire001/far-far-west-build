@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Far Far West — Pianificatore di build"
+  },
+  "menu": {
+    "version": "Gioco v{version} · dati del {date}",
+    "versionShort": "v{version} · {date}",
+    "builds": "Build",
+    "newBuild": "Nuova build",
+    "myBuilds": "Le mie build…",
+    "import": "Importa…",
+    "export": "Condividi…",
+    "unavailable": "Salvataggio non disponibile"
+  },
+  "home": {
+    "untitled": "Build senza nome",
+    "rename": "Nome della build",
+    "chooseMain": "Scegli un'arma principale",
+    "chooseSidearm": "Scegli un'arma secondaria",
+    "chooseUtility": "Scegli un'utilità",
+    "chooseSpells": "Scegli gli incantesimi",
+    "summary": "Riepilogo",
+    "prestiges": "{n} prestigi | {n} prestigio | {n} prestigi",
+    "problems": "Nessun problema | 1 problema | {n} problemi",
+    "complete": "Build completa e valida",
+    "assumed": "Prestigi: regola presunta (bonus acquistati nel negozio prestigio utilizzabili subito)"
+  },
+  "problem": {
+    "missing_weapon_main": "Nessuna arma principale scelta",
+    "missing_weapon_sidearm": "Nessuna arma secondaria scelta",
+    "missing_element": "Nessun elemento scelto per l'arma secondaria",
+    "missing_utility": "Nessuna utilità scelta",
+    "missing_spell": "Lo slot incantesimo [{key}] è vuoto",
+    "unknown_id": "Oggetto sconosciuto {name} (rimosso dal gioco?)",
+    "wrong_item": "{name} non può essere usato qui",
+    "duplicate_spell": "{name} è equipaggiato due volte",
+    "joker_incompatible": "{name} non può essere equipaggiato su {carrier}",
+    "joker_not_equippable": "{name} non può essere equipaggiato nella lobby",
+    "joker_too_many_copies": "{name}: {copies} copie, {max} max",
+    "joker_slots_exceeded": "{carrier}: {used}/{max} slot jolly",
+    "upgrade_incompatible": "{name} non è disponibile su {carrier}",
+    "upgrade_too_many_points": "{name}: {points}/{max} punti",
+    "upgrade_points_exceeded": "{carrier}: {used}/{max} punti potenziamento"
+  },
+  "picker": {
+    "clearsLoadout": "Equipaggiandola rimuovi i jolly e i potenziamenti di {weapon}."
+  },
+  "customize": {
+    "minLevel": "Liv. min. {level}",
+    "upgradesNeed": "Potenziamenti: {used} punti → livello {level}",
+    "jokersNeed": "Jolly: {used} slot → livello {level}",
+    "bought": "+ {n} acquistati nel negozio prestigio | + {n} acquistato nel negozio prestigio | + {n} acquistati nel negozio prestigio",
+    "requirements": "Progressione richiesta",
+    "jokerSlots": "{used}/{max} slot",
+    "prestigeSlot": "Slot acquistato nel negozio prestigio",
+    "addPoint": "Aggiungi un punto a {name}",
+    "removePoint": "Rimuovi un punto da {name}",
+    "setPoints": "{name}: {n} punti"
+  },
+  "jokers": {
+    "rarity": "Rarità",
+    "search": "Cerca un nome o un effetto…",
+    "noResult": "Nessun jolly corrispondente.",
+    "noRoom": "Slot insufficienti ({cost} richiesti)",
+    "cost": "Costa {n} slot | Costa 1 slot | Costa {n} slot",
+    "removeHint": "Clicca su un jolly equipaggiato per rimuoverlo"
+  },
+  "spells": {
+    "hint": "Clicca su un incantesimo, poi su uno slot. Clicca su uno slot per svuotarlo.",
+    "pickSlot": "Scegli uno slot per {name} (Esc per annullare)"
+  },
+  "dialog": {
+    "close": "Chiudi",
+    "exportTitle": "Condividi la build",
+    "linkHelp": "Invia questo link: apre la build nel pianificatore, che la aggiunge alle build di chi lo apre.",
+    "exportHelp": "Oppure copia questo testo, da incollare nel pianificatore con Importa.",
+    "copy": "Copia",
+    "copyLink": "Copia il link",
+    "copied": "Copiato!",
+    "importTitle": "Importa una build",
+    "importHelp": "Incolla il testo di una build esportata (inizia con FFW1:). Verrà aggiunta alle tue build.",
+    "import": "Importa",
+    "importError": {
+      "prefix": "Non è una build esportata: il testo deve iniziare con FFW1:.",
+      "encoding": "Il testo è incompleto o danneggiato.",
+      "format": "Il testo non contiene una build.",
+      "version": "Questa build proviene da una versione più recente del pianificatore."
+    }
+  },
+  "builds": {
+    "title": "Le mie build",
+    "current": "In modifica",
+    "updated": "Modificata il {date}",
+    "duplicate": "Duplica",
+    "delete": "Elimina",
+    "copyName": "{name} (copia)",
+    "confirmDelete": "Eliminare la build “{name}”? L'operazione non può essere annullata.",
+    "unavailable": "Il tuo browser non consente il salvataggio: le build andranno perse alla chiusura della pagina."
+  },
+  "share": {
+    "invalidTitle": "Link di condivisione non valido"
+  },
+  "guides": {
+    "label": "Guide al gioco",
+    "jokers": "Tutti i jolly",
+    "weapons": "Armi e relativi jolly",
+    "spells": "Incantesimi e tempi di recupero",
+    "progression": "Slot jolly e prestigio"
+  }
+}

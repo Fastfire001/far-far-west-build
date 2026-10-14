@@ -39,9 +39,11 @@ repository layout, and [docs/](docs/) for the game rules and the design decision
 
 ## Translations
 
-Game texts come from the game in its 15 languages. The planner's own texts are in `web/src/i18n/ui/<language>.json`
-(English and French today). To add a language, copy `en.json`, translate it and register it in
-`web/src/i18n/index.ts`; any missing key falls back to English.
+Game texts come from the game in its 15 languages. The planner's own texts are ours, in the same 15 languages: the
+interface in `web/src/i18n/ui/<language>.json`, the content pages in `web/src/pages/i18n/<language>.json` (one file
+per game language, e.g. `zh-TW.json`). When you add or change an English text, update every language: a test checks
+that each file has the keys, variables (`{name}`) and plural forms (`a | b | c`) of `en-US.json`. Use the game's own
+words for its concepts (joker, slot, prestige…): see `data/i18n/ui/<language>.json` and `data/i18n/<language>.json`.
 
 ## Pull requests
 

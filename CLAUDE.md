@@ -49,8 +49,8 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 
 - Every new script is run through an entry in `bin/` that runs it in a container, like `bin/extract-game`.
 - Containers run as the host user: generated files must not belong to root.
-- Everything in English: documentation, README, code and comments. Only the French interface translation
-  (`web/src/i18n/ui/fr.json`) and the game's translations are in other languages.
+- Everything in English: documentation, README, code and comments. Only our interface and page translations
+  (`web/src/i18n/ui/`, `web/src/pages/i18n/`, 15 languages) and the game's translations are in other languages.
 - Files extracted from the game stay in `.cache/`: never version or publish them. Only the values the planner needs
   go into `data/`.
 - Items are referenced by their internal game id (`itemPistol`, `jokerCrackShot`), never by their displayed name.

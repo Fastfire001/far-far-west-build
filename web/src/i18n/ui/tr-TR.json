@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Far Far West — Build planlayıcı"
+  },
+  "menu": {
+    "version": "Oyun v{version} · veriler: {date}",
+    "versionShort": "v{version} · {date}",
+    "builds": "Build'ler",
+    "newBuild": "Yeni build",
+    "myBuilds": "Build'lerim…",
+    "import": "İçe aktar…",
+    "export": "Paylaş…",
+    "unavailable": "Kayıt kullanılamıyor"
+  },
+  "home": {
+    "untitled": "Adsız build",
+    "rename": "Build adı",
+    "chooseMain": "Ana silah seç",
+    "chooseSidearm": "Yan silah seç",
+    "chooseUtility": "Destek ekipmanı seç",
+    "chooseSpells": "Büyü seç",
+    "summary": "Özet",
+    "prestiges": "{n} prestij | {n} prestij | {n} prestij",
+    "problems": "Sorun yok | 1 sorun | {n} sorun",
+    "complete": "Build eksiksiz ve geçerli",
+    "assumed": "Prestijler: varsayılan kural (prestij mağazasından alınan bonuslar hemen kullanılabilir)"
+  },
+  "problem": {
+    "missing_weapon_main": "Ana silah seçilmedi",
+    "missing_weapon_sidearm": "Yan silah seçilmedi",
+    "missing_element": "Yan silah için element seçilmedi",
+    "missing_utility": "Destek ekipmanı seçilmedi",
+    "missing_spell": "[{key}] büyü yuvası boş",
+    "unknown_id": "Bilinmeyen öğe: {name} (oyundan kaldırılmış olabilir)",
+    "wrong_item": "{name} burada kullanılamaz",
+    "duplicate_spell": "{name} iki kez kuşanılmış",
+    "joker_incompatible": "{name}, {carrier} için kuşanılamaz",
+    "joker_not_equippable": "{name} lobide kuşanılamaz",
+    "joker_too_many_copies": "{name}: {copies} kopya, en fazla {max}",
+    "joker_slots_exceeded": "{carrier}: {used}/{max} joker yuvası",
+    "upgrade_incompatible": "{name}, {carrier} için kullanılamaz",
+    "upgrade_too_many_points": "{name}: {points}/{max} puan",
+    "upgrade_points_exceeded": "{carrier}: {used}/{max} yükseltme puanı"
+  },
+  "picker": {
+    "clearsLoadout": "Kuşanırsan {weapon} silahındaki jokerler ve yükseltmeler kaldırılır."
+  },
+  "customize": {
+    "minLevel": "En az {level}. Svy",
+    "upgradesNeed": "Yükseltmeler: {used} puan → {level}. seviye",
+    "jokersNeed": "Jokerler: {used} yuva → {level}. seviye",
+    "bought": "+ {n} prestij mağazasından | + {n} prestij mağazasından | + {n} prestij mağazasından",
+    "requirements": "Gereken ilerleme",
+    "jokerSlots": "{used}/{max} yuva",
+    "prestigeSlot": "Prestij mağazasından alınan yuva",
+    "addPoint": "{name}: bir puan ekle",
+    "removePoint": "{name}: bir puan çıkar",
+    "setPoints": "{name}: {n} puan"
+  },
+  "jokers": {
+    "rarity": "Nadirlik",
+    "search": "Ad veya etki ara…",
+    "noResult": "Eşleşen joker yok.",
+    "noRoom": "Yeterli yuva yok ({cost} gerekli)",
+    "cost": "{n} yuva | 1 yuva | {n} yuva",
+    "removeHint": "Kaldırmak için kuşanılmış bir jokere tıkla"
+  },
+  "spells": {
+    "hint": "Bir büyüye, sonra bir yuvaya tıkla. Boşaltmak için bir yuvaya tıkla.",
+    "pickSlot": "{name} için bir yuva seç (iptal için Esc)"
+  },
+  "dialog": {
+    "close": "Kapat",
+    "exportTitle": "Build'i paylaş",
+    "linkHelp": "Bu bağlantıyı gönder: build'i planlayıcıda açar ve açan kişinin build'lerine ekler.",
+    "exportHelp": "Ya da bu metni kopyala ve planlayıcıda İçe aktar ile yapıştır.",
+    "copy": "Kopyala",
+    "copyLink": "Bağlantıyı kopyala",
+    "copied": "Kopyalandı!",
+    "importTitle": "Build içe aktar",
+    "importHelp": "Dışa aktarılmış bir build'in metnini yapıştır (FFW1: ile başlar). Build'lerine eklenir.",
+    "import": "İçe aktar",
+    "importError": {
+      "prefix": "Bu, dışa aktarılmış bir build değil: metin FFW1: ile başlamalı.",
+      "encoding": "Metin eksik veya bozuk.",
+      "format": "Metin bir build içermiyor.",
+      "version": "Bu build, planlayıcının daha yeni bir sürümünden geliyor."
+    }
+  },
+  "builds": {
+    "title": "Build'lerim",
+    "current": "Düzenleniyor",
+    "updated": "Değiştirildi: {date}",
+    "duplicate": "Çoğalt",
+    "delete": "Sil",
+    "copyName": "{name} (kopya)",
+    "confirmDelete": "“{name}” build'i silinsin mi? Bu işlem geri alınamaz.",
+    "unavailable": "Tarayıcın kayda izin vermiyor: sayfa kapatılınca build'ler kaybolacak."
+  },
+  "share": {
+    "invalidTitle": "Geçersiz paylaşım bağlantısı"
+  },
+  "guides": {
+    "label": "Oyun rehberleri",
+    "jokers": "Tüm jokerler",
+    "weapons": "Silahlar ve jokerleri",
+    "spells": "Büyüler ve bekleme süreleri",
+    "progression": "Joker yuvaları ve prestij"
+  }
+}

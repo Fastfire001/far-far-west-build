@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Far Far West — 빌드 플래너"
+  },
+  "menu": {
+    "version": "게임 v{version} · {date} 기준 데이터",
+    "versionShort": "v{version} · {date}",
+    "builds": "빌드",
+    "newBuild": "새 빌드",
+    "myBuilds": "내 빌드…",
+    "import": "가져오기…",
+    "export": "공유…",
+    "unavailable": "저장할 수 없음"
+  },
+  "home": {
+    "untitled": "이름 없는 빌드",
+    "rename": "빌드 이름",
+    "chooseMain": "주무기 선택",
+    "chooseSidearm": "보조 무기 선택",
+    "chooseUtility": "유틸리티 선택",
+    "chooseSpells": "주문 선택",
+    "summary": "요약",
+    "prestiges": "명성 {n} | 명성 {n} | 명성 {n}",
+    "problems": "문제 없음 | 문제 1개 | 문제 {n}개",
+    "complete": "빌드가 완성되었으며 유효합니다",
+    "assumed": "명성: 추정 규칙 (명성 스토어에서 구매한 보너스를 바로 사용할 수 있다고 가정)"
+  },
+  "problem": {
+    "missing_weapon_main": "주무기를 선택하지 않았습니다",
+    "missing_weapon_sidearm": "보조 무기를 선택하지 않았습니다",
+    "missing_element": "보조 무기의 원소를 선택하지 않았습니다",
+    "missing_utility": "유틸리티를 선택하지 않았습니다",
+    "missing_spell": "주문 슬롯 [{key}]이(가) 비어 있습니다",
+    "unknown_id": "알 수 없는 아이템 {name} (게임에서 삭제됨?)",
+    "wrong_item": "{name}은(는) 여기에서 사용할 수 없습니다",
+    "duplicate_spell": "{name}이(가) 두 번 장착되었습니다",
+    "joker_incompatible": "{name}은(는) {carrier}에 장착할 수 없습니다",
+    "joker_not_equippable": "{name}은(는) 로비에서 장착할 수 없습니다",
+    "joker_too_many_copies": "{name}: {copies}장, 최대 {max}장",
+    "joker_slots_exceeded": "{carrier}: 조커 슬롯 {used}/{max}",
+    "upgrade_incompatible": "{name}은(는) {carrier}에서 사용할 수 없습니다",
+    "upgrade_too_many_points": "{name}: {points}/{max} 포인트",
+    "upgrade_points_exceeded": "{carrier}: 업그레이드 포인트 {used}/{max}"
+  },
+  "picker": {
+    "clearsLoadout": "장착하면 {weapon}의 조커와 업그레이드가 해제됩니다."
+  },
+  "customize": {
+    "minLevel": "최소 레벨 {level}",
+    "upgradesNeed": "업그레이드: {used} 포인트 → 레벨 {level}",
+    "jokersNeed": "조커: {used} 슬롯 → 레벨 {level}",
+    "bought": "+ 명성 스토어에서 {n}개 구매 | + 명성 스토어에서 {n}개 구매 | + 명성 스토어에서 {n}개 구매",
+    "requirements": "필요한 진행도",
+    "jokerSlots": "{used}/{max} 슬롯",
+    "prestigeSlot": "명성 스토어에서 구매한 슬롯",
+    "addPoint": "{name}에 포인트 추가",
+    "removePoint": "{name}에서 포인트 제거",
+    "setPoints": "{name}: {n} 포인트"
+  },
+  "jokers": {
+    "rarity": "희귀도",
+    "search": "이름 또는 효과 검색…",
+    "noResult": "일치하는 조커가 없습니다.",
+    "noRoom": "슬롯 부족 ({cost}개 필요)",
+    "cost": "슬롯 {n}개 사용 | 슬롯 1개 사용 | 슬롯 {n}개 사용",
+    "removeHint": "장착한 조커를 클릭하면 해제됩니다"
+  },
+  "spells": {
+    "hint": "주문을 클릭한 다음 슬롯을 클릭하세요. 슬롯을 클릭하면 비울 수 있습니다.",
+    "pickSlot": "{name}을(를) 넣을 슬롯 선택 (Esc로 취소)"
+  },
+  "dialog": {
+    "close": "닫기",
+    "exportTitle": "빌드 공유",
+    "linkHelp": "이 링크를 보내세요. 링크를 연 사람의 플래너에서 빌드가 열리고, 그 사람의 빌드 목록에 추가됩니다.",
+    "exportHelp": "또는 이 텍스트를 복사해 플래너의 가져오기에 붙여넣으세요.",
+    "copy": "복사",
+    "copyLink": "링크 복사",
+    "copied": "복사했습니다!",
+    "importTitle": "빌드 가져오기",
+    "importHelp": "내보낸 빌드의 텍스트(FFW1:로 시작)를 붙여넣으세요. 내 빌드에 추가됩니다.",
+    "import": "가져오기",
+    "importError": {
+      "prefix": "내보낸 빌드가 아닙니다. 텍스트는 FFW1:로 시작해야 합니다.",
+      "encoding": "텍스트가 불완전하거나 손상되었습니다.",
+      "format": "텍스트에 빌드가 없습니다.",
+      "version": "이 빌드는 더 새로운 버전의 플래너에서 만들어졌습니다."
+    }
+  },
+  "builds": {
+    "title": "내 빌드",
+    "current": "편집 중",
+    "updated": "{date} 수정",
+    "duplicate": "복제",
+    "delete": "삭제",
+    "copyName": "{name} (사본)",
+    "confirmDelete": "빌드 “{name}”을(를) 삭제할까요? 되돌릴 수 없습니다.",
+    "unavailable": "브라우저에서 저장을 허용하지 않습니다. 페이지를 닫으면 빌드가 사라집니다."
+  },
+  "share": {
+    "invalidTitle": "잘못된 공유 링크"
+  },
+  "guides": {
+    "label": "게임 가이드",
+    "jokers": "모든 조커",
+    "weapons": "무기와 조커",
+    "spells": "주문과 재사용 대기시간",
+    "progression": "조커 슬롯과 명성"
+  }
+}

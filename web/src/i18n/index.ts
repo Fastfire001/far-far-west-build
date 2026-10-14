@@ -1,11 +1,10 @@
-// Two kinds of texts: the planner's own interface (src/i18n/ui/, translated by us, English fallback) and the game
+// Two kinds of texts: the planner's own interface (src/i18n/ui/<locale>.json, translated by us, English fallback) and the game
 // texts (official translations from data/i18n/, see stores/language.ts). The game's menu labels (data/i18n/ui/)
 // are merged into the interface messages under the "game" key: t('game.back').
 import { createI18n } from 'vue-i18n'
 import gameUiEn from '@data/i18n/ui/en-US.json'
 import languageNames from '@data/i18n/languages.json'
-import en from './ui/en.json'
-import fr from './ui/fr.json'
+import en from './ui/en-US.json'
 
 /** The game's 15 languages, as named in data/i18n/. */
 export const LOCALES = [
@@ -21,10 +20,18 @@ export const LANGUAGE_NAMES = languageNames as Record<Locale, string>
 
 export type UiMessages = typeof en & { game: typeof gameUiEn }
 
-// Only some languages have our own interface texts: the others fall back to English.
+// English is bundled; the other languages are loaded on demand by the language store (loadUiMessages). A missing
+// key falls back to English.
 const messages: Partial<Record<Locale, UiMessages>> = {
   'en-US': { ...en, game: gameUiEn },
-  'fr-FR': fr as UiMessages,
+}
+
+const uiLoaders = import.meta.glob<Record<string, unknown>>('./ui/*.json', { import: 'default' })
+
+/** Our interface texts in one language ({} if there are none). */
+export async function loadUiMessages(locale: Locale): Promise<Record<string, unknown>> {
+  const load = uiLoaders[`./ui/${locale}.json`]
+  return load ? load() : {}
 }
 
 export const i18n = createI18n({

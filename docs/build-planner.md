@@ -97,7 +97,10 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
 - The interface reuses the game's menu labels when they exist (`data/i18n/ui/`, 15 languages: BACK, Customize,
   rarities…), and the game's language names for the picker (`data/i18n/languages.json`).
 - The rest of the interface (summary, validation messages…) does not exist in the game: it is translated by us in
-  `web/src/i18n/ui/` (English and French for now). A missing key falls back to English.
+  `web/src/i18n/ui/<language>.json`, in the game's 15 languages, with the game's own words for its concepts (joker,
+  slot, prestige…). English is bundled, the other languages are loaded on demand. A missing key falls back to
+  English. vue-i18n does not apply Slavic plural rules: Polish, Russian and Ukrainian texts are worded so that each
+  plural form reads right for any number.
 
 ## Content pages
 
@@ -114,7 +117,7 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   and that every internal link leads to a page.
 - **15 languages**: English at the root, the others under a prefix (`fr/`, `es-419/`, `pt-br/`…, `LOCALE_PREFIXES`
   in `src/pages/routes.ts`), linked together with `hreflang`. Names and descriptions come from the game's
-  translations; the page texts (`src/pages/i18n/`) are ours, English and French for now, English elsewhere.
+  translations; the page texts (`src/pages/i18n/<language>.json`) are ours, in the 15 languages.
 - Rendered with the planner's own data and rules (`src/domain/`), the game's menu labels (rarity names), the
   generated icons (copied to `icons/<id>.svg`) and the planner's stylesheet (`src/styles/main.css`, followed by
   `src/pages/pages.css`, published as `pages/style.css`).

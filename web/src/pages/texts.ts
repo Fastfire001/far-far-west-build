@@ -1,8 +1,8 @@
 // Texts of the content pages in one language: the game's names and descriptions (data/i18n/), the game's menu labels
-// (data/i18n/ui/) and our own page texts (pages/i18n/, English and French for now). Anything missing falls back to
+// (data/i18n/ui/) and our own page texts (pages/i18n/<locale>.json). Anything missing falls back to
 // English.
 import { DEFAULT_LOCALE, type Locale } from '@/i18n'
-import en from './i18n/en.json'
+import en from './i18n/en-US.json'
 
 interface GameText {
   name: string
@@ -49,7 +49,7 @@ export function textsFor(locale: Locale): Texts {
   const game = gameTexts[`../../../data/i18n/${locale}.json`] ?? english
   const ui = gameUi[`../../../data/i18n/ui/${locale}.json`] ?? {}
   const englishUi = gameUi[`../../../data/i18n/ui/${DEFAULT_LOCALE}.json`]
-  const page = pageTexts[`./i18n/${locale.split('-')[0]}.json`]
+  const page = pageTexts[`./i18n/${locale}.json`]
   return {
     locale,
     name: (id) => (game[id]?.name ?? english[id]?.name ?? id).replace(/\s*\n\s*/g, ' '),

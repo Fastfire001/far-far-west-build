@@ -5,7 +5,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { equipment, jokers, spells, spellSchools, upgrades } from '@/domain/gameData'
-import { DEFAULT_LOCALE, detectLocale, i18n, LOCALES, type Locale } from '@/i18n'
+import { DEFAULT_LOCALE, detectLocale, i18n, loadUiMessages, LOCALES, type Locale } from '@/i18n'
 
 interface GameText {
   name: string
@@ -41,9 +41,9 @@ export const useLanguageStore = defineStore('language', () => {
   async function setLocale(value: Locale): Promise<void> {
     const load = loaders[`../../../data/i18n/${value}.json`]
     const loadUi = uiLoaders[`../../../data/i18n/ui/${value}.json`]
-    const [loaded, ui] = await Promise.all([load ? load() : {}, loadUi ? loadUi() : {}])
+    const [loaded, ui, own] = await Promise.all([load ? load() : {}, loadUi ? loadUi() : {}, loadUiMessages(value)])
     // Switch everything at once, once the game texts are there.
-    i18n.global.mergeLocaleMessage(value, { game: ui })
+    i18n.global.mergeLocaleMessage(value, { ...own, game: ui })
     texts.value = loaded
     locale.value = value
     i18n.global.locale.value = value

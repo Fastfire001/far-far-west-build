@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Far Far West — Build planner"
+  },
+  "menu": {
+    "version": "Juego v{version} · datos del {date}",
+    "versionShort": "v{version} · {date}",
+    "builds": "Builds",
+    "newBuild": "Nueva build",
+    "myBuilds": "Mis builds…",
+    "import": "Importar…",
+    "export": "Compartir…",
+    "unavailable": "No se puede guardar"
+  },
+  "home": {
+    "untitled": "Build sin nombre",
+    "rename": "Nombre de la build",
+    "chooseMain": "Elige un arma principal",
+    "chooseSidearm": "Elige un arma secundaria",
+    "chooseUtility": "Elige un apoyo",
+    "chooseSpells": "Elige hechizos",
+    "summary": "Resumen",
+    "prestiges": "{n} prestigios | {n} prestigio | {n} prestigios",
+    "problems": "Ningún problema | 1 problema | {n} problemas",
+    "complete": "Build completa y válida",
+    "assumed": "Prestigios: regla supuesta (las mejoras compradas en la tienda de prestigio se pueden usar de inmediato)"
+  },
+  "problem": {
+    "missing_weapon_main": "No elegiste un arma principal",
+    "missing_weapon_sidearm": "No elegiste un arma secundaria",
+    "missing_element": "No elegiste un elemento para el arma secundaria",
+    "missing_utility": "No elegiste un apoyo",
+    "missing_spell": "El espacio de hechizo [{key}] está vacío",
+    "unknown_id": "Objeto desconocido {name} (¿se quitó del juego?)",
+    "wrong_item": "{name} no se puede usar aquí",
+    "duplicate_spell": "{name} está equipado dos veces",
+    "joker_incompatible": "{name} no se puede equipar en {carrier}",
+    "joker_not_equippable": "{name} no se puede equipar en el lobby",
+    "joker_too_many_copies": "{name}: {copies} copias, {max} como máximo",
+    "joker_slots_exceeded": "{carrier}: {used}/{max} espacios para comodines",
+    "upgrade_incompatible": "{name} no está disponible en {carrier}",
+    "upgrade_too_many_points": "{name}: {points}/{max} puntos",
+    "upgrade_points_exceeded": "{carrier}: {used}/{max} puntos de mejora"
+  },
+  "picker": {
+    "clearsLoadout": "Si lo equipas, se quitan los comodines y las mejoras de {weapon}."
+  },
+  "customize": {
+    "minLevel": "Nivel mín. {level}",
+    "upgradesNeed": "Mejoras: {used} puntos → nivel {level}",
+    "jokersNeed": "Comodines: {used} espacios → nivel {level}",
+    "bought": "+ {n} de la tienda de prestigio | + {n} de la tienda de prestigio | + {n} de la tienda de prestigio",
+    "requirements": "Progresión necesaria",
+    "jokerSlots": "{used}/{max} espacios",
+    "prestigeSlot": "Espacio comprado en la tienda de prestigio",
+    "addPoint": "Agregar un punto a {name}",
+    "removePoint": "Quitar un punto a {name}",
+    "setPoints": "{name}: {n} puntos"
+  },
+  "jokers": {
+    "rarity": "Rareza",
+    "search": "Busca un nombre o un efecto…",
+    "noResult": "Ningún comodín coincide.",
+    "noRoom": "No hay espacios suficientes (se necesitan {cost})",
+    "cost": "Cuesta {n} espacios | Cuesta 1 espacio | Cuesta {n} espacios",
+    "removeHint": "Haz clic en un comodín equipado para quitarlo"
+  },
+  "spells": {
+    "hint": "Haz clic en un hechizo y luego en un espacio. Haz clic en un espacio para vaciarlo.",
+    "pickSlot": "Elige un espacio para {name} (Esc para cancelar)"
+  },
+  "dialog": {
+    "close": "Cerrar",
+    "exportTitle": "Compartir la build",
+    "linkHelp": "Envía este enlace: abre la build en el planificador, que la agrega a las builds de quien lo abra.",
+    "exportHelp": "O copia este texto para pegarlo en el planificador con Importar.",
+    "copy": "Copiar",
+    "copyLink": "Copiar el enlace",
+    "copied": "¡Copiado!",
+    "importTitle": "Importar una build",
+    "importHelp": "Pega el texto de una build exportada (empieza con FFW1:). Se agregará a tus builds.",
+    "import": "Importar",
+    "importError": {
+      "prefix": "No es una build exportada: el texto debe empezar con FFW1:.",
+      "encoding": "El texto está incompleto o dañado.",
+      "format": "El texto no contiene ninguna build.",
+      "version": "Esta build viene de una versión más reciente del planificador."
+    }
+  },
+  "builds": {
+    "title": "Mis builds",
+    "current": "En edición",
+    "updated": "Modificada el {date}",
+    "duplicate": "Duplicar",
+    "delete": "Eliminar",
+    "copyName": "{name} (copia)",
+    "confirmDelete": "¿Eliminar la build \"{name}\"? Esta acción no se puede deshacer.",
+    "unavailable": "Tu navegador no permite guardar: las builds se perderán al cerrar la página."
+  },
+  "share": {
+    "invalidTitle": "Enlace para compartir no válido"
+  },
+  "guides": {
+    "label": "Guías del juego",
+    "jokers": "Todos los comodines",
+    "weapons": "Armas y sus comodines",
+    "spells": "Hechizos y tiempos de recarga",
+    "progression": "Espacios para comodines y prestigio"
+  }
+}

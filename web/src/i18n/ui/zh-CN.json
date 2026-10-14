@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Far Far West — 配装规划器"
+  },
+  "menu": {
+    "version": "游戏版本 v{version} · 数据日期 {date}",
+    "versionShort": "v{version} · {date}",
+    "builds": "配装",
+    "newBuild": "新建配装",
+    "myBuilds": "我的配装…",
+    "import": "导入…",
+    "export": "分享…",
+    "unavailable": "无法保存"
+  },
+  "home": {
+    "untitled": "未命名配装",
+    "rename": "配装名称",
+    "chooseMain": "选择主武器",
+    "chooseSidearm": "选择副武器",
+    "chooseUtility": "选择辅助道具",
+    "chooseSpells": "选择法术",
+    "summary": "概览",
+    "prestiges": "{n} 次声望 | {n} 次声望 | {n} 次声望",
+    "problems": "没有问题 | 1 个问题 | {n} 个问题",
+    "complete": "配装完整且有效",
+    "assumed": "声望：推测规则（在声望商店购买的加成可立即使用）"
+  },
+  "problem": {
+    "missing_weapon_main": "未选择主武器",
+    "missing_weapon_sidearm": "未选择副武器",
+    "missing_element": "未给副武器选择元素",
+    "missing_utility": "未选择辅助道具",
+    "missing_spell": "法术槽位 [{key}] 为空",
+    "unknown_id": "未知物品 {name}（已从游戏中移除？）",
+    "wrong_item": "{name} 不能用在这里",
+    "duplicate_spell": "{name} 被装备了两次",
+    "joker_incompatible": "{name} 无法装备在{carrier}上",
+    "joker_not_equippable": "{name} 无法在大厅装备",
+    "joker_too_many_copies": "{name}：{copies} 张，最多 {max} 张",
+    "joker_slots_exceeded": "{carrier}：奇术卡槽位 {used}/{max}",
+    "upgrade_incompatible": "{name} 不适用于{carrier}",
+    "upgrade_too_many_points": "{name}：{points}/{max} 点",
+    "upgrade_points_exceeded": "{carrier}：升级点数 {used}/{max}"
+  },
+  "picker": {
+    "clearsLoadout": "装备后将移除{weapon}的奇术卡和升级。"
+  },
+  "customize": {
+    "minLevel": "最低 {level} 级",
+    "upgradesNeed": "升级：{used} 点 → {level} 级",
+    "jokersNeed": "奇术卡：{used} 个槽位 → {level} 级",
+    "bought": "+ {n} 个在声望商店购买 | + {n} 个在声望商店购买 | + {n} 个在声望商店购买",
+    "requirements": "所需进度",
+    "jokerSlots": "槽位 {used}/{max}",
+    "prestigeSlot": "在声望商店购买的槽位",
+    "addPoint": "为{name}增加 1 点",
+    "removePoint": "从{name}移除 1 点",
+    "setPoints": "{name}：{n} 点"
+  },
+  "jokers": {
+    "rarity": "稀有度",
+    "search": "搜索名称或效果…",
+    "noResult": "没有匹配的奇术卡。",
+    "noRoom": "槽位不足（需要 {cost} 个）",
+    "cost": "占用 {n} 个槽位 | 占用 1 个槽位 | 占用 {n} 个槽位",
+    "removeHint": "点击已装备的奇术卡即可移除"
+  },
+  "spells": {
+    "hint": "先点击法术，再点击槽位。点击槽位可将其清空。",
+    "pickSlot": "为{name}选择槽位（按 Esc 取消）"
+  },
+  "dialog": {
+    "close": "关闭",
+    "exportTitle": "分享配装",
+    "linkHelp": "发送此链接：它会在规划器中打开该配装，并添加到打开者的配装列表中。",
+    "exportHelp": "或复制这段文本，在规划器中通过“导入”粘贴。",
+    "copy": "复制",
+    "copyLink": "复制链接",
+    "copied": "已复制！",
+    "importTitle": "导入配装",
+    "importHelp": "粘贴导出的配装文本（以 FFW1: 开头）。它会被添加到你的配装中。",
+    "import": "导入",
+    "importError": {
+      "prefix": "这不是导出的配装：文本必须以 FFW1: 开头。",
+      "encoding": "文本不完整或已损坏。",
+      "format": "文本中不包含配装。",
+      "version": "此配装来自更新版本的规划器。"
+    }
+  },
+  "builds": {
+    "title": "我的配装",
+    "current": "正在编辑",
+    "updated": "修改于 {date}",
+    "duplicate": "创建副本",
+    "delete": "删除",
+    "copyName": "{name}（副本）",
+    "confirmDelete": "删除配装“{name}”？此操作无法撤销。",
+    "unavailable": "你的浏览器不允许保存：关闭页面后配装将会丢失。"
+  },
+  "share": {
+    "invalidTitle": "分享链接无效"
+  },
+  "guides": {
+    "label": "游戏指南",
+    "jokers": "全部奇术卡",
+    "weapons": "武器及其奇术卡",
+    "spells": "法术与冷却时间",
+    "progression": "奇术卡槽位与声望"
+  }
+}

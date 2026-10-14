@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Far Far West — 配裝規劃器"
+  },
+  "menu": {
+    "version": "遊戲版本 v{version} · 資料日期 {date}",
+    "versionShort": "v{version} · {date}",
+    "builds": "配裝",
+    "newBuild": "新增配裝",
+    "myBuilds": "我的配裝…",
+    "import": "匯入…",
+    "export": "分享…",
+    "unavailable": "無法儲存"
+  },
+  "home": {
+    "untitled": "未命名配裝",
+    "rename": "配裝名稱",
+    "chooseMain": "選擇主武器",
+    "chooseSidearm": "選擇副武器",
+    "chooseUtility": "選擇戰術道具",
+    "chooseSpells": "選擇法術",
+    "summary": "總覽",
+    "prestiges": "{n} 次聲望 | {n} 次聲望 | {n} 次聲望",
+    "problems": "沒有問題 | 1 個問題 | {n} 個問題",
+    "complete": "配裝完整且有效",
+    "assumed": "聲望：推測規則（在聲望商店購買的加成可立即使用）"
+  },
+  "problem": {
+    "missing_weapon_main": "未選擇主武器",
+    "missing_weapon_sidearm": "未選擇副武器",
+    "missing_element": "未替副武器選擇元素",
+    "missing_utility": "未選擇戰術道具",
+    "missing_spell": "法術欄位 [{key}] 是空的",
+    "unknown_id": "未知物品 {name}（已從遊戲中移除？）",
+    "wrong_item": "{name} 無法用在這裡",
+    "duplicate_spell": "{name} 裝備了兩次",
+    "joker_incompatible": "{name} 無法裝備在{carrier}上",
+    "joker_not_equippable": "{name} 無法在大廳裝備",
+    "joker_too_many_copies": "{name}：{copies} 張，最多 {max} 張",
+    "joker_slots_exceeded": "{carrier}：鬼牌欄位 {used}/{max}",
+    "upgrade_incompatible": "{name} 不適用於{carrier}",
+    "upgrade_too_many_points": "{name}：{points}/{max} 點",
+    "upgrade_points_exceeded": "{carrier}：升級點數 {used}/{max}"
+  },
+  "picker": {
+    "clearsLoadout": "裝備後將移除{weapon}的鬼牌和升級。"
+  },
+  "customize": {
+    "minLevel": "最低 {level} 等",
+    "upgradesNeed": "升級：{used} 點 → 等級 {level}",
+    "jokersNeed": "鬼牌：{used} 個欄位 → 等級 {level}",
+    "bought": "+ {n} 個在聲望商店購買 | + {n} 個在聲望商店購買 | + {n} 個在聲望商店購買",
+    "requirements": "所需進度",
+    "jokerSlots": "欄位 {used}/{max}",
+    "prestigeSlot": "在聲望商店購買的欄位",
+    "addPoint": "為{name}增加 1 點",
+    "removePoint": "從{name}移除 1 點",
+    "setPoints": "{name}：{n} 點"
+  },
+  "jokers": {
+    "rarity": "稀有度",
+    "search": "搜尋名稱或效果…",
+    "noResult": "沒有符合的鬼牌。",
+    "noRoom": "欄位不足（需要 {cost} 個）",
+    "cost": "佔用 {n} 個欄位 | 佔用 1 個欄位 | 佔用 {n} 個欄位",
+    "removeHint": "點擊已裝備的鬼牌即可移除"
+  },
+  "spells": {
+    "hint": "先點擊法術，再點擊欄位。點擊欄位可將其清空。",
+    "pickSlot": "為{name}選擇欄位（按 Esc 取消）"
+  },
+  "dialog": {
+    "close": "關閉",
+    "exportTitle": "分享配裝",
+    "linkHelp": "傳送這個連結：它會在規劃器中開啟此配裝，並加入開啟者的配裝清單。",
+    "exportHelp": "或複製這段文字，在規劃器中透過「匯入」貼上。",
+    "copy": "複製",
+    "copyLink": "複製連結",
+    "copied": "已複製！",
+    "importTitle": "匯入配裝",
+    "importHelp": "貼上匯出的配裝文字（以 FFW1: 開頭）。它會加入你的配裝。",
+    "import": "匯入",
+    "importError": {
+      "prefix": "這不是匯出的配裝：文字必須以 FFW1: 開頭。",
+      "encoding": "文字不完整或已損毀。",
+      "format": "文字中沒有配裝。",
+      "version": "此配裝來自較新版本的規劃器。"
+    }
+  },
+  "builds": {
+    "title": "我的配裝",
+    "current": "編輯中",
+    "updated": "修改於 {date}",
+    "duplicate": "建立副本",
+    "delete": "刪除",
+    "copyName": "{name}（副本）",
+    "confirmDelete": "要刪除配裝「{name}」嗎？此操作無法復原。",
+    "unavailable": "你的瀏覽器不允許儲存：關閉頁面後配裝將會遺失。"
+  },
+  "share": {
+    "invalidTitle": "分享連結無效"
+  },
+  "guides": {
+    "label": "遊戲指南",
+    "jokers": "所有鬼牌",
+    "weapons": "武器及其鬼牌",
+    "spells": "法術與冷卻時間",
+    "progression": "鬼牌欄位與聲望"
+  }
+}
