@@ -54,6 +54,8 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   progression needed. The game's "Confirm for X gold" is left out: gold is out of scope.
 - **Jokers**: rarity tabs named as in the game, plus a search on the name and description in the current language;
   cards in the game's format. Clicking a card adds a copy if it fits; a card that does not fit has a red frame.
+- **Joker slots** (Customize and Jokers): hovering an equipped joker with the mouse, or focusing it with the keyboard,
+  shows its card beside the slots. Not on touch screens, where a tap removes the joker.
 - **Spells**: the 6 schools, the spells of the chosen school with their cooldown, and the 3 slots. Keys under the
   slots follow the game: [A] [E] [C] in French (AZERTY), [Q] [E] [C] in the other languages.
 - **My builds**: the saved builds (open, duplicate, delete).

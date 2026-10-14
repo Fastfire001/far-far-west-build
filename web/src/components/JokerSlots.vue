@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // The carrier's joker slots, like the game's: circles in rows (2 columns by default), a joker taking as many
 // circles as it costs, linked together (an SVG layer behind the circles draws the links). Unused circles show the
-// level that unlocks them, or P for the slots bought at the prestige shop.
-import { computed } from 'vue'
+// level that unlocks them, or P for the slots bought at the prestige shop. Hovering an equipped joker (or focusing it
+// with the keyboard) shows its card next to the slots.
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { Loadout } from '@/domain/build'
 import { jokerById, type Rarity } from '@/domain/gameData'
@@ -10,6 +11,7 @@ import { MAX_JOKER_SLOTS, RULES } from '@/domain/rules'
 import { iconUrl } from '@/icons'
 import { useLanguageStore } from '@/stores/language'
 import { RARITY_COLORS } from '@/ui/colors'
+import JokerCard from '@/components/JokerCard.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -66,8 +68,9 @@ const circles = computed<Circle[]>(() => {
       rarity: owner ? jokerById.get(owner.joker)?.rarity : undefined,
       linked: Boolean(owner && next && next.joker === owner.joker && next.copy === owner.copy),
       label: owner ? '' : level !== undefined ? String(level) : 'P',
+      // An equipped joker shows its card on hover instead of a native tooltip.
       title: owner
-        ? language.gameName(owner.joker)
+        ? ''
         : level !== undefined
           ? t('game.unlocked_at_level', { level })
           : t('customize.prestigeSlot'),
@@ -88,6 +91,53 @@ const links = computed(() =>
 )
 const width = computed(() => props.columns * geometry.value.size + (props.columns - 1) * geometry.value.columnGap)
 const height = computed(() => rows.value * geometry.value.size + (rows.value - 1) * geometry.value.rowGap)
+
+// Hover preview: the circle under the pointer (by index, so that after a click removes a joker the preview follows
+// the joker now in that circle) and its position on screen.
+const hovered = ref<{ index: number; anchor: DOMRect } | null>(null)
+const previewElement = ref<HTMLElement | null>(null)
+const previewPosition = ref({ left: 0, top: 0 })
+const preview = computed(() => {
+  const id = hovered.value && circles.value[hovered.value.index]?.joker
+  const joker = id ? jokerById.get(id) : undefined
+  return joker ? { joker, copies: props.loadout.jokers[joker.id] ?? 0 } : null
+})
+
+function showPreview(index: number, target: EventTarget | null) {
+  if (target instanceof HTMLElement) hovered.value = { index, anchor: target.getBoundingClientRect() }
+}
+function onPointerEnter(index: number, event: PointerEvent) {
+  // Touch: a tap removes the joker, a preview would only get in the way.
+  if (event.pointerType === 'mouse') showPreview(index, event.currentTarget)
+}
+function onFocus(index: number, event: FocusEvent) {
+  if (event.currentTarget instanceof HTMLElement && event.currentTarget.matches(':focus-visible')) {
+    showPreview(index, event.currentTarget)
+  }
+}
+function hidePreview() {
+  hovered.value = null
+}
+
+// Beside the circle, on the side with room (left first: the slots are on the right of the jokers page), centered on
+// it and kept inside the window.
+const GAP = 12
+watch(
+  [preview, hovered],
+  () => {
+    const card = previewElement.value
+    if (!card || !hovered.value) return
+    const { anchor } = hovered.value
+    const { offsetWidth: w, offsetHeight: h } = card
+    const left = anchor.left - GAP - w >= GAP ? anchor.left - GAP - w : Math.min(anchor.right + GAP, innerWidth - GAP - w)
+    const top = Math.min(Math.max(anchor.top + anchor.height / 2 - h / 2, GAP), innerHeight - GAP - h)
+    previewPosition.value = { left: Math.max(left, GAP), top: Math.max(top, GAP) }
+  },
+  { flush: 'post' },
+)
+// The position is computed once: scrolling would leave the card behind.
+onMounted(() => addEventListener('scroll', hidePreview, { capture: true, passive: true }))
+onBeforeUnmount(() => removeEventListener('scroll', hidePreview, { capture: true }))
 </script>
 
 <template>
@@ -124,14 +174,29 @@ const height = computed(() => rows.value * geometry.value.size + (rows.value - 1
         class="circle"
         :class="{ used: c.joker, free: !c.joker, next: c.index === firstFree, prestige: c.label === 'P' }"
         :style="{ gridRow: c.row + 1, gridColumn: c.column + 1, '--rarity': c.rarity ? RARITY_COLORS[c.rarity] : undefined }"
-        :title="c.title"
-        :aria-label="c.title"
+        :title="c.title || undefined"
+        :aria-label="c.joker ? language.gameName(c.joker) : c.title"
         @click="emit('select', c.joker)"
+        @pointerenter="c.joker && onPointerEnter(c.index, $event)"
+        @pointerleave="hidePreview"
+        @focus="c.joker && onFocus(c.index, $event)"
+        @blur="hidePreview"
       >
         <img v-if="c.joker" :src="iconUrl(c.joker)" alt="" />
         <template v-else>{{ c.index === firstFree ? '+' : c.label }}</template>
       </button>
     </template>
+    <Teleport to="body">
+      <div
+        v-if="preview"
+        ref="previewElement"
+        class="preview"
+        :style="{ left: `${previewPosition.left}px`, top: `${previewPosition.top}px` }"
+        aria-hidden="true"
+      >
+        <JokerCard :joker="preview.joker" :copies="preview.copies" />
+      </div>
+    </Teleport>
   </div>
 </template>
 
@@ -182,6 +247,12 @@ const height = computed(() => rows.value * geometry.value.size + (rows.value - 1
 }
 .circle:hover {
   outline: 3px solid var(--accent);
+}
+.preview {
+  pointer-events: none;
+  position: fixed;
+  width: 11.5rem;
+  z-index: 10;
 }
 .links {
   left: 0;
