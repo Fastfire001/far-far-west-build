@@ -80,6 +80,29 @@
     ]
   },
   {
+    "id": "jokerUpgradeChargingSpeed",
+    "name": "Charging Speed",
+    "value": 0.15,
+    "flat": false,
+    "max_slots": 4,
+    "gold_cost": 100,
+    "available_on": [
+      "itemKnuckles",
+      "itemLasso"
+    ]
+  },
+  {
+    "id": "jokerUpgradeChordCapacity",
+    "name": "Chord Capacity",
+    "value": 1.0,
+    "flat": true,
+    "max_slots": 5,
+    "gold_cost": 100,
+    "available_on": [
+      "itemBanjo"
+    ]
+  },
+  {
     "id": "jokerUpgradeClipSize",
     "name": "Clip Size",
     "value": 0.1,

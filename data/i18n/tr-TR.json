@@ -800,6 +800,12 @@
   "jokerUpgradeBoomerangRange": {
     "name": "Menzil"
   },
+  "jokerUpgradeChargingSpeed": {
+    "name": "Yüklenme Hızı"
+  },
+  "jokerUpgradeChordCapacity": {
+    "name": "Akor Kapasitesi"
+  },
   "jokerUpgradeClipSize": {
     "name": "Şarjör Boyutu"
   },

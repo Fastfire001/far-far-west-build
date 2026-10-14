@@ -355,6 +355,7 @@ UPGRADE_GLYPHS = {
     "jokerUpgradeBoomerangLingeringTime": "hourglass", "jokerUpgradeSherrifStarPickUpRange": "magnet",
     "jokerUpgradeBoomerangRange": "expand", "jokerUpgradeWeaponMeleeRange": "expand", "jokerUpgradeReloadSpeed": "reload",
     "jokerUpgradeHeroSpeed": "chevrons", "jokerUpgradeSpellCooldownReduction": "hourglass+minus",
+    "jokerUpgradeChordCapacity": "note+plus", "jokerUpgradeChargingSpeed": "bolt+chevrons",
 }
 
 # Jokers: pictogram, and for elemental jokers the spell school shown in a corner badge.

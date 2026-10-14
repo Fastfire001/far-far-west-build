@@ -800,6 +800,12 @@
   "jokerUpgradeBoomerangRange": {
     "name": "Дальность"
   },
+  "jokerUpgradeChargingSpeed": {
+    "name": "Скорость накопления заряда"
+  },
+  "jokerUpgradeChordCapacity": {
+    "name": "Максимальный запас аккордов"
+  },
   "jokerUpgradeClipSize": {
     "name": "Размер магазина"
   },

@@ -800,6 +800,12 @@
   "jokerUpgradeBoomerangRange": {
     "name": "Zasięg"
   },
+  "jokerUpgradeChargingSpeed": {
+    "name": "Prędkość ładowania"
+  },
+  "jokerUpgradeChordCapacity": {
+    "name": "Pojemność akordów"
+  },
   "jokerUpgradeClipSize": {
     "name": "Wielkość magazynka"
   },

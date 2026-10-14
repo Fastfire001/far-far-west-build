@@ -76,6 +76,11 @@ joker budget. The utility has neither upgrades nor jokers.
   `false` if it is a fraction (`0.05` = +5%).
 - The same stat can come in several variants depending on the weapon: for instance Attack Speed is +5% ×16 on
   firearms, +5% ×8 on the Minigun and melee weapons, +10% ×8 on the Bow.
+- The table's `isEnabled` flag is not reliable for upgrades: Chord Capacity (Banjo, +1 chord ×5) and Charging Speed
+  (Knuckles and Lasso, +15% ×4) are disabled in the table but shown in the game (checked in game on 2026-10-14).
+  Every upgrade row available on at least one item is kept; rows without items (`jokerUpgradeTotalAmmoBagB`,
+  `jokerUpgradeShieldPoints`) are unused leftovers. For jokers the flag seems to hold: disabled jokers are left out,
+  and Can Opener (`jokerCanOpenener`, disabled) is indeed absent from the game (checked on 2026-10-14).
 
 ## Prestige
 

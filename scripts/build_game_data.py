@@ -288,7 +288,10 @@ def items(ids):
     return ids
 
 
-rows = {key: row for key, row in decode_data_table("DT_PlayerJokers", "joker", JOKER_ROW).items() if row["isEnabled"]}
+# isEnabled is not reliable for upgrades: Chord Capacity (Banjo) and Charging Speed (Knuckles, Lasso) are disabled in
+# the table but shown in the game. Upgrades are kept whenever they are available on an item.
+rows = {key: row for key, row in decode_data_table("DT_PlayerJokers", "joker", JOKER_ROW).items()
+        if row["isEnabled"] or key.startswith("jokerUpgrade")}
 
 jokers, upgrades = [], []
 for key, row in rows.items():

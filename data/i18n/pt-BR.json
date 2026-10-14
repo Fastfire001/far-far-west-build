@@ -800,6 +800,12 @@
   "jokerUpgradeBoomerangRange": {
     "name": "Alcance"
   },
+  "jokerUpgradeChargingSpeed": {
+    "name": "Velocidade de Carga"
+  },
+  "jokerUpgradeChordCapacity": {
+    "name": "Capacidade de Acordes"
+  },
   "jokerUpgradeClipSize": {
     "name": "Tamanho do Pente"
   },

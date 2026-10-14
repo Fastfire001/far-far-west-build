@@ -800,6 +800,12 @@
   "jokerUpgradeBoomerangRange": {
     "name": "Portée"
   },
+  "jokerUpgradeChargingSpeed": {
+    "name": "Vitesse de charge"
+  },
+  "jokerUpgradeChordCapacity": {
+    "name": "Réserve d'accords"
+  },
   "jokerUpgradeClipSize": {
     "name": "Taille du chargeur"
   },

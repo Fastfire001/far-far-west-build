@@ -800,6 +800,12 @@
   "jokerUpgradeBoomerangRange": {
     "name": "射程"
   },
+  "jokerUpgradeChargingSpeed": {
+    "name": "チャージ速度"
+  },
+  "jokerUpgradeChordCapacity": {
+    "name": "コード容量"
+  },
   "jokerUpgradeClipSize": {
     "name": "装弾数"
   },

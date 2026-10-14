@@ -800,6 +800,12 @@
   "jokerUpgradeBoomerangRange": {
     "name": "Raggio"
   },
+  "jokerUpgradeChargingSpeed": {
+    "name": "Velocità di carica"
+  },
+  "jokerUpgradeChordCapacity": {
+    "name": "Capacità accordi"
+  },
   "jokerUpgradeClipSize": {
     "name": "Dimensione del caricatore"
   },

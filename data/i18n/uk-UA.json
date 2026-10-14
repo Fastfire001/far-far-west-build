@@ -800,6 +800,12 @@
   "jokerUpgradeBoomerangRange": {
     "name": "Радіус"
   },
+  "jokerUpgradeChargingSpeed": {
+    "name": "Швидкість накопичення заряду"
+  },
+  "jokerUpgradeChordCapacity": {
+    "name": "Запас акордів"
+  },
   "jokerUpgradeClipSize": {
     "name": "Розмір магазину"
   },
