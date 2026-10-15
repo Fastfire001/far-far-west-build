@@ -117,11 +117,18 @@ joker budget. The utility has neither upgrades nor jokers.
 
 ## Hand-entered data (`manual.json`)
 
-Values that are not in the readable game files, copied by hand from wiki.gg and wikily.gg. `bin/extract-game`
+Values that are not in the readable game files: copied by hand from wiki.gg and wikily.gg, or read once from a
+Blueprint of the game. `bin/extract-game`
 never touches this file: check it by hand after each game update (`checked_for_version`).
 
 - `spell_cooldowns`: base cooldown of each spell in seconds, by spell id (`null` if unknown). Shown next to each
   spell, with the game's own label ("{sec}-second cooldown", `ST_UI_Spell_SecondsCooldown`).
+- `school_colors`: colour of each spell school in the game's menus, by school id. They are constants in the bytecode
+  of the `F_GetElementInfos` function (`/Game/Gamework/BPFL_FunctionLibrary`), which returns for each element its
+  school (`associatedItem`), icon, `Color` and `DamagesColor` (a brighter variant). Read by hand on 2026-10-15: four
+  `0x1E` + float32 constants make an `FLinearColor`, converted to sRGB, followed by the school's name. Not
+  extracted: the bytecode layout would break at the slightest change of the function. Elec is blue and Acid
+  yellow in the game.
 - Disagreements found on 2026-10-10 between the two sites (wiki.gg / wikily.gg): Fireball 20 / 15 s,
   Firebeam 80 / 60 s, Surcharge 60 / 50 s, Finger Guns 120 / 80 s, Mino 10 / 7 s. Values to check in game.
 

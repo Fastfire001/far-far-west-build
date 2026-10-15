@@ -5,7 +5,7 @@ Usage: python3 scripts/build_icons.py <data_dir> <out_dir>
 
 The icons are original drawings that follow the game's visual codes without copying its assets:
 - jokers: a card in the colour of their rarity, one dot per slot they cost, a white pictogram;
-- spells and spell schools: a round badge in the colour of their school;
+- spells and spell schools: a round badge in the colour of their school (`school_colors` in manual.json);
 - equipment and the hero: a light silhouette on a dark tile;
 - upgrades: a hexagon in the colour of their stat on the game's upgrade screen (`color` in upgrades.json).
 
@@ -20,12 +20,11 @@ RARITY_COLORS = {
     "Normal": "#8c7b5e", "Fine": "#6a8a2b", "Prime": "#2f6fae",
     "Mythic": "#7b3fa3", "Legendary": "#c9821a", "Unique": "#a3232e",
 }
-SCHOOL_COLORS = {
-    "itemFire": "#e2531d", "itemElec": "#e0a91f", "itemAcid": "#8cbf26",
-    "itemVoodoo": "#8b4bb8", "itemCactus": "#2f8a4c", "itemIce": "#4fb6de",
-}
+# Hand-entered from the game (data/manual.json), like the spell cooldowns.
+SCHOOL_COLORS = {school: color for school, color in json.load(open(os.path.join(data_dir, "manual.json")))["school_colors"].items()
+                 if not school.startswith("_")}
 TILE_COLOR, SILHOUETTE_COLOR = "#2b211b", "#ecd9b2"
-UPGRADE_DARK_GLYPH = "#1c1d22"
+DARK_GLYPH = "#1c1d22"
 
 
 # --- Pictogram library (100x100 box) -------------------------------------------------------------------------
@@ -239,7 +238,8 @@ def joker_icon(joker, spec, school=None):
     )
     if school:
         content += (f'<circle cx="80" cy="120" r="13" fill="{SCHOOL_COLORS[school]}" stroke="#fff" stroke-width="2.5"/>'
-                    + group(f'<g fill="#fff" color="#fff">{G[SCHOOL_GLYPHS[school]]}</g>', "translate(71 111) scale(.18)"))
+                    + group(f'<g fill="{ink(SCHOOL_COLORS[school])}" color="{ink(SCHOOL_COLORS[school])}">{G[SCHOOL_GLYPHS[school]]}</g>',
+                            "translate(71 111) scale(.18)"))
     return document("0 0 100 140", content, joker["name"])
 
 
@@ -248,7 +248,7 @@ def badge_icon(color, spec, title, double_ring=False):
                f'<circle cx="50" cy="50" r="42" fill="none" stroke="#000" stroke-opacity=".22" stroke-width="3"/>')
     if double_ring:
         content += '<circle cx="50" cy="50" r="46" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2.5"/>'
-    content += group(f'<g fill="#fff" color="#fff">{glyph(spec)}</g>', "translate(21 21) scale(.58)")
+    content += group(f'<g fill="{ink(color)}" color="{ink(color)}">{glyph(spec)}</g>', "translate(21 21) scale(.58)")
     return document("0 0 100 100", content, title)
 
 
@@ -267,13 +267,17 @@ def luminance(color):
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
 
 
+def ink(color):
+    """Pictogram colour on a background: the game's colours are bright, white only reads on the darkest ones."""
+    light = luminance(color)
+    return "#fff" if (light + 0.05) / 0.05 < 1.05 / (light + 0.05) else DARK_GLYPH
+
+
 def upgrade_icon(spec, color, title):
     hexagon = " ".join(f"{50 + 48 * math.cos(math.radians(90 + i * 60)):.1f},{50 + 48 * math.sin(math.radians(90 + i * 60)):.1f}"
                        for i in range(6))
-    # The game's stat colours are bright: white only reads on the darkest ones (purple, blue).
-    ink = "#fff" if (luminance(color) + 0.05) / 0.05 < 1.05 / (luminance(color) + 0.05) else UPGRADE_DARK_GLYPH
     content = (f'<polygon points="{hexagon}" fill="{color}"/>'
-               + group(f'<g fill="{ink}" color="{ink}">{glyph(spec)}</g>', "translate(24 24) scale(.52)"))
+               + group(f'<g fill="{ink(color)}" color="{ink(color)}">{glyph(spec)}</g>', "translate(24 24) scale(.52)"))
     return document("0 0 100 100", content, title)
 
 
@@ -451,6 +455,7 @@ _check_glyphs()
 equipment, spells, jokers, upgrades = load("equipment.json"), load("spells.json"), load("jokers.json"), load("upgrades.json")
 require([e["id"] for e in equipment], EQUIPMENT_SILHOUETTES, "equipment")
 require([s["id"] for s in spells["schools"]], SCHOOL_GLYPHS, "spell schools")
+require([s["id"] for s in spells["schools"]], SCHOOL_COLORS, "spell schools (school_colors in manual.json)")
 require([s["id"] for s in spells["spells"]], SPELL_GLYPHS, "spells")
 require([j["id"] for j in jokers], JOKER_GLYPHS, "jokers")
 require([u["id"] for u in upgrades], UPGRADE_GLYPHS, "upgrades")
