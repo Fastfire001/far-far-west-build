@@ -11,7 +11,8 @@
       "itemShotgun",
       "itemDualRevolver",
       "itemQuadCylinder"
-    ]
+    ],
+    "color": "#63ffb5"
   },
   {
     "id": "jokerUpgradeTotalAmmoBag",
@@ -22,7 +23,8 @@
     "gold_cost": 40,
     "available_on": [
       "itemHero"
-    ]
+    ],
+    "color": "#b900ff"
   },
   {
     "id": "jokerUpgradeTotalAmmoBagC",
@@ -35,7 +37,8 @@
       "itemDualRevolver",
       "itemMinigun",
       "itemBow"
-    ]
+    ],
+    "color": "#b900ff"
   },
   {
     "id": "jokerUpgradeFirerate",
@@ -52,7 +55,8 @@
       "itemSheriffStar",
       "itemWinchester",
       "itemDualRevolver"
-    ]
+    ],
+    "color": "#ffbc00"
   },
   {
     "id": "jokerUpgradeFirerateB",
@@ -66,7 +70,8 @@
       "itemKnuckles",
       "itemBanjo",
       "itemLasso"
-    ]
+    ],
+    "color": "#ffbc00"
   },
   {
     "id": "jokerUpgradeFirerateC",
@@ -77,7 +82,8 @@
     "gold_cost": 40,
     "available_on": [
       "itemBow"
-    ]
+    ],
+    "color": "#ffbc00"
   },
   {
     "id": "jokerUpgradeChargingSpeed",
@@ -89,7 +95,8 @@
     "available_on": [
       "itemKnuckles",
       "itemLasso"
-    ]
+    ],
+    "color": "#bbff5f"
   },
   {
     "id": "jokerUpgradeChordCapacity",
@@ -100,7 +107,8 @@
     "gold_cost": 100,
     "available_on": [
       "itemBanjo"
-    ]
+    ],
+    "color": "#edaa46"
   },
   {
     "id": "jokerUpgradeClipSize",
@@ -115,7 +123,8 @@
       "itemPistol",
       "itemShotgun",
       "itemWinchester"
-    ]
+    ],
+    "color": "#b900ff"
   },
   {
     "id": "jokerUpgradeDamage",
@@ -138,7 +147,8 @@
       "itemKnuckles",
       "itemBanjo",
       "itemLasso"
-    ]
+    ],
+    "color": "#ff2c2c"
   },
   {
     "id": "jokerUpgradeDrawSpeed",
@@ -161,7 +171,8 @@
       "itemKnuckles",
       "itemBanjo",
       "itemLasso"
-    ]
+    ],
+    "color": "#00ffda"
   },
   {
     "id": "jokerUpgradeHeal",
@@ -172,7 +183,8 @@
     "gold_cost": 200,
     "available_on": [
       "itemHero"
-    ]
+    ],
+    "color": "#a4ff00"
   },
   {
     "id": "jokerUpgradeJumpHeight",
@@ -183,7 +195,8 @@
     "gold_cost": 100,
     "available_on": [
       "itemHero"
-    ]
+    ],
+    "color": "#bbff5f"
   },
   {
     "id": "jokerUpgradeLifesteal",
@@ -198,7 +211,8 @@
       "itemDualRevolver",
       "itemSheriffStar",
       "itemBoomerang"
-    ]
+    ],
+    "color": "#a4ff00"
   },
   {
     "id": "jokerUpgradeBoomerangLingeringTime",
@@ -209,7 +223,8 @@
     "gold_cost": 40,
     "available_on": [
       "itemBoomerang"
-    ]
+    ],
+    "color": "#ff69b4"
   },
   {
     "id": "jokerUpgradeSherrifStarPickUpRange",
@@ -220,7 +235,8 @@
     "gold_cost": 40,
     "available_on": [
       "itemSheriffStar"
-    ]
+    ],
+    "color": "#009aff"
   },
   {
     "id": "jokerUpgradeBoomerangRange",
@@ -231,7 +247,8 @@
     "gold_cost": 40,
     "available_on": [
       "itemBoomerang"
-    ]
+    ],
+    "color": "#7e94ff"
   },
   {
     "id": "jokerUpgradeWeaponMeleeRange",
@@ -244,7 +261,8 @@
       "itemKnuckles",
       "itemBanjo",
       "itemLasso"
-    ]
+    ],
+    "color": "#7e94ff"
   },
   {
     "id": "jokerUpgradeReloadSpeed",
@@ -260,7 +278,8 @@
       "itemPistol",
       "itemDualRevolver",
       "itemWinchester"
-    ]
+    ],
+    "color": "#00bfff"
   },
   {
     "id": "jokerUpgradeHeroSpeed",
@@ -271,7 +290,8 @@
     "gold_cost": 200,
     "available_on": [
       "itemHero"
-    ]
+    ],
+    "color": "#ffd700"
   },
   {
     "id": "jokerUpgradeSpellCooldownReduction",
@@ -282,6 +302,7 @@
     "gold_cost": 200,
     "available_on": [
       "itemHero"
-    ]
+    ],
+    "color": "#0097ff"
   }
 ]

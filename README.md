@@ -33,7 +33,7 @@ bin/extract-game
 ```
 
 The game is only read; the extracted files stay in `.cache/`, which is not versioned. `data/manual.json` is the
-exception: values that cannot be extracted (spell cooldowns), entered by hand.
+exception: values that cannot be extracted (spell cooldowns, spell school colours), entered by hand.
 
 ## Documentation
 
