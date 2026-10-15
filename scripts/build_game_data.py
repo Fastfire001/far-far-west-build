@@ -412,7 +412,8 @@ out = {
     "equipment.json": equipment,
     "spells.json": {"schools": spell_schools, "spells": spells},
     "jokers.json": sorted(jokers, key=lambda j: (RARITIES.index(j["rarity"]), j["name"])),
-    "upgrades.json": sorted(upgrades, key=lambda u: (u["name"], u["id"])),
+    # Table order: the game lists a carrier's upgrades in that order.
+    "upgrades.json": upgrades,
     "progression.json": progression,
     "meta.json": meta,
     "i18n/languages.json": language_names,
