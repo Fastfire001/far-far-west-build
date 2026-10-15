@@ -6,14 +6,15 @@ Usage: python3 scripts/build_icons.py <data_dir> <out_dir>
 The icons are original drawings that follow the game's visual codes without copying its assets:
 - jokers: a card in the colour of their rarity, one dot per slot they cost, and a white drawing of their own, on the
   same subject as the joker's card in the game;
-- spells and spell schools: a round badge in the colour of their school (`school_colors` in manual.json);
+- spells and spell schools: a round badge in the colour of their school (`school_colors` in manual.json), with a
+  pictogram on the same subject as the spell's icon in the game;
 - equipment and the hero: a light silhouette on a dark tile;
 - upgrades: a hexagon in the colour of their stat on the game's upgrade screen (`color` in upgrades.json).
 
 Pictograms are drawn in a 100x100 box with fill="currentColor". Every id found in data/ must have an entry in the
 tables below: a new joker or item after a game update makes the script fail until it gets one.
 """
-import html, json, math, os, sys
+import hashlib, html, json, math, os, sys
 
 data_dir, out_dir = sys.argv[1:3]
 
@@ -70,17 +71,24 @@ def at(content, cx, cy, scale=1, rotate=0):
     return group(content, f"translate({cx} {cy}) rotate({rotate}) scale({scale}) translate(-50 -50)")
 
 
-_masks = [0]
-
-
 def cut(content, holes):
     """Punches holes (any pictogram, drawn in black) out of content, so the card shows through."""
-    _masks[0] += 1
-    mask = f"k{_masks[0]}"
+    # The mask id comes from what it cuts, so that changing one drawing does not renumber the others' masks.
+    mask = "k" + hashlib.md5((content + holes).encode()).hexdigest()[:8]
     return (f'<mask id="{mask}" maskUnits="userSpaceOnUse" x="-100" y="-100" width="300" height="300">'
             f'<rect x="-100" y="-100" width="300" height="300" fill="#fff"/><g fill="#000" color="#000">{holes}</g></mask>'
             f'<g mask="url(#{mask})">{content}</g>')
 
+
+
+def arrow(x0, y0, x1, y1, width=6, head=16):
+    """A straight arrow from (x0, y0) to its tip at (x1, y1)."""
+    length = math.hypot(x1 - x0, y1 - y0)
+    ux, uy = (x1 - x0) / length, (y1 - y0) / length
+    bx, by = x1 - head * ux, y1 - head * uy
+    corners = [(x1, y1), (bx - head * .6 * uy, by + head * .6 * ux), (bx + head * .6 * uy, by - head * .6 * ux)]
+    return (stroke(f"M{x0} {y0}L{bx + 2 * ux:.1f} {by + 2 * uy:.1f}", width, "butt")
+            + f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in corners)}"/>')
 
 G = {}
 
@@ -117,25 +125,19 @@ G["sheriff"] = star_points(50, 50, 6, 46, 24) + "".join(
     circle(round(50 + 44 * math.cos(math.radians(-90 + i * 60)), 1), round(50 + 44 * math.sin(math.radians(-90 + i * 60)), 1), 7)
     for i in range(6))
 G["bell"] = P("M50 8c-18 0-26 18-26 38v20L12 80h76L76 66V46C76 26 68 8 50 8z") + circle(50, 88, 8)
-G["pickaxe"] = group(stroke("M14 34C32 14 68 14 86 34", 12) + P("M45 22h10v72H45z"), "rotate(-35 50 50)")
 G["moon"] = P("M60 6A44 44 0 1 0 94 64 34 34 0 1 1 60 6z")
 G["arrow"] = group(P("M10 46h62v8H10z") + P("M68 32 96 50 68 68z") + P("M4 34h16l10 12H14zM4 66h16l10-12H14z"), "rotate(-40 50 50)")
 G["lasso"] = stroke("M30 52c-14-6-20-18-12-28 10-12 40-14 56-2 12 10 8 24-8 28-12 3-26 2-36 2", 8) + stroke(
     "M30 52c2 14 6 26 18 40", 8)
-G["chain"] = stroke("M44 56 28 72a14 14 0 0 1-20-20l16-16a14 14 0 0 1 20 0", 10) + stroke(
-    "M56 44l16-16a14 14 0 0 1 20 20L76 64a14 14 0 0 1-20 0", 10)
 G["tooth"] = P("M26 10c10-4 18 2 24 2s14-6 24-2c12 6 14 22 8 38-4 12-4 24-8 38-2 6-10 6-12 0l-6-22c-2-6-10-6-12 0l-6 22c-2 6-10 6-12 0-4-14-4-26-8-38-6-16-4-32 8-38z")
 G["bottle"] = P("M42 6h16v8h-2v18c12 4 18 14 18 26v28a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V58c0-12 6-22 18-26V14h-2z")
 G["cube"] = P("M50 6 90 28v44L50 94 10 72V28z") + P("M50 50 90 28M50 50v44M50 50 10 28", "nonzero").replace(
     "<path", '<path fill="none" stroke="#000" stroke-opacity=".35" stroke-width="5"')
 G["portal"] = (f'<ellipse cx="30" cy="50" rx="14" ry="38" fill="none" stroke="currentColor" stroke-width="9"/>'
                f'<ellipse cx="70" cy="50" rx="14" ry="38" fill="none" stroke="currentColor" stroke-width="9"/>')
-G["beam"] = circle(20, 50, 16) + P("M30 38h66v24H30z") + P("M30 30 46 50 30 70z")
 G["cloud"] = P("M26 70a18 18 0 0 1 0-36 24 24 0 0 1 46-6 20 20 0 0 1 4 42z")
 G["spring"] = stroke("M30 90h40M34 78l32-10-32-10 32-10-32-10 32-10", 8) + P("M50 2 70 22H30z")
 G["candle"] = P("M38 40h24v54H38z") + P("M50 6c6 10 10 14 10 22a10 10 0 0 1-20 0c0-8 4-12 10-22z")
-G["swirl"] = stroke("M52 50a4 4 0 0 1 4 4 10 10 0 0 1-10 10 16 16 0 0 1-16-16 22 22 0 0 1 22-22 28 28 0 0 1 28 28 34 34 0 0 1-34 34", 9)
-G["wind"] = stroke("M8 34h52a12 12 0 1 0-12-12M8 54h70a12 12 0 1 1-12 12M8 74h32", 9)
 G["spikes"] = P("M4 92 18 40l14 52zM34 92 50 14l16 78zM68 92 82 40l14 52z")
 G["swap"] = P("M10 30h56V14l26 26-26 26V50H10z") + P("M90 70H34v16L8 60l26-26v16h56z").replace("<path", '<path fill-opacity=".85"')
 G["geyser"] = P("M38 94V40h24v54z") + P("M50 4c10 10 26 14 26 28 0 8-6 12-12 12-4 0-8-2-10-6-2 6-6 8-8 8s-6-2-8-8c-2 4-6 6-10 6-6 0-12-4-12-12 0-14 16-18 26-28z")
@@ -143,29 +145,98 @@ G["bubble"] = P(hole(50, 50, 42) + hole(50, 50, 32), "evenodd") + P("M30 40c2-10
 G["rain"] = group(G["cloud"], "translate(0 -16)") + P("M28 70l-6 16h8l6-16zM48 70l-6 16h8l6-16zM68 70l-6 16h8l6-16z")
 G["spray"] = P("M4 40h26v20H4z") + circle(46, 50, 7) + circle(62, 38, 7) + circle(62, 62, 7) + circle(80, 26, 8) + circle(
     80, 50, 8) + circle(80, 74, 8)
-G["biohazard"] = circle(50, 28, 18) + circle(30, 64, 18) + circle(70, 64, 18) + P(hole(50, 52, 10)).replace(
-    "<path", '<path fill="#000" fill-opacity=".35"')
 G["doll"] = (circle(50, 26, 20) + P("M36 46h28l6 20 18 6-4 10-20-6v24H48V78H42v22H32V76l-20 6-4-10 18-6z")
              + P("M38 20l8 8M46 20l-8 8M54 20l8 8M62 20l-8 8", "nonzero").replace(
                  "<path", '<path fill="none" stroke="#000" stroke-opacity=".45" stroke-width="4"'))
-G["sombrero"] = P("M4 70c0-6 20-10 46-10s46 4 46 10-20 10-46 10S4 76 4 70z") + P("M32 62c0-26 8-40 18-40s18 14 18 40z")
 G["magnet"] = stroke("M24 12v38a26 26 0 0 0 52 0V12", 16, "butt") + P("M16 6h16v14H16zM68 6h16v14H68z").replace(
     "<path", '<path fill="#000" fill-opacity=".35"')
 G["expand"] = P("M4 50 24 30v12h18v16H24v12zM96 50 76 30v12H58v16h18v12z") + circle(50, 50, 7)
 G["magazine"] = P("M34 8h32l6 84H28z" "M40 20h20v8H40zM40 36h20v8H40zM40 52h20v8H40z", "evenodd")
 G["pouch"] = P("M32 24h36l-6 12c16 8 26 22 26 38 0 14-14 20-38 20S12 88 12 74c0-16 10-30 26-38z") + P("M34 34h32v7H34z").replace("<path", '<path fill="#000" fill-opacity=".3"')
 G["hand"] = P("M20 44h22a8 8 0 0 1 8 8v24a10 10 0 0 1-10 10H22A10 10 0 0 1 12 76V52a8 8 0 0 1 8-8z") + P("M38 44h48a7 7 0 0 1 0 14H38z") + P("M22 18a7 7 0 0 1 14 0v28H22z") + stroke("M14 62h32M14 72h32", 4).replace('stroke="currentColor"', 'stroke="#000" stroke-opacity=".35"')
-G["arch"] = P("M4 80V60c0-24 20-42 46-42s46 18 46 42v20H78V62c0-16-12-28-28-28S22 46 22 62v18z")
 G["target_burst"] = group(G["burst"], "translate(14 14) scale(.72)") + ring(50, 50, 44, 6)
 G["hero"] = (P("M28 30c0-14 10-22 22-22s22 8 22 22v8H28z") + P("M10 40c0-4 10-6 18-4h44c8-2 18 0 18 4s-16 8-40 8-40-4-40-8z")
              + P("M34 52h32v8c0 10-7 18-16 18s-16-8-16-18z") + P("M22 96c0-14 12-22 28-22s28 8 28 22z"))
-G["golem"] = G["cactus"] + group(G["sombrero"], "translate(14 -6) scale(.72)")
 G["bullet_h"] = P("M14 38h44c16 0 30 12 30 12S74 62 58 62H14z") + P("M6 34h10v32H6z")
 G["pew"] = group(G["bullet_h"], "translate(22 10) scale(.8)") + P("M2 26h22v7H2zM2 47h16v7H2zM2 68h22v7H2z")
 G["mine"] = star_points(50, 56, 10, 42, 30) + circle(50, 56, 26)
-G["turret"] = G["cactus"] + P("M58 40h36v12H58z")
 G["vampire"] = P("M50 92C26 76 10 58 10 36 30 44 40 30 50 10c10 20 20 34 40 26 0 22-16 40-40 56z") + P(
     "M38 50 44 70l6-20zM50 50l6 20 6-20z").replace("<path", '<path fill="#000" fill-opacity=".4"')
+
+
+
+# Spell pictograms, on the same subject as the spell's icon in the game.
+def voodoo_doll(arms, torso=None):
+    """A voodoo doll: stitched head, torso (a stitched sack unless given), legs, and the given arms as a path."""
+    head = cut(circle(50, 22, 17), stroke("M40 16l6 6M46 16l-6 6M54 16l6 6M60 16l-6 6", 3) + stroke("M42 30h16", 2.5))
+    body = torso if torso is not None else cut(P("M38 40h24l4 32H34z"), stroke("M40 50h20M40 60h20", 2.5))
+    return head + body + stroke("M42 70 38 94M58 70 62 94", 9) + stroke(arms, 9)
+
+
+def candle(x, top):
+    """A lit candle standing on y = 90, its wax top at the given height."""
+    return (P(f"M{x - 9} {top}h18v{90 - top}h-18z") + P(f"M{x - 9} {top}h18v5c-3 0-3 7-6 7s-3-7-6-7-3 5-6 5z")
+            + P(f"M{x} {top - 26}c6 8 9 12 9 18a9 9 0 0 1-18 0c0-6 3-10 9-18z"))
+
+
+G["cowboy_hat"] = P("M4 40c0-6 10-6 18-4 4-18 12-28 28-28s24 10 28 28c8-2 18-2 18 4 0 8-20 12-46 12S4 48 4 40z")
+G["fireball"] = circle(66, 50, 26) + P("M60 26C40 22 22 30 4 22c10 10 12 16 22 20-10 2-18 2-24 0 10 8 22 10 32 10-8 4-16 6-24 6"
+                                      " 12 8 30 10 42 8z")
+G["fire_beam"] = P("M28 98V42C20 34 20 20 28 8c2 10 8 14 10 16 0-12 4-20 12-24 6 6 10 14 10 24 4-4 8-6 10-16 8 12 8 26 0 34v56z")
+G["bolts"] = "".join(group(G["bolt"], f"translate({x} 2) scale(.42 .96)") for x in (-2, 29, 60))
+G["doll_heart"] = voodoo_doll("M36 50 18 64M64 50l18 14", torso=at(G["heart"], 50, 56, .58))
+G["candles"] = candle(32, 46) + candle(68, 34)
+G["bandito"] = G["cowboy_hat"] + cut(P("M28 50h44v10c0 4-2 8-6 10v4c0 14-8 24-16 24s-16-10-16-24v-4c-4-2-6-6-6-10z"),
+                                     P("M30 52h40v6H30z") + P("M36 66c4-4 24-4 28 0-4 2-24 2-28 0z"))
+G["frost_burst"] = cut(star_points(50, 50, 12, 48, 26), circle(50, 50, 20)) + at(G["snowflake"], 50, 50, .32)
+
+
+def ring_spiral(turns, r0, r1, width, start=-90):
+    """A spiral around the centre whose radius goes from r0 to r1, starting at the given angle, as a stroke."""
+    n = int(turns * 36)
+    points = [(50 + (r0 + (r1 - r0) * i / n) * math.cos(math.radians(start + i * 10)),
+               50 + (r0 + (r1 - r0) * i / n) * math.sin(math.radians(start + i * 10))) for i in range(n + 1)]
+    return stroke("M" + "L".join(f"{x:.1f} {y:.1f}" for x, y in points), width)
+
+
+def drips(x0, y0, x1, y1, spots):
+    """Paint drips hanging under the segment (x0, y0)-(x1, y1), as (position along it, length) pairs."""
+    art = ""
+    for t, length in spots:
+        x, y = x0 + (x1 - x0) * t, y0 + (y1 - y0) * t
+        art += stroke(f"M{x:.1f} {y:.1f}v{length * 1.4:.0f}", 8) + circle(round(x, 1), round(y + length * 1.4, 1), 6)
+    return art
+
+
+G["burning_skull"] = (cut(at(P("M50 20c-22 0-34 14-34 32 0 12 6 20 14 24v14h40V76c8-4 14-12 14-24 0-18-12-32-34-32z"), 50, 56, .92),
+                          '<ellipse cx="38" cy="52" rx="10" ry="11"/><ellipse cx="62" cy="52" rx="10" ry="11"/>'
+                          + P("M47 64h6l-3 6z") + stroke("M40 82v6M50 82v6M60 82v6", 3))
+                      + at(G["flame"], 38, 50, .24) + at(G["flame"], 62, 50, .24))
+G["cactus_cannon"] = (at(P("M12 38h54l4 4v16l-4 4H12a12 12 0 0 1 0-24z")
+                         + "".join(P(f"M{x} 40l4-8 4 8zM{x} 60l4 8 4-8z") for x in (20, 34, 48)), 34, 66, 1, -45)
+                      + at(P("M50 4c10 14 30 24 28 46-2 18-14 26-28 26S22 68 22 50c0-14 10-20 14-34 6 10 8 14 12 16 2-10 2-18 2-28z"),
+                           66, 34, .7, 45))
+G["breeze"] = at(G["snowflake"], 50, 50, .4) + ring_spiral(1.25, 30, 42, 6, 90)
+G["dripping_arrow"] = (P("M10 84 74 20l6 6-64 64z") + arrow(70, 30, 92, 8, 1, 30)
+                       + drips(12, 90, 76, 26, ((.1, 4), (.3, 12), (.5, 6), (.7, 16), (.9, 8))))
+
+
+def ray(x0, y0, angle, length, width):
+    """A tapered ray from (x0, y0) in the given direction (degrees), widest at its far end."""
+    a, n = math.radians(angle), math.radians(angle + 90)
+    tx, ty = x0 + length * math.cos(a), y0 + length * math.sin(a)
+    dx, dy = width / 2 * math.cos(n), width / 2 * math.sin(n)
+    return f'<polygon points="{x0:.1f},{y0:.1f} {tx + dx:.1f},{ty + dy:.1f} {tx - dx:.1f},{ty - dy:.1f}"/>'
+
+
+G["splash"] = ('<ellipse cx="50" cy="88" rx="40" ry="8"/>' + at(G["drop"], 50, 58, .5)
+               + stroke("M30 80C22 70 16 66 8 66M70 80c8-10 14-14 22-14", 6)
+               + circle(10, 54, 5) + circle(90, 54, 5) + circle(26, 40, 4) + circle(74, 40, 4))
+G["drained_doll"] = (at(voodoo_doll("M62 48h20M38 48 22 62"), 28, 74, .78, -70)
+                     + "".join(ray(48, 62, a, length, 18) for a, length in ((-100, 64), (-70, 70), (-40, 66), (-10, 58))))
+G["hatted_cactus"] = (P("M36 40h28v52a4 4 0 0 1-4 4H40a4 4 0 0 1-4-4z")
+                      + P("M36 50 18 56l18 6zM36 68l-18 6 18 6zM64 50l18 6-18 6zM64 68l18 6-18 6zM36 84l-14 5 14 5zM64 84l14 5-14 5z")
+                      + at(G["cowboy_hat"], 50, 30, .92))
 
 
 def _check_glyphs():
@@ -319,18 +390,18 @@ SCHOOL_GLYPHS = {
 }
 
 SPELL_GLYPHS = {
-    "itemSpellFireBall": "flame", "itemSpellFireBeam": "beam", "itemSpellFireSurcharge": "target_burst",
+    "itemSpellFireBall": "fireball", "itemSpellFireBeam": "fire_beam", "itemSpellFireSurcharge": "target_burst",
     "itemSpellFireWisp": "ghost", "itemSpellFireFingergun": "hand",
-    "itemSpellElecStrike": "bolt", "itemSpellElecSuperJump": "spring", "itemSpellElecPortal": "portal",
+    "itemSpellElecStrike": "bolts", "itemSpellElecSuperJump": "spring", "itemSpellElecPortal": "portal",
     "itemSpellElecSwap": "swap", "itemSpellElecThunderstrike": "bolt+down",
     "itemSpellAcidThrower": "spray", "itemSpellAcidGeyser": "geyser", "itemSpellAcidBubble": "bubble",
-    "itemSpellAcidContagion": "biohazard", "itemSpellAcidRain": "rain",
-    "itemSpellVoodooDrain": "heart+down", "itemSpellVoodooHeal": "heart+plus", "itemSpellVoodooCorruption": "swirl",
-    "itemSpellVoodooHealArea": "candle", "itemSpellVoodooDoll": "doll",
-    "itemSpellCactusBetty": "mine", "itemSpellCactusTurret": "turret", "itemSpellCactusWall": "spikes",
-    "itemSpellCactusDecoy": "cactus+note", "itemSpellCactusUlti": "golem",
-    "itemSpellIceBreeze": "wind", "itemSpellIceLance": "arch", "itemSpellIceCube": "cube",
-    "itemSpellIceGlaze": "snowflake+shield", "itemSpellIceBlizzard": "cloud+snowflake",
+    "itemSpellAcidContagion": "splash", "itemSpellAcidRain": "rain",
+    "itemSpellVoodooDrain": "drained_doll", "itemSpellVoodooHeal": "doll_heart", "itemSpellVoodooCorruption": "burning_skull",
+    "itemSpellVoodooHealArea": "candles", "itemSpellVoodooDoll": "doll",
+    "itemSpellCactusBetty": "mine", "itemSpellCactusTurret": "cactus_cannon", "itemSpellCactusWall": "spikes",
+    "itemSpellCactusDecoy": "hatted_cactus", "itemSpellCactusUlti": "bandito",
+    "itemSpellIceBreeze": "breeze", "itemSpellIceLance": "dripping_arrow", "itemSpellIceCube": "cube",
+    "itemSpellIceGlaze": "frost_burst", "itemSpellIceBlizzard": "cloud+snowflake",
 }
 
 UPGRADE_GLYPHS = {
@@ -367,11 +438,6 @@ G["horseshoe"] = cut(stroke("M30 94V52a20 20 0 0 1 40 0v42", 17, "butt"),
                              for a in (160, 200, 240, 300, 340, 20)) + P("M20 82h60v3H20z"))
 G["bone"] = stroke("M24 50h52", 14) + circle(20, 42, 10) + circle(20, 58, 10) + circle(80, 42, 10) + circle(80, 58, 10)
 G["bin"] = cut(P("M24 40h52l-6 54H30z") + P("M20 34h60v8H20z"), stroke("M40 50v36M50 50v36M60 50v36", 4))
-G["gun_left"] = (P("M6 30h46v14H6z") + P("M8 24h6v6H8z") + P("M46 24h32v32H46z") + P("M74 18h10v12H74z")
-                 + P("M58 54h22l10 38H68z") + stroke("M50 56c0 10 6 14 12 14", 5))
-G["fist_side"] = cut(P("M14 36c0-12 10-22 22-22h30v72H34C22 86 14 76 14 64z")
-                     + "".join(f'<rect x="58" y="{y}" width="34" height="15" rx="7.5"/>' for y in (14, 31, 48, 65)),
-                     stroke("M14 52c14 0 28 4 36 14", 5) + stroke("M58 29.5h30M58 46.5h30M58 63.5h30", 2.5))
 
 G["jester"] = (P("M14 72C12 52 8 42 2 30c14 0 24 8 30 18 2-18 8-32 18-44 10 12 16 26 18 44 6-10 16-18 30-18-6 12-10 22-12 42z")
                + P("M10 68h80v16H10z") + circle(6, 30, 7) + circle(50, 6, 7) + circle(94, 30, 7))
@@ -404,16 +470,6 @@ def cycle_arrows(n, r=34, width=12):
                 (50 + (r - 12) * math.cos(a1), 50 + (r - 12) * math.sin(a1))]
         parts.append(f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in head)}"/>')
     return "".join(parts)
-
-
-def arrow(x0, y0, x1, y1, width=6, head=16):
-    """A straight arrow from (x0, y0) to its tip at (x1, y1)."""
-    length = math.hypot(x1 - x0, y1 - y0)
-    ux, uy = (x1 - x0) / length, (y1 - y0) / length
-    bx, by = x1 - head * ux, y1 - head * uy
-    corners = [(x1, y1), (bx - head * .6 * uy, by + head * .6 * ux), (bx + head * .6 * uy, by - head * .6 * ux)]
-    return (stroke(f"M{x0} {y0}L{bx + 2 * ux:.1f} {by + 2 * uy:.1f}", width, "butt")
-            + f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in corners)}"/>')
 
 
 def through(ring_art, arrow_art, front, behind):
