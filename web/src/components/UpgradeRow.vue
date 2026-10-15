@@ -6,7 +6,6 @@ import { useI18n } from 'vue-i18n'
 import type { Upgrade } from '@/domain/gameData'
 import { iconUrl } from '@/icons'
 import { useLanguageStore } from '@/stores/language'
-import { upgradeColor } from '@/ui/colors'
 
 const props = defineProps<{
   upgrade: Upgrade
@@ -36,7 +35,7 @@ function setTo(points: number) {
 </script>
 
 <template>
-  <div class="row" :style="{ '--band': upgradeColor(upgrade.id) }">
+  <div class="row" :style="{ '--band': upgrade.color }">
     <div class="band">
       <img :src="iconUrl(upgrade.id)" alt="" />
       <span class="name">{{ name }}</span>
@@ -89,8 +88,17 @@ function setTo(points: number) {
 .band {
   align-items: center;
   align-self: stretch;
-  background: linear-gradient(90deg, var(--band), color-mix(in srgb, var(--band) 35%, transparent));
+  /* As in the game: a dark band lit by the stat colour on the left, the name in that colour. */
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--band) 75%, #000) 0,
+    color-mix(in srgb, var(--band) 30%, #1c1d22) 3rem,
+    rgb(28 29 34 / 85%) 75%,
+    transparent
+  );
   border-left: 5px solid var(--band);
+  border-radius: 6px 0 0 6px;
+  box-shadow: -4px 0 12px color-mix(in srgb, var(--band) 45%, transparent);
   display: flex;
   gap: 0.5rem;
   padding: 0.2rem 0.6rem;
@@ -101,6 +109,7 @@ function setTo(points: number) {
   width: 1.8rem;
 }
 .name {
+  color: var(--band);
   font-family: var(--font-title);
   font-size: 1.1rem;
   line-height: 1.1;

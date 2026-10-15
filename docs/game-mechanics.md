@@ -71,7 +71,8 @@ joker budget. The utility has neither upgrades nor jokers.
 - **1 point every 2 levels** since update 644, up to **20 points at level 40**.
 - **+6 points** can be bought at the prestige shop → **26 points** per carrier, hero included.
 - Each upgrade has a name (`name`), a value per point (`value`), a maximum number of points (`max_slots`), a gold
-  price per point (`gold_cost`, out of scope for now) and the ids of the carriers that have it (`available_on`).
+  price per point (`gold_cost`, out of scope for now), the ids of the carriers that have it (`available_on`) and
+  its colour on the game's upgrade screen (`color`, the row's `upgradeColor` converted from linear to sRGB).
 - `flat`: `true` if the value is a fixed amount (Health: +5 HP per point; Chord Capacity: +1 chord per point),
   `false` if it is a fraction (`0.05` = +5%).
 - The same stat can come in several variants depending on the weapon: for instance Attack Speed is +5% ×16 on

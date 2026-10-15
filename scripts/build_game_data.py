@@ -246,6 +246,14 @@ def clean(value):
     return value.replace("\r\n", "\n")
 
 
+def srgb_hex(color):
+    """Converts an FLinearColor (linear RGBA floats) to the sRGB hex colour the game displays."""
+    def channel(c):
+        c = min(max(c, 0.0), 1.0)
+        return round(255 * (12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055))
+    return "#" + "".join(f"{channel(c):02x}" for c in color[:3])
+
+
 def row_text(item_id, field, value):
     """Text of a DataTable row field: an FText pointing to a string table entry."""
     if not isinstance(value, dict):
@@ -306,6 +314,8 @@ for key, row in rows.items():
                 "max_slots": row["maxAvailable"],
                 "gold_cost": row["buyPrice"],
                 "available_on": items(row["availableOnItems"]),
+                # Colour of the stat on the game's upgrade screen (band, name and points).
+                "color": srgb_hex(row["upgradeColor"] or [0, 0, 0]),
             })
         continue
     jokers.append({

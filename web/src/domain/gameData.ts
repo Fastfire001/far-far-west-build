@@ -63,6 +63,8 @@ export interface Upgrade {
   max_slots: number
   gold_cost: number
   available_on: string[]
+  /** Colour of the stat on the game's upgrade screen, as #rrggbb. */
+  color: string
 }
 
 export interface Progression {
