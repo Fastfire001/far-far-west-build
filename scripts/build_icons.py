@@ -4,7 +4,8 @@ schools and spells, plus the hero (itemHero).
 Usage: python3 scripts/build_icons.py <data_dir> <out_dir>
 
 The icons are original drawings that follow the game's visual codes without copying its assets:
-- jokers: a card in the colour of their rarity, one dot per slot they cost, a white pictogram;
+- jokers: a card in the colour of their rarity, one dot per slot they cost, and a white drawing of their own, on the
+  same subject as the joker's card in the game;
 - spells and spell schools: a round badge in the colour of their school (`school_colors` in manual.json);
 - equipment and the hero: a light silhouette on a dark tile;
 - upgrades: a hexagon in the colour of their stat on the game's upgrade screen (`color` in upgrades.json).
@@ -64,6 +65,23 @@ def group(content, transform):
     return f'<g transform="{transform}">{content}</g>'
 
 
+def at(content, cx, cy, scale=1, rotate=0):
+    """Places a pictogram drawn in the 100x100 box with its centre at (cx, cy), scaled and rotated."""
+    return group(content, f"translate({cx} {cy}) rotate({rotate}) scale({scale}) translate(-50 -50)")
+
+
+_masks = [0]
+
+
+def cut(content, holes):
+    """Punches holes (any pictogram, drawn in black) out of content, so the card shows through."""
+    _masks[0] += 1
+    mask = f"k{_masks[0]}"
+    return (f'<mask id="{mask}" maskUnits="userSpaceOnUse" x="-100" y="-100" width="300" height="300">'
+            f'<rect x="-100" y="-100" width="300" height="300" fill="#fff"/><g fill="#000" color="#000">{holes}</g></mask>'
+            f'<g mask="url(#{mask})">{content}</g>')
+
+
 G = {}
 
 G["burst"] = star_points(50, 50, 9, 46, 22)
@@ -89,60 +107,25 @@ G["skull"] = P("M50 8C26 8 12 24 12 46c0 14 7 22 16 26v18h44V72c9-4 16-12 16-26C
                + hole(34, 46, 9) + hole(66, 46, 9) + "M44 64h12v8H44z", "evenodd")
 G["ghost"] = P("M50 6C28 6 16 24 16 46v48l12-10 11 10 11-10 11 10 11-10 12 10V46C84 24 72 6 50 6z"
                + hole(38, 42, 7) + hole(62, 42, 7), "evenodd")
-G["coin"] = circle(50, 50, 44) + ring(50, 50, 32, 5).replace('stroke="currentColor"', 'stroke="#000" stroke-opacity=".3"') + star_points(50, 51, 5, 18, 8).replace("<polygon", '<polygon fill="#000" fill-opacity=".3"')
-G["nugget"] = P("M14 66 26 34l24-14 30 12 8 30-16 22H32z") + P("M34 40l14-8 10 4-12 10z").replace(
-    "<path", '<path fill="#000" fill-opacity=".3"')
 G["hourglass"] = P("M22 6h56v10c0 20-20 28-20 34s20 14 20 34v10H22V84c0-20 20-28 20-34S22 36 22 16z"
                    "M32 16c0 14 18 22 18 30 0-8 18-16 18-30z", "evenodd")
 G["chevrons"] = P("M10 18h22l28 32-28 32H10l28-32zM46 18h22l28 32-28 32H46l28-32z")
-G["feather"] = P("M84 6C44 12 20 48 16 94h9c4-22 14-36 30-46H42c12-8 22-16 26-24H56C68 18 78 12 84 6z")
-G["weight"] = P("M30 44c0-16 8-28 20-28s20 12 20 28h-9c0-11-4-19-11-19s-11 8-11 19z") + circle(50, 66, 28)
 G["reload"] = stroke("M82 52a32 32 0 1 1-14-28", 12) + P("M58 6 90 22 62 40z")
-G["clover"] = circle(36, 36, 17) + circle(64, 36, 17) + circle(36, 64, 17) + circle(64, 64, 17) + P("M47 60h6v36h-6z")
-G["fist"] = P("M22 30a8 8 0 0 1 8-8h44a8 8 0 0 1 8 8v40c0 12-10 22-22 22H38c-9 0-16-7-16-16z") + stroke("M35 26v14M50 26v14M65 26v14", 4).replace(
-              'stroke="currentColor"', 'stroke="#000" stroke-opacity=".35"') + P("M10 48h22v18H18a8 8 0 0 1-8-8z")
 G["note"] = P("M36 16 84 6v62a12 10 0 1 1-8-9V24L44 31v49a12 10 0 1 1-8-9z")
 G["boomerang"] = stroke("M10 34Q40 38 50 72 60 38 90 34", 17)
-G["star"] = star_points(50, 52, 5, 46, 20)
 G["sheriff"] = star_points(50, 50, 6, 46, 24) + "".join(
     circle(round(50 + 44 * math.cos(math.radians(-90 + i * 60)), 1), round(50 + 44 * math.sin(math.radians(-90 + i * 60)), 1), 7)
     for i in range(6))
-G["pig"] = circle(50, 54, 36) + P("M18 30 26 8l16 16zM82 30 74 8 58 24z") + P(
-    "M38 58a12 9 0 1 0 24 0 12 9 0 1 0-24 0z" + hole(45, 58, 3) + hole(55, 58, 3), "evenodd").replace(
-    "<path", '<path fill="#000" fill-opacity=".35"') + P(hole(38, 42, 4) + hole(62, 42, 4)).replace(
-    "<path", '<path fill="#000" fill-opacity=".35"')
-G["drumstick"] = P("M60 8c18 0 32 14 32 30 0 18-16 30-34 26L36 86a10 10 0 1 1-14-6 10 10 0 1 1-6-14l22-22C34 26 44 8 60 8z")
-G["duck"] = P("M30 50c0-16 10-28 26-28s24 12 24 24c0 6-2 10-4 13h20c0 20-16 33-40 33-20 0-34-10-36-26 4 4 10 6 16 6-4-6-6-14-6-22z"
-              "M56 40a4 4 0 1 0 0.1 0z", "evenodd") + P("M76 44h18l-10 10H76z")
 G["bell"] = P("M50 8c-18 0-26 18-26 38v20L12 80h76L76 66V46C76 26 68 8 50 8z") + circle(50, 88, 8)
-G["mushroom"] = P("M8 52C8 28 28 10 50 10s42 18 42 42z") + P("M38 52h24v34a8 8 0 0 1-8 8H46a8 8 0 0 1-8-8z")
 G["pickaxe"] = group(stroke("M14 34C32 14 68 14 86 34", 12) + P("M45 22h10v72H45z"), "rotate(-35 50 50)")
-G["card"] = P("M22 6h56a8 8 0 0 1 8 8v72a8 8 0 0 1-8 8H22a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8z"
-              "M26 18v64h48V18zM50 34 62 50 50 66 38 50z", "evenodd")
-G["cards"] = group(G["card"], "rotate(-16 50 50) translate(-8 0) scale(.9)") + group(G["card"], "rotate(14 50 50) translate(14 4) scale(.9)")
-G["chest"] = P("M10 44h80v42a6 6 0 0 1-6 6H16a6 6 0 0 1-6-6z") + P("M10 40c0-16 12-28 28-28h24c16 0 28 12 28 28z") + P(
-    "M42 40h16v18H42z").replace("<path", '<path fill="#000" fill-opacity=".35"')
-G["horseshoe"] = stroke("M24 14v34a26 26 0 0 0 52 0V14", 16, "butt")
 G["moon"] = P("M60 6A44 44 0 1 0 94 64 34 34 0 1 1 60 6z")
-G["sun"] = circle(50, 50, 20) + "".join(group(P("M46 4h8v18h-8z"), f"rotate({a} 50 50)") for a in range(0, 360, 45))
-G["dash"] = P("M4 28h40v10H4zM12 46h40v10H12zM4 64h40v10H4z") + P("M56 14 96 50 56 86z")
-G["crown"] = P("M8 82 14 24l22 26 14-34 14 34 22-26 6 58z")
-G["bomb"] = circle(44, 58, 34) + stroke("M64 30c6-10 14-14 22-12", 7) + star_points(88, 14, 5, 10, 4)
 G["arrow"] = group(P("M10 46h62v8H10z") + P("M68 32 96 50 68 68z") + P("M4 34h16l10 12H14zM4 66h16l10-12H14z"), "rotate(-40 50 50)")
 G["lasso"] = stroke("M30 52c-14-6-20-18-12-28 10-12 40-14 56-2 12 10 8 24-8 28-12 3-26 2-36 2", 8) + stroke(
     "M30 52c2 14 6 26 18 40", 8)
-G["ring"] = ring(50, 60, 28, 10) + P("M36 24 44 10h12l8 14-14 14z")
-G["eye"] = P("M4 50C18 28 34 18 50 18s32 10 46 32C82 72 66 82 50 82S18 72 4 50z" + hole(50, 50, 18), "evenodd") + circle(50, 50, 9)
 G["chain"] = stroke("M44 56 28 72a14 14 0 0 1-20-20l16-16a14 14 0 0 1 20 0", 10) + stroke(
     "M56 44l16-16a14 14 0 0 1 20 20L76 64a14 14 0 0 1-20 0", 10)
-G["wheel"] = ring(50, 50, 38, 10) + "".join(group(P("M47 14h6v72h-6z"), f"rotate({a} 50 50)") for a in (0, 45, 90, 135)) + circle(50, 50, 10)
-G["wrench"] = P("M72 6a22 22 0 0 0-20 30L10 78a8 8 0 0 0 12 12l42-42A22 22 0 0 0 94 28L80 42 64 38 60 22 74 8z")
 G["tooth"] = P("M26 10c10-4 18 2 24 2s14-6 24-2c12 6 14 22 8 38-4 12-4 24-8 38-2 6-10 6-12 0l-6-22c-2-6-10-6-12 0l-6 22c-2 6-10 6-12 0-4-14-4-26-8-38-6-16-4-32 8-38z")
 G["bottle"] = P("M42 6h16v8h-2v18c12 4 18 14 18 26v28a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V58c0-12 6-22 18-26V14h-2z")
-G["pear"] = P("M50 22c10 0 14 10 14 18 0 10 18 16 18 34 0 14-14 22-32 22S18 88 18 74c0-18 18-24 18-34 0-8 4-18 14-18z") + P(
-    "M50 22c2-8 10-16 20-16-2 10-10 16-20 16z")
-G["wall"] = P("M6 20h88v62H6zM8 40h84M8 60h84", "nonzero") + stroke("M8 40h84M8 60h84M30 22v18M70 22v18M50 40v20M18 60v20M82 60v20", 5).replace(
-    'stroke="currentColor"', 'stroke="#000" stroke-opacity=".35"')
 G["cube"] = P("M50 6 90 28v44L50 94 10 72V28z") + P("M50 50 90 28M50 50v44M50 50 10 28", "nonzero").replace(
     "<path", '<path fill="none" stroke="#000" stroke-opacity=".35" stroke-width="5"')
 G["portal"] = (f'<ellipse cx="30" cy="50" rx="14" ry="38" fill="none" stroke="currentColor" stroke-width="9"/>'
@@ -166,19 +149,16 @@ G["doll"] = (circle(50, 26, 20) + P("M36 46h28l6 20 18 6-4 10-20-6v24H48V78H42v2
              + P("M38 20l8 8M46 20l-8 8M54 20l8 8M62 20l-8 8", "nonzero").replace(
                  "<path", '<path fill="none" stroke="#000" stroke-opacity=".45" stroke-width="4"'))
 G["sombrero"] = P("M4 70c0-6 20-10 46-10s46 4 46 10-20 10-46 10S4 76 4 70z") + P("M32 62c0-26 8-40 18-40s18 14 18 40z")
-G["hat"] = P("M4 64c0-6 10-6 18-4 6-26 14-40 28-40s22 14 28 40c8-2 18-2 18 4 0 10-20 16-46 16S4 74 4 64z")
 G["magnet"] = stroke("M24 12v38a26 26 0 0 0 52 0V12", 16, "butt") + P("M16 6h16v14H16zM68 6h16v14H68z").replace(
     "<path", '<path fill="#000" fill-opacity=".35"')
 G["expand"] = P("M4 50 24 30v12h18v16H24v12zM96 50 76 30v12H58v16h18v12z") + circle(50, 50, 7)
 G["magazine"] = P("M34 8h32l6 84H28z" "M40 20h20v8H40zM40 36h20v8H40zM40 52h20v8H40z", "evenodd")
 G["pouch"] = P("M32 24h36l-6 12c16 8 26 22 26 38 0 14-14 20-38 20S12 88 12 74c0-16 10-30 26-38z") + P("M34 34h32v7H34z").replace("<path", '<path fill="#000" fill-opacity=".3"')
 G["hand"] = P("M20 44h22a8 8 0 0 1 8 8v24a10 10 0 0 1-10 10H22A10 10 0 0 1 12 76V52a8 8 0 0 1 8-8z") + P("M38 44h48a7 7 0 0 1 0 14H38z") + P("M22 18a7 7 0 0 1 14 0v28H22z") + stroke("M14 62h32M14 72h32", 4).replace('stroke="currentColor"', 'stroke="#000" stroke-opacity=".35"')
-G["tornado"] = P("M8 14h84l-8 12H16zM20 34h64l-10 12H30zM30 54h44l-10 12H40zM40 74h22l-8 12H48z")
 G["arch"] = P("M4 80V60c0-24 20-42 46-42s46 18 46 42v20H78V62c0-16-12-28-28-28S22 46 22 62v18z")
 G["target_burst"] = group(G["burst"], "translate(14 14) scale(.72)") + ring(50, 50, 44, 6)
 G["hero"] = (P("M28 30c0-14 10-22 22-22s22 8 22 22v8H28z") + P("M10 40c0-4 10-6 18-4h44c8-2 18 0 18 4s-16 8-40 8-40-4-40-8z")
              + P("M34 52h32v8c0 10-7 18-16 18s-16-8-16-18z") + P("M22 96c0-14 12-22 28-22s28 8 28 22z"))
-G["allies"] = group(G["hero"], "translate(-4 14) scale(.62)") + group(G["hero"], "translate(42 14) scale(.62)")
 G["golem"] = G["cactus"] + group(G["sombrero"], "translate(14 -6) scale(.72)")
 G["bullet_h"] = P("M14 38h44c16 0 30 12 30 12S74 62 58 62H14z") + P("M6 34h10v32H6z")
 G["pew"] = group(G["bullet_h"], "translate(22 10) scale(.8)") + P("M2 26h22v7H2zM2 47h16v7H2zM2 68h22v7H2z")
@@ -186,15 +166,6 @@ G["mine"] = star_points(50, 56, 10, 42, 30) + circle(50, 56, 26)
 G["turret"] = G["cactus"] + P("M58 40h36v12H58z")
 G["vampire"] = P("M50 92C26 76 10 58 10 36 30 44 40 30 50 10c10 20 20 34 40 26 0 22-16 40-40 56z") + P(
     "M38 50 44 70l6-20zM50 50l6 20 6-20z").replace("<path", '<path fill="#000" fill-opacity=".4"')
-G["glass"] = P("M22 8h56l-6 40c-2 14-12 22-22 22S30 62 28 48zM46 70h8v16h14v8H32v-8h14z") + P(
-    "M40 16 58 40", "nonzero").replace("<path", '<path fill="none" stroke="#000" stroke-opacity=".4" stroke-width="5"')
-G["tin"] = P("M34 6h32v18H34zM28 28h44v40H28zM12 30h14v34H12zM74 30h14v34H74zM32 72h14v22H32zM54 72h14v22H54z")
-G["eagle"] = P("M4 30c20-6 32 0 40 10 4-14 18-24 38-22l14 8-16 6c-6 14-14 30-34 40l-6 20-8-16C18 70 8 52 4 30z")
-G["confetti"] = P("M12 92 36 30l34 34z") + P("M60 12h8v8h-8zM78 28h8v8h-8zM70 46h8v8h-8zM48 22h6v6h-6zM84 54h6v6h-6z")
-G["skull_x"] = G["skull"] + P("M70 8l8-8 22 22-8 8z")
-G["flex"] = P("M14 70c0-24 10-40 22-46l8 14c-6 4-10 10-10 18 8-10 22-14 36-10 14 4 20 18 18 30-2 14-14 20-30 20H30c-10 0-16-10-16-26z")
-G["campsite"] = P("M50 10 92 86H8z" "M50 46 66 86H34z", "evenodd")
-G["dart"] = P("M50 4 64 50 50 96 36 50z")
 
 
 def _check_glyphs():
@@ -225,7 +196,7 @@ def document(view_box, content, title):
             f"<title>{html.escape(title)}</title>{content}</svg>\n")
 
 
-def joker_icon(joker, spec, school=None):
+def joker_icon(joker, svg, school=None):
     color = RARITY_COLORS[joker["rarity"]]
     dots = joker["slot_cost"]
     spacing = 9
@@ -234,7 +205,7 @@ def joker_icon(joker, spec, school=None):
         f'<rect x="2" y="2" width="96" height="136" rx="10" fill="{color}"/>'
         f'<rect x="8" y="8" width="84" height="124" rx="6" fill="none" stroke="#000" stroke-opacity=".25" stroke-width="2"/>'
         + "".join(f'<circle cx="{first + i * spacing:.1f}" cy="18" r="3.2" fill="#fff"/>' for i in range(dots))
-        + group(f'<g fill="#fff" color="#fff">{glyph(spec)}</g>', "translate(18 44) scale(.64)")
+        + group(f'<g fill="#fff" color="#fff">{svg}</g>', "translate(8 32) scale(.84)")
     )
     if school:
         content += (f'<circle cx="80" cy="120" r="13" fill="{SCHOOL_COLORS[school]}" stroke="#fff" stroke-width="2.5"/>'
@@ -373,73 +344,411 @@ UPGRADE_GLYPHS = {
     "jokerUpgradeChordCapacity": "note+plus", "jokerUpgradeChargingSpeed": "bolt+chevrons",
 }
 
-# Jokers: pictogram, and for elemental jokers the spell school shown in a corner badge.
-JOKER_GLYPHS = {
-    # Normal
-    "jokerBracing": "reload+plus", "jokerChickshot": "drumstick", "jokerDeadlyStrong": "ghost+plus",
-    "jokerFreeCocktail": "bottle+plus", "jokerGoldTooth": "tooth", "jokerHeavyDrinker": "bottle",
-    "jokerHeavyWeapon": "weight", "jokerHelpingHand": "allies+chevrons", "jokerKnuckleDown": "fist",
-    "jokerLastDance": "skull+chevrons", "jokerLightWeight": "feather", "jokerMagicReload": "reload+star",
-    "jokerPanicAttack": "heart+burst", "jokerPartyShot": "confetti", "jokerPigshot": "pig",
-    "jokerQuickDraw": "hand+chevrons", "jokerRelentless": "skull+burst", "jokerPlasticDuck": "duck",
-    "jokerShineBright": "sun", "jokerSpareBullets": "bullets+plus", "jokerFocusedFeet": "crosshair+chevrons",
-    # Fine
-    "jokerAntiGravityFalls": "feather+up", "jokerBellShot": "bell", "jokerBouncingBall": "spring+burst",
-    "jokerCactusDay": "cactus", "jokerCarePackage": "chest+plus", "jokerChad": "hat",
-    "jokerClutch": "bomb", "jokerCrackShot": "burst+plus", "jokerFastHands": "reload+chevrons",
-    "jokerFightOrFlight": "fist+chevrons", "jokerFistFight": "fist+burst", "jokerFrostBite": "fist+snowflake",
-    "jokerGoldProspector": "nugget", "jokerHop": "up", "jokerLuckyStrike": "clover",
-    "jokerLunge": "fist+expand", "jokerJokheal": "card+heart", "jokerPickPick": "pickaxe",
-    "jokerPreciousRush": "ring", "jokerPricklyPear": "pear", "jokerRage": "flame+skull",
-    "jokerRunAndGun": "chevrons+bullet", "jokerRunAndReload": "chevrons+reload", "jokerScoutsHonor": "shield+star",
-    "jokerShroomGrave": "mushroom", "jokerSlowAndSteady": "crosshair+minus", "jokerSoulReaper": "ghost+plus",
-    "jokerSoulSiphon": "ghost+heart", "jokerSpeedyGunzales": "chevrons", "jokerFastDraw": "hand+burst",
-    "jokerWellFed": "heart+plus",
-    # Prime
-    "jokerAmmoSupply": "chest+bullet", "jokerApprentice": "hourglass+minus", "jokerAvalanche": "shield+burst",
-    "jokerBerserker": "skull+fist", "jokerBloodLust": "fist+drop", "jokerCheapSkate": "coin+heart",
-    "jokerChonky": "weight+burst", "jokerDestroyer": "magazine+burst", "jokerDisgrace": "horseshoe+chevrons",
-    "jokerExplosiveRoundsAcid": "bomb", "jokerExplosiveRoundsElec": "bomb", "jokerExplosiveRoundsFrost": "bomb",
-    "jokerExplosiveRounds": "bomb", "jokerGreatWall": "wall", "jokerHealthyBoi": "heart+chevrons",
-    "jokerFreezeOver": "shield+snowflake", "jokerMagicFriendship": "allies+heart", "jokerPewPewPew": "pew",
-    "jokerRampage": "reload+skull", "jokerReloadMastery": "reload", "jokerScrubBullet": "bullet+minus",
-    "jokerSharpShooter": "crosshair+plus", "jokerSoulEater": "ghost+burst", "jokerStonks": "chest+card",
-    "jokerWeakLink": "chain", "jokerHeadshotRefund": "crosshair+bullet",
-    # Mythic
-    "jokerCdrAcid": "hourglass", "jokerCdrCactus": "hourglass", "jokerColdBlooded": "fist+snowflake",
-    "jokerConsumer": "magazine+minus", "jokerDeathsDance": "shield+hourglass", "jokerEatAPunch": "fist+heart",
-    "jokerCdrElec": "hourglass", "jokerExecute": "skull_x", "jokerExtraJump": "up+plus",
-    "jokerCdrFrost": "hourglass", "jokerHeadBang": "crosshair+burst", "jokerHitMe": "heart+hourglass",
-    "jokerHoarder": "cards", "jokerTweakDealer": "card+plus", "jokerLastStand": "shield+skull",
-    "jokerLazy": "bullets+hourglass", "jokerLifePact": "heart+skull", "jokerLowGravity": "moon",
-    "jokerCdrFire": "hourglass", "jokerRiposte": "shield+fist", "jokerSecondWind": "heart+reload",
-    "jokerSnackAPunch": "fist+shield", "jokerThickSkin": "shield+minus", "jokerTinMan": "tin",
-    "jokerCdrVoodoo": "hourglass", "jokerWestWizard": "hat+star",
-    # Legendary
-    "jokerAllMighty": "crown", "jokerBattleMage": "skull+hourglass", "jokerCamper": "campsite",
-    "jokerCantRipOneTrick": "hourglass+star", "jokerCastAway": "star+hourglass", "jokerCoinFlip": "coin",
-    "jokerDoubleDown": "shield+plus", "jokerDwarf": "down", "jokerExtraDash": "dash+plus",
-    "jokerGiant": "flex", "jokerGlassCannon": "glass", "jokerGoliath": "flex+heart",
-    "jokerOneTrick": "cards+star", "jokerMachineGun": "pew+up", "jokerRicochet": "bullet+swap",
-    "jokerSpeedster": "chevrons+burst", "jokerSpellRoulette": "wheel", "jokerToolBox": "wrench",
-    "jokerVampire": "vampire",
-    # Unique
-    "jokerAimingBurst": "crosshair+bullets", "jokerBardbarian": "note+fist", "jokerChonkyThrow": "boomerang+plus",
-    "jokerEagleLever": "eagle", "jokerEcoTrick": "reload+bullet", "jokerElementalSpin": "tornado",
-    "jokerFanningAce": "hand+bullets", "jokerFistRage": "fist+flame", "jokerFistRoDah": "fist+snowflake",
-    "jokerFocusShot": "crosshair+hourglass", "jokerFrenzySpin": "tornado+skull", "jokerHomingBurst": "dart",
-    "jokerJumpStar": "sheriff+up", "jokerLingeringThrow": "boomerang+hourglass", "jokerLullabard": "note+heart",
-    "jokerMarkAce": "eye", "jokerMindShot": "crosshair+bomb", "jokerOverBlast": "bullets+burst",
-    "jokerOverDraw": "arrow+plus", "jokerRushBlast": "bullet+crosshair", "jokerScavengerStar": "sheriff+magnet",
-    "jokerSkyLash": "lasso+up", "jokerSpellLash": "lasso+star", "jokerStackedLever": "bullets+reload",
-    "jokerSwampTrick": "drop+burst", "jokerUltraDraw": "arrow+bomb",
-}
 JOKER_SCHOOLS = {
     "jokerExplosiveRounds": "itemFire", "jokerExplosiveRoundsAcid": "itemAcid", "jokerExplosiveRoundsElec": "itemElec",
     "jokerExplosiveRoundsFrost": "itemIce", "jokerCdrFire": "itemFire", "jokerCdrElec": "itemElec",
     "jokerCdrAcid": "itemAcid", "jokerCdrVoodoo": "itemVoodoo", "jokerCdrCactus": "itemCactus", "jokerCdrFrost": "itemIce",
 }
 
+
+# Shapes shared by several joker drawings.
+G["knuckles"] = cut(circle(20, 40, 16) + circle(40, 34, 16) + circle(60, 34, 16) + circle(80, 40, 16)
+                    + P("M8 46h84l-6 18c-4 10-14 16-24 16H38c-10 0-20-6-24-16z"),
+                    circle(20, 40, 8) + circle(40, 34, 8) + circle(60, 34, 8) + circle(80, 40, 8) + P("M30 64h40v5H30z"))
+G["fist_front"] = cut(P("M22 26a9 9 0 0 1 18 0 9 9 0 0 1 16 0 9 9 0 0 1 16 0 8 8 0 0 1 16 2v30c0 14-8 24-20 28v12H36V84"
+                        "C24 80 14 70 14 56V42a8 8 0 0 1 8-8z"),
+                      stroke("M40 22v16M56 22v16M72 22v16", 3) + stroke("M18 50c10-4 26-4 34 2", 5))
+G["open_hand"] = (P("M28 46h44v28c0 12-10 22-22 22S28 86 28 74z")
+                  + stroke("M33 50V20M45 48V12M57 48V14M68 52V24", 10) + stroke("M30 68 12 50", 11))
+G["sparkle"] = star_points(50, 50, 4, 46, 12)
+G["anger"] = "".join(group(stroke("M6 38Q40 40 38 6", 11), f"rotate({a} 50 50)") for a in (0, 90, 180, 270))
+G["horseshoe"] = cut(stroke("M30 94V52a20 20 0 0 1 40 0v42", 17, "butt"),
+                     "".join(circle(round(50 + 20 * math.cos(math.radians(a)), 1), round(52 + 20 * math.sin(math.radians(a)), 1), 3.2)
+                             for a in (160, 200, 240, 300, 340, 20)) + P("M20 82h60v3H20z"))
+G["bone"] = stroke("M24 50h52", 14) + circle(20, 42, 10) + circle(20, 58, 10) + circle(80, 42, 10) + circle(80, 58, 10)
+G["bin"] = cut(P("M24 40h52l-6 54H30z") + P("M20 34h60v8H20z"), stroke("M40 50v36M50 50v36M60 50v36", 4))
+G["gun_left"] = (P("M6 30h46v14H6z") + P("M8 24h6v6H8z") + P("M46 24h32v32H46z") + P("M74 18h10v12H74z")
+                 + P("M58 54h22l10 38H68z") + stroke("M50 56c0 10 6 14 12 14", 5))
+G["fist_side"] = cut(P("M14 36c0-12 10-22 22-22h30v72H34C22 86 14 76 14 64z")
+                     + "".join(f'<rect x="58" y="{y}" width="34" height="15" rx="7.5"/>' for y in (14, 31, 48, 65)),
+                     stroke("M14 52c14 0 28 4 36 14", 5) + stroke("M58 29.5h30M58 46.5h30M58 63.5h30", 2.5))
+
+G["jester"] = (P("M14 72C12 52 8 42 2 30c14 0 24 8 30 18 2-18 8-32 18-44 10 12 16 26 18 44 6-10 16-18 30-18-6 12-10 22-12 42z")
+               + P("M10 68h80v16H10z") + circle(6, 30, 7) + circle(50, 6, 7) + circle(94, 30, 7))
+G["wing"] = cut(P("M50 74C42 44 26 20 4 6c0 18 4 32 10 42-4 0-8-1-10-3 4 12 12 20 22 24-4 2-8 2-12 1 8 8 20 12 36 4z"),
+                stroke("M20 48c8 10 18 16 26 18M14 30c6 8 12 12 20 16", 3))
+
+def explosion(school):
+    """Explosive Hits: an explosion with the school's pictogram punched out."""
+    return cut(P("M14 94 6 62l12 4L8 30l22 14 4-36 16 24L64 4l6 36 22-18-8 36 12 2-10 34z"),
+               at(G[SCHOOL_GLYPHS[school]], 50, 66, .42))
+
+
+def mastery(school, pictogram=None):
+    """Mastery (cooldown) jokers: a tilted card with the school's pictogram, and a clock on its corner."""
+    card = P("M24 8h52a6 6 0 0 1 6 6v72a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6z")
+    return (cut(at(card, 58, 54, .9, 10), at(G[pictogram or SCHOOL_GLYPHS[school]], 60, 58, .44, 10) + circle(24, 22, 20))
+            + ring(24, 22, 13, 5) + stroke("M24 15v8h6", 4))
+
+
+def cycle_arrows(n, r=34, width=12):
+    """n curved arrows chasing each other around a circle."""
+    parts = []
+    for i in range(n):
+        a0, a1 = math.radians(i * 360 / n + 8), math.radians((i + 1) * 360 / n - 28)
+        x0, y0, x1, y1 = 50 + r * math.cos(a0), 50 + r * math.sin(a0), 50 + r * math.cos(a1), 50 + r * math.sin(a1)
+        parts.append(stroke(f"M{x0:.1f} {y0:.1f}A{r} {r} 0 0 1 {x1:.1f} {y1:.1f}", width, "butt"))
+        tip = math.radians((i + 1) * 360 / n - 8)
+        head = [(50 + r * math.cos(tip), 50 + r * math.sin(tip)),
+                (50 + (r + 12) * math.cos(a1), 50 + (r + 12) * math.sin(a1)),
+                (50 + (r - 12) * math.cos(a1), 50 + (r - 12) * math.sin(a1))]
+        parts.append(f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in head)}"/>')
+    return "".join(parts)
+
+
+def arrow(x0, y0, x1, y1, width=6, head=16):
+    """A straight arrow from (x0, y0) to its tip at (x1, y1)."""
+    length = math.hypot(x1 - x0, y1 - y0)
+    ux, uy = (x1 - x0) / length, (y1 - y0) / length
+    bx, by = x1 - head * ux, y1 - head * uy
+    corners = [(x1, y1), (bx - head * .6 * uy, by + head * .6 * ux), (bx + head * .6 * uy, by - head * .6 * ux)]
+    return (stroke(f"M{x0} {y0}L{bx + 2 * ux:.1f} {by + 2 * uy:.1f}", width, "butt")
+            + f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in corners)}"/>')
+
+
+def through(ring_art, arrow_art, front, behind):
+    """An arrow through a ring: front is where the arrow passes in front of the ring, behind where it passes behind."""
+    return cut(ring_art, front) + cut(arrow_art, behind)
+
+
+def rib(y, width, side):
+    """A rib leaving the spine (x = 50) at height y, curving out to the given width and back down; side is -1 or 1."""
+    return stroke(f"M{50 + 6 * side} {y}C{50 + width * .6 * side} {y - 6} {50 + width * side} {y + 4} {50 + width * .9 * side} {y + 18}", 7)
+
+
+def spiral(turns, r_max, width, cx=50, cy=50):
+    """An open spiral from the centre outwards, as a stroke."""
+    points = []
+    for i in range(int(turns * 36) + 1):
+        a = math.radians(i * 10)
+        r = r_max * i / (turns * 36)
+        points.append(f"{cx + r * math.cos(a):.1f} {cy + r * math.sin(a):.1f}")
+    return stroke("M" + "L".join(points), width)
+
+
+def demon():
+    """A horned demon head with a jagged grin."""
+    head = P("M8 8 26 32c6-4 14-6 24-6s18 2 24 6L92 8 84 42c4 6 6 12 6 20 0 18-18 32-40 32S10 80 10 62c0-8 2-14 6-20z")
+    return cut(head, P("M24 46 44 54 28 60z") + P("M76 46 56 54 72 60z")
+               + P("M26 70 34 66 40 74 46 66 54 74 60 66 66 74 74 70 70 82 62 78 56 86 50 78 44 86 38 78 30 82z"))
+
+
+# Jokers: one drawing per joker, in the spirit of its card in the game. Elemental jokers also get the spell school
+# in a corner badge (JOKER_SCHOOLS).
+JOKER_ART = {
+    "jokerBracing": cut(star_points(50, 50, 14, 48, 36), at(G["bullet"], 50, 50, .74, 45))
+                    + at(G["bullet"], 50, 50, .52, 45),
+    "jokerChickshot": cut(P("M38 30 34 14l10 6 6-14 6 14 10-6-4 16c8 6 12 14 12 24 0 10-6 18-14 22l14 20H26l14-20"
+                            "c-8-4-14-12-14-22 0-10 4-18 12-24z"),
+                          circle(40, 48, 4.5) + circle(60, 48, 4.5) + P("M50 54 60 62 50 70 40 62z") + stroke("M32 86h36", 4)),
+    "jokerDeadlyStrong": cut(P("M18 22C38 2 80 6 92 30c8 18 2 38-12 50L72 96 62 80 48 92 42 76 26 82 30 66C12 58 6 36 18 22z"),
+                             P("M30 38 54 48 34 56z") + P("M88 36 62 48 82 58z") + P("M44 70h22l-4 8h-14z")),
+    "jokerFreeCocktail": P("M4 22h66L42 54v30h16v10H18V84h16V54z") + at(G["knuckles"], 76, 22, .42, 28),
+    "jokerGoldTooth": at(G["tooth"], 42, 56, .86) + star_points(80, 18, 4, 18, 5),
+    "jokerHeavyDrinker": at(G["bottle"], 26, 24, .56, -135) + cut(at(G["drop"], 64, 62, .66), at(G["plus"], 64, 68, .26))
+                         + at(G["drop"], 26, 70, .34) + at(G["drop"], 46, 40, .2),
+    "jokerHeavyWeapon": cut(P("M18 16h62l12 12v18H72v16H46l-8 32H12l10-38-8-8V24z"), P("M42 24h24v24H42z") + circle(30, 52, 4)),
+    "jokerHelpingHand": at(G["open_hand"], 50, 52, .96, -40),
+    "jokerKnuckleDown": at(G["knuckles"], 50, 52, 1.05, -18),
+    "jokerLastDance": stroke("M50 88C14 62 6 40 22 24c12-12 24-6 28 6 4-12 16-18 28-6 16 16 8 38-28 64", 8)
+                      + at(G["drop"], 40, 46, .3) + at(G["drop"], 62, 40, .26) + at(G["drop"], 54, 64, .24)
+                      + at(G["drop"], 84, 82, .26),
+    "jokerLightWeight": cut(P("M6 74C8 38 44 8 94 8 74 22 72 52 54 70 40 84 20 90 6 74z"),
+                            stroke("M8 92 60 38", 5) + stroke("M44 38l-8 18M60 30l-6 16M72 22l-6 14", 4)),
+    "jokerMagicReload": stroke("M24 32A34 34 0 0 1 80 30", 10) + P("M70 12 92 32 64 40z")
+                        + stroke("M76 68A34 34 0 0 1 20 70", 10) + P("M30 88 8 68 36 60z") + at(G["sparkle"], 50, 50, .5),
+    "jokerPanicAttack": at(G["bolt"], 28, 40, .62, -20) + at(G["bolt"], 70, 34, .58, 18) + at(G["bolt"], 50, 72, .5, 4)
+                        + P("M10 80 22 70 18 92z"),
+    "jokerPartyShot": P("M6 94 26 40 60 74z") + stroke("M54 12c8 6 0 12 8 18s0 12 8 18", 5) + stroke("M78 60c6-4 12 4 18 0", 5)
+                      + circle(36, 20, 5) + circle(86, 30, 5) + circle(74, 82, 5) + P("M68 8l8 2-2 8-8-2z"),
+    "jokerPigshot": cut(P("M14 10 36 22h28l22-12-4 28c6 6 10 14 10 24 0 20-18 34-42 34S8 82 8 62c0-10 4-18 10-24z"),
+                        P("M30 60c0-8 8-12 20-12s20 4 20 12-8 14-20 14-20-6-20-14z") + circle(28, 42, 5) + circle(72, 42, 5))
+                    + P("M34 60c0-6 6-8 16-8s16 2 16 8-6 10-16 10-16-4-16-10z" + hole(43, 60, 3.5) + hole(57, 60, 3.5), "evenodd"),
+    "jokerQuickDraw": P("M8 58c14-6 26-8 42-8s28 2 42 8l-8 34c-10 4-22 6-34 6s-24-2-34-6z") + P("M50 4 74 28H60v28H40V28H26z")
+                      + at(G["plus"], 84, 16, .26),
+    "jokerRelentless": G["fist_front"],
+    "jokerPlasticDuck": cut(P("M40 30c0-14 10-24 24-24s22 10 22 22c0 2 0 4-1 6h11c2 8-6 14-16 14 8 8 12 16 12 26 0 14-14 22-40 22"
+                              "S6 88 6 70c0-10 4-18 8-22 8 6 18 8 30 6-4-6-4-14-4-24z"),
+                            circle(66, 24, 5) + stroke("M24 68c10 8 26 8 34-4", 5)),
+    "jokerShineBright": cut(P("M50 18c16 0 28 12 28 28 0 10-6 18-12 24v12H34V70c-6-6-12-14-12-24 0-16 12-28 28-28z")
+                            + P("M36 86h28v6c0 4-4 6-6 6H42c-2 0-6-2-6-6z"),
+                            stroke("M42 70V54l8 8 8-8v16", 4) + P("M34 80h32v3H34z"))
+                        + stroke("M50 2v8M12 20l6 6M88 20l-6 6M2 50h8M90 50h8", 6),
+    "jokerSpareBullets": cut(P("M24 40C24 16 36 4 50 4s26 12 26 36v52H24z"),
+                             P("M24 34h52v6H24z") + circle(40, 56, 5) + circle(60, 56, 5) + stroke("M38 70c6 8 18 8 24 0", 5)),
+    "jokerFocusedFeet": ring(50, 50, 32, 8) + at(G["bullet"], 20, 20, .5, 135) + at(G["bullet"], 80, 20, .5, -135)
+                        + at(G["bullet"], 80, 80, .5, -45) + at(G["bullet"], 20, 80, .5, 45),
+    "jokerAntiGravityFalls": ring(50, 50, 43, 8) + cut(P("M50 14C30 14 18 28 18 46c0 12 6 20 14 24v14h36V70c8-4 14-12 14-24 0-18-12-32-32-32z"),
+                                                       P("M26 42 46 46 40 58 28 54zM74 42 54 46 60 58 72 54z") + P("M50 22 56 30 50 38 44 30z")
+                                                       + P("M46 60h8l-4 8z") + stroke("M40 74v10M50 74v10M60 74v10", 3)),
+    "jokerBellShot": at(G["bell"], 46, 56, .86, -22) + stroke("M74 8c10 6 16 16 16 28M80 54c6 2 10 6 12 12", 6),
+    "jokerBouncingBall": stroke("M8 94C14 30 40 30 46 94", 8) + star_points(70, 28, 9, 26, 23),
+    "jokerCactusDay": cut(P("M50 8C28 8 16 22 16 40c0 12 6 20 14 24v14h40V64c8-4 14-12 14-24C84 22 72 8 50 8z"),
+                          P("M28 34 46 42 32 50z") + P("M72 34 54 42 68 50z") + P("M44 58h12l-6 8z"))
+                      + P("M4 60c14 0 26 10 32 30-16 2-28-10-32-30zM96 60c-14 0-26 10-32 30 16 2 28-10 32-30z"),
+    "jokerCarePackage": cut(P("M12 40h68v54H12z"), P("M20 48h52v38H20z")) + stroke("M28 40c0-24 36-24 36 0", 7)
+                        + at(G["bullet"], 46, 66, .4, 50) + at(G["plus"], 84, 24, .3),
+    "jokerChad": cut(star_points(50, 50, 16, 48, 38), circle(50, 50, 30)) + ring(37, 37, 7, 5) + ring(63, 63, 7, 5)
+                 + stroke("M66 32 34 68", 6),
+    "jokerClutch": cut(P("M6 94 10 52 2 28l20 12 4-30 14 24L50 2l10 32 14-24 4 30 20-12-8 24 4 42z"),
+                       at(G["bullet"], 34, 74, .4) + at(G["bullet"], 50, 74, .4) + at(G["bullet"], 66, 74, .4))
+                   + at(G["bullet"], 34, 74, .3) + at(G["bullet"], 50, 74, .3) + at(G["bullet"], 66, 74, .3),
+    "jokerCrackShot": P("M6 30 32 44 26 8l22 30 12-16 4 26 30 6-26 14 16 26-28-16-10 26-6-26-30 4 20-20z")
+                      + at(G["plus"], 82, 18, .3),
+    "jokerFastHands": stroke("M22 34A34 34 0 0 1 78 28", 11) + P("M68 10 94 30 64 40z")
+                      + stroke("M78 66A34 34 0 0 1 22 72", 11) + P("M32 90 6 70 36 60z") + at(G["bolt"], 50, 50, .46, 12),
+    "jokerFightOrFlight": cut(at(G["heart"], 50, 50, 1.06), stroke("M4 52h22l6-12 8 26 8-34 8 30 6-10h34", 5)),
+    "jokerFistFight": cut(P("M50 98C24 96 8 78 12 54c2-12 10-20 12-34 8 8 10 16 10 24 4-14 10-28 22-40 0 14 6 24 14 32 2-6 2-12 0-18"
+                            " 12 10 20 26 18 42-2 22-16 36-38 38z"), at(G["fist_front"], 50, 62, .74, 20))
+                      + at(G["fist_front"], 50, 62, .62, 20),
+    "jokerFrostBite": P("M4 8h92l-8 20-6-8-6 26-8-18-6 12-6-18-6 26-6-26-6 18-6-12-8 18-6-26-6 8z")
+                      + P("M4 92h92l-8-20-6 8-6-26-8 18-6-12-6 18-6-26-6 26-6-18-6 12-8-18-6 26-6-8z"),
+    "jokerGoldProspector": cut(ring(48, 52, 38, 9), P("M66 8h30v30z")) + stroke("M64 38A18 18 0 1 0 66 64V54H52", 9)
+                           + at(G["plus"], 84, 16, .28),
+    "jokerHop": P("M6 76 52 30 40 18h46v46L74 52 28 98z") + at(G["plus"], 22, 20, .3),
+    "jokerLuckyStrike": at(G["heart"], 50, 28, .46) + at(G["heart"], 72, 50, .46, 90) + at(G["heart"], 50, 72, .46, 180)
+                        + at(G["heart"], 28, 50, .46, -90) + stroke("M54 62c6 10 10 20 18 32", 6),
+    "jokerLunge": cut(P("M50 18c20 0 36 16 36 36S70 92 50 92 14 74 14 54s16-36 36-36z") + P("M14 34 4 8l26 14zM86 34 96 8 70 22z"),
+                      "".join(at(P("M50 12 68 34H56v26H44V34H32z"), 50 + 20 * math.cos(math.radians(a)), 56 + 20 * math.sin(math.radians(a)),
+                                 .42, a + 90) for a in (45, 135, 225, 315))),
+    "jokerJokheal": cut(at(P("M22 4h56v92H22z"), 40, 46, .78, -14), at(P("M18 0h64v100H18z"), 62, 56, .82, 10)
+                        + at(G["plus"], 30, 30, .24, -14))
+                    + cut(at(P("M22 4h56v92H22z"), 62, 56, .78, 10), at(G["plus"], 62, 56, .4, 10)),
+    "jokerPickPick": stroke("M10 92 66 36", 12, "butt") + P("M10 18C50 14 82 40 92 90 76 60 56 44 30 38z")
+                     + cut(at(P("M36 36h28v28H36z"), 56, 42, 1, 45), P("M50 34a8 8 0 0 1 0 16z")),
+    "jokerPreciousRush": through(f'<ellipse cx="50" cy="60" rx="36" ry="14" fill="none" stroke="currentColor" stroke-width="10"/>'
+                                 + P("M50 30 60 38 50 46 40 38z"),
+                                 stroke("M8 92C30 80 40 64 52 52S78 26 82 20", 8) + P("M70 16 94 6 88 32z"),
+                                 stroke("M24 82 36 72", 16), stroke("M56 48 64 40", 16)),
+    "jokerPricklyPear": cut(circle(40, 42, 34) + "".join(circle(round(40 + 34 * math.cos(math.radians(a)), 1),
+                                                                 round(42 + 34 * math.sin(math.radians(a)), 1), 6)
+                                                          for a in range(50, 340, 32)),
+                            circle(40, 42, 24) + P("M40 42 100 0V70z"))
+                        + stroke("M44 76 54 90", 8) + circle(57, 94, 6)
+                        + stroke("M94 4 34 42 66 56", 4) + at(G["bullet"], 78, 66, .44, 125),
+    "jokerRage": "".join(group(stroke("M50 6A44 44 0 0 1 92 38", 8), f"rotate({a} 50 50)") for a in (0, 120, 240))
+                 + at(G["anger"], 50, 50, .74),
+    "jokerRunAndGun": P("M41 2h7v14h-7zM52 2h7v14h-7z") + P("M50 14 84 40 76 52 50 32 24 52 16 40z")
+                      + at(G["bullet"], 22, 24, .38, -28) + at(G["bullet"], 78, 24, .38, 28)
+                      + P("M52 96 24 34 32 32zM52 96 38 40 44 38zM52 96 58 38 64 40zM52 96 68 32 76 34z")
+                      + P("M2 66 18 28 26 66zM98 66 82 28 74 66z"),
+    "jokerRunAndReload": P("M34 6h22l26 44-26 44H34l20-44z") + stroke("M30 18A38 38 0 0 0 22 80", 10, "butt")
+                         + P("M10 74h26L22 94z") + stroke("M74 82A38 38 0 0 0 80 20", 10, "butt") + P("M92 26H66L80 6z"),
+    "jokerScoutsHonor": cut(G["shield"], at(G["shield"], 50, 50, .8)) + cut(at(G["shield"], 50, 50, .68), at(G["hourglass"], 50, 48, .44)),
+    "jokerShroomGrave": P("M6 50C6 22 28 6 50 6s44 16 44 44c-14 4-28 6-44 6S20 54 6 50z")
+                        + P("M38 56h24c0 14 2 26 6 36H32c4-10 6-22 6-36z"),
+    "jokerSlowAndSteady": cut(ring(50, 50, 38, 9), P("M44 0h12v100H44zM0 44h100v12H0z"))
+                          + P("M44 4h12v14H44zM4 44h14v12H4zM82 44h14v12H82z") + P("M50 92 76 62H60V24H40v38H24z"),
+    "jokerSoulReaper": stroke("M70 20H40L32 42l28 6 4 22-22 16-14-10", 14, "butt") + at(G["plus"], 84, 16, .3),
+    "jokerSoulSiphon": cut(at(G["heart"], 50, 50, 1.08), stroke("M38 10 60 32 34 48 66 62 44 94", 9, "butt")),
+    "jokerSpeedyGunzales": at(G["chevrons"], 46, 54, .96) + at(G["plus"], 86, 14, .28),
+    "jokerFastDraw": cut(at(P("M30 46C30 20 50 4 50 4s20 16 20 42z") + P("M28 52h44v36H28z") + P("M24 88h52v8H24z"), 62, 50, .96, 40),
+                         star_points(26, 26, 5, 28, 13))
+                     + star_points(26, 26, 5, 22, 9) + cut(at(P("M28 52h44v36H28z"), 62, 50, .96, 40), at(P("M28 58h44v4H28z"), 62, 50, .96, 40)),
+    "jokerWellFed": at(cut(P("M28 34c0-6 6-10 22-10s22 4 22 10L52 98h-4z"), stroke("M30 46h12M58 60h12M38 74h8", 4))
+                       + P("M50 26C40 18 36 8 40 2c8 4 12 12 10 24zM50 26c4-10 12-16 20-14-2 8-10 14-20 14z"
+                           "M50 26c-6-8-16-10-22-6 4 6 12 8 22 6z"), 50, 50, 1, -35),
+    "jokerAmmoSupply": cut(P("M24 34c0-16 12-28 26-28s26 12 26 28v46H24z") + P("M14 80h72v14H14z"),
+                           "".join(circle(round(50 + 16 * math.cos(math.radians(a)), 1), round(38 + 16 * math.sin(math.radians(a)), 1), 6)
+                                   for a in range(0, 360, 60)) + circle(50, 38, 3)),
+    "jokerApprentice": P("M2 30 54 10 98 30 46 50z") + P("M20 42v18c12 12 38 12 52 2V40L46 54z") + stroke("M86 34v28", 4)
+                       + P("M80 62h12l-2 14h-8z"),
+    "jokerAvalanche": cut(circle(50, 42, 14) + circle(50, 74, 22), circle(45, 40, 2.5) + circle(55, 40, 2.5) + circle(50, 66, 3)
+                          + circle(50, 78, 3) + P("M50 44l10 3-10 2z"))
+                      + P("M24 28c0-4 12-6 26-6s26 2 26 6-12 4-26 4-26 0-26-4z") + P("M36 26c0-14 6-22 14-22s14 8 14 22z")
+                      + stroke("M28 68 6 54M10 48l4 8M72 68l22-14M90 48l-4 8", 4),
+    "jokerBerserker": P("M12 38 30 46 38 34 50 48 62 34 70 46 88 38 82 60 92 72 74 70 66 94 58 76 50 92 42 76 34 94 26 70 8 72 18 60z")
+                      + star_points(28, 16, 6, 11, 8) + star_points(72, 16, 6, 11, 8),
+    "jokerBloodLust": at(G["fist_front"], 44, 44, .8, -24) + at(G["drop"], 78, 74, .26) + at(G["drop"], 64, 88, .2)
+                      + stroke("M74 52v14", 5),
+    "jokerCheapSkate": cut(at(G["heart"], 50, 50, 1.06), ring(50, 46, 22, 6) + stroke("M58 38A10 10 0 1 0 60 52H50", 6)),
+    "jokerChonky": cut(P("M34 32h32v14c0 8-8 14-16 14s-16-6-16-14z"), P("M34 38h32v4H34z"))
+                   + P("M14 28c0-4 16-6 36-6s36 2 36 6-16 4-36 4-36 0-36-4z") + P("M32 26c0-14 8-22 18-22s18 8 18 22z")
+                   + cut(P("M6 64c0-8 12-12 24-12h40c12 0 24 4 24 12v20H76v12H24V84H6z"), P("M24 76h52v4H24z") + P("M46 68h8v8h-8z")),
+    "jokerDestroyer": at(G["knuckles"], 38, 62, .82, -40)
+                      + P("M62 6 70 22 84 8 82 28 98 26 86 40 96 50 78 50 70 38 58 40 64 24z"),
+    "jokerDisgrace": cut(stroke("M22 6v38c0 18 8 30 20 36", 15, "butt") + stroke("M78 6v38c0 18-8 30-20 36", 15, "butt"),
+                         circle(22, 18, 3) + circle(22, 34, 3) + circle(78, 18, 3) + circle(78, 34, 3))
+                     + P("M44 86 50 74 54 90zM40 58l8 4-6 6z"),
+    "jokerExplosiveRoundsAcid": explosion("itemAcid"),
+    "jokerExplosiveRoundsElec": explosion("itemElec"),
+    "jokerExplosiveRoundsFrost": explosion("itemIce"),
+    "jokerExplosiveRounds": explosion("itemFire"),
+    "jokerGreatWall": P("M4 6h28v18H4zM36 6h28v18H36zM68 6h28v18H68zM4 28h12v18H4zM20 28h28v18H20zM52 28h28v18H52zM84 28h12v18H84zM4 50h28v18H4zM36 50h28v18H36zM68 50h28v18H68zM4 72h12v18H4zM20 72h28v18H20zM52 72h28v18H52zM84 72h12v18H84z"),
+    "jokerHealthyBoi": at(G["heart"], 50, 52, .56) + stroke("".join(
+        f"M{50 + 32 * math.cos(math.radians(a)):.1f} {52 + 32 * math.sin(math.radians(a)):.1f}"
+        f"L{50 + 46 * math.cos(math.radians(a)):.1f} {52 + 46 * math.sin(math.radians(a)):.1f}" for a in range(0, 360, 30)), 7),
+    "jokerFreezeOver": cut(P("M22 30h10v8h10v-8h16v8h10v-8h10v20l-6 6v40H28V56l-6-6z"), P("M42 94V78a8 8 0 0 1 16 0v16z"))
+                       + stroke("M50 30V4", 4) + P("M52 4h20l-6 6 6 6H52z"),
+    "jokerMagicFriendship": P("M10 96 28 50h22L40 96z") + P("M90 96 72 50H50l10 46z")
+                            + cut(P("M24 26c0-12 10-20 26-20s26 8 26 20v18c0 8-6 14-14 14H38c-8 0-14-6-14-14z"),
+                                  stroke("M34 18v22M44 14v26M56 14v26M66 18v22", 4) + stroke("M22 44c10 6 24 6 30 0", 5)),
+    "jokerPewPewPew": cut(circle(50, 58, 34), circle(36, 50, 9) + circle(64, 50, 9) + circle(50, 76, 9) + circle(50, 58, 3))
+                      + stroke("M12 34C24 8 66 2 86 24", 9) + P("M74 24h24l-8 20z"),
+    "jokerRampage": at(demon(), 36, 52, .7) + P("M62 16h18l18 34-18 34H62l18-34z"),
+    "jokerReloadMastery": cycle_arrows(4),
+    "jokerScrubBullet": stroke("M24 24 76 76M76 24 24 76", 10) + "".join(
+        at(P("M50 2 64 20H36z"), 50 + 34 * math.cos(math.radians(a)), 50 + 34 * math.sin(math.radians(a)), .8, a + 90)
+        for a in (45, 135, 225, 315)) + "".join(
+        at(P("M50 30 60 14H40z"), 50, 50, 1, a) for a in (0, 90, 180, 270)),
+    "jokerSharpShooter": cut(at(G["bone"], 50, 50, 1.25, -30), P("M46 30 54 44 44 52 56 62 50 72 48 72 52 62 40 52 50 44 44 30z"))
+                         + P("M50 20l4 6h-6zM46 80l6 2-4 4z"),
+    "jokerSoulEater": demon(),
+    "jokerStonks": cut(P("M10 46h80v46H10z") + P("M10 42c0-16 12-28 28-28h24c16 0 28 12 28 28z"),
+                       P("M6 42h88v5H6z") + P("M43 38h14v18H43z") + stroke("M28 16v24M72 16v24M28 50v40M72 50v40", 3)),
+    "jokerWeakLink": cut(group(stroke("M50 4v90", 9) + "".join(rib(y, w, side) for y, w in ((14, 30), (34, 38), (54, 40), (74, 32))
+                                                             for side in (-1, 1)), "rotate(-12 50 50)"),
+                         P("M0 46 30 40 44 52 58 42 72 54 100 46v8L72 62 58 50 44 60 30 48 0 54z")),
+    "jokerHeadshotRefund": at(G["bullet"], 26, 56, .72, -15) + stroke("M36 22C58 4 92 16 88 50S60 88 44 80", 10)
+                           + P("M30 80 50 66 50 94z"),
+    "jokerCdrAcid": mastery("itemAcid"),
+    "jokerCdrCactus": mastery("itemCactus"),
+    "jokerColdBlooded": at(cut(P("M30 24a20 20 0 0 1 40 0v46H30z"), circle(70, 8, 10) + stroke("M42 30v28M58 30v28", 3))
+                           + P("M44 70h12v26a6 6 0 0 1-12 0z"), 52, 48, .96, 40) + at(G["drop"], 84, 70, .22) + at(G["drop"], 76, 86, .16),
+    "jokerConsumer": cut(stroke("M90.6 66.9A42 42 0 0 1 12 70", 11, "butt") + P("M5 48 24 66 2 76z"), at(G["bin"], 50, 64, .74))
+                     + cut(at(G["bin"], 50, 64, .62), stroke("M9.4 45.1A42 42 0 0 1 71 19.6C84 28 62 30 53 43", 18)
+                                                     + P("M45 58 61 49 44 39z"))
+                     + stroke("M9.4 45.1A42 42 0 0 1 71 19.6C84 28 62 30 53 43", 11) + P("M45 60 62 49 43 38z"),
+    "jokerDeathsDance": cut(G["shield"], P("M24 34 46 44 28 52z") + P("M76 34 54 44 72 52z") + P("M50 54 56 64H44z")
+                            + P("M30 68h40l-4 10H34z") + stroke("M40 68v10M50 68v10M60 68v10", 3)),
+    "jokerEatAPunch": cut(at(G["heart"], 50, 50, 1.06), at(G["fist_front"], 50, 46, .5)),
+    "jokerCdrElec": mastery("itemElec"),
+    "jokerExecute": cut(P("M8 6h84v12H8zM14 18h12v70H14zM74 18h12v70H74zM4 88h92v8H4z") + P("M26 22h48v14L26 48z")
+                        + P("M26 62h48v18H26z"), circle(50, 71, 7) + P("M26 70h48v2H26z")),
+    "jokerExtraJump": stroke("M8 94C14 62 22 50 34 40", 10) + P("M24 30 46 24 40 48z") + stroke("M40 94C48 60 60 40 74 26", 10)
+                      + P("M62 20 90 10 80 38z") + at(G["plus"], 20, 16, .3),
+    "jokerCdrFrost": mastery("itemIce"),
+    "jokerHeadBang": cut(P("M26 24 44 12l26 4 18 18 4 20-6 8 4 10-12 4-2 12-16 2v8H34V82L20 70 14 50z"),
+                         circle(68, 48, 10) + P("M44 12 54 32 42 42 56 58 46 66 54 94h-12l-6-26 8-10-12-14 8-12-6-20z"))
+                     + P("M14 6l12 6-8 8zM4 24l10 2-6 8zM30 2l6 6-8 2z"),
+    "jokerHitMe": P("M6 52h88c0 24-20 42-44 42S6 76 6 52z") + stroke("M14 14l20 20M34 14 14 34", 8) + circle(72, 28, 16),
+    "jokerHoarder": cut(at(P("M22 6h56v88H22z"), 68, 44, .76, 10), at(P("M22 6h56v88H22z"), 38, 54, .9, -4))
+                    + at(G["jester"], 68, 30, .3, 10)
+                    + cut(at(P("M22 6h56v88H22z"), 38, 54, .82, -4), at(G["jester"], 38, 52, .5, -4)),
+    "jokerTweakDealer": cut(G["jester"], at(G["plus"], 50, 52, .3)) + at(G["plus"], 50, 52, .2),
+    "jokerLastStand": cut(stroke("M88 30H18M90 44H12M88 58H14M84 72H22", 10) + P("M78 22h22v58H78z"),
+                          at(G["heart"], 44, 52, .78))
+                      + at(G["heart"], 44, 52, .66),
+    "jokerLazy": P("M4 48h44v10L20 84h30v12H4V86l28-26H4z") + P("M50 22h30v8L60 52h22v8H48v-8l20-22H50z")
+                 + P("M78 6h18v6L84 22h12v6H76v-6l12-10H78z"),
+    "jokerLifePact": cut(ring(50, 50, 38, 8), P("M44 0h12v100H44zM0 44h100v12H0z")) + P("M44 4h12v16H44zM4 44h16v12H4zM80 44h16v12H80zM44 80h12v16H44z")
+                     + cut(at(G["heart"], 50, 52, .56), at(G["bolt"], 50, 52, .3, 10)),
+    "jokerLowGravity": at(G["moon"], 44, 56, .86) + at(G["sparkle"], 76, 20, .4) + at(G["sparkle"], 60, 48, .2),
+    "jokerCdrFire": mastery("itemFire"),
+    "jokerRiposte": cut(P("M6 8 26 30 50 4 74 30 94 8 92 56C88 76 70 90 50 96 30 90 12 76 8 56z"),
+                        P("M18 34 30 44 50 22 70 44 82 34 80 56C76 70 64 80 50 84 36 80 24 70 20 56z"))
+                    + P("M24 46 36 52 38 36 48 50 50 32 56 48 66 38 64 54 76 50 66 64 70 74 52 70 50 80 44 70 30 72 34 62z"),
+    "jokerSecondWind": G["wing"] + group(G["wing"], "translate(100 0) scale(-1 1)"),
+    "jokerSnackAPunch": cut(G["shield"], at(G["fist_front"], 50, 50, .52)),
+    "jokerThickSkin": stroke("M10 22 40 64 72 30", 11) + P("M60 22 90 10 82 42z") + P("M4 78h92v14H4z")
+                      + P("M30 74 36 66 42 74zM48 74l4-6 4 6z"),
+    "jokerTinMan": cut(P("M12 50 50 88 78 40 60 22z") + stroke("M66 34 92 8", 13, "butt")
+                       + '<ellipse cx="31" cy="69" rx="28" ry="11" transform="rotate(45 31 69)"/>',
+                       '<ellipse cx="31" cy="69" rx="21" ry="5" transform="rotate(45 31 69)"/>') + ring(84, 66, 9, 6),
+    "jokerCdrVoodoo": mastery("itemVoodoo", "candle"),
+    "jokerWestWizard": cut(at(G["heart"], 50, 50, 1.06), ring(50, 44, 20, 6) + stroke("M50 32v12h10", 5)),
+    "jokerAllMighty": cut(G["shield"], stroke("M30 30 70 70M70 30 30 70", 9) + circle(28, 26, 6) + circle(24, 32, 6)
+                          + circle(72, 26, 6) + circle(76, 32, 6) + circle(28, 74, 6) + circle(24, 68, 6) + circle(72, 74, 6)
+                          + circle(76, 68, 6)),
+    "jokerBattleMage": cut(P("M2 26c16-6 32-4 48 6 16-10 32-12 48-6v62c-16-6-32-4-48 6-16-10-32-12-48-6z"),
+                           at(G["skull"], 50, 58, .62)) + at(G["skull"], 50, 58, .5),
+    "jokerCamper": cut(P("M50 16 90 94H10z"), P("M50 52 64 94H36z")) + stroke("M38 4 58 32M62 4 42 32", 4),
+    "jokerCantRipOneTrick": cut(P("M28 64C34 40 40 18 64 4c-6 14-6 26 4 36l6 24z")
+                                + P("M2 72c0-8 20-12 48-12s48 4 48 12-20 14-48 14S2 80 2 72z"),
+                                circle(50, 64, 12)) + ring(50, 64, 8, 4) + stroke("M50 60v4h3", 2.5),
+    "jokerCastAway": cut(star_points(50, 50, 4, 48, 20, -45) + star_points(50, 50, 4, 30, 14), circle(50, 50, 18))
+                     + ring(50, 50, 12, 5) + stroke("M50 42v8h6", 4),
+    "jokerCoinFlip": ring(50, 50, 44, 7) + cut(circle(50, 50, 32), P("M48 10h4v80h-4z") + P("M30 38 42 44 32 48z")
+                                                + P("M70 38 58 44 68 48z") + P("M28 60 36 56 42 64 50 56 58 64 64 56 72 60 64 74H36z")),
+    "jokerDoubleDown": stroke("M52 52a5 5 0 0 1 5 5 11 11 0 0 1-11 11 17 17 0 0 1-17-17 23 23 0 0 1 23-23 29 29 0 0 1 29 29"
+                              " 35 35 0 0 1-35 35 41 41 0 0 1-41-41", 11),
+    "jokerDwarf": cut(P("M50 2 66 36H34z") + circle(50, 42, 12) + P("M32 44c4 12 8 24 18 28 10-4 14-16 18-28z")
+                      + P("M28 64h44v22H60v10H40V86H28z"), circle(45, 40, 2.5) + circle(55, 40, 2.5) + P("M28 34h44v3H28z")),
+    "jokerExtraDash": "".join(at(P("M10 30h34l26 20-26 20H10l26-20z"), x, y, .8, -25) for x, y in ((38, 74), (56, 56), (74, 38)))
+                      + at(G["plus"], 20, 18, .3),
+    "jokerGiant": cut(P("M18 54c0-26 14-42 32-42s32 16 32 42v34H18z") + P("M44 2h12l2 16H42z") + P("M8 50h12v20H8zM80 50h12v20H80z"),
+                      circle(36, 52, 10) + circle(64, 52, 10) + stroke("M36 74h28M36 82h28", 4)) + circle(36, 52, 4) + circle(64, 52, 4),
+    "jokerGlassCannon": cut(at(G["skull"], 50, 50, 1.04), stroke("M30 4 42 30 30 44 48 62 40 96", 4)
+                            + stroke("M70 0 60 24 72 40", 4)),
+    "jokerGoliath": cut(P("M44 2h12l2 12c18 4 30 20 30 40v20l-12 22H24L12 74V54c0-20 12-36 30-40z"),
+                        P("M22 40h56v42l-10 12H32L22 82z"))
+                    + cut(P("M28 46h44v34l-8 10H36l-8-10z"),
+                          P("M30 52 46 58 32 62zM70 52 54 58 68 62z") + P("M44 64h12l4 10H40z") + P("M38 80h24v4H38z")),
+    "jokerOneTrick": cut(P("M30 38h46l-4 40H34z"), P("M32 66h42v6H32z")) + P("M8 80c0-6 18-8 42-8s42 2 42 8-18 10-42 10-42-4-42-10z")
+                     + stroke("M34 18 84 34", 7) + at(G["sparkle"], 18, 26, .34),
+    "jokerMachineGun": at(G["bullet_h"], 62, 50, .86)
+                       + P("M4 8h18l20 26H22zM26 4h16l20 26H46zM4 92h18l20-26H22zM26 96h16l20-26H46z"),
+    "jokerRicochet": stroke("M40 6 14 64 58 82 80 26", 7) + P("M66 26 88 6 92 34z"),
+    "jokerSpeedster": stroke("M14 86A42 42 0 0 1 90 44", 12, "butt") + stroke("M32 82 78 26", 7) + circle(32, 82, 9),
+    "jokerSpellRoulette": cut(P("M50 4 92 24v50L50 96 8 74V24z"),
+                              stroke("M8 24 50 46 92 24M50 46v50", 4) + circle(50, 24, 5) + circle(34, 18, 4) + circle(66, 30, 4)
+                              + at(G["sparkle"], 29, 62, .36) + circle(64, 60, 5) + circle(78, 74, 5) + circle(78, 46, 5)),
+    "jokerToolBox": cut(P("M8 50h84v42H8z") + stroke("M34 50V38h32v12", 7), stroke("M10 10 90 90", 20, "butt") + P("M8 64h84v4H8z"))
+                    + stroke("M12 12 88 88", 9),
+    "jokerVampire": P("M2 4h96l-6 12-6 10-6 34-8-26-6 8-6-8-6 8-6-8-6 8-6-8-8 26-6-34-6-10z") + at(G["drop"], 26, 82, .28),
+    "jokerAimingBurst": cut(star_points(50, 50, 16, 49, 42), circle(50, 50, 36)) + ring(50, 50, 24, 6)
+                        + P("M46 4h8v24h-8zM46 72h8v24h-8zM4 46h24v8H4zM72 46h24v8H72z") + at(G["plus"], 50, 50, .2),
+    "jokerBardbarian": at(EQUIPMENT_SILHOUETTES["itemBanjo"], 56, 56, 1) + at(G["bolt"], 22, 30, .48, -20),
+    "jokerChonkyThrow": at(G["horseshoe"], 48, 52, .92, -45),
+    "jokerEagleLever": cut(P("M6 94C4 56 16 22 48 12c20-6 36 2 44 16l6 18c-6-4-12-5-16-3l-14 4c4 8 4 20-2 30L56 94z"),
+                           circle(62, 30, 5) + P("M46 22 70 22 64 26z") + stroke("M14 60c8 4 18 6 28 4M18 76c8 4 16 4 24 2", 3)),
+    "jokerEcoTrick": at(cycle_arrows(2, 34, 13), 50, 50, 1, 30),
+    "jokerElementalSpin": cut(circle(50, 50, 46), "".join(
+        circle(round(50 + 26 * math.cos(math.radians(a)), 1), round(50 + 26 * math.sin(math.radians(a)), 1), 10)
+        for a in range(30, 360, 60)) + circle(50, 50, 5) + at(G["sparkle"], 50, 24, .22)),
+    "jokerFanningAce": cut(circle(60, 58, 34), "".join(
+        circle(round(60 + 20 * math.cos(math.radians(a)), 1), round(58 + 20 * math.sin(math.radians(a)), 1), 7) for a in range(0, 360, 72)))
+                       + P("M4 22c16-4 34 2 42 14-14-2-26 0-34 8 2-8-2-16-8-22zM2 52c10 0 20 4 24 12-8 0-14 4-18 10 0-8-2-16-6-22z"),
+    "jokerFistRage": at(G["fist_front"], 50, 64, .72) + P("M18 36C10 22 16 10 26 4c-2 10 4 14 8 20 2-8 6-14 14-18-2 10 2 16 6 22"
+                                                         " 2-8 8-14 16-16-4 10 0 16 4 22 2-6 6-10 12-12-2 8-2 14-4 20z"),
+    "jokerFistRoDah": cut(P("M22 40c0-18 12-30 28-30s28 12 28 30v14H22z") + P("M24 44 4 14l22 10zM76 44 96 14 74 24z")
+                          + P("M20 56h26v26L32 96 20 80zM54 56h26v24L68 96 54 82z"),
+                          P("M30 40h14v8H30zM56 40h14v8H56z") + P("M47 16h6v40h-6z")),
+    "jokerFocusShot": cut(ring(50, 50, 38, 9), P("M44 0h12v100H44zM0 44h100v12H0z"))
+                      + P("M44 4h12v16H44zM4 44h16v12H4zM80 44h16v12H80zM44 80h12v16H44z") + stroke("M50 28v22l14 12", 7),
+    "jokerFrenzySpin": cut(ring(50, 50, 40, 8), P("M44 0h12v100H44zM0 44h100v12H0z"))
+                       + P("M44 2h12v14H44zM2 44h14v12H2zM84 44h14v12H84zM44 84h12v14H44z")
+                       + P("M24 34l10-6h6v44h-10V40l-6 3z") + P(hole(62, 50, 16) + hole(62, 50, 8), "evenodd"),
+    "jokerHomingBurst": spiral(2.6, 44, 7) + at(G["bullet"], 74, 18, .5, 45),
+    "jokerJumpStar": at(G["sheriff"], 66, 30, .56) + P("M4 92C10 60 26 44 50 40c-10 10-14 22-16 36-4-8-10-10-16-6-4 6-8 14-14 22z"),
+    "jokerLingeringThrow": "".join(at(P("M44 4h12l6 92H38z"), 52 + 40 * math.cos(math.radians(a)), 60 + 40 * math.sin(math.radians(a)), .6, a + 90)
+                                   for a in (180, 210, 240, 270)) + at(G["plus"], 84, 18, .3),
+    "jokerLullabard": at(G["note"], 50, 56, .76) + stroke("M10 46C10 22 28 6 50 6s40 16 40 40", 7),
+    "jokerMarkAce": cut(P("M50 6c16 0 28 12 28 28 0 20-28 56-28 56S22 54 22 34C22 18 34 6 50 6z"), circle(50, 34, 10))
+                    + stroke("M14 36A38 38 0 0 0 30 84M86 36a38 38 0 0 1-16 48", 7),
+    "jokerMindShot": cut(at(G["skull"], 50, 62, .74), P("M32 56 46 62 34 68zM68 56 54 62 66 68z"))
+                     + P("M14 40 20 22l10 10 8-28 10 24 10-26 6 26 12-12 2 18 12-6-6 14z"),
+    "jokerOverBlast": circle(76, 22, 16) + circle(38, 76, 14) + circle(74, 68, 12) + circle(52, 42, 9) + circle(20, 48, 8)
+                      + stroke("M4 20l28 12M4 38l14 4", 6),
+    "jokerOverDraw": arrow(12, 88, 52, 10, 6, 18) + arrow(12, 88, 90, 14, 6, 18) + arrow(12, 88, 92, 58, 6, 18)
+                     + P("M2 84 14 80 10 92zM6 96l10-12"),
+    "jokerRushBlast": P("M34 52h32v36H34z") + P("M28 86h44v10H28z") + P("M14 46 20 24l10 12 6-26 12 22 10-26 6 26 14-16 2 22 12-4-10 16z"),
+    "jokerScavengerStar": cut(at(P("M14 14h72v72H14z"), 50, 50, .96, 15), at(star_points(50, 50, 5, 46, 20), 50, 50, 1.02, 15))
+                          + cut(at(star_points(50, 50, 5, 46, 20), 50, 50, .86, 15), circle(50, 52, 9)),
+    "jokerSkyLash": P("M8 50h30v24l34 6c10 2 16 8 16 16H8z") + P("M4 42h38v8H4z")
+                    + group(at(G["wing"], 34, 40, .8, 10), "translate(100 0) scale(-1 1)"),
+    "jokerSpellLash": cut(at(P("M24 8h52v84H24z"), 50, 44, .8, -12), at(G["sparkle"], 50, 44, .3)) + stroke("M8 64c10 28 74 30 84 4", 8)
+                      + P("M80 54h20L88 76z"),
+    "jokerStackedLever": "".join(at(stroke("M50 18v64", 12) + circle(42, 14, 9) + circle(58, 14, 9) + circle(42, 86, 9) + circle(58, 86, 9),
+                                    x, 50, .86, r) for x, r in ((16, -6), (50, 0), (84, 6))),
+    "jokerSwampTrick": circle(44, 60, 30) + circle(70, 38, 18) + circle(22, 30, 12) + circle(80, 76, 10) + circle(88, 14, 7)
+                       + circle(12, 82, 6),
+    "jokerUltraDraw": cut(P("M62 98C40 92 34 72 44 56c4 10 10 12 16 12-6-14-2-30 12-42 0 12 6 18 12 24 4-8 2-16-2-26 14 10 22 28 18 46"
+                            "-4 18-18 28-38 28z"),
+                          stroke("M8 8 66 66", 16) + P("M100 100 44 86 86 44z"))
+                      + stroke("M8 8 64 64", 8) + cut(P("M96 96 50 84 84 50z"), P("M84 84 64 78 78 64z"))
+                      + stroke("M4 36 36 4", 8),
+}
 
 def load(name):
     return json.load(open(os.path.join(data_dir, name)))
@@ -457,7 +766,7 @@ require([e["id"] for e in equipment], EQUIPMENT_SILHOUETTES, "equipment")
 require([s["id"] for s in spells["schools"]], SCHOOL_GLYPHS, "spell schools")
 require([s["id"] for s in spells["schools"]], SCHOOL_COLORS, "spell schools (school_colors in manual.json)")
 require([s["id"] for s in spells["spells"]], SPELL_GLYPHS, "spells")
-require([j["id"] for j in jokers], JOKER_GLYPHS, "jokers")
+require([j["id"] for j in jokers], JOKER_ART, "jokers")
 require([u["id"] for u in upgrades], UPGRADE_GLYPHS, "upgrades")
 
 icons = {"itemHero": tile_icon(EQUIPMENT_SILHOUETTES["itemHero"], "Hero")}
@@ -465,7 +774,7 @@ icons.update({e["id"]: tile_icon(EQUIPMENT_SILHOUETTES[e["id"]], e["name"]) for 
 icons.update({s["id"]: badge_icon(SCHOOL_COLORS[s["id"]], SCHOOL_GLYPHS[s["id"]], s["name"], double_ring=True)
               for s in spells["schools"]})
 icons.update({s["id"]: badge_icon(SCHOOL_COLORS[s["school"]], SPELL_GLYPHS[s["id"]], s["name"]) for s in spells["spells"]})
-icons.update({j["id"]: joker_icon(j, JOKER_GLYPHS[j["id"]], JOKER_SCHOOLS.get(j["id"])) for j in jokers})
+icons.update({j["id"]: joker_icon(j, JOKER_ART[j["id"]], JOKER_SCHOOLS.get(j["id"])) for j in jokers})
 icons.update({u["id"]: upgrade_icon(UPGRADE_GLYPHS[u["id"]], u["color"], u["name"]) for u in upgrades})
 
 os.makedirs(out_dir, exist_ok=True)
