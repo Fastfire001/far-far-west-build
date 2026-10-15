@@ -73,6 +73,8 @@ joker budget. The utility has neither upgrades nor jokers.
 - Each upgrade has a name (`name`), a value per point (`value`), a maximum number of points (`max_slots`), a gold
   price per point (`gold_cost`, out of scope for now), the ids of the carriers that have it (`available_on`) and
   its colour on the game's upgrade screen (`color`, the row's `upgradeColor` converted from linear to sRGB).
+- `upgrades.json` keeps the order of the table's rows: it is the order of the game's upgrade screen, which lists
+  the rows available on the carrier (checked on 2026-10-15 on the hero, a melee weapon, a firearm and the Sheriff Star).
 - `flat`: `true` if the value is a fixed amount (Health: +5 HP per point; Chord Capacity: +1 chord per point),
   `false` if it is a fraction (`0.05` = +5%).
 - The same stat can come in several variants depending on the weapon: for instance Attack Speed is +5% ×16 on

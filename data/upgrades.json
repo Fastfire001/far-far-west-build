@@ -1,44 +1,27 @@
 [
   {
-    "id": "jokerUpgradeAccuracy",
-    "name": "Accuracy",
+    "id": "jokerUpgradeDamage",
+    "name": "Damage",
     "value": 0.05,
     "flat": false,
-    "max_slots": 5,
+    "max_slots": 8,
     "gold_cost": 40,
     "available_on": [
-      "itemMinigun",
+      "itemQuadCylinder",
+      "itemLongRanger",
       "itemShotgun",
-      "itemDualRevolver",
-      "itemQuadCylinder"
-    ],
-    "color": "#63ffb5"
-  },
-  {
-    "id": "jokerUpgradeTotalAmmoBag",
-    "name": "Ammo Bag",
-    "value": 0.05,
-    "flat": false,
-    "max_slots": 16,
-    "gold_cost": 40,
-    "available_on": [
-      "itemHero"
-    ],
-    "color": "#b900ff"
-  },
-  {
-    "id": "jokerUpgradeTotalAmmoBagC",
-    "name": "Ammo Bag",
-    "value": 0.05,
-    "flat": false,
-    "max_slots": 16,
-    "gold_cost": 40,
-    "available_on": [
-      "itemDualRevolver",
       "itemMinigun",
-      "itemBow"
+      "itemPistol",
+      "itemBow",
+      "itemSheriffStar",
+      "itemBoomerang",
+      "itemDualRevolver",
+      "itemWinchester",
+      "itemKnuckles",
+      "itemBanjo",
+      "itemLasso"
     ],
-    "color": "#b900ff"
+    "color": "#ff2c2c"
   },
   {
     "id": "jokerUpgradeFirerate",
@@ -86,31 +69,6 @@
     "color": "#ffbc00"
   },
   {
-    "id": "jokerUpgradeChargingSpeed",
-    "name": "Charging Speed",
-    "value": 0.15,
-    "flat": false,
-    "max_slots": 4,
-    "gold_cost": 100,
-    "available_on": [
-      "itemKnuckles",
-      "itemLasso"
-    ],
-    "color": "#bbff5f"
-  },
-  {
-    "id": "jokerUpgradeChordCapacity",
-    "name": "Chord Capacity",
-    "value": 1.0,
-    "flat": true,
-    "max_slots": 5,
-    "gold_cost": 100,
-    "available_on": [
-      "itemBanjo"
-    ],
-    "color": "#edaa46"
-  },
-  {
     "id": "jokerUpgradeClipSize",
     "name": "Clip Size",
     "value": 0.1,
@@ -127,28 +85,116 @@
     "color": "#b900ff"
   },
   {
-    "id": "jokerUpgradeDamage",
-    "name": "Damage",
+    "id": "jokerUpgradeTotalAmmoBag",
+    "name": "Ammo Bag",
     "value": 0.05,
     "flat": false,
-    "max_slots": 8,
+    "max_slots": 16,
+    "gold_cost": 40,
+    "available_on": [
+      "itemHero"
+    ],
+    "color": "#b900ff"
+  },
+  {
+    "id": "jokerUpgradeTotalAmmoBagC",
+    "name": "Ammo Bag",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 16,
+    "gold_cost": 40,
+    "available_on": [
+      "itemDualRevolver",
+      "itemMinigun",
+      "itemBow"
+    ],
+    "color": "#b900ff"
+  },
+  {
+    "id": "jokerUpgradeReloadSpeed",
+    "name": "Reload Speed",
+    "value": 0.075,
+    "flat": false,
+    "max_slots": 16,
     "gold_cost": 40,
     "available_on": [
       "itemQuadCylinder",
       "itemLongRanger",
       "itemShotgun",
-      "itemMinigun",
       "itemPistol",
-      "itemBow",
-      "itemSheriffStar",
-      "itemBoomerang",
       "itemDualRevolver",
-      "itemWinchester",
+      "itemWinchester"
+    ],
+    "color": "#00bfff"
+  },
+  {
+    "id": "jokerUpgradeWeaponMeleeRange",
+    "name": "Range",
+    "value": 0.04,
+    "flat": false,
+    "max_slots": 10,
+    "gold_cost": 40,
+    "available_on": [
       "itemKnuckles",
       "itemBanjo",
       "itemLasso"
     ],
-    "color": "#ff2c2c"
+    "color": "#7e94ff"
+  },
+  {
+    "id": "jokerUpgradeLifesteal",
+    "name": "Lifesteal",
+    "value": 0.01,
+    "flat": false,
+    "max_slots": 5,
+    "gold_cost": 100,
+    "available_on": [
+      "itemPistol",
+      "itemBow",
+      "itemDualRevolver",
+      "itemSheriffStar",
+      "itemBoomerang"
+    ],
+    "color": "#a4ff00"
+  },
+  {
+    "id": "jokerUpgradeAccuracy",
+    "name": "Accuracy",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 5,
+    "gold_cost": 40,
+    "available_on": [
+      "itemMinigun",
+      "itemShotgun",
+      "itemDualRevolver",
+      "itemQuadCylinder"
+    ],
+    "color": "#63ffb5"
+  },
+  {
+    "id": "jokerUpgradeHeal",
+    "name": "Health",
+    "value": 5.0,
+    "flat": true,
+    "max_slots": 6,
+    "gold_cost": 200,
+    "available_on": [
+      "itemHero"
+    ],
+    "color": "#a4ff00"
+  },
+  {
+    "id": "jokerUpgradeSpellCooldownReduction",
+    "name": "Spell Cooldown Reduction",
+    "value": 0.02,
+    "flat": false,
+    "max_slots": 6,
+    "gold_cost": 200,
+    "available_on": [
+      "itemHero"
+    ],
+    "color": "#0097ff"
   },
   {
     "id": "jokerUpgradeDrawSpeed",
@@ -175,44 +221,16 @@
     "color": "#00ffda"
   },
   {
-    "id": "jokerUpgradeHeal",
-    "name": "Health",
-    "value": 5.0,
-    "flat": true,
-    "max_slots": 6,
-    "gold_cost": 200,
-    "available_on": [
-      "itemHero"
-    ],
-    "color": "#a4ff00"
-  },
-  {
-    "id": "jokerUpgradeJumpHeight",
-    "name": "Jump Height",
+    "id": "jokerUpgradeSherrifStarPickUpRange",
+    "name": "Pickup Range",
     "value": 0.07,
     "flat": false,
-    "max_slots": 6,
-    "gold_cost": 100,
+    "max_slots": 10,
+    "gold_cost": 40,
     "available_on": [
-      "itemHero"
+      "itemSheriffStar"
     ],
-    "color": "#bbff5f"
-  },
-  {
-    "id": "jokerUpgradeLifesteal",
-    "name": "Lifesteal",
-    "value": 0.01,
-    "flat": false,
-    "max_slots": 5,
-    "gold_cost": 100,
-    "available_on": [
-      "itemPistol",
-      "itemBow",
-      "itemDualRevolver",
-      "itemSheriffStar",
-      "itemBoomerang"
-    ],
-    "color": "#a4ff00"
+    "color": "#009aff"
   },
   {
     "id": "jokerUpgradeBoomerangLingeringTime",
@@ -227,18 +245,6 @@
     "color": "#ff69b4"
   },
   {
-    "id": "jokerUpgradeSherrifStarPickUpRange",
-    "name": "Pickup Range",
-    "value": 0.07,
-    "flat": false,
-    "max_slots": 10,
-    "gold_cost": 40,
-    "available_on": [
-      "itemSheriffStar"
-    ],
-    "color": "#009aff"
-  },
-  {
     "id": "jokerUpgradeBoomerangRange",
     "name": "Range",
     "value": 0.15,
@@ -249,37 +255,6 @@
       "itemBoomerang"
     ],
     "color": "#7e94ff"
-  },
-  {
-    "id": "jokerUpgradeWeaponMeleeRange",
-    "name": "Range",
-    "value": 0.04,
-    "flat": false,
-    "max_slots": 10,
-    "gold_cost": 40,
-    "available_on": [
-      "itemKnuckles",
-      "itemBanjo",
-      "itemLasso"
-    ],
-    "color": "#7e94ff"
-  },
-  {
-    "id": "jokerUpgradeReloadSpeed",
-    "name": "Reload Speed",
-    "value": 0.075,
-    "flat": false,
-    "max_slots": 16,
-    "gold_cost": 40,
-    "available_on": [
-      "itemQuadCylinder",
-      "itemLongRanger",
-      "itemShotgun",
-      "itemPistol",
-      "itemDualRevolver",
-      "itemWinchester"
-    ],
-    "color": "#00bfff"
   },
   {
     "id": "jokerUpgradeHeroSpeed",
@@ -294,15 +269,40 @@
     "color": "#ffd700"
   },
   {
-    "id": "jokerUpgradeSpellCooldownReduction",
-    "name": "Spell Cooldown Reduction",
-    "value": 0.02,
+    "id": "jokerUpgradeJumpHeight",
+    "name": "Jump Height",
+    "value": 0.07,
     "flat": false,
     "max_slots": 6,
-    "gold_cost": 200,
+    "gold_cost": 100,
     "available_on": [
       "itemHero"
     ],
-    "color": "#0097ff"
+    "color": "#bbff5f"
+  },
+  {
+    "id": "jokerUpgradeChargingSpeed",
+    "name": "Charging Speed",
+    "value": 0.15,
+    "flat": false,
+    "max_slots": 4,
+    "gold_cost": 100,
+    "available_on": [
+      "itemKnuckles",
+      "itemLasso"
+    ],
+    "color": "#bbff5f"
+  },
+  {
+    "id": "jokerUpgradeChordCapacity",
+    "name": "Chord Capacity",
+    "value": 1.0,
+    "flat": true,
+    "max_slots": 5,
+    "gold_cost": 100,
+    "available_on": [
+      "itemBanjo"
+    ],
+    "color": "#edaa46"
   }
 ]
