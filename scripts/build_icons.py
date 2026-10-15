@@ -7,7 +7,7 @@ The icons are original drawings that follow the game's visual codes without copy
 - jokers: a card in the colour of their rarity, one dot per slot they cost, a white pictogram;
 - spells and spell schools: a round badge in the colour of their school;
 - equipment and the hero: a light silhouette on a dark tile;
-- upgrades: a gold hexagon.
+- upgrades: a hexagon in the colour of their stat on the game's upgrade screen (`color` in upgrades.json).
 
 Pictograms are drawn in a 100x100 box with fill="currentColor". Every id found in data/ must have an entry in the
 tables below: a new joker or item after a game update makes the script fail until it gets one.
@@ -25,7 +25,7 @@ SCHOOL_COLORS = {
     "itemVoodoo": "#8b4bb8", "itemCactus": "#2f8a4c", "itemIce": "#4fb6de",
 }
 TILE_COLOR, SILHOUETTE_COLOR = "#2b211b", "#ecd9b2"
-UPGRADE_COLOR = "#b4842b"
+UPGRADE_DARK_GLYPH = "#1c1d22"
 
 
 # --- Pictogram library (100x100 box) -------------------------------------------------------------------------
@@ -258,11 +258,22 @@ def tile_icon(svg, title):
     return document("0 0 100 100", content, title)
 
 
-def upgrade_icon(spec, title):
+def luminance(color):
+    """Relative luminance (WCAG) of a #rrggbb colour."""
+    def channel(c):
+        c = int(c, 16) / 255
+        return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = (channel(color[i:i + 2]) for i in (1, 3, 5))
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def upgrade_icon(spec, color, title):
     hexagon = " ".join(f"{50 + 48 * math.cos(math.radians(90 + i * 60)):.1f},{50 + 48 * math.sin(math.radians(90 + i * 60)):.1f}"
                        for i in range(6))
-    content = (f'<polygon points="{hexagon}" fill="{UPGRADE_COLOR}"/>'
-               + group(f'<g fill="#fff" color="#fff">{glyph(spec)}</g>', "translate(24 24) scale(.52)"))
+    # The game's stat colours are bright: white only reads on the darkest ones (purple, blue).
+    ink = "#fff" if (luminance(color) + 0.05) / 0.05 < 1.05 / (luminance(color) + 0.05) else UPGRADE_DARK_GLYPH
+    content = (f'<polygon points="{hexagon}" fill="{color}"/>'
+               + group(f'<g fill="{ink}" color="{ink}">{glyph(spec)}</g>', "translate(24 24) scale(.52)"))
     return document("0 0 100 100", content, title)
 
 
@@ -450,7 +461,7 @@ icons.update({s["id"]: badge_icon(SCHOOL_COLORS[s["id"]], SCHOOL_GLYPHS[s["id"]]
               for s in spells["schools"]})
 icons.update({s["id"]: badge_icon(SCHOOL_COLORS[s["school"]], SPELL_GLYPHS[s["id"]], s["name"]) for s in spells["spells"]})
 icons.update({j["id"]: joker_icon(j, JOKER_GLYPHS[j["id"]], JOKER_SCHOOLS.get(j["id"])) for j in jokers})
-icons.update({u["id"]: upgrade_icon(UPGRADE_GLYPHS[u["id"]], u["name"]) for u in upgrades})
+icons.update({u["id"]: upgrade_icon(UPGRADE_GLYPHS[u["id"]], u["color"], u["name"]) for u in upgrades})
 
 os.makedirs(out_dir, exist_ok=True)
 for stale in os.listdir(out_dir):
