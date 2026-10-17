@@ -6,6 +6,7 @@ import { useI18n } from 'vue-i18n'
 import type { Upgrade } from '@/domain/gameData'
 import { iconUrl } from '@/icons'
 import { useLanguageStore } from '@/stores/language'
+import { upgradeBonus } from '@/ui/format'
 
 const props = defineProps<{
   upgrade: Upgrade
@@ -19,14 +20,7 @@ const { t, locale } = useI18n()
 const language = useLanguageStore()
 
 const name = computed(() => language.gameName(props.upgrade.id))
-const bonus = computed(() => {
-  const total = props.points * props.upgrade.value
-  return new Intl.NumberFormat(locale.value, {
-    style: props.upgrade.flat ? 'decimal' : 'percent',
-    signDisplay: 'always',
-    maximumFractionDigits: 2,
-  }).format(total)
-})
+const bonus = computed(() => upgradeBonus(props.upgrade, props.points, locale.value))
 
 function setTo(points: number) {
   const target = points === props.points ? points - 1 : points

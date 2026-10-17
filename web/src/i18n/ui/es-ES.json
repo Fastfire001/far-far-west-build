@@ -23,7 +23,9 @@
     "prestiges": "{n} prestigios | {n} prestigio | {n} prestigios",
     "problems": "Ningún problema | 1 problema | {n} problemas",
     "complete": "Build completa y válida",
-    "assumed": "Prestigios: regla supuesta (las mejoras compradas en la tienda de prestigio se pueden usar al momento)"
+    "assumed": "Prestigios: regla supuesta (las mejoras compradas en la tienda de prestigio se pueden usar al momento)",
+    "cooldown": "{sec} s",
+    "slotLegend": "Número en una ranura libre: nivel que la desbloquea; P: ranura comprada en la tienda de prestigio"
   },
   "problem": {
     "missing_weapon_main": "No has elegido arma principal",

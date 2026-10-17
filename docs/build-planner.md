@@ -46,8 +46,16 @@ screen has the menu bar (game version and extraction date, language, builds menu
 Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
 
 - **Build home**: one plank per part of the build (hero, main weapon, sidearm, spells, utility); in place of the
-  character, a summary with the minimum level and prestiges per carrier, then the validation problems (each links to
-  the screen that fixes it).
+  character, a summary of the build at a glance: the spells (with their key) and the utility, then per carrier its
+  minimum level and prestiges, its jokers as small cards (×copies) and its upgrades as their icon with the points;
+  then the validation problems (each links to the screen that fixes it). A click on the summary opens the summary
+  sheet.
+- **Summary** (`/#/summary`): a read-only sheet with everything needed to make the build in the game, laid out to
+  fit in one screenshot: the name, the spells (key and cooldown), the utility, then one column per carrier (hero, main
+  weapon, sidearm and its element) with its minimum level and prestiges, its joker slots as on the Customize screen
+  with the list of jokers beside them, and its upgrades (points and total bonus). The footer gives the game version,
+  what the numbers in free slots mean and the planner's address. Nothing on it is clickable (only BACK); hovering a
+  joker still shows its card.
 - **Item picker**: weapons or utilities as planks, the selected one in detail with EQUIP and CUSTOMIZE.
 - **Customize** (hero, main weapon, sidearm): upgrades with the game's bars, the sidearm's element, the joker slots
   (one circle per slot, a locked slot shows the level that unlocks it, the last 2 are the prestige slots) and the

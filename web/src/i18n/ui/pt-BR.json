@@ -23,7 +23,9 @@
     "prestiges": "{n} prestígios | {n} prestígio | {n} prestígios",
     "problems": "Nenhum problema | 1 problema | {n} problemas",
     "complete": "Build completa e válida",
-    "assumed": "Prestígios: regra presumida (bônus comprados na loja de prestígio podem ser usados na hora)"
+    "assumed": "Prestígios: regra presumida (bônus comprados na loja de prestígio podem ser usados na hora)",
+    "cooldown": "{sec} s",
+    "slotLegend": "Número em um espaço livre: nível que o desbloqueia; P: espaço comprado na loja de prestígio"
   },
   "problem": {
     "missing_weapon_main": "Nenhuma arma principal escolhida",

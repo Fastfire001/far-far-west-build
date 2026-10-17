@@ -23,7 +23,9 @@
     "prestiges": "Prestiż: {n} | Prestiż: {n} | Prestiż: {n}",
     "problems": "Brak problemów | 1 problem | Problemy: {n}",
     "complete": "Build kompletny i poprawny",
-    "assumed": "Prestiż: zasada przyjęta (bonusy kupione w prestiżowym sklepie działają od razu)"
+    "assumed": "Prestiż: zasada przyjęta (bonusy kupione w prestiżowym sklepie działają od razu)",
+    "cooldown": "{sec} s",
+    "slotLegend": "Liczba w wolnym miejscu: poziom, który je odblokowuje; P: miejsce kupione w prestiżowym sklepie"
   },
   "problem": {
     "missing_weapon_main": "Nie wybrano broni głównej",
