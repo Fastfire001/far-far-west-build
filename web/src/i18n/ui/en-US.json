@@ -23,7 +23,9 @@
     "prestiges": "{n} prestiges | {n} prestige | {n} prestiges",
     "problems": "No problems | 1 problem | {n} problems",
     "complete": "Build complete and valid",
-    "assumed": "Prestiges: assumed rule (bonuses bought at the prestige shop usable right away)"
+    "assumed": "Prestiges: assumed rule (bonuses bought at the prestige shop usable right away)",
+    "cooldown": "{sec} s",
+    "slotLegend": "Number in a free slot: level that unlocks it; P: slot bought at the prestige shop"
   },
   "problem": {
     "missing_weapon_main": "No main weapon chosen",

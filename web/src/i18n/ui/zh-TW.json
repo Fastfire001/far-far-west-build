@@ -23,7 +23,9 @@
     "prestiges": "{n} 次聲望 | {n} 次聲望 | {n} 次聲望",
     "problems": "沒有問題 | 1 個問題 | {n} 個問題",
     "complete": "配裝完整且有效",
-    "assumed": "聲望：推測規則（在聲望商店購買的加成可立即使用）"
+    "assumed": "聲望：推測規則（在聲望商店購買的加成可立即使用）",
+    "cooldown": "{sec} 秒",
+    "slotLegend": "空欄位中的數字：解鎖該欄位的等級；P：在聲望商店購買的欄位"
   },
   "problem": {
     "missing_weapon_main": "未選擇主武器",

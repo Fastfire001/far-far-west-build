@@ -23,7 +23,9 @@
     "prestiges": "{n} Prestige | {n} Prestige | {n} Prestige",
     "problems": "Keine Probleme | 1 Problem | {n} Probleme",
     "complete": "Build vollständig und gültig",
-    "assumed": "Prestige: angenommene Regel (im Prestige-Laden gekaufte Boni sofort nutzbar)"
+    "assumed": "Prestige: angenommene Regel (im Prestige-Laden gekaufte Boni sofort nutzbar)",
+    "cooldown": "{sec} s",
+    "slotLegend": "Zahl in einem freien Slot: Stufe, die ihn freischaltet; P: im Prestige-Laden gekaufter Slot"
   },
   "problem": {
     "missing_weapon_main": "Keine Primärwaffe gewählt",

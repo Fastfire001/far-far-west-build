@@ -19,8 +19,10 @@ const props = withDefaults(
     columns?: number
     /** Circle size, in tenths of rem. */
     size?: number
+    /** Display only (build summary): no clicks, no + in the first unused circle; hovering still shows the cards. */
+    readonly?: boolean
   }>(),
-  { columns: 2, size: 36 },
+  { columns: 2, size: 36, readonly: false },
 )
 /** A click on a joker's circle (with its id) or on an unused one (null). */
 const emit = defineEmits<{ select: [joker: string | null] }>()
@@ -77,7 +79,7 @@ const circles = computed<Circle[]>(() => {
     }
   })
 })
-const firstFree = computed(() => circles.value.find((c) => !c.joker)?.index)
+const firstFree = computed(() => (props.readonly ? undefined : circles.value.find((c) => !c.joker)?.index))
 const rows = computed(() => Math.ceil(circles.value.length / props.columns))
 const links = computed(() =>
   circles.value
@@ -169,14 +171,16 @@ onBeforeUnmount(() => removeEventListener('scroll', hidePreview, { capture: true
       />
     </svg>
     <template v-for="c in circles" :key="c.index">
-      <button
-        type="button"
+      <component
+        :is="readonly ? 'span' : 'button'"
+        :type="readonly ? undefined : 'button'"
+        :role="readonly ? 'img' : undefined"
         class="circle"
-        :class="{ used: c.joker, free: !c.joker, next: c.index === firstFree, prestige: c.label === 'P' }"
+        :class="{ used: c.joker, free: !c.joker, next: c.index === firstFree, prestige: c.label === 'P', readonly }"
         :style="{ gridRow: c.row + 1, gridColumn: c.column + 1, '--rarity': c.rarity ? RARITY_COLORS[c.rarity] : undefined }"
         :title="c.title || undefined"
         :aria-label="c.joker ? language.gameName(c.joker) : c.title"
-        @click="emit('select', c.joker)"
+        @click="!readonly && emit('select', c.joker)"
         @pointerenter="c.joker && onPointerEnter(c.index, $event)"
         @pointerleave="hidePreview"
         @focus="c.joker && onFocus(c.index, $event)"
@@ -184,7 +188,7 @@ onBeforeUnmount(() => removeEventListener('scroll', hidePreview, { capture: true
       >
         <img v-if="c.joker" :src="iconUrl(c.joker)" alt="" />
         <template v-else>{{ c.index === firstFree ? '+' : c.label }}</template>
-      </button>
+      </component>
     </template>
     <Teleport to="body">
       <div
@@ -245,7 +249,10 @@ onBeforeUnmount(() => removeEventListener('scroll', hidePreview, { capture: true
 .free.prestige {
   border-style: dashed;
 }
-.circle:hover {
+.circle.readonly {
+  cursor: default;
+}
+.circle:not(.readonly):hover {
   outline: 3px solid var(--accent);
 }
 .preview {

@@ -23,7 +23,9 @@
     "prestiges": "{n} prestij | {n} prestij | {n} prestij",
     "problems": "Sorun yok | 1 sorun | {n} sorun",
     "complete": "Build eksiksiz ve geçerli",
-    "assumed": "Prestijler: varsayılan kural (prestij mağazasından alınan bonuslar hemen kullanılabilir)"
+    "assumed": "Prestijler: varsayılan kural (prestij mağazasından alınan bonuslar hemen kullanılabilir)",
+    "cooldown": "{sec} sn",
+    "slotLegend": "Boş yuvadaki sayı: yuvanın kilidinin açıldığı seviye; P: prestij mağazasından alınan yuva"
   },
   "problem": {
     "missing_weapon_main": "Ana silah seçilmedi",

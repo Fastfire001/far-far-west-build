@@ -23,7 +23,9 @@
     "prestiges": "{n} prestigi | {n} prestigio | {n} prestigi",
     "problems": "Nessun problema | 1 problema | {n} problemi",
     "complete": "Build completa e valida",
-    "assumed": "Prestigi: regola presunta (bonus acquistati nel negozio prestigio utilizzabili subito)"
+    "assumed": "Prestigi: regola presunta (bonus acquistati nel negozio prestigio utilizzabili subito)",
+    "cooldown": "{sec} s",
+    "slotLegend": "Numero in uno slot libero: livello che lo sblocca; P: slot acquistato nel negozio prestigio"
   },
   "problem": {
     "missing_weapon_main": "Nessuna arma principale scelta",

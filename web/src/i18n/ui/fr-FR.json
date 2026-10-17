@@ -23,7 +23,9 @@
     "prestiges": "{n} prestige | {n} prestige | {n} prestiges",
     "problems": "Aucun problème | 1 problème | {n} problèmes",
     "complete": "Build complet et valide",
-    "assumed": "Prestiges : règle supposée (bonus achetés au prestige utilisables tout de suite)"
+    "assumed": "Prestiges : règle supposée (bonus achetés au prestige utilisables tout de suite)",
+    "cooldown": "{sec} s",
+    "slotLegend": "Nombre dans un emplacement libre : niveau qui le débloque ; P : emplacement acheté au prestige"
   },
   "problem": {
     "missing_weapon_main": "Aucune arme principale choisie",

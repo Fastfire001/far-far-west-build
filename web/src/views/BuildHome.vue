@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Home of a build: one plank per part of the build, and a summary of the requirements and problems where the game shows
-// the character.
+// the character. A click on the summary opens the full sheet of the build (SummaryView).
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { CARRIERS } from '@/domain/build'
@@ -76,7 +76,10 @@ function onRename(event: Event) {
     </section>
 
     <aside class="summary">
-      <h2>{{ t('home.summary') }}</h2>
+      <!-- Its ::after covers the whole block: a click opens the summary sheet, except on a problem's link. -->
+      <h2>
+        <RouterLink :to="{ name: 'summary' }" class="open-summary">{{ t('home.summary') }} <span aria-hidden="true">›</span></RouterLink>
+      </h2>
       <table class="requirements">
         <tbody>
           <tr v-for="carrier in CARRIERS" :key="carrier">
@@ -186,6 +189,22 @@ function onRename(event: Event) {
   border-top: 3px solid var(--accent);
   margin-top: 1rem;
   padding: 1.25rem 1.5rem;
+  position: relative;
+}
+.summary:has(.open-summary:hover, .open-summary:focus-visible) {
+  background: rgb(255 255 255 / 6%);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.open-summary {
+  text-decoration: none;
+}
+.open-summary::after {
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+.open-summary:focus-visible {
+  outline: none;
 }
 .summary h2 {
   color: var(--accent);
@@ -235,6 +254,10 @@ function onRename(event: Event) {
 }
 .problems .incomplete {
   color: var(--text-muted);
+}
+.problems a {
+  position: relative;
+  z-index: 1;
 }
 .problems a:hover {
   color: var(--accent);
