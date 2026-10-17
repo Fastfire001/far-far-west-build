@@ -1,6 +1,6 @@
 // Interface colours shared by several screens. Rarity colours mirror those of the generated icons (RARITY_COLORS
 // in scripts/build_icons.py): keep them in sync.
-import type { Rarity } from '@/domain/gameData'
+import { spellById, type Rarity } from '@/domain/gameData'
 import manualJson from '@data/manual.json'
 
 export const RARITY_COLORS: Record<Rarity, string> = {
@@ -16,3 +16,9 @@ export const RARITY_COLORS: Record<Rarity, string> = {
 export const SCHOOL_COLORS: Record<string, string> = Object.fromEntries(
   Object.entries(manualJson.school_colors).filter(([id]) => !id.startsWith('_')),
 )
+
+/** Colour of a spell: the colour of its school. */
+export function spellColor(spellId: string): string | undefined {
+  const school = spellById.get(spellId)?.school
+  return school ? SCHOOL_COLORS[school] : undefined
+}

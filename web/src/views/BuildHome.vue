@@ -1,24 +1,29 @@
 <script setup lang="ts">
-// Home of a build: one plank per part of the build, and a summary of the requirements and problems where the game shows
-// the character. A click on the summary opens the full sheet of the build (SummaryView).
+// Home of a build: one plank per part of the build, and where the game shows the character, a summary (spells, utility,
+// and per carrier its level, prestiges, jokers and upgrades at a glance) followed by the problems. A click on the
+// summary opens the full sheet of the build (SummaryView).
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { CARRIERS } from '@/domain/build'
 import { HERO_ID } from '@/domain/gameData'
+import { spellKeys } from '@/i18n'
 import { problemRoute, useProblemText } from '@/i18n/problems'
 import { iconUrl } from '@/icons'
 import { useBuildStore } from '@/stores/build'
 import { useLanguageStore } from '@/stores/language'
+import { spellColor } from '@/ui/colors'
+import CarrierOverview from '@/components/CarrierOverview.vue'
 import WoodPlank from '@/components/WoodPlank.vue'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const store = useBuildStore()
 const language = useLanguageStore()
-const { carrierName, problemText } = useProblemText()
+const { problemText } = useProblemText()
 
 const build = computed(() => store.build)
 const errors = computed(() => store.problems.filter((p) => p.severity === 'error'))
 const anyAssumed = computed(() => CARRIERS.some((c) => store.requirements[c].assumed))
+const keys = computed(() => spellKeys(locale.value))
 
 function onRename(event: Event) {
   store.rename((event.target as HTMLInputElement).value)
@@ -80,26 +85,29 @@ function onRename(event: Event) {
       <h2>
         <RouterLink :to="{ name: 'summary' }" class="open-summary">{{ t('home.summary') }} <span aria-hidden="true">›</span></RouterLink>
       </h2>
-      <table class="requirements">
-        <tbody>
-          <tr v-for="carrier in CARRIERS" :key="carrier">
-            <th scope="row">
-              {{ carrierName(build, carrier) }}
-              <span v-if="carrier === 'sidearm' && build.sidearm.element">
-                ({{ language.gameName(build.sidearm.element) }})
-              </span>
-            </th>
-            <td>{{ t('game.level_short', { lvl: store.requirements[carrier].level }) }}</td>
-            <td>
-              {{ t('home.prestiges', store.requirements[carrier].prestiges) }}<span
-                v-if="store.requirements[carrier].assumed"
-                class="assumed-mark"
-                >*</span
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div v-if="build.utility || build.spells.some((s) => s)" class="glance">
+        <span
+          v-for="(spell, slot) in build.spells"
+          :key="slot"
+          class="chip"
+          :style="{ '--school': spell ? spellColor(spell) : undefined }"
+        >
+          <kbd>{{ keys[slot] }}</kbd>
+          <img v-if="spell" :src="iconUrl(spell)" alt="" />
+          <span v-else class="chip-empty" />
+          <template v-if="spell">{{ language.gameName(spell) }}</template>
+        </span>
+        <span v-if="build.utility" class="chip">
+          <img :src="iconUrl(build.utility)" alt="" />{{ language.gameName(build.utility) }}
+        </span>
+      </div>
+      <CarrierOverview
+        v-for="carrier in CARRIERS"
+        :key="carrier"
+        :build="build"
+        :carrier="carrier"
+        :requirements="store.requirements[carrier]"
+      />
 
       <h3 :class="{ ok: !store.problems.length, bad: errors.length }">
         {{ store.problems.length ? `⚠ ${t('home.problems', store.problems.length)}` : `✔ ${t('home.complete')}` }}
@@ -211,26 +219,42 @@ function onRename(event: Event) {
   font-size: 1.8rem;
   margin-bottom: 0.75rem;
 }
-.requirements {
-  border-collapse: collapse;
-  width: 100%;
-}
-.requirements th,
-.requirements td {
+.glance {
   border-bottom: 1px solid var(--line);
-  padding: 0.45rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding-bottom: 0.7rem;
 }
-.requirements th {
+.chip {
+  align-items: center;
+  background: rgb(0 0 0 / 30%);
+  border: 1px solid color-mix(in srgb, var(--school, var(--plank)) 45%, transparent);
+  border-radius: 20px;
+  display: inline-flex;
   font-family: var(--font-title);
-  font-size: 1.05rem;
-  font-weight: 500;
-  text-align: left;
+  font-size: 0.85rem;
+  gap: 0.3rem;
+  padding: 0.1rem 0.55rem 0.1rem 0.2rem;
   text-transform: uppercase;
 }
-.requirements td {
-  padding-left: 1rem;
-  text-align: right;
-  white-space: nowrap;
+.chip img,
+.chip-empty {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.chip-empty {
+  border: 2px dashed var(--line);
+  border-radius: 50%;
+}
+kbd {
+  background: rgb(0 0 0 / 45%);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  margin-left: 0.15rem;
+  padding: 0 0.3rem;
 }
 .summary h3 {
   font-size: 1.25rem;

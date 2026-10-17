@@ -5,12 +5,12 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { CARRIERS } from '@/domain/build'
-import { gameMeta, spellById, spellCooldown } from '@/domain/gameData'
+import { gameMeta, spellCooldown } from '@/domain/gameData'
 import { spellKeys } from '@/i18n'
 import { iconUrl } from '@/icons'
 import { useBuildStore } from '@/stores/build'
 import { useLanguageStore } from '@/stores/language'
-import { SCHOOL_COLORS } from '@/ui/colors'
+import { spellColor } from '@/ui/colors'
 import BackButton from '@/components/BackButton.vue'
 import CarrierSummary from '@/components/CarrierSummary.vue'
 
@@ -27,11 +27,6 @@ const extractedOn = computed(() =>
 )
 // Where the planner is, so that whoever sees a screenshot can find it.
 const siteAddress = `${location.host}${import.meta.env.BASE_URL}`.replace(/\/$/, '')
-
-function spellColor(spell: string) {
-  const school = spellById.get(spell)?.school
-  return school ? SCHOOL_COLORS[school] : undefined
-}
 </script>
 
 <template>
