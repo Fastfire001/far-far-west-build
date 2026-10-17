@@ -10,13 +10,14 @@
   },
   "language": "언어: {name}",
   "footer": "Far Far West {version} 데이터, {date}에 게임 파일에서 추출. Evil Raptor와 관련 없는 팬 프로젝트입니다. 게임의 이름과 텍스트는 Evil Raptor에 귀속됩니다.",
+  "updated": "버전 {version} 기준.",
   "source": "소스 코드",
   "yes": "예",
   "no": "아니요",
   "gold": "{n}골드",
   "seconds": "{n}초",
   "jokers": {
-    "title": "Far Far West 조커: 조커 {count}종의 비용과 효과",
+    "title": "Far Far West 조커 목록: 조커 {count}종의 비용과 효과",
     "description": "Far Far West의 모든 조커: 희귀도, 슬롯 비용, 최대 장수, 효과, 장착 가능한 무기. 게임 파일에서 추출한 데이터입니다.",
     "heading": "조커",
     "intro": "게임의 조커 {count}종을 희귀도별로 정리했습니다. 영웅, 주무기, 보조 무기는 각각 자체 조커 슬롯을 가집니다. 레벨로 14개가 잠금 해제되고, 명성 스토어에서 2개를 더 구매할 수 있습니다. 조커는 카드에 표시된 점의 개수만큼 슬롯을 사용합니다.",
@@ -28,7 +29,7 @@
     "missionOnly": "임무 중 드롭 전용"
   },
   "joker": {
-    "title": "{name}: Far Far West 조커",
+    "title": "{name} 조커 – Far Far West: 효과, 비용, 무기",
     "description": "{name}, Far Far West의 {rarity} 조커: {effect} 슬롯 {cost}개 사용.",
     "rarity": "희귀도",
     "cost": "슬롯 비용",
@@ -45,7 +46,7 @@
     "others": "다른 {rarity} 조커"
   },
   "weapons": {
-    "title": "Far Far West 무기: 주무기, 보조 무기, 유틸리티",
+    "title": "Far Far West 전체 무기: 주무기, 보조 무기, 유틸리티",
     "description": "Far Far West의 주무기 {main}종, 보조 무기 {sidearms}종, 유틸리티 {utilities}종과 각각의 업그레이드 및 장착 가능한 조커.",
     "heading": "무기",
     "intro": "빌드는 주무기, 원소를 가진 보조 무기, 유틸리티로 구성됩니다. 영웅과 각 무기는 자체 레벨, 업그레이드 포인트, 조커 슬롯을 가집니다. 유틸리티에는 둘 다 없습니다.",
@@ -55,10 +56,8 @@
     "hero": "영웅"
   },
   "weapon": {
-    "title": "{name}: Far Far West {type}, 업그레이드와 조커",
-    "description": "Far Far West의 {name}: 업그레이드 {upgrades}종과 장착 가능한 조커 {jokers}종, 그 비용과 효과.",
-    "typeMain": "주무기",
-    "typeSidearm": "보조 무기",
+    "title": "Far Far West {name}: 조커, 업그레이드, 빌드",
+    "description": "Far Far West {name} 빌드: 장착 가능한 조커 {jokers}종의 비용과 효과, 업그레이드 {upgrades}종.",
     "upgrades": "업그레이드",
     "upgradesIntro": "업그레이드 포인트는 최대 {points}: 2레벨마다 1포인트씩 레벨 {level}에서 {fromLevels}포인트까지, 그리고 명성 스토어에서 {bought}포인트를 구매할 수 있습니다.",
     "stat": "능력치",

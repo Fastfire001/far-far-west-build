@@ -92,7 +92,7 @@ function weaponPage(weapon: Equipment): Page {
       // Share link of a build with this weapon equipped: opens the planner on it.
       const code = await encodeShareCode(setWeapon(emptyBuild(), slot, weapon.id))
       return {
-        title: ctx.t('weapon.title', { name, type: ctx.t(weapon.type === 'main' ? 'weapon.typeMain' : 'weapon.typeSidearm') }),
+        title: ctx.t('weapon.title', { name }),
         description: ctx.t('weapon.description', {
           name,
           upgrades: upgrades.filter((u) => u.available_on.includes(weapon.id)).length,

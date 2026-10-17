@@ -10,13 +10,14 @@
   },
   "language": "Idioma: {name}",
   "footer": "Datos de Far Far West {version}, extraídos de los archivos del juego el {date}. Proyecto de fans, sin relación con Evil Raptor: los nombres y textos del juego pertenecen a Evil Raptor.",
+  "updated": "Actualizado para la versión {version}.",
   "source": "Código fuente",
   "yes": "Sí",
   "no": "No",
   "gold": "{n} de oro",
   "seconds": "{n} s",
   "jokers": {
-    "title": "Comodines de Far Far West: los {count} comodines, costos y efectos",
+    "title": "Lista de comodines de Far Far West: los {count} comodines, costos y efectos",
     "description": "Todos los comodines de Far Far West: rareza, costo en espacios, copias máximas, efecto y armas compatibles, extraídos de los archivos del juego.",
     "heading": "Comodines",
     "intro": "Los {count} comodines del juego, por rareza. El héroe, el arma principal y el arma secundaria tienen cada uno sus propios espacios para comodines: 14 que se desbloquean con los niveles y 2 más que se compran en la tienda de prestigio. Un comodín ocupa tantos espacios como puntos tiene su carta.",
@@ -28,7 +29,7 @@
     "missionOnly": "Solo en misiones"
   },
   "joker": {
-    "title": "{name}: comodín de Far Far West",
+    "title": "Comodín {name} – Far Far West: efecto, costo y armas",
     "description": "{name}, comodín {rarity} de Far Far West: {effect} Cuesta {cost} espacios.",
     "rarity": "Rareza",
     "cost": "Costo en espacios",
@@ -45,7 +46,7 @@
     "others": "Otros comodines {rarity}"
   },
   "weapons": {
-    "title": "Armas de Far Far West: armas principales, armas secundarias y apoyos",
+    "title": "Todas las armas de Far Far West: principales, secundarias y apoyos",
     "description": "Las {main} armas principales, {sidearms} armas secundarias y {utilities} apoyos de Far Far West, con sus mejoras y los comodines que pueden equipar.",
     "heading": "Armas",
     "intro": "Una build tiene un arma principal, un arma secundaria con su elemento y un apoyo. El héroe y cada arma tienen su propio nivel, sus puntos de mejora y sus espacios para comodines; los apoyos no tienen nada de eso.",
@@ -55,10 +56,8 @@
     "hero": "Héroe"
   },
   "weapon": {
-    "title": "{name}: {type} de Far Far West, mejoras y comodines",
-    "description": "{name} en Far Far West: sus {upgrades} mejoras y los {jokers} comodines que puede equipar, con sus costos y efectos.",
-    "typeMain": "arma principal",
-    "typeSidearm": "arma secundaria",
+    "title": "{name} en Far Far West: comodines, mejoras y build",
+    "description": "Build de {name} en Far Far West: los {jokers} comodines que puede equipar, con sus costos y efectos, y sus {upgrades} mejoras.",
     "upgrades": "Mejoras",
     "upgradesIntro": "Hasta {points} puntos de mejora: uno cada 2 niveles hasta {fromLevels} en el nivel {level}, más {bought} comprados en la tienda de prestigio.",
     "stat": "Estadística",

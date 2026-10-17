@@ -10,13 +10,14 @@
   },
   "language": "Język: {name}",
   "footer": "Dane z Far Far West {version}, wyodrębnione z plików gry {date}. Projekt fanowski, niezwiązany z Evil Raptor: nazwy i teksty z gry należą do Evil Raptor.",
+  "updated": "Aktualne dla wersji {version}.",
   "source": "Kod źródłowy",
   "yes": "Tak",
   "no": "Nie",
   "gold": "Złoto: {n}",
   "seconds": "{n} s",
   "jokers": {
-    "title": "Jokery w Far Far West: wszystkie jokery ({count}), koszty i efekty",
+    "title": "Lista jokerów w Far Far West: wszystkie jokery ({count}), koszty i efekty",
     "description": "Wszystkie jokery w Far Far West: rzadkość, koszt w miejscach, maks. liczba kopii, efekt i pasujące bronie, wyodrębnione z plików gry.",
     "heading": "Jokery",
     "intro": "Wszystkie jokery w grze ({count}) według rzadkości. Bohater, broń główna i broń dodatkowa mają własne miejsca na jokery: 14 odblokowywanych poziomami i 2 kupowane w prestiżowym sklepie. Joker zajmuje tyle miejsc, ile kropek jest na jego karcie.",
@@ -28,7 +29,7 @@
     "missionOnly": "Tylko w misjach"
   },
   "joker": {
-    "title": "{name}: joker w Far Far West",
+    "title": "Joker {name} – Far Far West: efekt, koszt i bronie",
     "description": "{name}, joker w Far Far West (rzadkość: {rarity}): {effect} Zajmowane miejsca: {cost}.",
     "rarity": "Rzadkość",
     "cost": "Koszt w miejscach",
@@ -45,7 +46,7 @@
     "others": "Inne jokery – rzadkość {rarity}"
   },
   "weapons": {
-    "title": "Bronie w Far Far West: bronie główne, bronie dodatkowe i narzędzia",
+    "title": "Wszystkie bronie w Far Far West: główne, dodatkowe i narzędzia",
     "description": "Bronie główne ({main}), bronie dodatkowe ({sidearms}) i narzędzia ({utilities}) w Far Far West, z ich ulepszeniami i pasującymi jokerami.",
     "heading": "Bronie",
     "intro": "Build składa się z broni głównej, broni dodatkowej z jej żywiołem i narzędzia. Bohater i każda broń mają własny poziom, punkty ulepszeń i miejsca na jokery; narzędzia ich nie mają.",
@@ -55,10 +56,8 @@
     "hero": "Bohater"
   },
   "weapon": {
-    "title": "{name}: {type} w Far Far West, ulepszenia i jokery",
-    "description": "{name} w Far Far West: ulepszenia ({upgrades}) i pasujące jokery ({jokers}), z ich kosztami i efektami.",
-    "typeMain": "broń główna",
-    "typeSidearm": "broń dodatkowa",
+    "title": "{name} w Far Far West: jokery, ulepszenia i build",
+    "description": "Build {name} w Far Far West: pasujące jokery ({jokers}) z ich kosztami i efektami oraz ulepszenia ({upgrades}).",
     "upgrades": "Ulepszenia",
     "upgradesIntro": "Maks. punkty ulepszeń: {points}. Jeden co 2 poziomy, aż do {fromLevels} na poziomie {level}, plus {bought} z prestiżowego sklepu.",
     "stat": "Statystyka",

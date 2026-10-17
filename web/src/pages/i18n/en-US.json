@@ -10,13 +10,14 @@
   },
   "language": "Language: {name}",
   "footer": "Data from Far Far West {version}, extracted from the game files on {date}. Fan project, not affiliated with Evil Raptor: the game's names and texts belong to Evil Raptor.",
+  "updated": "Up to date with version {version}.",
   "source": "Source code",
   "yes": "Yes",
   "no": "No",
   "gold": "{n} gold",
   "seconds": "{n} s",
   "jokers": {
-    "title": "Far Far West jokers: the {count} jokers, costs and effects",
+    "title": "Far Far West jokers list: all {count} jokers, costs and effects",
     "description": "Every joker in Far Far West: rarity, slot cost, max copies, effect and the weapons it fits, extracted from the game files.",
     "heading": "Jokers",
     "intro": "The {count} jokers of the game, by rarity. The hero, the main weapon and the sidearm each have their own joker slots: 14 unlocked by levels, plus 2 bought at the prestige shop. A joker costs as many slots as the dots on its card.",
@@ -28,7 +29,7 @@
     "missionOnly": "Mission drop only"
   },
   "joker": {
-    "title": "{name}: Far Far West joker",
+    "title": "{name} joker – Far Far West: effect, cost and weapons",
     "description": "{name}, {rarity} joker of Far Far West: {effect} Costs {cost} slots.",
     "rarity": "Rarity",
     "cost": "Slot cost",
@@ -45,7 +46,7 @@
     "others": "Other {rarity} jokers"
   },
   "weapons": {
-    "title": "Far Far West weapons: main weapons, sidearms and utilities",
+    "title": "All Far Far West weapons: main weapons, sidearms and utilities",
     "description": "The {main} main weapons, {sidearms} sidearms and {utilities} utilities of Far Far West, with their upgrades and the jokers they can equip.",
     "heading": "Weapons",
     "intro": "A build has a main weapon, a sidearm with its element, and a utility. The hero and each weapon have their own level, upgrade points and joker slots; utilities have neither.",
@@ -55,10 +56,8 @@
     "hero": "Hero"
   },
   "weapon": {
-    "title": "{name}: Far Far West {type}, upgrades and jokers",
-    "description": "{name} in Far Far West: its {upgrades} upgrades and the {jokers} jokers it can equip, with their costs and effects.",
-    "typeMain": "main weapon",
-    "typeSidearm": "sidearm",
+    "title": "Far Far West {name}: jokers, upgrades and build",
+    "description": "{name} build in Far Far West: the {jokers} jokers it can equip, with their costs and effects, and its {upgrades} upgrades.",
     "upgrades": "Upgrades",
     "upgradesIntro": "Up to {points} upgrade points: one every 2 levels up to {fromLevels} at level {level}, plus {bought} bought at the prestige shop.",
     "stat": "Stat",
@@ -74,7 +73,7 @@
     "plan": "Plan a build with {name}"
   },
   "hero": {
-    "title": "Far Far West hero: upgrades and jokers",
+    "title": "Far Far West hero upgrades and jokers",
     "description": "The hero in Far Far West: its {upgrades} upgrades and the {jokers} hero jokers, with their costs and effects.",
     "intro": "The hero has its own level, upgrade points and joker slots, like the weapons."
   },

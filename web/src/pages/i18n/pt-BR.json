@@ -10,13 +10,14 @@
   },
   "language": "Idioma: {name}",
   "footer": "Dados de Far Far West {version}, extraídos dos arquivos do jogo em {date}. Projeto de fã, sem vínculo com a Evil Raptor: os nomes e textos do jogo pertencem à Evil Raptor.",
+  "updated": "Atualizado para a versão {version}.",
   "source": "Código-fonte",
   "yes": "Sim",
   "no": "Não",
   "gold": "{n} de ouro",
   "seconds": "{n} s",
   "jokers": {
-    "title": "Curingas de Far Far West: os {count} curingas, custos e efeitos",
+    "title": "Lista de curingas de Far Far West: os {count} curingas, custos e efeitos",
     "description": "Todos os curingas de Far Far West: raridade, custo em espaços, cópias máximas, efeito e armas compatíveis, extraídos dos arquivos do jogo.",
     "heading": "Curingas",
     "intro": "Os {count} curingas do jogo, por raridade. O herói, a arma principal e a arma secundária têm cada um seus próprios espaços de curinga: 14 desbloqueados pelos níveis, mais 2 comprados na loja de prestígio. Um curinga ocupa tantos espaços quanto os pontos na sua carta.",
@@ -28,7 +29,7 @@
     "missionOnly": "Só em missões"
   },
   "joker": {
-    "title": "{name}: curinga de Far Far West",
+    "title": "Curinga {name} – Far Far West: efeito, custo e armas",
     "description": "{name}, curinga {rarity} de Far Far West: {effect} Custa {cost} espaços.",
     "rarity": "Raridade",
     "cost": "Custo em espaços",
@@ -45,7 +46,7 @@
     "others": "Outros curingas {rarity}"
   },
   "weapons": {
-    "title": "Armas de Far Far West: armas principais, armas secundárias e utilidades",
+    "title": "Todas as armas de Far Far West: principais, secundárias e utilidades",
     "description": "As {main} armas principais, {sidearms} armas secundárias e {utilities} utilidades de Far Far West, com suas melhorias e os curingas que podem equipar.",
     "heading": "Armas",
     "intro": "Uma build tem uma arma principal, uma arma secundária com seu elemento e uma utilidade. O herói e cada arma têm seu próprio nível, pontos de melhoria e espaços de curinga; as utilidades não têm nada disso.",
@@ -55,10 +56,8 @@
     "hero": "Herói"
   },
   "weapon": {
-    "title": "{name}: {type} de Far Far West, melhorias e curingas",
-    "description": "{name} em Far Far West: suas {upgrades} melhorias e os {jokers} curingas que pode equipar, com seus custos e efeitos.",
-    "typeMain": "arma principal",
-    "typeSidearm": "arma secundária",
+    "title": "{name} em Far Far West: curingas, melhorias e build",
+    "description": "Build de {name} em Far Far West: os {jokers} curingas que pode equipar, com seus custos e efeitos, e suas {upgrades} melhorias.",
     "upgrades": "Melhorias",
     "upgradesIntro": "Até {points} pontos de melhoria: um a cada 2 níveis até {fromLevels} no nível {level}, mais {bought} comprados na loja de prestígio.",
     "stat": "Atributo",

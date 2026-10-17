@@ -35,13 +35,15 @@ export function renderDocument(ctx: Context, page: Page, content: PageContent): 
   // "</" cannot appear inside a <script> element.
   const jsonLd = JSON.stringify(breadcrumbList).replace(/<\//g, '<\\/')
   const current = page.path.split('/')[0] + '/'
+  // The game is in early access: the version tells players the data is not outdated.
+  const description = `${content.description} ${ctx.t('updated', { version: gameMeta.game_version })}`
 
   return `<!doctype html>\n${html`<html lang="${ctx.locale}">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>${content.title}</title>
-<meta name="description" content="${content.description}" />
+<meta name="description" content="${description}" />
 <link rel="canonical" href="${ctx.absolute(page.path)}" />
 ${LOCALES.map((l) => html`<link rel="alternate" hreflang="${l}" href="${ctx.absolute(page.path, l)}" />\n`)}<link rel="alternate" hreflang="x-default" href="${ctx.absolute(page.path, DEFAULT_LOCALE)}" />
 <link rel="icon" type="image/svg+xml" href="${ctx.icon('itemHero')}" />
@@ -50,7 +52,7 @@ ${LOCALES.map((l) => html`<link rel="alternate" hreflang="${l}" href="${ctx.abso
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="${ctx.t('site')}" />
 <meta property="og:title" content="${content.title}" />
-<meta property="og:description" content="${content.description}" />
+<meta property="og:description" content="${description}" />
 <meta property="og:url" content="${ctx.absolute(page.path)}" />
 <meta property="og:locale" content="${ogLocale(ctx.locale)}" />
 <meta property="og:image" content="${ctx.siteUrl}og-image.png" />

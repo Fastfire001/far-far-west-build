@@ -10,13 +10,14 @@
   },
   "language": "Sprache: {name}",
   "footer": "Daten aus Far Far West {version}, am {date} aus den Spieldateien extrahiert. Fanprojekt ohne Verbindung zu Evil Raptor: Die Namen und Texte des Spiels gehören Evil Raptor.",
+  "updated": "Aktuell für Version {version}.",
   "source": "Quellcode",
   "yes": "Ja",
   "no": "Nein",
   "gold": "{n} Gold",
   "seconds": "{n} Sek.",
   "jokers": {
-    "title": "Far Far West Joker: alle {count} Joker, Kosten und Effekte",
+    "title": "Far Far West Joker-Liste: alle {count} Joker, Kosten und Effekte",
     "description": "Alle Joker in Far Far West: Seltenheit, Slot-Kosten, maximale Anzahl, Effekt und passende Waffen, direkt aus den Spieldateien extrahiert.",
     "heading": "Joker",
     "intro": "Die {count} Joker des Spiels, nach Seltenheit. Der Held, die Primärwaffe und die Sekundärwaffe haben jeweils eigene Joker-Slots: 14 werden über Stufen freigeschaltet, dazu kommen 2 aus dem Prestige-Laden. Ein Joker kostet so viele Slots, wie Punkte auf seiner Karte sind.",
@@ -28,7 +29,7 @@
     "missionOnly": "Nur in Missionen"
   },
   "joker": {
-    "title": "{name}: Joker in Far Far West",
+    "title": "{name} Joker – Far Far West: Effekt, Kosten und Waffen",
     "description": "{name}, Joker der Seltenheit {rarity} in Far Far West: {effect} Kostet {cost} Slots.",
     "rarity": "Seltenheit",
     "cost": "Slot-Kosten",
@@ -45,7 +46,7 @@
     "others": "Weitere Joker der Seltenheit {rarity}"
   },
   "weapons": {
-    "title": "Far Far West Waffen: Primärwaffen, Sekundärwaffen und Support",
+    "title": "Alle Far Far West Waffen: Primärwaffen, Sekundärwaffen und Support",
     "description": "Die {main} Primärwaffen, {sidearms} Sekundärwaffen und {utilities} Support-Gegenstände von Far Far West, mit ihren Upgrades und den passenden Jokern.",
     "heading": "Waffen",
     "intro": "Ein Build besteht aus einer Primärwaffe, einer Sekundärwaffe mit ihrem Element und einem Support-Gegenstand. Der Held und jede Waffe haben eigene Stufen, Upgrade-Punkte und Joker-Slots; Support-Gegenstände haben nichts davon.",
@@ -55,10 +56,8 @@
     "hero": "Held"
   },
   "weapon": {
-    "title": "{name}: {type} in Far Far West, Upgrades und Joker",
-    "description": "{name} in Far Far West: die {upgrades} Upgrades und die {jokers} Joker, die damit ausrüstbar sind, mit ihren Kosten und Effekten.",
-    "typeMain": "Primärwaffe",
-    "typeSidearm": "Sekundärwaffe",
+    "title": "Far Far West {name}: Joker, Upgrades und Build",
+    "description": "{name}-Build in Far Far West: die {jokers} Joker, die damit ausrüstbar sind, mit ihren Kosten und Effekten, und die {upgrades} Upgrades.",
     "upgrades": "Upgrades",
     "upgradesIntro": "Bis zu {points} Upgrade-Punkte: einer alle 2 Stufen bis zu {fromLevels} auf Stufe {level}, dazu {bought} aus dem Prestige-Laden.",
     "stat": "Wert",

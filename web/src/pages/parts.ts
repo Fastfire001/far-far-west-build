@@ -51,6 +51,18 @@ export function plain(text: string): string {
   return text.replace(/\s+/g, ' ').trim()
 }
 
+/** Languages that capitalize every word of a name; the others only capitalize the first one. */
+const TITLE_CASE_LOCALES = new Set(['en-US', 'de-DE'])
+
+/** A card name in upper case, as on the game's cards, in normal case for titles and descriptions: DEATH'S DANCE →
+ * Death's Dance, RUÉE DU PRÉCIEUX → Ruée du précieux. */
+export function titleCase(ctx: Context, name: string): string {
+  const words = TITLE_CASE_LOCALES.has(ctx.locale) ? /(^|[\s(-])(\p{L})/gu : /^()(\p{L})/u
+  return name
+    .toLocaleLowerCase(ctx.locale)
+    .replace(words, (_, before: string, letter: string) => before + letter.toLocaleUpperCase(ctx.locale))
+}
+
 /** A game text used inside one of our sentences: on one line, ending with a full stop. */
 export function sentence(text: string): string {
   const line = plain(text)

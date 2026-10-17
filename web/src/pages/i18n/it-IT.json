@@ -10,13 +10,14 @@
   },
   "language": "Lingua: {name}",
   "footer": "Dati di Far Far West {version}, estratti dai file del gioco il {date}. Progetto di fan, non affiliato con Evil Raptor: i nomi e i testi del gioco appartengono a Evil Raptor.",
+  "updated": "Aggiornato alla versione {version}.",
   "source": "Codice sorgente",
   "yes": "Sì",
   "no": "No",
   "gold": "{n} pz. d'oro",
   "seconds": "{n} s",
   "jokers": {
-    "title": "Jolly di Far Far West: tutti i {count} jolly, costi ed effetti",
+    "title": "Lista dei jolly di Far Far West: tutti i {count} jolly, costi ed effetti",
     "description": "Tutti i jolly di Far Far West: rarità, costo in slot, copie massime, effetto e armi compatibili, estratti dai file del gioco.",
     "heading": "Jolly",
     "intro": "I {count} jolly del gioco, per rarità. L'eroe, l'arma principale e l'arma secondaria hanno ciascuno i propri slot jolly: 14 sbloccati con i livelli, più 2 acquistati nel negozio prestigio. Un jolly costa tanti slot quanti sono i punti sulla sua carta.",
@@ -28,7 +29,7 @@
     "missionOnly": "Solo in missione"
   },
   "joker": {
-    "title": "{name}: jolly di Far Far West",
+    "title": "Jolly {name} – Far Far West: effetto, costo e armi",
     "description": "{name}, jolly {rarity} di Far Far West: {effect} Costa {cost} slot.",
     "rarity": "Rarità",
     "cost": "Costo in slot",
@@ -45,7 +46,7 @@
     "others": "Altri jolly {rarity}"
   },
   "weapons": {
-    "title": "Armi di Far Far West: armi principali, armi secondarie e utilità",
+    "title": "Tutte le armi di Far Far West: principali, secondarie e utilità",
     "description": "Le {main} armi principali, le {sidearms} armi secondarie e le {utilities} utilità di Far Far West, con i loro potenziamenti e i jolly che possono equipaggiare.",
     "heading": "Armi",
     "intro": "Una build ha un'arma principale, un'arma secondaria con il suo elemento e un'utilità. L'eroe e ogni arma hanno il proprio livello, i propri punti potenziamento e i propri slot jolly; le utilità non hanno nulla di tutto ciò.",
@@ -55,10 +56,8 @@
     "hero": "Eroe"
   },
   "weapon": {
-    "title": "{name}: {type} di Far Far West, potenziamenti e jolly",
-    "description": "{name} in Far Far West: i suoi {upgrades} potenziamenti e i {jokers} jolly che può equipaggiare, con costi ed effetti.",
-    "typeMain": "arma principale",
-    "typeSidearm": "arma secondaria",
+    "title": "{name} in Far Far West: jolly, potenziamenti e build",
+    "description": "Build {name} in Far Far West: i {jokers} jolly che può equipaggiare, con costi ed effetti, e i suoi {upgrades} potenziamenti.",
     "upgrades": "Potenziamenti",
     "upgradesIntro": "Fino a {points} punti potenziamento: uno ogni 2 livelli fino a {fromLevels} al livello {level}, più {bought} acquistati nel negozio prestigio.",
     "stat": "Statistica",
