@@ -10,13 +10,14 @@
   },
   "language": "Langue : {name}",
   "footer": "Données de Far Far West {version}, extraites des fichiers du jeu le {date}. Projet de fan, sans lien avec Evil Raptor : les noms et textes du jeu appartiennent à Evil Raptor.",
+  "updated": "À jour pour la version {version}.",
   "source": "Code source",
   "yes": "Oui",
   "no": "Non",
   "gold": "{n} or",
   "seconds": "{n} s",
   "jokers": {
-    "title": "Jokers de Far Far West : les {count} jokers, coûts et effets",
+    "title": "Liste des jokers de Far Far West : les {count} jokers, coûts et effets",
     "description": "Tous les jokers de Far Far West : rareté, coût en emplacements, copies max, effet et armes compatibles, extraits des fichiers du jeu.",
     "heading": "Jokers",
     "intro": "Les {count} jokers du jeu, par rareté. Le héros, l'arme principale et l'arme secondaire ont chacun leurs emplacements de jokers : 14 débloqués par les niveaux, plus 2 achetés à la boutique de prestige. Un joker coûte autant d'emplacements que de points sur sa carte.",
@@ -28,7 +29,7 @@
     "missionOnly": "Seulement en mission"
   },
   "joker": {
-    "title": "{name} : joker de Far Far West",
+    "title": "Joker {name} – Far Far West : effet, coût et armes",
     "description": "{name}, joker {rarity} de Far Far West : {effect} Coûte {cost} emplacements.",
     "rarity": "Rareté",
     "cost": "Coût en emplacements",
@@ -45,7 +46,7 @@
     "others": "Autres jokers {rarity}"
   },
   "weapons": {
-    "title": "Armes de Far Far West : armes principales, secondaires et utilitaires",
+    "title": "Toutes les armes de Far Far West : principales, secondaires et utilitaires",
     "description": "Les {main} armes principales, {sidearms} armes secondaires et {utilities} utilitaires de Far Far West, avec leurs améliorations et les jokers qu'elles peuvent équiper.",
     "heading": "Armes",
     "intro": "Un build a une arme principale, une arme secondaire avec son élément, et un utilitaire. Le héros et chaque arme ont leur propre niveau, leurs points d'amélioration et leurs emplacements de jokers ; les utilitaires n'en ont pas.",
@@ -55,10 +56,8 @@
     "hero": "Héros"
   },
   "weapon": {
-    "title": "{name} : {type} de Far Far West, améliorations et jokers",
-    "description": "{name} dans Far Far West : ses {upgrades} améliorations et ses {jokers} jokers compatibles, avec leurs coûts et effets.",
-    "typeMain": "arme principale",
-    "typeSidearm": "arme secondaire",
+    "title": "{name} dans Far Far West : jokers, améliorations et build",
+    "description": "Build {name} dans Far Far West : ses {jokers} jokers compatibles, avec leurs coûts et effets, et ses {upgrades} améliorations.",
     "upgrades": "Améliorations",
     "upgradesIntro": "Jusqu'à {points} points d'amélioration : un tous les 2 niveaux jusqu'à {fromLevels} au niveau {level}, plus {bought} achetés à la boutique de prestige.",
     "stat": "Stat",

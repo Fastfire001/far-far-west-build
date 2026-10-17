@@ -10,6 +10,7 @@
   },
   "language": "言語：{name}",
   "footer": "Far Far West {version} のデータ。{date} にゲームファイルから抽出。非公式のファンプロジェクトで、Evil Raptor とは関係ありません。ゲームの名称とテキストは Evil Raptor に帰属します。",
+  "updated": "バージョン {version} 対応。",
   "source": "ソースコード",
   "yes": "はい",
   "no": "いいえ",
@@ -28,7 +29,7 @@
     "missionOnly": "ミッション中のドロップのみ"
   },
   "joker": {
-    "title": "{name}：Far Far West のジョーカー",
+    "title": "{name}（ジョーカー）– Far Far West：効果、コスト、対応武器",
     "description": "{name}、Far Far West の{rarity}ジョーカー：{effect} {cost}スロット消費。",
     "rarity": "レア度",
     "cost": "スロットコスト",
@@ -45,7 +46,7 @@
     "others": "その他の{rarity}ジョーカー"
   },
   "weapons": {
-    "title": "Far Far West 武器一覧：メイン武器、サブ武器、補助系",
+    "title": "Far Far West 全武器一覧：メイン武器、サブ武器、補助系",
     "description": "Far Far West のメイン武器{main}種、サブ武器{sidearms}種、補助系{utilities}種と、そのアップグレードおよび装備可能なジョーカー。",
     "heading": "武器",
     "intro": "ビルドはメイン武器、属性付きのサブ武器、補助系で構成されます。ヒーローと各武器はそれぞれ独自のレベル、アップグレードポイント、ジョーカースロットを持ちます。補助系にはどちらもありません。",
@@ -55,10 +56,8 @@
     "hero": "ヒーロー"
   },
   "weapon": {
-    "title": "{name}：Far Far West の{type}、アップグレードとジョーカー",
-    "description": "Far Far West の{name}：{upgrades}種のアップグレードと装備可能な{jokers}種のジョーカー、そのコストと効果。",
-    "typeMain": "メイン武器",
-    "typeSidearm": "サブ武器",
+    "title": "Far Far West {name}：ジョーカー、アップグレード、ビルド",
+    "description": "Far Far West の{name}ビルド：装備可能な{jokers}種のジョーカーのコストと効果、{upgrades}種のアップグレード。",
     "upgrades": "アップグレード",
     "upgradesIntro": "アップグレードポイントは最大{points}。2レベルごとに1ポイント、レベル{level}で{fromLevels}ポイントに達し、さらにプレステージ・ショップで{bought}ポイント購入できます。",
     "stat": "ステータス",

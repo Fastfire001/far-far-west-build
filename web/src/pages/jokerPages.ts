@@ -3,7 +3,7 @@ import { equipmentById, HERO_ID, jokers, type Joker } from '@/domain/gameData'
 import { uniqueUnlockLevel } from '@/domain/progression'
 import type { Context, Page } from './context'
 import { html } from './html'
-import { gameText, icon, itemLink, itemPath, jokersByRarity, lobbyOnly, plain, rarityBadge, rarityName, sentence, sortJokers } from './parts'
+import { gameText, icon, itemLink, itemPath, jokersByRarity, lobbyOnly, plain, rarityBadge, rarityName, sentence, sortJokers, titleCase } from './parts'
 
 /** School whose level unlocks a Mastery joker (challengeLvl50Acid → itemAcid), with that level. */
 const MASTERY_SCHOOLS: Record<string, string> = {
@@ -51,10 +51,10 @@ function jokerPage(joker: Joker): Page {
       const yesNo = (value: boolean) => ctx.t(value ? 'yes' : 'no')
       const others = sortJokers(jokers.filter((j) => j.rarity === joker.rarity && j.id !== joker.id))
       return {
-        title: ctx.t('joker.title', { name }),
+        title: ctx.t('joker.title', { name: titleCase(ctx, name) }),
         description: plain(
           ctx.t('joker.description', {
-            name,
+            name: titleCase(ctx, name),
             rarity: rarityName(ctx, joker.rarity),
             effect: sentence(ctx.description(joker.id)),
             cost: joker.slot_cost,

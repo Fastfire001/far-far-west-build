@@ -10,6 +10,7 @@
   },
   "language": "语言：{name}",
   "footer": "数据来自 Far Far West {version}，于 {date} 从游戏文件中提取。粉丝项目，与 Evil Raptor 无关：游戏中的名称和文本归 Evil Raptor 所有。",
+  "updated": "已更新至 {version} 版本。",
   "source": "源代码",
   "yes": "是",
   "no": "否",
@@ -28,7 +29,7 @@
     "missionOnly": "仅在任务中掉落"
   },
   "joker": {
-    "title": "{name}：Far Far West 奇术卡",
+    "title": "{name} 奇术卡 – Far Far West：效果、槽位消耗与适用武器",
     "description": "{name}，Far Far West 的{rarity}奇术卡：{effect} 占用 {cost} 个槽位。",
     "rarity": "稀有度",
     "cost": "槽位消耗",
@@ -45,7 +46,7 @@
     "others": "其他{rarity}奇术卡"
   },
   "weapons": {
-    "title": "Far Far West 武器大全：主武器、副武器与辅助道具",
+    "title": "Far Far West 全部武器：主武器、副武器与辅助道具",
     "description": "Far Far West 的 {main} 把主武器、{sidearms} 把副武器和 {utilities} 种辅助道具，以及它们的升级和可装备的奇术卡。",
     "heading": "武器",
     "intro": "一套配装包含一把主武器、一把带元素的副武器和一个辅助道具。英雄和每把武器都有各自的等级、升级点数和奇术卡槽位；辅助道具则都没有。",
@@ -55,10 +56,8 @@
     "hero": "英雄"
   },
   "weapon": {
-    "title": "{name}：Far Far West {type}的升级与奇术卡",
-    "description": "Far Far West 中的{name}：{upgrades} 项升级，以及可装备的 {jokers} 张奇术卡的槽位消耗与效果。",
-    "typeMain": "主武器",
-    "typeSidearm": "副武器",
+    "title": "Far Far West {name}：奇术卡、升级与配装",
+    "description": "Far Far West {name}配装：可装备的 {jokers} 张奇术卡的槽位消耗与效果，以及 {upgrades} 项升级。",
     "upgrades": "升级",
     "upgradesIntro": "最多 {points} 个升级点数：每 2 级获得 1 点，{level} 级时达到 {fromLevels} 点，另有 {bought} 点可在声望商店购买。",
     "stat": "属性",

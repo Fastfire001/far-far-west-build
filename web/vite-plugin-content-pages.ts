@@ -1,8 +1,9 @@
 // Static content pages (src/pages/, see docs/build-planner.md, "Content pages"): rendered into the built site with
-// the sitemap, their stylesheet, font and icons; served on request by the dev server.
+// the sitemap, their stylesheet, font and icons; served on request by the dev server. Also fills in the static part
+// of index.html (game version, links to the pages).
 import { readdirSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { runnerImport, type Plugin, type ResolvedConfig } from 'vite'
+import { runnerImport, type Plugin, type ResolvedConfig, type ViteDevServer } from 'vite'
 
 /** Public address of the site: canonical URLs, links between languages and the sitemap. */
 const SITE_URL = 'https://fastfire001.github.io/far-far-west-build/'
@@ -19,6 +20,7 @@ interface SiteOptions {
 interface SiteModule {
   siteFiles(options: SiteOptions): { file: string; url: string; render(): Promise<string> }[]
   sitemap(options: SiteOptions): string
+  homeContent(options: SiteOptions): { gameVersion: string; links: string }
 }
 
 const TYPES: Record<string, string> = { css: 'text/css', svg: 'image/svg+xml', woff2: 'font/woff2' }
@@ -38,6 +40,16 @@ function assets(): Map<string, () => string | Buffer> {
 export function contentPages(): Plugin {
   let config: ResolvedConfig
   const options = () => ({ base: config.base, siteUrl: SITE_URL })
+  const loadSite = async (server?: ViteDevServer): Promise<SiteModule> => {
+    if (server) return (await server.ssrLoadModule(SITE_MODULE)) as SiteModule
+    const { module } = await runnerImport<SiteModule>(SITE_MODULE, {
+      configFile: false,
+      root: config.root,
+      resolve: { alias: config.resolve.alias },
+      logLevel: 'warn',
+    })
+    return module
+  }
 
   return {
     name: 'content-pages',
@@ -45,13 +57,16 @@ export function contentPages(): Plugin {
       config = resolved
     },
 
+    transformIndexHtml: {
+      order: 'pre',
+      async handler(html, { server }) {
+        const home = (await loadSite(server)).homeContent(options())
+        return html.replaceAll('{gameVersion}', home.gameVersion).replace('<!-- content-pages:links -->', home.links)
+      },
+    },
+
     async generateBundle() {
-      const { module: site } = await runnerImport<SiteModule>(SITE_MODULE, {
-        configFile: false,
-        root: config.root,
-        resolve: { alias: config.resolve.alias },
-        logLevel: 'warn',
-      })
+      const site = await loadSite()
       for (const page of site.siteFiles(options())) {
         this.emitFile({ type: 'asset', fileName: page.file, source: await page.render() })
       }
@@ -70,7 +85,7 @@ export function contentPages(): Plugin {
             return
           }
           if (!url.endsWith('/') || url === config.base) return next()
-          const site = (await server.ssrLoadModule(SITE_MODULE)) as SiteModule
+          const site = await loadSite(server)
           const page = site.siteFiles(options()).find((p) => p.url === url)
           if (!page) return next()
           res.setHeader('Content-Type', 'text/html; charset=utf-8')

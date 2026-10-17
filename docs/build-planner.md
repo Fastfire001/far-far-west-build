@@ -175,7 +175,14 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   Pages source must be "GitHub Actions". Address: https://fastfire001.github.io/far-far-west-build/
 - **Search engines**: `web/index.html` holds the title, description, canonical URL, link previews (Open Graph) and
   JSON-LD data, plus a short static text in `#app` (replaced when the app mounts) with links to the content pages,
-  for crawlers that do not run JavaScript. The planner's screens are hash routes, ignored by search engines: what
+  for crawlers that do not run JavaScript. The game version (`{gameVersion}`) and the links to every weapon and
+  school (`<!-- content-pages:links -->`) are filled in by the content pages plugin (`homeContent` in
+  `src/pages/site.ts`).
+- **Titles and descriptions** follow what players search for: the game's name first, then the item and the words
+  of the search ("Far Far West Minigun: jokers, upgrades and build", "Precious Rush joker – Far Far West…"). Joker
+  names are in normal case there (title case in English and German, only the first letter elsewhere), upper case
+  only in the page heading. Every description ends with the game version, as players avoid outdated data in early
+  access. The planner's screens are hash routes, ignored by search engines: what
   can rank are the content pages (see "Content pages"). `sitemap.xml` is generated at build time with the planner
   and every content page. A `robots.txt` would have to be at the domain root (`fastfire001.github.io`), so the
   sitemap is submitted in Google Search Console instead.

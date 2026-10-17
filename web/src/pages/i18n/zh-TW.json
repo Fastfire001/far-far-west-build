@@ -10,6 +10,7 @@
   },
   "language": "語言：{name}",
   "footer": "資料來自 Far Far West {version}，於 {date} 從遊戲檔案中擷取。粉絲專案，與 Evil Raptor 無關：遊戲中的名稱和文字皆屬 Evil Raptor 所有。",
+  "updated": "已更新至 {version} 版本。",
   "source": "原始碼",
   "yes": "是",
   "no": "否",
@@ -28,7 +29,7 @@
     "missionOnly": "僅在委託中掉落"
   },
   "joker": {
-    "title": "{name}：Far Far West 鬼牌",
+    "title": "{name} 鬼牌 – Far Far West：效果、欄位消耗與適用武器",
     "description": "{name}，Far Far West 的{rarity}鬼牌：{effect} 佔用 {cost} 個欄位。",
     "rarity": "稀有度",
     "cost": "欄位消耗",
@@ -45,7 +46,7 @@
     "others": "其他{rarity}鬼牌"
   },
   "weapons": {
-    "title": "Far Far West 武器大全：主武器、副武器與戰術道具",
+    "title": "Far Far West 全部武器：主武器、副武器與戰術道具",
     "description": "Far Far West 的 {main} 把主武器、{sidearms} 把副武器和 {utilities} 種戰術道具，以及它們的升級和可裝備的鬼牌。",
     "heading": "武器",
     "intro": "一套配裝包含一把主武器、一把附帶元素的副武器和一個戰術道具。英雄和每把武器都有各自的等級、升級點數和鬼牌欄位；戰術道具則都沒有。",
@@ -55,10 +56,8 @@
     "hero": "英雄"
   },
   "weapon": {
-    "title": "{name}：Far Far West {type}的升級與鬼牌",
-    "description": "Far Far West 中的{name}：{upgrades} 項升級，以及可裝備的 {jokers} 張鬼牌的欄位消耗與效果。",
-    "typeMain": "主武器",
-    "typeSidearm": "副武器",
+    "title": "Far Far West {name}：鬼牌、升級與配裝",
+    "description": "Far Far West {name}配裝：可裝備的 {jokers} 張鬼牌的欄位消耗與效果，以及 {upgrades} 項升級。",
     "upgrades": "升級",
     "upgradesIntro": "最多 {points} 個升級點數：每 2 級獲得 1 點，等級 {level} 時達到 {fromLevels} 點，另有 {bought} 點可在聲望商店購買。",
     "stat": "屬性",

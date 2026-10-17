@@ -10,13 +10,14 @@
   },
   "language": "Dil: {name}",
   "footer": "Far Far West {version} verileri, oyun dosyalarından {date} tarihinde çıkarıldı. Hayran projesidir, Evil Raptor ile bağlantısı yoktur: oyunun adları ve metinleri Evil Raptor'a aittir.",
+  "updated": "{version} sürümüne göre güncel.",
   "source": "Kaynak kodu",
   "yes": "Evet",
   "no": "Hayır",
   "gold": "{n} altın",
   "seconds": "{n} sn.",
   "jokers": {
-    "title": "Far Far West jokerleri: {count} jokerin tamamı, maliyetleri ve etkileri",
+    "title": "Far Far West joker listesi: {count} jokerin tamamı, maliyetleri ve etkileri",
     "description": "Far Far West'teki tüm jokerler: nadirlik, yuva maliyeti, en fazla kopya, etki ve uyumlu silahlar, oyun dosyalarından çıkarıldı.",
     "heading": "Jokerler",
     "intro": "Oyundaki {count} joker, nadirliğe göre. Karakter, ana silah ve yan silahın her birinin kendi joker yuvaları vardır: 14'ü seviyelerle açılır, 2'si de prestij mağazasından alınır. Bir joker, kartındaki nokta sayısı kadar yuva kaplar.",
@@ -28,7 +29,7 @@
     "missionOnly": "Yalnızca serüvende düşer"
   },
   "joker": {
-    "title": "{name}: Far Far West jokeri",
+    "title": "{name} jokeri – Far Far West: etkisi, maliyeti ve silahları",
     "description": "{name}, Far Far West'in {rarity} nadirlikteki jokeri: {effect} Maliyeti: {cost} yuva.",
     "rarity": "Nadirlik",
     "cost": "Yuva maliyeti",
@@ -45,7 +46,7 @@
     "others": "Diğer {rarity} jokerler"
   },
   "weapons": {
-    "title": "Far Far West silahları: ana silahlar, yan silahlar ve destek ekipmanları",
+    "title": "Tüm Far Far West silahları: ana silahlar, yan silahlar ve destek ekipmanları",
     "description": "Far Far West'teki {main} ana silah, {sidearms} yan silah ve {utilities} destek ekipmanı; yükseltmeleri ve kuşanabildikleri jokerlerle.",
     "heading": "Silahlar",
     "intro": "Bir build'de bir ana silah, elementiyle birlikte bir yan silah ve bir destek ekipmanı bulunur. Karakterin ve her silahın kendi seviyesi, yükseltme puanları ve joker yuvaları vardır; destek ekipmanlarında bunlar yoktur.",
@@ -55,10 +56,8 @@
     "hero": "Karakter"
   },
   "weapon": {
-    "title": "{name} ({type}): Far Far West yükseltmeleri ve jokerleri",
-    "description": "Far Far West'te {name}: {upgrades} yükseltme ve kuşanabildiği {jokers} joker, maliyetleri ve etkileriyle.",
-    "typeMain": "ana silah",
-    "typeSidearm": "yan silah",
+    "title": "Far Far West {name}: jokerler, yükseltmeler ve build",
+    "description": "Far Far West'te {name} build'i: kuşanabildiği {jokers} joker, maliyetleri ve etkileriyle, ve {upgrades} yükseltme.",
     "upgrades": "Yükseltmeler",
     "upgradesIntro": "En fazla {points} yükseltme puanı: {level}. seviyeye kadar her 2 seviyede bir, toplam {fromLevels} puan; artı prestij mağazasından alınan {bought} puan.",
     "stat": "Özellik",
