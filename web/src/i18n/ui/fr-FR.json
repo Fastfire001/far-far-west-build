@@ -1,10 +1,10 @@
 {
   "app": {
-    "title": "Far Far West — Build planner"
+    "title": "Far Far West - Build planner"
   },
   "menu": {
-    "version": "Jeu v{version} · données du {date}",
-    "versionShort": "v{version} · {date}",
+    "version": "Jeu v{version} - données du {date}",
+    "versionShort": "v{version} - {date}",
     "builds": "Builds",
     "newBuild": "Nouveau build",
     "myBuilds": "Mes builds…",
