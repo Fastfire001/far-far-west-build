@@ -108,9 +108,10 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   `web/src/i18n/ui/<language>.json`, **in English and French only**, with the game's own words for its concepts
   (joker, slot, prestige…). In the other languages it shows in English, next to the game's texts in the chosen
   language. English is bundled, French is loaded on demand. A missing key falls back to English.
-- **No machine translation**: at the request of the game's team (2026-10-22), the AI translations of our texts into
-  the other 13 languages were removed. Only the game's official translations and texts written in English or French
-  remain.
+- **No text written or translated by AI**: at the request of the game's team (2026-10-22), the AI translations of
+  our texts into the other 13 languages were removed, and the English texts, written by AI, were replaced by
+  `"todo"` to be rewritten by hand. The French texts were kept. English stays the fallback, even while it says
+  `"todo"`.
 
 ## Content pages
 

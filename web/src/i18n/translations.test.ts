@@ -1,5 +1,6 @@
-// Our own translations (interface and content pages), in English and French only: the French file has the keys of the
-// English file, with the same variables and the same number of plural forms, and nothing else.
+// Our own texts (interface and content pages), in English and French only, written by hand: no AI text or translation
+// (request of the game's team). A text not written yet is "todo". French has no key that English does not have, and
+// each French text has the variables and number of plural forms of the English one, once both are written.
 import { describe, expect, it } from 'vitest'
 
 type Messages = { [key: string]: string | Messages }
@@ -30,8 +31,9 @@ describe.each(Object.entries(sets))('%s translations', (_, files) => {
 
   it.each(['fr-FR'])('%s matches the English keys, variables and plural forms', (locale) => {
     const translated = flatten(fileOf(locale) ?? {})
-    expect(Object.keys(translated).sort()).toEqual(Object.keys(english).sort())
-    for (const [key, text] of Object.entries(english)) {
+    expect(Object.keys(translated).filter((key) => !(key in english))).toEqual([])
+    const written = (text: string | undefined) => text !== undefined && text !== 'todo'
+    for (const [key, text] of Object.entries(english).filter(([key, text]) => written(text) && written(translated[key]))) {
       expect(variables(translated[key]), `${locale} ${key}`).toEqual(variables(text))
       expect(pluralForms(translated[key]), `${locale} ${key}`).toBe(pluralForms(text))
       expect(translated[key].trim(), `${locale} ${key}`).not.toBe('')

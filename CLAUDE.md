@@ -51,8 +51,12 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 - Containers run as the host user: generated files must not belong to root.
 - Everything in English: documentation, README, code and comments. Only our French interface and page texts
   (`web/src/i18n/ui/`, `web/src/pages/i18n/`) and the game's translations are in other languages.
-- No machine translation (request of the game's team): our texts exist only in English and French. Do not add other
-  languages to `web/src/i18n/ui/` or `web/src/pages/i18n/`.
+- **No text written or translated by AI in `web/src/i18n/ui/` and `web/src/pages/i18n/`** (request of the game's
+  team, 2026-10-22), in any language, English included. These files exist only in English and French, written by
+  hand by the maintainer; a text not written yet is `"todo"`. When Claude adds a key, it sets `"todo"` in
+  `en-US.json`, adds nothing to `fr-FR.json`, and tells the user which keys to write. It never replaces a `"todo"`,
+  never edits an existing text, and never adds another language. English stays the fallback, even while it says
+  `"todo"`. Only the game's official translations (`data/i18n/`) are in the other languages.
 - Files extracted from the game stay in `.cache/`: never version or publish them. Only the values the planner needs
   go into `data/`.
 - Items are referenced by their internal game id (`itemPistol`, `jokerCrackShot`), never by their displayed name.
