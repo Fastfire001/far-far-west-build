@@ -1,7 +1,6 @@
-// Our own translations (interface and content pages): every language has the keys of the English file, with the same
-// variables and the same number of plural forms, and nothing else.
+// Our own translations (interface and content pages), in English and French only: the French file has the keys of the
+// English file, with the same variables and the same number of plural forms, and nothing else.
 import { describe, expect, it } from 'vitest'
-import { LOCALES } from '@/i18n'
 
 type Messages = { [key: string]: string | Messages }
 
@@ -25,11 +24,11 @@ describe.each(Object.entries(sets))('%s translations', (_, files) => {
   const fileOf = (locale: string) => Object.entries(files).find(([path]) => path.endsWith(`/${locale}.json`))?.[1]
   const english = flatten(fileOf('en-US')!)
 
-  it('has one file per game language', () => {
-    expect(Object.keys(files).map((path) => path.split('/').pop()!.replace('.json', '')).sort()).toEqual([...LOCALES].sort())
+  it('has an English and a French file', () => {
+    expect(Object.keys(files).map((path) => path.split('/').pop()!.replace('.json', '')).sort()).toEqual(['en-US', 'fr-FR'])
   })
 
-  it.each(LOCALES.filter((l) => l !== 'en-US'))('%s matches the English keys, variables and plural forms', (locale) => {
+  it.each(['fr-FR'])('%s matches the English keys, variables and plural forms', (locale) => {
     const translated = flatten(fileOf(locale) ?? {})
     expect(Object.keys(translated).sort()).toEqual(Object.keys(english).sort())
     for (const [key, text] of Object.entries(english)) {

@@ -104,11 +104,13 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
 - Texts are shown as in the game (joker names in upper case); line breaks in Japanese names are shown as spaces.
 - The interface reuses the game's menu labels when they exist (`data/i18n/ui/`, 15 languages: BACK, Customize,
   rarities…), and the game's language names for the picker (`data/i18n/languages.json`).
-- The rest of the interface (summary, validation messages…) does not exist in the game: it is translated by us in
-  `web/src/i18n/ui/<language>.json`, in the game's 15 languages, with the game's own words for its concepts (joker,
-  slot, prestige…). English is bundled, the other languages are loaded on demand. A missing key falls back to
-  English. vue-i18n does not apply Slavic plural rules: Polish, Russian and Ukrainian texts are worded so that each
-  plural form reads right for any number.
+- The rest of the interface (summary, validation messages…) does not exist in the game: it is written by us in
+  `web/src/i18n/ui/<language>.json`, **in English and French only**, with the game's own words for its concepts
+  (joker, slot, prestige…). In the other languages it shows in English, next to the game's texts in the chosen
+  language. English is bundled, French is loaded on demand. A missing key falls back to English.
+- **No machine translation**: at the request of the game's team (2026-10-22), the AI translations of our texts into
+  the other 13 languages were removed. Only the game's official translations and texts written in English or French
+  remain.
 
 ## Content pages
 
@@ -123,15 +125,15 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
 - **URLs from the English name** (`jokers/crackshot/`, `weapons/leveredge/`), not the internal id: they contain the
   words players search for. If the game renames an item, its URL changes. The tests check that every slug is unique
   and that every internal link leads to a page.
-- **15 languages**: English at the root, the others under a prefix (`fr/`, `es-419/`, `pt-br/`…, `LOCALE_PREFIXES`
-  in `src/pages/routes.ts`), linked together with `hreflang`. Names and descriptions come from the game's
-  translations; the page texts (`src/pages/i18n/<language>.json`) are ours, in the 15 languages.
+- **English and French**, the languages of our page texts (`src/pages/i18n/<language>.json`): English at the root,
+  French under `fr/` (`LOCALE_PREFIXES` in `src/pages/routes.ts`), linked together with `hreflang`. Names and
+  descriptions come from the game's translations. The planner links to the English pages in the other languages.
 - Rendered with the planner's own data and rules (`src/domain/`), the game's menu labels (rarity names), the
   generated icons (copied to `icons/<id>.svg`) and the planner's stylesheet (`src/styles/main.css`, followed by
   `src/pages/pages.css`, published as `pages/style.css`).
 - Each page links to the planner. Weapon and utility pages open it on a build with that item, through a share link.
   The planner links back to the pages in its footer, in the current language.
-- About 180 pages per language, so about 2,700 files (60 MB) in the built site.
+- About 180 pages per language, so about 360 files in the built site.
 
 ## Icons
 

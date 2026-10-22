@@ -1,10 +1,10 @@
 // The HTML document around each content page: head (title, description, canonical URL, the page in the other
 // languages, link previews, breadcrumbs as JSON-LD), the site's header and footer. No JavaScript.
 import { gameMeta } from '@/domain/gameData'
-import { DEFAULT_LOCALE, LANGUAGE_NAMES, LOCALES } from '@/i18n'
+import { DEFAULT_LOCALE, LANGUAGE_NAMES } from '@/i18n'
 import type { Context, Page, PageContent } from './context'
 import { html, raw } from './html'
-import { pagePath } from './routes'
+import { PAGE_LOCALES, pagePath } from './routes'
 
 const SECTIONS = [
   ['jokers', 'jokers/'],
@@ -45,7 +45,7 @@ export function renderDocument(ctx: Context, page: Page, content: PageContent): 
 <title>${content.title}</title>
 <meta name="description" content="${description}" />
 <link rel="canonical" href="${ctx.absolute(page.path)}" />
-${LOCALES.map((l) => html`<link rel="alternate" hreflang="${l}" href="${ctx.absolute(page.path, l)}" />\n`)}<link rel="alternate" hreflang="x-default" href="${ctx.absolute(page.path, DEFAULT_LOCALE)}" />
+${PAGE_LOCALES.map((l) => html`<link rel="alternate" hreflang="${l}" href="${ctx.absolute(page.path, l)}" />\n`)}<link rel="alternate" hreflang="x-default" href="${ctx.absolute(page.path, DEFAULT_LOCALE)}" />
 <link rel="icon" type="image/svg+xml" href="${ctx.icon('itemHero')}" />
 <link rel="stylesheet" href="${ctx.base}pages/style.css" />
 <meta name="theme-color" content="#1d272d" />
@@ -68,7 +68,7 @@ ${LOCALES.map((l) => html`<link rel="alternate" hreflang="${l}" href="${ctx.abso
   <details class="languages">
     <summary>${ctx.t('language', { name: LANGUAGE_NAMES[ctx.locale] })}</summary>
     <ul>
-      ${LOCALES.map((l) => html`<li><a href="${ctx.base}${pagePath(l, page.path)}" hreflang="${l}" lang="${l}"${l === ctx.locale ? raw(' aria-current="true"') : ''}>${LANGUAGE_NAMES[l]}</a></li>`)}
+      ${PAGE_LOCALES.map((l) => html`<li><a href="${ctx.base}${pagePath(l, page.path)}" hreflang="${l}" lang="${l}"${l === ctx.locale ? raw(' aria-current="true"') : ''}>${LANGUAGE_NAMES[l]}</a></li>`)}
     </ul>
   </details>
   <a class="plank-button" href="${ctx.planner()}">${ctx.t('nav.planner')}</a>
