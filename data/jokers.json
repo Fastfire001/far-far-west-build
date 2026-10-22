@@ -44,7 +44,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -115,7 +116,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -162,7 +164,8 @@
       "itemBanjo",
       "itemLasso",
       "itemMinigun",
-      "itemBoomerang"
+      "itemBoomerang",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -281,7 +284,9 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemBoomerang",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -366,7 +371,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -489,7 +495,9 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemBoomerang",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -563,7 +571,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -651,7 +660,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -796,7 +806,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -864,7 +875,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -894,7 +906,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": false,
@@ -1005,6 +1018,30 @@
     "unlocked_by": null,
     "can_drop_in_mission": false,
     "droppable": false
+  },
+  {
+    "id": "jokerScrubBullet",
+    "name": "SCRUB HIT",
+    "rarity": "Fine",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 300,
+    "sell_price": 150,
+    "description": "Your primary weapon removes elements from enemies to instantly deal 10 damage",
+    "available_on": [
+      "itemQuadCylinder",
+      "itemLongRanger",
+      "itemMinigun",
+      "itemWinchester",
+      "itemShotgun",
+      "itemKnuckles",
+      "itemLasso"
+    ],
+    "can_be_bought": true,
+    "can_be_gambled": true,
+    "unlocked_by": null,
+    "can_drop_in_mission": true,
+    "droppable": true
   },
   {
     "id": "jokerShroomGrave",
@@ -1149,7 +1186,7 @@
     "max_equip": 2,
     "buy_price": 300,
     "sell_price": 150,
-    "description": "+5 HP",
+    "description": "+7 HP",
     "available_on": [
       "itemHero"
     ],
@@ -1181,7 +1218,8 @@
       "itemShotgun",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1229,7 +1267,8 @@
       "itemBoomerang",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1285,7 +1324,7 @@
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "description": "Gain +1 HP for every 20 Gold in your mission inventory, up to +15 HP",
+    "description": "Gain +1 HP for every 15 Gold in your mission inventory, up to +20 HP",
     "available_on": [
       "itemHero"
     ],
@@ -1329,7 +1368,8 @@
       "itemMinigun",
       "itemPistol",
       "itemDualRevolver",
-      "itemWinchester"
+      "itemWinchester",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1376,7 +1416,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1405,7 +1446,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1434,7 +1476,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1463,13 +1506,32 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
     "unlocked_by": null,
     "can_drop_in_mission": true,
     "droppable": true
+  },
+  {
+    "id": "jokerFinalEmber",
+    "name": "FINAL EMBER",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "description": "While at or below 30% HP, your hits are electrified",
+    "available_on": [
+      "itemHero"
+    ],
+    "can_be_bought": true,
+    "can_be_gambled": false,
+    "unlocked_by": "challengeSecretRedwood",
+    "can_drop_in_mission": false,
+    "droppable": false
   },
   {
     "id": "jokerGreatWall",
@@ -1526,6 +1588,24 @@
     "droppable": true
   },
   {
+    "id": "jokerLazy",
+    "name": "LAZY",
+    "rarity": "Prime",
+    "slot_cost": 3,
+    "max_equip": 1,
+    "buy_price": 500,
+    "sell_price": 250,
+    "description": "Ammo pickups are disabled. Gain 10% of max ammo every 12 sec.",
+    "available_on": [
+      "itemHero"
+    ],
+    "can_be_bought": true,
+    "can_be_gambled": true,
+    "unlocked_by": null,
+    "can_drop_in_mission": true,
+    "droppable": false
+  },
+  {
     "id": "jokerMagicFriendship",
     "name": "MAGIC FRIENDSHIP",
     "rarity": "Prime",
@@ -1533,7 +1613,7 @@
     "max_equip": 2,
     "buy_price": 500,
     "sell_price": 250,
-    "description": "Passively regain HP while being near allies",
+    "description": "Passively regain HP while near allies",
     "available_on": [
       "itemHero"
     ],
@@ -1611,30 +1691,6 @@
       "itemDualRevolver",
       "itemShotgun",
       "itemWinchester"
-    ],
-    "can_be_bought": true,
-    "can_be_gambled": true,
-    "unlocked_by": null,
-    "can_drop_in_mission": true,
-    "droppable": true
-  },
-  {
-    "id": "jokerScrubBullet",
-    "name": "SCRUB HIT",
-    "rarity": "Prime",
-    "slot_cost": 3,
-    "max_equip": 1,
-    "buy_price": 500,
-    "sell_price": 250,
-    "description": "Your primary weapon removes elements from enemies to instantly deal 10 damage",
-    "available_on": [
-      "itemQuadCylinder",
-      "itemLongRanger",
-      "itemMinigun",
-      "itemWinchester",
-      "itemShotgun",
-      "itemKnuckles",
-      "itemLasso"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -1906,7 +1962,8 @@
       "itemKnuckles",
       "itemBoomerang",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2049,24 +2106,6 @@
     "droppable": true
   },
   {
-    "id": "jokerLazy",
-    "name": "LAZY",
-    "rarity": "Mythic",
-    "slot_cost": 4,
-    "max_equip": 1,
-    "buy_price": 800,
-    "sell_price": 400,
-    "description": "Ammo pickups are disabled. Gain 10% of max ammo every 12 sec.",
-    "available_on": [
-      "itemHero"
-    ],
-    "can_be_bought": true,
-    "can_be_gambled": true,
-    "unlocked_by": null,
-    "can_drop_in_mission": true,
-    "droppable": false
-  },
-  {
     "id": "jokerLifePact",
     "name": "LIFE PACT",
     "rarity": "Mythic",
@@ -2193,7 +2232,7 @@
     "name": "THICK SKIN",
     "rarity": "Mythic",
     "slot_cost": 4,
-    "max_equip": 2,
+    "max_equip": 1,
     "buy_price": 800,
     "sell_price": 400,
     "description": "Reduce all damage taken by 20%, but receive -30% healing",
@@ -2282,7 +2321,8 @@
       "itemKnuckles",
       "itemBoomerang",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2326,7 +2366,8 @@
       "itemDualRevolver",
       "itemBow",
       "itemSheriffStar",
-      "itemWinchester"
+      "itemWinchester",
+      "itemJetpack"
     ],
     "can_be_bought": false,
     "can_be_gambled": false,
@@ -2516,7 +2557,8 @@
       "itemSheriffStar",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemBow"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2593,7 +2635,8 @@
       "itemSheriffStar",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemBow"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2658,7 +2701,9 @@
       "itemBow",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemBoomerang",
+      "itemJetpack"
     ],
     "can_be_bought": true,
     "can_be_gambled": true,
@@ -2688,7 +2733,7 @@
     "id": "jokerBardbarian",
     "name": "BARDBARIAN",
     "rarity": "Unique",
-    "slot_cost": 5,
+    "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
@@ -2717,6 +2762,24 @@
     "can_be_bought": true,
     "can_be_gambled": false,
     "unlocked_by": "challengeLvl40ItemBoomerang",
+    "can_drop_in_mission": false,
+    "droppable": true
+  },
+  {
+    "id": "jokerCrashPack",
+    "name": "CRASH PACK",
+    "rarity": "Unique",
+    "slot_cost": 4,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "description": "Double the fuel ammo, but half the flight duration",
+    "available_on": [
+      "itemJetpack"
+    ],
+    "can_be_bought": true,
+    "can_be_gambled": false,
+    "unlocked_by": "challengeLvl40ItemJetpack",
     "can_drop_in_mission": false,
     "droppable": true
   },
@@ -2818,7 +2881,7 @@
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "description": "The charged attack propels you backwards and has a 20% chance to apply Frost to enemies",
+    "description": "The charged attack propels you backwards and applies Frost to enemies",
     "available_on": [
       "itemKnuckles"
     ],
@@ -2879,6 +2942,24 @@
     "can_be_bought": true,
     "can_be_gambled": false,
     "unlocked_by": "challengeLevel55ItemQuadCylinder",
+    "can_drop_in_mission": false,
+    "droppable": true
+  },
+  {
+    "id": "jokerHoverPack",
+    "name": "HOVER PACK",
+    "rarity": "Unique",
+    "slot_cost": 5,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "description": "Divebomb is replaced with a hover boost that costs fuel and swaps to your main weapon",
+    "available_on": [
+      "itemJetpack"
+    ],
+    "can_be_bought": true,
+    "can_be_gambled": false,
+    "unlocked_by": "challengeLvl60ItemJetpack",
     "can_drop_in_mission": false,
     "droppable": true
   },
@@ -3048,7 +3129,7 @@
     "id": "jokerSkyLash",
     "name": "SKY LASH",
     "rarity": "Unique",
-    "slot_cost": 4,
+    "slot_cost": 3,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
@@ -3117,10 +3198,28 @@
     "droppable": true
   },
   {
+    "id": "jokerTrailPack",
+    "name": "TRAIL PACK",
+    "rarity": "Unique",
+    "slot_cost": 2,
+    "max_equip": 1,
+    "buy_price": 1200,
+    "sell_price": 600,
+    "description": "Your jetpack trail leaves elemental puddles",
+    "available_on": [
+      "itemJetpack"
+    ],
+    "can_be_bought": true,
+    "can_be_gambled": false,
+    "unlocked_by": "challengeLvl30ItemJetpack",
+    "can_drop_in_mission": false,
+    "droppable": true
+  },
+  {
     "id": "jokerUltraDraw",
     "name": "ULTRA DRAW",
     "rarity": "Unique",
-    "slot_cost": 7,
+    "slot_cost": 4,
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,

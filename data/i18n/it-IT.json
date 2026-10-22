@@ -35,6 +35,10 @@
     "name": "Gelo",
     "description": "Difensiva: congela i nemici e rinforza il tuo scudo"
   },
+  "itemJetpack": {
+    "name": "Jetpack",
+    "description": "Vola dove vuoi e piomba sui tuoi nemici.\nTutto ciò che sale deve scendere, possibilmente addosso a qualcuno."
+  },
   "itemKnuckles": {
     "name": "Tirapugni",
     "description": "Corto raggio, grande impatto.\nNon richiede munizioni, mira, riflessione."
@@ -233,7 +237,7 @@
   },
   "jokerAvalanche": {
     "name": "VALANGA",
-    "description": "+15% di danni mentre hai lo scudo"
+    "description": "+15% di danni finché hai la corazza"
   },
   "jokerBardbarian": {
     "name": "BARBARDO",
@@ -241,7 +245,7 @@
   },
   "jokerBattleMage": {
     "name": "MAGO COMBATTENTE",
-    "description": "Uccidere un nemico diminuisce i tempi di recupero di tutti gli incantesimi in corso dello 0,5%"
+    "description": "Uccidere un nemico diminuisce dello 0,5% i tempi di recupero in corso di tutti gli incantesimi"
   },
   "jokerBellShot": {
     "name": "COLPO CAMPANA",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "INCANTESIMO UN SOLO TRUCCO",
-    "description": "Gli incantesimi con recupero base pari o inferiore a 35 s ottengono -25% di tempo di recupero"
+    "description": "Incantesimi con tempi di recupero base pari o inferiori a 35 s guadagnano -25% del tempo di recupero incantesimi"
   },
   "jokerCarePackage": {
     "name": "PACCHETTO DI RIFORNIMENTO",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "NAUFRAGIO",
-    "description": "Lanciare un incantesimo riduce di 3 s il tempo di recupero degli altri incantesimi, fino a un minimo di 4 s"
+    "description": "Lanciare un incantesimo riduce di 3 s il tempo di recupero degli altri incantesimi a un minimo di 4 s"
   },
   "jokerCdrAcid": {
     "name": "MAESTRIA DELL'ACIDO",
@@ -289,23 +293,23 @@
   },
   "jokerCdrCactus": {
     "name": "MAESTRIA DEL CACTUS",
-    "description": "Guadagni -10% di tempo di recupero Cactus per ogni incantesimo Cactus equipaggiato"
+    "description": "Guadagni -10% di tempo di recupero incantesimi Cactus per ogni incantesimo Cactus equipaggiato"
   },
   "jokerCdrElec": {
     "name": "MAESTRIA DELL'ELETTRICITÀ",
-    "description": "Guadagni -10% di tempo di recupero elettricità per ogni incantesimo di elettricità equipaggiato"
+    "description": "Guadagni -10% di tempo di recupero incantesimi di elettricità per ogni incantesimo di elettricità equipaggiato"
   },
   "jokerCdrFire": {
     "name": "MAESTRIA DELLA FIAMMA",
-    "description": "Guadagni -10% di tempo di recupero fiamma per ogni incantesimo di fiamma equipaggiato"
+    "description": "Guadagni -10% di tempo di recupero incantesimi di fiamma per ogni incantesimo di fiamma equipaggiato"
   },
   "jokerCdrFrost": {
     "name": "MAESTRIA DEL GELO",
-    "description": "Guadagni -10% di tempo di recupero Gelo per ogni incantesimo Gelo equipaggiato"
+    "description": "Guadagni -10% di tempo di recupero incantesimi Gelo per ogni incantesimo Gelo equipaggiato"
   },
   "jokerCdrVoodoo": {
     "name": "MAESTRIA DEL VOODOO",
-    "description": "Guadagni -10% di tempo di recupero voodoo per ogni incantesimo di voodoo equipaggiato"
+    "description": "Guadagni -10% di tempo di recupero incantesimi di voodoo per ogni incantesimo di voodoo equipaggiato"
   },
   "jokerChad": {
     "name": "SVENTOLA",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "TACCAGNO",
-    "description": "Guadagni +1 PS per ogni 20 pz. d'oro nell'inventario della missione, fino a +15 PS"
+    "description": "Guadagni +1 PS per ogni 15 pz. d'oro nell'inventario della missione, fino a +20 PS"
   },
   "jokerChickshot": {
     "name": "COLPO GALLINA",
@@ -333,11 +337,11 @@
   },
   "jokerCoinFlip": {
     "name": "TESTA O CROCE",
-    "description": "Lancia una moneta ogni 10 s. Infliggi +100% o -50% di danni da arma"
+    "description": "Lancia una moneta ogni 10 s, infliggi +100% o -50% di danni da arma"
   },
   "jokerColdBlooded": {
     "name": "SANGUE FREDDO",
-    "description": "I tuoi attacchi corpo a corpo congelano i nemici, consumando 3 punti corazza per nemico"
+    "description": "I tuoi attacchi corpo a corpo congelano i nemici, consumando 3 punti corazza per ogni nemico"
   },
   "jokerConsumer": {
     "name": "CONSUMATORE",
@@ -347,13 +351,17 @@
     "name": "CECCHINO INFALLIBILE",
     "description": "+7% di danni"
   },
+  "jokerCrashPack": {
+    "name": "SCHIANTO A REAZIONE",
+    "description": "Munizioni di carburante raddoppiate, ma durata del volo dimezzata"
+  },
   "jokerDeadlyStrong": {
     "name": "FORTE DA MORIRE",
     "description": "Ti muovi più velocemente e infliggi più danni come fantasma"
   },
   "jokerDeathsDance": {
     "name": "DANZA DELLA MORTE",
-    "description": "Il tuo scudo si riduce il 30% più lentamente"
+    "description": "La tua corazza si riduce il 30% più lentamente"
   },
   "jokerDestroyer": {
     "name": "DISTRUTTORE",
@@ -365,7 +373,7 @@
   },
   "jokerDoubleDown": {
     "name": "RADDOPPIO",
-    "description": "Guadagni +30% di punti corazza da tutte le fonti"
+    "description": "Guadagni +30% di punti corazza da ogni cosa che te li conferisce"
   },
   "jokerDwarf": {
     "name": "POLLICINO",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "ESECUZIONE",
-    "description": "I tuoi colpi uccidono all'istante i nemici sotto il 20% di PS, tranne élite e boss"
+    "description": "I tuoi colpi uccidono all'istante i nemici sotto il 20% di PS, tranne quelli d'élite e i boss"
   },
   "jokerExplosiveRounds": {
     "name": "COLPI ESPLOSIVI (Fiamma)",
@@ -429,7 +437,11 @@
   },
   "jokerFightOrFlight": {
     "name": "COMBATTI O FUGGI",
-    "description": "Subire danni ai PS dona +20% di velocità corpo a corpo per 3 sec."
+    "description": "Subire danni ai PS dona +20% di velocità corpo a corpo per 3 s"
+  },
+  "jokerFinalEmber": {
+    "name": "ULTIMA SCINTILLA",
+    "description": "Con il 30% di PS o meno, i tuoi colpi sono elettrificati"
   },
   "jokerFistFight": {
     "name": "RISSA A PUGNI",
@@ -441,7 +453,7 @@
   },
   "jokerFistRoDah": {
     "name": "PUGNO RO DAH",
-    "description": "L'attacco caricato ti spinge all'indietro e ha il 20% di probabilità di applicare Gelo ai nemici"
+    "description": "L'attacco caricato ti spinge all'indietro e infligge Gelo ai nemici"
   },
   "jokerFocusShot": {
     "name": "SPARO CONCENTRATO",
@@ -456,8 +468,8 @@
     "description": "Quando ricarichi un caricatore vuoto, recuperi 2 PS"
   },
   "jokerFreezeOver": {
-    "name": "ULTIMO BALUARDO",
-    "description": "Quando raggiungi il 25% di PS, guadagni +50 punti corazza (tempo di recupero: 60 s)"
+    "name": "ULTIMO BASTIONE",
+    "description": "Quando raggiungi il 25% di PS, guadagni +50 di punti corazza (tempo di recupero: 60 s)"
   },
   "jokerFrenzySpin": {
     "name": "VOLTEGGIO FRENETICO",
@@ -485,15 +497,15 @@
   },
   "jokerGoliath": {
     "name": "GOLIA",
-    "description": "Sei più grosso. Guadagni +25% di PS"
+    "description": "Sei più grande. Guadagni +25% di PS."
   },
   "jokerGreatWall": {
     "name": "GRANDE MURAGLIA",
-    "description": "Riduci del 10% tutti i danni subiti mentre hai lo scudo"
+    "description": "Riduci tutti i danni subiti del 10% quando hai la corazza"
   },
   "jokerHeadBang": {
     "name": "TESTA ROTTA",
-    "description": "Infliggi +30% di danni ai punti deboli"
+    "description": "+30% di danni ai punti deboli"
   },
   "jokerHeadshotRefund": {
     "name": "RIMBORSO DEL PUNTO DEBOLE",
@@ -531,6 +543,10 @@
     "name": "BALZO",
     "description": "+20% di altezza del salto"
   },
+  "jokerHoverPack": {
+    "name": "LEVITAZIONE A REAZIONE",
+    "description": "La picchiata viene sostituita da una spinta di levitazione che consuma carburante e ti fa passare all'arma principale"
+  },
   "jokerJokheal": {
     "name": "MEDICARD",
     "description": "Prendi un jolly e ottieni +35 PS bonus"
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "ULTIMO BALLO",
-    "description": "Quando hai il 30% o meno dei PS max, guadagni +30% di velocità di movimento"
+    "description": "Quando hai il 30% o meno dei PS, guadagni +30% di velocità di movimento"
   },
   "jokerLastStand": {
     "name": "ULTIMA RESISTENZA",
-    "description": "Quando hai il 30% o meno dei PS max, subisci -30% di danni e guadagni il 10% di rubavita corpo a corpo"
+    "description": "Quando hai il 30% o meno dei PS, riduci tutti i danni subiti del -30% e guadagni il 10% di rubavita corpo a corpo"
   },
   "jokerLazy": {
     "name": "PIGRIZIA",
@@ -613,7 +629,7 @@
   },
   "jokerOverDraw": {
     "name": "ALLUNGO ECCESSIVO",
-    "description": "Carica per 2 s per scagliare 3 frecce in un cono. La velocità di attacco riduce il tempo di carica"
+    "description": "Carica per 2 s per scagliare 3 frecce in un cono. La velocità di attacco riduce il tempo di ricarica."
   },
   "jokerPanicAttack": {
     "name": "ATTACCO DI PANICO",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "IMPLACABILE",
-    "description": "Quando hai il 30% o meno dei PS massimi, infliggi +30% di danni"
+    "description": "Quando hai il 30% o meno dei PS, infliggi +30% di danni"
   },
   "jokerReloadMastery": {
     "name": "MAESTRIA DELLA RICARICA",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "PAROLA DI SCOUT",
-    "description": "Dopo 10 sec. senza subire danni, il tuo scudo viene portato a un minimo di 10 punti corazza"
+    "description": "Dopo 10 s senza subire danni, la tua corazza raggiunge un minimo di 10 punti corazza"
   },
   "jokerScrubBullet": {
     "name": "COLPO PULENTE",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "PELLE DURA",
-    "description": "Riduci del 20% tutti i danni subiti, ma ricevi -30% di cure"
+    "description": "Riduci tutti i danni subiti del 20%, ma ricevi -30% di cure"
   },
   "jokerTinMan": {
     "name": "UOMO DI LATTA",
-    "description": "Le cure in eccesso si convertono in punti corazza, fino a +15 punti corazza"
+    "description": "Le cure in eccesso si trasformano in punti corazza, fino a +15 PC"
   },
   "jokerToolBox": {
     "name": "CASSETTA ATTREZZI",
     "description": "Raccolta utilità disabilitata. La tua utilità si ricarica automaticamente dopo 90 s"
+  },
+  "jokerTrailPack": {
+    "name": "SCIA A REAZIONE",
+    "description": "La scia del tuo Jetpack lascia pozzanghere elementali"
   },
   "jokerTweakDealer": {
     "name": "MAZZIERE DI JOLLY",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "ULTRA-SCOCCO",
-    "description": "Carica per 4 s per scagliare un'enorme freccia esplosiva. La velocità di attacco riduce il tempo di carica"
+    "description": "Carica per 4 s per scagliare un'enorme freccia esplosiva. La velocità di attacco riduce il tempo di ricarica."
   },
   "jokerUpgradeAccuracy": {
     "name": "Precisione"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "Velocità"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "Durata del volo"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "Forza di sollevamento"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "Munizioni di carburante"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "Altezza del salto"
   },
@@ -860,11 +889,11 @@
   },
   "jokerWeakLink": {
     "name": "ANELLO DEBOLE",
-    "description": "I colpi ai punti deboli provocano il 35% di danni in più, ma i colpi normali provocano il 20% di danni in meno"
+    "description": "+35% di danni ai punti deboli, ma -20% di danni con colpi normali"
   },
   "jokerWellFed": {
     "name": "PANCIA PIENA",
-    "description": "+5 PS"
+    "description": "+7 PS"
   },
   "jokerWestWizard": {
     "name": "STREGONERIA DEL WEST",

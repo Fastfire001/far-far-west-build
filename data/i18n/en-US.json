@@ -35,6 +35,10 @@
     "name": "Frost",
     "description": "Defensive - Freeze enemies and reinforce your shield"
   },
+  "itemJetpack": {
+    "name": "Jetpack",
+    "description": "Fly anywhere and crash down on your enemies.\nWhat goes up must come down, preferably on someone."
+  },
   "itemKnuckles": {
     "name": "Knuckles",
     "description": "Short range, big impact.\nRequires no ammo, no aim, and no thoughts."
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "CHEAPSKATE",
-    "description": "Gain +1 HP for every 20 Gold in your mission inventory, up to +15 HP"
+    "description": "Gain +1 HP for every 15 Gold in your mission inventory, up to +20 HP"
   },
   "jokerChickshot": {
     "name": "CHICKSHOT",
@@ -346,6 +350,10 @@
   "jokerCrackShot": {
     "name": "CRACKSHOT",
     "description": "+7% damage"
+  },
+  "jokerCrashPack": {
+    "name": "CRASH PACK",
+    "description": "Double the fuel ammo, but half the flight duration"
   },
   "jokerDeadlyStrong": {
     "name": "DEADLY STRONG",
@@ -431,6 +439,10 @@
     "name": "FIGHT OR FLIGHT",
     "description": "Taking HP damage grants +20% melee speed for 3 sec."
   },
+  "jokerFinalEmber": {
+    "name": "FINAL EMBER",
+    "description": "While at or below 30% HP, your hits are electrified"
+  },
   "jokerFistFight": {
     "name": "FIST FIGHT",
     "description": "Your bare hands hits are more powerful"
@@ -441,7 +453,7 @@
   },
   "jokerFistRoDah": {
     "name": "FIST RO DAH",
-    "description": "The charged attack propels you backwards and has a 20% chance to apply Frost to enemies"
+    "description": "The charged attack propels you backwards and applies Frost to enemies"
   },
   "jokerFocusShot": {
     "name": "FOCUS SHOT",
@@ -531,6 +543,10 @@
     "name": "HOP",
     "description": "+20% jump height"
   },
+  "jokerHoverPack": {
+    "name": "HOVER PACK",
+    "description": "Divebomb is replaced with a hover boost that costs fuel and swaps to your main weapon"
+  },
   "jokerJokheal": {
     "name": "MEDICARD",
     "description": "Picking up a joker heals for a bonus +35HP"
@@ -589,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "MAGIC FRIENDSHIP",
-    "description": "Passively regain HP while being near allies"
+    "description": "Passively regain HP while near allies"
   },
   "jokerMagicReload": {
     "name": "MAGIC RELOAD",
@@ -783,6 +799,10 @@
     "name": "TOOLBOX",
     "description": "Utility pickups are disabled. Your utility automatically refills after 90 sec."
   },
+  "jokerTrailPack": {
+    "name": "TRAIL PACK",
+    "description": "Your jetpack trail leaves elemental puddles"
+  },
   "jokerTweakDealer": {
     "name": "JOKER DEALER",
     "description": "Gain +1 HP for each active Joker"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "Speed"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "Flight Duration"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "Elevation Force"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "Fuel Ammo"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "Jump Height"
   },
@@ -864,7 +893,7 @@
   },
   "jokerWellFed": {
     "name": "WELL FED",
-    "description": "+5 HP"
+    "description": "+7 HP"
   },
   "jokerWestWizard": {
     "name": "WEST WIZARD",

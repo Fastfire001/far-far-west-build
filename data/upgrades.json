@@ -19,7 +19,8 @@
       "itemWinchester",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "color": "#ff2c2c"
   },
@@ -109,6 +110,42 @@
       "itemBow"
     ],
     "color": "#b900ff"
+  },
+  {
+    "id": "jokerUpgradeJetpackFuel",
+    "name": "Fuel Ammo",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 10,
+    "gold_cost": 100,
+    "available_on": [
+      "itemJetpack"
+    ],
+    "color": "#b900ff"
+  },
+  {
+    "id": "jokerUpgradeJetpackForce",
+    "name": "Elevation Force",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 10,
+    "gold_cost": 100,
+    "available_on": [
+      "itemJetpack"
+    ],
+    "color": "#ffcf23"
+  },
+  {
+    "id": "jokerUpgradeJetpackFlightDuration",
+    "name": "Flight Duration",
+    "value": 0.05,
+    "flat": false,
+    "max_slots": 10,
+    "gold_cost": 100,
+    "available_on": [
+      "itemJetpack"
+    ],
+    "color": "#00a8ff"
   },
   {
     "id": "jokerUpgradeReloadSpeed",
@@ -216,14 +253,15 @@
       "itemSheriffStar",
       "itemKnuckles",
       "itemBanjo",
-      "itemLasso"
+      "itemLasso",
+      "itemJetpack"
     ],
     "color": "#00ffda"
   },
   {
     "id": "jokerUpgradeSherrifStarPickUpRange",
     "name": "Pickup Range",
-    "value": 0.07,
+    "value": 0.1,
     "flat": false,
     "max_slots": 10,
     "gold_cost": 40,

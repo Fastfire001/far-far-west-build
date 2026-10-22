@@ -239,6 +239,39 @@ G["hatted_cactus"] = (P("M36 40h28v52a4 4 0 0 1-4 4H40a4 4 0 0 1-4-4z")
                       + at(G["cowboy_hat"], 50, 30, .92))
 
 
+def rocket(x, top=14, bottom=70, r=12):
+    """A Jetpack fuel tank: a rounded nose, then a nozzle at the bottom."""
+    return (P(f"M{x - r} {bottom}V{top + r}a{r} {r} 0 0 1 {2 * r} 0V{bottom}z")
+            + P(f"M{x - r + 3} {bottom + 2}h{2 * r - 6}l4 9h{-(2 * r + 2)}z"))
+
+
+def thrust(x, y, w=8, h=16):
+    """The flame under a nozzle, its top edge at y."""
+    return P(f"M{x - w} {y}h{2 * w}c0 {h * .55}-{w * .5} {h * .8}-{w} {h}-{w * .5}-{h * .2}-{w}-{h * .45}-{w}-{h}z")
+
+
+G["jetpack"] = (rocket(25) + rocket(75) + cut(P("M34 34h32v22H34z"), circle(50, 45, 15))
+                + ring(50, 45, 13, 8) + thrust(25, 82) + thrust(75, 82))
+# The Jetpack with a clock in the middle, its hands always white so they show on the darkened face.
+G["jetpack_clock"] = (rocket(18, 20, 74) + rocket(82, 20, 74) + thrust(18, 86) + thrust(82, 86) + circle(50, 50, 26)
+                      + f'<g fill="#000" fill-opacity=".45">{circle(50, 50, 19)}</g>'
+                      + stroke("M50 35v15l10 7", 8).replace('stroke="currentColor"', 'stroke="#fff"'))
+G["jerrycan"] = (cut(P("M20 30 34 16h48v78H20z"), P("M42 22h30v12H42z") + P("M34 46h38v36H34z"))
+                 + stroke("M38 50 68 78M68 50 38 78", 6, "butt") + P("M14 22l12-12 6 6-12 12z"))
+
+
+def tongue(x, top, length, w, lean=0):
+    """A teardrop tongue of flame hanging from (x, top), its point `length` lower, leaning sideways by `lean`."""
+    tip_x, tip_y = x + lean, top + length
+    return P(f"M{x - w} {top}C{x - w} {top + length * .45:.0f} {tip_x - 2} {top + length * .6:.0f} {tip_x} {tip_y}"
+             f"C{tip_x + 2} {top + length * .6:.0f} {x + w} {top + length * .45:.0f} {x + w} {top}z")
+
+
+# A flame blowing downward (the Jetpack's thrust): three tongues of different lengths, a hollow core.
+G["down_flame"] = cut(P("M14 6h72v26H14z") + tongue(28, 28, 34, 14, -4) + tongue(50, 30, 64, 17) + tongue(72, 28, 48, 14, 4),
+                      tongue(50, 14, 30, 8))
+
+
 def _check_glyphs():
     for name, svg in G.items():
         if not svg.startswith("<"):
@@ -373,6 +406,7 @@ EQUIPMENT_SILHOUETTES = {
     "itemDualRevolver": group(revolver(), "translate(-8 -10) scale(.82)") + group(revolver(), "translate(108 28) scale(-.82 .82)"),
     "itemBoomerang": G["boomerang"],
     "itemSheriffStar": G["sheriff"],
+    "itemJetpack": G["jetpack"],
     "itemBanjo": group(circle(30, 64, 26) + P(hole(30, 64, 26) + hole(30, 64, 18), "evenodd").replace(
         "<path", '<path fill="#000" fill-opacity=".3"') + P("M44 54 86 12l8 8-42 42z") + P("M80 6h14v14H80z"), ""),
     "itemUtilityAmmo": P("M10 44h80v46H10z") + P("M10 44l10-10h60l10 10z") + group(G["bullets"], "translate(26 -2) scale(.48)"),
@@ -413,6 +447,9 @@ UPGRADE_GLYPHS = {
     "jokerUpgradeBoomerangRange": "expand", "jokerUpgradeWeaponMeleeRange": "expand", "jokerUpgradeReloadSpeed": "reload",
     "jokerUpgradeHeroSpeed": "chevrons", "jokerUpgradeSpellCooldownReduction": "hourglass+minus",
     "jokerUpgradeChordCapacity": "note+plus", "jokerUpgradeChargingSpeed": "bolt+chevrons",
+    "jokerUpgradeJetpackFuel": "jerrycan",
+    "jokerUpgradeJetpackFlightDuration": "jetpack_clock",
+    "jokerUpgradeJetpackForce": "down_flame",
 }
 
 JOKER_SCHOOLS = {
@@ -499,9 +536,20 @@ def demon():
                + P("M26 70 34 66 40 74 46 66 54 74 60 66 66 74 74 70 70 82 62 78 56 86 50 78 44 86 38 78 30 82z"))
 
 
+def radial_bolts(r, scale, angles=(-90, 30, 150)):
+    """Lightning bolts centred at radius r around (50, 50), their point turned outward (G["bolt"]'s axis is at 104.6°)."""
+    return "".join(at(G["bolt"], round(50 + r * math.cos(math.radians(a)), 1), round(50 + r * math.sin(math.radians(a)), 1),
+                      scale, round(a - 104.6, 1)) for a in angles)
+
+
 # Jokers: one drawing per joker, in the spirit of its card in the game. Elemental jokers also get the spell school
 # in a corner badge (JOKER_SCHOOLS).
 JOKER_ART = {
+    "jokerCrashPack": G["jerrycan"] + at(G["plus"], 80, 18, .34),
+    "jokerHoverPack": rocket(18, 30, 74, 10) + rocket(82, 30, 74, 10) + P("M50 6 74 34H60v28c0 10 8 18 18 30H22c10-12 18-20 18-30V34H26z"),
+    "jokerTrailPack": (stroke("M94 6C82 28 70 44 56 56", 8) + '<ellipse cx="50" cy="88" rx="42" ry="8"/>'
+                       + at(G["flame"], 24, 70, .3) + at(G["flame"], 48, 64, .4) + at(G["flame"], 74, 70, .3)),
+    "jokerFinalEmber": cut(ring(50, 50, 30, 8), radial_bolts(28, .54)) + radial_bolts(28, .44),
     "jokerBracing": cut(star_points(50, 50, 14, 48, 36), at(G["bullet"], 50, 50, .74, 45))
                     + at(G["bullet"], 50, 50, .52, 45),
     "jokerChickshot": cut(P("M38 30 34 14l10 6 6-14 6 14 10-6-4 16c8 6 12 14 12 24 0 10-6 18-14 22l14 20H26l14-20"

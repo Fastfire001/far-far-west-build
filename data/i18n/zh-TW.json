@@ -35,6 +35,10 @@
     "name": "冰霜",
     "description": "防禦型：凍結敵人並強化你的護盾"
   },
+  "itemJetpack": {
+    "name": "噴射背包",
+    "description": "想飛哪就飛哪，再從天而降砸向敵人。\n飛得越高，摔得越重，最好是摔在別人頭上。"
+  },
   "itemKnuckles": {
     "name": "指虎",
     "description": "距離短，衝擊強。\n不需要彈藥、不需要瞄準，也不需要動腦。"
@@ -77,7 +81,7 @@
   },
   "itemSpellAcidGeyser": {
     "name": "噴泉",
-    "description": "召喚一座酸液噴泉，撞擊後會噴發。"
+    "description": "召喚一股酸液噴泉，在撞擊時噴發。"
   },
   "itemSpellAcidRain": {
     "name": "酸雨",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "基礎法術專精",
-    "description": "法術基礎冷卻時間如在 35 秒以下，冷卻時間減少 25%"
+    "description": "法術基礎冷卻時間如在 35 秒以下，冷卻時間 -25%"
   },
   "jokerCarePackage": {
     "name": "補給包裹",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "施法連發",
-    "description": "施放法術時，其他法術的冷卻時間縮短 3 秒，最低降至 4 秒"
+    "description": "施放法術時，其他法術的冷卻時間縮短 3 秒，最低縮短至 4 秒。"
   },
   "jokerCdrAcid": {
     "name": "酸蝕精通",
@@ -289,23 +293,23 @@
   },
   "jokerCdrCactus": {
     "name": "仙人掌精通",
-    "description": "每配備一個仙人掌法術，仙人掌冷卻時間縮短 10%"
+    "description": "每裝備一個仙人掌法術，仙人掌法術冷卻時間 -10%"
   },
   "jokerCdrElec": {
     "name": "閃電精通",
-    "description": "每配備一個閃電法術，閃電冷卻時間縮短 10%"
+    "description": "每裝備一個閃電法術，閃電法術冷卻時間 -10%"
   },
   "jokerCdrFire": {
     "name": "火焰精通",
-    "description": "每配備一個火焰法術，火焰冷卻時間縮短 10%"
+    "description": "每裝備一個火焰法術，火焰法術冷卻時間 -10%"
   },
   "jokerCdrFrost": {
     "name": "冰霜精通",
-    "description": "每配備一個冰霜法術，冰霜冷卻時間縮短 10%"
+    "description": "每裝備一個冰霜法術，冰霜法術冷卻時間 -10%"
   },
   "jokerCdrVoodoo": {
     "name": "巫毒精通",
-    "description": "每配備一個巫毒法術，巫毒冷卻時間縮短 10%"
+    "description": "每裝備一個巫毒法術，巫毒法術冷卻時間 -10%"
   },
   "jokerChad": {
     "name": "人帥真好",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "小氣巴拉",
-    "description": "委託物品欄中每有 20 枚金幣，生命值便 +1，最多 +15"
+    "description": "委託物品欄中每有 15 枚金幣，生命值便 +1，最多 +20"
   },
   "jokerChickshot": {
     "name": "小雞射擊",
@@ -337,7 +341,7 @@
   },
   "jokerColdBlooded": {
     "name": "冷血",
-    "description": "近戰攻擊會凍結敵人，每凍結一名敵人消耗 3 點護盾值"
+    "description": "你的近戰攻擊會凍結敵人，每凍結一名敵人消耗 3 點護盾值"
   },
   "jokerConsumer": {
     "name": "出手闊綽",
@@ -347,13 +351,17 @@
     "name": "精準射手",
     "description": "傷害 +7%"
   },
+  "jokerCrashPack": {
+    "name": "墜擊背包",
+    "description": "燃料彈藥加倍，但飛行時間減半"
+  },
   "jokerDeadlyStrong": {
     "name": "死了都要礙",
     "description": "成為死亡鬼魂時的移動速度更快，造成的傷害更高"
   },
   "jokerDeathsDance": {
     "name": "死亡之舞",
-    "description": "護盾流失速度減緩 30%"
+    "description": "護盾值流失速度減緩 30%"
   },
   "jokerDestroyer": {
     "name": "火力壓榨",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "處決",
-    "description": "你的攻擊可立即處決生命值低於 20% 的非精英、非首領敵人"
+    "description": "你的攻擊可立即處決生命值 20% 的敵人，精英敵人和魔王除外"
   },
   "jokerExplosiveRounds": {
     "name": "爆炸打擊 (火焰)",
@@ -429,7 +437,11 @@
   },
   "jokerFightOrFlight": {
     "name": "戰或逃",
-    "description": "生命值受到傷害時，近戰攻擊速度 +20%，持續 3 秒"
+    "description": "受到生命值傷害時，近戰攻擊速度 +20%，持續 3 秒"
+  },
+  "jokerFinalEmber": {
+    "name": "最後火花",
+    "description": "生命值低於或等於 30% 時，你的攻擊會帶電"
   },
   "jokerFistFight": {
     "name": "拳來拳往",
@@ -441,7 +453,7 @@
   },
   "jokerFistRoDah": {
     "name": "拳斯羅達",
-    "description": "蓄力攻擊會將你向後彈，並有 20% 機率對命中的敵人施加冰霜效果"
+    "description": "蓄力攻擊會將你向後彈，並對敵人施加冰霜"
   },
   "jokerFocusShot": {
     "name": "凝神射擊",
@@ -456,8 +468,8 @@
     "description": "空彈匣裝填時，回復 2 點生命值"
   },
   "jokerFreezeOver": {
-    "name": "最終堡壘",
-    "description": "生命值達 25% 時，獲得 +50 點護盾值 (冷卻時間：60 秒)"
+    "name": "最後的堡壘",
+    "description": "生命值降至 25% 時，獲得 +50 點護盾 (冷卻時間：60 秒)。"
   },
   "jokerFrenzySpin": {
     "name": "瘋狂迴旋",
@@ -465,7 +477,7 @@
   },
   "jokerFrostBite": {
     "name": "冰霜之噬",
-    "description": "近戰擊殺凍結的敵人可給予 2 點護盾值"
+    "description": "用近戰攻擊擊殺凍結的敵人時，獲得 2 點護盾值"
   },
   "jokerGiant": {
     "name": "高大威武",
@@ -485,7 +497,7 @@
   },
   "jokerGoliath": {
     "name": "巨人之軀",
-    "description": "你的體型變得更大。生命值 +25%"
+    "description": "你的體型變大。生命值 +25%"
   },
   "jokerGreatWall": {
     "name": "長城",
@@ -493,7 +505,7 @@
   },
   "jokerHeadBang": {
     "name": "重擊要害",
-    "description": "對弱點造成 +30% 傷害"
+    "description": "弱點傷害 +30%"
   },
   "jokerHeadshotRefund": {
     "name": "弱點回溯",
@@ -529,7 +541,11 @@
   },
   "jokerHop": {
     "name": "蹦跳",
-    "description": "跳躍高度 +20%"
+    "description": "+20% 跳躍高度"
+  },
+  "jokerHoverPack": {
+    "name": "懸浮背包",
+    "description": "俯衝轟炸會改為懸浮推進：消耗燃料，並切換成你的主武器"
   },
   "jokerJokheal": {
     "name": "醫療卡",
@@ -537,7 +553,7 @@
   },
   "jokerJumpStar": {
     "name": "跳躍之星",
-    "description": "持有警長之星時，跳躍次數 +2"
+    "description": "持有警長之星時，跳躍力 +2"
   },
   "jokerKnuckleDown": {
     "name": "拳拳到肉",
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "最後一舞",
-    "description": "生命值低於或等於生命值上限的 30% 時，移動速度 +30%"
+    "description": "生命值低於或等於 30% 時，移動速度 +30%"
   },
   "jokerLastStand": {
     "name": "背水一戰",
-    "description": "生命值低於或等於生命值上限的 30% 時，受到的傷害減少 30%，並獲得 10% 近戰吸血"
+    "description": "生命值低於或等於 30% 時，受到的所有傷害 -30%，並獲得 10% 近戰生命偷取"
   },
   "jokerLazy": {
     "name": "超懶",
@@ -613,7 +629,7 @@
   },
   "jokerOverDraw": {
     "name": "蓄力拉弓",
-    "description": "蓄力 2 秒，朝錐形範圍發射 3 支箭。攻擊速度會縮短蓄力時間"
+    "description": "蓄力 2 秒，朝錐形範圍發射 3 支箭。攻擊速度越快，蓄力時間越短"
   },
   "jokerPanicAttack": {
     "name": "恐慌攻擊",
@@ -645,7 +661,7 @@
   },
   "jokerPricklyPear": {
     "name": "仙人掌果",
-    "description": "生命值受到傷害時，對攻擊者反彈等量傷害，再額外造成 15 點傷害"
+    "description": "受到生命值傷害時，對攻擊者反彈等量傷害，再額外造成 +15 點傷害"
   },
   "jokerQuickDraw": {
     "name": "快速換槍",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "百折不撓",
-    "description": "生命值等於或低於最大生命值的 30% 時，造成傷害 +30%"
+    "description": "生命值低於或等於 30% 時，造成傷害 +30%"
   },
   "jokerReloadMastery": {
     "name": "裝填精通",
@@ -725,7 +741,7 @@
   },
   "jokerSnackAPunch": {
     "name": "拳頭點心",
-    "description": "近戰擊殺可給予 1 點護盾值"
+    "description": "用近戰攻擊擊殺敵人時，獲得 1 點護盾值"
   },
   "jokerSoulEater": {
     "name": "靈魂吞噬者",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "皮粗肉厚",
-    "description": "受到的所有傷害減少 20%，但受到的治療效果 -30%"
+    "description": "受到的所有傷害減少 20%，但獲得的治療量 -30%"
   },
   "jokerTinMan": {
     "name": "人形罐頭",
-    "description": "多餘的治療量會轉化為護盾值，最多 +15 點"
+    "description": "溢出的治療量會轉化為護盾值，最多 +15 點"
   },
   "jokerToolBox": {
     "name": "工具箱",
     "description": "戰術拾取功能會停用。戰術會在 90 秒後自動恢復。"
+  },
+  "jokerTrailPack": {
+    "name": "尾跡背包",
+    "description": "噴射背包的尾跡會留下元素池"
   },
   "jokerTweakDealer": {
     "name": "鬼牌莊家",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "極限拉弓",
-    "description": "蓄力 4 秒，發射一支巨型爆炸箭。攻擊速度會縮短蓄力時間"
+    "description": "蓄力 4 秒，發射一支巨型爆炸箭。攻擊速度越快，蓄力時間越短"
   },
   "jokerUpgradeAccuracy": {
     "name": "精準度"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "速度"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "飛行時間"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "上升推力"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "燃料彈藥"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "跳躍高度"
   },
@@ -856,15 +885,15 @@
   },
   "jokerVampire": {
     "name": "吸血鬼",
-    "description": "此武器的吸血效果 +4%"
+    "description": "此武器的生命偷取效果 +4%"
   },
   "jokerWeakLink": {
     "name": "弱點",
-    "description": "命中弱點時傷害增加 35%，但普通攻擊傷害降低 20%"
+    "description": "弱點傷害 +35%，但普通攻擊傷害 -20%"
   },
   "jokerWellFed": {
     "name": "酒足飯飽",
-    "description": "生命值 +5"
+    "description": "生命值 +7"
   },
   "jokerWestWizard": {
     "name": "西部巫師",

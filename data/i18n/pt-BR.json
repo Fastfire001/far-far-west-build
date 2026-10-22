@@ -8,7 +8,7 @@
     "description": "Ataques lentos e fracos, com um pouco de poder de cura.\nPerfeito para curar seus aliados enquanto destrói os tímpanos deles."
   },
   "itemBoomerang": {
-    "name": " Bumerangue",
+    "name": "Bumerangue",
     "description": "Voa, incomoda os inimigos por um tempo e depois volta para outra rodada. \nNão precisa de munição, o que o torna um equipamento ecologicamente correto."
   },
   "itemBow": {
@@ -34,6 +34,10 @@
   "itemIce": {
     "name": "Gelo",
     "description": "Defensiva - Congele os inimigos e reforce seu escudo."
+  },
+  "itemJetpack": {
+    "name": "Mochila a Jato",
+    "description": "Voe para onde quiser e despenque sobre seus inimigos.\nTudo que sobe tem que descer, de preferência em cima de alguém."
   },
   "itemKnuckles": {
     "name": "Soqueiras",
@@ -61,7 +65,7 @@
   },
   "itemSheriffStar": {
     "name": "Estrela de Xerife",
-    "description": "Lança-se em alta velocidade e corta os inimigos. \nA justiça nunca foi tão fácil."
+    "description": "Lança-se em alta velocidade e corta os inimigos.\nFazer justiça nunca foi tão fácil."
   },
   "itemShotgun": {
     "name": "Escopeta",
@@ -213,11 +217,11 @@
   },
   "jokerAimingBurst": {
     "name": "IMPULSO DE MIRA",
-    "description": "+30% de dano em pontos fracos e balas perfurantes ao mirar"
+    "description": "+30% de dano em pontos fracos e balas perfurantes ao mirar."
   },
   "jokerAllMighty": {
     "name": "TODO PODEROSO",
-    "description": "Ganha +1% de dano a cada ponto de escudo, até 80%"
+    "description": "Ganha +1% de dano a cada 1 ponto de escudo, até 80%."
   },
   "jokerAmmoSupply": {
     "name": "SUPRIMENTO DE MUNIÇÃO",
@@ -233,7 +237,7 @@
   },
   "jokerAvalanche": {
     "name": "AVALANCHE",
-    "description": "+15% de dano enquanto estiver com escudo"
+    "description": "+15% de dano enquanto estiver com escudo."
   },
   "jokerBardbarian": {
     "name": "BÁRBARDO",
@@ -241,7 +245,7 @@
   },
   "jokerBattleMage": {
     "name": "MAGO DE BATALHA",
-    "description": "Abater um inimigo reduz o tempo de recarga de todos os feitiços em andamento em 0,5%"
+    "description": "Abater um inimigo reduz em 0,5% os tempos de recarga em andamento de todos os feitiços"
   },
   "jokerBellShot": {
     "name": "SOAR O GONGO",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "TRAPAÇA ÚNICA",
-    "description": "Seus feitiços com recarga base de 35s ou menos têm 25% de tempo de recarga reduzido"
+    "description": "Feitiços com tempo de recarga base de 35s ou menos ganham -25% no tempo de recarga do feitiço."
   },
   "jokerCarePackage": {
     "name": "KIT MÉDICO",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "NÁUFRAGO",
-    "description": "Lançar um feitiço reduz em 3 seg. o tempo de recarga dos outros feitiços, até um mínimo de 4 seg."
+    "description": "Lançar um feitiço reduz em 3s o tempo de recarga dos outros feitiços até um mínimo de 4s."
   },
   "jokerCdrAcid": {
     "name": "MAESTRIA EM ÁCIDOS",
@@ -289,31 +293,31 @@
   },
   "jokerCdrCactus": {
     "name": "MAESTRIA EM CACTO",
-    "description": "-10% de tempo de recarga de Cacto por feitiço de Cacto equipado"
+    "description": "-10% de tempo de recarga de feitiços de Cacto por feitiço de Cacto equipado."
   },
   "jokerCdrElec": {
     "name": "MAESTRIA EM ELÉT.",
-    "description": "-10% de tempo de recarga de Elét. por feitiço de Elét. equipado"
+    "description": "-10% de tempo de recarga de feitiços Elét. por feitiço Elét. equipado."
   },
   "jokerCdrFire": {
     "name": "MAESTRIA EM PIRO",
-    "description": "-10% de tempo de recarga de Piro por feitiço de Piro equipado"
+    "description": "-10% de tempo de recarga de feitiços Piro por feitiço Piro equipado."
   },
   "jokerCdrFrost": {
     "name": "MAESTRIA DE GELO",
-    "description": "Ganhe -10% no tempo de recarga de Gelo por cada feitiço de Gelo equipado"
+    "description": "-10% no tempo de recarga de feitiços de Gelo por cada feitiço de Gelo equipado."
   },
   "jokerCdrVoodoo": {
     "name": "MAESTRIA EM VODU",
-    "description": "-10% de tempo de recarga de Vodu por feitiço de Vodu equipado"
+    "description": "-10% de tempo de recarga de feitiços Vodu por feitiço Vodu equipado."
   },
   "jokerChad": {
     "name": "PECHINCHA",
-    "description": "Revela a posição do Vendedora Ambulante e concede um desconto de 20%. Você merece!"
+    "description": "Revela a posição da Vendedora Ambulante e concede um desconto de 20%. Você merece!"
   },
   "jokerCheapSkate": {
     "name": "PÃO-DURO",
-    "description": "Ganha +1 de PV para cada 20 de Ouro em seu inventário de missão, até +15 de PV."
+    "description": "Ganha +1 de PV para cada 15 de Ouro em seu inventário de missão, até +20 de PV"
   },
   "jokerChickshot": {
     "name": "GALINHADA",
@@ -325,7 +329,7 @@
   },
   "jokerChonkyThrow": {
     "name": "ARREMESSO GORDINHO",
-    "description": "O bumerangue é duas vezes maior e atravessa escudos"
+    "description": "O bumerangue é duas vezes maior e atravessa escudos."
   },
   "jokerClutch": {
     "name": "FINALIZAÇÃO",
@@ -333,11 +337,11 @@
   },
   "jokerCoinFlip": {
     "name": "CARA OU COROA",
-    "description": "Joga uma moeda a cada 10 seg. Você causa +100% ou -50% de dano de arma"
+    "description": "Joga uma moeda a cada 10s. Você causa +100% ou -50% de dano de arma."
   },
   "jokerColdBlooded": {
     "name": "SANGUE FRIO",
-    "description": "Seus ataques corpo a corpo congelam os inimigos, consumindo 3 pontos de escudo por inimigo"
+    "description": "Seus ataques corpo a corpo congelam os inimigos, consumindo 3 pontos de escudo por inimigo."
   },
   "jokerConsumer": {
     "name": "CONSUMIDOR",
@@ -345,7 +349,11 @@
   },
   "jokerCrackShot": {
     "name": "ATIRADOR EXÍMIO",
-    "description": "+7% de dano"
+    "description": "+7% de dano."
+  },
+  "jokerCrashPack": {
+    "name": "MOCHILA DE IMPACTO",
+    "description": "Dobro de munição de combustível, mas metade da duração do voo"
   },
   "jokerDeadlyStrong": {
     "name": "DURO DE MATAR",
@@ -353,7 +361,7 @@
   },
   "jokerDeathsDance": {
     "name": "DANÇA DA MORTE",
-    "description": "Seu escudo diminui 30% mais devagar"
+    "description": "Seu escudo diminui 30% mais devagar."
   },
   "jokerDestroyer": {
     "name": "DESTRUIDOR",
@@ -365,7 +373,7 @@
   },
   "jokerDoubleDown": {
     "name": "APOSTA DUPLA",
-    "description": "Ganha +30% de pontos de escudo de todas as fontes"
+    "description": "Ganha +30% de pontos de escudo de todas as fontes."
   },
   "jokerDwarf": {
     "name": "ANÃO",
@@ -373,7 +381,7 @@
   },
   "jokerEagleLever": {
     "name": "GATILHO CERTEIRO",
-    "description": "Tiros consecutivos sem errar concedem +10% de dano, acumulando até +50%"
+    "description": "Tiros consecutivos sem errar concedem +10% de dano, acumulando até +50%."
   },
   "jokerEatAPunch": {
     "name": "TOMA ESSA",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "EXECUTAR",
-    "description": "Seus golpes matam instantaneamente inimigos com menos de 20% de PV, exceto elites e chefes"
+    "description": "Seus acertos abatem instantaneamente inimigos com menos de 20% de PV, exceto de elite e chefes."
   },
   "jokerExplosiveRounds": {
     "name": "ACERTOS EXPLOSIVOS (Piro)",
@@ -429,7 +437,11 @@
   },
   "jokerFightOrFlight": {
     "name": "LUTAR OU VOAR",
-    "description": "Sofrer dano no seu PV concede +20% de velocidade de ataque corpo a corpo por 3 seg."
+    "description": "Ao sofrer dano de PV, ganhe +20% de velocidade corpo a corpo por 3s."
+  },
+  "jokerFinalEmber": {
+    "name": "ÚLTIMA FAÍSCA",
+    "description": "Com 30% de PV ou menos, seus acertos ficam eletrificados"
   },
   "jokerFistFight": {
     "name": "BRIGA DE SOCOS",
@@ -437,11 +449,11 @@
   },
   "jokerFistRage": {
     "name": "FÚRIA DE SOCOS",
-    "description": "Receber dano gera carga e concede +30% de velocidade de ataque por 2 seg."
+    "description": "Receber dano gera carga e concede +30% de velocidade de ataque por 2s."
   },
   "jokerFistRoDah": {
     "name": "FUS RO PANCA-DAH",
-    "description": "O ataque carregado empurra você para trás e tem 20% de chance de aplicar Gelo nos inimigos"
+    "description": "O ataque carregado empurra você para trás e aplica Gelo aos inimigos"
   },
   "jokerFocusShot": {
     "name": "TIRO FOCADO",
@@ -453,11 +465,11 @@
   },
   "jokerFreeCocktail": {
     "name": "DRINQUE GRÁTIS",
-    "description": "Quando você recarregar um pente vazio, ganhe 2 PV"
+    "description": "Ao recarregar um pente vazio, ganhe 2 de PV."
   },
   "jokerFreezeOver": {
-    "name": "ÚLTIMO REDUTO",
-    "description": "Ao chegar em 25% de PV, concede +50 de escudo (tempo de recarga: 60 seg.)"
+    "name": "ÚLTIMO BASTIÃO",
+    "description": "Ao chegar em 25% de PV, ganha +50 de escudo (tempo de recarga: 60s)."
   },
   "jokerFrenzySpin": {
     "name": "GIRO FRENÉTICO",
@@ -465,7 +477,7 @@
   },
   "jokerFrostBite": {
     "name": "QUEIMADURA DE GELO",
-    "description": "Abates corpo a corpo contra inimigos congelados concedem 2 pontos de escudo"
+    "description": "Abates corpo a corpo contra inimigos congelados concedem 2 pontos de escudo."
   },
   "jokerGiant": {
     "name": "GIGANTE",
@@ -485,15 +497,15 @@
   },
   "jokerGoliath": {
     "name": "GOLIAS",
-    "description": "Você é maior. Ganha +25% de PV"
+    "description": "Você está maior. Ganhe +25% de PV."
   },
   "jokerGreatWall": {
     "name": "GRANDE MURALHA",
-    "description": "Reduz todo o dano recebido em 10% enquanto estiver com escudo"
+    "description": "Reduz todo o dano recebido em 10% quando estiver com escudo."
   },
   "jokerHeadBang": {
     "name": "CALCANHAR DE AQUILES",
-    "description": "Causa +30% de dano aos pontos fracos"
+    "description": "+30% de dano em pontos fracos."
   },
   "jokerHeadshotRefund": {
     "name": "REEMBOLSO DE PONTO FRACO",
@@ -509,7 +521,7 @@
   },
   "jokerHeavyWeapon": {
     "name": "ARMA PESADA",
-    "description": "Ganhe +10% de dano, mas +30% de gravidade enquanto a arma estiver ativa"
+    "description": "Ganhe +10% de dano, mas +30% de gravidade enquanto a arma estiver ativa."
   },
   "jokerHelpingHand": {
     "name": "MÃO AMIGA",
@@ -517,7 +529,7 @@
   },
   "jokerHitMe": {
     "name": "ME BATA",
-    "description": "Cura 0,75 de PV por segundo durante 20 seg. após você ser atingido"
+    "description": "Cura 0,75 de PV por segundo durante 20s após você ser atingido."
   },
   "jokerHoarder": {
     "name": "ACUMULADOR",
@@ -525,11 +537,15 @@
   },
   "jokerHomingBurst": {
     "name": "RAJADA TELEGUIADA",
-    "description": "A cada 8 balas disparadas, atira 2 balas teleguiadas em inimigos próximos"
+    "description": "A cada 8 balas disparadas, atira 2 balas teleguiadas em inimigos próximos."
   },
   "jokerHop": {
     "name": "SALTO",
-    "description": "+20% de altura do salto"
+    "description": "+20% de altura de salto."
+  },
+  "jokerHoverPack": {
+    "name": "MOCHILA DE LEVITAÇÃO",
+    "description": "O Mergulho-Bomba é substituído por um impulso de levitação que consome combustível e alterna para a sua arma principal"
   },
   "jokerJokheal": {
     "name": "CARTÃO MÉDICO",
@@ -537,7 +553,7 @@
   },
   "jokerJumpStar": {
     "name": "SALTO ESTELAR",
-    "description": "+2 Pulos ao segurar as Estrelas de Xerife"
+    "description": "+2 Pulos ao segurar Estrelas de Xerife."
   },
   "jokerKnuckleDown": {
     "name": "MÃO NA MASSA",
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "ÚLTIMA DANÇA",
-    "description": "Enquanto estiver com 30% ou menos do seu PV máximo, ganha +30% de velocidade de movimento"
+    "description": "Enquanto estiver com 30% de PV ou menos, você ganha +30% de velocidade de movimento."
   },
   "jokerLastStand": {
     "name": "ÚLTIMO EM PÉ",
-    "description": "Enquanto estiver com 30% ou menos do seu PV máximo, receba -30% de dano e ganhe 10% de roubo de vida corpo a corpo"
+    "description": "Enquanto estiver com 30% de PV ou menos, reduza todo o dano sofrido em -30% e ganhe 10% de roubo de vida em ataques corpo a corpo."
   },
   "jokerLazy": {
     "name": "PREGUIÇOSO",
@@ -593,11 +609,11 @@
   },
   "jokerMagicReload": {
     "name": "RECARGA MÁGICA",
-    "description": "Recarregue automaticamente suas armas depois de lançar um feitiço"
+    "description": "Recarregue automaticamente a sua arma depois de lançar um feitiço."
   },
   "jokerMarkAce": {
     "name": "ÁS DA MARCAÇÃO",
-    "description": "As balas marcam os inimigos por 5 seg. Os inimigos marcados recebem +15% de dano"
+    "description": "As balas marcam os inimigos por 5s. Os inimigos marcados recebem +15% de dano."
   },
   "jokerMindShot": {
     "name": "SURTO EXPLOSIVO",
@@ -605,15 +621,15 @@
   },
   "jokerOneTrick": {
     "name": "TRUQUE DE CURINGA",
-    "description": "Ganha +7% de dano e velocidade de ataque para cada raridade diferente de curinga equipado na arma"
+    "description": "Ganha +7% de dano e velocidade de ataque para cada raridade diferente de curinga equipado na arma."
   },
   "jokerOverBlast": {
     "name": "EXORBITÂNCIA",
-    "description": "Dispara um projétil extra para cada 4 balas faltando no carregador"
+    "description": "Dispara um projétil extra para cada 4 balas faltando no carregador."
   },
   "jokerOverDraw": {
     "name": "SAQUE EXORBITANTE",
-    "description": "Carregue por 2 seg. para disparar 3 flechas em um cone. A velocidade de ataque reduz o tempo de carga"
+    "description": "Carregue por 2s para disparar 3 flechas em um cone. A velocidade de ataque reduz o tempo de carga."
   },
   "jokerPanicAttack": {
     "name": "ATAQUE DE PÂNICO",
@@ -645,11 +661,11 @@
   },
   "jokerPricklyPear": {
     "name": "TOMA LÁ, DÁ CÁ",
-    "description": "Ao receber dano de PV, devolve ao atacante o mesmo dano +15"
+    "description": "Ao perder PV, devolva ao atacante o dano recebido +15."
   },
   "jokerQuickDraw": {
     "name": "SAQUE VELOZ",
-    "description": "+40% de velocidade de troca"
+    "description": "+40% de velocidade de troca."
   },
   "jokerRage": {
     "name": "FÚRIA",
@@ -657,11 +673,11 @@
   },
   "jokerRampage": {
     "name": "FÚRIA",
-    "description": "Ganha 5% de velocidade de recarga por abate durante 10 seg., até 100%"
+    "description": "Ganha 5% de velocidade de recarga por abate durante 10s, até 100%."
   },
   "jokerRelentless": {
     "name": "IMPLACÁVEL",
-    "description": "Enquanto estiver com 30% ou menos do seu PV máximo, você causa +30% de dano"
+    "description": "Enquanto estiver com 30% de PV ou menos, você causa +30% de dano."
   },
   "jokerReloadMastery": {
     "name": "MAESTRIA EM RECARGA",
@@ -673,7 +689,7 @@
   },
   "jokerRiposte": {
     "name": "CONTRA-ATAQUE",
-    "description": "Depois que seu escudo absorve um golpe, seu próximo ataque causa +100% de dano"
+    "description": "Depois que seu escudo absorve um golpe, seu próximo ataque causa +100% de dano."
   },
   "jokerRunAndGun": {
     "name": "CORRE E ATIRA",
@@ -681,11 +697,11 @@
   },
   "jokerRunAndReload": {
     "name": "CORRE E RECARREGA",
-    "description": "+50% de velocidade de movimento ao recarregar"
+    "description": "+50% de velocidade de movimento ao recarregar."
   },
   "jokerRushBlast": {
     "name": "RAJADA RÁPIDA",
-    "description": "As primeiras 3 balas em seu carregador têm 100% de precisão e atiram mais longe"
+    "description": "As primeiras 3 balas em seu carregador têm 100% de precisão e atiram mais longe."
   },
   "jokerScavengerStar": {
     "name": "ESTRELA COLETORA",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "HONRA DE ESCOTEIRO",
-    "description": "Após 10 seg. sem sofrer dano, seu escudo é mantido em um mínimo de 10 PE"
+    "description": "Após 10s sem sofrer dano, seu escudo é ajustado para um mínimo de 10 pontos de escudo."
   },
   "jokerScrubBullet": {
     "name": "GOLPE LIMPADOR",
@@ -717,15 +733,15 @@
   },
   "jokerSkyLash": {
     "name": "LAÇO CELESTE",
-    "description": "O ataque carregado concede +50% de velocidade de movimento e permite que você voe"
+    "description": "O ataque carregado concede +50% de velocidade de movimento e permite que você voe."
   },
   "jokerSlowAndSteady": {
     "name": "PACIÊNCIA E FIRMEZA",
-    "description": "Ganha +25% de precisão, mas -10% de velocidade de ataque"
+    "description": "Ganha +25% de precisão, mas -10% de velocidade de ataque."
   },
   "jokerSnackAPunch": {
     "name": "TOMA MAIS ESSA",
-    "description": "Abates corpo a corpo concedem 1 ponto de escudo"
+    "description": "Abates corpo a corpo concedem 1 ponto de escudo."
   },
   "jokerSoulEater": {
     "name": "COMEDOR DE ALMAS",
@@ -745,7 +761,7 @@
   },
   "jokerSpeedster": {
     "name": "CORREDOR",
-    "description": "+1% de dano e velocidade de ataque a cada 3% de velocidade de movimento bônus, até +40%"
+    "description": "+1% de dano e velocidade de ataque a cada 3% de velocidade de movimento bônus, até +40%."
   },
   "jokerSpeedyGunzales": {
     "name": "ARMANDO LIGEIRINHO",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "PELE GROSSA",
-    "description": "Reduz todo o dano recebido em 20%, mas você recebe -30% de cura"
+    "description": "Reduz todo o dano recebido em 20%, mas recebe -30% de cura."
   },
   "jokerTinMan": {
     "name": "HOMEM DE LATA",
-    "description": "A cura excedente é convertida em pontos de escudo, até +15 PE"
+    "description": "A cura excedente se transforma em pontos de escudo, até +15 de PE."
   },
   "jokerToolBox": {
     "name": "CAIXA DE FERRAMENTAS",
     "description": "A coleta de utilitários está desativada. Seus utilitários são recarregados automaticamente após 90 seg."
+  },
+  "jokerTrailPack": {
+    "name": "MOCHILA DE RASTRO",
+    "description": "O rastro da sua mochila a jato deixa poças elementais"
   },
   "jokerTweakDealer": {
     "name": "FORNECEDOR DE CURINGAS",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "ULTRA SAQUE",
-    "description": "Carregue por 4 seg. para disparar uma enorme flecha explosiva. A velocidade de ataque reduz o tempo de carga"
+    "description": "Carregue por 4s para disparar uma enorme flecha explosiva. A velocidade de ataque reduz o tempo de carga."
   },
   "jokerUpgradeAccuracy": {
     "name": "Precisão"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "Velocidade"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "Duração do Voo"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "Força de Elevação"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "Munição de Combustível"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "Altura do Salto"
   },
@@ -860,14 +889,14 @@
   },
   "jokerWeakLink": {
     "name": "ELO FRACO",
-    "description": "Acertos em pontos fracos causam 35% a mais de dano, mas acertos comuns causam 20% menos dano"
+    "description": "+35% de dano em pontos fracos, mas -20% de dano em golpes normais."
   },
   "jokerWellFed": {
     "name": "BEM ALIMENTADO",
-    "description": "+5 de PV"
+    "description": "+7 de PV"
   },
   "jokerWestWizard": {
     "name": "MAGO DO OESTE",
-    "description": "Ganha -30% de tempo de recarga dos feitiços, mas -30% de PV"
+    "description": "-30% de tempo de recarga dos feitiços, mas -30% de PV."
   }
 }

@@ -35,6 +35,10 @@
     "name": "Frost",
     "description": "Defensiv – Friere Feinde ein und verstärke deinen Schild"
   },
+  "itemJetpack": {
+    "name": "Jetpack",
+    "description": "Flieg, wohin du willst, und stürz dich krachend auf deine Feinde.\nWer hoch fliegt, fällt tief, am liebsten auf jemanden drauf."
+  },
   "itemKnuckles": {
     "name": "Schlagring",
     "description": "Kleine Reichweite, große Wirkung.\nMan braucht keine Muni, muss nicht zielen und nicht nachdenken."
@@ -61,7 +65,7 @@
   },
   "itemSheriffStar": {
     "name": "Sheriffstern",
-    "description": "Wird mit hoher Geschwindigkeit abgefeuert und zerschneidet Gegner. \nGerechtigkeit war noch nie so mühelos."
+    "description": "Feuert mit hoher Geschwindigkeit und schneidet den Gegner entzwei.\nGerechtigkeit war noch nie so einfach zu handhaben."
   },
   "itemShotgun": {
     "name": "Schrotflinte",
@@ -217,7 +221,7 @@
   },
   "jokerAllMighty": {
     "name": "ALLMÄCHTIG",
-    "description": "Erhalte +1 % Schaden pro Schildpunkt, bis zu 80 %"
+    "description": "Erhalte +1 % Schaden pro 1 Schildpunkt (bis zu 80 % stapelbar)."
   },
   "jokerAmmoSupply": {
     "name": "MUNITIONSVERSORGUNG",
@@ -233,7 +237,7 @@
   },
   "jokerAvalanche": {
     "name": "LAWINE",
-    "description": "+15 % Schaden, solange du einen Schild hast"
+    "description": "+15 % Schaden, solange du einen Schild hast."
   },
   "jokerBardbarian": {
     "name": "BARDBARENANGRIFF",
@@ -241,7 +245,7 @@
   },
   "jokerBattleMage": {
     "name": "KAMPFMAGIER",
-    "description": "Töten eines Gegners verkürzt die Abklingzeit aller laufenden Zauber um 0,5 %"
+    "description": "Töten eines Gegners verkürzt die Abklingzeit aller laufenden Zauber um 0,5 %."
   },
   "jokerBellShot": {
     "name": "GLOCKENSCHUSS",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "EINMAL-ZAUBER",
-    "description": "Deine Zauber mit einer Basisabklingzeit von 35 Sek. oder weniger haben eine um 25 % verringerte Abklingzeit"
+    "description": "Zauber mit einer Grundabklingzeit von 35 Sek. oder weniger erhalten -25 % Zauber-Abklingzeit."
   },
   "jokerCarePackage": {
     "name": "PFLEGEPAKET",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "DURCHZAUBERN",
-    "description": "Das Wirken eines Zaubers verringert die Abklingzeit anderer Zauber um 3 Sek., bis zu einem Minimum von 4 Sek."
+    "description": "Das Wirken eines Zaubers verringert die Zauber-Abklingzeit anderer Zauber um 3 Sek. (bis zu einem Minimum von 4 Sek.)."
   },
   "jokerCdrAcid": {
     "name": "SÄUREMEISTERSCHAFT",
@@ -289,23 +293,23 @@
   },
   "jokerCdrCactus": {
     "name": "KAKTUSMEISTERSCHAFT",
-    "description": "Erhalte -10 % Kaktus-Abklingzeit pro ausgerüstetem Kaktus-Zauber"
+    "description": "Erhalte -10 % Kaktuszauber-Abklingzeit pro ausgerüstetem Kaktuszauber."
   },
   "jokerCdrElec": {
     "name": "ELEKMEISTERSCHAFT",
-    "description": "-10 % Elek-Abklingzeit pro ausgerüstetem Elekzauber"
+    "description": "Erhalte -10 % Elekzauber-Abklingzeit pro ausgerüstetem Elekzauber."
   },
   "jokerCdrFire": {
     "name": "PYROMEISTERSCHAFT",
-    "description": "-10 % Pyro-Abklingzeit pro ausgerüstetem Pyrozauber"
+    "description": "Erhalte -10 % Pyrozauber-Abklingzeit pro ausgerüstetem Pyrozauber."
   },
   "jokerCdrFrost": {
     "name": "FROSTMEISTERSCHAFT",
-    "description": "-10 % Frost-Abklingzeit pro ausgerüstetem Frostzauber"
+    "description": "Erhalte -10 % Frostzauber-Abklingzeit pro ausgerüstetem Frostzauber."
   },
   "jokerCdrVoodoo": {
     "name": "VOODOOMEISTERSCHAFT",
-    "description": "-10 % Voodoo-Abklingzeit pro ausgerüstetem Voodoozauber"
+    "description": "Erhalte -10 % Voodoozauber-Abklingzeit pro ausgerüstetem Voodoozauber."
   },
   "jokerChad": {
     "name": "CHAD",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "GEIZHALS",
-    "description": "Erhalte +1 TP für je 20 Gold in deinem Missionsinventar (bis zu +15 TP stapelbar)"
+    "description": "Erhalte +1 TP für je 15 Gold in deinem Missionsinventar (bis zu +20 TP stapelbar)"
   },
   "jokerChickshot": {
     "name": "KÜKENSCHUSS",
@@ -333,11 +337,11 @@
   },
   "jokerCoinFlip": {
     "name": "MÜNZWURF",
-    "description": "Wirf alle 10 Sek. eine Münze. Du verursachst entweder +100 % oder -50 % Waffenschaden"
+    "description": "Wirf alle 10 Sek. eine Münze. Du verursachst entweder +100 % oder -50 % Waffenschaden."
   },
   "jokerColdBlooded": {
     "name": "KALTBLÜTIG",
-    "description": "Deine Nahkampfangriffe frieren Feinde ein und verbrauchen dabei 3 Schildpunkte pro Feind"
+    "description": "Deine Nahkampfangriffe frieren Gegner ein und kosten pro Gegner 3 Schildpunkte."
   },
   "jokerConsumer": {
     "name": "ABFALL",
@@ -347,13 +351,17 @@
     "name": "MEISTERSCHÜTZE",
     "description": "+7 % Schaden"
   },
+  "jokerCrashPack": {
+    "name": "KRACHPACK",
+    "description": "Doppelte Treibstoffmunition, aber halbe Flugdauer"
+  },
   "jokerDeadlyStrong": {
     "name": "TOD, ABER TÖDLICHER",
     "description": "Bewege dich schneller und verursache mehr Schaden als toter Geist"
   },
   "jokerDeathsDance": {
     "name": "TANZ DES TODES",
-    "description": "Dein Schild schwindet 30 % langsamer"
+    "description": "Dein Schild schwindet 30 % langsamer."
   },
   "jokerDestroyer": {
     "name": "ZERSTÖRER",
@@ -365,7 +373,7 @@
   },
   "jokerDoubleDown": {
     "name": "DOPPELT ODER NICHTS",
-    "description": "Erhalte +30 % Schildpunkte aus allen Quellen"
+    "description": "Erhalte +30 % Schildpunkte aus allen Quellen."
   },
   "jokerDwarf": {
     "name": "ZWERG",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "HINRICHTUNG",
-    "description": "Deine Treffer töten Gegner unter 20 % TP sofort, ausgenommen Elite-Feinde und Bosse"
+    "description": "Deine Treffer töten Gegner unter 20 % TP sofort, außer Elite-Gegnern und Bossen"
   },
   "jokerExplosiveRounds": {
     "name": "EXPLOSIONSTREFFER (Pyro)",
@@ -429,7 +437,11 @@
   },
   "jokerFightOrFlight": {
     "name": "KAMPF ODER FLUCHT",
-    "description": "Erlittener TP-Schaden gewährt 3 Sek. lang +20 % Nahkampftempo"
+    "description": "Erlittener TP-Schaden gewährt 3 Sek. lang +20 % Nahkampftempo."
+  },
+  "jokerFinalEmber": {
+    "name": "LETZTER FUNKE",
+    "description": "Wenn du 30 % oder weniger TP hast, sind deine Treffer elektrisiert"
   },
   "jokerFistFight": {
     "name": "FAUSTKAMPF",
@@ -437,11 +449,11 @@
   },
   "jokerFistRage": {
     "name": "FAUSTZORN",
-    "description": "Erlittener Schaden erzeugt Aufladung und gewährt 2 Sek. lang +30 % Angriffstempo"
+    "description": "Erlittener Schaden erzeugt Aufladung und gewährt 2 Sek. lang +30 % Angriffstempo."
   },
   "jokerFistRoDah": {
     "name": "FAUST RO DAH",
-    "description": "Der aufgeladene Angriff schleudert dich nach hinten und hat eine Chance von 20 %, Gegner mit Frost zu belegen"
+    "description": "Der aufgeladene Angriff schleudert dich nach hinten und belegt Gegner mit Frost"
   },
   "jokerFocusShot": {
     "name": "FOKUSSCHUSS",
@@ -457,7 +469,7 @@
   },
   "jokerFreezeOver": {
     "name": "LETZTE BASTION",
-    "description": "Beim Erreichen von 25 % TP erhältst du +50 Schildpunkte (Abklingzeit: 60 Sek.)"
+    "description": "Sobald deine TP 25 % erreichen, erhältst du +50 Schild (Abklingzeit: 60 Sek.)"
   },
   "jokerFrenzySpin": {
     "name": "RASEREIDREHUNG",
@@ -465,11 +477,11 @@
   },
   "jokerFrostBite": {
     "name": "FROSTBEULE",
-    "description": "Nahkampfkills an eingefrorenen Feinden gewähren 2 Schildpunkte"
+    "description": "Nahkampfkills gegen eingefrorene Gegner gewähren 2 Schildpunkte."
   },
   "jokerGiant": {
     "name": "RIESE",
-    "description": "Du bist groß. Du erhältst Trefferpunkte, Waffenschaden und Zauber-Abklingzeitverringerung"
+    "description": "Du bist groß. Du erhältst Gesundheit, Waffenschaden und Zauber-Abklingzeitverringerung."
   },
   "jokerGlassCannon": {
     "name": "GLASKANONE",
@@ -485,15 +497,15 @@
   },
   "jokerGoliath": {
     "name": "GOLIATH",
-    "description": "Du bist größer. Erhalte +25 % TP"
+    "description": "Du bist größer. Du erhältst +25 % TP."
   },
   "jokerGreatWall": {
     "name": "GROSSE MAUER",
-    "description": "Verringert sämtlichen erlittenen Schaden um 10 %, solange du einen Schild hast"
+    "description": "Verringert sämtlichen erlittenen Schaden um 10 %, wenn mit einem Schild belegt."
   },
   "jokerHeadBang": {
     "name": "HEADBANGEN",
-    "description": "Verursache +30 % Schaden an Schwachpunkten"
+    "description": "+30 % Schwachpunktschaden."
   },
   "jokerHeadshotRefund": {
     "name": "SCHWACHPUNKT-ERSTATTUNG",
@@ -529,7 +541,11 @@
   },
   "jokerHop": {
     "name": "HÜPFER",
-    "description": "+20 % Sprunghöhe"
+    "description": "+20 % Sprunghöhe."
+  },
+  "jokerHoverPack": {
+    "name": "SCHWEBEPACK",
+    "description": "Der Sturzangriff wird durch einen Schwebeschub ersetzt, der Treibstoff kostet und dich zu deiner Primärwaffe wechseln lässt"
   },
   "jokerJokheal": {
     "name": "MEDI-KARTE",
@@ -537,7 +553,7 @@
   },
   "jokerJumpStar": {
     "name": "SPRUNGSTERN",
-    "description": "+2 Sprünge, während du die Sheriffsterne hältst"
+    "description": "+2 Sprünge, während du Sheriffsterne hältst."
   },
   "jokerKnuckleDown": {
     "name": "NIEDERKNÖCHELN",
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "LETZTER TANZ",
-    "description": "Wenn du 30 % oder weniger TP hast, erhalte +30 % Bewegungstempo"
+    "description": "Wenn du 30 % oder weniger TP hast, erhältst du +30 % Bewegungstempo."
   },
   "jokerLastStand": {
     "name": "LETZTES GEFECHT",
-    "description": "Wenn du 30 % oder weniger TP hast, erleidest du -30 % Schaden und erhältst 10 % Nahkampf-Lebensraub"
+    "description": "Wenn du 30 % oder weniger TP hast, verringert sich sämtlicher erlittener Schaden um 30 % und du erhältst 10 % Nahkampf-Lebensraub."
   },
   "jokerLazy": {
     "name": "FAULPELZ",
@@ -593,7 +609,7 @@
   },
   "jokerMagicReload": {
     "name": "MAGISCHES NACHLADEN",
-    "description": "Lädt deine Waffe nach dem Wirken eines Zaubers automatisch nach"
+    "description": "Lädt deine Waffe nach dem Wirken eines Zaubers automatisch nach."
   },
   "jokerMarkAce": {
     "name": "MARKIER-ASS",
@@ -605,7 +621,7 @@
   },
   "jokerOneTrick": {
     "name": "JOKER-TRICK",
-    "description": "Erhalte +7 % Schaden und Angriffstempo für jede mit der Waffe ausgerüstete unterschiedliche Joker-Seltenheit"
+    "description": "Erhalte +7 % Schaden und Angriffstempo für jede mit der Waffe ausgerüstete unterschiedliche Joker-Seltenheit."
   },
   "jokerOverBlast": {
     "name": "ÜBERLASTEN",
@@ -613,7 +629,7 @@
   },
   "jokerOverDraw": {
     "name": "ÜBERZIEHEN",
-    "description": "Lade 2 Sek. lang auf, um 3 Pfeile in einem Kegel abzuschießen. Angriffstempo verringert die Aufladezeit"
+    "description": "Lade 2 Sek. lang auf, um 3 Pfeile in einem Kegel abzuschießen. Angriffstempo verringert das Aufladetempo."
   },
   "jokerPanicAttack": {
     "name": "PANIKATTACKE",
@@ -633,7 +649,7 @@
   },
   "jokerPigshot": {
     "name": "SCHWEINESCHUSS",
-    "description": "+5 % Chance, beim Aufprall ein Schwein zu erzeugen. Greif es an, damit es hochgeht"
+    "description": "+5 % Chance, beim Aufprall ein Schwein zu erzeugen. Greif es an, damit es hochgeht."
   },
   "jokerPlasticDuck": {
     "name": "GUMMIENTE",
@@ -645,7 +661,7 @@
   },
   "jokerPricklyPear": {
     "name": "KAKTUSFEIGE",
-    "description": "Wenn du TP-Schaden erleidest, fügst du dem Angreifer denselben Schaden +15 zu"
+    "description": "Wenn deine TP getroffen werden, erleidet der Angreifer denselben Schaden +15."
   },
   "jokerQuickDraw": {
     "name": "SCHNELLWECHSEL",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "UNERBITTLICH",
-    "description": "Wenn du 30 % oder weniger deiner max. TP hast, verursachst du +30 % Schaden"
+    "description": "Wenn du 30 % oder weniger TP hast, verursachst du +30 % Schaden."
   },
   "jokerReloadMastery": {
     "name": "NACHLADEMEISTERSCHAFT",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "PFADFINDEREHRE",
-    "description": "Nach 10 Sek. ohne erlittenen Schaden wird dein Schild auf mindestens 10 Schildpunkte gesetzt"
+    "description": "Nach 10 Sek. ohne erlittenen Schaden wird dein Schild auf mindestens 10 Schildpunkte gesetzt."
   },
   "jokerScrubBullet": {
     "name": "PUTZFRAU",
@@ -717,7 +733,7 @@
   },
   "jokerSkyLash": {
     "name": "HIMMELSPEITSCHE",
-    "description": "Der aufgeladene Angriff gewährt +50 % Bewegungstempo und lässt dich fliegen"
+    "description": "Der aufgeladene Angriff gewährt +50 % Bewegungstempo und lässt dich fliegen."
   },
   "jokerSlowAndSteady": {
     "name": "LANGSAM, ABER SICHER",
@@ -725,7 +741,7 @@
   },
   "jokerSnackAPunch": {
     "name": "FAUSTSNACK",
-    "description": "Nahkampfkills gewähren dir 1 Schildpunkt"
+    "description": "Nahkampfkills gewähren dir 1 Schildpunkt."
   },
   "jokerSoulEater": {
     "name": "SEELENERNTER",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "DICKES FELL",
-    "description": "Verringert sämtlichen erlittenen Schaden um 20 %, aber du erhältst 30 % weniger Heilung"
+    "description": "Verringert sämtlichen erlittenen Schaden um 20 %, aber verringert erhaltene Heilung um 30 %."
   },
   "jokerTinMan": {
     "name": "BLECHMANN",
-    "description": "Überschüssige Heilung wird in bis zu +15 Schildpunkte umgewandelt"
+    "description": "Überschüssige Heilung wird in Schildpunkte umgewandelt (bis zu +15 SP)."
   },
   "jokerToolBox": {
     "name": "WERKZEUGKASTEN",
-    "description": "Support-Aufhebungen sind deaktiviert. Dein Support wird nach 90 Sek. automatisch aufgefüllt"
+    "description": "Support-Aufhebungen sind deaktiviert. Dein Support wird nach 90 Sek. automatisch aufgefüllt."
+  },
+  "jokerTrailPack": {
+    "name": "SPURPACK",
+    "description": "Deine Jetpack-Spur hinterlässt Elementpfützen"
   },
   "jokerTweakDealer": {
     "name": "JOKER-HÄNDLER",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "ULTRAZIEHEN",
-    "description": "Lade 4 Sek. lang auf, um einen starken explosiven Pfeil abzuschießen. Angriffstempo verringert die Aufladezeit"
+    "description": "Lade 4 Sek. lang auf, um einen starken explosiven Pfeil abzuschießen. Angriffstempo verringert das Aufladetempo."
   },
   "jokerUpgradeAccuracy": {
     "name": "Genauigkeit"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "Tempo"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "Flugdauer"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "Steigkraft"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "Treibstoffmunition"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "Sprunghöhe"
   },
@@ -860,11 +889,11 @@
   },
   "jokerWeakLink": {
     "name": "SCHWACHES GLIED",
-    "description": "Schwachpunkttreffer verursachen 35 % mehr Schaden, aber normale Treffer 20 % weniger Schaden"
+    "description": "+35 % Schwachpunktschaden, aber -20 % Schaden bei normalen Treffern."
   },
   "jokerWellFed": {
     "name": "WOHLGENÄHRT",
-    "description": "+5 TP"
+    "description": "+7 TP"
   },
   "jokerWestWizard": {
     "name": "WESTERNZAUBERER",

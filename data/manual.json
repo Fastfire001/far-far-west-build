@@ -1,6 +1,6 @@
 {
   "_comment": "Hand-entered values that cannot be extracted from the game files. Not touched by bin/extract-game: check and update them by hand after each game update. See \"Hand-entered data\" in docs/game-mechanics.md.",
-  "checked_for_version": "0.2.0.20",
+  "checked_for_version": "0.3.0.0",
   "school_colors": {
     "_comment": "Colour of each spell school in the game's menus (Color in F_GetElementInfos, BPFL_FunctionLibrary, converted from linear to sRGB). A Blueprint constant: read once from the bytecode on 2026-10-15, not extracted.",
     "itemFire": "#ff4400",

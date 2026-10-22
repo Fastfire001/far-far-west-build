@@ -35,6 +35,10 @@
     "name": "フロスト",
     "description": "防御系 - 敵を凍らせ、SPを強化する。"
   },
+  "itemJetpack": {
+    "name": "ジェットパック",
+    "description": "どこへでも飛んでいき、敵の頭上に墜落する。\n上がったものは必ず落ちる。できれば誰かの上に。"
+  },
   "itemKnuckles": {
     "name": "ナックル",
     "description": "射程は短いが、威力は絶大。\n弾薬も、狙いも、思考も必要なし。"
@@ -77,7 +81,7 @@
   },
   "itemSpellAcidGeyser": {
     "name": "間欠泉",
-    "description": "着弾時に噴出する酸の間欠泉を召喚する。"
+    "description": "着弾と同時に噴き出す酸の間欠泉を召喚する。"
   },
   "itemSpellAcidRain": {
     "name": "レイン",
@@ -241,7 +245,7 @@
   },
   "jokerBattleMage": {
     "name": "バトルメイジ",
-    "description": "敵を倒すたび、進行中のすべてのスペルのクールダウンが0.5%短縮される"
+    "description": "敵を倒すたび、スペルで進行中のすべてのクールダウンが0.5%短縮される"
   },
   "jokerBellShot": {
     "name": "ベルショット",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "キャントリップ\nワントリック",
-    "description": "基本クールダウンが35秒以下のスペルのクールダウンが25%減少する"
+    "description": "基本クールダウンが35秒以下のスペルのクールダウンが25%短縮される"
   },
   "jokerCarePackage": {
     "name": "ケアパッケージ",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "キャスト\nアウェイ",
-    "description": "スペルを詠唱すると、他のスペルのクールダウンが3秒減少する（最短4秒まで）"
+    "description": "スペルを詠唱すると、他のスペルのクールダウンが3秒短縮される（最短4秒まで）"
   },
   "jokerCdrAcid": {
     "name": "アシッドマスタリ",
@@ -289,23 +293,23 @@
   },
   "jokerCdrCactus": {
     "name": "サボテン\nマスタリ",
-    "description": "装備しているサボテンスペル1つにつき、サボテンのクールダウンが -10%"
+    "description": "装備しているサボテンスペル 1 つにつき、サボテンスペルのクールダウンが -10%"
   },
   "jokerCdrElec": {
     "name": "エレキマスタリ",
-    "description": "装備中のエレキスペル1つにつきエレキクールダウン -10%"
+    "description": "装備しているエレキスペル1つにつき、エレキスペルのクールダウンが10%短縮される"
   },
   "jokerCdrFire": {
     "name": "パイロマスタリ",
-    "description": "装備中のパイロスペル1つにつきパイロクールダウン -10%"
+    "description": "装備しているパイロスペル1つにつき、パイロスペルのクールダウンが10%短縮される"
   },
   "jokerCdrFrost": {
     "name": "フロスト\nマスタリ",
-    "description": "装備しているフロストスペル1つにつき、フロストクールダウンが10%短縮される"
+    "description": "装備中のフロストスペル1つにつきフロストスペルのクールダウン -10%"
   },
   "jokerCdrVoodoo": {
     "name": "ブードゥーマスタリ",
-    "description": "装備中のブードゥースペル1つにつきブードゥークールダウン -10%"
+    "description": "装備しているブードゥースペル1つにつき、ブードゥースペルのクールダウンが10%短縮される"
   },
   "jokerChad": {
     "name": "チャド",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "チープスケート",
-    "description": "ミッションインベントリのゴールド20につきHP +1（最大+15）"
+    "description": "ミッションインベントリのゴールド15につきHP +1（最大+20）"
   },
   "jokerChickshot": {
     "name": "チキンショット",
@@ -321,7 +325,7 @@
   },
   "jokerChonky": {
     "name": "チョンキー",
-    "description": "与ダメージが20%だが、重力も+15%"
+    "description": "与ダメージが20%増加するが、重力も15%上昇"
   },
   "jokerChonkyThrow": {
     "name": "むっちりスロー",
@@ -333,11 +337,11 @@
   },
   "jokerCoinFlip": {
     "name": "コインフリップ",
-    "description": "10秒ごとにコインを投げる。武器ダメージが+100%か-50%になる"
+    "description": "10秒ごとにコインを投げる。武器ダメージが+100%か、 -50%になる"
   },
   "jokerColdBlooded": {
     "name": "コールドブラッド",
-    "description": "近接攻撃が敵を凍らせ、敵1体につきSPを3消費する"
+    "description": "近接攻撃で敵を凍らせる。敵1体につきシールドポイントを3消費する"
   },
   "jokerConsumer": {
     "name": "コンシューマー",
@@ -346,6 +350,10 @@
   "jokerCrackShot": {
     "name": "クラック\nショット",
     "description": "ダメージ +7%"
+  },
+  "jokerCrashPack": {
+    "name": "クラッシュパック",
+    "description": "燃料量が倍になるが、飛行時間は半分になる"
   },
   "jokerDeadlyStrong": {
     "name": "デッドリー・ストロング",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "エグゼキュート",
-    "description": "攻撃がHP20%未満の強敵以外の敵を即死させる"
+    "description": "HPが20%未満の敵を、攻撃で即座に倒す（エリートとボスを除く）"
   },
   "jokerExplosiveRounds": {
     "name": "爆発ヒット (パイロ)",
@@ -431,6 +439,10 @@
     "name": "ファイト・オア・フライト",
     "description": "HPにダメージを受けると、3秒間、近接攻撃速度が20%上昇する"
   },
+  "jokerFinalEmber": {
+    "name": "ラストスパーク",
+    "description": "HPが30%以下の間、攻撃が電撃を帯びる"
+  },
   "jokerFistFight": {
     "name": "拳闘",
     "description": "素手の威力が増す"
@@ -441,7 +453,7 @@
   },
   "jokerFistRoDah": {
     "name": "拳・ロ・ダー",
-    "description": "チャージ攻撃で後方へ飛び、20%の確率で敵にフロストを付与する"
+    "description": "チャージ攻撃で後方へ弾き飛ばされ、敵にフロストを付与する"
   },
   "jokerFocusShot": {
     "name": "フォーカスショット",
@@ -456,8 +468,8 @@
     "description": "空のクリップをリロードすると、HPが2回復する"
   },
   "jokerFreezeOver": {
-    "name": "最後の砦",
-    "description": "HPが25%に減った時、SPを50付与する（クールダウン：60秒）"
+    "name": "ラストバスティオン",
+    "description": "HPが25%に達すると、シールド +50が付与される（クールダウン：60秒）"
   },
   "jokerFrenzySpin": {
     "name": "フレンジー\nスピン",
@@ -465,7 +477,7 @@
   },
   "jokerFrostBite": {
     "name": "フロストバイト",
-    "description": "凍った敵を近接攻撃で倒すとSPを2付与する"
+    "description": "凍った敵への近接キルでシールドポイントを2得る"
   },
   "jokerGiant": {
     "name": "ジャイアント",
@@ -485,11 +497,11 @@
   },
   "jokerGoliath": {
     "name": "ゴライアス",
-    "description": "大きくなる。HP +25%"
+    "description": "体が大きくなる。HP +25%"
   },
   "jokerGreatWall": {
     "name": "グレート\nウォール",
-    "description": "シールド中、すべての被ダメージを10%軽減する"
+    "description": "シールド中、被ダメージをすべて10%軽減する"
   },
   "jokerHeadBang": {
     "name": "ヘドバン",
@@ -529,7 +541,11 @@
   },
   "jokerHop": {
     "name": "ホップ",
-    "description": "ジャンプの高さ +20%"
+    "description": "ジャンプ高度 +20%"
+  },
+  "jokerHoverPack": {
+    "name": "ホバーパック",
+    "description": "急降下爆撃が、燃料を消費してメイン武器に切り替えるホバーブーストに置き換わる"
   },
   "jokerJokheal": {
     "name": "メディカード",
@@ -537,7 +553,7 @@
   },
   "jokerJumpStar": {
     "name": "ジャンプスター",
-    "description": "保安官の星を所持中、ジャンプ +2"
+    "description": "保安官の星を所持中ジャンプ +2"
   },
   "jokerKnuckleDown": {
     "name": "ナックルダウン",
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "ラストダンス",
-    "description": "現在のHPが最大HPの30%以下の場合、移動速度が30%増加する"
+    "description": "現在のHPが30%未満の場合、移動速度が30%増加する"
   },
   "jokerLastStand": {
     "name": "ラストスタンド",
-    "description": "最大HPの30%以下の間、被ダメージ -30%と近接ライフスティール10%が付与される"
+    "description": "HPが30%以下のとき、被ダメージ -30%、近接ライフスティール10%が付与される"
   },
   "jokerLazy": {
     "name": "レイジー",
@@ -613,7 +629,7 @@
   },
   "jokerOverDraw": {
     "name": "オーバードロー",
-    "description": "2秒チャージして、扇形状に3本矢を発射する。攻撃速度でチャージ時間が短縮する"
+    "description": "2秒チャージすると、扇形状に矢を3本放つ。攻撃速度が上がるとチャージ時間が短縮される"
   },
   "jokerPanicAttack": {
     "name": "パニック\nアタック",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "不屈",
-    "description": "最大HPの30%以下の間、与ダメージ +30%"
+    "description": "現在のHPが最大HPの30%未満の場合、与ダメージが30%増加する"
   },
   "jokerReloadMastery": {
     "name": "リロード\nマスタリ",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "名誉にかけて",
-    "description": "10秒間ダメージを受けないと、シールドが最低でもSP10になる"
+    "description": "10秒間ダメージを受けないと、シールドが最低10シールドポイントに設定される"
   },
   "jokerScrubBullet": {
     "name": "クリーンヒット",
@@ -725,7 +741,7 @@
   },
   "jokerSnackAPunch": {
     "name": "スナック・ア・パンチ",
-    "description": "近接キルでSPを1付与する"
+    "description": "近接キルでシールドポイントを1得る"
   },
   "jokerSoulEater": {
     "name": "ソウルイーター",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "分厚い皮",
-    "description": "すべての被ダメージを20%軽減するが、受ける回復量が30%減少する"
+    "description": "すべての被ダメージをすべて20%軽減するが、受ける回復量が30%減少する"
   },
   "jokerTinMan": {
     "name": "ティンマン",
-    "description": "超過した回復量がSPに変換される（最大+15SP）"
+    "description": "超過した回復量がシールドポイントに変換される（最大 +15 SP）"
   },
   "jokerToolBox": {
     "name": "ツールボックス",
-    "description": "補助系のピックアップは無効。補助系は90秒後に自動的に補充される"
+    "description": "ユーティリティのピックアップは無効。ユーティリティは90秒後に自動的に補充される。"
+  },
+  "jokerTrailPack": {
+    "name": "トレイルパック",
+    "description": "ジェットパックの噴射跡に、属性の水たまりが残る"
   },
   "jokerTweakDealer": {
     "name": "ジョーカーディーラー",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "ウルトラドロー",
-    "description": "4秒チャージして、大爆発する矢を発射する。攻撃速度でチャージ時間が短縮する"
+    "description": "4秒チャージすると、大爆発する矢を放つ。攻撃速度が上がるとチャージ時間が短縮される"
   },
   "jokerUpgradeAccuracy": {
     "name": "命中"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "速度"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "飛行時間"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "上昇力"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "燃料量"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "ジャンプ高度"
   },
@@ -860,11 +889,11 @@
   },
   "jokerWeakLink": {
     "name": "ウィークリンク",
-    "description": "弱点命中時のダメージが +35%、通常ダメージが -20%"
+    "description": "弱点ダメージが35%増加するが、通常命中時のダメージが20%減少する"
   },
   "jokerWellFed": {
     "name": "ウェルフェッド",
-    "description": "HP +5"
+    "description": "HP +7"
   },
   "jokerWestWizard": {
     "name": "西の魔術師",

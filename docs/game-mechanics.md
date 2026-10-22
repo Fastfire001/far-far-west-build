@@ -1,6 +1,7 @@
 # Far Far West — game mechanics used by the build planner
 
-Rules checked on 2026-10-07 for game version 0.2.0.20 (early access). Update 644 (2026-05-14) reworked progression
+Rules checked on 2026-10-07 for game version 0.2.0.20 (early access); data extracted again on 2026-10-22 from version
+0.3.0.0 ("Fear Fear West" update, which added the Jetpack). Update 644 (2026-05-14) reworked progression
 and made several wiki pages outdated.
 
 ## Data sources
@@ -25,7 +26,7 @@ planner (see "Prestige"). The [wiki](https://farfarwest.wiki.gg/) is no longer a
 | Part | Choice | Data |
 |---|---|---|
 | Main weapon | 1 of 7 (Quad Cylinder, Shotgun, Long Ranger, Minigun, Leveredge, Knuckles, Lasso) | `equipment.json`, `type: main` |
-| Sidearm | 1 of 6 (Revolver, Bow, Dual Revolvers, Boomerang, Sheriff Star, Banjo) + **an element** applied on hit: Acid, Pyro, Elec or Frost, all 4 available on every sidearm (according to the wiki) | `equipment.json`, `type: sidearm` |
+| Sidearm | 1 of 7 (Revolver, Bow, Dual Revolvers, Boomerang, Sheriff Star, Banjo, Jetpack) + **an element** applied on hit: Acid, Pyro, Elec or Frost, all 4 available on every sidearm (according to the wiki; not checked yet on the Jetpack) | `equipment.json`, `type: sidearm` |
 | Utility | 1 of 4 (Ammo Pack, Bottle Crate, Healing Area, Impulse Grenade) | `equipment.json`, `type: utility` |
 | Spells | up to 3, out of 30 spells in 6 schools: Pyro, Elec, Acid, Voodoo, Cactus, Frost | `spells.json` |
 | Stat upgrades | Hero, main weapon, sidearm: points spread over stats | `upgrades.json` |
@@ -38,8 +39,8 @@ joker budget. The utility has neither upgrades nor jokers.
 
 - `id`: internal game id (`jokerCrackShot`), stable even if the displayed name changes. `name`: displayed name (upper
   case, as in the game). `description`: the joker's effect.
-- `slot_cost`: cost in slots. Normal 1, Fine 2, Prime 3, Mythic 4, Legendary 5; Unique jokers cost 2 to 7 depending
-  on the card (Ultra Draw 7, Mindshot 6, Eco Trick and Swamp Trick 2…).
+- `slot_cost`: cost in slots. Normal 1, Fine 2, Prime 3, Mythic 4, Legendary 5; Unique jokers cost 2 to 6 depending
+  on the card (Mindshot 6, Hover Pack 5, Ultra Draw 4, Eco Trick and Swamp Trick 2…).
 - `max_equip`: maximum number of copies of the same joker on a carrier.
 - `available_on`: `["itemHero"]` for a hero joker, otherwise the ids of the compatible weapons.
 - **How to get them**:
@@ -58,7 +59,7 @@ joker budget. The utility has neither upgrades nor jokers.
 | Level | 1 | 4 | 8 | 12 | 16 | 21 | 26 | 32 | 40 | 48 | 58 | 70 | 84 | 100 |
 
 - **Unique jokers**: specific to one weapon, unlocked by a weapon level challenge (main weapons: levels 35 and 55;
-  sidearms: levels 30 and 40), then bought.
+  sidearms: levels 30 and 40; the Jetpack has three, at levels 30, 40 and 60), then bought.
 - **Mastery jokers** (one per spell school): unlocked at school level 50; −10% cooldown per equipped spell of that
   school. The sidearm's element does not count.
 - The joker table has **no level field**. But the game contains the text "Your HERO needs to be at least level
@@ -171,7 +172,7 @@ Assets read:
 | `/Game/LocaStringTables/ST_UI` | game menu labels and language names |
 | `/Game/Interfaces/Equipment/C_UnlockedJokers` | curve slot number → required level (rounded down) |
 | `Localization/Game/<language>/Game.locres` | translations: by string table namespace (`ST_Tweaks`, `ST_Skin` for `ST_Weapons`, `ST_Elements` for `ST_Spells`), same keys as the English texts |
-| `FarFarWest.exe` (outside the archives) | game version (the executable's `FileVersion`, "0.2.0.20 - CL 915") |
+| `FarFarWest.exe` (outside the archives) | game version (the executable's `FileVersion`, "0.3.0.0 - CL 2812") |
 
 The game serializes its properties in "unversioned" mode (no names or types) and ships no mappings file. CUE4Parse
 therefore cannot decode the joker table: `build_game_data.py` decodes it itself, with the order and type of the
@@ -186,19 +187,22 @@ elimination (the only Frost id and name left). An item added by an update makes 
 to `EQUIPMENT`, `SPELLS`, `SCHOOLS` or `IGNORED_ITEMS`. The string tables also contain items missing from
 `DT_PlayerItems` (Dynamite, Elder Pickaxe): they are not part of the current game.
 
-Checks that validate the method: the table's 176 rows read up to the exact end of the export; Crackshot matches the
-wiki; the old curve `C_UnlockedJokers_BeforeRemapTo100Levels` gives back exactly the wiki's old schedule (4, 6, 8,
-10, 13, 16, 19, 24, 29, 35, 42, 50); the 149 active joker names are identical to the wiki's.
+Checks that validate the method: the table's rows (176 in 0.2.0.20, 183 in 0.3.0.0) read up to the exact end of the
+export; Crackshot matches the wiki; the old curve `C_UnlockedJokers_BeforeRemapTo100Levels` gives back exactly the
+wiki's old schedule (4, 6, 8, 10, 13, 16, 19, 24, 29, 35, 42, 50); in 0.2.0.20, the 149 active joker names were
+identical to the wiki's (0.3.0.0 has 153: the 3 Jetpack Uniques and Final Ember, a hero joker unlocked by a secret of
+the Redwood map).
 
 ## Known wiki errors
 
-Corrected by the game files:
+Corrected by the game files (checked on 0.2.0.20; update 0.3.0.0 changed Ultra Draw to 4 slots, Bardbarian to 4 and Sky
+Lash to 3, which the wiki may not show yet):
 
 - **Unique joker costs** (wiki → game): Eco Trick and Swamp Trick 5 → 2; Fanning Ace, Mark Ace, Scavenger Star and
   Chonky Throw 5 → 3; Eagle Lever, Frenzy Spin, Jump Star, Lingering Throw, Rush Blast and Stacked Lever 5 → 4;
   Mindshot 5 → 6; Ultra Draw 5 → 7.
 - **Max copies**: Bouncing Ball and Clutch, 1 → 2.
-- **Lazy and Medicard**: no source on the wiki; they can be bought (800 and 300 gold).
+- **Lazy and Medicard**: no source on the wiki; they can be bought (500 and 300 gold since 0.3.0.0, Lazy became Prime).
 - **Rampage**: not available on the Bow or the Minigun.
 - **Health** (hero upgrade): +5 flat HP per point, not +5%.
 - Sidearm **Lifesteal**: 1% ×5 (the Equipment page says 1.25% ×8).
@@ -211,7 +215,7 @@ Others:
 
 ## Sources
 
-- Game files, version 0.2.0.20: all of `data/` except `manual.json`.
+- Game files, version 0.3.0.0: all of `data/` except `manual.json`.
 - [farfarwest.wiki.gg](https://farfarwest.wiki.gg/): elements available on sidearms, spell unlock levels (not
   used), spell cooldowns (`manual.json`, cross-checked with wikily.gg).
 - [Early Access Update 1 patch notes (V644)](https://steamcommunity.com/app/3124540/discussions/0/837250028234942852/):
@@ -219,6 +223,8 @@ Others:
 - [wikily.gg spell pages](https://wikily.gg/far-far-west/spells/): spell cooldowns (`manual.json`).
 - [wikily.gg build planner](https://wikily.gg/far-far-west/build-planner/new): prestige shop (costs, caps, formula
   for the prestiges needed). License not stated: used to cross-check, its data is not copied into `data/`.
+- [Fear Fear West patch notes (0.3.0.0)](https://farfarwest.notion.site/fearfearwest2026): Jetpack, balance changes
+  (rarities, slot costs, compatible jokers), used to check the extracted data.
 - [Steam discussion on prestige](https://steamcommunity.com/app/3124540/discussions/0/571540300205508222/):
   "at least 5 prestiges" to unlock everything.
 - [Neonsect, Prestige explained](https://neonsect.com/far-far-west/far-far-west-prestige-explained/): prestige up

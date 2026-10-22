@@ -17,7 +17,7 @@
   },
   "itemCactus": {
     "name": "Kaktüs",
-    "description": "Destek - Yardımcı kaktüsler çağırarak savaş alanının kontrolünü sağla"
+    "description": "Destek - Yardımcı kaktüsler çağırarak savaş alanının kontrolünü sağlar"
   },
   "itemDualRevolver": {
     "name": "İkili Altıpatlar",
@@ -34,6 +34,10 @@
   "itemIce": {
     "name": "Buz",
     "description": "Savunma - Düşmanları dondurur ve kalkanını güçlendirir"
+  },
+  "itemJetpack": {
+    "name": "Jetpack",
+    "description": "İstediğin yere uç ve düşmanlarının üstüne çakıl.\nHer çıkışın bir inişi vardır, tercihen birinin tepesine."
   },
   "itemKnuckles": {
     "name": "Muşta",
@@ -61,7 +65,7 @@
   },
   "itemSheriffStar": {
     "name": "Şerif Yıldızı",
-    "description": "Yüksek bir hızda fırlatılır ve düşmanları kesip biçer. \nAdaleti sağlama işi hiç bu kadar zahmetsiz olmamıştı."
+    "description": "Yüksek hızda fırlayarak gider ve düşmanları kesip biçer.\nAdaleti sağlamak hiç bu kadar zahmetsiz olmamıştı."
   },
   "itemShotgun": {
     "name": "Pompalı Tüfek",
@@ -217,7 +221,7 @@
   },
   "jokerAllMighty": {
     "name": "YÜCELER YÜCESİ",
-    "description": "Her 1 kalkan puanı için verdiğin hasar %1 artar (en fazla %80'e kadar birikebilir)"
+    "description": "Her 1 kalkan puanı için verdiğin hasar %1 artar, bu etki en fazla %80'e kadar birikebilir"
   },
   "jokerAmmoSupply": {
     "name": "CEPHANE TEDARİKİ",
@@ -233,7 +237,7 @@
   },
   "jokerAvalanche": {
     "name": "ÇIĞ",
-    "description": "Kalkanın varken +%15 hasar"
+    "description": "Kalkan ile korunurken verdiğin hasar %15 artar"
   },
   "jokerBardbarian": {
     "name": "BARBOZAN",
@@ -261,7 +265,7 @@
   },
   "jokerBracing": {
     "name": "SAĞLAM DURUŞ",
-    "description": "Saldırı hızı ve cephane doldurma hızı +%5"
+    "description": "Saldırı hızı ve cephane dolum hızı +%5"
   },
   "jokerCactusDay": {
     "name": "KAKTÜS GÜNÜ",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "BASİT BÜYÜ BAĞIMLISI",
-    "description": "Temel bekleme süresi 35 saniye veya daha az olan büyülerin bekleme süreleri %25 azalır"
+    "description": "Temel bekleme süresi 35 saniye veya daha az olan büyülerin bekleme süresi %25 azalır"
   },
   "jokerCarePackage": {
     "name": "YARDIM PAKETİ",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "SERİ BÜYÜCÜ",
-    "description": "Bir büyü kullanmak, diğer büyülerin bekleme süresini en az 4 sn. kalacak şekilde 3 sn. azaltır"
+    "description": "Bir büyü kullanmak, diğer büyülerin bekleme süresini 3 sn. azaltır (süre 4 sn. altına düşemez)"
   },
   "jokerCdrAcid": {
     "name": "ASİT USTALIĞI",
@@ -289,35 +293,35 @@
   },
   "jokerCdrCactus": {
     "name": "KAKTÜS USTALIĞI",
-    "description": "Kuşanılan her Kaktüs büyüsü için Kaktüs bekleme süresi -%10"
+    "description": "Kuşanılan her Kaktüs büyüsü için Kaktüs büyülerinin bekleme süresi -%10"
   },
   "jokerCdrElec": {
     "name": "AKIM USTALIĞI",
-    "description": "Kuşanılan her Akım büyüsü için Akım bekleme süresi -%10"
+    "description": "Kuşanılan her Akım büyüsü için Akım büyülerinin bekleme süresi -%10"
   },
   "jokerCdrFire": {
     "name": "ATEŞ USTALIĞI",
-    "description": "Kuşanılan her Ateş büyüsü için Ateş bekleme süresi -%10"
+    "description": "Kuşanılan her Ateş büyüsü için Ateş büyülerinin bekleme süresi -%10"
   },
   "jokerCdrFrost": {
     "name": "BUZ USTALIĞI",
-    "description": "Kuşanılan her Buz büyüsü için Buz bekleme süresi -%10"
+    "description": "Kuşanılan her Buz büyüsü için Buz büyülerinin bekleme süresi -%10"
   },
   "jokerCdrVoodoo": {
     "name": "VUDU USTALIĞI",
-    "description": "Kuşanılan her Vudu büyüsü için Vudu bekleme süresi -%10"
+    "description": "Kuşanılan her Vudu büyüsü için Vudu büyülerinin bekleme süresi -%10"
   },
   "jokerChad": {
     "name": "KARİZMATİK",
-    "description": "Gezgin Tüccarın konumunu ortaya çıkarır ve sana %20 indirim kazandırır. Zira bunu hak ediyorsun"
+    "description": "Gezgin Tüccar'ın konumunu ortaya çıkarır ve sana %20 indirim kazandırır. Zira bunu hak ediyorsun"
   },
   "jokerCheapSkate": {
     "name": "VARYEMEZ",
-    "description": "Serüven envanterindeki her 20 altın için +1 SP elde edersin, bu artış en fazla +15 SP olabilir"
+    "description": "Serüven envanterindeki her 15 altın için +1 SP elde edersin, bu artış en fazla +20 SP olabilir"
   },
   "jokerChickshot": {
     "name": "GIT GIT GIDAK",
-    "description": "Saldırılarının tavuk sesi çıkarma şansı. +%50 Gereksiz mi gereksiz bir özellik!"
+    "description": "Saldırılarının tavuk sesi çıkarma şansı +%50. Gereksiz mi gereksiz bir özellik!"
   },
   "jokerChonky": {
     "name": "TOSUN PAŞA",
@@ -333,11 +337,11 @@
   },
   "jokerCoinFlip": {
     "name": "YAZI TURA",
-    "description": "Her 10 saniyede bir yazı tura atılır. Sonuca göre ya +%100 ya da -%50 silah hasarı verirsin"
+    "description": "Her 10 saniyede bir yazı tura atılır, sonuca göre ya +%100 ya da -%50 silah hasarı verirsin"
   },
   "jokerColdBlooded": {
     "name": "SOĞUKKANLI",
-    "description": "Yakın dövüş vuruşların düşmanları dondurur ve düşman başına 3 kalkan puanı harcar"
+    "description": "Yakın dövüş saldırıların düşmanları dondurur ve düşman başına 3 kalkan puanı tüketir"
   },
   "jokerConsumer": {
     "name": "SAVURGAN",
@@ -345,7 +349,11 @@
   },
   "jokerCrackShot": {
     "name": "USTA NİŞANCI",
-    "description": "+%7 hasar"
+    "description": "Hasar +%7"
+  },
+  "jokerCrashPack": {
+    "name": "ÇAKILAN JET",
+    "description": "Yakıt cephanesi iki katına çıkar ama uçuş süresi yarıya iner"
   },
   "jokerDeadlyStrong": {
     "name": "ÖLÜM TEHLİKESİ",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "İNFAZ",
-    "description": "Vuruşların, SP'si %20'nin altındaki düşmanları anında öldürür; seçkinler ve patronlar hariç"
+    "description": "Yaptığın vuruşlar, SP'si %20'nin altındaki seçkin veya elebaşı olmayan düşmanları anında öldürür"
   },
   "jokerExplosiveRounds": {
     "name": "PATLAYICI VURUŞLAR (Ateş)",
@@ -425,11 +433,15 @@
   },
   "jokerFastHands": {
     "name": "HIZLI ELLER",
-    "description": "+%20 cephane dolum hızı"
+    "description": "Cephane dolum hızı +%20"
   },
   "jokerFightOrFlight": {
     "name": "YA SAVAŞ YA KAÇ",
-    "description": "SP'ni eksilten bir hasar aldığında 3 saniyeliğine +%20 yakın dövüş hızı sağlar"
+    "description": "SP hasarı aldıktan sonra 3 saniye boyunca yakın dövüş hızın %20 artar"
+  },
+  "jokerFinalEmber": {
+    "name": "SON KIVILCIM",
+    "description": "SP'n %30 veya daha altındayken vuruşların elektrik yüklü olur"
   },
   "jokerFistFight": {
     "name": "DEMİR YUMRUK",
@@ -440,8 +452,8 @@
     "description": "Hasar almak, yükü artırır ve 2 sn. boyunca +%30 saldırı hızı sağlar"
   },
   "jokerFistRoDah": {
-    "name": "YUMRUK RO DAH",
-    "description": "Yüklü saldırı seni geriye doğru fırlatır ve düşmanlara %20 ihtimalle Buz etkisi uygular"
+    "name": "YUM RO DAH",
+    "description": "Yüklü saldırın seni geriye doğru fırlatır ve düşmanlara Buz etkisi uygular"
   },
   "jokerFocusShot": {
     "name": "ODAK VURUŞU",
@@ -457,7 +469,7 @@
   },
   "jokerFreezeOver": {
     "name": "SON KALE",
-    "description": "%25 SP'ye ulaştığında +50 kalkan puanı kazanırsın (Bekleme süresi: 60 sn)"
+    "description": "%25 SP'ye ulaştığında 50 kalkan kazanırsın (Bekleme süresi: 60 sn.)"
   },
   "jokerFrenzySpin": {
     "name": "ÇILGIN DÖNÜŞ",
@@ -485,15 +497,15 @@
   },
   "jokerGoliath": {
     "name": "DEV",
-    "description": "Daha irisin. SP +%25"
+    "description": "Çam yarmasını da aştın resmen. SP'n %25 artar"
   },
   "jokerGreatWall": {
     "name": "BÜYÜK SET",
-    "description": "Kalkanın varken aldığın tüm hasar %10 azalır"
+    "description": "Kalkanın varken alınan tüm hasar %10 azalır"
   },
   "jokerHeadBang": {
     "name": "BAM TELİ",
-    "description": "Zayıf noktalara verilen hasar %30 artar"
+    "description": "Zayıf nokta hasarı +%30"
   },
   "jokerHeadshotRefund": {
     "name": "ZAYIF NOKTA İADESİ",
@@ -501,7 +513,7 @@
   },
   "jokerHealthyBoi": {
     "name": "TURP GİBİ",
-    "description": "SP tamamen doluyken +%20 hareket hızı, cephane doldurma hızı ve saldırı hızı elde edersin"
+    "description": "SP tamamen doluyken +%20 hareket hızı, cephane dolum hızı ve saldırı hızı elde edersin"
   },
   "jokerHeavyDrinker": {
     "name": "MÜPTELA",
@@ -529,7 +541,11 @@
   },
   "jokerHop": {
     "name": "HOPLAMATİK",
-    "description": "+%20 zıplama yüksekliği"
+    "description": "Zıplama yüksekliği +%20"
+  },
+  "jokerHoverPack": {
+    "name": "SÜZÜLEN JET",
+    "description": "Pike dalışın yerini, yakıt harcayan ve seni ana silahına geçiren bir süzülme itkisi alır"
   },
   "jokerJokheal": {
     "name": "MEDİKART",
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "SON DANS",
-    "description": "Maks. SP'nin %30'unda veya daha altındayken hareket hızın %30 artar"
+    "description": "SP %30 veya daha altındayken hareket hızın %30 artar"
   },
   "jokerLastStand": {
     "name": "SON DİRENİŞ",
-    "description": "Maks. SP'nin %30'unda veya daha altındayken %30 daha az hasar alırsın ve %10 yakın dövüş can çalma etkisi kazanırsın"
+    "description": "SP'n %30 veya daha altındayken aldığın tüm hasar %30 azalır ve %10 yakın dövüş can çalma etkisi kazanırsın"
   },
   "jokerLazy": {
     "name": "ÜŞENGEÇ",
@@ -593,7 +609,7 @@
   },
   "jokerMagicReload": {
     "name": "SİHİRLİ DOLUM",
-    "description": "Bir büyü kullandıktan sonra silahın otomatik olarak doldurulur"
+    "description": "Bir büyü kullandıktan sonra silah cephanesi otomatik olarak doldurulur"
   },
   "jokerMarkAce": {
     "name": "KURŞUN İŞARETİ",
@@ -613,7 +629,7 @@
   },
   "jokerOverDraw": {
     "name": "GERME GÜCÜ",
-    "description": "Yayını 2 sn. boyunca gererek bir koni içerisinde 3 ok atabilirsin. Saldırı hızı, yüklenme süresini kısaltır"
+    "description": "Yayını 2 sn. boyunca gererek bir koni içerisinde 3 ok atabilirsin. Saldırı hızı arttıkça yüklenme süresi kısalır"
   },
   "jokerPanicAttack": {
     "name": "PANİK ATAK",
@@ -621,7 +637,7 @@
   },
   "jokerPartyShot": {
     "name": "PARTİ VURUŞU",
-    "description": "Zayıf nokta vuruşlarının etrafa konfeti saçma şansı +%50. Gereksiz mi gereksiz!"
+    "description": "Zayıf nokta vuruşlarının etrafa konfeti saçma şansı +%50. Gereksiz mi gereksiz bir özellik!"
   },
   "jokerPewPewPew": {
     "name": "DIKŞIN DIKŞIN",
@@ -637,7 +653,7 @@
   },
   "jokerPlasticDuck": {
     "name": "LASTİK ÖRDEK",
-    "description": "Yürürken lastik ördek sesleri çıkarırsın. Gereksiz mi gereksiz!"
+    "description": "Yürürken lastik ördek sesleri çıkarırsın. Gereksiz mi gereksiz bir özellik!"
   },
   "jokerPreciousRush": {
     "name": "KIYMETLİ AKIN",
@@ -645,7 +661,7 @@
   },
   "jokerPricklyPear": {
     "name": "DİKENLİ BELA",
-    "description": "SP hasarı aldığında aynı hasarı +15 fazlalıkla saldırgana iade edersin"
+    "description": "SP hasarı aldığında aynı hasarı +15 fazlasıyla saldırgana iade edersin"
   },
   "jokerQuickDraw": {
     "name": "ATİK ÇEKİŞ",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "AMANSIZ",
-    "description": "Maks. SP'nin %30'unda veya altındayken +%30 hasar verirsin"
+    "description": "SP %30 veya daha altındayken verdiğin hasar %30 artar"
   },
   "jokerReloadMastery": {
     "name": "DOLUM USTALIĞI",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "İZCİ SÖZÜ",
-    "description": "10 sn. boyunca hasar almadığında kalkanın en az 10 KP'ye tamamlanır"
+    "description": "10 saniye boyunca hasar almadığında kalkanın en az 10 kalkan puanına sahip olacak şekilde sabitlenir"
   },
   "jokerScrubBullet": {
     "name": "TEMİZLEYİCİ VURUŞ",
@@ -705,11 +721,11 @@
   },
   "jokerSharpShooter": {
     "name": "KESKİN NİŞANCI",
-    "description": "+%20 zayıf nokta hasarı"
+    "description": "Zayıf nokta hasarı +%20"
   },
   "jokerShineBright": {
     "name": "IŞIL IŞIL",
-    "description": "Karakter parıltısı +%50. Bugün yine ışıl ışılsın! Gereksiz mi gereksiz!"
+    "description": "Karakter parıltısı +%50. Bugün yine ışıl ışılsın! Gereksiz mi gereksiz bir özellik!"
   },
   "jokerShroomGrave": {
     "name": "MANTAR MEZAR",
@@ -717,15 +733,15 @@
   },
   "jokerSkyLash": {
     "name": "GÖK KEMENDİ",
-    "description": "Yüklü saldırı +%50 hareket hızı verir ve uçabilmeni sağlar"
+    "description": "Yüklü saldırılar +%50 hareket hızı verir ve uçabilmeni sağlar"
   },
   "jokerSlowAndSteady": {
     "name": "YAVAŞ AMA EMİN",
-    "description": "+%25 isabet kazanırsın ama -%10 saldırı hızı"
+    "description": "İsabet oranı %25 artar ama saldırı hızı %10 azalır"
   },
   "jokerSnackAPunch": {
     "name": "ÇEREZLİK YUMRUK",
-    "description": "Yakın dövüşle yapılan öldürmeler sana 1 kalkan puanı kazandırır"
+    "description": "Yakın dövüşle yapılan öldürmeler 1 kalkan puanı kazandırır"
   },
   "jokerSoulEater": {
     "name": "RUH YİYİCİ",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "KALIN DERİ",
-    "description": "Aldığın tüm hasar %20 azalır fakat iyileşme miktarın %30 düşer"
+    "description": "Alınan tüm hasar %20 azalır ama aynı zamanda %30 daha az iyileşirsin"
   },
   "jokerTinMan": {
     "name": "TENEKE ADAM",
-    "description": "Fazla iyileşme kalkan puanına dönüşür (en fazla +15 KP)"
+    "description": "Fazla iyileşme, en fazla +15 olacak şekilde kalkan puanına dönüştürülür"
   },
   "jokerToolBox": {
     "name": "ALET KUTUSU",
-    "description": "Destek toplama devre dışı bırakıldı. Destek ekipmanı kullanıldıktan 90 sn. sonra yenilenir"
+    "description": "Destek toplama devre dışı bırakıldı. Destek ekipmanı kullanıldıktan 90 sn. sonra yenilenir."
+  },
+  "jokerTrailPack": {
+    "name": "İZ BIRAKAN JET",
+    "description": "Jetpack'inin bıraktığı iz, yerde element birikintileri oluşturur"
   },
   "jokerTweakDealer": {
     "name": "JOKER JONGLÖRÜ",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "AŞIRI GERME",
-    "description": "Yayını 4 sn. boyunca gererek devasa bir patlayıcı ok atabilirsin. Saldırı hızı, yüklenme süresini kısaltır"
+    "description": "Yayını 4 sn. boyunca gererek devasa bir patlayıcı ok atabilirsin. Saldırı hızı arttıkça yüklenme süresi kısalır"
   },
   "jokerUpgradeAccuracy": {
     "name": "İsabet Oranı"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "Hız"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "Uçuş Süresi"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "Yükselme Gücü"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "Yakıt Cephanesi"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "Zıplama Yüksekliği"
   },
@@ -837,7 +866,7 @@
     "name": "Can Çalma"
   },
   "jokerUpgradeReloadSpeed": {
-    "name": "Cephane Doldurma Hızı"
+    "name": "Cephane Dolum Hızı"
   },
   "jokerUpgradeSherrifStarPickUpRange": {
     "name": "Toplama Menzili"
@@ -860,11 +889,11 @@
   },
   "jokerWeakLink": {
     "name": "ZAYIF HALKA",
-    "description": "Zayıf nokta vuruşları %35 daha fazla hasar verir fakat normal vuruşların verdiği hasar %20 azalır"
+    "description": "Zayıf noktalara verilen hasar %35 artar ancak normal vuruşların verdiği hasar %20 azalır"
   },
   "jokerWellFed": {
     "name": "KARNI TOK, SIRTI PEK",
-    "description": "+5 SP"
+    "description": "+7 SP"
   },
   "jokerWestWizard": {
     "name": "BATI BÜYÜCÜSÜ",
