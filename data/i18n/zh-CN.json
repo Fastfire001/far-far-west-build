@@ -35,6 +35,10 @@
     "name": "冰霜",
     "description": "防御型 - 冻结敌人并强化你的护盾值"
   },
+  "itemJetpack": {
+    "name": "喷气背包",
+    "description": "随处飞行，从天而降砸向敌人。\n飞得越高，摔得越重，最好砸在别人头上。"
+  },
   "itemKnuckles": {
     "name": "指虎",
     "description": "攻击距离短，但破坏力极强。\n无需弹药，无需瞄准，也无需动脑。"
@@ -61,7 +65,7 @@
   },
   "itemSheriffStar": {
     "name": "警长徽章",
-    "description": "高速发射，干净利落地切开敌人。\n正义从未如此轻松。"
+    "description": "高速发射，干净利落地穿透敌人。\n正义从未如此轻松。"
   },
   "itemShotgun": {
     "name": "霰弹枪",
@@ -77,7 +81,7 @@
   },
   "itemSpellAcidGeyser": {
     "name": "喷泉",
-    "description": "召唤一个酸蚀喷泉，撞击后喷发。"
+    "description": "召唤一个撞击后喷发的酸蚀喷泉。"
   },
   "itemSpellAcidRain": {
     "name": "酸雨",
@@ -241,7 +245,7 @@
   },
   "jokerBattleMage": {
     "name": "战斗法师",
-    "description": "每击杀 1 名敌人，所有正在冷却的法术冷却时间缩短 0.5%"
+    "description": "每击杀一名敌人，所有正在冷却的法术冷却时间缩短 0.5%"
   },
   "jokerBellShot": {
     "name": "鸣钟射击",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "戏法专精",
-    "description": "基础冷却 35 秒及以下的法术，冷却时间缩短 25%"
+    "description": "基础冷却 35 秒及以下的法术，冷却时间 -25%"
   },
   "jokerCarePackage": {
     "name": "补给包",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "法术连发",
-    "description": "施放法术后，其余所有法术的冷却时间缩短 3 秒，最短不低于 4 秒"
+    "description": "施放法术后，其余所有法术的冷却时间缩减 3 秒，最低不低于 4 秒。"
   },
   "jokerCdrAcid": {
     "name": "酸蚀精通",
@@ -289,23 +293,23 @@
   },
   "jokerCdrCactus": {
     "name": "仙人掌精通",
-    "description": "每装备一个仙人掌法术，仙人掌冷却时间 -10%"
+    "description": "每装备一个仙人掌法术，仙人掌法术冷却时间 -10%"
   },
   "jokerCdrElec": {
     "name": "闪电精通",
-    "description": "每装备一个闪电法术，闪电冷却时间 -10%"
+    "description": "每装备一个闪电法术，闪电法术冷却时间 -10%"
   },
   "jokerCdrFire": {
     "name": "火焰精通",
-    "description": "每装备一个火焰法术，火焰冷却时间 -10%"
+    "description": "每装备一个火焰法术，火焰法术冷却时间 -10%"
   },
   "jokerCdrFrost": {
     "name": "冰霜精通",
-    "description": "每装备一个冰霜法术，冰霜冷却时间 -10%"
+    "description": "每装备一个冰霜法术，冰霜法术冷却时间 -10%"
   },
   "jokerCdrVoodoo": {
     "name": "巫毒精通",
-    "description": "每装备一个巫毒法术，巫毒冷却时间 -10%"
+    "description": "每装备一个巫毒法术，巫毒法术冷却时间 -10%"
   },
   "jokerChad": {
     "name": "强者礼遇",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "吝啬鬼",
-    "description": "任务库存中每有 20 枚金币，生命值 +1，最多 +15"
+    "description": "任务库存中每有 15 枚金币，生命值 +1，最多 +20"
   },
   "jokerChickshot": {
     "name": "鸡叫射击",
@@ -337,7 +341,7 @@
   },
   "jokerColdBlooded": {
     "name": "冷血",
-    "description": "近战攻击会冻结敌人，每冻结一名敌人消耗 3 点护盾值"
+    "description": "你的近战攻击会冻结敌人，每冻结一名敌人消耗 3 点护盾值"
   },
   "jokerConsumer": {
     "name": "弹药挥霍",
@@ -346,6 +350,10 @@
   "jokerCrackShot": {
     "name": "精准射手",
     "description": "伤害 +7%"
+  },
+  "jokerCrashPack": {
+    "name": "坠击背包",
+    "description": "燃料弹药翻倍，但飞行时长减半"
   },
   "jokerDeadlyStrong": {
     "name": "致命强韧",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "处决",
-    "description": "你的攻击可立即处决生命值低于 20% 的敌人，精英和 Boss 除外"
+    "description": "你的攻击会直接击杀生命值低于 20% 的敌人 (精英与 Boss 除外)"
   },
   "jokerExplosiveRounds": {
     "name": "爆炸命中 (火焰)",
@@ -431,6 +439,10 @@
     "name": "或战或逃",
     "description": "生命值受到伤害时，近战攻击速度 +20%，持续 3 秒"
   },
+  "jokerFinalEmber": {
+    "name": "最后电火花",
+    "description": "生命值处于 30% 或以下时，你的攻击附带电击"
+  },
   "jokerFistFight": {
     "name": "拳来拳往",
     "description": "徒手攻击威力提高"
@@ -441,7 +453,7 @@
   },
   "jokerFistRoDah": {
     "name": "重拳撼击",
-    "description": "蓄力攻击会将你向后击退，并有 20% 几率对敌人施加冰霜效果"
+    "description": "蓄力攻击会将你向后推，并对敌人施加冰霜"
   },
   "jokerFocusShot": {
     "name": "专注射击",
@@ -457,7 +469,7 @@
   },
   "jokerFreezeOver": {
     "name": "最后堡垒",
-    "description": "生命值降至 25% 时，获得 +50 点护盾值 (冷却时间：60 秒)"
+    "description": "生命值降至 25% 时，护盾值 +50 (冷却时间：60 秒)"
   },
   "jokerFrenzySpin": {
     "name": "狂暴回旋",
@@ -485,7 +497,7 @@
   },
   "jokerGoliath": {
     "name": "巨人之躯",
-    "description": "你的体型变大。生命值 +25%"
+    "description": "体型变大，生命值 +25%"
   },
   "jokerGreatWall": {
     "name": "坚壁长城",
@@ -493,7 +505,7 @@
   },
   "jokerHeadBang": {
     "name": "重击要害",
-    "description": "对弱点造成的伤害 +30%"
+    "description": "弱点伤害 +30%"
   },
   "jokerHeadshotRefund": {
     "name": "弱点返还",
@@ -531,6 +543,10 @@
     "name": "跳跃",
     "description": "跳跃高度 +20%"
   },
+  "jokerHoverPack": {
+    "name": "悬浮背包",
+    "description": "俯冲轰炸替换为悬浮推进，消耗燃料并切换至主武器"
+  },
   "jokerJokheal": {
     "name": "医疗卡片",
     "description": "拾取奇术卡可额外回复 35 点生命值"
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "最后一舞",
-    "description": "当生命值低于或等于最大生命值的 30% 时，移动速度 +30%"
+    "description": "当生命值低于或等于 30% 时，移动速度 +30%"
   },
   "jokerLastStand": {
     "name": "背水一战",
-    "description": "当生命值低于或等于最大生命值的 30% 时，受到的伤害 -30%，并获得 10% 近战攻击生命偷取"
+    "description": "当生命值低于或等于 30% 时，所有受到的伤害 -30%，并获得 10% 近战攻击生命偷取"
   },
   "jokerLazy": {
     "name": "懒散",
@@ -613,7 +629,7 @@
   },
   "jokerOverDraw": {
     "name": "超额拉弓",
-    "description": "蓄力 2 秒后朝锥形区域射出 3 支箭。攻击速度可缩短蓄力时间"
+    "description": "蓄力 2 秒后朝锥形区域射出 3 支箭。攻击速度会缩短蓄力时长"
   },
   "jokerPanicAttack": {
     "name": "恐慌攻击",
@@ -645,7 +661,7 @@
   },
   "jokerPricklyPear": {
     "name": "尖刺反伤",
-    "description": "生命值受到伤害时，向攻击者反弹等额伤害 +15"
+    "description": "受到生命值伤害时，向攻击者反弹的等额伤害 +15"
   },
   "jokerQuickDraw": {
     "name": "神速拔枪",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "不屈不挠",
-    "description": "生命值等于或低于最大生命值的 30% 时，伤害 +30%"
+    "description": "当生命值低于或等于 30% 时，造成的伤害 +30%"
   },
   "jokerReloadMastery": {
     "name": "换弹精通",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "斥候荣誉",
-    "description": "10 秒未受到伤害后，护盾值至少保持在 10 点"
+    "description": "10 秒未受到伤害后，护盾值最低保持 10 点"
   },
   "jokerScrubBullet": {
     "name": "净化打击",
@@ -737,7 +753,7 @@
   },
   "jokerSoulSiphon": {
     "name": "灵魂虹吸",
-    "description": "扩大拾取范围，拾取灵魂时恢复 +2 点生命"
+    "description": "扩大拾取范围，拾取灵魂时恢复 +2 点生命值"
   },
   "jokerSpareBullets": {
     "name": "备用弹药",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "皮糙肉厚",
-    "description": "受到的所有伤害降低 20%，但受到的治疗效果 -30%"
+    "description": "受到的所有伤害降低 20%，但治疗效果 -30%"
   },
   "jokerTinMan": {
     "name": "铁皮之躯",
-    "description": "超出的治疗量会转化为护盾值，最多 +15 点"
+    "description": "过量治疗转化为护盾值，护盾值最多 +15"
   },
   "jokerToolBox": {
     "name": "工具箱",
     "description": "辅助道具拾取功能已禁用。辅助道具会在 90 秒后自动补充"
+  },
+  "jokerTrailPack": {
+    "name": "尾迹背包",
+    "description": "你的喷气背包尾迹会留下元素水洼"
   },
   "jokerTweakDealer": {
     "name": "奇术卡商人",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "极限拉弓",
-    "description": "蓄力 4 秒后射出巨型爆炸箭。攻击速度可缩短蓄力时间"
+    "description": "蓄力 4 秒后射出巨型爆炸箭。攻击速度会缩短蓄力时长"
   },
   "jokerUpgradeAccuracy": {
     "name": "精准"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "速度"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "飞行时长"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "上升推力"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "燃料弹药"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "跳跃高度"
   },
@@ -860,11 +889,11 @@
   },
   "jokerWeakLink": {
     "name": "薄弱环节",
-    "description": "弱点命中伤害增加 35%，但普通命中伤害减少 20%"
+    "description": "弱点伤害 +35%，但普通命中伤害 -20%"
   },
   "jokerWellFed": {
     "name": "强健体魄",
-    "description": "生命值 +5"
+    "description": "生命值 +7"
   },
   "jokerWestWizard": {
     "name": "西部巫师",

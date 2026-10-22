@@ -106,6 +106,8 @@ G["crosshair"] = (ring(50, 50, 30, 9) + P("M45 4h10v26H45zM45 70h10v26H45zM4 45h
                   + circle(50, 50, 7))
 G["bolt"] = P("M60 4 20 56h26l-10 40 46-56H56z")
 G["flame"] = P("M50 4c12 22 34 34 32 60-2 20-16 32-32 32S18 84 18 64c0-18 12-26 16-40 6 12 10 16 14 18 4-12 4-26 2-38z")
+# Placeholder for an item whose icon is still to draw: grep "TODO icon" to find them.
+G["todo"] = stroke("M32 32a18 18 0 1 1 26 16c-6 3-8 7-8 14v4", 11) + circle(50, 82, 7)
 G["drop"] = P("M50 6c14 24 32 42 32 60 0 18-14 30-32 30S18 84 18 66c0-18 18-36 32-60z")
 G["snowflake"] = "".join(group(P("M45 6h10v88H45z") + P("M50 22 36 10l6-6 8 8 8-8 6 6zM50 78 36 90l6 6 8-8 8 8 6-6z"),
                                f"rotate({a} 50 50)") for a in (0, 60, 120))
@@ -373,6 +375,7 @@ EQUIPMENT_SILHOUETTES = {
     "itemDualRevolver": group(revolver(), "translate(-8 -10) scale(.82)") + group(revolver(), "translate(108 28) scale(-.82 .82)"),
     "itemBoomerang": G["boomerang"],
     "itemSheriffStar": G["sheriff"],
+    "itemJetpack": G["todo"],  # TODO icon
     "itemBanjo": group(circle(30, 64, 26) + P(hole(30, 64, 26) + hole(30, 64, 18), "evenodd").replace(
         "<path", '<path fill="#000" fill-opacity=".3"') + P("M44 54 86 12l8 8-42 42z") + P("M80 6h14v14H80z"), ""),
     "itemUtilityAmmo": P("M10 44h80v46H10z") + P("M10 44l10-10h60l10 10z") + group(G["bullets"], "translate(26 -2) scale(.48)"),
@@ -413,6 +416,8 @@ UPGRADE_GLYPHS = {
     "jokerUpgradeBoomerangRange": "expand", "jokerUpgradeWeaponMeleeRange": "expand", "jokerUpgradeReloadSpeed": "reload",
     "jokerUpgradeHeroSpeed": "chevrons", "jokerUpgradeSpellCooldownReduction": "hourglass+minus",
     "jokerUpgradeChordCapacity": "note+plus", "jokerUpgradeChargingSpeed": "bolt+chevrons",
+    # TODO icon
+    "jokerUpgradeJetpackFuel": "todo", "jokerUpgradeJetpackForce": "todo", "jokerUpgradeJetpackFlightDuration": "todo",
 }
 
 JOKER_SCHOOLS = {
@@ -502,6 +507,8 @@ def demon():
 # Jokers: one drawing per joker, in the spirit of its card in the game. Elemental jokers also get the spell school
 # in a corner badge (JOKER_SCHOOLS).
 JOKER_ART = {
+    # TODO icon
+    "jokerTrailPack": G["todo"], "jokerCrashPack": G["todo"], "jokerHoverPack": G["todo"], "jokerFinalEmber": G["todo"],
     "jokerBracing": cut(star_points(50, 50, 14, 48, 36), at(G["bullet"], 50, 50, .74, 45))
                     + at(G["bullet"], 50, 50, .52, 45),
     "jokerChickshot": cut(P("M38 30 34 14l10 6 6-14 6 14 10-6-4 16c8 6 12 14 12 24 0 10-6 18-14 22l14 20H26l14-20"

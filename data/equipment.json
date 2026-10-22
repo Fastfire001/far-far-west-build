@@ -78,6 +78,12 @@
     "description": "Slow and weak attacks, some healing power.\nPerfect for healing your allies while destroying their eardrums."
   },
   {
+    "id": "itemJetpack",
+    "name": "Jetpack",
+    "type": "sidearm",
+    "description": "Fly anywhere and crash down on your enemies.\nWhat goes up must come down, preferably on someone."
+  },
+  {
     "id": "itemUtilityAmmo",
     "name": "Ammo Pack",
     "type": "utility",

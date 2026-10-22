@@ -35,6 +35,10 @@
     "name": "Givre",
     "description": "Défensif - Gelez les ennemis et renforcez votre bouclier"
   },
+  "itemJetpack": {
+    "name": "Jetpack",
+    "description": "Volez où bon vous semble et écrasez-vous sur vos ennemis.\nTout ce qui monte doit redescendre, de préférence sur quelqu'un."
+  },
   "itemKnuckles": {
     "name": "Poings américains",
     "description": "Courte portée, gros impact.\nNe nécessite ni munitions, ni visée, ni réflexion."
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "FAN DE SORTILÈGES",
-    "description": "Les sorts avec un temps de recharge de base de 35 s ou moins gagnent -25 % de temps de recharge"
+    "description": "Les sorts avec un temps de recharge de base de 35 sec. ou moins gagnent -25 % de temps de recharge"
   },
   "jokerCarePackage": {
     "name": "COLIS STRATÉGIQUE",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "GROS RADIN",
-    "description": "Gagnez +1 PV tous les 20 or dans votre inventaire de mission, jusqu'à +15 PV"
+    "description": "Gagnez +1 PV tous les 15 or dans votre inventaire de mission, jusqu'à +20 PV"
   },
   "jokerChickshot": {
     "name": "TIR DE POULET",
@@ -337,7 +341,7 @@
   },
   "jokerColdBlooded": {
     "name": "SANG-FROID",
-    "description": "Vos coups de corps à corps gèlent les ennemis et consomment 3 PB par ennemi"
+    "description": "Vos attaques au corps à corps gèlent les ennemis et consomment 3 PB par ennemi"
   },
   "jokerConsumer": {
     "name": "GOINFRE",
@@ -346,6 +350,10 @@
   "jokerCrackShot": {
     "name": "BON PETIT TIREUR",
     "description": "+7 % de dégâts"
+  },
+  "jokerCrashPack": {
+    "name": "PROPULSEUR FRACASSANT",
+    "description": "Réserve de carburant doublée, mais durée de vol réduite de moitié"
   },
   "jokerDeadlyStrong": {
     "name": "MORTELLEMENT FORT",
@@ -429,7 +437,11 @@
   },
   "jokerFightOrFlight": {
     "name": "INSTINCT DE SURVIE",
-    "description": "Subir des dégâts sur vos PV confère +20 % de vitesse de frappe pendant 3 sec."
+    "description": "Perdre des PV confère +20 % de vitesse de frappe pendant 3 sec."
+  },
+  "jokerFinalEmber": {
+    "name": "DERNIÈRE ÉTINCELLE",
+    "description": "À 30 % ou moins de vos PV max, vos coups sont électrifiés"
   },
   "jokerFistFight": {
     "name": "POING-BOUCHE",
@@ -441,7 +453,7 @@
   },
   "jokerFistRoDah": {
     "name": "POING RO DAH",
-    "description": "L'attaque chargée vous propulse en arrière et a 20 % de chances d'appliquer Givre aux ennemis"
+    "description": "L'attaque chargée vous propulse en arrière et applique Givre aux ennemis"
   },
   "jokerFocusShot": {
     "name": "TIR SORCIER",
@@ -457,7 +469,7 @@
   },
   "jokerFreezeOver": {
     "name": "DERNIER REMPART",
-    "description": "En atteignant 25 % PV, recevez +50 PB (recharge : 60 s)"
+    "description": "En atteignant 25 % de PV, recevez +50 PB (recharge : 60 sec.)"
   },
   "jokerFrenzySpin": {
     "name": "VRILLE FRÉNÉSIE",
@@ -531,6 +543,10 @@
     "name": "P'TIT BOND",
     "description": "+20 % de hauteur de saut"
   },
+  "jokerHoverPack": {
+    "name": "PROPULSEUR FLOTTANT",
+    "description": "L'attaque en piqué est remplacée par un boost de vol stationnaire qui consomme du carburant et vous fait passer à votre arme principale"
+  },
   "jokerJokheal": {
     "name": "MEDICARTE",
     "description": "Ramasser un joker restaure +35 PV supplémentaires"
@@ -589,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "POUVOIR DE L'AMITIÉ",
-    "description": "Récupérez passivement des PV en restant près d'un allié"
+    "description": "Récupérez passivement des PV en restant près de vos alliés"
   },
   "jokerMagicReload": {
     "name": "RECHARGE MAGIQUE",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "PAROLE DE SCOUT",
-    "description": "Après 10 sec. sans subir de dégâts, votre bouclier remonte à 10 PB minimum"
+    "description": "Après 10 sec. sans subir de dégâts, votre bouclier remonte à 10 PB minimum"
   },
   "jokerScrubBullet": {
     "name": "BALLE NETTOYANTE",
@@ -777,11 +793,15 @@
   },
   "jokerTinMan": {
     "name": "BOÎTE DE CONSERVE",
-    "description": "Les soins excédentaires sont convertis en PB, jusqu'à +15 PB"
+    "description": "Les soins excédentaires sont convertis en points de bouclier, jusqu'à +15 PB"
   },
   "jokerToolBox": {
     "name": "BOÎTE À OUTILS",
     "description": "Impossible de ramasser des utilitaires. Votre utilitaire se recharge automatiquement au bout de 90 sec."
+  },
+  "jokerTrailPack": {
+    "name": "PROPULSEUR TRAÇANT",
+    "description": "La traînée de votre jetpack laisse des flaques élémentaires"
   },
   "jokerTweakDealer": {
     "name": "CROUPIER",
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "Vitesse"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "Durée de vol"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "Force d'élévation"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "Réserve de carburant"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "Hauteur de saut"
   },
@@ -864,7 +893,7 @@
   },
   "jokerWellFed": {
     "name": "BIEN NOURRI",
-    "description": "+5 PV"
+    "description": "+7 PV"
   },
   "jokerWestWizard": {
     "name": "MAGE DE L'OUEST",

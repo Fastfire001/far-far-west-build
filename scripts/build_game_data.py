@@ -37,6 +37,7 @@ EQUIPMENT = {
     "itemPistol": ("sidearm", "ST_Weapon_Pistol"), "itemBow": ("sidearm", "ST_Weapon_Bow"),
     "itemDualRevolver": ("sidearm", "ST_Weapon_DualRevolver"), "itemBoomerang": ("sidearm", "ST_Weapon_Boomerang"),
     "itemSheriffStar": ("sidearm", "ST_Weapon_SheriffStar"), "itemBanjo": ("sidearm", "ST_Weapons_Banjo"),
+    "itemJetpack": ("sidearm", "ST_Weapon_Jetpack"),
     "itemUtilityAmmo": ("utility", "ST_Grenade_Ammo"), "itemUtilityBottleCrate": ("utility", "ST_Grenade_BottleCrate"),
     "itemUtilityHealBottle": ("utility", "ST_Grenade_Heal"), "itemUtilityImpulse": ("utility", "ST_Grenade_Impulse"),
 }

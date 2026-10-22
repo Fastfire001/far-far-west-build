@@ -17,7 +17,7 @@
   },
   "itemCactus": {
     "name": "Cactus",
-    "description": "Recurso auxiliar: controla el campo de batalla para invocar cactus que te ayudarán"
+    "description": "Utilidad: controla el campo de batalla invocando cactus que te ayudarán"
   },
   "itemDualRevolver": {
     "name": "Revólveres dobles",
@@ -34,6 +34,10 @@
   "itemIce": {
     "name": "Hielo",
     "description": "Defensiva: congela a los enemigos y refuerza tu escudo"
+  },
+  "itemJetpack": {
+    "name": "Jetpack",
+    "description": "Vuela a donde quieras y estréllate sobre tus enemigos.\nTodo lo que sube tiene que bajar, de preferencia encima de alguien."
   },
   "itemKnuckles": {
     "name": "Nudillos",
@@ -61,7 +65,7 @@
   },
   "itemSheriffStar": {
     "name": "Estrella del Sheriff",
-    "description": "Se lanza a toda velocidad y corta a los enemigos. \nLa justicia nunca había sido tan fácil."
+    "description": "Lánzate a toda velocidad y corta a los enemigos. \nLa justicia nunca había sido tan fácil."
   },
   "itemShotgun": {
     "name": "Escopeta",
@@ -217,7 +221,7 @@
   },
   "jokerAllMighty": {
     "name": "TODOPODEROSO",
-    "description": "Gana +1% de daño por cada 1 de SP, hasta un 80%"
+    "description": "Gana +1% de daño por cada 1 punto de escudo, hasta un 80%"
   },
   "jokerAmmoSupply": {
     "name": "SUMINISTRO DE MUNICIONES",
@@ -233,7 +237,7 @@
   },
   "jokerAvalanche": {
     "name": "AVALANCHA",
-    "description": "+15% de daño mientras tengas escudo"
+    "description": "+15% de daño mientras tengas el escudo"
   },
   "jokerBardbarian": {
     "name": "BÁRBARDO",
@@ -241,7 +245,7 @@
   },
   "jokerBattleMage": {
     "name": "MAGO DE COMBATE",
-    "description": "Matar a un enemigo reduce los tiempos de recarga de todos los hechizos activos en un 0.5%"
+    "description": "Matar a un enemigo reduce en un 0.5% todos los tiempos de recarga en curso de los hechizos"
   },
   "jokerBellShot": {
     "name": "TIRO A LA CAMPANA",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "CONJUROS MENORES DE UN SOLO TRUCO",
-    "description": "Los hechizos con un tiempo de recarga base de 35 s o menos tienen una reducción del 25% en su tiempo de recarga"
+    "description": "Los hechizos con un tiempo de recarga base de 35 s o menos tienen un -25% en su tiempo de recarga de hechizos"
   },
   "jokerCarePackage": {
     "name": "PAQUETE DE CUIDADOS",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "DESCARTAR",
-    "description": "Lanzar un hechizo reduce en 3 s el tiempo de recarga de los demás hechizos, hasta un mínimo de 4 s"
+    "description": "Lanzar un hechizo reduce el tiempo de los demás hechizos por 3 s, hasta un mínimo de 4 s"
   },
   "jokerCdrAcid": {
     "name": "MAESTRÍA ÁCIDA",
@@ -289,23 +293,23 @@
   },
   "jokerCdrCactus": {
     "name": "MAESTRÍA CACTÁCEA",
-    "description": "Ganas un -10% en el tiempo de recarga de Cactus por cada hechizo de Cactus que tengas equipado"
+    "description": "Gana un -10% en el tiempo de recarga de hechizos de cactus por cada hechizo de cactus que tengas equipado"
   },
   "jokerCdrElec": {
     "name": "MAESTRÍA ELÉCTRICA",
-    "description": "Gana un -10% en tiempo de recarga eléctrica por cada hechizo eléctrico equipado"
+    "description": "Gana un -10% en tiempo de recarga hechizos eléctricos por cada hechizo eléctrico equipado"
   },
   "jokerCdrFire": {
     "name": "MAESTRÍA ÍGNEA",
-    "description": "Gana un -10% en tiempo de recarga de fuego por cada hechizo ígneo equipado"
+    "description": "Gana un -10% en tiempo de recarga de hechizos ígneos por cada hechizo ígneo equipado"
   },
   "jokerCdrFrost": {
     "name": "MAESTRÍA GLACIAL",
-    "description": "Ganas un -10% en tiempo de recarga de Hielo por cada hechizo de Hielo que equipes"
+    "description": "Gana un -10% en tiempo de recarga de hechizos de hielo por cada hechizo de hielo que equipes"
   },
   "jokerCdrVoodoo": {
     "name": "MAESTRÍA VUDÚ",
-    "description": "Gana un -10% en tiempo de recarga vudú por cada hechizo vudú equipado"
+    "description": "Gana un -10% en tiempo de recarga de hechizos vudú por cada hechizo vudú equipado"
   },
   "jokerChad": {
     "name": "CHAD",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "TACAÑO",
-    "description": "Gana +1 de HP por cada 20 de oro que tengas en el inventario de la misión, hasta +15 HP"
+    "description": "Gana +1 de HP por cada 15 de oro que tengas en el inventario de la misión, hasta +20 HP"
   },
   "jokerChickshot": {
     "name": "TIRO FÁCIL",
@@ -337,7 +341,7 @@
   },
   "jokerColdBlooded": {
     "name": "SANGRE FRÍA",
-    "description": "Tus golpes cuerpo a cuerpo congelan a los enemigos y consumen 3 de SP por enemigo"
+    "description": "Tus ataques cuerpo a cuerpo congelan a los enemigos y consumen 3 puntos de escudo por enemigo"
   },
   "jokerConsumer": {
     "name": "CONSUMISTA",
@@ -346,6 +350,10 @@
   "jokerCrackShot": {
     "name": "PUNTERÍA",
     "description": "+7% de daño"
+  },
+  "jokerCrashPack": {
+    "name": "JETPACK DE CHOQUE",
+    "description": "El doble de munición de combustible, pero la mitad de la duración del vuelo"
   },
   "jokerDeadlyStrong": {
     "name": "FORTALEZA DE ULTRATUMBA",
@@ -365,7 +373,7 @@
   },
   "jokerDoubleDown": {
     "name": "DOBLE O NADA",
-    "description": "Gana un +30% de SP de todas las fuentes"
+    "description": "Gana un +30% de puntos de escudo de todas las fuentes"
   },
   "jokerDwarf": {
     "name": "ENANO",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "EJECUCIÓN",
-    "description": "Tus golpes matan al instante a los enemigos por debajo del 20% de HP, excepto élites y jefes"
+    "description": "Tus golpes matan al instante a los enemigos que tengan menos del 20% de HP, excepto a los enemigos de élite y a los jefes"
   },
   "jokerExplosiveRounds": {
     "name": "GOLPES EXPLOSIVOS (Fuego)",
@@ -431,17 +439,21 @@
     "name": "LUCHA O HUYE",
     "description": "Recibir daño en tus HP otorga un +20% de velocidad cuerpo a cuerpo durante 3 s."
   },
+  "jokerFinalEmber": {
+    "name": "ÚLTIMA CHISPA",
+    "description": "Mientras tengas un 30% de HP o menos, tus golpes están electrificados"
+  },
   "jokerFistFight": {
     "name": "PUÑO LIMPIO",
     "description": "Tus golpes a puño limpio son más potentes"
   },
   "jokerFistRage": {
     "name": "FURIA DE PUÑOS",
-    "description": "Recibir daño genera carga y otorga un +30% de velocidad de ataque durante 2 seg."
+    "description": "Recibir daño genera carga y otorga un +30% de velocidad de ataque durante 2 s"
   },
   "jokerFistRoDah": {
     "name": "PUÑO RO DAH",
-    "description": "El ataque cargado te impulsa hacia atrás y tiene un 20% de probabilidad de aplicar Hielo a los enemigos"
+    "description": "El ataque cargado te impulsa hacia atrás y aplica hielo a los enemigos"
   },
   "jokerFocusShot": {
     "name": "TIRO ENFOCADO",
@@ -456,8 +468,8 @@
     "description": "Cuando recargas un cargador vacío, recuperas 2 de HP"
   },
   "jokerFreezeOver": {
-    "name": "ÚLTIMO BASTIÓN",
-    "description": "Cuando llegues al 25% de HP, ganas +50 de SP (tiempo de recarga: 60 s)"
+    "name": "ÚLTIMO BALUARTE",
+    "description": "Cuando tu HP baje al 25%, obtienes +50 de escudo (tiempo de recarga: 60 segundos)."
   },
   "jokerFrenzySpin": {
     "name": "GIRO FRENÉTICO",
@@ -465,7 +477,7 @@
   },
   "jokerFrostBite": {
     "name": "MORDIDA GLACIAL",
-    "description": "Las bajas cuerpo a cuerpo de enemigos congelados otorgan 2 de SP"
+    "description": "Las bajas cuerpo a cuerpo de enemigos congelados otorgan 2 de puntos de escudo"
   },
   "jokerGiant": {
     "name": "GIGANTE",
@@ -485,15 +497,15 @@
   },
   "jokerGoliath": {
     "name": "GOLIAT",
-    "description": "Eres más grande. Ganas +25% de HP"
+    "description": "Eres más grande. Ganas un +25% de HP"
   },
   "jokerGreatWall": {
     "name": "GRAN MURALLA",
-    "description": "Reduce todo el daño recibido un 10% mientras tengas escudo"
+    "description": "Reduce todo el daño que recibiste en un 10%"
   },
   "jokerHeadBang": {
     "name": "SACUDIDA DE CABEZA",
-    "description": "Inflige un +30% de daño a los puntos débiles"
+    "description": "+30% de daño en puntos débiles"
   },
   "jokerHeadshotRefund": {
     "name": "REEMBOLSO POR PUNTO DÉBIL",
@@ -531,13 +543,17 @@
     "name": "SALTO",
     "description": "+20% de altura de salto"
   },
+  "jokerHoverPack": {
+    "name": "JETPACK DE LEVITACIÓN",
+    "description": "El ataque en picada se reemplaza por un impulso de levitación que consume combustible y cambia a tu arma principal"
+  },
   "jokerJokheal": {
     "name": "MEDICARD",
     "description": "Si recoges un comodín, recuperas +35 de HP adicionales"
   },
   "jokerJumpStar": {
     "name": "ESTRELLA DEL SALTO",
-    "description": "+2 saltos mientras tengas las Estrellas de Sheriff"
+    "description": "+2 en salto mientras tengas las estrellas de Sheriff"
   },
   "jokerKnuckleDown": {
     "name": "MANO DURA",
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "ÚLTIMO BAILE",
-    "description": "Mientras tengas el 30% o menos de tu máx. HP, gana +30% de velocidad de movimiento"
+    "description": "Mientras tengas el 30% o menos de tu HP, obtienes un +30% de velocidad de movimiento"
   },
   "jokerLastStand": {
     "name": "ÚLTIMA RESISTENCIA",
-    "description": "Mientras tengas el 30% o menos de tu máx. HP, recibe un -30% de daño y obtén un 10% de robo de vida cuerpo a cuerpo"
+    "description": "Cuando tengas un 30% o menos de HP, reduces todo el daño que recibas en un -30% y obtienes un 10% de robo de vida cuerpo a cuerpo"
   },
   "jokerLazy": {
     "name": "PEREZOSO",
@@ -593,7 +609,7 @@
   },
   "jokerMagicReload": {
     "name": "RECARGA MÁGICA",
-    "description": "Recarga tus armas de forma automática tras lanzar un hechizo"
+    "description": "Recarga tu arma de forma automática tras lanzar un hechizo"
   },
   "jokerMarkAce": {
     "name": "AS DE LAS MARCAS",
@@ -605,7 +621,7 @@
   },
   "jokerOneTrick": {
     "name": "TRUCO DE COMODÍN",
-    "description": "Gana +7% de daño y velocidad de ataque por cada rareza de comodín distinta equipada en el arma"
+    "description": "Gana +7% de daño y velocidad de ataque por cada rareza de comodín distinta que equipes en el arma"
   },
   "jokerOverBlast": {
     "name": "OVERBLAST",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "IMPLACABLE",
-    "description": "Mientras tengas el 30% o menos de tus HP máximos, infliges un +30% de daño"
+    "description": "Mientras tengas el 30% o menos de tu HP, infliges un +30% de daño"
   },
   "jokerReloadMastery": {
     "name": "MAESTRÍA DE RECARGA",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "PALABRA DE EXPLORADOR",
-    "description": "Tras 10 s. sin recibir daño, tu escudo se fija en un mínimo de 10 SP"
+    "description": "Tras 10 segundos sin recibir daño, el escudo se fija en un mínimo de 10 puntos de escudo"
   },
   "jokerScrubBullet": {
     "name": "GOLPE LIMPIADOR",
@@ -725,7 +741,7 @@
   },
   "jokerSnackAPunch": {
     "name": "GOLPE COMO APERITIVO",
-    "description": "Las bajas cuerpo a cuerpo te otorgan 1 de SP"
+    "description": "Las bajas cuerpo a cuerpo te otorgan 1 de puntos de escudo"
   },
   "jokerSoulEater": {
     "name": "DEVORADOR DE ALMAS",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "PIEL GRUESA",
-    "description": "Reduce todo el daño recibido un 20%, pero recibes un -30% de curación"
+    "description": "Reduce todo el daño que recibiste en un 20%, pero recibes un -30% de curación"
   },
   "jokerTinMan": {
     "name": "HOMBRE DE HOJALATA",
-    "description": "La curación sobrante se convierte en SP, hasta +15 de SP"
+    "description": "El exceso de curación se convierte en puntos de escudo, hasta un máximo de +15 puntos de escudo"
   },
   "jokerToolBox": {
     "name": "CAJA DE HERRAMIENTAS",
-    "description": "Los objetos de utilidad están desactivados. Tu objeto de utilidad se recarga automáticamente después de 90 s."
+    "description": "La recolección de equipo auxiliar está desactivada. Tu equipo auxiliar se recarga automáticamente después de 90 s."
+  },
+  "jokerTrailPack": {
+    "name": "JETPACK DE ESTELA",
+    "description": "La estela de tu jetpack deja charcos elementales"
   },
   "jokerTweakDealer": {
     "name": "REPARTIDOR DE COMODINES",
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "Velocidad"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "Duración del vuelo"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "Fuerza de elevación"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "Munición de combustible"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "Altura de salto"
   },
@@ -860,11 +889,11 @@
   },
   "jokerWeakLink": {
     "name": "ESLABÓN DÉBIL",
-    "description": "Los impactos en puntos débiles infligen 35% más daño, pero los impactos normales infligen 20% menos daño"
+    "description": "+35% de daño en puntos débiles, pero -20% de daño en golpes normales"
   },
   "jokerWellFed": {
     "name": "BIEN ALIMENTADO",
-    "description": "+5 de HP"
+    "description": "+7 de HP"
   },
   "jokerWestWizard": {
     "name": "HECHICERO DEL OESTE",

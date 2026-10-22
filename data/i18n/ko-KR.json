@@ -35,6 +35,10 @@
     "name": "서리",
     "description": "방어 - 적을 얼리고 보호막을 강화합니다"
   },
+  "itemJetpack": {
+    "name": "제트팩",
+    "description": "어디로든 날아올라 적에게 내리꽂힐 수 있습니다.\n올라간 것은 반드시 내려오는 법이죠. 되도록이면 누군가의 머리 위로요."
+  },
   "itemKnuckles": {
     "name": "너클",
     "description": "사거리는 짧지만 위력은 확실하다.\n탄약도 조준도 필요없고, 생각할 필요도 없다."
@@ -61,7 +65,7 @@
   },
   "itemSheriffStar": {
     "name": "보안관 별",
-    "description": "빠른 속도로 발사되어 적을 베어버립니다. \n정의가 이렇게 손쉬웠던 적은 없었죠."
+    "description": "빠른 속도로 발사하여 적을 베어버립니다.\n정의가 이렇게 쉽게 실현된 적은 없었죠."
   },
   "itemShotgun": {
     "name": "산탄총",
@@ -77,7 +81,7 @@
   },
   "itemSpellAcidGeyser": {
     "name": "간헐천",
-    "description": "충격을 입으면 분출하는 산성 간헐천을 소환합니다."
+    "description": "충돌 시 분출하는 산성 간헐천을 소환합니다."
   },
   "itemSpellAcidRain": {
     "name": "비",
@@ -233,7 +237,7 @@
   },
   "jokerAvalanche": {
     "name": "눈사태",
-    "description": "보호막이 있는 동안 주는 피해 +15%"
+    "description": "보호막이 있을 때 피해 +15%"
   },
   "jokerBardbarian": {
     "name": "야만적인 음유시인",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "자잘한 속임수",
-    "description": "기본 재사용 대기시간 35초 이하 주문 재사용 대기시간 25% 감소"
+    "description": "기본 재사용 대기시간 35초 이하 주문 재사용 대기시간 -25%"
   },
   "jokerCarePackage": {
     "name": "구호품",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "연속 시전",
-    "description": "주문을 시전하면 다른 주문의 재사용 대기시간 3초 감소 (최소 4초)"
+    "description": "주문을 시전하면 다른 주문의 재사용 대기시간 3초, 최소 4초까지 감소."
   },
   "jokerCdrAcid": {
     "name": "산성 마스터",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "구두쇠",
-    "description": "임무 인벤토리에 있는 골드 20당 체력 +1 획득, 최대 +15까지"
+    "description": "임무 인벤토리에 있는 골드 15당 체력 +1 획득, 최대 +20까지"
   },
   "jokerChickshot": {
     "name": "닭샷",
@@ -333,11 +337,11 @@
   },
   "jokerCoinFlip": {
     "name": "동전 던지기",
-    "description": "10초마다 동전을 던짐. 무기 피해 +100% 또는 -50%"
+    "description": "10초마다 동전을 던져 다음 효과를 얻음. 무기 피해 +100% 또는 -50%"
   },
   "jokerColdBlooded": {
     "name": "냉혈한",
-    "description": "근접 공격으로 적을 얼림 (적 1명당 보호막 포인트 3 소모)"
+    "description": "근접 공격이 적을 얼리지만 적 한 명당 보호막 포인트 3 소모"
   },
   "jokerConsumer": {
     "name": "소비자",
@@ -346,6 +350,10 @@
   "jokerCrackShot": {
     "name": "백발백중",
     "description": "피해 +7%"
+  },
+  "jokerCrashPack": {
+    "name": "크래시 팩",
+    "description": "연료 탄약 두 배, 대신 비행 지속 시간 절반"
   },
   "jokerDeadlyStrong": {
     "name": "뒤지게 강함",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "처형",
-    "description": "체력 20% 미만의 적을 공격하여 즉시 처치 (정예 및 보스 제외)"
+    "description": "체력 20% 미만의 적을 공격 시 즉시 처치(엘리트와 보스 제외)"
   },
   "jokerExplosiveRounds": {
     "name": "폭발성 공격 (화염)",
@@ -431,6 +439,10 @@
     "name": "생존 반응",
     "description": "피해를 받고 체력이 깎이면 3초 동안 근접 공격 속도 +20%"
   },
+  "jokerFinalEmber": {
+    "name": "최후의 스파크",
+    "description": "체력이 30% 이하일 때 공격에 전기가 흐름"
+  },
   "jokerFistFight": {
     "name": "주먹싸움",
     "description": "맨손 공격의 위력이 더 강해짐"
@@ -441,7 +453,7 @@
   },
   "jokerFistRoDah": {
     "name": "주먹 로 다",
-    "description": "충전 공격이 플레이어를 뒤로 밀어내고, 20% 확률로 적에게 서리를 적용함"
+    "description": "충전 후 공격 시 플레이어가 뒤로 밀려나며 적에게 서리 효과 부여"
   },
   "jokerFocusShot": {
     "name": "포커스 샷",
@@ -457,7 +469,7 @@
   },
   "jokerFreezeOver": {
     "name": "최후의 보루",
-    "description": "체력이 25%에 도달하면, 보호막 +50 부여 (재사용 대기시간: 60초)"
+    "description": "체력이 25%가 되면 보호막 +50(재사용 대기시간: 60초)"
   },
   "jokerFrenzySpin": {
     "name": "광란의 스핀",
@@ -485,11 +497,11 @@
   },
   "jokerGoliath": {
     "name": "골리앗",
-    "description": "몸집이 커집니다. 체력 +25%"
+    "description": "덩치가 커짐. 체력 +25%"
   },
   "jokerGreatWall": {
     "name": "만리장성",
-    "description": "보호막이 있는 동안 받는 모든 피해 10% 감소"
+    "description": "보호막이 있을 때 받는 모든 피해 -10%"
   },
   "jokerHeadBang": {
     "name": "헤드뱅잉",
@@ -531,6 +543,10 @@
     "name": "깡총",
     "description": "점프 높이 +20%"
   },
+  "jokerHoverPack": {
+    "name": "호버 팩",
+    "description": "급강하 공격이 연료를 소모하는 호버 부스트로 대체되며, 사용 시 주무기로 전환됨"
+  },
   "jokerJokheal": {
     "name": "메디카드",
     "description": "조커 획득 시 추가로 체력 +35 치유"
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "라스트 댄스",
-    "description": "최대 체력의 30% 이하일 때 이동 속도 +30%"
+    "description": "체력이 30% 이하일 때 이동 속도 +30%"
   },
   "jokerLastStand": {
     "name": "최후의 저항",
-    "description": "최대 체력의 30% 이하일 때 받는 피해 -30% 및 근접 생명력 흡수 10% 증가"
+    "description": "체력 30% 이하일 때 받는 모든 피해 -30% 및 근접 생명력 흡수 10% 증가"
   },
   "jokerLazy": {
     "name": "게으름",
@@ -645,7 +661,7 @@
   },
   "jokerPricklyPear": {
     "name": "선인장 열매",
-    "description": "체력 피해를 받으면 공격자에게 같은 피해 +15를 되돌려 줌"
+    "description": "체력 피격 시 공격자에게 같은 피해 +15를 되돌려 줌"
   },
   "jokerQuickDraw": {
     "name": "빨리 뽑기",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "불굴",
-    "description": "최대 체력의 30% 이하일 때 피해 +30%"
+    "description": "체력이 30% 이하일 때 피해 +30%"
   },
   "jokerReloadMastery": {
     "name": "재장전 마스터",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "명예를 걸고",
-    "description": "10초 동안 피해를 받지 않으면 보호막이 최소 10포인트로 유지됨"
+    "description": "10초 동안 피해를 받지 않으면 보호막 포인트를 최소 10으로 유지"
   },
   "jokerScrubBullet": {
     "name": "정화 타격",
@@ -717,7 +733,7 @@
   },
   "jokerSkyLash": {
     "name": "하늘 후리기",
-    "description": "충전 공격이 이동 속도를 50% 증가시키고 하늘을 날 수 있게 함"
+    "description": "충전 후 공격 시 이동 속도를 50% 증가시키고 하늘을 날 수 있음"
   },
   "jokerSlowAndSteady": {
     "name": "느려도 확실하게",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "두꺼운 가죽",
-    "description": "받는 모든 피해 -20%, 회복량 -30%"
+    "description": "받는 모든 피해가 20% 감소하지만 치유량 -30%"
   },
   "jokerTinMan": {
     "name": "양철 인간",
-    "description": "초과 회복량이 보호막 포인트로 전환됨, 최대 보호막 포인트 +15까지"
+    "description": "초과 치유량이 보호막 포인트로 전환됨(최대 15포인트)"
   },
   "jokerToolBox": {
     "name": "도구 상자",
     "description": "유틸리티 집기 비활성화. 90초 후 유틸리티가 자동으로 재충전됨"
+  },
+  "jokerTrailPack": {
+    "name": "트레일 팩",
+    "description": "제트팩이 지나간 자리에 원소 웅덩이가 남음"
   },
   "jokerTweakDealer": {
     "name": "조커 딜러",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "울트라 드로",
-    "description": "4초 동안 충전하여 거대한 폭발 화살 발사. 공격 속도에 따라 충전 시간 감소"
+    "description": "4초 동안 충전하여 거대한 폭발 화살 1발 발사. 공격 속도에 따라 충전 시간 감소"
   },
   "jokerUpgradeAccuracy": {
     "name": "명중률"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "속도"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "비행 지속 시간"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "상승력"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "연료 탄약"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "점프 높이"
   },
@@ -864,7 +893,7 @@
   },
   "jokerWellFed": {
     "name": "포식",
-    "description": "체력 +5"
+    "description": "체력 +7"
   },
   "jokerWestWizard": {
     "name": "서쪽 마법사",

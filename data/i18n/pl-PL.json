@@ -35,9 +35,13 @@
     "name": "Mróz",
     "description": "Defensywny – zamrażaj wrogów i wzmacniaj swoją tarczę"
   },
+  "itemJetpack": {
+    "name": "Plecak odrzutowy",
+    "description": "Lataj, gdzie dusza zapragnie, i z hukiem spadaj na wrogów.\nKto wysoko lata, ten nisko upada, najlepiej komuś na głowę."
+  },
   "itemKnuckles": {
     "name": "Kastet",
-    "description": "Krótki zasięg, wielki efekt.\nNie potrzebujesz amunicji, nie musisz celować ani się nad tym zastanawiać."
+    "description": "Krótki zasięg, wielki efekt.\nZero amunicji, zero celowania i zero myślenia."
   },
   "itemLasso": {
     "name": "Lasso",
@@ -61,7 +65,7 @@
   },
   "itemSheriffStar": {
     "name": "Gwiazda szeryfa",
-    "description": "Wystrzeliwuje z dużą prędkością i przecina wrogów. \nSprawiedliwość nigdy nie była tak prosta."
+    "description": "Wystrzeliwuje z dużą prędkością i przecina wrogów.\nSprawiedliwość nigdy nie była tak prosta."
   },
   "itemShotgun": {
     "name": "Strzelba",
@@ -217,7 +221,7 @@
   },
   "jokerAllMighty": {
     "name": "WSZECHMOCNY",
-    "description": "Zyskujesz +1% obrażeń za każdy 1 punkt tarczy, aż do 80%"
+    "description": "Zyskujesz +1% obrażeń za każdy 1 punkt tarczy, aż do 80%."
   },
   "jokerAmmoSupply": {
     "name": "ZAPAS AMUNICJI",
@@ -233,7 +237,7 @@
   },
   "jokerAvalanche": {
     "name": "LAWINA",
-    "description": "+15% obrażeń, gdy masz tarczę"
+    "description": "+15% obrażeń, gdy masz tarczę."
   },
   "jokerBardbarian": {
     "name": "BARDBARZYŃCA",
@@ -241,7 +245,7 @@
   },
   "jokerBattleMage": {
     "name": "MAG BITEWNY",
-    "description": "Zabicie wroga skraca czas odnowienia wszystkich zaklęć o 0,5%"
+    "description": "Zabicie wroga skraca czas odnowienia wszystkich zaklęć o 0,5%."
   },
   "jokerBellShot": {
     "name": "STRZAŁ W DZWON",
@@ -273,7 +277,7 @@
   },
   "jokerCantRipOneTrick": {
     "name": "ZNANA SZTUCZKA",
-    "description": "Twoje zaklęcia o bazowym czasie odnowienia 35 sekund lub krótszym mają czas odnowienia skrócony o 25%"
+    "description": "Twoje zaklęcia o bazowym czasie odnowienia 35 sek. lub krótszym zyskują -25% czasu odnowienia zaklęcia."
   },
   "jokerCarePackage": {
     "name": "PAKIET PIELĘGNACYJNY",
@@ -281,7 +285,7 @@
   },
   "jokerCastAway": {
     "name": "ODRZUCONY",
-    "description": "Rzucenie zaklęcia skraca czas odnowienia pozostałych zaklęć o 3 sek., ale nie poniżej 4 sek."
+    "description": "Rzucenie zaklęcia skraca czas odnowienia pozostałych zaklęć o 3 sek. do minimum 4 sek."
   },
   "jokerCdrAcid": {
     "name": "MISTRZOSTWO KWASU",
@@ -289,23 +293,23 @@
   },
   "jokerCdrCactus": {
     "name": "MISTRZOSTWO KAKTUSÓW",
-    "description": "Zyskujesz -10% czasu odnowienia kaktusa za każde zaklęcie kaktusa dodane do wyposażenia"
+    "description": "Zyskujesz -10% czasu odnowienia zaklęć kaktusa za każde zaklęcie kaktusa w ekwipunku."
   },
   "jokerCdrElec": {
     "name": "MISTRZOSTWO PRĄDU",
-    "description": "Zyskujesz -10% czasu odnowienia prądu za każde zaklęcie prądu dodane do wyposażenia"
+    "description": "Zyskujesz -10% czasu odnowienia zaklęć prądu za każde zaklęcie prądu dodane do wyposażenia."
   },
   "jokerCdrFire": {
     "name": "MISTRZOSTWO PIRO",
-    "description": "Zyskujesz -10% czasu odnowienia piro za każde zaklęcie piro dodane do wyposażenia"
+    "description": "Zyskujesz -10% czasu odnowienia zaklęć piro za każde zaklęcie piro dodane do wyposażenia."
   },
   "jokerCdrFrost": {
     "name": "MISTRZOSTWO MROZU",
-    "description": "Zyskujesz -10% czasu odnowienia mrozu za każde zaklęcie mrozu dodane do wyposażenia"
+    "description": "Zyskujesz -10% czasu odnowienia zaklęć mrozu za każde zaklęcie mrozu dodane do wyposażenia."
   },
   "jokerCdrVoodoo": {
     "name": "MISTRZOSTWO VOODOO",
-    "description": "Zyskujesz -10% czasu odnowienia voodoo za każde zaklęcie voodoo dodane do wyposażenia"
+    "description": "Zyskujesz -10% czasu odnowienia zaklęć voodoo za każde zaklęcie voodoo dodane do wyposażenia."
   },
   "jokerChad": {
     "name": "CHAD",
@@ -313,7 +317,7 @@
   },
   "jokerCheapSkate": {
     "name": "DUSIGROSZ",
-    "description": "Zyskujesz +1 PŻ za każde 20 sztuk złota w ekwipunku misji, aż do +15 PŻ."
+    "description": "Zyskujesz +1 PŻ za każde 15 sztuk złota w ekwipunku misji, aż do +20 PŻ"
   },
   "jokerChickshot": {
     "name": "STRZAŁ W KURAKA",
@@ -333,11 +337,11 @@
   },
   "jokerCoinFlip": {
     "name": "RZUT MONETĄ",
-    "description": "Co 10 sek. rzucasz monetą. Zadajesz +100% albo -50% obrażeń od broni"
+    "description": "Co 10 sekund rzuca monetą. Zadajesz +100% albo -50% obrażeń od broni."
   },
   "jokerColdBlooded": {
     "name": "ZIMNA KREW",
-    "description": "Twoje ataki w walce wręcz zamrażają wrogów, zużywając 3 punkty tarczy na wroga"
+    "description": "Twoje ataki wręcz zamrażają przeciwników, zużywając 3 punkty tarczy na każdego wroga."
   },
   "jokerConsumer": {
     "name": "KONSUMENT",
@@ -347,13 +351,17 @@
     "name": "CELNE OKO",
     "description": "+7% obrażeń"
   },
+  "jokerCrashPack": {
+    "name": "PLECAK ZDERZENIOWY",
+    "description": "Podwójny zapas paliwa, ale o połowę krótszy czas lotu"
+  },
   "jokerDeadlyStrong": {
     "name": "ŚMIERTELNA SIŁA",
     "description": "Poruszaj się szybciej i zadawaj więcej obrażeń jako martwy duch"
   },
   "jokerDeathsDance": {
     "name": "TANIEC ŚMIERCI",
-    "description": "Twoja tarcza wyczerpuje się o 30% wolniej"
+    "description": "Twoja tarcza wyczerpuje się o 30% wolniej."
   },
   "jokerDestroyer": {
     "name": "NISZCZYCIEL",
@@ -365,7 +373,7 @@
   },
   "jokerDoubleDown": {
     "name": "PODWÓJNA STAWKA",
-    "description": "Zyskujesz +30% punktów tarczy ze wszystkich źródeł"
+    "description": "Zyskujesz +30% punktów tarczy ze wszystkich źródeł."
   },
   "jokerDwarf": {
     "name": "KARZEŁ",
@@ -389,7 +397,7 @@
   },
   "jokerExecute": {
     "name": "EGZEKUCJA",
-    "description": "Twoje trafienia natychmiast zabijają wrogów poniżej 20% PŻ, z wyjątkiem elit i bossów"
+    "description": "Twoje trafienia natychmiast zabijają przeciwników mających poniżej 20% PŻ, z wyjątkiem elit i bossów."
   },
   "jokerExplosiveRounds": {
     "name": "WYBUCHOWE TRAFIENIA (Piro)",
@@ -421,7 +429,7 @@
   },
   "jokerFastDraw": {
     "name": "ZMIANOSTRZAŁ",
-    "description": "Pierwsze trafienie po wyposażeniu broni zadaje o 30% więcej obrażeń"
+    "description": "Pierwsze trafienie po wyposażeniu broni zadaje o 30% więcej obrażeń."
   },
   "jokerFastHands": {
     "name": "SZYBKIE RĘCE",
@@ -430,6 +438,10 @@
   "jokerFightOrFlight": {
     "name": "WALCZ LUB UCIEKAJ",
     "description": "Ubytek PŻ daje +20% do szybkości walki wręcz na 3 sek."
+  },
+  "jokerFinalEmber": {
+    "name": "OSTATNIA ISKRA",
+    "description": "Gdy masz 30% lub mniej PŻ, twoje trafienia porażają prądem"
   },
   "jokerFistFight": {
     "name": "WALKA NA PIĘŚCI",
@@ -441,7 +453,7 @@
   },
   "jokerFistRoDah": {
     "name": "PIĘŚĆ RO DAH",
-    "description": "Naładowany atak odrzuca cię do tyłu i ma 20% szans na nałożenie mrozu na wrogów"
+    "description": "Naładowany atak odrzuca cię do tyłu i nakłada mróz na wrogów"
   },
   "jokerFocusShot": {
     "name": "SKUPIONY STRZAŁ",
@@ -456,8 +468,8 @@
     "description": "Gdy przeładowujesz pusty magazynek, odzyskujesz 2 PŻ."
   },
   "jokerFreezeOver": {
-    "name": "OSTATNI BASTION",
-    "description": "Po osiągnięciu 25% PŻ zyskujesz +50 punktów tarczy (czas odnowienia: 60 sek.)"
+    "name": "OSTATNIA TWIERDZA",
+    "description": "Po osiągnięciu 25% PŻ zyskujesz +50 punktów tarczy (czas odnowienia: 60 sek.)."
   },
   "jokerFrenzySpin": {
     "name": "SZALEŃCZY OBRÓT",
@@ -465,7 +477,7 @@
   },
   "jokerFrostBite": {
     "name": "ODMROŻENIE",
-    "description": "Zabójstwa zamrożonych wrogów w walce wręcz dają 2 punkty tarczy"
+    "description": "Zabójstwa zamrożonych wrogów w walce wręcz dają 2 punkty tarczy."
   },
   "jokerGiant": {
     "name": "OLBRZYM",
@@ -485,15 +497,15 @@
   },
   "jokerGoliath": {
     "name": "GOLIAT",
-    "description": "Jesteś większy. Zyskujesz +25% PŻ"
+    "description": "Twój rozmiar się zwiększa. Zyskujesz +25% PŻ."
   },
   "jokerGreatWall": {
     "name": "WIELKI MUR",
-    "description": "Zmniejsza wszystkie otrzymywane obrażenia o 10%, gdy masz tarczę"
+    "description": "Zmniejsza wszystkie otrzymywane obrażenia o 10%, gdy masz tarczę."
   },
   "jokerHeadBang": {
     "name": "MACHANIE GRZYWĄ",
-    "description": "Zadajesz +30% obrażeń słabym punktom"
+    "description": "+30% do obrażeń od trafień w słaby punkt."
   },
   "jokerHeadshotRefund": {
     "name": "ZWROT ZA SŁABY PUNKT",
@@ -529,7 +541,11 @@
   },
   "jokerHop": {
     "name": "SKOK",
-    "description": "+20% wysokości skoku"
+    "description": "+20% do wysokości skoku."
+  },
+  "jokerHoverPack": {
+    "name": "PLECAK LEWITACYJNY",
+    "description": "Pikowanie zostaje zastąpione lewitacyjnym zrywem, który zużywa paliwo i przełącza cię na broń główną"
   },
   "jokerJokheal": {
     "name": "KARTA ZDROWIA",
@@ -537,7 +553,7 @@
   },
   "jokerJumpStar": {
     "name": "SKACZĄCA GWIAZDA",
-    "description": "+2 skoki podczas trzymania gwiazd szeryfa"
+    "description": "+2 do skoku podczas trzymania gwiazd szeryfa."
   },
   "jokerKnuckleDown": {
     "name": "ŚWIERZBIĄCE PIĘŚCI",
@@ -545,11 +561,11 @@
   },
   "jokerLastDance": {
     "name": "OSTATNI TANIEC",
-    "description": "Gdy masz 30% maks. PŻ lub mniej, zyskujesz +30% do szybkości ruchu"
+    "description": "Gdy masz 30% lub mniej PŻ, zyskujesz +30% prędkości ruchu."
   },
   "jokerLastStand": {
     "name": "OSTATNI BASTION",
-    "description": "Gdy masz 30% maks. PŻ lub mniej, otrzymujesz -30% obrażeń i zyskujesz 10% kradzieży życia w walce wręcz"
+    "description": "Gdy masz 30% lub mniej PŻ, zmniejszasz wszystkie otrzymywane obrażenia o -30% i zyskujesz 10% kradzieży życia w walce wręcz."
   },
   "jokerLazy": {
     "name": "LENIUCH",
@@ -557,7 +573,7 @@
   },
   "jokerLifePact": {
     "name": "CYROGRAF",
-    "description": "Zabójstwa leczą cię o 2 PŻ, ale maksymalnie. PŻ zmniejszone o 30%"
+    "description": "Zabójstwa leczą cię o 2 PŻ, ale maks. PŻ zmniejszone o 30%"
   },
   "jokerLightWeight": {
     "name": "WAGA PIÓRKOWA",
@@ -593,7 +609,7 @@
   },
   "jokerMagicReload": {
     "name": "MAGICZNE PRZEŁADOWANIE",
-    "description": "Automatycznie przeładowuje broń po rzuceniu zaklęcia"
+    "description": "Automatycznie przeładowuje broń po rzuceniu zaklęcia."
   },
   "jokerMarkAce": {
     "name": "AS STRZELECKI",
@@ -605,7 +621,7 @@
   },
   "jokerOneTrick": {
     "name": "SZTUCZKA JOKERA",
-    "description": "Zyskujesz +7% obrażeń i szybkości ataku za każdą różną rzadkość jokerów w broni"
+    "description": "Zyskujesz +7% obrażeń i szybkości ataku za każdą różną rzadkość jokerów w broni."
   },
   "jokerOverBlast": {
     "name": "NADWYBUCH",
@@ -613,7 +629,7 @@
   },
   "jokerOverDraw": {
     "name": "PRZECIAGNIĘCIE",
-    "description": "Ładuj przez 2 sek., aby wystrzelić 3 strzały w stożku. Szybkość ataku skraca czas ładowania"
+    "description": "Ładuj przez 2 sek., aby wystrzelić 3 rozproszone na boki strzały. Szybkość ataku skraca czas ładowania."
   },
   "jokerPanicAttack": {
     "name": "ATAK PANIKI",
@@ -645,7 +661,7 @@
   },
   "jokerPricklyPear": {
     "name": "OPUNCJA",
-    "description": "Gdy stracisz PŻ, zadajesz atakującemu te same obrażenia +15"
+    "description": "Po ubytku PŻ zadajesz atakującemu te same obrażenia +15."
   },
   "jokerQuickDraw": {
     "name": "BŁYSKAWICZNE DOBYCIE",
@@ -661,7 +677,7 @@
   },
   "jokerRelentless": {
     "name": "NIEUSTĘPLIWOŚĆ",
-    "description": "Gdy masz 30% maks. PŻ lub mniej, zadajesz +30% obrażeń"
+    "description": "Gdy masz 30% lub mniej PŻ, zadajesz +30% obrażeń."
   },
   "jokerReloadMastery": {
     "name": "MISTRZOSTWO PRZEŁADOWANIA",
@@ -693,7 +709,7 @@
   },
   "jokerScoutsHonor": {
     "name": "SŁOWO HARCERZA",
-    "description": "Po 10 sek. bez otrzymywania obrażeń twoja tarcza ma co najmniej 10 PT"
+    "description": "Po 10 sek. bez otrzymywania obrażeń twoja tarcza zostaje ustawiona na minimum 10 pkt. tarczy."
   },
   "jokerScrubBullet": {
     "name": "CZYSZCZĄCE TRAFIENIE",
@@ -717,7 +733,7 @@
   },
   "jokerSkyLash": {
     "name": "PODNIEBNE SMAGNIĘCIE",
-    "description": "Naładowany atak daje +50% szybkości ruchu i pozwala latać"
+    "description": "Naładowany atak daje +50% szybkości ruchu i pozwala latać."
   },
   "jokerSlowAndSteady": {
     "name": "POWOLI, ALE PEWNIE",
@@ -725,7 +741,7 @@
   },
   "jokerSnackAPunch": {
     "name": "PIĄCHA NA PRZEKĄSKĘ",
-    "description": "Zabójstwa w walce wręcz dają ci 1 punkt tarczy"
+    "description": "Zabójstwa w walce wręcz dają ci 1 punkt tarczy."
   },
   "jokerSoulEater": {
     "name": "POŻERACZ DUSZ",
@@ -773,15 +789,19 @@
   },
   "jokerThickSkin": {
     "name": "GRUBA SKÓRA",
-    "description": "Zmniejsza wszystkie otrzymywane obrażenia o 20%, ale otrzymujesz -30% leczenia"
+    "description": "Zmniejsza wszystkie otrzymywane obrażenia o 20%, ale otrzymujesz -30% leczenia."
   },
   "jokerTinMan": {
     "name": "BLASZANY DRWAL",
-    "description": "Nadmiarowe leczenie zamienia się w punkty tarczy, do +15 PT"
+    "description": "Nadprogramowe leczenie zamienia się w punkty tarczy, do +15 PT."
   },
   "jokerToolBox": {
     "name": "SKRZYNKA NARZĘDZIOWA",
     "description": "Nie możesz podnosić narzędzi. Twoje narzędzia automatycznie uzupełnią się po 90 sekundach."
+  },
+  "jokerTrailPack": {
+    "name": "PLECAK SMUGOWY",
+    "description": "Smuga twojego plecaka odrzutowego pozostawia kałuże żywiołów"
   },
   "jokerTweakDealer": {
     "name": "DILER JOKERÓW",
@@ -789,7 +809,7 @@
   },
   "jokerUltraDraw": {
     "name": "ULTRA NACIĄGNIĘCIE",
-    "description": "Ładuj przez 4 sek., aby wystrzelić potężną wybuchową strzałę. Szybkość ataku skraca czas ładowania"
+    "description": "Ładuj przez 4 sek., aby wystrzelić potężną wybuchową strzałę. Szybkość ataku skraca czas ładowania."
   },
   "jokerUpgradeAccuracy": {
     "name": "Celność"
@@ -830,6 +850,15 @@
   "jokerUpgradeHeroSpeed": {
     "name": "Prędkość"
   },
+  "jokerUpgradeJetpackFlightDuration": {
+    "name": "Czas lotu"
+  },
+  "jokerUpgradeJetpackForce": {
+    "name": "Siła wznoszenia"
+  },
+  "jokerUpgradeJetpackFuel": {
+    "name": "Zapas paliwa"
+  },
   "jokerUpgradeJumpHeight": {
     "name": "Wysokość skoku"
   },
@@ -860,11 +889,11 @@
   },
   "jokerWeakLink": {
     "name": "SŁABE OGNIWO",
-    "description": "Trafienia w słaby punkt zadają 35% więcej obrażeń, ale zwykłe trafienia zadają 20% mniej obrażeń"
+    "description": "+35% do obrażeń od trafień w słaby punkt, ale -20% do obrażeń normalnych trafień."
   },
   "jokerWellFed": {
     "name": "WYPASIONY",
-    "description": "+5 PŻ"
+    "description": "+7 PŻ"
   },
   "jokerWestWizard": {
     "name": "CZARODZIEJ Z ZACHODU",
