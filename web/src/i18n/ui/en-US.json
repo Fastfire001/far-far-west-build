@@ -77,7 +77,7 @@
     "linkHelp": "Send this link : it opens the build in the planner, which add it to the builds of whoever opens it.",
     "exportHelp": "Or copy this text, to paste it in the planner with Import.",
     "copy": "Copy",
-    "copyLink": "Copier the link",
+    "copyLink": "Copy the link",
     "copied": "Copied !",
     "importTitle": "Import a build",
     "importHelp": "Paste the text of an exported build (it start with FFW1:). It's added to your builds.",
