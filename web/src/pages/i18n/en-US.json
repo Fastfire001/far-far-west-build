@@ -56,48 +56,48 @@
     "hero": "Hero"
   },
   "weapon": {
-    "title": "todo",
-    "description": "todo",
-    "upgrades": "todo",
-    "upgradesIntro": "todo",
-    "stat": "todo",
-    "perPoint": "todo",
-    "maxPoints": "todo",
-    "maxBonus": "todo",
-    "jokers": "todo",
-    "unique": "todo",
-    "uniqueIntro": "todo",
-    "level": "todo",
-    "elements": "todo",
-    "elementsIntro": "todo",
-    "plan": "todo"
+    "title": "{name} in Far Far West : jokers, upgrades and build",
+    "description": "Build {name} in Far Far West : it's {jokers} jokers compatible, their costs and effects, and it's {upgrades} upgrades",
+    "upgrades": "Upgrades",
+    "upgradesIntro": "Up to {points} upgrade points : one every 2 levels until {fromLevels} to level {level}, plus {bought} buy with prestige",
+    "stat": "Stat",
+    "perPoint": "Per point",
+    "maxPoints": "Max ponts",
+    "maxBonus": "Max bonus",
+    "jokers": "Jokers ({count})",
+    "unique": "Unique jokers",
+    "uniqueIntro": "The unique joker belong to this weapon : each one is unlocked by reaching a weapon level.",
+    "level": "Level",
+    "elements": "Elements",
+    "elementsIntro": "A secondary weapon applies an element on hit, chosen among these four:",
+    "plan": "Plan a build with {name}"
   },
   "hero": {
-    "title": "todo",
-    "description": "todo",
-    "intro": "todo"
+    "title": "Hero of Far Far West : upgrades and jokers",
+    "description": "The hero in Far Far West : it's {upgrades} upgrades and the {jokers} hero jokers, with their costs and effects.",
+    "intro": "The hero has it's own level, upgrade points and joker slot, like the weapons."
   },
   "utility": {
-    "title": "todo",
-    "description": "todo",
-    "intro": "todo",
-    "others": "todo"
+    "title": "{name} : utility of Far Far West",
+    "description": "{name}, utility of Far Far West : {effect}",
+    "intro": "Utility does not have upgrades or jokers.",
+    "others": "Other utilities"
   },
   "spells": {
-    "title": "todo",
-    "description": "todo",
-    "heading": "todo",
-    "intro": "todo",
-    "cooldown": "todo",
-    "cooldownNote": "todo",
-    "spell": "todo"
+    "title": "Spells of Far Far West : the {schools} schools and {count} spells",
+    "description": "The {count} spells of Far Far West in {schools} schools, with their effects and cooldowns.",
+    "heading": "Spells",
+    "intro": "A build has up to 3 spells, no duplicates. Each school has its own level: at level {level}, it unlocks its Mastery joker, which reduce the cooldown of the spells of that school.",
+    "cooldown": "Cooldown",
+    "cooldownNote": "Base cooldowns, without jokers or upgrades. They are not in the readable game files: they come from the community wikis.",
+    "spell": "Spell"
   },
   "school": {
-    "title": "todo",
-    "description": "todo",
-    "mastery": "todo",
-    "element": "todo",
-    "others": "todo"
+    "title": "{name} spells of Far Far West: {count} spells and cooldowns",
+    "description": "The {count} {name} spells of Far Far West, with their effects and cooldowns, and the {name} Mastery joker.",
+    "mastery": "Mastery joker",
+    "element": "Secondary weapon can also apply the {name} element on hit.",
+    "others": "Other schools"
   },
   "progression": {
     "title": "todo",
