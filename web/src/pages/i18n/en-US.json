@@ -29,8 +29,8 @@
     "missionOnly": "Only in mission"
   },
   "joker": {
-    "title": "Joker {title} - Far Far West : effect, cost and weapons",
-    "description": "{name}, joker {rarity} of Far Far West : {effect} costs {cost} slots",
+    "title": "Joker {name} - Far Far West : effect, cost and weapons",
+    "description": "{name}, joker {rarity} of Far Far West : {effect} costs {cost} slots.",
     "rarity": "Rarity",
     "cost": "Slot cost",
     "copies": "Max copies per carrier",
@@ -47,7 +47,7 @@
   },
   "weapons": {
     "title": "Every weapon in Far Far West : main, secondary and utility",
-    "description": "The {main} main weapons, {sidearms} secondary weapons and {utilities} utility of Far Far West, with their upgrades and jokers they can equip",
+    "description": "The {main} main weapons, {sidearms} secondary weapons and {utilities} utility of Far Far West, with their upgrades and jokers they can equip.",
     "heading": "Weapons",
     "intro": "A build has a main weapon, a secondary weapon with  its element, and a utility. The hero and each weapon have their own level, upgrade points and joker slots.",
     "main": "Main weapons",
@@ -57,7 +57,7 @@
   },
   "weapon": {
     "title": "{name} in Far Far West : jokers, upgrades and build",
-    "description": "Build {name} in Far Far West : it's {jokers} jokers compatible, their costs and effects, and it's {upgrades} upgrades",
+    "description": "Build {name} in Far Far West : it's {jokers} jokers compatible, their costs and effects, and it's {upgrades} upgrades.",
     "upgrades": "Upgrades",
     "upgradesIntro": "Up to {points} upgrade points : one every 2 levels until {fromLevels} to level {level}, plus {bought} buy with prestige",
     "stat": "Stat",
