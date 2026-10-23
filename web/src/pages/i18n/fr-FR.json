@@ -9,7 +9,7 @@
     "breadcrumbs": "Fil d'Ariane"
   },
   "language": "Langue : {name}",
-  "footer": "Données de Far Far West {version}, extraites des fichiers du jeu le {date}. Projet de fan, sans lien avec Evil Raptor : les noms et textes du jeu appartiennent à Evil Raptor.",
+  "footer": "Données de Far Far West {version}, extraites des fichiers du jeu le {date}. Projet de fan, sans lien avec Evil Raptor.",
   "updated": "À jour pour la version {version}.",
   "source": "Code source",
   "yes": "Oui",
