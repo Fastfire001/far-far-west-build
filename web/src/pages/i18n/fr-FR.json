@@ -105,7 +105,7 @@
     "heading": "Progression",
     "intro": "Le héros, chaque arme principale et chaque arme secondaire montent de niveau séparément, de 1 à {max}. Leur niveau débloque des emplacements de jokers et des points d'amélioration ; la boutique de prestige en ajoute quelques-uns.",
     "slotsTitle": "Emplacements de jokers",
-    "slotsText": "{fromLevels} emplacements de jokers se débloquent avec les niveaux, le dernier au niveau {max}. {bought} de plus s'achètent à la boutique de prestige : {total} emplacements par porteur.",
+    "slotsText": "{fromLevels} emplacements de jokers se débloquent avec les niveaux, le dernier au niveau {max}. {bought} de plus se débloquent avec les prestige : {total} emplacements par porteur.",
     "slot": "Emplacement",
     "level": "Niveau",
     "pointsTitle": "Points d'amélioration",
