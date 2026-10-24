@@ -20,7 +20,7 @@
     "title": "Far Far West jokers list : the {count} jokers, costs and effects",
     "description": "Every joker in Far Far West: rarity, slot cost, max copies, effect and the weapons it fits, extracted from the game files.",
     "heading": "Jokers",
-    "intro": "The {count} jokers of the game, by rarity. The hero, the main weapon and the secondary weapon each have their own joker slots: 14 unlocked by levels, plus 2 bought at the prestige shop. A joker costs as many slots as the dots on its card.",
+    "intro": "The {count} jokers of the game, by rarity. The hero, the main weapon and the sidearm each have their own joker slots: 14 unlocked by levels, plus 2 bought at the prestige shop. A joker costs as many slots as the dots on its card.",
     "joker": "Joker",
     "cost": "Slots",
     "copies": "Max",
@@ -46,12 +46,12 @@
     "others": "Other {rarity} jokers"
   },
   "weapons": {
-    "title": "Every weapon in Far Far West : main, secondary and utility",
-    "description": "The {main} main weapons, {sidearms} secondary weapons and {utilities} utilities of Far Far West, with their upgrades and the jokers they can equip.",
+    "title": "Every weapon in Far Far West : main weapons, sidearms and utilities",
+    "description": "The {main} main weapons, {sidearms} sidearms and {utilities} utilities of Far Far West, with their upgrades and the jokers they can equip.",
     "heading": "Weapons",
-    "intro": "A build has a main weapon, a secondary weapon with its element, and a utility. The hero and each weapon have their own level, upgrade points and joker slots.",
+    "intro": "A build has a main weapon, a sidearm with its element, and a utility. The hero and each weapon have their own level, upgrade points and joker slots.",
     "main": "Main weapons",
-    "sidearm": "Secondary weapons",
+    "sidearm": "Sidearms",
     "utility": "Utilities",
     "hero": "Hero"
   },
@@ -69,7 +69,7 @@
     "uniqueIntro": "The Unique jokers belong to this weapon : each one is unlocked by reaching a weapon level.",
     "level": "Level",
     "elements": "Elements",
-    "elementsIntro": "A secondary weapon applies an element on hit, chosen among these four:",
+    "elementsIntro": "A sidearm applies an element on hit, chosen among these four:",
     "plan": "Plan a build with {name}"
   },
   "hero": {
@@ -96,14 +96,14 @@
     "title": "{name} spells of Far Far West: {count} spells and cooldowns",
     "description": "The {count} {name} spells of Far Far West, with their effects and cooldowns, and the {name} Mastery joker.",
     "mastery": "Mastery joker",
-    "element": "Secondary weapons can also apply the {name} element on hit.",
+    "element": "Sidearms can also apply the {name} element on hit.",
     "others": "Other schools"
   },
   "progression": {
     "title": "Progression in Far Far West : joker slots, upgrade points and prestige",
     "description": "Levels of the joker slots, upgrade points, prestige and the number of prestiges needed for a maxed-out build in Far Far West.",
     "heading": "Progression",
-    "intro": "The hero, each main weapon and each secondary weapon level up on their own, from 1 to {max}. Their level unlocks joker slots and upgrade points; the prestige adds a few more.",
+    "intro": "The hero, each main weapon and each sidearm level up on their own, from 1 to {max}. Their level unlocks joker slots and upgrade points; the prestige adds a few more.",
     "slotsTitle": "Joker slots",
     "slotsText": "{fromLevels} joker slots unlock with levels, the last one at level {max}. {bought} more to unlock with the prestige : {total} slots per carrier.",
     "slot": "Slot",
