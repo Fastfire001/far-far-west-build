@@ -1,4 +1,4 @@
-"""Generates one SVG icon per element of data/ in assets/icons/<id>.svg: jokers, upgrades, equipment, spell
+"""Generates one SVG icon per element of data/ in assets/ai/icons/<id>.svg: jokers, upgrades, equipment, spell
 schools and spells, plus the hero (itemHero).
 
 Usage: python3 scripts/build_icons.py <data_dir> <out_dir>

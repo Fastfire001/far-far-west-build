@@ -36,7 +36,9 @@ describe('content pages', () => {
 
   it('links only to pages, icons and assets that exist', () => {
     const icons = new Set(
-      Object.keys(import.meta.glob('../../../assets/icons/*.svg')).map((f) => `${options.base}icons/${f.split('/').pop()}`),
+      Object.keys(import.meta.glob(['../../../assets/ai/icons/*.svg', '../../../assets/icons/*.svg'])).map(
+        (f) => `${options.base}icons/${f.split('/').pop()}`,
+      ),
     )
     const assets = new Set([`${options.base}pages/style.css`, `${options.base}og-image.png`])
     for (const [url, page] of rendered) {

@@ -1,7 +1,7 @@
 // Static content pages (src/pages/, see docs/build-planner.md, "Content pages"): rendered into the built site with
-// the sitemap, their stylesheet, font and icons; served on request by the dev server. Also fills in the static part
+// the sitemap, their stylesheet, font, icons and link preview image; served on request by the dev server. Also fills in the static part
 // of index.html (game version, links to the pages).
-import { readdirSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { runnerImport, type Plugin, type ResolvedConfig, type ViteDevServer } from 'vite'
 
@@ -23,7 +23,20 @@ interface SiteModule {
   homeContent(options: SiteOptions): { gameVersion: string; links: string }
 }
 
-const TYPES: Record<string, string> = { css: 'text/css', svg: 'image/svg+xml', woff2: 'font/woff2' }
+const TYPES: Record<string, string> = { css: 'text/css', svg: 'image/svg+xml', png: 'image/png', woff2: 'font/woff2' }
+
+/** Images of assets/, by path from it: the hand-drawn ones replace the AI-generated ones of assets/ai/ (same path). */
+function images(): Map<string, string> {
+  const files = new Map<string, string>()
+  for (const dir of ['ai/', '']) {
+    for (const name of ['og-image.png', ...readdirIfExists(`${dir}icons`).map((f) => `icons/${f}`)]) {
+      if (existsSync(path(`../assets/${dir}${name}`))) files.set(name, path(`../assets/${dir}${name}`))
+    }
+  }
+  return files
+}
+
+const readdirIfExists = (dir: string) => (existsSync(path(`../assets/${dir}`)) ? readdirSync(path(`../assets/${dir}`)) : [])
 
 /** Files the pages use besides themselves, by path from the root of the site. */
 function assets(): Map<string, () => string | Buffer> {
@@ -31,9 +44,7 @@ function assets(): Map<string, () => string | Buffer> {
     ['pages/style.css', () => readFileSync(path('./src/styles/main.css'), 'utf8') + readFileSync(path('./src/pages/pages.css'), 'utf8')],
     ['pages/oswald.woff2', () => readFileSync(path('./node_modules/@fontsource-variable/oswald/files/oswald-latin-wght-normal.woff2'))],
   ])
-  for (const name of readdirSync(path('../assets/icons/'))) {
-    files.set(`icons/${name}`, () => readFileSync(path(`../assets/icons/${name}`)))
-  }
+  for (const [name, file] of images()) files.set(name, () => readFileSync(file))
   return files
 }
 

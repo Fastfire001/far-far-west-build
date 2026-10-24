@@ -17,7 +17,7 @@ services:
       - ./.cache/game:/out
       - ./.cache/oodle:/cache
 
-  # Vue app (web/). The whole repo is mounted: the app reads data/ and assets/icons/ directly.
+  # Vue app (web/). The whole repo is mounted: the app reads data/ and assets/ directly.
   web:
     build: web
     user: "${UID:-1000}:${GID:-1000}"

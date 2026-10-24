@@ -24,7 +24,7 @@ The application (Vue 3 + TypeScript + Vite) is in `web/`. Every push to `main` d
 
 ## Game data
 
-The game data (`data/*.json`) is extracted from the installed game files; the icons (`assets/icons/`) are generated
+The game data (`data/*.json`) is extracted from the installed game files; the icons (`assets/ai/icons/`) are generated
 from it. Both are committed, so you only need the game to update them after a game update:
 
 ```sh
@@ -46,7 +46,7 @@ Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-The code, the documentation and the icons (`assets/icons/`) are under the [MIT License](LICENSE).
+The code, the documentation and the images (`assets/`) are under the [MIT License](LICENSE).
 
 The game texts in `data/` (item names and descriptions, menu labels and their official translations) belong to
 Evil Raptor and are **not** covered by this license: they are included only so that the planner can show what the
