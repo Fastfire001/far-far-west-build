@@ -8,7 +8,7 @@
   Business logic (validation, level and prestiges, export) is not: it is written as pure TypeScript functions in
   `web/src/domain/`, without Vue or Pinia, so that it can be tested on its own.
 - TypeScript stays on 6.x: vue-tsc does not work with TypeScript 7 yet.
-- Data and icons are read directly from `data/` and `assets/icons/`: no copy to keep in sync. Each
+- Data and images are read directly from `data/` and `assets/`: no copy to keep in sync. Each
   `data/i18n/<language>.json` file becomes a separate JS chunk, loaded only when that language is picked.
 - Icons stay separate files in the build (`assetsInlineLimit: 0`) instead of being inlined in the JS.
 
@@ -129,16 +129,29 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   French under `fr/` (`LOCALE_PREFIXES` in `src/pages/routes.ts`), linked together with `hreflang`. Names and
   descriptions come from the game's translations. The planner links to the English pages in the other languages.
 - Rendered with the planner's own data and rules (`src/domain/`), the game's menu labels (rarity names), the
-  generated icons (copied to `icons/<id>.svg`) and the planner's stylesheet (`src/styles/main.css`, followed by
+  icons (copied to `icons/<id>.svg`, see "Images") and the planner's stylesheet (`src/styles/main.css`, followed by
   `src/pages/pages.css`, published as `pages/style.css`).
 - Each page links to the planner. Weapon and utility pages open it on a build with that item, through a share link.
   The planner links back to the pages in its footer, in the current language.
 - About 180 pages per language, so about 360 files in the built site.
 
-## Icons
+## Images
 
-- One SVG icon per item, named after its id: `assets/icons/<id>.svg` (jokers, upgrades, equipment, schools, spells,
-  and `itemHero` for the hero). Since the id is stable, the interface finds the icon without a lookup table.
+- **AI-made images are being replaced by hand-made ones.** Every AI-made image is in `assets/ai/` (today all of
+  them: the icons and `og-image.png`, the link preview image). A hand-made image goes at the same path without `ai/`
+  (`assets/icons/weapons/itemPistol.svg` replaces `assets/ai/icons/weapons/itemPistol.svg`, `assets/og-image.png`
+  replaces `assets/ai/og-image.png`) and is used instead, by the planner (`src/icons.ts`) and the content pages
+  (`vite-plugin-content-pages.ts`), which publish both at the same URL (`icons/<id>.svg`, `og-image.png`). Once
+  every image has its replacement, `assets/ai/` and `scripts/build_icons.py` can be deleted.
+- The favicon is written as a path in `web/index.html` (`assets/ai/icons/hero/itemHero.svg`): update it when the hero
+  icon is replaced.
+
+### Icons
+
+- One SVG icon per item, named after its id, in a folder per type of item: `assets/ai/icons/<type>/<id>.svg`, with
+  `hero` (`itemHero`), `weapons` (main weapons and sidearms), `utilities`, `jokers`, `upgrades`, `schools` and
+  `spells`. Since the id is stable and unique (checked by the tests), the interface finds the icon by its id alone,
+  whatever its folder, without a lookup table, and the site publishes it as `icons/<id>.svg`.
 - They are **original drawings**, not the game's or the wiki's art (which belongs to Evil Raptor). They follow the
   game's visual codes: jokers as cards in their rarity color with one dot per slot, spells and schools as badges in
   the school color (`data/manual.json`), equipment as silhouettes, upgrades as hexagons in the color of their stat in the game (the

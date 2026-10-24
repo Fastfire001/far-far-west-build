@@ -1,5 +1,5 @@
 #!/bin/sh
-# Updates data/*.json from the local game install, then the icons in assets/icons/.
+# Updates data/*.json from the local game install, then the icons in assets/ai/icons/.
 # The install path is read from FFW_GAME_DIR, set in the environment or in .env (see .env.example).
 set -eu
 cd "$(dirname "$0")/.."

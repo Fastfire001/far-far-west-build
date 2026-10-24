@@ -14,10 +14,13 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 - `tools/game-extract/`: C# extractor (CUE4Parse) that reads the game archives and writes the raw assets to
   `.cache/game/`.
 - `scripts/build_game_data.py`: decodes these assets and writes `data/` (Python, standard library only).
-- `assets/icons/<id>.svg`: one icon per item of `data/`, **generated** by `scripts/build_icons.py` (original
-  drawings, see "Icons" in `docs/build-planner.md`). Do not edit the SVGs by hand.
+- `assets/ai/`: every AI-made image, to be replaced one by one by hand-made ones (see "Images" in
+  `docs/build-planner.md`): `icons/<type>/<id>.svg`, one icon per item of `data/` sorted by type (`hero`,
+  `weapons`, `utilities`, `jokers`, `upgrades`, `schools`, `spells`), **generated** by `scripts/build_icons.py` (do
+  not edit the SVGs by hand), and `og-image.png` (link previews). `assets/icons/<type>/<id>.svg` and
+  `assets/og-image.png`: the hand-made replacements, used instead of the AI image with the same path.
 - `web/`: the application (Vue 3, TypeScript, Vite, Pinia, vue-i18n, Vitest tests). It reads `data/` (alias `@data`)
-  and `assets/icons/` directly. `src/domain/`: typed data and build rules, in plain TypeScript without Vue, so they
+  and `assets/` directly. `src/domain/`: typed data and build rules, in plain TypeScript without Vue, so they
   can be tested on their own. `src/stores/`: shared state (Pinia stores), which calls the functions of
   `src/domain/` without holding rules. `src/views/`: one screen per route of `src/router.ts` (vue-router in hash
   mode, see "Screens" in `docs/build-planner.md`); `src/components/`: shared pieces (menu bar, BACK button, wooden
@@ -39,7 +42,7 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 - `bin/extract-game`: regenerates all of `data/` from the installed game, then the icons. Needs Docker (under WSL,
   Docker Desktop must be running) and `FFW_GAME_DIR` (in `.env`, see `.env.example`). Run it again after each game
   update.
-- `bin/build-icons`: regenerates only `assets/icons/` from `data/` (to tweak the icons).
+- `bin/build-icons`: regenerates only `assets/ai/icons/` from `data/` (to tweak the icons).
 - `bin/dev`: Vite dev server (http://localhost:5173/). `bin/test`: unit tests (`bin/test --watch`).
   `bin/build-site`: type check and build of the site into `web/dist/`.
 - `bin/web <command>`: runs a command in the Node container, for instance `bin/web npm install <package>`. Installs
@@ -61,6 +64,7 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
   go into `data/`.
 - Items are referenced by their internal game id (`itemPistol`, `jokerCrackShot`), never by their displayed name.
 - No art from the game or the wiki in the repo (icons, images, textures): icons are original drawings.
+- Every AI-made image goes in `assets/ai/`, never elsewhere; Claude never adds or edits an image outside it.
 
 ## Game files
 
