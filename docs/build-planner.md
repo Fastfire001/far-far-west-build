@@ -121,8 +121,7 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
 
 - **Pages**: `jokers/` (all jokers by rarity) and `jokers/<joker>/`; `weapons/` (hero, weapons, utilities),
   `weapons/<weapon>/` (upgrades, Unique jokers with their level, all compatible jokers, elements of a sidearm),
-  `hero/`, `utilities/<utility>/`; `spells/` and `spells/<school>/` (spells, cooldowns, Mastery joker);
-  `progression/` (joker slots by level, upgrade points, prestige shop, prestiges needed, from `src/domain/rules.ts`).
+  `hero/`, `utilities/<utility>/`; `spells/` and `spells/<school>/` (spells, cooldowns, Mastery joker).
 - **URLs from the English name** (`jokers/crackshot/`, `weapons/leveredge/`), not the internal id: they contain the
   words players search for. If the game renames an item, its URL changes. The tests check that every slug is unique
   and that every internal link leads to a page.
