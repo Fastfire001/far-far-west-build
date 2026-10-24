@@ -9,7 +9,7 @@
     "breadcrumbs": "Breadcrumbs"
   },
   "language": "Language: {name}",
-  "footer": "Data of Far Far West {version}, extracted from the game file on {date}. Fan project, not affiliated with Evil Raptor.",
+  "footer": "Data of Far Far West {version}, extracted from the game files on {date}. Fan project, not affiliated with Evil Raptor.",
   "updated": "Up to date with version {version}",
   "source": "Source code",
   "yes": "Yes",
@@ -30,7 +30,7 @@
   },
   "joker": {
     "title": "Joker {name} - Far Far West : effect, cost and weapons",
-    "description": "{name}, joker {rarity} of Far Far West : {effect} costs {cost} slots.",
+    "description": "{name}, a {rarity} joker in Far Far West : {effect} Costs {cost} slots.",
     "rarity": "Rarity",
     "cost": "Slot cost",
     "copies": "Max copies per carrier",
@@ -39,17 +39,17 @@
     "drop": "Can drop during a mission",
     "on": "Equipped on",
     "unlock": "How to obtain it",
-    "unlockUnique": "Reach the level {level} with the {weapon}, then buy it in the lobby.",
-    "unlockMastery": "Reach the level {level} in the {school} school.",
+    "unlockUnique": "Reach level {level} with the {weapon}, then buy it in the lobby.",
+    "unlockMastery": "Reach level {level} in the {school} school.",
     "unlockChallenge": "Unlocked by a challenge in game.",
     "missionOnly": "This joker cannot be equipped in the lobby : it drops only in missions, does not count in joker slots and disappears when the mission ends.",
     "others": "Other {rarity} jokers"
   },
   "weapons": {
     "title": "Every weapon in Far Far West : main, secondary and utility",
-    "description": "The {main} main weapons, {sidearms} secondary weapons and {utilities} utility of Far Far West, with their upgrades and jokers they can equip.",
+    "description": "The {main} main weapons, {sidearms} secondary weapons and {utilities} utilities of Far Far West, with their upgrades and the jokers they can equip.",
     "heading": "Weapons",
-    "intro": "A build has a main weapon, a secondary weapon with  its element, and a utility. The hero and each weapon have their own level, upgrade points and joker slots.",
+    "intro": "A build has a main weapon, a secondary weapon with its element, and a utility. The hero and each weapon have their own level, upgrade points and joker slots.",
     "main": "Main weapons",
     "sidearm": "Secondary weapons",
     "utility": "Utilities",
@@ -57,16 +57,16 @@
   },
   "weapon": {
     "title": "{name} in Far Far West : jokers, upgrades and build",
-    "description": "Build {name} in Far Far West : it's {jokers} jokers compatible, their costs and effects, and it's {upgrades} upgrades.",
+    "description": "Build {name} in Far Far West : its {jokers} compatible jokers, their costs and effects, and its {upgrades} upgrades.",
     "upgrades": "Upgrades",
-    "upgradesIntro": "Up to {points} upgrade points : one every 2 levels until {fromLevels} to level {level}, plus {bought} buy with prestige",
+    "upgradesIntro": "Up to {points} upgrade points : one every 2 levels up to {fromLevels} at level {level}, plus {bought} bought at the prestige shop.",
     "stat": "Stat",
     "perPoint": "Per point",
-    "maxPoints": "Max ponts",
+    "maxPoints": "Max points",
     "maxBonus": "Max bonus",
     "jokers": "Jokers ({count})",
     "unique": "Unique jokers",
-    "uniqueIntro": "The unique joker belong to this weapon : each one is unlocked by reaching a weapon level.",
+    "uniqueIntro": "The Unique jokers belong to this weapon : each one is unlocked by reaching a weapon level.",
     "level": "Level",
     "elements": "Elements",
     "elementsIntro": "A secondary weapon applies an element on hit, chosen among these four:",
@@ -74,20 +74,20 @@
   },
   "hero": {
     "title": "Hero of Far Far West : upgrades and jokers",
-    "description": "The hero in Far Far West : it's {upgrades} upgrades and the {jokers} hero jokers, with their costs and effects.",
-    "intro": "The hero has it's own level, upgrade points and joker slot, like the weapons."
+    "description": "The hero in Far Far West : its {upgrades} upgrades and the {jokers} hero jokers, with their costs and effects.",
+    "intro": "The hero has its own level, upgrade points and joker slots, like the weapons."
   },
   "utility": {
     "title": "{name} : utility of Far Far West",
     "description": "{name}, utility of Far Far West : {effect}",
-    "intro": "Utility does not have upgrades or jokers.",
+    "intro": "Utilities have no upgrades or jokers.",
     "others": "Other utilities"
   },
   "spells": {
     "title": "Spells of Far Far West : the {schools} schools and {count} spells",
     "description": "The {count} spells of Far Far West in {schools} schools, with their effects and cooldowns.",
     "heading": "Spells",
-    "intro": "A build has up to 3 spells, no duplicates. Each school has its own level: at level {level}, it unlocks its Mastery joker, which reduce the cooldown of the spells of that school.",
+    "intro": "A build has up to 3 spells, no duplicates. Each school has its own level: at level {level}, it unlocks its Mastery joker, which reduces the cooldown of the spells of that school.",
     "cooldown": "Cooldown",
     "cooldownNote": "Base cooldowns, without jokers or upgrades. They are not in the readable game files: they come from the community wikis.",
     "spell": "Spell"
@@ -96,7 +96,7 @@
     "title": "{name} spells of Far Far West: {count} spells and cooldowns",
     "description": "The {count} {name} spells of Far Far West, with their effects and cooldowns, and the {name} Mastery joker.",
     "mastery": "Mastery joker",
-    "element": "Secondary weapon can also apply the {name} element on hit.",
+    "element": "Secondary weapons can also apply the {name} element on hit.",
     "others": "Other schools"
   },
   "progression": {
@@ -119,7 +119,7 @@
     "token": "{n} token",
     "jokerSlot": "Joker slot",
     "upgradePoint": "Upgrade point",
-    "resources": "Ticket XP, 500 gold or 1000 souls",
+    "resources": "XP ticket, 500 gold or 1000 souls",
     "unlimited": "Unlimited",
     "neededTitle": "Prestiges needed",
     "neededText": "Tokens add up from one prestige to the next, so the prestiges needed are the total cost divided by {tokens}, rounded up. A maxed-out carrier ({slots} slots and {points} points bought) needs {prestiges} prestiges.",

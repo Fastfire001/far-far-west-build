@@ -13,8 +13,8 @@
     "unavailable": "Save unavailable"
   },
   "home": {
-    "untitled": "Build without name",
-    "rename": "Build's name",
+    "untitled": "Untitled build",
+    "rename": "Build name",
     "chooseMain": "Choose a main weapon",
     "chooseSidearm": "Choose a secondary weapon",
     "chooseUtility": "Choose a utility",
@@ -33,7 +33,7 @@
     "missing_element": "No element chosen for the secondary weapon",
     "missing_utility": "No utility chosen",
     "missing_spell": "Spell slot [{key}] is empty",
-    "unknown_id": "Unknown item {name} (remove from the game ?)",
+    "unknown_id": "Unknown item {name} (removed from the game?)",
     "wrong_item": "{name} can't be used here",
     "duplicate_spell": "{name} is equipped several times",
     "joker_incompatible": "{name} can't be equipped on {carrier}",
@@ -56,7 +56,7 @@
     "jokerSlots": "{used}/{max} slots",
     "prestigeSlot": "Slot bought with prestige",
     "addPoint": "Add a point to {name}",
-    "removePoint": "Remove a point to {name}",
+    "removePoint": "Remove a point from {name}",
     "setPoints": "{name} : {n} points"
   },
   "jokers": {
@@ -65,7 +65,7 @@
     "noResult": "No joker matches.",
     "noRoom": "Not enough slots ({cost} needed)",
     "cost": "Costs {n} slots | Costs 1 slot | Costs {n} slots",
-    "removeHint": "Click on a equipped joker to remove it"
+    "removeHint": "Click on an equipped joker to remove it"
   },
   "spells": {
     "hint": "Click on a spell, then on a slot. Click on a slot to remove it.",
@@ -74,30 +74,30 @@
   "dialog": {
     "close": "Close",
     "exportTitle": "Share the build",
-    "linkHelp": "Send this link : it opens the build in the planner, which add it to the builds of whoever opens it.",
+    "linkHelp": "Send this link : it opens the build in the planner, which adds it to the builds of whoever opens it.",
     "exportHelp": "Or copy this text, to paste it in the planner with Import.",
     "copy": "Copy",
     "copyLink": "Copy the link",
     "copied": "Copied !",
     "importTitle": "Import a build",
-    "importHelp": "Paste the text of an exported build (it start with FFW1:). It's added to your builds.",
+    "importHelp": "Paste the text of an exported build (it starts with FFW1:). It's added to your builds.",
     "import": "Import",
     "importError": {
-      "prefix": "This is not a exported build : the text must start with FFW1:.",
+      "prefix": "This is not an exported build : the text must start with FFW1:.",
       "encoding": "The text is incomplete or corrupted.",
-      "format": "The text does not contain a  build.",
+      "format": "The text does not contain a build.",
       "version": "This build comes from a newer version of the planner."
     }
   },
   "builds": {
     "title": "My builds",
     "current": "Current",
-    "updated": "Updated at {date}",
+    "updated": "Updated on {date}",
     "duplicate": "Duplicate",
     "delete": "Delete",
     "copyName": "{name} (copy)",
-    "confirmDelete": "Remove the build « {name} » ? it's definitive.",
-    "unavailable": "Your brower does not allow save : the builds will be lost when the page is closed."
+    "confirmDelete": "Delete the build \"{name}\"? This cannot be undone.",
+    "unavailable": "Your browser does not allow saving : the builds will be lost when the page is closed."
   },
   "share": {
     "invalidTitle": "Share link invalid"
@@ -105,8 +105,8 @@
   "guides": {
     "label": "Game guides",
     "jokers": "All jokers",
-    "weapons": "Weapon and their jokers",
+    "weapons": "Weapons and their jokers",
     "spells": "Spells and cooldowns",
-    "progression": "Jokers slots and prestige"
+    "progression": "Joker slots and prestige"
   }
 }
