@@ -1,6 +1,6 @@
-// Two kinds of texts: the planner's own interface (src/i18n/ui/<locale>.json, translated by us, English fallback) and the game
-// texts (official translations from data/i18n/, see stores/language.ts). The game's menu labels (data/i18n/ui/)
-// are merged into the interface messages under the "game" key: t('game.back').
+// Two kinds of texts: the planner's own interface (src/i18n/ui/<locale>.json, ours, written by hand in English and
+// French only, English fallback) and the game texts (official translations from data/i18n/, see stores/language.ts).
+// The game's menu labels (data/i18n/ui/) are merged into the interface messages under the "game" key: t('game.back').
 import { createI18n } from 'vue-i18n'
 import gameUiEn from '@data/i18n/ui/en-US.json'
 import languageNames from '@data/i18n/languages.json'

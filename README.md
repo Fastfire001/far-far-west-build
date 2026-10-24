@@ -1,8 +1,8 @@
 # far-far-west-build
 
 Build planner for [Far Far West](https://store.steampowered.com/app/3124540/Far_Far_West): plan the hero, weapons,
-jokers, upgrades and spells of a build, check that it is valid, and see the level and prestiges it needs. Available
-in the game's 15 languages.
+jokers, upgrades and spells of a build, check that it is valid, and see the level and prestiges it needs. Game texts
+in the game's 15 languages, the planner's own texts in English and French.
 
 Live site: https://fastfire001.github.io/far-far-west-build/
 

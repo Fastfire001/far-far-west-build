@@ -21,9 +21,9 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
   can be tested on their own. `src/stores/`: shared state (Pinia stores), which calls the functions of
   `src/domain/` without holding rules. `src/views/`: one screen per route of `src/router.ts` (vue-router in hash
   mode, see "Screens" in `docs/build-planner.md`); `src/components/`: shared pieces (menu bar, BACK button, wooden
-  plank). `src/i18n/`: interface texts (`ui/<language>.json`, our own translations), completed by the game's labels
+  plank). `src/i18n/`: interface texts (`ui/<language>.json`, ours, English and French only), completed by the game's labels
   (`data/i18n/ui/`, key `game`); the game texts are loaded on demand from `data/i18n/` by the `language` store.
-  `src/pages/`: the static content pages (jokers, weapons, spells, progression, in 15 languages), rendered to HTML
+  `src/pages/`: the static content pages (jokers, weapons, spells, progression, in English and French), rendered to HTML
   at build time by `vite-plugin-content-pages.ts` (see "Content pages" in `docs/build-planner.md`).
 - `.github/workflows/deploy.yml`: deploys the site to GitHub Pages on every push to `main`.
 - `bin/`: commands to run from the host. Each one runs its script in a Docker container from `compose.yaml` (`app`
@@ -49,8 +49,14 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 
 - Every new script is run through an entry in `bin/` that runs it in a container, like `bin/extract-game`.
 - Containers run as the host user: generated files must not belong to root.
-- Everything in English: documentation, README, code and comments. Only our interface and page translations
-  (`web/src/i18n/ui/`, `web/src/pages/i18n/`, 15 languages) and the game's translations are in other languages.
+- Everything in English: documentation, README, code and comments. Only our French interface and page texts
+  (`web/src/i18n/ui/`, `web/src/pages/i18n/`) and the game's translations are in other languages.
+- **No text written or translated by AI in `web/src/i18n/ui/` and `web/src/pages/i18n/`** (request of the game's
+  team, 2026-10-22), in any language, English included. These files exist only in English and French, written by
+  hand by the maintainer; a text not written yet is `"todo"`. When Claude adds a key, it sets `"todo"` in
+  `en-US.json`, adds nothing to `fr-FR.json`, and tells the user which keys to write. It never replaces a `"todo"`,
+  never edits an existing text, and never adds another language. English stays the fallback, even while it says
+  `"todo"`. Only the game's official translations (`data/i18n/`) are in the other languages.
 - Files extracted from the game stay in `.cache/`: never version or publish them. Only the values the planner needs
   go into `data/`.
 - Items are referenced by their internal game id (`itemPistol`, `jokerCrackShot`), never by their displayed name.

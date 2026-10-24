@@ -1,15 +1,15 @@
-// All the static content pages, in every language, and the sitemap (see docs/build-planner.md, "Content pages").
+// All the static content pages, in each of their languages, and the sitemap (see docs/build-planner.md, "Content pages").
 // Rendered at build time by the contentPages Vite plugin (vite-plugin-content-pages.ts), and on request by the dev
 // server.
 import { equipment, gameMeta, spellSchools, type Equipment } from '@/domain/gameData'
-import { DEFAULT_LOCALE, LOCALES } from '@/i18n'
+import { DEFAULT_LOCALE } from '@/i18n'
 import { contextFor, type Page, type SiteOptions } from './context'
 import { html } from './html'
 import { jokerPages } from './jokerPages'
 import { renderDocument } from './layout'
 import { itemPath } from './parts'
 import { progressionPage } from './progressionPage'
-import { pagePath } from './routes'
+import { PAGE_LOCALES, pagePath } from './routes'
 import { spellPages } from './spellPages'
 import { weaponPages } from './weaponPages'
 
@@ -26,7 +26,7 @@ export interface SiteFile {
 }
 
 export function siteFiles(options: SiteOptions): SiteFile[] {
-  return LOCALES.flatMap((locale) => {
+  return PAGE_LOCALES.flatMap((locale) => {
     const ctx = contextFor(locale, options)
     return PAGES.map((page) => ({
       file: `${pagePath(locale, page.path)}index.html`,
@@ -38,7 +38,7 @@ export function siteFiles(options: SiteOptions): SiteFile[] {
 
 /** sitemap.xml: the planner and every content page. The languages of each page are given in the pages themselves. */
 export function sitemap(options: SiteOptions): string {
-  const urls = [options.siteUrl, ...LOCALES.flatMap((l) => PAGES.map((page) => options.siteUrl + pagePath(l, page.path)))]
+  const urls = [options.siteUrl, ...PAGE_LOCALES.flatMap((l) => PAGES.map((page) => options.siteUrl + pagePath(l, page.path)))]
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((url) => `  <url><loc>${url}</loc></url>`).join('\n')}

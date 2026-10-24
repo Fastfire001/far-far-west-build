@@ -52,7 +52,7 @@ export function plain(text: string): string {
 }
 
 /** Languages that capitalize every word of a name; the others only capitalize the first one. */
-const TITLE_CASE_LOCALES = new Set(['en-US', 'de-DE'])
+const TITLE_CASE_LOCALES = new Set(['en-US'])
 
 /** A card name in upper case, as on the game's cards, in normal case for titles and descriptions: DEATH'S DANCE →
  * Death's Dance, RUÉE DU PRÉCIEUX → Ruée du précieux. */

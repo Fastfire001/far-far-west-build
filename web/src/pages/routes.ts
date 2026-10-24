@@ -1,28 +1,19 @@
 // URLs of the static content pages (see docs/build-planner.md, "Content pages"): English at the root of the site,
-// the other languages under a prefix (/fr/jokers/). Also used by the planner to link to the pages.
-import type { Locale } from '@/i18n'
+// French under a prefix (/fr/jokers/). Also used by the planner to link to the pages.
+import { DEFAULT_LOCALE, type Locale } from '@/i18n'
 
-export const LOCALE_PREFIXES: Record<Locale, string> = {
+/** The languages of the content pages (those of our page texts, pages/i18n/), with their URL prefix. */
+export const LOCALE_PREFIXES: Partial<Record<Locale, string>> = {
   'en-US': '',
-  'de-DE': 'de',
-  'es-419': 'es-419',
-  'es-ES': 'es',
   'fr-FR': 'fr',
-  'it-IT': 'it',
-  'ja-JP': 'ja',
-  'ko-KR': 'ko',
-  'pl-PL': 'pl',
-  'pt-BR': 'pt-br',
-  'ru-RU': 'ru',
-  'tr-TR': 'tr',
-  'uk-UA': 'uk',
-  'zh-CN': 'zh-cn',
-  'zh-TW': 'zh-tw',
 }
 
-/** Path of a page from the root of the site, e.g. pagePath('fr-FR', 'jokers/') → 'fr/jokers/'. */
+export const PAGE_LOCALES = Object.keys(LOCALE_PREFIXES) as Locale[]
+
+/** Path of a page from the root of the site, e.g. pagePath('fr-FR', 'jokers/') → 'fr/jokers/'. The English page for a
+ * language without pages. */
 export function pagePath(locale: Locale, path: string): string {
-  const prefix = LOCALE_PREFIXES[locale]
+  const prefix = LOCALE_PREFIXES[locale] ?? LOCALE_PREFIXES[DEFAULT_LOCALE]
   return prefix ? `${prefix}/${path}` : path
 }
 
