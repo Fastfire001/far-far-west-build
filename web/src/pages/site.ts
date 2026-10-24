@@ -8,14 +8,13 @@ import { html } from './html'
 import { jokerPages } from './jokerPages'
 import { renderDocument } from './layout'
 import { itemPath } from './parts'
-import { progressionPage } from './progressionPage'
 import { PAGE_LOCALES, pagePath } from './routes'
 import { spellPages } from './spellPages'
 import { weaponPages } from './weaponPages'
 
 export type { SiteOptions }
 
-export const PAGES: Page[] = [...jokerPages, ...weaponPages, ...spellPages, progressionPage]
+export const PAGES: Page[] = [...jokerPages, ...weaponPages, ...spellPages]
 
 export interface SiteFile {
   /** Path of the file from the root of the built site: 'fr/jokers/index.html'. */

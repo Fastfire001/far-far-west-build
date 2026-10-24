@@ -10,7 +10,7 @@ const language = useLanguageStore()
 
 // The static content pages (src/pages/), in the current language.
 const guides = computed(() =>
-  (['jokers', 'weapons', 'spells', 'progression'] as const).map((key) => ({
+  (['jokers', 'weapons', 'spells'] as const).map((key) => ({
     key,
     href: import.meta.env.BASE_URL + pagePath(language.locale, `${key}/`),
   })),

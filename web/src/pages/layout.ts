@@ -10,7 +10,6 @@ const SECTIONS = [
   ['jokers', 'jokers/'],
   ['weapons', 'weapons/'],
   ['spells', 'spells/'],
-  ['progression', 'progression/'],
 ] as const
 
 /** Open Graph locale: fr_FR, es_419... */

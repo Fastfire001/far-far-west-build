@@ -62,6 +62,6 @@ describe('content pages', () => {
   it('lists the planner and every page in the sitemap', () => {
     const xml = sitemap(options)
     expect(xml.match(/<loc>/g)).toHaveLength(files.length + 1)
-    expect(xml).toContain('<loc>https://example.org/far-far-west-build/fr/progression/</loc>')
+    expect(xml).toContain('<loc>https://example.org/far-far-west-build/fr/spells/</loc>')
   })
 })
