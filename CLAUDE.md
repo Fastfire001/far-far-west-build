@@ -15,8 +15,9 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
   `.cache/game/`.
 - `scripts/build_game_data.py`: decodes these assets and writes `data/` (Python, standard library only).
 - `assets/ai/`: every AI-made image, to be replaced one by one by hand-made ones (see "Images" in
-  `docs/build-planner.md`): `icons/<id>.svg`, one icon per item of `data/`, **generated** by `scripts/build_icons.py`
-  (do not edit the SVGs by hand), and `og-image.png` (link previews). `assets/icons/<id>.svg` and
+  `docs/build-planner.md`): `icons/<type>/<id>.svg`, one icon per item of `data/` sorted by type (`hero`,
+  `weapons`, `utilities`, `jokers`, `upgrades`, `schools`, `spells`), **generated** by `scripts/build_icons.py` (do
+  not edit the SVGs by hand), and `og-image.png` (link previews). `assets/icons/<type>/<id>.svg` and
   `assets/og-image.png`: the hand-made replacements, used instead of the AI image with the same path.
 - `web/`: the application (Vue 3, TypeScript, Vite, Pinia, vue-i18n, Vitest tests). It reads `data/` (alias `@data`)
   and `assets/` directly. `src/domain/`: typed data and build rules, in plain TypeScript without Vue, so they

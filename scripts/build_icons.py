@@ -1,5 +1,5 @@
-"""Generates one SVG icon per element of data/ in assets/ai/icons/<id>.svg: jokers, upgrades, equipment, spell
-schools and spells, plus the hero (itemHero).
+"""Generates one SVG icon per element of data/ in assets/ai/icons/<type>/<id>.svg: jokers, upgrades, weapons (main
+and sidearm), utilities, spell schools and spells, plus the hero (hero/itemHero.svg).
 
 Usage: python3 scripts/build_icons.py <data_dir> <out_dir>
 
@@ -873,19 +873,27 @@ require([s["id"] for s in spells["spells"]], SPELL_GLYPHS, "spells")
 require([j["id"] for j in jokers], JOKER_ART, "jokers")
 require([u["id"] for u in upgrades], UPGRADE_GLYPHS, "upgrades")
 
-icons = {"itemHero": tile_icon(EQUIPMENT_SILHOUETTES["itemHero"], "Hero")}
-icons.update({e["id"]: tile_icon(EQUIPMENT_SILHOUETTES[e["id"]], e["name"]) for e in equipment})
-icons.update({s["id"]: badge_icon(SCHOOL_COLORS[s["id"]], SCHOOL_GLYPHS[s["id"]], s["name"], double_ring=True)
+# Icons by folder (one per type of item) and by id.
+EQUIPMENT_FOLDERS = {"main": "weapons", "sidearm": "weapons", "utility": "utilities"}
+icons = {("hero", "itemHero"): tile_icon(EQUIPMENT_SILHOUETTES["itemHero"], "Hero")}
+icons.update({(EQUIPMENT_FOLDERS[e["type"]], e["id"]): tile_icon(EQUIPMENT_SILHOUETTES[e["id"]], e["name"])
+              for e in equipment})
+icons.update({("schools", s["id"]): badge_icon(SCHOOL_COLORS[s["id"]], SCHOOL_GLYPHS[s["id"]], s["name"], double_ring=True)
               for s in spells["schools"]})
-icons.update({s["id"]: badge_icon(SCHOOL_COLORS[s["school"]], SPELL_GLYPHS[s["id"]], s["name"]) for s in spells["spells"]})
-icons.update({j["id"]: joker_icon(j, JOKER_ART[j["id"]], JOKER_SCHOOLS.get(j["id"])) for j in jokers})
-icons.update({u["id"]: upgrade_icon(UPGRADE_GLYPHS[u["id"]], u["color"], u["name"]) for u in upgrades})
+icons.update({("spells", s["id"]): badge_icon(SCHOOL_COLORS[s["school"]], SPELL_GLYPHS[s["id"]], s["name"])
+              for s in spells["spells"]})
+icons.update({("jokers", j["id"]): joker_icon(j, JOKER_ART[j["id"]], JOKER_SCHOOLS.get(j["id"])) for j in jokers})
+icons.update({("upgrades", u["id"]): upgrade_icon(UPGRADE_GLYPHS[u["id"]], u["color"], u["name"]) for u in upgrades})
 
-os.makedirs(out_dir, exist_ok=True)
-for stale in os.listdir(out_dir):
-    if stale.endswith(".svg") and stale[:-4] not in icons:
-        os.remove(os.path.join(out_dir, stale))
-for icon_id, svg in icons.items():
-    with open(os.path.join(out_dir, icon_id + ".svg"), "w") as f:
+paths = {os.path.join(folder, icon_id + ".svg"): svg for (folder, icon_id), svg in icons.items()}
+for root, dirs, files in os.walk(out_dir, topdown=False):
+    for stale in files:
+        if stale.endswith(".svg") and os.path.relpath(os.path.join(root, stale), out_dir) not in paths:
+            os.remove(os.path.join(root, stale))
+    if root != out_dir and not os.listdir(root):
+        os.rmdir(root)
+for path, svg in paths.items():
+    os.makedirs(os.path.join(out_dir, os.path.dirname(path)), exist_ok=True)
+    with open(os.path.join(out_dir, path), "w") as f:
         f.write(svg)
-print(f"{len(icons)} icons written to {out_dir}")
+print(f"{len(paths)} icons written to {out_dir}")

@@ -25,18 +25,23 @@ interface SiteModule {
 
 const TYPES: Record<string, string> = { css: 'text/css', svg: 'image/svg+xml', png: 'image/png', woff2: 'font/woff2' }
 
-/** Images of assets/, by path from it: the hand-drawn ones replace the AI-generated ones of assets/ai/ (same path). */
+/**
+ * Images of assets/, by path in the site: the hand-drawn ones replace the AI-generated ones of assets/ai/. Icons are
+ * sorted by type in assets/ (icons/<type>/<id>.svg) but published by id alone (icons/<id>.svg).
+ */
 function images(): Map<string, string> {
   const files = new Map<string, string>()
   for (const dir of ['ai/', '']) {
-    for (const name of ['og-image.png', ...readdirIfExists(`${dir}icons`).map((f) => `icons/${f}`)]) {
-      if (existsSync(path(`../assets/${dir}${name}`))) files.set(name, path(`../assets/${dir}${name}`))
+    if (existsSync(path(`../assets/${dir}og-image.png`))) files.set('og-image.png', path(`../assets/${dir}og-image.png`))
+    for (const icon of readdirIfExists(`${dir}icons`).filter((f) => f.endsWith('.svg'))) {
+      files.set(`icons/${icon.split('/').pop()}`, path(`../assets/${dir}icons/${icon}`))
     }
   }
   return files
 }
 
-const readdirIfExists = (dir: string) => (existsSync(path(`../assets/${dir}`)) ? readdirSync(path(`../assets/${dir}`)) : [])
+const readdirIfExists = (dir: string) =>
+  existsSync(path(`../assets/${dir}`)) ? readdirSync(path(`../assets/${dir}`), { recursive: true, encoding: 'utf8' }) : []
 
 /** Files the pages use besides themselves, by path from the root of the site. */
 function assets(): Map<string, () => string | Buffer> {

@@ -24,7 +24,7 @@ repository layout, and [docs/](docs/) for the game rules and the design decision
 - **Refer to items by their internal game id** (`itemPistol`, `jokerCrackShot`), never by their displayed name.
 - **No game or wiki art** in the repo (icons, images, textures): icons are original drawings.
 - **AI-made images live in `assets/ai/`** and are being replaced by hand-made ones: put a hand-made image at the same
-  path without `ai/` (`assets/icons/<id>.svg`, `assets/og-image.png`) and it is used instead.
+  path without `ai/` (`assets/icons/<type>/<id>.svg`, `assets/og-image.png`) and it is used instead.
 - **Never commit or publish the files extracted from the game** (`.cache/`): only the values the planner needs go
   into `data/`.
 - Build rules go in `web/src/domain/` (plain TypeScript, with tests), not in the Vue components or stores.

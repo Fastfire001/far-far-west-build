@@ -1,5 +1,5 @@
 #!/bin/sh
-# Regenerates assets/ai/icons/<id>.svg from data/ (one icon per joker, upgrade, item, spell school and spell).
+# Regenerates assets/ai/icons/<type>/<id>.svg from data/ (one icon per joker, upgrade, item, spell school and spell).
 set -eu
 cd "$(dirname "$0")/.."
 mkdir -p assets/ai/icons

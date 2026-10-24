@@ -139,17 +139,19 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
 
 - **AI-made images are being replaced by hand-made ones.** Every AI-made image is in `assets/ai/` (today all of
   them: the icons and `og-image.png`, the link preview image). A hand-made image goes at the same path without `ai/`
-  (`assets/icons/itemPistol.svg` replaces `assets/ai/icons/itemPistol.svg`, `assets/og-image.png` replaces
-  `assets/ai/og-image.png`) and is used instead, by the planner (`src/icons.ts`) and the content pages
+  (`assets/icons/weapons/itemPistol.svg` replaces `assets/ai/icons/weapons/itemPistol.svg`, `assets/og-image.png`
+  replaces `assets/ai/og-image.png`) and is used instead, by the planner (`src/icons.ts`) and the content pages
   (`vite-plugin-content-pages.ts`), which publish both at the same URL (`icons/<id>.svg`, `og-image.png`). Once
   every image has its replacement, `assets/ai/` and `scripts/build_icons.py` can be deleted.
-- The favicon is written as a path in `web/index.html` (`assets/ai/icons/itemHero.svg`): update it when the hero icon
-  is replaced.
+- The favicon is written as a path in `web/index.html` (`assets/ai/icons/hero/itemHero.svg`): update it when the hero
+  icon is replaced.
 
 ### Icons
 
-- One SVG icon per item, named after its id: `assets/ai/icons/<id>.svg` (jokers, upgrades, equipment, schools, spells,
-  and `itemHero` for the hero). Since the id is stable, the interface finds the icon without a lookup table.
+- One SVG icon per item, named after its id, in a folder per type of item: `assets/ai/icons/<type>/<id>.svg`, with
+  `hero` (`itemHero`), `weapons` (main weapons and sidearms), `utilities`, `jokers`, `upgrades`, `schools` and
+  `spells`. Since the id is stable and unique (checked by the tests), the interface finds the icon by its id alone,
+  whatever its folder, without a lookup table, and the site publishes it as `icons/<id>.svg`.
 - They are **original drawings**, not the game's or the wiki's art (which belongs to Evil Raptor). They follow the
   game's visual codes: jokers as cards in their rarity color with one dot per slot, spells and schools as badges in
   the school color (`data/manual.json`), equipment as silhouettes, upgrades as hexagons in the color of their stat in the game (the

@@ -34,9 +34,16 @@ describe('content pages', () => {
     for (const school of spellSchools) expect(masteryJoker(school.id), school.id).toBeDefined()
   })
 
+  it('has at most one icon per id in assets/ai/icons/ and in assets/icons/', () => {
+    for (const icons of [import.meta.glob('../../../assets/ai/icons/**/*.svg'), import.meta.glob('../../../assets/icons/**/*.svg')]) {
+      const ids = Object.keys(icons).map((f) => f.split('/').pop())
+      expect(ids.filter((id, i) => ids.indexOf(id) !== i)).toEqual([])
+    }
+  })
+
   it('links only to pages, icons and assets that exist', () => {
     const icons = new Set(
-      Object.keys(import.meta.glob(['../../../assets/ai/icons/*.svg', '../../../assets/icons/*.svg'])).map(
+      Object.keys(import.meta.glob(['../../../assets/ai/icons/**/*.svg', '../../../assets/icons/**/*.svg'])).map(
         (f) => `${options.base}icons/${f.split('/').pop()}`,
       ),
     )
