@@ -1,5 +1,5 @@
-// Interface colours shared by several screens. Rarity colours mirror those of the generated icons (RARITY_COLORS
-// in scripts/build_icons.py): keep them in sync.
+// Interface colours shared by several screens. Joker icons are white pictograms: the interface draws the colour of
+// their rarity around them (card, slot circle).
 import { spellById, type Rarity } from '@/domain/gameData'
 import manualJson from '@data/manual.json'
 
