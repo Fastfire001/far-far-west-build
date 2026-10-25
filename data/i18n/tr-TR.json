@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "SİHİRLİ DOSTLUK",
-    "description": "Müttefiklerinin yanındayken pasif olarak SP kazanırsın"
+    "description": "Müttefiklerinin yanındayken pasif olarak saniyede 0,5 SP kazanırsın"
   },
   "jokerMagicReload": {
     "name": "SİHİRLİ DOLUM",

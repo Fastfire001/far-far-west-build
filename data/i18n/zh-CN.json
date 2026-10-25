@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "魔法友谊",
-    "description": "在盟友附近时被动回复生命值"
+    "description": "在盟友附近时每秒被动回复 0.5 点生命值"
   },
   "jokerMagicReload": {
     "name": "魔法换弹",

@@ -1,8 +1,9 @@
 """Builds data/*.json (equipment, spells, jokers, upgrades, progression, meta) and their translations (data/i18n/)
 from assets extracted from the game by tools/game-extract (see bin/extract-game). Also writes the game's own menu
-labels that the planner reuses (data/i18n/ui/) and the name of each language (data/i18n/languages.json).
+labels that the planner reuses (data/i18n/ui/) and the name of each language (data/i18n/languages.json). Also copies
+the game's icon of each joker, upgrade, item, spell school and spell to <icons_dir>/<type>/<id>.png.
 
-Usage: python3 scripts/build_game_data.py <extract_dir> <out_dir>
+Usage: python3 scripts/build_game_data.py <extract_dir> <out_dir> <icons_dir>
 
 The game's assets use unversioned property serialization: values are written without names or types, in the
 order of the row struct's fields. That order and the field types are hard-coded in JOKER_ROW and ITEM_ROW below;
@@ -10,9 +11,9 @@ they come from the Blueprint structs /Game/Progress/S_PlayerJokers and S_PlayerI
 those structs, decoding stops with an error and the layouts must be updated (see docs/game-mechanics.md,
 "Extraction from the game"). The same goes for a new item: it must be added to EQUIPMENT, SPELLS or IGNORED_ITEMS.
 """
-import datetime, glob, json, os, re, struct, sys
+import datetime, glob, json, os, re, shutil, struct, sys
 
-extract_dir, out_dir = sys.argv[1:3]
+extract_dir, out_dir, icons_dir = sys.argv[1:4]
 
 # Fields of S_PlayerJokers, in serialization order.
 JOKER_ROW = [
@@ -100,6 +101,12 @@ LANGUAGE_NAMES = {
 
 def read(name):
     return open(os.path.join(extract_dir, name), "rb").read()
+
+
+def imports(asset):
+    """Import map of an asset: package index → path of the imported object ("" if unresolved)."""
+    lines = read(asset + ".imports.txt").decode().split("\n")
+    return lambda index: lines[-index - 1] if index is not None and index < 0 and -index <= len(lines) else ""
 
 
 class Reader:
@@ -263,7 +270,8 @@ def row_text(item_id, field, value):
     return text(item_id, field, table, value["key"])
 
 
-item_ids = set(decode_data_table("DT_PlayerItems", "item", ITEM_ROW))
+item_rows = decode_data_table("DT_PlayerItems", "item", ITEM_ROW)
+item_ids = set(item_rows)
 unknown = item_ids - EQUIPMENT.keys() - SPELLS.keys() - SCHOOLS.keys() - IGNORED_ITEMS
 missing = (EQUIPMENT.keys() | SPELLS.keys() | SCHOOLS.keys()) - item_ids
 if unknown or missing:
@@ -303,7 +311,10 @@ rows = {key: row for key, row in decode_data_table("DT_PlayerJokers", "joker", J
         if row["isEnabled"] or key.startswith("jokerUpgrade")}
 
 jokers, upgrades = [], []
+joker_import = imports("DT_PlayerJokers")
+textures = {}  # item id → path of its icon texture
 for key, row in rows.items():
+    textures[key] = joker_import(row["icon"])
     if key.startswith("jokerUpgrade"):
         if row["availableOnItems"]:  # rows without items are unused leftovers
             upgrades.append({
@@ -409,6 +420,40 @@ progression = {
     "joker_slot_levels": [int(evaluate_curve(slot_curve, n)) for n in range(1, max_slots + 1)],
 }
 
+# Icons: jokers and upgrades name their texture in their row; items (equipment, schools, spells, the hero) in their
+# Blueprint, which imports the item's small icon (/Game/Textures/Icons/...) and, for weapons and schools, a large
+# one (T_WeaponIconLarge_..., T_IconLarge_...). The small one is used, the large one only if there is no other (hero).
+item_import = imports("DT_PlayerItems")
+
+
+def item_texture(key):
+    blueprint = item_import(item_rows[key]["associatedItemBlueprint"]).split(".")[0].split("/")[-1]
+    if not os.path.exists(os.path.join(extract_dir, blueprint + ".imports.txt")):
+        raise SystemExit(f"{key}: no import map for its Blueprint {blueprint!r}, add its folder to bin/extract-game")
+    found = [p for p in read(blueprint + ".imports.txt").decode().split("\n") if p.startswith("/Game/Textures/")]
+    return min(found, key=lambda p: "IconLarge" in p, default="")
+
+
+icon_types = {
+    "hero": ["itemHero"],
+    "weapons": [e["id"] for e in equipment if e["type"] in ("main", "sidearm")],
+    "utilities": [e["id"] for e in equipment if e["type"] == "utility"],
+    "jokers": [j["id"] for j in jokers],
+    "upgrades": [u["id"] for u in upgrades],
+    "schools": [s["id"] for s in spell_schools],
+    "spells": [s["id"] for s in spells],
+}
+icons = {}  # path in icons_dir → extracted PNG
+for folder, ids in icon_types.items():
+    for item_id in ids:
+        path = textures[item_id] if item_id in textures else item_texture(item_id)
+        texture = path.split(".")[0].split("/")[-1]
+        png = os.path.join(extract_dir, "textures", texture + ".png")
+        if not texture or not os.path.exists(png):
+            raise SystemExit(f"{item_id}: no icon ({texture or 'no texture reference'}), see the texture: lines of "
+                             f"bin/extract-game's output")
+        icons[os.path.join(folder, item_id + ".png")] = png
+
 out = {
     "equipment.json": equipment,
     "spells.json": {"schools": spell_schools, "spells": spells},
@@ -426,6 +471,13 @@ for name, data in out.items():
     with open(os.path.join(out_dir, name), "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
-print(f"equipment.json {len(equipment)}, spells.json {len(spells)}, jokers.json {len(jokers)}, upgrades.json {len(upgrades)}, "
+for root, _, files in os.walk(icons_dir):
+    for stale in files:
+        if os.path.relpath(os.path.join(root, stale), icons_dir) not in icons:
+            os.remove(os.path.join(root, stale))
+for name, png in icons.items():
+    os.makedirs(os.path.dirname(os.path.join(icons_dir, name)), exist_ok=True)
+    shutil.copyfile(png, os.path.join(icons_dir, name))
+print(f"icons {len(icons)}, equipment.json {len(equipment)}, spells.json {len(spells)}, jokers.json {len(jokers)}, upgrades.json {len(upgrades)}, "
       f"joker slot levels {progression['joker_slot_levels']}, translations {sorted(translations)}, "
       f"ui texts {len(UI_TEXTS)}, game version {meta['game_version']}")

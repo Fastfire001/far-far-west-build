@@ -161,25 +161,25 @@ body {
 
 .icon {
   flex: none;
+  height: var(--size);
   vertical-align: middle;
+  width: auto;
 }
 .icon.small {
-  height: 1.8rem;
-  width: auto;
+  --size: 1.8rem;
 }
 .icon.medium {
-  height: 3.5rem;
-  width: auto;
+  --size: 3.5rem;
 }
 .icon.large {
-  height: 9rem;
-  width: auto;
+  --size: 9rem;
 }
+/* A joker's pictogram in a circle of its rarity colour, as in the game's slots. */
 .joker-icon {
-  aspect-ratio: 1;
   background: var(--rarity);
   border-radius: 50%;
-  padding: 19%;
+  padding: calc(var(--size) * 0.19);
+  width: var(--size);
 }
 
 .item-head {
@@ -398,7 +398,7 @@ td.joker-name > .icon {
     flex-direction: column;
   }
   .icon.large {
-    height: 6rem;
+    --size: 6rem;
   }
   .site-footer {
     padding: 1rem;

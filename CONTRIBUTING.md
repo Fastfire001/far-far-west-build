@@ -19,14 +19,15 @@ repository layout, and [docs/](docs/) for the game rules and the design decision
 ## Ground rules
 
 - **Everything in English**: code, comments, docs, commit messages.
-- **Do not edit generated files by hand**: `data/` (except `data/manual.json`) comes from `scripts/build_game_data.py`
-  and `assets/ai/icons/` from `scripts/build_icons.py`. Fix the script, then regenerate.
+- **Do not edit generated files by hand**: `data/` (except `data/manual.json`) and `assets/game/icons/` come from
+  `bin/extract-game`. Fix the extraction (`scripts/build_game_data.py`, `tools/game-extract/`), then regenerate.
 - **Refer to items by their internal game id** (`itemPistol`, `jokerCrackShot`), never by their displayed name.
-- **No game or wiki art** in the repo (icons, images, textures): icons are original drawings.
-- **AI-made images live in `assets/ai/`** and are being replaced by hand-made ones: put a hand-made image at the same
-  path without `ai/` (`assets/icons/<type>/<id>.svg`, `assets/og-image.png`) and it is used instead.
+- **Images come from three sources**, by order of priority: `assets/human/` (hand-made), `assets/game/` (the game's
+  icons, extracted with the permission of its team) and `assets/ai/` (AI-made, being replaced). Put a hand-made
+  image at the same path in `assets/human/` (`assets/human/icons/<type>/<id>.svg`, `assets/human/og-image.png`) and
+  it is used instead. No other game art and no wiki art in the repo.
 - **Never commit or publish the files extracted from the game** (`.cache/`): only the values the planner needs go
-  into `data/`.
+  into `data/`, and the icons it shows into `assets/game/icons/`.
 - Build rules go in `web/src/domain/` (plain TypeScript, with tests), not in the Vue components or stores.
 - A new script gets an entry in `bin/` that runs it in a container.
 
@@ -36,7 +37,7 @@ repository layout, and [docs/](docs/) for the game rules and the design decision
   `scripts/build_game_data.py`. If it is in `data/manual.json` (hand-entered, e.g. spell cooldowns), you can fix it
   directly; say in the pull request where the value comes from (in-game screenshot, patch notes…).
 - **New game version?** Someone with the game installed runs `bin/extract-game` (see the README) and commits the
-  updated `data/` and `assets/ai/icons/`. If extraction fails, see "Game files" in [CLAUDE.md](CLAUDE.md). Also check
+  updated `data/` and `assets/game/icons/`. If extraction fails, see "Game files" in [CLAUDE.md](CLAUDE.md). Also check
   `data/manual.json` against the game and update its `checked_for_version`.
 
 ## Translations

@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "AMISTAD MÁGICA",
-    "description": "Recuperas HP de forma pasiva cuando estás cerca de tus aliados"
+    "description": "Recuperas 0.5 de HP por segundo de forma pasiva cuando estás cerca de tus aliados"
   },
   "jokerMagicReload": {
     "name": "RECARGA MÁGICA",

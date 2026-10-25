@@ -34,20 +34,24 @@ describe('content pages', () => {
     for (const school of spellSchools) expect(masteryJoker(school.id), school.id).toBeDefined()
   })
 
-  it('has at most one icon per id in assets/ai/icons/ and in assets/icons/', () => {
-    for (const icons of [import.meta.glob('../../../assets/ai/icons/**/*.svg'), import.meta.glob('../../../assets/icons/**/*.svg')]) {
-      const ids = Object.keys(icons).map((f) => f.split('/').pop())
+  it('has at most one icon per id in each of assets/ai/, assets/game/ and assets/human/', () => {
+    for (const icons of [
+      import.meta.glob('../../../assets/ai/icons/**/*.{svg,png}'),
+      import.meta.glob('../../../assets/game/icons/**/*.{svg,png}'),
+      import.meta.glob('../../../assets/human/icons/**/*.{svg,png}'),
+    ]) {
+      const ids = Object.keys(icons).map((f) => f.slice(f.lastIndexOf('/') + 1, f.lastIndexOf('.')))
       expect(ids.filter((id, i) => ids.indexOf(id) !== i)).toEqual([])
     }
   })
 
   it('links only to pages, icons and assets that exist', () => {
     const icons = new Set(
-      Object.keys(import.meta.glob(['../../../assets/ai/icons/**/*.svg', '../../../assets/icons/**/*.svg'])).map(
+      Object.keys(import.meta.glob('../../../assets/{ai,game,human}/icons/**/*.{svg,png}')).map(
         (f) => `${options.base}icons/${f.split('/').pop()}`,
       ),
     )
-    const assets = new Set([`${options.base}pages/style.css`, `${options.base}og-image.png`])
+    const assets = new Set([`${options.base}pages/style.css`, `${options.base}og-image.png`, `${options.base}favicon.svg`])
     for (const [url, page] of rendered) {
       for (const [, target] of page.matchAll(/(?:href|src)="([^"]+)"/g)) {
         if (target.startsWith('https://') || target.startsWith(`${options.base}#/`)) continue

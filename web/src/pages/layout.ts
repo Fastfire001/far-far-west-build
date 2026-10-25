@@ -45,7 +45,7 @@ export function renderDocument(ctx: Context, page: Page, content: PageContent): 
 <meta name="description" content="${description}" />
 <link rel="canonical" href="${ctx.absolute(page.path)}" />
 ${PAGE_LOCALES.map((l) => html`<link rel="alternate" hreflang="${l}" href="${ctx.absolute(page.path, l)}" />\n`)}<link rel="alternate" hreflang="x-default" href="${ctx.absolute(page.path, DEFAULT_LOCALE)}" />
-<link rel="icon" type="image/svg+xml" href="${ctx.icon('itemHero')}" />
+<link rel="icon" type="image/svg+xml" href="${ctx.base}favicon.svg" />
 <link rel="stylesheet" href="${ctx.base}pages/style.css" />
 <meta name="theme-color" content="#1d272d" />
 <meta property="og:type" content="website" />

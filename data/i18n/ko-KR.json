@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "마법의 우정",
-    "description": "아군 근처에 있는 동안 지속적으로 체력 회복"
+    "description": "아군 근처에 있는 동안 초당 0.5 체력 회복"
   },
   "jokerMagicReload": {
     "name": "마법 재장전",

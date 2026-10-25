@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "POUVOIR DE L'AMITIÉ",
-    "description": "Récupérez passivement des PV en restant près de vos alliés"
+    "description": "Récupérez passivement 0,5 PV par seconde en restant près de vos alliés"
   },
   "jokerMagicReload": {
     "name": "RECHARGE MAGIQUE",
