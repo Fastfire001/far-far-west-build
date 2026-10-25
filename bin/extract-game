@@ -1,5 +1,5 @@
 #!/bin/sh
-# Updates data/*.json from the local game install, then the icons in assets/ai/icons/.
+# Updates data/*.json and the icons in assets/game/icons/ from the local game install.
 # The install path is read from FFW_GAME_DIR, set in the environment or in .env (see .env.example).
 set -eu
 cd "$(dirname "$0")/.."
@@ -12,20 +12,27 @@ if [ ! -d "${FFW_GAME_DIR:-}/FarFarWest/Content/Paks" ]; then
 fi
 export FFW_GAME_DIR
 # Created here so they belong to the host user, not to root.
-mkdir -p .cache/game .cache/oodle data
+mkdir -p .cache/game .cache/oodle data assets/game/icons
+# Textures of a previous extraction would hide an icon that is no longer extracted.
+rm -rf .cache/game/textures
 
 docker compose run --rm --build extract /game/FarFarWest/Content/Paks /out \
   version:/game/FarFarWest.exe \
   raw:FarFarWest/Content/Progress/DT_PlayerJokers \
   names:FarFarWest/Content/Progress/DT_PlayerJokers \
+  imports:FarFarWest/Content/Progress/DT_PlayerJokers \
   raw:FarFarWest/Content/Progress/DT_PlayerItems \
   names:FarFarWest/Content/Progress/DT_PlayerItems \
+  imports:FarFarWest/Content/Progress/DT_PlayerItems \
+  'imports:FarFarWest/Content/Items/BP_Item_*' \
+  'imports:FarFarWest/Content/Items/Grenades/BP_Item_*' \
+  'imports:FarFarWest/Content/Spells/BP_Item_*' \
+  'texture:FarFarWest/Content/Textures/Icons/*' \
+  'texture:FarFarWest/Content/Textures/Weapons/*' \
   json:FarFarWest/Content/LocaStringTables/ST_Tweaks \
   json:FarFarWest/Content/LocaStringTables/ST_Weapons \
   json:FarFarWest/Content/LocaStringTables/ST_Spells \
   json:FarFarWest/Content/LocaStringTables/ST_UI \
   raw:FarFarWest/Content/Interfaces/Equipment/C_UnlockedJokers \
   'locres:FarFarWest/Content/Localization/Game/*/Game.locres'
-docker compose run --rm --build app python3 scripts/build_game_data.py /extract data
-# Icons follow the data (names, rarities, slot costs): a new joker or item must get an icon.
-exec bin/build-icons
+exec docker compose run --rm --build app python3 scripts/build_game_data.py /extract data assets/game/icons

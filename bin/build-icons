@@ -1,6 +1,0 @@
-#!/bin/sh
-# Regenerates assets/ai/icons/<type>/<id>.svg from data/ (one icon per joker, upgrade, item, spell school and spell).
-set -eu
-cd "$(dirname "$0")/.."
-mkdir -p assets/ai/icons
-exec docker compose run --rm --build app python3 scripts/build_icons.py data assets/ai/icons

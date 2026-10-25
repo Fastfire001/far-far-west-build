@@ -8,8 +8,8 @@ and made several wiki pages outdated.
 
 All of `data/` is extracted from the **game files** (local install) by `bin/extract-game`: `equipment.json`,
 `spells.json`, `jokers.json`, `upgrades.json`, `progression.json`, `meta.json` (game version and extraction date)
-and the translations in `i18n/`. The extracted files stay in `.cache/` (not versioned); only the values the planner
-needs go into `data/`. The one exception is `data/manual.json`, entered by hand (see "Hand-entered data").
+and the translations in `i18n/`, as well as the icons of `assets/game/icons/`. The extracted files stay in `.cache/`
+(not versioned); only the values the planner needs go into `data/`, and the icons it shows into `assets/game/icons/`. The one exception is `data/manual.json`, entered by hand (see "Hand-entered data").
 
 Texts (names, descriptions) are kept **as displayed in the game**, in English in the main files: joker names are
 upper case (`CRACKSHOT`), as on the game's cards.
@@ -158,8 +158,10 @@ never touches this file: check it by hand after each game update (`checked_for_v
 steps:
 
 1. `tools/game-extract` (C#, [CUE4Parse](https://github.com/FabianFG/CUE4Parse) library) reads the game's IoStore
-   archives (Unreal Engine 5.6, Oodle compression, no encryption) and writes the raw assets to `.cache/game/`.
-2. `scripts/build_game_data.py` decodes them and writes `data/`.
+   archives (Unreal Engine 5.6, Oodle compression, no encryption) and writes the raw assets to `.cache/game/`, and the
+   icon textures as PNG to `.cache/game/textures/`.
+2. `scripts/build_game_data.py` decodes them, writes `data/` and copies the icon of each item to
+   `assets/game/icons/<type>/<id>.png`.
 
 Assets read:
 
@@ -172,6 +174,8 @@ Assets read:
 | `/Game/LocaStringTables/ST_UI` | game menu labels and language names |
 | `/Game/Interfaces/Equipment/C_UnlockedJokers` | curve slot number → required level (rounded down) |
 | `Localization/Game/<language>/Game.locres` | translations: by string table namespace (`ST_Tweaks`, `ST_Skin` for `ST_Weapons`, `ST_Elements` for `ST_Spells`), same keys as the English texts |
+| `/Game/Items/BP_Item_*`, `Items/Grenades/BP_Item_*`, `Spells/BP_Item_*` | Blueprints of the items: only their import map, to find their icon |
+| `/Game/Textures/Icons/*`, `/Game/Textures/Weapons/*` | icon textures (`Texture2D`, DXT5), decoded to PNG |
 | `FarFarWest.exe` (outside the archives) | game version (the executable's `FileVersion`, "0.3.0.0 - CL 2812") |
 
 The game serializes its properties in "unversioned" mode (no names or types) and ships no mappings file. CUE4Parse
@@ -179,6 +183,16 @@ therefore cannot decode the joker table: `build_game_data.py` decodes it itself,
 `S_PlayerJokers` fields hard-coded (`JOKER_ROW`). If a game update changes this struct, the script stops with an
 error. To find the new order: the fields are serialized in `S_PlayerJokers.uasset` as pairs of FNames (type, name),
 which can be read back with the package's name map (the extractor's `names:` mode).
+
+**Icons.** A joker's or an upgrade's row names its texture (field `icon`, an index in the import map of
+`DT_PlayerJokers`, which the extractor's `imports:` mode resolves). An item's row names its Blueprint
+(`associatedItemBlueprint`), whose import map holds the item's small icon (`/Game/Textures/Icons/...`) and, for
+weapons and schools, a large one (`T_WeaponIconLarge_...`, `T_IconLarge_...`): the small one is kept, the large one
+only when it is the only one (the hero, `T_PlayerIconLarge`). Textures also use unversioned properties: the extractor
+declares the few the icons serialize (`Mappings()` in `Program.cs`, indexes read from the bytes). A texture with
+another property is skipped with a message ("Unknown property with value N"); if the planner needs it, the
+extraction fails. An item whose Blueprint is in another folder makes it fail too: add the folder to
+`bin/extract-game`. Checked on 0.3.0.7: all 564 icon textures decode, and every item of `data/` has its own icon.
 
 The mapping between items and their texts is written by hand in `build_game_data.py` (`EQUIPMENT`, `SPELLS`,
 `SCHOOLS`), because internal names often differ from displayed ones: `itemWinchester` = Leveredge,

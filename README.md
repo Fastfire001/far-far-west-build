@@ -6,7 +6,7 @@ in the game's 15 languages, the planner's own texts in English and French.
 
 Live site: https://fastfire001.github.io/far-far-west-build/
 
-Fan project, not affiliated with Evil Raptor. Icons are original drawings; no game art is included.
+Fan project, not affiliated with Evil Raptor. The icons are the game's own.
 
 ## Development
 
@@ -24,8 +24,8 @@ The application (Vue 3 + TypeScript + Vite) is in `web/`. Every push to `main` d
 
 ## Game data
 
-The game data (`data/*.json`) is extracted from the installed game files; the icons (`assets/ai/icons/`) are generated
-from it. Both are committed, so you only need the game to update them after a game update:
+The game data (`data/*.json`) and the icons (`assets/game/icons/`) are extracted from the installed game files. Both
+are committed, so you only need the game to update them after a game update:
 
 ```sh
 cp .env.example .env   # once, then set FFW_GAME_DIR (game install folder)
@@ -46,8 +46,8 @@ Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-The code, the documentation and the images (`assets/`) are under the [MIT License](LICENSE).
+The code, the documentation and the images of `assets/human/` and `assets/ai/` are under the
+[MIT License](LICENSE).
 
-The game texts in `data/` (item names and descriptions, menu labels and their official translations) belong to
-Evil Raptor and are **not** covered by this license: they are included only so that the planner can show what the
-game shows. Far Far West is a trademark of its owners.
+The game texts in `data/` (item names and descriptions, menu labels and their official translations) and the game's
+icons in `assets/game/` belong to Evil Raptor and are **not** covered by this license.

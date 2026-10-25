@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "AMISTAD MÁGICA",
-    "description": "Recuperas PS pasivamente cuando estás cerca de tus aliados"
+    "description": "Recuperas pasivamente 0,5 PS por segundo cuando estás cerca de tus aliados"
   },
   "jokerMagicReload": {
     "name": "RECARGA MÁGICA",

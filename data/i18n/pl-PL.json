@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "MAGICZNA PRZYJAŹŃ",
-    "description": "Pasywnie odzyskujesz PŻ, gdy znajdujesz się w pobliżu sojuszników"
+    "description": "Pasywnie odzyskujesz 0,5 PŻ na sekundę, gdy znajdujesz się w pobliżu sojuszników"
   },
   "jokerMagicReload": {
     "name": "MAGICZNE PRZEŁADOWANIE",

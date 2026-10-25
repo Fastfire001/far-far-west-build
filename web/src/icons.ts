@@ -1,15 +1,27 @@
-// URL of the icon of each game item: the hand-drawn one (assets/icons/<type>/<id>.svg) if it exists, otherwise the
-// generated one (assets/ai/icons/<type>/<id>.svg, see scripts/build_icons.py). Found by id, whatever the folder.
-const generated = import.meta.glob<string>('../../assets/ai/icons/**/*.svg', { query: '?url', import: 'default', eager: true })
-const handDrawn = import.meta.glob<string>('../../assets/icons/**/*.svg', { query: '?url', import: 'default', eager: true })
+// Icon of each game item, found by id whatever its folder (assets/<source>/icons/<type>/<id>.svg or .png): the
+// hand-made one (assets/human/) if it exists, otherwise the game's (assets/game/, extracted by bin/extract-game),
+// otherwise an AI-made one (assets/ai/).
+const sources = [
+  import.meta.glob<string>('../../assets/ai/icons/**/*.{svg,png}', { query: '?url', import: 'default', eager: true }),
+  import.meta.glob<string>('../../assets/game/icons/**/*.{svg,png}', { query: '?url', import: 'default', eager: true }),
+  import.meta.glob<string>('../../assets/human/icons/**/*.{svg,png}', { query: '?url', import: 'default', eager: true }),
+]
 
+/** Each later source overrides the earlier ones. */
 const byId = new Map(
-  [...Object.entries(generated), ...Object.entries(handDrawn)].map(([path, url]) => [
-    path.slice(path.lastIndexOf('/') + 1, -'.svg'.length),
-    url,
-  ]),
+  sources.flatMap((files) =>
+    Object.entries(files).map(([path, url]) => {
+      const file = path.slice(path.lastIndexOf('/') + 1)
+      return [file.slice(0, file.lastIndexOf('.')), { file, url }] as const
+    }),
+  ),
 )
 
 export function iconUrl(id: string): string | undefined {
-  return byId.get(id)
+  return byId.get(id)?.url
+}
+
+/** Name of the icon's file (<id>.svg or <id>.png): the content pages publish it as icons/<file>. */
+export function iconFile(id: string): string | undefined {
+  return byId.get(id)?.file
 }

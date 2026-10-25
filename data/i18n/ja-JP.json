@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "マジックフレンドシップ",
-    "description": "味方の近くにいると、HPが徐々に回復する"
+    "description": "味方の近くにいると、HPを毎秒0.5回復する"
   },
   "jokerMagicReload": {
     "name": "マジック\nリロード",

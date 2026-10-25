@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "MAGISCHE FREUNDSCHAFT",
-    "description": "Erhalte passiv TP zurück, wenn du in der Nähe von Verbündeten bist"
+    "description": "Erhalte passiv 0,5 TP pro Sekunde zurück, wenn du in der Nähe von Verbündeten bist"
   },
   "jokerMagicReload": {
     "name": "MAGISCHES NACHLADEN",

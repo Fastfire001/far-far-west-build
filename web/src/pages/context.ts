@@ -1,5 +1,6 @@
 // What a content page needs to render in one language: its texts and the URLs of the site.
 import type { Locale } from '@/i18n'
+import { iconFile } from '@/icons'
 import type { Html } from './html'
 import { pagePath } from './routes'
 import { textsFor, type Texts } from './texts'
@@ -16,6 +17,7 @@ export interface Context extends Texts, SiteOptions {
   href(path: string): string
   /** Public URL of a page, in this language or another one. */
   absolute(path: string, locale?: Locale): string
+  /** URL of an item's icon, published by id (see src/icons.ts). */
   icon(id: string): string
   /** The planner (the application at the root of the site), at one of its routes. */
   planner(route?: string): string
@@ -27,7 +29,7 @@ export function contextFor(locale: Locale, options: SiteOptions): Context {
     ...options,
     href: (path) => options.base + pagePath(locale, path),
     absolute: (path, other = locale) => options.siteUrl + pagePath(other, path),
-    icon: (id) => `${options.base}icons/${id}.svg`,
+    icon: (id) => `${options.base}icons/${iconFile(id) ?? `${id}.png`}`,
     planner: (route = '/') => `${options.base}#${route}`,
   }
 }

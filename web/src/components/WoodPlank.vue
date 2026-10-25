@@ -66,10 +66,11 @@ defineProps<{
   flex: none;
   gap: 0.3rem;
 }
+/* Width from the image: square icons, except the hero's, which is wide. */
 .icons :deep(img) {
   display: block;
   height: 3rem;
-  width: 3rem;
+  width: auto;
 }
 .label {
   flex: 1;
@@ -94,7 +95,6 @@ defineProps<{
   }
   .icons :deep(img) {
     height: 2.4rem;
-    width: 2.4rem;
   }
 }
 </style>

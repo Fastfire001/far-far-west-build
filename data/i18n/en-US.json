@@ -605,7 +605,7 @@
   },
   "jokerMagicFriendship": {
     "name": "MAGIC FRIENDSHIP",
-    "description": "Passively regain HP while near allies"
+    "description": "Passively regain 0.5 HP per second while near allies"
   },
   "jokerMagicReload": {
     "name": "MAGIC RELOAD",
