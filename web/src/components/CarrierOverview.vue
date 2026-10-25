@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// One carrier in the build home's summary: its item, the level and prestiges it needs, its jokers as small cards and
+// One carrier in the build home's summary: its item, the level and prestiges it needs, its jokers as their icon in a circle of their rarity colour (as in the game's slots) and
 // its upgrades as their icon with the points. A glance at the build; the full detail is on the summary sheet.
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -9,7 +9,7 @@ import type { Requirements } from '@/domain/progression'
 import { useProblemText } from '@/i18n/problems'
 import { iconUrl } from '@/icons'
 import { useLanguageStore } from '@/stores/language'
-import { SCHOOL_COLORS } from '@/ui/colors'
+import { RARITY_COLORS, SCHOOL_COLORS } from '@/ui/colors'
 
 const props = defineProps<{ build: Build; carrier: CarrierKey; requirements: Requirements }>()
 
@@ -23,7 +23,10 @@ const element = computed(() => (props.carrier === 'sidearm' ? props.build.sidear
 
 // Unknown ids (imported builds) are left out: the problems list names them.
 const jokerRows = computed(() =>
-  Object.entries(loadout.value.jokers).filter(([id]) => jokerById.has(id)).map(([id, copies]) => ({ id, copies })),
+  Object.entries(loadout.value.jokers).flatMap(([id, copies]) => {
+    const joker = jokerById.get(id)
+    return joker ? [{ id, copies, color: RARITY_COLORS[joker.rarity] }] : []
+  }),
 )
 const upgradeRows = computed(() =>
   upgrades.filter((u) => loadout.value.upgrades[u.id]).map((u) => ({ id: u.id, points: loadout.value.upgrades[u.id] })),
@@ -48,7 +51,7 @@ const upgradeRows = computed(() =>
     <div v-if="jokerRows.length || upgradeRows.length" class="body">
       <ul class="jokers">
         <li v-for="row in jokerRows" :key="row.id">
-          <img :src="iconUrl(row.id)" :alt="language.gameName(row.id)" />
+          <img :src="iconUrl(row.id)" :alt="language.gameName(row.id)" :style="{ background: row.color }" />
           <span v-if="row.copies > 1" class="copies">×{{ row.copies }}</span>
         </li>
       </ul>
@@ -137,9 +140,11 @@ const upgradeRows = computed(() =>
   position: relative;
 }
 .jokers img {
+  border-radius: 50%;
   display: block;
-  height: 2.24rem;
-  width: 1.6rem;
+  height: 2rem;
+  padding: 0.35rem;
+  width: 2rem;
 }
 .copies {
   background: var(--accent);

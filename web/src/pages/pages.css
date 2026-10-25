@@ -175,6 +175,12 @@ body {
   height: 9rem;
   width: auto;
 }
+.joker-icon {
+  aspect-ratio: 1;
+  background: var(--rarity);
+  border-radius: 50%;
+  padding: 19%;
+}
 
 .item-head {
   align-items: flex-start;

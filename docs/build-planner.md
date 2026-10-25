@@ -153,11 +153,13 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   `spells`. Since the id is stable and unique (checked by the tests), the interface finds the icon by its id alone,
   whatever its folder, without a lookup table, and the site publishes it as `icons/<id>.svg`.
 - They are **original drawings**, not the game's or the wiki's art (which belongs to Evil Raptor). They follow the
-  game's visual codes: jokers as cards in their rarity color with one dot per slot, spells and schools as badges in
+  game's visual codes: jokers as a white pictogram alone, on a transparent background, as in the game (the interface
+  draws the card, or the slot circle, in the joker's rarity color around it), spells and schools as badges in
   the school color (`data/manual.json`), equipment as silhouettes, upgrades as hexagons in the color of their stat in the game (the
   pictogram is dark, or white on the darkest colors).
-- Each joker has a drawing of its own (`JOKER_ART`), on the same subject as its card in the game (a snowman for
-  Avalanche, a tent for Camper), so that players recognize it. Spell pictograms follow the subject of the spell's icon
+- Each joker has a drawing of its own (`JOKER_ART`), on the same subject as its icon in the game (a snowman for
+  Avalanche, a tent for Camper), so that players recognize it. Elemental variants (Explosive Hits, Mastery) carry
+  their school's pictogram in the drawing itself, without a badge, as in the game. Spell pictograms follow the subject of the spell's icon
   in the game the same way (two candles for Ritual, a skull with burning eyes for Corruption), inside the school's
   badge. The game's icons are only looked at (wikily.gg shows them on its joker and spell pages), never copied or
   traced, and never stored in the repo.

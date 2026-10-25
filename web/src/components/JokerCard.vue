@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// A joker as a card in the game's format: slot cost as dots, copies equipped, name, icon, description, max copies and
-// the level that unlocks a Unique joker. A button in the jokers catalog, a plain block in the slots' hover preview.
+// A joker as a card in the game's format, in the colour of its rarity: slot cost as dots, copies equipped, name, icon
+// (also faded in two corners, as in the game), description, max copies and the level that unlocks a Unique joker. A button in the jokers catalog, a plain block in the slots' hover preview.
 import { useI18n } from 'vue-i18n'
 import type { Joker } from '@/domain/gameData'
 import { uniqueUnlockLevel } from '@/domain/progression'
@@ -33,10 +33,11 @@ const language = useLanguageStore()
     :style="{ '--rarity': RARITY_COLORS[joker.rarity] }"
     :aria-disabled="tag === 'button' ? Boolean(reason) : undefined"
   >
+    <span class="cost" :aria-label="t('jokers.cost', joker.slot_cost)">
+      <span v-for="n in joker.slot_cost" :key="n" class="cost-dot" />
+    </span>
     <span class="top">
-      <span class="cost" :aria-label="t('jokers.cost', joker.slot_cost)">
-        <span v-for="n in joker.slot_cost" :key="n" class="cost-dot" />
-      </span>
+      <img :src="iconUrl(joker.id)" alt="" class="corner-icon" />
       <span v-if="copies" class="copies">×{{ copies }}</span>
     </span>
     <span class="name">{{ language.gameName(joker.id) }}</span>
@@ -47,6 +48,7 @@ const language = useLanguageStore()
       <span v-if="uniqueUnlockLevel(joker)" class="unlock">
         🔓 {{ t('game.level_short', { lvl: uniqueUnlockLevel(joker) }) }}
       </span>
+      <img :src="iconUrl(joker.id)" alt="" class="corner-icon" />
     </span>
     <span v-if="reason" class="reason">{{ reason }}</span>
   </component>
@@ -55,11 +57,15 @@ const language = useLanguageStore()
 <style scoped>
 .card {
   align-items: center;
-  background: linear-gradient(180deg, #c9c3cf, #a9a2b0);
-  border: 3px solid var(--rarity);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--rarity) 90%, white),
+    color-mix(in srgb, var(--rarity) 80%, black)
+  );
+  border: 3px solid color-mix(in srgb, var(--rarity) 55%, white);
   border-radius: 10px;
-  box-shadow: inset 0 0 0 3px rgb(255 255 255 / 25%);
-  color: #2a2430;
+  box-shadow: inset 0 0 0 2px rgb(0 0 0 / 20%);
+  color: white;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -67,6 +73,7 @@ const language = useLanguageStore()
   padding: 0.6rem 0.75rem 0.7rem;
   position: relative;
   text-align: center;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 35%);
   width: 100%;
 }
 .card.interactive {
@@ -78,9 +85,8 @@ const language = useLanguageStore()
   opacity: 1;
 }
 .card.equipped {
-  background: linear-gradient(180deg, #ebe7ef, #c9c3d0);
   box-shadow:
-    inset 0 0 0 3px rgb(255 255 255 / 40%),
+    inset 0 0 0 2px rgb(0 0 0 / 20%),
     0 0 16px color-mix(in srgb, var(--rarity) 70%, transparent);
 }
 .card.blocked {
@@ -93,23 +99,28 @@ const language = useLanguageStore()
 .card.equipped.blocked:hover {
   opacity: 1;
 }
+.cost {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+.cost-dot {
+  background: white;
+  border-radius: 50%;
+  height: 0.6rem;
+  width: 0.6rem;
+}
 .top {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  min-height: 1.4rem;
+  min-height: 1.6rem;
   width: 100%;
 }
-.cost {
-  display: flex;
-  gap: 3px;
-}
-.cost-dot {
-  background: var(--rarity);
-  border: 1px solid rgb(0 0 0 / 30%);
-  border-radius: 50%;
-  height: 0.65rem;
-  width: 0.65rem;
+.corner-icon {
+  height: 1.6rem;
+  opacity: 0.3;
+  width: 1.6rem;
 }
 .copies {
   font-family: var(--font-title);
@@ -123,8 +134,9 @@ const language = useLanguageStore()
   line-height: 1.1;
 }
 .icon {
-  height: 4.2rem;
-  width: 3rem;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 35%));
+  height: 3.6rem;
+  width: 3.6rem;
 }
 .description {
   flex: 1;
@@ -132,13 +144,11 @@ const language = useLanguageStore()
   line-height: 1.3;
 }
 .footer {
+  align-items: center;
   display: flex;
   font-family: var(--font-title);
   justify-content: space-between;
   width: 100%;
-}
-.unlock {
-  color: #7a1c24;
 }
 .reason {
   background: var(--danger);

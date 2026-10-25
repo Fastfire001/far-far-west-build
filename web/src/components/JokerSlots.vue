@@ -232,9 +232,8 @@ onBeforeUnmount(() => removeEventListener('scroll', hidePreview, { capture: true
   box-shadow: 0 0 12px color-mix(in srgb, var(--rarity) 70%, transparent);
 }
 .used img {
-  height: 140%;
-  object-fit: cover;
-  width: 100%;
+  height: 62%;
+  width: 62%;
 }
 .free {
   background: rgb(0 0 0 / 35%);

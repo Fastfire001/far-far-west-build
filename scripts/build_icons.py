@@ -4,8 +4,8 @@ and sidearm), utilities, spell schools and spells, plus the hero (hero/itemHero.
 Usage: python3 scripts/build_icons.py <data_dir> <out_dir>
 
 The icons are original drawings that follow the game's visual codes without copying its assets:
-- jokers: a card in the colour of their rarity, one dot per slot they cost, and a white drawing of their own, on the
-  same subject as the joker's card in the game;
+- jokers: a white drawing of their own on a transparent background, on the same subject as the joker's icon in the
+  game; the interface draws the card or the slot circle around it, in the colour of the joker's rarity;
 - spells and spell schools: a round badge in the colour of their school (`school_colors` in manual.json), with a
   pictogram on the same subject as the spell's icon in the game;
 - equipment and the hero: a light silhouette on a dark tile;
@@ -18,10 +18,6 @@ import hashlib, html, json, math, os, sys
 
 data_dir, out_dir = sys.argv[1:3]
 
-RARITY_COLORS = {
-    "Normal": "#8c7b5e", "Fine": "#6a8a2b", "Prime": "#2f6fae",
-    "Mythic": "#7b3fa3", "Legendary": "#c9821a", "Unique": "#a3232e",
-}
 # Hand-entered from the game (data/manual.json), like the spell cooldowns.
 SCHOOL_COLORS = {school: color for school, color in json.load(open(os.path.join(data_dir, "manual.json")))["school_colors"].items()
                  if not school.startswith("_")}
@@ -72,7 +68,7 @@ def at(content, cx, cy, scale=1, rotate=0):
 
 
 def cut(content, holes):
-    """Punches holes (any pictogram, drawn in black) out of content, so the card shows through."""
+    """Punches holes (any pictogram, drawn in black) out of content, so the background shows through."""
     # The mask id comes from what it cuts, so that changing one drawing does not renumber the others' masks.
     mask = "k" + hashlib.md5((content + holes).encode()).hexdigest()[:8]
     return (f'<mask id="{mask}" maskUnits="userSpaceOnUse" x="-100" y="-100" width="300" height="300">'
@@ -300,22 +296,10 @@ def document(view_box, content, title):
             f"<title>{html.escape(title)}</title>{content}</svg>\n")
 
 
-def joker_icon(joker, svg, school=None):
-    color = RARITY_COLORS[joker["rarity"]]
-    dots = joker["slot_cost"]
-    spacing = 9
-    first = 50 - (dots - 1) * spacing / 2
-    content = (
-        f'<rect x="2" y="2" width="96" height="136" rx="10" fill="{color}"/>'
-        f'<rect x="8" y="8" width="84" height="124" rx="6" fill="none" stroke="#000" stroke-opacity=".25" stroke-width="2"/>'
-        + "".join(f'<circle cx="{first + i * spacing:.1f}" cy="18" r="3.2" fill="#fff"/>' for i in range(dots))
-        + group(f'<g fill="#fff" color="#fff">{svg}</g>', "translate(8 32) scale(.84)")
-    )
-    if school:
-        content += (f'<circle cx="80" cy="120" r="13" fill="{SCHOOL_COLORS[school]}" stroke="#fff" stroke-width="2.5"/>'
-                    + group(f'<g fill="{ink(SCHOOL_COLORS[school])}" color="{ink(SCHOOL_COLORS[school])}">{G[SCHOOL_GLYPHS[school]]}</g>',
-                            "translate(71 111) scale(.18)"))
-    return document("0 0 100 140", content, joker["name"])
+def joker_icon(joker, svg):
+    """Only the white pictogram, on a transparent background, as in the game: the card, the slot circle and the
+    rarity colour around it are drawn by the interface."""
+    return document("0 0 100 100", f'<g fill="#fff" color="#fff">{svg}</g>', joker["name"])
 
 
 def badge_icon(color, spec, title, double_ring=False):
@@ -452,13 +436,6 @@ UPGRADE_GLYPHS = {
     "jokerUpgradeJetpackForce": "down_flame",
 }
 
-JOKER_SCHOOLS = {
-    "jokerExplosiveRounds": "itemFire", "jokerExplosiveRoundsAcid": "itemAcid", "jokerExplosiveRoundsElec": "itemElec",
-    "jokerExplosiveRoundsFrost": "itemIce", "jokerCdrFire": "itemFire", "jokerCdrElec": "itemElec",
-    "jokerCdrAcid": "itemAcid", "jokerCdrVoodoo": "itemVoodoo", "jokerCdrCactus": "itemCactus", "jokerCdrFrost": "itemIce",
-}
-
-
 # Shapes shared by several joker drawings.
 G["knuckles"] = cut(circle(20, 40, 16) + circle(40, 34, 16) + circle(60, 34, 16) + circle(80, 40, 16)
                     + P("M8 46h84l-6 18c-4 10-14 16-24 16H38c-10 0-20-6-24-16z"),
@@ -542,8 +519,8 @@ def radial_bolts(r, scale, angles=(-90, 30, 150)):
                       scale, round(a - 104.6, 1)) for a in angles)
 
 
-# Jokers: one drawing per joker, in the spirit of its card in the game. Elemental jokers also get the spell school
-# in a corner badge (JOKER_SCHOOLS).
+# Jokers: one drawing per joker, in the spirit of its card in the game. Elemental variants (Explosive Hits, Mastery)
+# carry their school's pictogram in the drawing itself.
 JOKER_ART = {
     "jokerCrashPack": G["jerrycan"] + at(G["plus"], 80, 18, .34),
     "jokerHoverPack": rocket(18, 30, 74, 10) + rocket(82, 30, 74, 10) + P("M50 6 74 34H60v28c0 10 8 18 18 30H22c10-12 18-20 18-30V34H26z"),
@@ -882,7 +859,7 @@ icons.update({("schools", s["id"]): badge_icon(SCHOOL_COLORS[s["id"]], SCHOOL_GL
               for s in spells["schools"]})
 icons.update({("spells", s["id"]): badge_icon(SCHOOL_COLORS[s["school"]], SPELL_GLYPHS[s["id"]], s["name"])
               for s in spells["spells"]})
-icons.update({("jokers", j["id"]): joker_icon(j, JOKER_ART[j["id"]], JOKER_SCHOOLS.get(j["id"])) for j in jokers})
+icons.update({("jokers", j["id"]): joker_icon(j, JOKER_ART[j["id"]]) for j in jokers})
 icons.update({("upgrades", u["id"]): upgrade_icon(UPGRADE_GLYPHS[u["id"]], u["color"], u["name"]) for u in upgrades})
 
 paths = {os.path.join(folder, icon_id + ".svg"): svg for (folder, icon_id), svg in icons.items()}

@@ -1,5 +1,5 @@
 // Pieces shared by the content pages: URLs of each item, icons, joker tables.
-import { HERO_ID, equipmentById, jokers, spellSchools, type Joker, type Rarity } from '@/domain/gameData'
+import { HERO_ID, equipmentById, jokerById, jokers, spellSchools, type Joker, type Rarity } from '@/domain/gameData'
 import { RARITY_COLORS } from '@/ui/colors'
 import type { Context } from './context'
 import { html, type Html } from './html'
@@ -28,8 +28,12 @@ export function rarityName(ctx: Context, rarity: Rarity): string {
   return ctx.game(`rarity_${rarity.toLowerCase()}`)
 }
 
+/** An item's icon; a joker's (a white pictogram) in a circle of its rarity colour, as in the game's slots. */
 export function icon(ctx: Context, id: string, size: 'small' | 'medium' | 'large' = 'small'): Html {
-  return html`<img class="icon ${size}" src="${ctx.icon(id)}" alt="" loading="lazy" />`
+  const joker = jokerById.get(id)
+  return joker
+    ? html`<img class="icon ${size} joker-icon" style="--rarity: ${RARITY_COLORS[joker.rarity]}" src="${ctx.icon(id)}" alt="" loading="lazy" />`
+    : html`<img class="icon ${size}" src="${ctx.icon(id)}" alt="" loading="lazy" />`
 }
 
 /** Link to an item's page, with its icon. */
