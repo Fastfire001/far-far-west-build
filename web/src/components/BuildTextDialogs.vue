@@ -4,7 +4,7 @@ import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { BuildImportError } from '@/domain/codec'
-import { shareLinkPath } from '@/domain/shareCode'
+import { encodeShareCode } from '@/domain/shareCode'
 import { useBuildStore } from '@/stores/build'
 import { useLibraryStore } from '@/stores/library'
 import AppDialog from './AppDialog.vue'
@@ -18,17 +18,17 @@ const editor = useBuildStore()
 const library = useLibraryStore()
 
 const exported = computed(() => (exportOpen.value ? editor.exportText() : ''))
-const link = ref('')
+const link = computed(() => {
+  if (!exportOpen.value) return ''
+  const code = encodeShareCode(editor.build)
+  return new URL(router.resolve({ name: 'share', params: { code } }).href, location.href).href
+})
 const copied = ref<'link' | 'text' | null>(null)
 const linkField = ref<HTMLInputElement>()
 const exportField = ref<HTMLTextAreaElement>()
 
-watch(exportOpen, async (open) => {
+watch(exportOpen, () => {
   copied.value = null
-  if (!open) return
-  link.value = ''
-  const path = await shareLinkPath(editor.build)
-  link.value = new URL(router.resolve(path).href, location.href).href
 })
 
 async function copy(what: 'link' | 'text') {
@@ -67,7 +67,7 @@ function importBuild() {
     <input ref="linkField" class="text" readonly :value="link" @focus="linkField?.select()" />
     <div class="actions">
       <span v-if="copied === 'link'" class="ok" aria-live="polite">{{ t('dialog.copied') }}</span>
-      <button type="button" class="action" :disabled="!link" @click="copy('link')">{{ t('dialog.copyLink') }}</button>
+      <button type="button" class="action" @click="copy('link')">{{ t('dialog.copyLink') }}</button>
     </div>
     <p class="second">{{ t('dialog.exportHelp') }}</p>
     <textarea ref="exportField" class="text" readonly :value="exported" rows="4" @focus="exportField?.select()" />

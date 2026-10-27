@@ -1,9 +1,9 @@
 import shareIds from '@data/share-ids.json'
 import { describe, expect, it } from 'vitest'
 import { addJoker, CARRIERS, carrierItem, emptyBuild, placeSpell, setElement, setUpgradePoints, setUtility, setWeapon, type Build } from './build'
-import { encodeShareCode, toBase64Url } from './codec'
+import { encodeBuild, toBase64Url } from './codec'
 import { equipment, jokers, spells, spellSchools, upgrades } from './gameData'
-import { decodeCompactCode, encodeCompactCode, shareLinkPath } from './shareCode'
+import { decodeShareCode, encodeShareCode } from './shareCode'
 
 /** A build with every part filled in: 5 upgrades and 6 jokers (one with 2 copies) per carrier. */
 function fullBuild(): Build {
@@ -35,28 +35,42 @@ describe('share id table', () => {
   })
 })
 
-describe('compact share links', () => {
-  it('round-trips a full build in a short URL-safe code', async () => {
-    const build = fullBuild()
-    const code = encodeCompactCode(build)!
+describe('share links', () => {
+  it('round-trips a build in a short URL-safe code', () => {
+    const code = encodeShareCode(fullBuild())
     expect(code).toMatch(/^[A-Za-z0-9_-]+$/)
-    expect(code.length).toBeLessThan((await encodeShareCode(build)).length / 3)
-    expect(decodeCompactCode(code)).toEqual(build)
-    expect(decodeCompactCode(encodeCompactCode(emptyBuild())!)).toEqual(emptyBuild())
+    expect(code.length).toBeLessThan(encodeBuild(fullBuild()).length / 10)
+    expect(decodeShareCode(code)).toEqual(fullBuild())
+    expect(decodeShareCode(encodeShareCode(emptyBuild()))).toEqual(emptyBuild())
   })
 
-  it('falls back to the long link for an id missing from the table', async () => {
-    const build = addJoker(fullBuild(), 'hero', 'jokerGone')
-    expect(encodeCompactCode(build)).toBeNull()
-    expect(await shareLinkPath(build)).toMatch(/^\/share\//)
-    expect(await shareLinkPath(fullBuild())).toMatch(/^\/b\//)
+  it('still opens a link of format 1', () => {
+    // Fails if data/share-ids.json was reordered, or if a change of the format broke the links already shared.
+    expect(decodeShareCode('AQlQeXJvIPCfpKAxNg8IAyIAKwELBgAAASEBBggDDAAV')).toEqual({
+      name: 'Pyro 🤠',
+      hero: { upgrades: { jokerUpgradeHeal: 6 }, jokers: {} },
+      main: { weapon: 'itemWinchester', upgrades: {}, jokers: { jokerCrackShot: 1 } },
+      sidearm: {
+        weapon: 'itemPistol',
+        element: 'itemFire',
+        upgrades: { jokerUpgradeDamage: 8 },
+        jokers: { jokerCrackShot: 1, jokerBracing: 2 },
+      },
+      utility: 'itemUtilityAmmo',
+      spells: ['itemSpellFireBall', null, 'itemSpellIceLance'],
+    })
+  })
+
+  it('leaves out the ids missing from the table', () => {
+    const build = setUtility(addJoker(fullBuild(), 'hero', 'jokerGone'), 'itemGone')
+    expect(decodeShareCode(encodeShareCode(build))).toEqual(setUtility(fullBuild(), null))
   })
 
   it('rejects a damaged code', () => {
-    const code = encodeCompactCode(fullBuild())!
+    const code = encodeShareCode(fullBuild())
     const reason = (text: string) => {
       try {
-        decodeCompactCode(text)
+        decodeShareCode(text)
       } catch (error) {
         return (error as { reason: string }).reason
       }
@@ -64,8 +78,9 @@ describe('compact share links', () => {
     expect(reason(code.slice(0, -2))).toBe('encoding')
     expect(reason(code + 'AA')).toBe('encoding')
     expect(reason('%%%')).toBe('encoding')
-    expect(reason(toBase64Url(new Uint8Array([3, 0])))).toBe('version')
-    // Joker number past the end of the table.
-    expect(reason(toBase64Url(new Uint8Array([2, 0, 0, 0, 0, 0, 0, 0, 1, 0x80, 0x10, 0, 0, 0, 0])))).toBe('encoding')
+    expect(reason('')).toBe('encoding')
+    expect(reason(toBase64Url(new Uint8Array([99, 0])))).toBe('version')
+    // Format 1, joker number past the end of the table.
+    expect(reason(toBase64Url(new Uint8Array([1, 0, 0, 0, 0, 0, 0, 0, 1, 0x80, 0x10, 0, 0, 0, 0])))).toBe('encoding')
   })
 })

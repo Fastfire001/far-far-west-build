@@ -1,6 +1,5 @@
 // Export and import of a build as text: "FFW1:" + base64 of the UTF-8 JSON, with a format version ("v": 1) to
 // convert old builds later. Ids are kept as they are, even unknown ones: validation reports them.
-// Share links carry the same JSON, compressed (deflate) and in URL-safe base64, to keep links short.
 import { emptyBuild, type Build, type Loadout } from './build'
 import { RULES } from './rules'
 
@@ -29,25 +28,6 @@ export function decodeBuild(text: string): Build {
   return restoreBuild(data)
 }
 
-/** Code of a share link (/#/share/<code>): the stored build, deflated, in URL-safe base64 without padding. */
-export async function encodeShareCode(build: Build): Promise<string> {
-  const json = new TextEncoder().encode(JSON.stringify(storedBuild(build)))
-  const packed = await pipe(json, new CompressionStream('deflate-raw'))
-  return toBase64Url(packed)
-}
-
-/** Reads the code of a share link. Throws a BuildImportError if it is not one. */
-export async function decodeShareCode(code: string): Promise<Build> {
-  let data: unknown
-  try {
-    const packed = fromBase64Url(code.trim())
-    data = parseJson(await pipe(packed, new DecompressionStream('deflate-raw')))
-  } catch {
-    throw new BuildImportError('encoding')
-  }
-  return restoreBuild(data)
-}
-
 // btoa() and atob() only handle Latin-1 characters: one character per byte.
 function toBase64(bytes: Uint8Array): string {
   return btoa(Array.from(bytes, (b) => String.fromCharCode(b)).join(''))
@@ -57,7 +37,7 @@ function fromBase64(text: string): Uint8Array {
   return Uint8Array.from(atob(text), (c) => c.charCodeAt(0))
 }
 
-/** URL-safe base64 without padding, as in share links. */
+/** URL-safe base64 without padding, for share links (see shareCode.ts). */
 export function toBase64Url(bytes: Uint8Array): string {
   return toBase64(bytes).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
 }
@@ -68,11 +48,6 @@ export function fromBase64Url(text: string): Uint8Array {
 
 function parseJson(bytes: Uint8Array): unknown {
   return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes))
-}
-
-async function pipe(bytes: Uint8Array, stream: CompressionStream | DecompressionStream): Promise<Uint8Array> {
-  const output = new Blob([bytes as Uint8Array<ArrayBuffer>]).stream().pipeThrough(stream)
-  return new Uint8Array(await new Response(output).arrayBuffer())
 }
 
 /** Build as stored (export, local saves): the build with its format version. */

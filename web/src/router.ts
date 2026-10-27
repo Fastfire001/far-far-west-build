@@ -43,9 +43,8 @@ export const router = createRouter({
     { path: '/spells', name: 'spells', component: SpellsView, meta: { back: () => ({ name: 'home' }) } },
     // Read-only sheet of the build, to screenshot.
     { path: '/summary', name: 'summary', component: SummaryView, meta: { back: () => ({ name: 'home' }) } },
-    // Share links: open the build they carry (see shareLinkPath). /share/ is the long format, still read.
-    { path: '/b/:code', name: 'share', component: ShareView, meta: { back: () => ({ name: 'home' }) } },
-    { path: '/share/:code', name: 'shareLong', component: ShareView, meta: { back: () => ({ name: 'home' }) } },
+    // Share link: opens the build it carries (see shareCode.ts).
+    { path: '/share/:code', name: 'share', component: ShareView, meta: { back: () => ({ name: 'home' }) } },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
   scrollBehavior: () => ({ top: 0 }),
