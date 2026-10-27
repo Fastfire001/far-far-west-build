@@ -6,7 +6,7 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import * as ops from '@/domain/build'
 import { CARRIERS, type Build, type CarrierKey } from '@/domain/build'
-import { decodeBuild, encodeBuild } from '@/domain/codec'
+import { decodeShareCode, encodeShareCode } from '@/domain/shareCode'
 import { requirements, type Requirements } from '@/domain/progression'
 import { jokerAddBlocker, upgradeRoom, validateBuild } from '@/domain/validation'
 
@@ -71,12 +71,12 @@ export const useBuildStore = defineStore('build', () => {
   }
 
   function exportText(): string {
-    return encodeBuild(build.value)
+    return encodeShareCode(build.value)
   }
 
-  /** Loads an exported build. Throws a BuildImportError if the text is not one; an invalid build is still loaded. */
+  /** Loads a share code or link. Throws a BuildImportError if the text is not one; an invalid build is still loaded. */
   function importText(text: string) {
-    build.value = decodeBuild(text)
+    build.value = decodeShareCode(text)
   }
 
   return {

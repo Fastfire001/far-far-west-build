@@ -3,7 +3,7 @@
 import { equipment, HERO_ID, jokers, upgrades, type Equipment } from '@/domain/gameData'
 import { uniqueUnlockLevel } from '@/domain/progression'
 import { MAX_UPGRADE_POINTS, RULES } from '@/domain/rules'
-import { encodeShareCode } from '@/domain/codec'
+import { encodeShareCode } from '@/domain/shareCode'
 import { emptyBuild, setUtility, setWeapon } from '@/domain/build'
 import type { Context, Page } from './context'
 import { html, type Html } from './html'
@@ -86,11 +86,11 @@ ${jokersByRarity(ctx, carrierJokers, false, 3)}`
 function weaponPage(weapon: Equipment): Page {
   return {
     path: itemPath(weapon.id),
-    render: async (ctx) => {
+    render: (ctx) => {
       const name = ctx.name(weapon.id)
       const slot = weapon.type === 'main' ? 'main' : 'sidearm'
       // Share link of a build with this weapon equipped: opens the planner on it.
-      const code = await encodeShareCode(setWeapon(emptyBuild(), slot, weapon.id))
+      const code = encodeShareCode(setWeapon(emptyBuild(), slot, weapon.id))
       return {
         title: ctx.t('weapon.title', { name }),
         description: ctx.t('weapon.description', {
@@ -144,9 +144,9 @@ ${loadoutSections(ctx, HERO_ID)}`,
 function utilityPage(utility: Equipment): Page {
   return {
     path: itemPath(utility.id),
-    render: async (ctx) => {
+    render: (ctx) => {
       const name = ctx.name(utility.id)
-      const code = await encodeShareCode(setUtility(emptyBuild(), utility.id))
+      const code = encodeShareCode(setUtility(emptyBuild(), utility.id))
       return {
         title: ctx.t('utility.title', { name }),
         description: plain(ctx.t('utility.description', { name, effect: sentence(ctx.description(utility.id)) })),

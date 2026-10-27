@@ -40,6 +40,16 @@ describe('language store', () => {
     expect((await reload()).locale).toBe('de-DE')
   })
 
+  it('shows a forced language without changing the chosen one', async () => {
+    const language = await reload()
+    await language.force('en-US')
+    expect([language.locale, language.chosen]).toEqual(['en-US', 'de-DE'])
+    await language.chooseLocale('fr-FR')
+    expect([language.locale, language.chosen]).toEqual(['en-US', 'fr-FR'])
+    await language.force(null)
+    expect(language.locale).toBe('fr-FR')
+  })
+
   it('works without storage', async () => {
     vi.stubGlobal('localStorage', undefined)
     const language = await reload()

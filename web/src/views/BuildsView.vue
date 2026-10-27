@@ -1,5 +1,6 @@
 <script setup lang="ts">
-// The saved builds: open one (click), duplicate or delete it, or start a new one.
+// The saved builds: open one (click), duplicate or delete it, or start a new one. Builds received by a share link or
+// an import are listed apart, until they are kept or changed, and can be deleted all at once.
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
@@ -15,6 +16,10 @@ const library = useLibraryStore()
 const language = useLanguageStore()
 
 const sorted = computed(() => [...library.builds].sort((a, b) => b.updatedAt - a.updatedAt))
+const sections = computed(() => [
+  { received: false, builds: sorted.value.filter((b) => !b.received) },
+  { received: true, builds: sorted.value.filter((b) => b.received) },
+])
 const dateFormat = computed(() => new Intl.DateTimeFormat(language.locale, { dateStyle: 'medium', timeStyle: 'short' }))
 
 function name(entry: SavedBuild): string {
@@ -41,6 +46,10 @@ function newBuild() {
 function remove(entry: SavedBuild) {
   if (window.confirm(t('builds.confirmDelete', { name: name(entry) }))) library.remove(entry.id)
 }
+
+function removeReceived() {
+  if (window.confirm(t('builds.confirmDeleteReceived'))) library.removeReceived()
+}
 </script>
 
 <template>
@@ -51,26 +60,35 @@ function remove(entry: SavedBuild) {
 
     <WoodPlank class="new" @click="newBuild">{{ t('menu.newBuild') }}</WoodPlank>
 
-    <ul class="list">
-      <li v-for="entry in sorted" :key="entry.id" class="row" :class="{ current: entry.id === library.currentId }">
-        <button type="button" class="open" @click="open(entry)">
-          <span class="name">
-            {{ name(entry) }}
-            <span v-if="entry.id === library.currentId" class="badge">{{ t('builds.current') }}</span>
-          </span>
-          <span class="icons">
-            <img v-for="(id, i) in icons(entry)" :key="i" :src="iconUrl(id)" :alt="language.gameName(id)" />
-          </span>
-          <span class="date">{{ t('builds.updated', { date: dateFormat.format(entry.updatedAt) }) }}</span>
-        </button>
-        <span class="row-actions">
-          <button type="button" class="small" @click="library.duplicate(entry.id, t('builds.copyName', { name: name(entry) }))">
-            {{ t('builds.duplicate') }}
+    <template v-for="section in sections" :key="String(section.received)">
+      <div v-if="section.received && section.builds.length" class="section-head">
+        <h2>{{ t('builds.received') }}</h2>
+        <button type="button" class="small danger" @click="removeReceived">{{ t('builds.deleteReceived') }}</button>
+      </div>
+      <ul class="list">
+        <li v-for="entry in section.builds" :key="entry.id" class="row" :class="{ current: entry.id === library.currentId }">
+          <button type="button" class="open" @click="open(entry)">
+            <span class="name">
+              {{ name(entry) }}
+              <span v-if="entry.id === library.currentId" class="badge">{{ t('builds.current') }}</span>
+            </span>
+            <span class="icons">
+              <img v-for="(id, i) in icons(entry)" :key="i" :src="iconUrl(id)" :alt="language.gameName(id)" />
+            </span>
+            <span class="date">{{ t('builds.updated', { date: dateFormat.format(entry.updatedAt) }) }}</span>
           </button>
-          <button type="button" class="small danger" @click="remove(entry)">{{ t('builds.delete') }}</button>
-        </span>
-      </li>
-    </ul>
+          <span class="row-actions">
+            <button v-if="entry.received" type="button" class="small" @click="library.keep(entry.id)">
+              {{ t('builds.keep') }}
+            </button>
+            <button type="button" class="small" @click="library.duplicate(entry.id, t('builds.copyName', { name: name(entry) }))">
+              {{ t('builds.duplicate') }}
+            </button>
+            <button type="button" class="small danger" @click="remove(entry)">{{ t('builds.delete') }}</button>
+          </span>
+        </li>
+      </ul>
+    </template>
   </main>
 </template>
 
@@ -89,6 +107,21 @@ h1 {
 .new {
   margin-bottom: 1.5rem;
   max-width: 24rem;
+}
+.section-head {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  margin: 2rem 0 0.8rem;
+}
+h2 {
+  color: var(--accent);
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  margin: 0;
+  text-transform: uppercase;
 }
 .list {
   display: flex;

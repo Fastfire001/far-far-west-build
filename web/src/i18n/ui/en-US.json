@@ -10,7 +10,8 @@
     "myBuilds": "My builds",
     "import": "Import…",
     "export": "Share…",
-    "unavailable": "Save unavailable"
+    "unavailable": "Save unavailable",
+    "settings": "Settings"
   },
   "home": {
     "untitled": "Untitled build",
@@ -80,10 +81,8 @@
     "copyLink": "Copy the link",
     "copied": "Copied !",
     "importTitle": "Import a build",
-    "importHelp": "Paste the text of an exported build (it starts with FFW1:). It's added to your builds.",
     "import": "Import",
     "importError": {
-      "prefix": "This is not an exported build : the text must start with FFW1:.",
       "encoding": "The text is incomplete or corrupted.",
       "format": "The text does not contain a build.",
       "version": "This build comes from a newer version of the planner."
@@ -97,7 +96,11 @@
     "delete": "Delete",
     "copyName": "{name} (copy)",
     "confirmDelete": "Delete the build \"{name}\"? This cannot be undone.",
-    "unavailable": "Your browser does not allow saving : the builds will be lost when the page is closed."
+    "unavailable": "Your browser does not allow saving : the builds will be lost when the page is closed.",
+    "received": "Imported build",
+    "deleteReceived": "Delete all imported build",
+    "confirmDeleteReceived": "Confirm",
+    "keep": "Move to my builds"
   },
   "share": {
     "invalidTitle": "Share link invalid"
@@ -107,5 +110,8 @@
     "jokers": "All jokers",
     "weapons": "Weapons and their jokers",
     "spells": "Spells and cooldowns"
+  },
+  "settings": {
+    "summaryInEnglish": "Summary always in english"
   }
 }

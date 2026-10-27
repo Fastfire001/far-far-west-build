@@ -1,9 +1,10 @@
 <script setup lang="ts">
-// Sharing of a build (link, or text to import: "FFW1:...") and import of a text, from the builds menu.
+// Sharing of a build (link, or its code to import) and import of a code or a link, from the builds menu.
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
-import { BuildImportError, encodeShareCode } from '@/domain/codec'
+import { BuildImportError } from '@/domain/codec'
+import { encodeShareCode } from '@/domain/shareCode'
 import { useBuildStore } from '@/stores/build'
 import { useLibraryStore } from '@/stores/library'
 import AppDialog from './AppDialog.vue'
@@ -17,17 +18,17 @@ const editor = useBuildStore()
 const library = useLibraryStore()
 
 const exported = computed(() => (exportOpen.value ? editor.exportText() : ''))
-const link = ref('')
+const link = computed(() => {
+  if (!exportOpen.value) return ''
+  const code = encodeShareCode(editor.build)
+  return new URL(router.resolve({ name: 'share', params: { code } }).href, location.href).href
+})
 const copied = ref<'link' | 'text' | null>(null)
 const linkField = ref<HTMLInputElement>()
 const exportField = ref<HTMLTextAreaElement>()
 
-watch(exportOpen, async (open) => {
+watch(exportOpen, () => {
   copied.value = null
-  if (!open) return
-  link.value = ''
-  const code = await encodeShareCode(editor.build)
-  link.value = new URL(router.resolve({ name: 'share', params: { code } }).href, location.href).href
 })
 
 async function copy(what: 'link' | 'text') {
@@ -66,7 +67,7 @@ function importBuild() {
     <input ref="linkField" class="text" readonly :value="link" @focus="linkField?.select()" />
     <div class="actions">
       <span v-if="copied === 'link'" class="ok" aria-live="polite">{{ t('dialog.copied') }}</span>
-      <button type="button" class="action" :disabled="!link" @click="copy('link')">{{ t('dialog.copyLink') }}</button>
+      <button type="button" class="action" @click="copy('link')">{{ t('dialog.copyLink') }}</button>
     </div>
     <p class="second">{{ t('dialog.exportHelp') }}</p>
     <textarea ref="exportField" class="text" readonly :value="exported" rows="4" @focus="exportField?.select()" />
@@ -77,8 +78,7 @@ function importBuild() {
   </AppDialog>
 
   <AppDialog v-model="importOpen" :title="t('dialog.importTitle')">
-    <p>{{ t('dialog.importHelp') }}</p>
-    <textarea v-model="pasted" class="text" rows="5" placeholder="FFW1:…" :aria-invalid="Boolean(importError)" />
+    <textarea v-model="pasted" class="text" rows="5" :aria-label="t('dialog.importTitle')" :aria-invalid="Boolean(importError)" />
     <p v-if="importError" class="error" role="alert">{{ importError }}</p>
     <div class="actions">
       <button type="button" class="action" :disabled="!pasted.trim()" @click="importBuild">{{ t('dialog.import') }}</button>

@@ -66,7 +66,11 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   shows its card beside the slots. Not on touch screens, where a tap removes the joker.
 - **Spells**: the 6 schools, the spells of the chosen school with their cooldown, and the 3 slots. Keys under the
   slots follow the game: [A] [E] [C] in French (AZERTY), [Q] [E] [C] in the other languages.
-- **My builds**: the saved builds (open, duplicate, delete).
+- **Settings** (Builds menu): a dialog of options, saved in localStorage (`web/src/stores/settings.ts`). Today a
+  single one, "Summary always in English": the summary sheet is shown in English whatever the language picked
+  (the whole page, menu bar included, while the summary is open; the language menu still shows the one picked).
+- **My builds**: the saved builds (open, duplicate, delete), then the received ones in their own section, which a
+  button empties.
 - **Share link** (`/#/share/<code>`): opens the build carried by the link, then goes to its home (see "Saving and
   sharing").
 
@@ -169,16 +173,29 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   choice) is dropped when another one is opened. Without localStorage (blocked storage), everything works without
   saving, and the menu says so.
 - An **imported** build is added to the list as a new build: it does not overwrite the current one.
-- **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the same JSON as the export,
-  compressed (`deflate-raw`, `CompressionStream`) and in URL-safe base64: about 400 characters for a full build,
-  against 1,700 for the export text. Opening a link adds the build to the saved builds, or reopens the saved copy if
-  an identical one exists, then replaces the URL with the build home, so a reload does not add it again.
-- **Export / Import** (text to copy, in the same dialog as the link): the build is JSON encoded in base64, with a
-  prefix (`FFW1:…`).
-- The JSON has a **format version number** (`"v": 1`), so that old builds can be converted.
-- Every item (equipment, spells, jokers, upgrades) is identified by its **internal game `id`** (`itemPistol`,
-  `jokerCrackShot`…), which does not change if the game renames the item.
-- Base64 is encoded from UTF-8 (`TextEncoder`), not with `btoa()` directly, which fails on non-ASCII characters.
+- **Received builds** (opened from a share link or imported) are listed apart in "My builds", so that opening many
+  links does not bury our own builds, and can all be deleted at once. A received build becomes one of ours with its
+  Keep button, or as soon as it is changed (a copy made with Duplicate is ours too). The flag is saved with the build (`"received": true`).
+- **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the build as bytes in URL-safe base64
+  (`web/src/domain/shareCode.ts`): items, jokers and upgrades are written as their number in `data/share-ids.json`,
+  in varints. About 90 characters for a full build without a name, against 900 for its JSON. Opening a link
+  adds the build to the saved builds, or reopens the saved copy if an identical one exists, then replaces the URL
+  with the build home, so a reload does not add it again.
+- **Link formats**: the code starts with its format version (today 1), which picks the reader. A new format gets the
+  next version, its own writer and reader, and the old readers stay, so that the links already shared still open. A
+  test decodes a link of format 1 written once and for all. The first links (compressed JSON, same address) are
+  no longer read: their code does not start with a known version, so they show an error.
+- Ids missing from the table (only a hand-edited saved build can have one: ids removed from the game stay in it) are
+  left out of the code.
+- **The numbers of `data/share-ids.json` never change**: `bin/extract-game` only appends the new ids (sorted) at
+  the end of each list and keeps the ids removed from the game, so an old link keeps its meaning after a game update.
+  It is the only file of `data/` built from its previous version: the extraction stops if it is missing (restore it
+  from git), and it must never be reordered or edited by hand. A test checks that every id of `data/` is in it.
+- **Export / Import** (text to copy, in the same dialog as the link): the text is the share code. Import accepts the
+  code or the whole link. The first export texts (`FFW1:…`, JSON in base64) are no longer read.
+- Saved builds (localStorage) are JSON with a **format version number** (`"v": 1`), so that old builds can be
+  converted. Every item (equipment, spells, jokers, upgrades) is identified there by its **internal game `id`**
+  (`itemPistol`, `jokerCrackShot`…), which does not change if the game renames the item.
 - On import, the build is validated with the same rules as in the editor. An invalid build, or one with an unknown id
   (joker removed by a patch), is still imported, with warnings.
 
@@ -204,9 +221,3 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   can rank are the content pages (see "Content pages"). `sitemap.xml` is generated at build time with the planner
   and every content page. A `robots.txt` would have to be at the domain root (`fastfire001.github.io`), so the
   sitemap is submitted in Google Search Console instead.
-
-## Open questions (to check in game)
-
-1. **Do prestige bonuses apply right away?** Can the bought slots and points be used from level 1, or do they only
-   raise the cap that has to be reached by leveling up? The logic is in the `UI_PrestigeShop` Blueprint, which we
-   cannot read with our extraction method.

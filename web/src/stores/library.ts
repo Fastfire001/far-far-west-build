@@ -1,10 +1,12 @@
 // The saved builds, in the browser's localStorage (docs/build-planner.md, "Saving and sharing"). The build being
 // edited is saved on every change: there is no save button. A build left blank is dropped when another one is
 // opened. If localStorage is not available (blocked storage, some private modes), everything works without saving.
+// Builds received from someone else (share link, import) are kept apart until they are changed.
 import { defineStore } from 'pinia'
 import { ref, watch } from 'vue'
 import { emptyBuild, type Build } from '@/domain/build'
-import { decodeBuild, restoreBuild, storedBuild } from '@/domain/codec'
+import { restoreBuild, storedBuild } from '@/domain/codec'
+import { decodeShareCode } from '@/domain/shareCode'
 import { useBuildStore } from './build'
 
 export const STORAGE_KEY = 'ffw-build-planner'
@@ -14,11 +16,13 @@ export interface SavedBuild {
   build: Build
   /** Last change, in milliseconds since the epoch. */
   updatedAt: number
+  /** Opened from a share link or imported, and not changed since. */
+  received: boolean
 }
 
 interface Stored {
   currentId: string
-  builds: { id: string; updatedAt: number; build: unknown }[]
+  builds: { id: string; updatedAt: number; received?: boolean; build: unknown }[]
 }
 
 function newId(): string {
@@ -50,7 +54,12 @@ export const useLibraryStore = defineStore('library', () => {
   function write() {
     const data: Stored = {
       currentId: currentId.value,
-      builds: builds.value.map((b) => ({ id: b.id, updatedAt: b.updatedAt, build: storedBuild(b.build) })),
+      builds: builds.value.map((b) => ({
+        id: b.id,
+        updatedAt: b.updatedAt,
+        ...(b.received && { received: true }),
+        build: storedBuild(b.build),
+      })),
     }
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
@@ -75,8 +84,8 @@ export const useLibraryStore = defineStore('library', () => {
     write()
   }
 
-  function add(build: Build): SavedBuild {
-    const entry = { id: newId(), build, updatedAt: Date.now() }
+  function add(build: Build, received = false): SavedBuild {
+    const entry = { id: newId(), build, updatedAt: Date.now(), received }
     builds.value = [entry, ...builds.value]
     return entry
   }
@@ -87,7 +96,12 @@ export const useLibraryStore = defineStore('library', () => {
     const restored: SavedBuild[] = []
     for (const b of stored?.builds ?? []) {
       try {
-        restored.push({ id: String(b.id), updatedAt: Number(b.updatedAt) || 0, build: restoreBuild(b.build) })
+        restored.push({
+          id: String(b.id),
+          updatedAt: Number(b.updatedAt) || 0,
+          received: b.received === true,
+          build: restoreBuild(b.build),
+        })
       } catch {
         // A build the planner cannot read (e.g. from a newer version) is left out.
       }
@@ -106,6 +120,8 @@ export const useLibraryStore = defineStore('library', () => {
         if (!entry || entry.build === build) return
         entry.build = build
         entry.updatedAt = Date.now()
+        // A received build that is changed becomes one of ours.
+        entry.received = false
         write()
       },
     )
@@ -129,8 +145,26 @@ export const useLibraryStore = defineStore('library', () => {
   }
 
   function remove(id: string) {
-    builds.value = builds.value.filter((b) => b.id !== id)
-    if (id === currentId.value) {
+    removeWhere((b) => b.id === id)
+  }
+
+  /** Moves a received build to our own builds. */
+  function keep(id: string) {
+    const entry = builds.value.find((b) => b.id === id)
+    if (!entry) return
+    entry.received = false
+    write()
+  }
+
+  /** Removes every received build. */
+  function removeReceived() {
+    removeWhere((b) => b.received)
+  }
+
+  function removeWhere(test: (entry: SavedBuild) => boolean) {
+    const entry = current()
+    builds.value = builds.value.filter((b) => !test(b))
+    if (!entry || test(entry)) {
       const next = [...builds.value].sort((a, b) => b.updatedAt - a.updatedAt)[0] ?? add(emptyBuild())
       currentId.value = next.id
       editor.load(next.build)
@@ -138,18 +172,18 @@ export const useLibraryStore = defineStore('library', () => {
     write()
   }
 
-  /** Imports an exported build as a new saved build and opens it. Throws a BuildImportError if the text is not one. */
+  /** Imports a share code or link as a new received build and opens it. Throws a BuildImportError if it is not one. */
   function importText(text: string) {
-    switchTo(add(decodeBuild(text)))
+    switchTo(add(decodeShareCode(text), true))
   }
 
-  /** Opens a build received by a share link: the saved copy if one is identical, otherwise a new saved build. */
+  /** Opens a build received by a share link: the saved copy if one is identical, otherwise a new received build. */
   function openShared(build: Build) {
     // Compared in their stored form, where the keys always come in the same order.
     const key = (b: Build) => JSON.stringify(restoreBuild(storedBuild(b)))
     const json = key(build)
-    switchTo(builds.value.find((b) => key(b.build) === json) ?? add(build))
+    switchTo(builds.value.find((b) => key(b.build) === json) ?? add(build, true))
   }
 
-  return { builds, currentId, available, init, newBuild, open, duplicate, remove, importText, openShared }
+  return { builds, currentId, available, init, newBuild, open, duplicate, remove, keep, removeReceived, importText, openShared }
 })
