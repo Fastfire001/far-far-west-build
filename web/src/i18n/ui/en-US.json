@@ -10,7 +10,8 @@
     "myBuilds": "My builds",
     "import": "Import…",
     "export": "Share…",
-    "unavailable": "Save unavailable"
+    "unavailable": "Save unavailable",
+    "settings": "Settings"
   },
   "home": {
     "untitled": "Untitled build",
@@ -109,5 +110,8 @@
     "jokers": "All jokers",
     "weapons": "Weapons and their jokers",
     "spells": "Spells and cooldowns"
+  },
+  "settings": {
+    "summaryInEnglish": "Summary always in english"
   }
 }

@@ -2,7 +2,7 @@
 // Summary of a build: a sheet with everything needed to make the build in the game, laid out to fit in one screenshot
 // (name, spells, utility, then one column per carrier with its jokers and upgrades). Display only: nothing on the sheet
 // is clickable, the build is edited from its home.
-import { computed } from 'vue'
+import { computed, onUnmounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { CARRIERS } from '@/domain/build'
 import { gameMeta, spellCooldown } from '@/domain/gameData'
@@ -10,6 +10,7 @@ import { spellKeys } from '@/i18n'
 import { iconUrl } from '@/icons'
 import { useBuildStore } from '@/stores/build'
 import { useLanguageStore } from '@/stores/language'
+import { useSettingsStore } from '@/stores/settings'
 import { spellColor } from '@/ui/colors'
 import BackButton from '@/components/BackButton.vue'
 import CarrierSummary from '@/components/CarrierSummary.vue'
@@ -17,6 +18,11 @@ import CarrierSummary from '@/components/CarrierSummary.vue'
 const { t, locale } = useI18n()
 const store = useBuildStore()
 const language = useLanguageStore()
+const { settings } = useSettingsStore()
+
+// Setting "summary always in English": the whole page is in English while the summary is open.
+watch(() => settings.summaryInEnglish, (english) => language.force(english ? 'en-US' : null), { immediate: true })
+onUnmounted(() => language.force(null))
 
 const build = computed(() => store.build)
 const anyAssumed = computed(() => CARRIERS.some((c) => store.requirements[c].assumed))

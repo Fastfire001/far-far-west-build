@@ -8,6 +8,7 @@ import { LANGUAGE_NAMES, LOCALES, type Locale } from '@/i18n'
 import { useLanguageStore } from '@/stores/language'
 import { useLibraryStore } from '@/stores/library'
 import BuildTextDialogs from './BuildTextDialogs.vue'
+import SettingsDialog from './SettingsDialog.vue'
 
 const { t } = useI18n()
 const router = useRouter()
@@ -16,6 +17,7 @@ const library = useLibraryStore()
 const buildsOpen = ref(false)
 const exportOpen = ref(false)
 const importOpen = ref(false)
+const settingsOpen = ref(false)
 
 const buildsMenu = ref<HTMLElement>()
 
@@ -54,7 +56,7 @@ function onLocaleChange(event: Event) {
     <div class="controls">
       <label class="language">
         <span class="sr-only">{{ t('game.language') }}</span>
-        <select :value="language.locale" @change="onLocaleChange">
+        <select :value="language.chosen" @change="onLocaleChange">
           <option v-for="l in LOCALES" :key="l" :value="l">{{ LANGUAGE_NAMES[l] }}</option>
         </select>
       </label>
@@ -71,10 +73,12 @@ function onLocaleChange(event: Event) {
           </li>
           <li><button type="button" @click="menu(() => (importOpen = true))">{{ t('menu.import') }}</button></li>
           <li><button type="button" @click="menu(() => (exportOpen = true))">{{ t('menu.export') }}</button></li>
+          <li><button type="button" @click="menu(() => (settingsOpen = true))">{{ t('menu.settings') }}</button></li>
         </ul>
       </div>
     </div>
     <BuildTextDialogs v-model:export="exportOpen" v-model:import="importOpen" />
+    <SettingsDialog v-model="settingsOpen" />
   </header>
 </template>
 

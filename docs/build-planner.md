@@ -66,6 +66,9 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   shows its card beside the slots. Not on touch screens, where a tap removes the joker.
 - **Spells**: the 6 schools, the spells of the chosen school with their cooldown, and the 3 slots. Keys under the
   slots follow the game: [A] [E] [C] in French (AZERTY), [Q] [E] [C] in the other languages.
+- **Settings** (Builds menu): a dialog of options, saved in localStorage (`web/src/stores/settings.ts`). Today a
+  single one, "Summary always in English": the summary sheet is shown in English whatever the language picked
+  (the whole page, menu bar included, while the summary is open; the language menu still shows the one picked).
 - **My builds**: the saved builds (open, duplicate, delete), then the received ones in their own section, which a
   button empties.
 - **Share link** (`/#/share/<code>`): opens the build carried by the link, then goes to its home (see "Saving and

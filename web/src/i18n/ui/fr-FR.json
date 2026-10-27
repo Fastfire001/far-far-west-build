@@ -10,7 +10,8 @@
     "myBuilds": "Mes builds…",
     "import": "Importer…",
     "export": "Partager…",
-    "unavailable": "Sauvegarde indisponible"
+    "unavailable": "Sauvegarde indisponible",
+    "settings": "Paramètres"
   },
   "home": {
     "untitled": "Build sans nom",
@@ -109,5 +110,8 @@
     "jokers": "Tous les jokers",
     "weapons": "Armes et leurs jokers",
     "spells": "Sorts et temps de recharge"
+  },
+  "settings": {
+    "summaryInEnglish": "Résumé toujours en anglais"
   }
 }
