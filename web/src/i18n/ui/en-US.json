@@ -95,7 +95,10 @@
     "delete": "Delete",
     "copyName": "{name} (copy)",
     "confirmDelete": "Delete the build \"{name}\"? This cannot be undone.",
-    "unavailable": "Your browser does not allow saving : the builds will be lost when the page is closed."
+    "unavailable": "Your browser does not allow saving : the builds will be lost when the page is closed.",
+    "received": "Imported build",
+    "deleteReceived": "Delete all imported build",
+    "confirmDeleteReceived": "Confirm"
   },
   "share": {
     "invalidTitle": "Share link invalid"

@@ -66,7 +66,8 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   shows its card beside the slots. Not on touch screens, where a tap removes the joker.
 - **Spells**: the 6 schools, the spells of the chosen school with their cooldown, and the 3 slots. Keys under the
   slots follow the game: [A] [E] [C] in French (AZERTY), [Q] [E] [C] in the other languages.
-- **My builds**: the saved builds (open, duplicate, delete).
+- **My builds**: the saved builds (open, duplicate, delete), then the received ones in their own section, which a
+  button empties.
 - **Share link** (`/#/share/<code>`): opens the build carried by the link, then goes to its home (see "Saving and
   sharing").
 
@@ -169,6 +170,9 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   choice) is dropped when another one is opened. Without localStorage (blocked storage), everything works without
   saving, and the menu says so.
 - An **imported** build is added to the list as a new build: it does not overwrite the current one.
+- **Received builds** (opened from a share link or imported) are listed apart in "My builds", so that opening many
+  links does not bury our own builds, and can all be deleted at once. A received build becomes one of ours as soon
+  as it is changed (a copy made with Duplicate is ours too). The flag is saved with the build (`"received": true`).
 - **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the build as bytes in URL-safe base64
   (`web/src/domain/shareCode.ts`): items, jokers and upgrades are written as their number in `data/share-ids.json`,
   in varints. About 90 characters for a full build without a name, against 900 for its JSON. Opening a link

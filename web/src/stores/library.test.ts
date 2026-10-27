@@ -60,7 +60,7 @@ describe('library store', () => {
     await nextTick()
     const text = editor.exportText()
     library.importText(text)
-    expect(library.builds).toHaveLength(2)
+    expect(library.builds.map((b) => b.received)).toEqual([true, false])
     expect(() => library.importText('nope')).toThrow()
   })
 
@@ -77,6 +77,30 @@ describe('library store', () => {
     library.openShared({ ...shared })
     expect(library.currentId).toBe(sharedId)
     expect(library.builds).toHaveLength(2)
+  })
+
+  it('keeps received builds apart until they are changed', async () => {
+    const { library, editor } = reload()
+    editor.rename('Mine')
+    await nextTick()
+    library.openShared({ ...emptyBuild('Kept'), utility: 'itemUtilityAmmo' })
+    editor.rename('Kept and changed')
+    await nextTick()
+    library.openShared({ ...emptyBuild('Received'), utility: 'itemUtilityAmmo' })
+    const received = (l: typeof library) => l.builds.filter((b) => b.received).map((b) => b.build.name)
+    expect(received(library)).toEqual(['Received'])
+    expect(received(reload().library)).toEqual(['Received'])
+  })
+
+  it('deletes every received build at once', async () => {
+    const { library, editor } = reload()
+    editor.rename('Mine')
+    await nextTick()
+    library.openShared({ ...emptyBuild('A'), utility: 'itemUtilityAmmo' })
+    library.openShared({ ...emptyBuild('B'), utility: 'itemUtilityAmmo' })
+    library.removeReceived()
+    expect(library.builds.map((b) => b.build.name)).toEqual(['Mine'])
+    expect(editor.build.name).toBe('Mine')
   })
 
   it('works without storage', () => {
