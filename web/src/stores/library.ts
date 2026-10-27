@@ -148,6 +148,14 @@ export const useLibraryStore = defineStore('library', () => {
     removeWhere((b) => b.id === id)
   }
 
+  /** Moves a received build to our own builds. */
+  function keep(id: string) {
+    const entry = builds.value.find((b) => b.id === id)
+    if (!entry) return
+    entry.received = false
+    write()
+  }
+
   /** Removes every received build. */
   function removeReceived() {
     removeWhere((b) => b.received)
@@ -177,5 +185,5 @@ export const useLibraryStore = defineStore('library', () => {
     switchTo(builds.value.find((b) => key(b.build) === json) ?? add(build, true))
   }
 
-  return { builds, currentId, available, init, newBuild, open, duplicate, remove, removeReceived, importText, openShared }
+  return { builds, currentId, available, init, newBuild, open, duplicate, remove, keep, removeReceived, importText, openShared }
 })

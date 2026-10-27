@@ -92,15 +92,17 @@ describe('library store', () => {
     expect(received(reload().library)).toEqual(['Received'])
   })
 
-  it('deletes every received build at once', async () => {
+  it('keeps a received build, or deletes them all at once', async () => {
     const { library, editor } = reload()
     editor.rename('Mine')
     await nextTick()
     library.openShared({ ...emptyBuild('A'), utility: 'itemUtilityAmmo' })
     library.openShared({ ...emptyBuild('B'), utility: 'itemUtilityAmmo' })
+    library.keep(library.builds.find((b) => b.build.name === 'A')!.id)
     library.removeReceived()
-    expect(library.builds.map((b) => b.build.name)).toEqual(['Mine'])
-    expect(editor.build.name).toBe('Mine')
+    expect(library.builds.map((b) => b.build.name).sort()).toEqual(['A', 'Mine'])
+    // The open build (B) was removed: the most recent one left is opened.
+    expect(editor.build.name).toBe('A')
   })
 
   it('works without storage', () => {

@@ -171,8 +171,8 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   saving, and the menu says so.
 - An **imported** build is added to the list as a new build: it does not overwrite the current one.
 - **Received builds** (opened from a share link or imported) are listed apart in "My builds", so that opening many
-  links does not bury our own builds, and can all be deleted at once. A received build becomes one of ours as soon
-  as it is changed (a copy made with Duplicate is ours too). The flag is saved with the build (`"received": true`).
+  links does not bury our own builds, and can all be deleted at once. A received build becomes one of ours with its
+  Keep button, or as soon as it is changed (a copy made with Duplicate is ours too). The flag is saved with the build (`"received": true`).
 - **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the build as bytes in URL-safe base64
   (`web/src/domain/shareCode.ts`): items, jokers and upgrades are written as their number in `data/share-ids.json`,
   in varints. About 90 characters for a full build without a name, against 900 for its JSON. Opening a link

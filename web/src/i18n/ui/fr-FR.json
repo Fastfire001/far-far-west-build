@@ -98,7 +98,8 @@
     "unavailable": "Votre navigateur ne permet pas la sauvegarde : les builds seront perdus à la fermeture de la page.",
     "received": "Build importé",
     "deleteReceived": "Supprimer tous les build importés",
-    "confirmDeleteReceived": "Confirmer"
+    "confirmDeleteReceived": "Confirmer",
+    "keep": "Déplacer dans mes builds"
   },
   "share": {
     "invalidTitle": "Lien de partage invalide"

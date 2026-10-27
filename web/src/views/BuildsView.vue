@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // The saved builds: open one (click), duplicate or delete it, or start a new one. Builds received by a share link or
-// an import are listed apart, until they are changed, and can be deleted all at once.
+// an import are listed apart, until they are kept or changed, and can be deleted all at once.
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
@@ -78,6 +78,9 @@ function removeReceived() {
             <span class="date">{{ t('builds.updated', { date: dateFormat.format(entry.updatedAt) }) }}</span>
           </button>
           <span class="row-actions">
+            <button v-if="entry.received" type="button" class="small" @click="library.keep(entry.id)">
+              {{ t('builds.keep') }}
+            </button>
             <button type="button" class="small" @click="library.duplicate(entry.id, t('builds.copyName', { name: name(entry) }))">
               {{ t('builds.duplicate') }}
             </button>
