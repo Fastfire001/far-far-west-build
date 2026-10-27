@@ -78,8 +78,7 @@ function importBuild() {
   </AppDialog>
 
   <AppDialog v-model="importOpen" :title="t('dialog.importTitle')">
-    <p>{{ t('dialog.importCodeHelp') }}</p>
-    <textarea v-model="pasted" class="text" rows="5" :aria-invalid="Boolean(importError)" />
+    <textarea v-model="pasted" class="text" rows="5" :aria-label="t('dialog.importTitle')" :aria-invalid="Boolean(importError)" />
     <p v-if="importError" class="error" role="alert">{{ importError }}</p>
     <div class="actions">
       <button type="button" class="action" :disabled="!pasted.trim()" @click="importBuild">{{ t('dialog.import') }}</button>

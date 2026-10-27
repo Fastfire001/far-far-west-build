@@ -80,7 +80,6 @@
     "copyLink": "Copy the link",
     "copied": "Copied !",
     "importTitle": "Import a build",
-    "importCodeHelp": "todo",
     "import": "Import",
     "importError": {
       "encoding": "The text is incomplete or corrupted.",
