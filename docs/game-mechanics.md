@@ -7,8 +7,9 @@ and made several wiki pages outdated.
 ## Data sources
 
 All of `data/` is extracted from the **game files** (local install) by `bin/extract-game`: `equipment.json`,
-`spells.json`, `jokers.json`, `upgrades.json`, `progression.json`, `meta.json` (game version and extraction date)
-and the translations in `i18n/`, as well as the icons of `assets/game/icons/`. The extracted files stay in `.cache/`
+`spells.json`, `jokers.json`, `upgrades.json`, `progression.json`, `meta.json` (game version and extraction date),
+`share-ids.json` (stable numbers of the ids for share links, only appended to, see "Saving and sharing" in
+`docs/build-planner.md`) and the translations in `i18n/`, as well as the icons of `assets/game/icons/`. The extracted files stay in `.cache/`
 (not versioned); only the values the planner needs go into `data/`, and the icons it shows into `assets/game/icons/`. The one exception is `data/manual.json`, entered by hand (see "Hand-entered data").
 
 Texts (names, descriptions) are kept **as displayed in the game**, in English in the main files: joker names are

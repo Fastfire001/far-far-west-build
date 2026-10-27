@@ -3,7 +3,7 @@
 import { equipment, HERO_ID, jokers, upgrades, type Equipment } from '@/domain/gameData'
 import { uniqueUnlockLevel } from '@/domain/progression'
 import { MAX_UPGRADE_POINTS, RULES } from '@/domain/rules'
-import { encodeShareCode } from '@/domain/codec'
+import { shareLinkPath } from '@/domain/shareCode'
 import { emptyBuild, setUtility, setWeapon } from '@/domain/build'
 import type { Context, Page } from './context'
 import { html, type Html } from './html'
@@ -90,7 +90,7 @@ function weaponPage(weapon: Equipment): Page {
       const name = ctx.name(weapon.id)
       const slot = weapon.type === 'main' ? 'main' : 'sidearm'
       // Share link of a build with this weapon equipped: opens the planner on it.
-      const code = await encodeShareCode(setWeapon(emptyBuild(), slot, weapon.id))
+      const link = await shareLinkPath(setWeapon(emptyBuild(), slot, weapon.id))
       return {
         title: ctx.t('weapon.title', { name }),
         description: ctx.t('weapon.description', {
@@ -105,7 +105,7 @@ function weaponPage(weapon: Equipment): Page {
   ${icon(ctx, weapon.id, 'large')}
   <div>
     <p class="effect">${gameText(ctx.description(weapon.id))}</p>
-    <p><a class="plank-button" href="${ctx.planner(`/share/${code}`)}">${ctx.t('weapon.plan', { name })}</a></p>
+    <p><a class="plank-button" href="${ctx.planner(link)}">${ctx.t('weapon.plan', { name })}</a></p>
   </div>
 </div>
 ${weapon.type === 'sidearm'
@@ -146,7 +146,7 @@ function utilityPage(utility: Equipment): Page {
     path: itemPath(utility.id),
     render: async (ctx) => {
       const name = ctx.name(utility.id)
-      const code = await encodeShareCode(setUtility(emptyBuild(), utility.id))
+      const link = await shareLinkPath(setUtility(emptyBuild(), utility.id))
       return {
         title: ctx.t('utility.title', { name }),
         description: plain(ctx.t('utility.description', { name, effect: sentence(ctx.description(utility.id)) })),
@@ -158,7 +158,7 @@ function utilityPage(utility: Equipment): Page {
   <div>
     <p class="effect">${gameText(ctx.description(utility.id))}</p>
     <p>${ctx.t('utility.intro')}</p>
-    <p><a class="plank-button" href="${ctx.planner(`/share/${code}`)}">${ctx.t('weapon.plan', { name })}</a></p>
+    <p><a class="plank-button" href="${ctx.planner(link)}">${ctx.t('weapon.plan', { name })}</a></p>
   </div>
 </div>
 <h2>${ctx.t('utility.others')}</h2>

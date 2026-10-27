@@ -3,7 +3,8 @@
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
-import { BuildImportError, encodeShareCode } from '@/domain/codec'
+import { BuildImportError } from '@/domain/codec'
+import { shareLinkPath } from '@/domain/shareCode'
 import { useBuildStore } from '@/stores/build'
 import { useLibraryStore } from '@/stores/library'
 import AppDialog from './AppDialog.vue'
@@ -26,8 +27,8 @@ watch(exportOpen, async (open) => {
   copied.value = null
   if (!open) return
   link.value = ''
-  const code = await encodeShareCode(editor.build)
-  link.value = new URL(router.resolve({ name: 'share', params: { code } }).href, location.href).href
+  const path = await shareLinkPath(editor.build)
+  link.value = new URL(router.resolve(path).href, location.href).href
 })
 
 async function copy(what: 'link' | 'text') {

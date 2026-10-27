@@ -1,10 +1,11 @@
 <script setup lang="ts">
-// A share link (/#/share/<code>): opens the shared build as one of the saved builds, then goes to its home. The
-// link is replaced in the history, so reloading the page does not open the build again.
+// A share link (/#/b/<code>, or the long format /#/share/<code>): opens the shared build as one of the saved builds,
+// then goes to its home. The link is replaced in the history, so reloading the page does not open the build again.
 import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { BuildImportError, decodeShareCode } from '@/domain/codec'
+import { decodeCompactCode } from '@/domain/shareCode'
 import { useLibraryStore } from '@/stores/library'
 import BackButton from '@/components/BackButton.vue'
 
@@ -20,7 +21,7 @@ watch(
     if (typeof code !== 'string') return
     error.value = ''
     try {
-      library.openShared(await decodeShareCode(code))
+      library.openShared(route.name === 'share' ? decodeCompactCode(code) : await decodeShareCode(code))
       await router.replace({ name: 'home' })
     } catch (e) {
       error.value = t(`dialog.importError.${e instanceof BuildImportError ? e.reason : 'format'}`)

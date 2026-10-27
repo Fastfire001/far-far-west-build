@@ -8,7 +8,8 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 
 - `data/*.json`: game data, all extracted from the game files, and `data/i18n/<language>.json` their official
   translations (15 languages); `data/i18n/ui/<language>.json`: game menu labels reused by the planner. **Generated**
-  files: do not edit them by hand, fix `scripts/build_game_data.py` and regenerate instead. Exception:
+  files: do not edit them by hand, fix `scripts/build_game_data.py` and regenerate instead. `data/share-ids.json`
+  (numbers used by share links) is only appended to by the extraction: never reorder it or delete it. Exception:
   `data/manual.json`, entered by hand (spell cooldowns, from the wikis) and never regenerated: check it by hand
   after each game update.
 - `tools/game-extract/`: C# extractor (CUE4Parse) that reads the game archives and writes the raw assets to

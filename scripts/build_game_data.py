@@ -454,6 +454,21 @@ for folder, ids in icon_types.items():
                              f"bin/extract-game's output")
         icons[os.path.join(folder, item_id + ".png")] = png
 
+# Share links number items, jokers and upgrades by their position in share-ids.json (see web/src/domain/shareCode.ts).
+# A link must keep its meaning after a game update: new ids are only appended, ids are never moved or removed, so
+# this file is the only one built from its previous version.
+share_ids_path = os.path.join(out_dir, "share-ids.json")
+if not os.path.exists(share_ids_path):
+    raise SystemExit(f"{share_ids_path} is missing: restore it from git, share links depend on its order")
+with open(share_ids_path) as f:
+    share_ids = json.load(f)
+for kind, ids in {
+    "items": [e["id"] for e in equipment] + [s["id"] for s in spell_schools] + [s["id"] for s in spells],
+    "jokers": [j["id"] for j in jokers],
+    "upgrades": [u["id"] for u in upgrades],
+}.items():
+    share_ids[kind] += sorted(set(ids) - set(share_ids[kind]))
+
 out = {
     "equipment.json": equipment,
     "spells.json": {"schools": spell_schools, "spells": spells},
@@ -462,6 +477,7 @@ out = {
     "upgrades.json": upgrades,
     "progression.json": progression,
     "meta.json": meta,
+    "share-ids.json": share_ids,
     "i18n/languages.json": language_names,
 }
 out.update({f"i18n/{culture}.json": dict(sorted(entries.items())) for culture, entries in translations.items()})

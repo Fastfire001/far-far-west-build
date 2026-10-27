@@ -33,14 +33,14 @@ export function decodeBuild(text: string): Build {
 export async function encodeShareCode(build: Build): Promise<string> {
   const json = new TextEncoder().encode(JSON.stringify(storedBuild(build)))
   const packed = await pipe(json, new CompressionStream('deflate-raw'))
-  return toBase64(packed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+  return toBase64Url(packed)
 }
 
 /** Reads the code of a share link. Throws a BuildImportError if it is not one. */
 export async function decodeShareCode(code: string): Promise<Build> {
   let data: unknown
   try {
-    const packed = fromBase64(code.trim().replace(/-/g, '+').replace(/_/g, '/'))
+    const packed = fromBase64Url(code.trim())
     data = parseJson(await pipe(packed, new DecompressionStream('deflate-raw')))
   } catch {
     throw new BuildImportError('encoding')
@@ -55,6 +55,15 @@ function toBase64(bytes: Uint8Array): string {
 
 function fromBase64(text: string): Uint8Array {
   return Uint8Array.from(atob(text), (c) => c.charCodeAt(0))
+}
+
+/** URL-safe base64 without padding, as in share links. */
+export function toBase64Url(bytes: Uint8Array): string {
+  return toBase64(bytes).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+}
+
+export function fromBase64Url(text: string): Uint8Array {
+  return fromBase64(text.replace(/-/g, '+').replace(/_/g, '/'))
 }
 
 function parseJson(bytes: Uint8Array): unknown {

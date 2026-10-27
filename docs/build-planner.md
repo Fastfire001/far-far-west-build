@@ -169,10 +169,18 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   choice) is dropped when another one is opened. Without localStorage (blocked storage), everything works without
   saving, and the menu says so.
 - An **imported** build is added to the list as a new build: it does not overwrite the current one.
-- **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the same JSON as the export,
-  compressed (`deflate-raw`, `CompressionStream`) and in URL-safe base64: about 400 characters for a full build,
-  against 1,700 for the export text. Opening a link adds the build to the saved builds, or reopens the saved copy if
-  an identical one exists, then replaces the URL with the build home, so a reload does not add it again.
+- **Share links** (Builds menu, "Share…"): `/#/b/<code>`, where the code is the build as bytes in URL-safe base64
+  (`web/src/domain/shareCode.ts`): items, jokers and upgrades are written as their number in `data/share-ids.json`,
+  in varints, with a format version (2). About 90 characters for a full build without a name, against 490 for the
+  long link and 1,200 for the export text. Opening a link adds the build to the saved builds, or reopens the saved
+  copy if an identical one exists, then replaces the URL with the build home, so a reload does not add it again.
+- **The numbers of `data/share-ids.json` never change**: `bin/extract-game` only appends the new ids (sorted) at
+  the end of each list and keeps the ids removed from the game, so an old link keeps its meaning after a game update.
+  It is the only file of `data/` built from its previous version: the extraction stops if it is missing (restore it
+  from git), and it must never be reordered or edited by hand. A test checks that every id of `data/` is in it.
+- **Long links** (`/#/share/<code>`): the same JSON as the export, compressed (`deflate-raw`, `CompressionStream`),
+  in URL-safe base64. Used only for a build with an id missing from the table (a hand-edited import), and still read
+  for the links shared before the compact format.
 - **Export / Import** (text to copy, in the same dialog as the link): the build is JSON encoded in base64, with a
   prefix (`FFW1:…`).
 - The JSON has a **format version number** (`"v": 1`), so that old builds can be converted.
@@ -204,9 +212,3 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   can rank are the content pages (see "Content pages"). `sitemap.xml` is generated at build time with the planner
   and every content page. A `robots.txt` would have to be at the domain root (`fastfire001.github.io`), so the
   sitemap is submitted in Google Search Console instead.
-
-## Open questions (to check in game)
-
-1. **Do prestige bonuses apply right away?** Can the bought slots and points be used from level 1, or do they only
-   raise the cap that has to be reached by leveling up? The logic is in the `UI_PrestigeShop` Blueprint, which we
-   cannot read with our extraction method.
