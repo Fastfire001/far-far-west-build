@@ -171,25 +171,24 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
 - An **imported** build is added to the list as a new build: it does not overwrite the current one.
 - **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the build as bytes in URL-safe base64
   (`web/src/domain/shareCode.ts`): items, jokers and upgrades are written as their number in `data/share-ids.json`,
-  in varints. About 90 characters for a full build without a name, against 1,200 for the export text. Opening a link
+  in varints. About 90 characters for a full build without a name, against 900 for its JSON. Opening a link
   adds the build to the saved builds, or reopens the saved copy if an identical one exists, then replaces the URL
   with the build home, so a reload does not add it again.
 - **Link formats**: the code starts with its format version (today 1), which picks the reader. A new format gets the
   next version, its own writer and reader, and the old readers stay, so that the links already shared still open. A
   test decodes a link of format 1 written once and for all. The first links (compressed JSON, same address) are
   no longer read: their code does not start with a known version, so they show an error.
-- Ids missing from the table (only a hand-edited import can have one: ids removed from the game stay in it) are left
-  out of the link.
+- Ids missing from the table (only a hand-edited saved build can have one: ids removed from the game stay in it) are
+  left out of the code.
 - **The numbers of `data/share-ids.json` never change**: `bin/extract-game` only appends the new ids (sorted) at
   the end of each list and keeps the ids removed from the game, so an old link keeps its meaning after a game update.
   It is the only file of `data/` built from its previous version: the extraction stops if it is missing (restore it
   from git), and it must never be reordered or edited by hand. A test checks that every id of `data/` is in it.
-- **Export / Import** (text to copy, in the same dialog as the link): the build is JSON encoded in base64, with a
-  prefix (`FFW1:…`).
-- The JSON has a **format version number** (`"v": 1`), so that old builds can be converted.
-- Every item (equipment, spells, jokers, upgrades) is identified by its **internal game `id`** (`itemPistol`,
-  `jokerCrackShot`…), which does not change if the game renames the item.
-- Base64 is encoded from UTF-8 (`TextEncoder`), not with `btoa()` directly, which fails on non-ASCII characters.
+- **Export / Import** (text to copy, in the same dialog as the link): the text is the share code. Import accepts the
+  code or the whole link. The first export texts (`FFW1:…`, JSON in base64) are no longer read.
+- Saved builds (localStorage) are JSON with a **format version number** (`"v": 1`), so that old builds can be
+  converted. Every item (equipment, spells, jokers, upgrades) is identified there by its **internal game `id`**
+  (`itemPistol`, `jokerCrackShot`…), which does not change if the game renames the item.
 - On import, the build is validated with the same rules as in the editor. An invalid build, or one with an unknown id
   (joker removed by a patch), is still imported, with warnings.
 

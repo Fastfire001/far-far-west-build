@@ -80,10 +80,8 @@
     "copyLink": "Copier le lien",
     "copied": "Copié !",
     "importTitle": "Importer un build",
-    "importHelp": "Collez le texte d'un build exporté (il commence par FFW1:). Il est ajouté à vos builds.",
     "import": "Importer",
     "importError": {
-      "prefix": "Ce n'est pas un build exporté : le texte doit commencer par FFW1:.",
       "encoding": "Le texte est incomplet ou abîmé.",
       "format": "Le texte ne contient pas de build.",
       "version": "Ce build vient d'une version plus récente du planificateur."

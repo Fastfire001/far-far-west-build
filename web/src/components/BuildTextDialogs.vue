@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Sharing of a build (link, or text to import: "FFW1:...") and import of a text, from the builds menu.
+// Sharing of a build (link, or its code to import) and import of a code or a link, from the builds menu.
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
@@ -78,8 +78,8 @@ function importBuild() {
   </AppDialog>
 
   <AppDialog v-model="importOpen" :title="t('dialog.importTitle')">
-    <p>{{ t('dialog.importHelp') }}</p>
-    <textarea v-model="pasted" class="text" rows="5" placeholder="FFW1:…" :aria-invalid="Boolean(importError)" />
+    <p>{{ t('dialog.importCodeHelp') }}</p>
+    <textarea v-model="pasted" class="text" rows="5" :aria-invalid="Boolean(importError)" />
     <p v-if="importError" class="error" role="alert">{{ importError }}</p>
     <div class="actions">
       <button type="button" class="action" :disabled="!pasted.trim()" @click="importBuild">{{ t('dialog.import') }}</button>

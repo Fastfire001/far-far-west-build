@@ -1,7 +1,7 @@
 import shareIds from '@data/share-ids.json'
 import { describe, expect, it } from 'vitest'
 import { addJoker, CARRIERS, carrierItem, emptyBuild, placeSpell, setElement, setUpgradePoints, setUtility, setWeapon, type Build } from './build'
-import { encodeBuild, toBase64Url } from './codec'
+import { storedBuild, toBase64Url } from './codec'
 import { equipment, jokers, spells, spellSchools, upgrades } from './gameData'
 import { decodeShareCode, encodeShareCode } from './shareCode'
 
@@ -39,9 +39,14 @@ describe('share links', () => {
   it('round-trips a build in a short URL-safe code', () => {
     const code = encodeShareCode(fullBuild())
     expect(code).toMatch(/^[A-Za-z0-9_-]+$/)
-    expect(code.length).toBeLessThan(encodeBuild(fullBuild()).length / 10)
+    expect(code.length).toBeLessThan(JSON.stringify(storedBuild(fullBuild())).length / 8)
     expect(decodeShareCode(code)).toEqual(fullBuild())
     expect(decodeShareCode(encodeShareCode(emptyBuild()))).toEqual(emptyBuild())
+  })
+
+  it('reads a whole share link too', () => {
+    const code = encodeShareCode(fullBuild())
+    expect(decodeShareCode(` https://fastfire001.github.io/far-far-west-build/#/share/${code}\n`)).toEqual(fullBuild())
   })
 
   it('still opens a link of format 1', () => {

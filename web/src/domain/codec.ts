@@ -1,31 +1,16 @@
-// Export and import of a build as text: "FFW1:" + base64 of the UTF-8 JSON, with a format version ("v": 1) to
-// convert old builds later. Ids are kept as they are, even unknown ones: validation reports them.
+// A build as stored in the browser (local saves): the build with a format version ("v": 1), to convert old builds
+// later, and the URL-safe base64 of share codes (see shareCode.ts). Ids are kept as they are, even unknown ones:
+// validation reports them.
 import { emptyBuild, type Build, type Loadout } from './build'
 import { RULES } from './rules'
 
-export const EXPORT_PREFIX = 'FFW1:'
 export const FORMAT_VERSION = 1
 
+/** A text that is not a build: a share code, or a stored build. */
 export class BuildImportError extends Error {
-  constructor(readonly reason: 'prefix' | 'encoding' | 'version' | 'format') {
+  constructor(readonly reason: 'encoding' | 'version' | 'format') {
     super(`invalid build export (${reason})`)
   }
-}
-
-export function encodeBuild(build: Build): string {
-  return EXPORT_PREFIX + toBase64(new TextEncoder().encode(JSON.stringify(storedBuild(build))))
-}
-
-export function decodeBuild(text: string): Build {
-  const trimmed = text.trim()
-  if (!trimmed.startsWith(EXPORT_PREFIX)) throw new BuildImportError('prefix')
-  let data: unknown
-  try {
-    data = parseJson(fromBase64(trimmed.slice(EXPORT_PREFIX.length)))
-  } catch {
-    throw new BuildImportError('encoding')
-  }
-  return restoreBuild(data)
 }
 
 // btoa() and atob() only handle Latin-1 characters: one character per byte.
@@ -44,10 +29,6 @@ export function toBase64Url(bytes: Uint8Array): string {
 
 export function fromBase64Url(text: string): Uint8Array {
   return fromBase64(text.replace(/-/g, '+').replace(/_/g, '/'))
-}
-
-function parseJson(bytes: Uint8Array): unknown {
-  return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes))
 }
 
 /** Build as stored (export, local saves): the build with its format version. */

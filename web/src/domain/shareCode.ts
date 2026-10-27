@@ -1,4 +1,4 @@
-// Share links (/#/share/<code>): the build as bytes, in URL-safe base64. The bytes are unsigned LEB128 varints and
+// Share codes, in share links (/#/share/<code>) or copied as text: the build as bytes, in URL-safe base64. The bytes are unsigned LEB128 varints and
 // UTF-8 texts; the first varint is the format version, which picks the reader. Items, jokers and upgrades are
 // numbered by their position in data/share-ids.json, which bin/extract-game only appends to, so a link keeps its
 // meaning after a game update.
@@ -139,11 +139,11 @@ export function encodeShareCode(build: Build): string {
   return toBase64Url(new Uint8Array(w.bytes))
 }
 
-/** Reads the code of a share link, in any format. Throws a BuildImportError if it is not one. */
-export function decodeShareCode(code: string): Build {
+/** Reads a share code, in any format, or a whole share link. Throws a BuildImportError if it is not one. */
+export function decodeShareCode(text: string): Build {
   let r: Reader
   try {
-    r = new Reader(fromBase64Url(code.trim()))
+    r = new Reader(fromBase64Url(text.trim().replace(/^.*\/share\//, '')))
   } catch {
     return fail()
   }

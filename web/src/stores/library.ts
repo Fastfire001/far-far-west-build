@@ -4,7 +4,8 @@
 import { defineStore } from 'pinia'
 import { ref, watch } from 'vue'
 import { emptyBuild, type Build } from '@/domain/build'
-import { decodeBuild, restoreBuild, storedBuild } from '@/domain/codec'
+import { restoreBuild, storedBuild } from '@/domain/codec'
+import { decodeShareCode } from '@/domain/shareCode'
 import { useBuildStore } from './build'
 
 export const STORAGE_KEY = 'ffw-build-planner'
@@ -138,9 +139,9 @@ export const useLibraryStore = defineStore('library', () => {
     write()
   }
 
-  /** Imports an exported build as a new saved build and opens it. Throws a BuildImportError if the text is not one. */
+  /** Imports a share code or link as a new saved build and opens it. Throws a BuildImportError if it is not one. */
   function importText(text: string) {
-    switchTo(add(decodeBuild(text)))
+    switchTo(add(decodeShareCode(text)))
   }
 
   /** Opens a build received by a share link: the saved copy if one is identical, otherwise a new saved build. */

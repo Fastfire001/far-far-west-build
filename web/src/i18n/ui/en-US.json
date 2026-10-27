@@ -80,10 +80,9 @@
     "copyLink": "Copy the link",
     "copied": "Copied !",
     "importTitle": "Import a build",
-    "importHelp": "Paste the text of an exported build (it starts with FFW1:). It's added to your builds.",
+    "importCodeHelp": "todo",
     "import": "Import",
     "importError": {
-      "prefix": "This is not an exported build : the text must start with FFW1:.",
       "encoding": "The text is incomplete or corrupted.",
       "format": "The text does not contain a build.",
       "version": "This build comes from a newer version of the planner."
