@@ -26,20 +26,20 @@ interface SiteModule {
 const TYPES: Record<string, string> = { css: 'text/css', svg: 'image/svg+xml', png: 'image/png', woff2: 'font/woff2' }
 
 /**
- * Images of assets/, by path in the site, from the same sources as src/icons.ts: hand-made (assets/human/), then the
+ * Images of assets/, by path in the site, from the same sources as src/icons.ts: hand-made (root of assets/), then the
  * game's (assets/game/), then AI-made (assets/ai/). Icons are sorted by type in assets/ (icons/<type>/<id>.png) but
  * published by id alone (icons/<id>.png).
  */
 function images(): Map<string, string> {
   const files = new Map<string, string>()
   const icons = new Map<string, string>()
-  for (const source of ['ai', 'game', 'human']) {
+  for (const source of ['ai/', 'game/', '']) {
     for (const name of ['og-image.png', 'favicon.svg']) {
-      if (existsSync(path(`../assets/${source}/${name}`))) files.set(name, path(`../assets/${source}/${name}`))
+      if (existsSync(path(`../assets/${source}${name}`))) files.set(name, path(`../assets/${source}${name}`))
     }
-    for (const icon of readdirIfExists(`${source}/icons`).filter((f) => /\.(svg|png)$/.test(f))) {
+    for (const icon of readdirIfExists(`${source}icons`).filter((f) => /\.(svg|png)$/.test(f))) {
       const file = icon.split('/').pop()!
-      icons.set(file.slice(0, file.lastIndexOf('.')), path(`../assets/${source}/icons/${icon}`))
+      icons.set(file.slice(0, file.lastIndexOf('.')), path(`../assets/${source}icons/${icon}`))
     }
   }
   for (const file of icons.values()) files.set(`icons/${file.split('/').pop()}`, file)

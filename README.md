@@ -46,7 +46,7 @@ Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-The code, the documentation and the images of `assets/human/` and `assets/ai/` are under the
+The code, the documentation and the images of `assets/` (except `assets/game/`) are under the
 [MIT License](LICENSE).
 
 The game texts in `data/` (item names and descriptions, menu labels and their official translations) and the game's
