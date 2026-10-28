@@ -141,10 +141,10 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
 
 ## Images
 
-- **Three sources, by order of priority**: `assets/human/` (hand-made), `assets/game/` (extracted from the game) and
-  `assets/ai/` (AI-made). An image with the same path in a higher source is used instead
-  (`assets/human/icons/weapons/itemPistol.svg` replaces `assets/game/icons/weapons/itemPistol.png`,
-  `assets/human/og-image.png` replaces `assets/ai/og-image.png`), by the planner (`src/icons.ts`) and the content
+- **Three sources, by order of priority**: the root of `assets/` (hand-made), `assets/game/` (extracted from the game)
+  and `assets/ai/` (AI-made). An image with the same path in a higher source is used instead
+  (`assets/icons/weapons/itemPistol.svg` replaces `assets/game/icons/weapons/itemPistol.png`,
+  `assets/og-image.png` replaces `assets/ai/og-image.png`), by the planner (`src/icons.ts`) and the content
   pages (`vite-plugin-content-pages.ts`), which publish the image at the same URL whatever its source (`icons/<id>.png`
   or `.svg`, `og-image.png`, `favicon.svg`).
 - The game's icons are used with the permission of its team (2026-10-25). They replaced the AI-made icons, which were

@@ -17,8 +17,8 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 - `scripts/build_game_data.py`: decodes these assets and writes `data/` and `assets/game/icons/` (Python, standard
   library only).
 - `assets/`: the images, from three sources, by order of priority (see "Images" in `docs/build-planner.md`):
-  `human/` (hand-made), `game/` (extracted from the game) and `ai/` (AI-made). An image with the same path in a
-  higher source is used instead. Icons are `icons/<type>/<id>.png` (or `.svg`), one per item of `data/` sorted by
+  hand-made images at the root of `assets/`, `game/` (extracted from the game) and `ai/` (AI-made). An image with
+  the same path in a higher source is used instead. Icons are `icons/<type>/<id>.png` (or `.svg`), one per item of `data/` sorted by
   type (`hero`, `weapons`, `utilities`, `jokers`, `upgrades`, `schools`, `spells`): `assets/game/icons/` has them
   all, **generated** by `bin/extract-game` (do not edit them by hand). `assets/ai/` only holds `og-image.png` (link
   previews) and `favicon.svg`.
@@ -68,7 +68,7 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 - The game's icons are used with the permission of its team (2026-10-25), only through `bin/extract-game`: no
   other art from the game, and none from the wiki, in the repo.
 - Every AI-made image goes in `assets/ai/`, never elsewhere; Claude never adds or edits an image outside it.
-  `assets/human/` is for hand-made images only.
+  The root of `assets/` (outside `game/` and `ai/`) is for hand-made images only.
 
 ## Game files
 
