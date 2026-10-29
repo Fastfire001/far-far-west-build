@@ -22,8 +22,8 @@ repository layout, and [docs/](docs/) for the game rules and the design decision
 - **Do not edit generated files by hand**: `data/` (except `data/manual.json`) and `assets/game/icons/` come from
   `bin/extract-game`. Fix the extraction (`scripts/build_game_data.py`, `tools/game-extract/`), then regenerate.
 - **Refer to items by their internal game id** (`itemPistol`, `jokerCrackShot`), never by their displayed name.
-- **Images come from three sources**, by order of priority: the root of `assets/` (hand-made), `assets/game/` (the game's
-  icons, extracted with the permission of its team) and `assets/ai/` (AI-made, being replaced). Put a hand-made
+- **Images come from two sources**, by order of priority: the root of `assets/` (hand-made) and `assets/game/` (the
+  game's icons, extracted with the permission of its team). No AI-made images. Put a hand-made
   image at the same path at the root of `assets/` (`assets/icons/<type>/<id>.svg`, `assets/og-image.png`) and it is
   used instead. No other game art and no wiki art in the repo.
 - **Never commit or publish the files extracted from the game** (`.cache/`): only the values the planner needs go

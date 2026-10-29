@@ -141,16 +141,17 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
 
 ## Images
 
-- **Three sources, by order of priority**: the root of `assets/` (hand-made), `assets/game/` (extracted from the game)
-  and `assets/ai/` (AI-made). An image with the same path in a higher source is used instead
-  (`assets/icons/weapons/itemPistol.svg` replaces `assets/game/icons/weapons/itemPistol.png`,
-  `assets/og-image.png` replaces `assets/ai/og-image.png`), by the planner (`src/icons.ts`) and the content
+- **Two sources, by order of priority**: the root of `assets/` (hand-made) and `assets/game/` (extracted from the
+  game). A hand-made image with the same path is used instead of the game's
+  (`assets/icons/weapons/itemPistol.svg` replaces `assets/game/icons/weapons/itemPistol.png`), by the planner (`src/icons.ts`) and the content
   pages (`vite-plugin-content-pages.ts`), which publish the image at the same URL whatever its source (`icons/<id>.png`
   or `.svg`, `og-image.png`, `favicon.svg`).
 - The game's icons are used with the permission of its team (2026-10-25). They replaced the AI-made icons, which were
-  deleted with their generator. Only two AI-made images are left in `assets/ai/`: `og-image.png` (link previews)
-  and `favicon.svg` (the game has no icon that works as a favicon: the hero's is a wide white drawing).
-- The favicon is written as a path in `web/index.html` (`assets/ai/favicon.svg`): update it if it is replaced.
+  deleted with their generator.
+- **No AI-made images**: the last two, `og-image.png` (link previews) and `favicon.svg`, were replaced by hand-made
+  ones at the root of `assets/` (2026-10-29), and `assets/ai/` was deleted. The game has no icon that works as a
+  favicon (the hero's is a wide white drawing).
+- The favicon is written as a path in `web/index.html` (`assets/favicon.svg`): update it if it is moved.
 
 ### Icons
 

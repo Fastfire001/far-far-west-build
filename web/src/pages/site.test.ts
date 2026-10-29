@@ -34,9 +34,8 @@ describe('content pages', () => {
     for (const school of spellSchools) expect(masteryJoker(school.id), school.id).toBeDefined()
   })
 
-  it('has at most one icon per id in each of assets/ai/, assets/game/ and assets/ (hand-made)', () => {
+  it('has at most one icon per id in each of assets/game/ and assets/ (hand-made)', () => {
     for (const icons of [
-      import.meta.glob('../../../assets/ai/icons/**/*.{svg,png}'),
       import.meta.glob('../../../assets/game/icons/**/*.{svg,png}'),
       import.meta.glob('../../../assets/icons/**/*.{svg,png}'),
     ]) {
@@ -48,7 +47,7 @@ describe('content pages', () => {
   it('links only to pages, icons and assets that exist', () => {
     const icons = new Set(
       Object.keys(
-        import.meta.glob(['../../../assets/{ai,game}/icons/**/*.{svg,png}', '../../../assets/icons/**/*.{svg,png}']),
+        import.meta.glob(['../../../assets/game/icons/**/*.{svg,png}', '../../../assets/icons/**/*.{svg,png}']),
       ).map(
         (f) => `${options.base}icons/${f.split('/').pop()}`,
       ),
