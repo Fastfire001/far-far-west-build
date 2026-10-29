@@ -27,13 +27,13 @@ const TYPES: Record<string, string> = { css: 'text/css', svg: 'image/svg+xml', p
 
 /**
  * Images of assets/, by path in the site, from the same sources as src/icons.ts: hand-made (root of assets/), then the
- * game's (assets/game/), then AI-made (assets/ai/). Icons are sorted by type in assets/ (icons/<type>/<id>.png) but
+ * game's (assets/game/). Icons are sorted by type in assets/ (icons/<type>/<id>.png) but
  * published by id alone (icons/<id>.png).
  */
 function images(): Map<string, string> {
   const files = new Map<string, string>()
   const icons = new Map<string, string>()
-  for (const source of ['ai/', 'game/', '']) {
+  for (const source of ['game/', '']) {
     for (const name of ['og-image.png', 'favicon.svg']) {
       if (existsSync(path(`../assets/${source}${name}`))) files.set(name, path(`../assets/${source}${name}`))
     }

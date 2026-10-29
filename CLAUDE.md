@@ -16,12 +16,11 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
   `.cache/game/`.
 - `scripts/build_game_data.py`: decodes these assets and writes `data/` and `assets/game/icons/` (Python, standard
   library only).
-- `assets/`: the images, from three sources, by order of priority (see "Images" in `docs/build-planner.md`):
-  hand-made images at the root of `assets/`, `game/` (extracted from the game) and `ai/` (AI-made). An image with
-  the same path in a higher source is used instead. Icons are `icons/<type>/<id>.png` (or `.svg`), one per item of `data/` sorted by
+- `assets/`: the images, from two sources, by order of priority (see "Images" in `docs/build-planner.md`):
+  hand-made images at the root of `assets/` (`og-image.png` for link previews, `favicon.svg`) and `game/` (extracted
+  from the game). A hand-made image with the same path is used instead of the game's. Icons are `icons/<type>/<id>.png` (or `.svg`), one per item of `data/` sorted by
   type (`hero`, `weapons`, `utilities`, `jokers`, `upgrades`, `schools`, `spells`): `assets/game/icons/` has them
-  all, **generated** by `bin/extract-game` (do not edit them by hand). `assets/ai/` only holds `og-image.png` (link
-  previews) and `favicon.svg`.
+  all, **generated** by `bin/extract-game` (do not edit them by hand).
 - `web/`: the application (Vue 3, TypeScript, Vite, Pinia, vue-i18n, Vitest tests). It reads `data/` (alias `@data`)
   and `assets/` directly. `src/domain/`: typed data and build rules, in plain TypeScript without Vue, so they
   can be tested on their own. `src/stores/`: shared state (Pinia stores), which calls the functions of
@@ -67,8 +66,8 @@ tools that generate both, and the web application (Vue 3 + TypeScript + Vite, st
 - Items are referenced by their internal game id (`itemPistol`, `jokerCrackShot`), never by their displayed name.
 - The game's icons are used with the permission of its team (2026-10-25), only through `bin/extract-game`: no
   other art from the game, and none from the wiki, in the repo.
-- Every AI-made image goes in `assets/ai/`, never elsewhere; Claude never adds or edits an image outside it.
-  The root of `assets/` (outside `game/` and `ai/`) is for hand-made images only.
+- No AI-made image in the repo: the root of `assets/` (outside `game/`) is for hand-made images only, and Claude
+  never adds or edits an image.
 
 ## Game files
 
