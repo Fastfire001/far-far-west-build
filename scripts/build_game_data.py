@@ -406,12 +406,13 @@ for path in sorted(glob.glob(os.path.join(extract_dir, "*.locres.json"))):
 ui_texts["en-US"] = {key: clean(ui_table["KeysToEntries"][st_key]) for key, st_key in UI_TEXTS.items()}
 language_names = {culture: ui_table["KeysToEntries"][key] for culture, key in LANGUAGE_NAMES.items()}
 
-# Version of the game the data comes from, e.g. "0.2.0.20 - CL 915" in the executable → "0.2.0.20".
-raw_version = open(os.path.join(extract_dir, "version.txt")).read().strip()
-version = re.match(r"\d+(\.\d+)+", raw_version)
+# Version of the game the data comes from, e.g. "ProjectVersion=0.3.0.10 - CL 2994" in DefaultGame.ini → "0.3.0.10".
+# (The executables no longer carry it since 0.3.0.10: their FileVersion is the engine build.)
+game_ini = open(os.path.join(extract_dir, "DefaultGame.ini"), encoding="utf-8-sig").read()
+version = re.search(r"^ProjectVersion=(\d+(\.\d+)+)", game_ini, re.MULTILINE)
 if not version:
-    raise SystemExit(f"unexpected game version {raw_version!r}")
-meta = {"game_version": version.group(), "extracted_on": datetime.date.today().isoformat()}
+    raise SystemExit("no ProjectVersion in DefaultGame.ini")
+meta = {"game_version": version.group(1), "extracted_on": datetime.date.today().isoformat()}
 
 slot_curve = decode_curve("C_UnlockedJokers")
 max_slots = int(slot_curve[-1][1])

@@ -449,7 +449,7 @@
   },
   "jokerFistRage": {
     "name": "怒火之拳",
-    "description": "受到傷害時會累積蓄力值，並使攻擊速度 +30%，持續 2 秒"
+    "description": "受到生命值傷害時會累積蓄力值，並使攻擊速度 +30%，持續 2 秒"
   },
   "jokerFistRoDah": {
     "name": "拳斯羅達",

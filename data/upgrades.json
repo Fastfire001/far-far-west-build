@@ -116,8 +116,8 @@
     "name": "Fuel Ammo",
     "value": 0.05,
     "flat": false,
-    "max_slots": 10,
-    "gold_cost": 100,
+    "max_slots": 12,
+    "gold_cost": 90,
     "available_on": [
       "itemJetpack"
     ],

@@ -449,7 +449,7 @@
   },
   "jokerFistRage": {
     "name": "IRA DE PUÑOS",
-    "description": "Recibir daño genera carga y otorga +30 % de velocidad de ataque durante 2 s"
+    "description": "Recibir daño en los PS genera carga y otorga +30 % de velocidad de ataque durante 2 s"
   },
   "jokerFistRoDah": {
     "name": "PUÑO RO DAH",

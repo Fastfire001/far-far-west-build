@@ -449,7 +449,7 @@
   },
   "jokerFistRage": {
     "name": "FIST RAGE",
-    "description": "Taking damage generates charge and grants +30% attack speed for 2 sec."
+    "description": "Taking HP damage generates charge and grants +30% attack speed for 2 sec."
   },
   "jokerFistRoDah": {
     "name": "FIST RO DAH",

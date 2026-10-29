@@ -449,7 +449,7 @@
   },
   "jokerFistRage": {
     "name": "FÚRIA DE SOCOS",
-    "description": "Receber dano gera carga e concede +30% de velocidade de ataque por 2s."
+    "description": "Receber dano de PV gera carga e concede +30% de velocidade de ataque por 2s."
   },
   "jokerFistRoDah": {
     "name": "FUS RO PANCA-DAH",

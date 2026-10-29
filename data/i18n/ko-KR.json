@@ -449,7 +449,7 @@
   },
   "jokerFistRage": {
     "name": "분노의 주먹",
-    "description": "피해를 받으면 충전이 쌓여 2초 동안 공격 속도 +30%"
+    "description": "체력 피해를 받으면 충전이 쌓여 2초 동안 공격 속도 +30%"
   },
   "jokerFistRoDah": {
     "name": "주먹 로 다",

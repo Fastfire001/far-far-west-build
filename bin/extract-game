@@ -17,7 +17,7 @@ mkdir -p .cache/game .cache/oodle data assets/game/icons
 rm -rf .cache/game/textures
 
 docker compose run --rm --build extract /game/FarFarWest/Content/Paks /out \
-  version:/game/FarFarWest.exe \
+  file:FarFarWest/Config/DefaultGame.ini \
   raw:FarFarWest/Content/Progress/DT_PlayerJokers \
   names:FarFarWest/Content/Progress/DT_PlayerJokers \
   imports:FarFarWest/Content/Progress/DT_PlayerJokers \
