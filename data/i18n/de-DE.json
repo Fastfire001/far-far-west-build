@@ -449,7 +449,7 @@
   },
   "jokerFistRage": {
     "name": "FAUSTZORN",
-    "description": "Erlittener Schaden erzeugt Aufladung und gewährt 2 Sek. lang +30 % Angriffstempo."
+    "description": "Erlittener TP-Schaden erzeugt Aufladung und gewährt 2 Sek. lang +30 % Angriffstempo."
   },
   "jokerFistRoDah": {
     "name": "FAUST RO DAH",

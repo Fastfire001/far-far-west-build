@@ -2863,7 +2863,7 @@
     "max_equip": 1,
     "buy_price": 1200,
     "sell_price": 600,
-    "description": "Taking damage generates charge and grants +30% attack speed for 2 sec.",
+    "description": "Taking HP damage generates charge and grants +30% attack speed for 2 sec.",
     "available_on": [
       "itemKnuckles"
     ],

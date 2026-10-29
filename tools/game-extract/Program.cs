@@ -7,17 +7,16 @@
 //   imports:<asset path>  the package import map, as <name>.imports.txt: line n is the path of the object that the
 //                       package index -n refers to (empty if it cannot be resolved)
 //   texture:<asset path>  a Texture2D, as textures/<name>.png
-//   locres:<file path>  localization files (the path may contain a * wildcard), as <culture>.locres.json:
+//   locres:<file path>  localization files as <culture>.locres.json:
 //                       {namespace: {key: translated string}}
-//   version:<file>      the FileVersion of a Windows executable (a loose file, not in the archives), as
-//                       version.txt
+//   file:<file path>    a file that is not an asset (config, text…), as is, under its own name
 //
 // The game's assets use unversioned properties and no mappings file is available, so CUE4Parse can only
 // deserialize classes described in Mappings() below. DataTables with Blueprint row structs are decoded
 // from their raw bytes by scripts/build_game_data.py instead.
 //
-// The asset path of every mode but version may contain * wildcards (any characters but /). In texture mode, a
-// texture that cannot be decoded is reported and skipped: build_game_data.py fails if it needs it.
+// Every path may contain * wildcards (any characters but /). In texture mode, a texture that cannot be decoded is
+// reported and skipped: build_game_data.py fails if it needs it.
 using System.Text.RegularExpressions;
 using CUE4Parse.Compression;
 using CUE4Parse.FileProvider;
@@ -52,7 +51,7 @@ Directory.CreateDirectory(Path.Combine(outDir, "textures"));
 foreach (var request in args.Skip(2))
 {
     var (mode, pattern) = (request[..request.IndexOf(':')], request[(request.IndexOf(':') + 1)..]);
-    foreach (var path in mode is "locres" or "version" ? [pattern] : Matching(provider, pattern, ".uasset"))
+    foreach (var path in mode is "locres" or "file" ? [pattern] : Matching(provider, pattern, ".uasset"))
         Extract(provider, mode, path);
 }
 
@@ -109,8 +108,9 @@ void Extract(DefaultFileProvider provider, string mode, string path)
                 File.WriteAllText(Path.Combine(outDir, culture + ".locres.json"), JsonConvert.SerializeObject(table, Formatting.Indented));
             }
             break;
-        case "version":
-            File.WriteAllText(Path.Combine(outDir, "version.txt"), FileVersion(File.ReadAllBytes(path)));
+        case "file":
+            foreach (var file in Matching(provider, path, ""))
+                File.WriteAllBytes(Path.Combine(outDir, Path.GetFileName(file)), provider.SaveAsset(provider.Files[file]));
             break;
         default:
             throw new ArgumentException($"unknown request mode '{mode}'");
@@ -124,26 +124,6 @@ static List<string> Matching(DefaultFileProvider provider, string path, string e
     var pattern = new Regex("^" + Regex.Escape(path + extension).Replace("\\*", "[^/]+") + "$", RegexOptions.IgnoreCase);
     var files = provider.Files.Keys.Where(k => pattern.IsMatch(k)).Select(k => k[..^extension.Length]).Order().ToList();
     return files.Count > 0 ? files : throw new FileNotFoundException($"no file matches {path}{extension}");
-}
-
-// Reads the FileVersion string of a PE file's version resource (VS_VERSIONINFO), e.g. "0.2.0.20 - CL 915".
-// FileVersionInfo only reads it on Windows, so the String structure is located by its key: it starts with
-// wLength, wValueLength and wType (1 = text), then the UTF-16 key, then the value aligned on 32 bits.
-static string FileVersion(byte[] exe)
-{
-    var key = System.Text.Encoding.Unicode.GetBytes("FileVersion\0");
-    for (var at = exe.AsSpan().IndexOf(key); at >= 6; )
-    {
-        var (valueLength, type) = (BitConverter.ToUInt16(exe, at - 4), BitConverter.ToUInt16(exe, at - 2));
-        if (type == 1 && valueLength > 0)
-        {
-            var start = (at + key.Length + 3) & ~3;
-            return System.Text.Encoding.Unicode.GetString(exe, start, (valueLength - 1) * 2);
-        }
-        var next = exe.AsSpan(at + 1).IndexOf(key);
-        at = next < 0 ? -1 : at + 1 + next;
-    }
-    throw new InvalidDataException("no FileVersion in the executable's version resource");
 }
 
 // Engine classes whose serialized properties we need to read. StringTable has no non-default tagged properties in

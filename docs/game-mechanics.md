@@ -177,7 +177,7 @@ Assets read:
 | `Localization/Game/<language>/Game.locres` | translations: by string table namespace (`ST_Tweaks`, `ST_Skin` for `ST_Weapons`, `ST_Elements` for `ST_Spells`), same keys as the English texts |
 | `/Game/Items/BP_Item_*`, `Items/Grenades/BP_Item_*`, `Spells/BP_Item_*` | Blueprints of the items: only their import map, to find their icon |
 | `/Game/Textures/Icons/*`, `/Game/Textures/Weapons/*` | icon textures (`Texture2D`, DXT5), decoded to PNG |
-| `FarFarWest.exe` (outside the archives) | game version (the executable's `FileVersion`, "0.3.0.0 - CL 2812") |
+| `FarFarWest/Config/DefaultGame.ini` | game version (`ProjectVersion`, "0.3.0.10 - CL 2994"; up to 0.3.0.7 it was read from the `FileVersion` of `FarFarWest.exe`, which now holds the engine build) |
 
 The game serializes its properties in "unversioned" mode (no names or types) and ships no mappings file. CUE4Parse
 therefore cannot decode the joker table: `build_game_data.py` decodes it itself, with the order and type of the

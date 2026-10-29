@@ -449,7 +449,7 @@
   },
   "jokerFistRage": {
     "name": "POING ENRAGÉ",
-    "description": "Subir des dégâts génère de la charge et confère +30 % de vitesse d'attaque pendant 2 sec."
+    "description": "Perdre des PV génère de la charge et confère +30 % de vitesse d'attaque pendant 2 sec."
   },
   "jokerFistRoDah": {
     "name": "POING RO DAH",

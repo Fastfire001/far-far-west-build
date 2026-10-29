@@ -449,7 +449,7 @@
   },
   "jokerFistRage": {
     "name": "狂怒之拳",
-    "description": "受到伤害时积攒蓄力，攻击速度 +30%，持续 2 秒"
+    "description": "生命值受到伤害时积攒蓄力，攻击速度 +30%，持续 2 秒"
   },
   "jokerFistRoDah": {
     "name": "重拳撼击",
