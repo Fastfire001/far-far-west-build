@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // One stat on the customize screen, like the game's: coloured band with the icon and name, total bonus, then
-// ◀ points ▶. Clicking a point sets the stat to that many points.
-import { computed } from 'vue'
+// ◀ points ▶. Clicking a point sets the stat to that many points; clicking one out of reach (carrier budget spent)
+// shows a short error beside the points.
+import { computed, onBeforeUnmount, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { Upgrade } from '@/domain/gameData'
 import { iconUrl } from '@/icons'
@@ -22,7 +23,23 @@ const language = useLanguageStore()
 const name = computed(() => language.gameName(props.upgrade.id))
 const bonus = computed(() => upgradeBonus(props.upgrade, props.points, locale.value))
 
+const OUT_OF_REACH_MS = 1500
+const outOfReach = ref(false)
+let outOfReachTimer: ReturnType<typeof setTimeout> | undefined
+
+function showOutOfReach() {
+  outOfReach.value = true
+  clearTimeout(outOfReachTimer)
+  outOfReachTimer = setTimeout(() => (outOfReach.value = false), OUT_OF_REACH_MS)
+}
+onBeforeUnmount(() => clearTimeout(outOfReachTimer))
+
 function setTo(points: number) {
+  if (points > props.points + props.room) {
+    showOutOfReach()
+    return
+  }
+  outOfReach.value = false
   const target = points === props.points ? points - 1 : points
   emit('change', Math.min(target - props.points, props.room))
 }
@@ -51,11 +68,12 @@ function setTo(points: number) {
           :key="n"
           type="button"
           class="pill"
-          :class="{ on: n <= points }"
-          :disabled="n > points + room"
+          :class="{ on: n <= points, out: n > points + room }"
+          :aria-disabled="n > points + room"
           :aria-label="t('customize.setPoints', { name, n })"
           @click="setTo(n)"
         />
+        <span v-if="outOfReach" class="out-of-reach" role="alert">{{ t('customize.noPointsLeft') }}</span>
       </span>
       <button
         type="button"
@@ -135,6 +153,7 @@ function setTo(points: number) {
 }
 .pills {
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   gap: 3px;
 }
@@ -152,8 +171,23 @@ function setTo(points: number) {
   background: var(--band);
   box-shadow: 0 0 6px color-mix(in srgb, var(--band) 60%, transparent);
 }
-.pill:disabled {
-  cursor: default;
+.pill.out {
+  cursor: not-allowed;
+}
+.out-of-reach {
+  background: var(--bg-deep);
+  border: 1px solid var(--danger);
+  border-radius: 4px;
+  bottom: calc(100% + 6px);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+  color: var(--danger);
+  font-size: 0.85rem;
+  left: 0;
+  padding: 0.2rem 0.5rem;
+  pointer-events: none;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
 }
 @media (max-width: 40rem) {
   .row {
