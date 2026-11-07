@@ -1,8 +1,8 @@
 <script setup lang="ts">
 // The carrier's joker slots, like the game's: circles in rows (2 columns by default), a joker taking as many
 // circles as it costs, linked together (an SVG layer behind the circles draws the links: as in the game, each circle
-// is linked to the next one and to the one below it, which in two columns links every neighbour but makes a single
-// diagonal, from top right to bottom left). Unused circles show the
+// is linked to the next one and to its neighbour across the line, which in two columns or two rows links every
+// neighbour but makes a single diagonal, from top right to bottom left). Unused circles show the
 // level that unlocks them, or P for the slots bought at the prestige shop. Hovering an equipped joker (or focusing it
 // with the keyboard) shows its card next to the slots.
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
@@ -19,12 +19,14 @@ const props = withDefaults(
   defineProps<{
     loadout: Loadout
     columns?: number
+    /** Lay the circles out as in the game instead: this many rows, filled column by column (ignores `columns`). */
+    rows?: number
     /** Circle size, in tenths of rem. */
     size?: number
     /** Display only (build summary): no clicks, no + in the first unused circle; hovering still shows the cards. */
     readonly?: boolean
   }>(),
-  { columns: 2, size: 36, readonly: false },
+  { columns: 2, rows: undefined, size: 36, readonly: false },
 )
 /** A click on a joker's circle (with its id) or on an unused one (null). */
 const emit = defineEmits<{ select: [joker: string | null] }>()
@@ -58,15 +60,16 @@ const circles = computed<Circle[]>(() => {
     for (let copy = 0; copy < copies; copy++) for (let i = 0; i < cost; i++) owners.push({ joker: id, copy })
   }
   const levels = RULES.jokerSlotLevels.value
-  // Over-budget builds (imports) show every joker: add rows as needed.
-  const count = Math.max(MAX_JOKER_SLOTS, Math.ceil(owners.length / props.columns) * props.columns)
+  // Over-budget builds (imports) show every joker: add rows (or columns) as needed.
+  const line = props.rows ?? props.columns
+  const count = Math.max(MAX_JOKER_SLOTS, Math.ceil(owners.length / line) * line)
   return Array.from({ length: count }, (_, index) => {
     const owner = owners[index]
     const level = levels[index]
     return {
       index,
-      row: Math.floor(index / props.columns),
-      column: index % props.columns,
+      row: props.rows ? index % props.rows : Math.floor(index / props.columns),
+      column: props.rows ? Math.floor(index / props.rows) : index % props.columns,
       joker: owner?.joker ?? null,
       owner: owner ? `${owner.joker}#${owner.copy}` : null,
       rarity: owner ? jokerById.get(owner.joker)?.rarity : undefined,
@@ -81,10 +84,11 @@ const circles = computed<Circle[]>(() => {
   })
 })
 const firstFree = computed(() => (props.readonly ? undefined : circles.value.find((c) => !c.joker)?.index))
-const rows = computed(() => Math.ceil(circles.value.length / props.columns))
+const gridRows = computed(() => props.rows ?? Math.ceil(circles.value.length / props.columns))
+const gridColumns = computed(() => (props.rows ? Math.ceil(circles.value.length / props.rows) : props.columns))
 const links = computed(() =>
   circles.value.flatMap((c) =>
-    [c.index + 1, c.index + props.columns]
+    [c.index + 1, c.index + (props.rows ?? props.columns)]
       .map((index) => circles.value[index])
       .filter((other) => c.owner && other?.owner === c.owner)
       .map((other) => {
@@ -95,8 +99,11 @@ const links = computed(() =>
       }),
   ),
 )
-const width = computed(() => props.columns * geometry.value.size + (props.columns - 1) * geometry.value.columnGap)
-const height = computed(() => rows.value * geometry.value.size + (rows.value - 1) * geometry.value.rowGap)
+const width = computed(() => {
+  const { size, columnGap } = geometry.value
+  return gridColumns.value * size + (gridColumns.value - 1) * columnGap
+})
+const height = computed(() => gridRows.value * geometry.value.size + (gridRows.value - 1) * geometry.value.rowGap)
 
 // Hover preview: the circle under the pointer (by index, so that after a click removes a joker the preview follows
 // the joker now in that circle) and its position on screen.
@@ -153,7 +160,7 @@ onBeforeUnmount(() => removeEventListener('scroll', hidePreview, { capture: true
       '--size': `${geometry.size / 10}rem`,
       '--column-gap': `${geometry.columnGap / 10}rem`,
       '--row-gap': `${geometry.rowGap / 10}rem`,
-      gridTemplateColumns: `repeat(${columns}, var(--size))`,
+      gridTemplateColumns: `repeat(${gridColumns}, var(--size))`,
     }"
   >
     <svg
