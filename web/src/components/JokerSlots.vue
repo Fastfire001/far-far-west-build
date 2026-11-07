@@ -1,6 +1,8 @@
 <script setup lang="ts">
 // The carrier's joker slots, like the game's: circles in rows (2 columns by default), a joker taking as many
-// circles as it costs, linked together (an SVG layer behind the circles draws the links). Unused circles show the
+// circles as it costs, linked together (an SVG layer behind the circles draws the links: as in the game, each circle
+// is linked to the next one and to the one below it, which in two columns links every neighbour but makes a single
+// diagonal, from top right to bottom left). Unused circles show the
 // level that unlocks them, or P for the slots bought at the prestige shop. Hovering an equipped joker (or focusing it
 // with the keyboard) shows its card next to the slots.
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
@@ -35,9 +37,9 @@ interface Circle {
   row: number
   column: number
   joker: string | null
+  /** The copy of the joker that takes this circle (`<joker>#<copy>`), to link its circles together. */
+  owner: string | null
   rarity?: Rarity
-  /** The next circle belongs to the same copy of the joker: draw a link towards it. */
-  linked: boolean
   label: string
   title: string
 }
@@ -60,15 +62,14 @@ const circles = computed<Circle[]>(() => {
   const count = Math.max(MAX_JOKER_SLOTS, Math.ceil(owners.length / props.columns) * props.columns)
   return Array.from({ length: count }, (_, index) => {
     const owner = owners[index]
-    const next = owners[index + 1]
     const level = levels[index]
     return {
       index,
       row: Math.floor(index / props.columns),
       column: index % props.columns,
       joker: owner?.joker ?? null,
+      owner: owner ? `${owner.joker}#${owner.copy}` : null,
       rarity: owner ? jokerById.get(owner.joker)?.rarity : undefined,
-      linked: Boolean(owner && next && next.joker === owner.joker && next.copy === owner.copy),
       label: owner ? '' : level !== undefined ? String(level) : 'P',
       // An equipped joker shows its card on hover instead of a native tooltip.
       title: owner
@@ -82,14 +83,17 @@ const circles = computed<Circle[]>(() => {
 const firstFree = computed(() => (props.readonly ? undefined : circles.value.find((c) => !c.joker)?.index))
 const rows = computed(() => Math.ceil(circles.value.length / props.columns))
 const links = computed(() =>
-  circles.value
-    .filter((c) => c.linked)
-    .map((c) => {
-      const next = circles.value[c.index + 1]
-      const from = center(c.row, c.column)
-      const to = center(next.row, next.column)
-      return { key: c.index, x1: from.x, y1: from.y, x2: to.x, y2: to.y, color: RARITY_COLORS[c.rarity!] }
-    }),
+  circles.value.flatMap((c) =>
+    [c.index + 1, c.index + props.columns]
+      .map((index) => circles.value[index])
+      .filter((other) => c.owner && other?.owner === c.owner)
+      .map((other) => {
+        const from = center(c.row, c.column)
+        const to = center(other.row, other.column)
+        const color = RARITY_COLORS[c.rarity!]
+        return { key: `${c.index}-${other.index}`, x1: from.x, y1: from.y, x2: to.x, y2: to.y, color }
+      }),
+  ),
 )
 const width = computed(() => props.columns * geometry.value.size + (props.columns - 1) * geometry.value.columnGap)
 const height = computed(() => rows.value * geometry.value.size + (rows.value - 1) * geometry.value.rowGap)
