@@ -61,6 +61,7 @@ function customize() {
           :key="item.id"
           :active="item.id === selected"
           :checked="item.id === equipped"
+          :configured="isWeapon && item.id in store.build.unequipped"
           @click="selected = item.id"
         >
           <template #icon><img :src="iconUrl(item.id)" alt="" /></template>

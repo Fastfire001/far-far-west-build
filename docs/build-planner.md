@@ -55,7 +55,7 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   what the numbers in free slots mean and the planner's address. Nothing on it is clickable (only BACK); hovering a
   joker still shows its card.
 - **Item picker**: weapons or utilities as planks, the selected one in detail with EQUIP and CUSTOMIZE. CUSTOMIZE
-  opens the selected weapon without equipping it.
+  opens the selected weapon without equipping it. A wrench marks the weapons customized but not equipped.
 - **Customize** (hero, main weapon, sidearm): upgrades with the game's bars, the sidearm's element, the joker slots
   (one circle per slot, a locked slot shows the level that unlocks it, the last 2 are the prestige slots) and the
   progression needed, and a button that clears them all (after a confirmation). The game's "Confirm for X gold" is
