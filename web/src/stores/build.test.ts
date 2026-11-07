@@ -31,7 +31,7 @@ describe('build store', () => {
     store.changeUpgrade('hero', 'jokerUpgradeTotalAmmoBag', 16)
     store.changeUpgrade('hero', 'jokerUpgradeJumpHeight', 6)
     expect(store.build.hero.upgrades.jokerUpgradeJumpHeight).toBe(4)
-    expect(store.requirements.hero).toMatchObject({ prestiges: 3, assumed: true })
+    expect(store.requirements.hero).toMatchObject({ level: 100, prestiges: 3 })
     store.changeUpgrade('hero', 'jokerUpgradeHeal', -10)
     expect(store.build.hero.upgrades.jokerUpgradeHeal).toBeUndefined()
   })

@@ -24,7 +24,6 @@
     "prestiges": "{n} prestige | {n} prestige | {n} prestiges",
     "problems": "No problems | 1 problem | {n} problems",
     "complete": "Build complete and valid",
-    "assumed": "Prestiges: assumed rule (bonuses purchased with prestige can be used immediately)",
     "cooldown": "{sec} s",
     "slotLegend": "Number in a free slot : level that unlocks it ; P : slot bought at the prestige shop"
   },

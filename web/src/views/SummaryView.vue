@@ -25,7 +25,6 @@ watch(() => settings.summaryInEnglish, (english) => language.force(english ? 'en
 onUnmounted(() => language.force(null))
 
 const build = computed(() => store.build)
-const anyAssumed = computed(() => CARRIERS.some((c) => store.requirements[c].assumed))
 const keys = computed(() => spellKeys(locale.value))
 
 const extractedOn = computed(() =>
@@ -88,9 +87,6 @@ const siteAddress = `${location.host}${import.meta.env.BASE_URL}`.replace(/\/$/,
         <span>
           {{ t('menu.versionShort', { version: gameMeta.game_version, date: extractedOn }) }} ·
           {{ t('home.slotLegend') }}
-          <template v-if="anyAssumed">
-            · <span class="assumed-mark">*</span> {{ t('home.assumed') }}
-          </template>
         </span>
         <span class="site">{{ siteAddress }}</span>
       </footer>
@@ -230,9 +226,6 @@ kbd {
 }
 .site {
   font-family: ui-monospace, monospace;
-}
-.assumed-mark {
-  color: var(--accent);
 }
 @media (max-width: 64rem) {
   .carriers {

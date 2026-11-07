@@ -11,7 +11,7 @@ const loadout = (points: number, slots: number, jokers: Record<string, number> =
 
 describe('requirements', () => {
   it('needs level 1 for an empty carrier', () => {
-    expect(requirements(loadout(0, 0))).toMatchObject({ level: 1, prestiges: 0, assumed: false })
+    expect(requirements(loadout(0, 0))).toMatchObject({ level: 1, prestiges: 0 })
   })
 
   it('gives 1 upgrade point every 2 levels, 20 at level 40', () => {
@@ -25,9 +25,9 @@ describe('requirements', () => {
     expect(requirements(loadout(0, 14)).level).toBe(100)
   })
 
-  it('buys at the prestige shop only what levels cannot give', () => {
+  it('buys at the prestige shop only what levels cannot give, at the max level', () => {
     const result = requirements(loadout(22, 0))
-    expect(result).toMatchObject({ level: 40, prestiges: 1, assumed: true })
+    expect(result).toMatchObject({ level: 100, prestiges: 1 })
     expect(result.upgradePoints).toEqual({ used: 22, bought: 2, level: 40 })
     expect(requirements(loadout(0, 15))).toMatchObject({ level: 100, prestiges: 1 })
   })

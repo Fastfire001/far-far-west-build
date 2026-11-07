@@ -1,6 +1,5 @@
 // Minimum level and prestiges needed by a carrier for its upgrades and jokers (see docs/build-planner.md, "Rules").
-// Only what levels cannot give is bought at the prestige shop; the level is the one needed for the rest, after the last
-// prestige.
+// Only what levels cannot give is bought at the prestige shop; a carrier that needs a prestige needs the max level.
 import { jokerSlotsUsed, upgradePointsUsed, type Loadout } from './build'
 import { jokerById, type Joker } from './gameData'
 import { RULES } from './rules'
@@ -11,15 +10,13 @@ export interface UniqueRequirement {
 }
 
 export interface Requirements {
-  /** Level to reach (after the last prestige, if any). */
+  /** Level to reach: the max level as soon as a prestige is needed. */
   level: number
   prestiges: number
   upgradePoints: { used: number; bought: number; level: number }
   jokerSlots: { used: number; bought: number; level: number }
   /** Unique jokers and the carrier level that unlocks them. */
   uniqueJokers: UniqueRequirement[]
-  /** True when the result relies on an assumed rule (see RULES): to be shown with a warning. */
-  assumed: boolean
 }
 
 /** Level of the challenge unlocking a Unique joker (challengeLvl40ItemBow, challengeLevel35ItemShotgun → 40, 35). */
@@ -51,13 +48,15 @@ export function requirements(loadout: Loadout): Requirements {
   const tokens = slotsBought * RULES.prestigeJokerSlot.value.cost + pointsBought * RULES.prestigeUpgradePoint.value.cost
   const prestiges = Math.ceil(tokens / RULES.tokensPerPrestige.value)
 
+  const maxLevel = RULES.maxLevel.value
+  const level = prestiges > 0 ? maxLevel : Math.max(pointsLevel, slotsLevel, ...uniqueJokers.map((u) => u.level))
+
   return {
-    level: Math.min(Math.max(pointsLevel, slotsLevel, ...uniqueJokers.map((u) => u.level)), RULES.maxLevel.value),
+    level: Math.min(level, maxLevel),
     prestiges,
     upgradePoints: { used: pointsUsed, bought: pointsBought, level: pointsLevel },
     jokerSlots: { used: slotsUsed, bought: slotsBought, level: slotsLevel },
     uniqueJokers,
-    assumed: prestiges > 0 && RULES.prestigeBonusesUsableAtAnyLevel.status === 'assumed',
   }
 }
 

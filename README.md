@@ -39,7 +39,7 @@ exception: values that cannot be extracted (spell cooldowns, spell school colour
 
 - [docs/game-mechanics.md](docs/game-mechanics.md): game rules used by the planner, where each value comes from,
   extraction method.
-- [docs/build-planner.md](docs/build-planner.md): design decisions and open questions.
+- [docs/build-planner.md](docs/build-planner.md): design decisions.
 - [CLAUDE.md](CLAUDE.md): repository layout and conventions.
 
 Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
