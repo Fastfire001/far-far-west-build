@@ -123,7 +123,7 @@ function onSlot(joker: string | null) {
 
     <aside class="slots-panel">
       <p class="count">{{ t('customize.jokerSlots', { used: slotsUsed, max: MAX_JOKER_SLOTS }) }}</p>
-      <JokerSlots :loadout="loadout" :columns="narrow ? 8 : 2" :size="narrow ? 21 : 36" @select="onSlot" />
+      <JokerSlots :loadout="loadout" :rows="narrow ? 2 : undefined" :size="narrow ? 21 : 36" @select="onSlot" />
       <p class="hint">{{ t('jokers.removeHint') }}</p>
     </aside>
   </main>
