@@ -3,8 +3,7 @@
 // right. Clicking a card adds a copy if there is room; clicking an equipped joker in the slots removes a copy.
 import { computed, ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRoute, useRouter } from 'vue-router'
-import { carrierItem, type CarrierKey } from '@/domain/build'
+import { useRouter } from 'vue-router'
 import { isEquippableInLobby, jokers, type Joker, type Rarity } from '@/domain/gameData'
 import { MAX_JOKER_SLOTS } from '@/domain/rules'
 import { jokerAddBlocker } from '@/domain/validation'
@@ -12,6 +11,7 @@ import { useProblemText } from '@/i18n/problems'
 import { useBuildStore } from '@/stores/build'
 import { useLanguageStore } from '@/stores/language'
 import { RARITY_COLORS } from '@/ui/colors'
+import { useCustomizeTarget } from '@/ui/useCustomizeTarget'
 import { useMediaQuery } from '@/ui/useMediaQuery'
 import BackButton from '@/components/BackButton.vue'
 import JokerCard from '@/components/JokerCard.vue'
@@ -20,17 +20,14 @@ import JokerSlots from '@/components/JokerSlots.vue'
 const RARITIES: Rarity[] = ['Normal', 'Fine', 'Prime', 'Mythic', 'Legendary', 'Unique']
 
 const { t } = useI18n()
-const route = useRoute()
 const router = useRouter()
 const store = useBuildStore()
 const language = useLanguageStore()
 const { carrierName } = useProblemText()
 const narrow = useMediaQuery('(max-width: 56rem)')
 
-const carrier = computed(() => route.params.carrier as CarrierKey)
-const item = computed(() => carrierItem(store.build, carrier.value))
-const loadout = computed(() => store.build[carrier.value])
-const slotsUsed = computed(() => store.requirements[carrier.value].jokerSlots.used)
+const { carrier, target, item, loadout, requirements } = useCustomizeTarget()
+const slotsUsed = computed(() => requirements.value.jokerSlots.used)
 
 watchEffect(() => {
   if (item.value === null) router.replace({ name: 'pick', params: { slot: carrier.value } })
@@ -64,7 +61,7 @@ const counts = computed(() =>
 )
 
 function blocker(joker: Joker) {
-  return jokerAddBlocker(store.build, carrier.value, joker.id)
+  return jokerAddBlocker(store.build, target.value, joker.id)
 }
 
 function blockerText(joker: Joker): string {
@@ -75,7 +72,7 @@ function blockerText(joker: Joker): string {
 }
 
 function onSlot(joker: string | null) {
-  if (joker) store.removeJoker(carrier.value, joker)
+  if (joker) store.removeJoker(target.value, joker)
 }
 </script>
 
@@ -84,7 +81,7 @@ function onSlot(joker: string | null) {
     <BackButton class="back" />
 
     <section class="catalog">
-      <h1>{{ t('game.jokers') }} — {{ carrierName(store.build, carrier) }}</h1>
+      <h1>{{ t('game.jokers') }} — {{ carrier === 'hero' || !item ? carrierName(store.build, carrier) : language.gameName(item) }}</h1>
 
       <div class="filters">
         <div class="tabs" role="group" :aria-label="t('jokers.rarity')">
@@ -115,7 +112,7 @@ function onSlot(joker: string | null) {
             :joker="joker"
             :copies="loadout.jokers[joker.id] ?? 0"
             :reason="blockerText(joker)"
-            @click="store.addJoker(carrier, joker.id)"
+            @click="store.addJoker(target, joker.id)"
           />
         </li>
       </ul>

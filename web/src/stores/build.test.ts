@@ -36,12 +36,35 @@ describe('build store', () => {
     expect(store.build.hero.upgrades.jokerUpgradeHeal).toBeUndefined()
   })
 
-  it('clears a carrier when its weapon changes', () => {
+  it('keeps the loadout of a weapon taken off', () => {
     const store = useBuildStore()
     store.setWeapon('sidearm', 'itemPistol')
     store.addJoker('sidearm', 'jokerBracing')
     store.setWeapon('sidearm', 'itemBow')
     expect(store.build.sidearm.jokers).toEqual({})
+    store.setWeapon('sidearm', 'itemPistol')
+    expect(store.build.sidearm.jokers).toEqual({ jokerBracing: 1 })
+  })
+
+  it('customizes a weapon without equipping it', () => {
+    const store = useBuildStore()
+    store.setWeapon('main', 'itemShotgun')
+    const target = { carrier: 'main', weapon: 'itemMinigun' } as const
+    expect(store.addJoker(target, 'jokerCrackShot')).toBe(true)
+    store.changeUpgrade(target, 'jokerUpgradeDamage', 1)
+    expect(store.build.main).toEqual({ weapon: 'itemShotgun', upgrades: {}, jokers: {} })
+    expect(store.build.unequipped.itemMinigun).toMatchObject({ jokers: { jokerCrackShot: 1 }, upgrades: { jokerUpgradeDamage: 1 } })
+    store.clearLoadout(target)
+    expect(store.build.unequipped).toEqual({})
+  })
+
+  it('shares only the equipped weapons', () => {
+    const store = useBuildStore()
+    store.setWeapon('main', 'itemShotgun')
+    store.addJoker({ carrier: 'main', weapon: 'itemMinigun' }, 'jokerCrackShot')
+    store.importText(store.exportText())
+    expect(store.build.main.weapon).toBe('itemShotgun')
+    expect(store.build.unequipped).toEqual({})
   })
 
   it('exports and imports the build', () => {

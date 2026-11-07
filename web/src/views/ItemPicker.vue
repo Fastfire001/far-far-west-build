@@ -1,10 +1,11 @@
 <script setup lang="ts">
 // Weapon or utility choice: the items as planks on the left, the selected one in detail on the right with EQUIP and
-// CUSTOMIZE.
+// CUSTOMIZE. Equipping another weapon keeps the loadout of the one taken off; CUSTOMIZE opens the selected weapon
+// without equipping it.
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
-import { equipment, type EquipmentType } from '@/domain/gameData'
+import { equipment, equipmentById, type EquipmentType } from '@/domain/gameData'
 import { iconUrl } from '@/icons'
 import { useBuildStore } from '@/stores/build'
 import { useLanguageStore } from '@/stores/language'
@@ -21,18 +22,20 @@ const slot = computed(() => route.params.slot as EquipmentType)
 const items = computed(() => equipment.filter((e) => e.type === slot.value))
 const equipped = computed(() => (slot.value === 'utility' ? store.build.utility : store.build[slot.value].weapon))
 
-/** Item shown in detail: the equipped one at first. */
+/** Item shown in detail: the one of `?weapon=` (back from customizing it), otherwise the equipped one. */
 const selected = ref<string | null>(null)
-watch(slot, () => (selected.value = equipped.value ?? items.value[0]?.id ?? null), { immediate: true })
+watch(
+  slot,
+  () => {
+    const asked = route.query.weapon
+    const fromQuery = typeof asked === 'string' && equipmentById.get(asked)?.type === slot.value ? asked : null
+    selected.value = fromQuery ?? equipped.value ?? items.value[0]?.id ?? null
+  },
+  { immediate: true },
+)
 
 const isWeapon = computed(() => slot.value !== 'utility')
 const isEquipped = computed(() => selected.value !== null && selected.value === equipped.value)
-/** Equipping another weapon clears the jokers and upgrades of the current one: warn when there are some. */
-const clearsLoadout = computed(() => {
-  if (slot.value === 'utility' || isEquipped.value || !equipped.value) return false
-  const loadout = store.build[slot.value]
-  return Object.keys(loadout.jokers).length > 0 || Object.keys(loadout.upgrades).length > 0
-})
 
 function equip() {
   if (!selected.value) return
@@ -41,8 +44,8 @@ function equip() {
 }
 
 function customize() {
-  equip()
-  router.push({ name: 'customize', params: { carrier: slot.value } })
+  if (!selected.value) return
+  router.push({ name: 'customize', params: { carrier: slot.value }, query: { weapon: selected.value } })
 }
 </script>
 
@@ -76,9 +79,6 @@ function customize() {
         </button>
         <button v-if="isWeapon" type="button" class="action" @click="customize">🔧 {{ t('game.customize') }}</button>
       </div>
-      <p v-if="clearsLoadout" class="warning">
-        ⓘ {{ t('picker.clearsLoadout', { weapon: language.gameName(equipped!) }) }}
-      </p>
     </section>
   </main>
 </template>
@@ -157,12 +157,6 @@ function customize() {
 .action:disabled {
   cursor: default;
   opacity: 0.55;
-}
-.warning {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 1rem;
-  max-width: 30rem;
 }
 /* Phone: the detail first (with its buttons), then the list. */
 @media (max-width: 56rem) {

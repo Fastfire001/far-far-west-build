@@ -63,6 +63,8 @@ describe('share links', () => {
       },
       utility: 'itemUtilityAmmo',
       spells: ['itemSpellFireBall', null, 'itemSpellIceLance'],
+      // Links carry the equipped weapons only.
+      unequipped: {},
     })
   })
 

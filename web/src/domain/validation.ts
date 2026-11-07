@@ -1,6 +1,17 @@
 // Build validation. Problems are codes with parameters, translated by the interface. The same rules apply in the
 // editor and on import (an imported build is kept even when invalid, with its problems shown).
-import { CARRIERS, carrierItem, jokerSlotsUsed, upgradePointsUsed, type Build, type CarrierKey, type Loadout } from './build'
+import {
+  CARRIERS,
+  carrierItem,
+  jokerSlotsUsed,
+  targetItem,
+  targetLoadout,
+  upgradePointsUsed,
+  type Build,
+  type CarrierKey,
+  type Loadout,
+  type Target,
+} from './build'
 import { equipmentById, isEquippableInLobby, jokerById, spellById, upgradeById, type EquipmentType } from './gameData'
 import { MAX_JOKER_SLOTS, MAX_UPGRADE_POINTS, RULES } from './rules'
 
@@ -91,27 +102,27 @@ function validateLoadout(
   if (points > MAX_UPGRADE_POINTS) add(carrier, 'upgrade_points_exceeded', undefined, { used: points, max: MAX_UPGRADE_POINTS })
 }
 
-/** Why a joker cannot be added to a carrier right now, or null if it can (used by the joker screen). */
+/** Why a joker cannot be added to a carrier or weapon right now, or null if it can (used by the joker screen). */
 export function jokerAddBlocker(
   build: Build,
-  carrier: CarrierKey,
+  target: Target,
   jokerId: string,
 ): 'incompatible' | 'not_equippable' | 'max_copies' | 'no_room' | null {
   const joker = jokerById.get(jokerId)
-  const item = carrierItem(build, carrier)
+  const item = targetItem(build, target)
   if (!joker || item === null || !joker.available_on.includes(item)) return 'incompatible'
   if (!isEquippableInLobby(joker)) return 'not_equippable'
-  const loadout = build[carrier]
+  const loadout = targetLoadout(build, target)
   if ((loadout.jokers[jokerId] ?? 0) >= joker.max_equip) return 'max_copies'
   if (jokerSlotsUsed(loadout) + joker.slot_cost > MAX_JOKER_SLOTS) return 'no_room'
   return null
 }
 
-/** Points that can still be added to an upgrade of a carrier (used by the ▶ arrow). */
-export function upgradeRoom(build: Build, carrier: CarrierKey, upgradeId: string): number {
+/** Points that can still be added to an upgrade of a carrier or weapon (used by the ▶ arrow). */
+export function upgradeRoom(build: Build, target: Target, upgradeId: string): number {
   const upgrade = upgradeById.get(upgradeId)
   if (!upgrade) return 0
-  const loadout = build[carrier]
+  const loadout = targetLoadout(build, target)
   const current = loadout.upgrades[upgradeId] ?? 0
   return Math.max(0, Math.min(upgrade.max_slots - current, MAX_UPGRADE_POINTS - upgradePointsUsed(loadout)))
 }

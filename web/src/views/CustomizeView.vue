@@ -1,10 +1,11 @@
 <script setup lang="ts">
 // Customize a carrier: upgrades, the sidearm's element, the joker slots and the progression this needs. A weapon
-// carrier without a weapon goes back to the weapon choice.
+// carrier without a weapon goes back to the weapon choice. A weapon that is not equipped can be customized too (see
+// useCustomizeTarget): its loadout is kept in the build, and a banner offers to equip it.
 import { computed, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRoute, useRouter } from 'vue-router'
-import { carrierItem, upgradePointsUsed, type CarrierKey } from '@/domain/build'
+import { useRouter } from 'vue-router'
+import { jokerSlotsUsed, upgradePointsUsed } from '@/domain/build'
 import { upgrades } from '@/domain/gameData'
 import { MAX_JOKER_SLOTS, MAX_UPGRADE_POINTS, RULES } from '@/domain/rules'
 import { upgradeRoom } from '@/domain/validation'
@@ -13,21 +14,24 @@ import { iconUrl } from '@/icons'
 import { useBuildStore } from '@/stores/build'
 import { useLanguageStore } from '@/stores/language'
 import { SCHOOL_COLORS } from '@/ui/colors'
+import { useCustomizeTarget } from '@/ui/useCustomizeTarget'
 import BackButton from '@/components/BackButton.vue'
 import JokerSlots from '@/components/JokerSlots.vue'
 import UpgradeRow from '@/components/UpgradeRow.vue'
 
 const { t } = useI18n()
-const route = useRoute()
 const router = useRouter()
 const store = useBuildStore()
 const language = useLanguageStore()
 const { carrierName } = useProblemText()
+const { carrier, weapon, target, item, equipped, loadout, element, requirements, query } = useCustomizeTarget()
 
-const carrier = computed(() => route.params.carrier as CarrierKey)
-const item = computed(() => carrierItem(store.build, carrier.value))
-const loadout = computed(() => store.build[carrier.value])
-const requirements = computed(() => store.requirements[carrier.value])
+const title = computed(() =>
+  carrier.value === 'hero' || !item.value ? carrierName(store.build, carrier.value) : language.gameName(item.value),
+)
+const isEmpty = computed(
+  () => upgradePointsUsed(loadout.value) === 0 && jokerSlotsUsed(loadout.value) === 0 && element.value === null,
+)
 
 watchEffect(() => {
   if (item.value === null) router.replace({ name: 'pick', params: { slot: carrier.value } })
@@ -38,7 +42,15 @@ const pointsUsed = computed(() => upgradePointsUsed(loadout.value))
 const levelPoints = RULES.upgradePointsFromLevels.value
 
 function openJokers() {
-  router.push({ name: 'jokers', params: { carrier: carrier.value } })
+  router.push({ name: 'jokers', params: { carrier: carrier.value }, query: query.value })
+}
+
+function equip() {
+  if (carrier.value !== 'hero' && item.value) store.setWeapon(carrier.value, item.value)
+}
+
+function clear() {
+  if (window.confirm(t('customize.clearConfirm', { name: title.value }))) store.clearLoadout(target.value)
 }
 </script>
 
@@ -48,12 +60,17 @@ function openJokers() {
 
     <section class="stats">
       <header class="title">
-        <h1>{{ carrierName(store.build, carrier) }}</h1>
+        <h1>{{ title }}</h1>
         <p class="level">
           {{ t('customize.minLevel', { level: requirements.level }) }} ·
           {{ t('home.prestiges', requirements.prestiges) }}
         </p>
       </header>
+
+      <p v-if="!equipped" class="not-equipped">
+        <span>ⓘ {{ t('customize.notEquipped') }}</span>
+        <button type="button" class="action" @click="equip">{{ t('game.equip') }}</button>
+      </p>
 
       <div class="budget">
         <span>{{ t('game.upgrade_slots') }}</span>
@@ -74,8 +91,8 @@ function openJokers() {
           :key="upgrade.id"
           :upgrade="upgrade"
           :points="loadout.upgrades[upgrade.id] ?? 0"
-          :room="upgradeRoom(store.build, carrier, upgrade.id)"
-          @change="(delta) => store.changeUpgrade(carrier, upgrade.id, delta)"
+          :room="upgradeRoom(store.build, target, upgrade.id)"
+          @change="(delta) => store.changeUpgrade(target, upgrade.id, delta)"
         />
       </div>
 
@@ -87,12 +104,12 @@ function openJokers() {
             :key="school"
             type="button"
             class="element-choice"
-            :class="{ on: store.build.sidearm.element === school }"
+            :class="{ on: element === school }"
             :style="{ '--school': SCHOOL_COLORS[school] }"
-            :aria-pressed="store.build.sidearm.element === school"
+            :aria-pressed="element === school"
             :title="language.gameName(school)"
             :aria-label="language.gameName(school)"
-            @click="store.setElement(store.build.sidearm.element === school ? null : school)"
+            @click="store.setElement(element === school ? null : school, weapon)"
           >
             <img :src="iconUrl(school)" alt="" />
           </button>
@@ -119,6 +136,8 @@ function openJokers() {
           </li>
         </ul>
       </section>
+
+      <button v-if="!isEmpty" type="button" class="clear" @click="clear">{{ t('customize.clear') }}</button>
     </section>
 
     <section class="jokers">
@@ -251,6 +270,43 @@ function openJokers() {
   margin: 0.25rem 0;
 }
 .bought {
+  color: var(--accent);
+}
+.not-equipped {
+  align-items: center;
+  border: 2px dashed var(--accent);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  margin: 1rem 0 0;
+  padding: 0.5rem 0.75rem;
+}
+.action {
+  background: linear-gradient(180deg, var(--plank-light), var(--plank));
+  border: 2px solid var(--plank-dark);
+  color: var(--plank-text);
+  cursor: pointer;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  text-transform: uppercase;
+}
+.action:hover {
+  box-shadow: 0 0 0 2px var(--accent), 0 0 12px rgb(244 181 47 / 50%);
+}
+.clear {
+  background: none;
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  margin-top: 1.5rem;
+  padding: 0.3rem 0.8rem;
+}
+.clear:hover {
+  border-color: var(--accent);
   color: var(--accent);
 }
 .jokers {
