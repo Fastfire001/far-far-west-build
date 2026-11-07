@@ -17,10 +17,13 @@ const router = useRouter()
 const editor = useBuildStore()
 const library = useLibraryStore()
 
-const exported = computed(() => (exportOpen.value ? editor.exportText() : ''))
+/** Share the loadouts of the unequipped weapons too (link and code). */
+const withUnequipped = ref(false)
+const hasUnequipped = computed(() => Object.keys(editor.build.unequipped).length > 0)
+const exported = computed(() => (exportOpen.value ? editor.exportText(withUnequipped.value) : ''))
 const link = computed(() => {
   if (!exportOpen.value) return ''
-  const code = encodeShareCode(editor.build)
+  const code = encodeShareCode(editor.build, withUnequipped.value)
   return new URL(router.resolve({ name: 'share', params: { code } }).href, location.href).href
 })
 const copied = ref<'link' | 'text' | null>(null)
@@ -63,6 +66,10 @@ function importBuild() {
 
 <template>
   <AppDialog v-model="exportOpen" :title="t('dialog.exportTitle')">
+    <label class="option" :class="{ disabled: !hasUnequipped }">
+      <input v-model="withUnequipped" type="checkbox" :disabled="!hasUnequipped" />
+      {{ t('dialog.withUnequipped') }}
+    </label>
     <p>{{ t('dialog.linkHelp') }}</p>
     <input ref="linkField" class="text" readonly :value="link" @focus="linkField?.select()" />
     <div class="actions">
@@ -89,6 +96,19 @@ function importBuild() {
 <style scoped>
 p {
   margin: 0 0 0.75rem;
+}
+.option {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.option.disabled {
+  color: var(--text-muted);
+  cursor: default;
 }
 .second {
   border-top: 1px solid var(--line);

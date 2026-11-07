@@ -1,5 +1,19 @@
 import { describe, expect, it } from 'vitest'
-import { addJoker, clearSpellSlot, emptyBuild, jokerSlotsUsed, placeSpell, removeJoker, setUpgradePoints, setWeapon } from './build'
+import {
+  addJoker,
+  clearLoadout,
+  clearSpellSlot,
+  emptyBuild,
+  isTargetEquipped,
+  jokerSlotsUsed,
+  placeSpell,
+  removeJoker,
+  setElement,
+  setUpgradePoints,
+  setWeapon,
+  targetItem,
+  targetLoadout,
+} from './build'
 
 describe('build operations', () => {
   it('starts empty', () => {
@@ -8,13 +22,51 @@ describe('build operations', () => {
     expect(build.spells).toEqual([null, null, null])
   })
 
-  it('clears the jokers and upgrades of a carrier when its weapon changes', () => {
+  it('keeps the loadout of a weapon taken off and gives it back when it is equipped again', () => {
     let build = setWeapon(emptyBuild(), 'sidearm', 'itemPistol')
     build = addJoker(build, 'sidearm', 'jokerCrackShot')
     build = setUpgradePoints(build, 'sidearm', 'jokerUpgradeDamage', 3)
+    build = setElement(build, 'itemFire')
     expect(setWeapon(build, 'sidearm', 'itemPistol')).toBe(build)
+
     const changed = setWeapon(build, 'sidearm', 'itemBow')
-    expect(changed.sidearm).toMatchObject({ weapon: 'itemBow', jokers: {}, upgrades: {} })
+    expect(changed.sidearm).toEqual({ weapon: 'itemBow', element: null, jokers: {}, upgrades: {} })
+    expect(changed.unequipped).toEqual({
+      itemPistol: { jokers: { jokerCrackShot: 1 }, upgrades: { jokerUpgradeDamage: 3 }, element: 'itemFire' },
+    })
+
+    const back = setWeapon(changed, 'sidearm', 'itemPistol')
+    expect(back.sidearm).toEqual(build.sidearm)
+    // The Bow was left empty: nothing to keep.
+    expect(back.unequipped).toEqual({})
+  })
+
+  it('customizes a weapon that is not equipped', () => {
+    const build = setWeapon(emptyBuild(), 'main', 'itemShotgun')
+    const target = { carrier: 'main', weapon: 'itemMinigun' } as const
+    expect(isTargetEquipped(build, target)).toBe(false)
+    expect(targetItem(build, target)).toBe('itemMinigun')
+
+    let changed = addJoker(build, target, 'jokerCrackShot')
+    changed = setUpgradePoints(changed, target, 'jokerUpgradeDamage', 2)
+    expect(changed.main).toEqual(build.main)
+    expect(targetLoadout(changed, target)).toEqual({ upgrades: { jokerUpgradeDamage: 2 }, jokers: { jokerCrackShot: 1 }, element: null })
+
+    // Equipping it brings its loadout, and the Shotgun (empty) is not kept.
+    const equipped = setWeapon(changed, 'main', 'itemMinigun')
+    expect(equipped.main).toEqual({ weapon: 'itemMinigun', upgrades: { jokerUpgradeDamage: 2 }, jokers: { jokerCrackShot: 1 } })
+    expect(equipped.unequipped).toEqual({})
+
+    // Removing the last joker and point of an unequipped weapon forgets it.
+    changed = removeJoker(setUpgradePoints(changed, target, 'jokerUpgradeDamage', 0), target, 'jokerCrackShot')
+    expect(changed.unequipped).toEqual({})
+  })
+
+  it('clears the loadout of a carrier or an unequipped weapon', () => {
+    let build = setElement(addJoker(setWeapon(emptyBuild(), 'sidearm', 'itemPistol'), 'sidearm', 'jokerCrackShot'), 'itemFire')
+    build = setElement(build, 'itemIce', 'itemBow')
+    expect(clearLoadout(build, 'sidearm').sidearm).toEqual({ weapon: 'itemPistol', element: null, jokers: {}, upgrades: {} })
+    expect(clearLoadout(build, { carrier: 'sidearm', weapon: 'itemBow' }).unequipped).toEqual({})
   })
 
   it('counts joker copies and slots', () => {

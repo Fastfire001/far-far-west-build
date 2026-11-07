@@ -9,6 +9,15 @@ describe('stored builds', () => {
     expect(build.spells).toEqual(['itemSpellFireBall', null, null])
   })
 
+  it('reads the loadouts of unequipped weapons, absent from older saves', () => {
+    expect(restoreBuild({ v: 1 }).unequipped).toEqual({})
+    const build = restoreBuild({
+      v: 1,
+      unequipped: { itemBow: { jokers: { jokerCrackShot: 1 }, element: 'itemFire' }, itemShotgun: 'nope' },
+    })
+    expect(build.unequipped).toEqual({ itemBow: { jokers: { jokerCrackShot: 1 }, upgrades: {}, element: 'itemFire' } })
+  })
+
   it('rejects data that is not a stored build', () => {
     const reason = (data: unknown) => {
       try {

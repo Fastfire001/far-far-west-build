@@ -79,6 +79,26 @@ describe('library store', () => {
     expect(library.builds).toHaveLength(2)
   })
 
+  it('saves the loadouts of unequipped weapons, and reopens a shared build without them', async () => {
+    const { library, editor } = reload()
+    editor.setWeapon('main', 'itemShotgun')
+    editor.addJoker({ carrier: 'main', weapon: 'itemMinigun' }, 'jokerCrackShot')
+    await nextTick()
+    const again = reload()
+    expect(again.editor.build.unequipped).toEqual({ itemMinigun: { upgrades: {}, jokers: { jokerCrackShot: 1 }, element: null } })
+    // A link to this build carries only the Shotgun: it reopens this build rather than adding a copy.
+    const mineId = again.library.currentId
+    again.library.openShared({ ...again.editor.build, unequipped: {} })
+    expect(again.library.currentId).toBe(mineId)
+    expect(again.library.builds).toHaveLength(1)
+    // A build with only an unequipped weapon customized is not blank.
+    library.newBuild()
+    editor.addJoker({ carrier: 'main', weapon: 'itemMinigun' }, 'jokerCrackShot')
+    await nextTick()
+    library.newBuild()
+    expect(library.builds).toHaveLength(3)
+  })
+
   it('keeps received builds apart until they are changed', async () => {
     const { library, editor } = reload()
     editor.rename('Mine')

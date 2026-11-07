@@ -23,21 +23,24 @@ export const router = createRouter({
     { path: '/', name: 'home', component: BuildHome },
     // Weapon or utility choice.
     { path: '/pick/:slot(main|sidearm|utility)', name: 'pick', component: ItemPicker, meta: { back: () => ({ name: 'home' }) } },
-    // Upgrades and jokers of a carrier.
+    // Upgrades and jokers of a carrier. For a weapon carrier, `?weapon=` names the weapon customized, equipped or not
+    // (the equipped one without it); the weapon choice then opens on that weapon.
     {
       path: '/customize/:carrier(hero|main|sidearm)',
       name: 'customize',
       component: CustomizeView,
       meta: {
         back: (route) =>
-          route.params.carrier === 'hero' ? { name: 'home' } : { name: 'pick', params: { slot: route.params.carrier } },
+          route.params.carrier === 'hero'
+            ? { name: 'home' }
+            : { name: 'pick', params: { slot: route.params.carrier }, query: route.query },
       },
     },
     {
       path: '/customize/:carrier(hero|main|sidearm)/jokers',
       name: 'jokers',
       component: JokersView,
-      meta: { back: (route) => ({ name: 'customize', params: { carrier: route.params.carrier } }) },
+      meta: { back: (route) => ({ name: 'customize', params: { carrier: route.params.carrier }, query: route.query }) },
     },
     { path: '/builds', name: 'builds', component: BuildsView, meta: { back: () => ({ name: 'home' }) } },
     { path: '/spells', name: 'spells', component: SpellsView, meta: { back: () => ({ name: 'home' }) } },

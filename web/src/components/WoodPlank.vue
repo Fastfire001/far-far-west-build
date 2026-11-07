@@ -11,6 +11,8 @@ defineProps<{
   active?: boolean
   /** Check mark: the equipped item. */
   checked?: boolean
+  /** Wrench mark: a weapon customized but not equipped. */
+  configured?: boolean
 }>()
 </script>
 
@@ -25,6 +27,7 @@ defineProps<{
   >
     <span class="icons"><slot name="icon" /></span>
     <span class="label"><slot /></span>
+    <span v-if="configured" class="configured" aria-hidden="true">🔧</span>
     <span v-if="checked" class="check" aria-hidden="true">✔</span>
   </component>
 </template>
@@ -83,6 +86,9 @@ defineProps<{
 }
 .empty .label {
   color: rgb(43 33 27 / 55%);
+}
+.configured {
+  font-size: 1.3rem;
 }
 .check {
   color: var(--accent);

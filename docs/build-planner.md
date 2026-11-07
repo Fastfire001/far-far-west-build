@@ -54,10 +54,13 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   with the list of jokers beside them, and its upgrades (points and total bonus). The footer gives the game version,
   what the numbers in free slots mean and the planner's address. Nothing on it is clickable (only BACK); hovering a
   joker still shows its card.
-- **Item picker**: weapons or utilities as planks, the selected one in detail with EQUIP and CUSTOMIZE.
+- **Item picker**: weapons or utilities as planks, the selected one in detail with EQUIP and CUSTOMIZE. CUSTOMIZE
+  opens the selected weapon without equipping it. A wrench marks the weapons customized but not equipped.
 - **Customize** (hero, main weapon, sidearm): upgrades with the game's bars, the sidearm's element, the joker slots
   (one circle per slot, a locked slot shows the level that unlocks it, the last 2 are the prestige slots) and the
-  progression needed. The game's "Confirm for X gold" is left out: gold is out of scope.
+  progression needed, and a button that clears them all (after a confirmation). The game's "Confirm for X gold" is
+  left out: gold is out of scope. A weapon that is not equipped can be customized too (`?weapon=<id>` in the route,
+  also kept by the Jokers screen): a banner says so, with an EQUIP button.
 - **Jokers**: rarity tabs named as in the game, plus a search on the name and description in the current language;
   cards in the game's format. Clicking a card adds a copy if it fits; a card that does not fit has a red frame.
 - **Joker slots** (Customize and Jokers): hovering an equipped joker with the mouse, or focusing it with the keyboard,
@@ -95,7 +98,10 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
   - other challenges (cooldown jokers at school level 50, kills, secret areas…) are neither shown nor counted in the
     minimum level;
   - the hero level that may be needed to buy a joker rarity is ignored (see `docs/game-mechanics.md`).
-- **Changing weapons empties that carrier's jokers and upgrades.**
+- **Each weapon keeps its own loadout** (upgrades, jokers, and the element for a sidearm), as in the game: equipping
+  another weapon keeps the loadout of the one taken off (`unequipped` in the build), and equipping it again brings it
+  back. Only the equipped weapons count for the home, the summary, the validation and the share links; an empty
+  loadout is not kept.
 - **A new build is empty**: no weapon, utility or spell chosen.
 
 ## Languages
@@ -169,8 +175,9 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
 
 - Builds are saved in the browser's **localStorage**: a list of named builds (open, duplicate, delete), the "My
   builds" screen and the Builds menu.
-- **Autosave**: the build being edited is saved on every change, with no button. A build left blank (no name and no
-  choice) is dropped when another one is opened. Without localStorage (blocked storage), everything works without
+- **Autosave**: the build being edited is saved on every change, with no button, the loadouts of its unequipped
+  weapons included. A build left blank (no name, no choice and no unequipped weapon customized) is dropped when
+  another one is opened. Without localStorage (blocked storage), everything works without
   saving, and the menu says so.
 - An **imported** build is added to the list as a new build: it does not overwrite the current one.
 - **Received builds** (opened from a share link or imported) are listed apart in "My builds", so that opening many
@@ -178,11 +185,14 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   Keep button, or as soon as it is changed (a copy made with Duplicate is ours too). The flag is saved with the build (`"received": true`).
 - **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the build as bytes in URL-safe base64
   (`web/src/domain/shareCode.ts`): items, jokers and upgrades are written as their number in `data/share-ids.json`,
-  in varints. About 90 characters for a full build without a name, against 900 for its JSON. Opening a link
-  adds the build to the saved builds, or reopens the saved copy if an identical one exists, then replaces the URL
+  in varints. About 90 characters for a full build without a name, against 900 for its JSON. By default only the
+  equipped weapons are in the code (its list of unequipped weapons is empty); a checkbox at the top of the dialog
+  adds the loadouts of the unequipped ones: about 620 characters with all 14 weapons customized to the maximum. Opening a link
+  adds the build to the saved builds, or reopens the saved copy if an identical one exists (whatever its unequipped
+  weapons, when the link carries none), then replaces the URL
   with the build home, so a reload does not add it again.
-- **Link formats**: the code starts with its format version (today 1), which picks the reader. A new format gets the
-  next version, its own writer and reader, and the old readers stay, so that the links already shared still open. A
+- **Link formats**: the code starts with its format version (today 2; format 1, without unequipped weapons, opens
+  with none), which picks the reader. A new format gets the next version, its own writer and reader, and the old readers stay, so that the links already shared still open. A
   test decodes a link of format 1 written once and for all. The first links (compressed JSON, same address) are
   no longer read: their code does not start with a known version, so they show an error.
 - Ids missing from the table (only a hand-edited saved build can have one: ids removed from the game stay in it) are

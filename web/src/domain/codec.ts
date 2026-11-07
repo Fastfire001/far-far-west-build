@@ -1,7 +1,7 @@
 // A build as stored in the browser (local saves): the build with a format version ("v": 1), to convert old builds
 // later, and the URL-safe base64 of share codes (see shareCode.ts). Ids are kept as they are, even unknown ones:
 // validation reports them.
-import { emptyBuild, type Build, type Loadout } from './build'
+import { emptyBuild, type Build, type Loadout, type WeaponLoadout } from './build'
 import { RULES } from './rules'
 
 export const FORMAT_VERSION = 1
@@ -56,7 +56,18 @@ function normalize(data: Record<string, unknown>): Build {
     sidearm: { ...loadout(sidearm), weapon: id(sidearm.weapon), element: id(sidearm.element) },
     utility: id(data.utility),
     spells: Array.from({ length: RULES.spellSlots.value }, (_, slot) => id(spells[slot])),
+    unequipped: unequipped(data.unequipped),
   }
+}
+
+/** Loadouts of the unequipped weapons (absent from builds saved before they existed). */
+function unequipped(value: unknown): Record<string, WeaponLoadout> {
+  if (!isObject(value)) return {}
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([weapon, data]) => weapon !== '' && isObject(data))
+      .map(([weapon, data]) => [weapon, { ...loadout(data), element: id((data as Record<string, unknown>).element) }]),
+  )
 }
 
 function loadout(value: unknown): Loadout {
