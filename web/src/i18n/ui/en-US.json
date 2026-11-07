@@ -57,7 +57,8 @@
     "prestigeSlot": "Slot bought with prestige",
     "addPoint": "Add a point to {name}",
     "removePoint": "Remove a point from {name}",
-    "setPoints": "{name} : {n} points"
+    "setPoints": "{name} : {n} points",
+    "noPointsLeft": "No further points for improvement available"
   },
   "jokers": {
     "rarity": "Rarity",
