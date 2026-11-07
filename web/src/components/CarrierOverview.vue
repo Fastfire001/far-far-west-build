@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // One carrier in the build home's summary: its item, the level and prestiges it needs, its jokers as their icon in a circle of their rarity colour (as in the game's slots) and
-// its upgrades as their icon with the points. A glance at the build; the full detail is on the summary sheet.
+// its upgrades as their icon with the points (in the stat's colour, lightened, once the stat is maxed, like a full bar in the game). A glance at the build; the full detail is on the summary sheet.
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { carrierItem, type Build, type CarrierKey } from '@/domain/build'
@@ -29,7 +29,7 @@ const jokerRows = computed(() =>
   }),
 )
 const upgradeRows = computed(() =>
-  upgrades.filter((u) => loadout.value.upgrades[u.id]).map((u) => ({ id: u.id, points: loadout.value.upgrades[u.id] })),
+  upgrades.filter((u) => loadout.value.upgrades[u.id]).map((u) => ({ id: u.id, points: loadout.value.upgrades[u.id], maxed: loadout.value.upgrades[u.id] >= u.max_slots, color: u.color })),
 )
 </script>
 
@@ -58,7 +58,7 @@ const upgradeRows = computed(() =>
       <ul class="upgrades">
         <li v-for="row in upgradeRows" :key="row.id">
           <img :src="iconUrl(row.id)" :alt="language.gameName(row.id)" />
-          <b>{{ row.points }}</b>
+          <b :class="{ maxed: row.maxed }" :style="{ '--band': row.color }">{{ row.points }}</b>
         </li>
       </ul>
     </div>
@@ -165,6 +165,10 @@ const upgradeRows = computed(() =>
   font-family: var(--font-title);
   font-size: 0.8rem;
   justify-items: center;
+}
+/* Lightened: some stat colours (purple, deep blue) are hard to read on the dark background. */
+.upgrades b.maxed {
+  color: color-mix(in srgb, var(--band) 70%, white);
 }
 .upgrades img {
   height: 1.4rem;
