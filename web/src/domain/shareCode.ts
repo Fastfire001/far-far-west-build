@@ -5,8 +5,9 @@
 //
 // To add a format: write its writer and reader below, add the reader to READERS under the next version and make
 // CURRENT and WRITE point to the new format. Keep the old readers, so that the links already shared still open.
+// Codes of format 1 have no unequipped weapons: they open with none.
 import shareIds from '@data/share-ids.json'
-import { CARRIERS, emptyBuild, type Build, type Loadout } from './build'
+import { CARRIERS, emptyBuild, type Build, type Loadout, type WeaponLoadout } from './build'
 import { BuildImportError, fromBase64Url, restoreBuild, storedBuild, toBase64Url } from './codec'
 
 type Kind = keyof typeof shareIds
@@ -76,66 +77,103 @@ function fail(): never {
 //     joker copy count, then for each copy the gap to the previous copy's number (0 for another copy).
 // Ids missing from the table (a hand-edited import, never a game id) are left out: an item becomes none.
 
-function writeV1(w: Writer, build: Build) {
-  const number = (kind: Kind, id: string | null) => (id === null ? undefined : NUMBERS[kind].get(id))
-  const item = (id: string | null) => w.uint((number('items', id) ?? -1) + 1)
-  // Numbers in increasing order, each written as the gap to the previous one.
-  const gaps = (numbers: number[], extra?: (n: number) => void) => {
-    w.uint(numbers.length)
-    numbers.reduce((previous, n) => (w.uint(n - previous), extra?.(n), n), 0)
-  }
+const number = (kind: Kind, id: string | null) => (id === null ? undefined : NUMBERS[kind].get(id))
+
+function writeItem(w: Writer, id: string | null) {
+  w.uint((number('items', id) ?? -1) + 1)
+}
+
+/** Numbers in increasing order, each written as the gap to the previous one, after their count. */
+function writeGaps(w: Writer, numbers: number[], extra?: (n: number) => void) {
+  w.uint(numbers.length)
+  numbers.reduce((previous, n) => (w.uint(n - previous), extra?.(n), n), 0)
+}
+
+function writeLoadout(w: Writer, loadout: Loadout) {
   const known = (kind: Kind, counts: Record<string, number>) =>
     Object.entries(counts).flatMap(([id, count]) => {
       const n = number(kind, id)
       return n === undefined ? [] : [[n, count] as const]
     })
+  const points = new Map(known('upgrades', loadout.upgrades))
+  writeGaps(w, [...points.keys()].sort((a, b) => a - b), (n) => w.uint(points.get(n)!))
+  const copies = known('jokers', loadout.jokers).flatMap(([n, count]) => Array<number>(count).fill(n))
+  writeGaps(w, copies.sort((a, b) => a - b))
+}
 
+function writeV1(w: Writer, build: Build) {
   w.text(build.name)
-  for (const id of [build.utility, build.main.weapon, build.sidearm.weapon, build.sidearm.element]) item(id)
+  for (const id of [build.utility, build.main.weapon, build.sidearm.weapon, build.sidearm.element]) writeItem(w, id)
   w.uint(build.spells.length)
-  build.spells.forEach(item)
-  for (const carrier of CARRIERS) {
-    const points = new Map(known('upgrades', build[carrier].upgrades))
-    gaps([...points.keys()].sort((a, b) => a - b), (n) => w.uint(points.get(n)!))
-    const copies = known('jokers', build[carrier].jokers).flatMap(([n, count]) => Array<number>(count).fill(n))
-    gaps(copies.sort((a, b) => a - b))
+  build.spells.forEach((id) => writeItem(w, id))
+  for (const carrier of CARRIERS) writeLoadout(w, build[carrier])
+}
+
+// Format 2: format 1, then the unequipped weapons by increasing item number: their count, then for each the gap to
+// the previous weapon's number, its element (item number + 1, or 0) and its loadout as in format 1.
+
+function writeV2(w: Writer, build: Build) {
+  writeV1(w, build)
+  const weapons = new Map(
+    Object.entries(build.unequipped).flatMap(([id, loadout]) => {
+      const n = number('items', id)
+      return n === undefined ? [] : [[n, loadout] as const]
+    }),
+  )
+  writeGaps(w, [...weapons.keys()].sort((a, b) => a - b), (n) => {
+    writeItem(w, weapons.get(n)!.element)
+    writeLoadout(w, weapons.get(n)!)
+  })
+}
+
+function readItem(r: Reader): string | null {
+  const n = r.uint()
+  return n === 0 ? null : r.id('items', n - 1)
+}
+
+function readLoadout(r: Reader): Loadout {
+  const result: Loadout = { upgrades: {}, jokers: {} }
+  for (let count = r.uint(), n = 0; count > 0; count--) result.upgrades[r.id('upgrades', (n += r.uint()))] = r.uint()
+  for (let count = r.uint(), n = 0; count > 0; count--) {
+    const joker = r.id('jokers', (n += r.uint()))
+    result.jokers[joker] = (result.jokers[joker] ?? 0) + 1
   }
+  return result
 }
 
 function readV1(r: Reader): Build {
-  const item = () => {
-    const n = r.uint()
-    return n === 0 ? null : r.id('items', n - 1)
-  }
-  const loadout = (): Loadout => {
-    const result: Loadout = { upgrades: {}, jokers: {} }
-    for (let count = r.uint(), n = 0; count > 0; count--) result.upgrades[r.id('upgrades', (n += r.uint()))] = r.uint()
-    for (let count = r.uint(), n = 0; count > 0; count--) {
-      const joker = r.id('jokers', (n += r.uint()))
-      result.jokers[joker] = (result.jokers[joker] ?? 0) + 1
-    }
-    return result
-  }
-
   const build = emptyBuild(r.text())
-  build.utility = item()
-  build.main.weapon = item()
-  build.sidearm.weapon = item()
-  build.sidearm.element = item()
-  build.spells = Array.from({ length: r.uint() }, item)
-  for (const carrier of CARRIERS) Object.assign(build[carrier], loadout())
+  build.utility = readItem(r)
+  build.main.weapon = readItem(r)
+  build.sidearm.weapon = readItem(r)
+  build.sidearm.element = readItem(r)
+  build.spells = Array.from({ length: r.uint() }, () => readItem(r))
+  for (const carrier of CARRIERS) Object.assign(build[carrier], readLoadout(r))
   return build
 }
 
-const CURRENT = 1
-const WRITE = writeV1
-const READERS: Record<number, (r: Reader) => Build> = { 1: readV1 }
+function readV2(r: Reader): Build {
+  const build = readV1(r)
+  for (let count = r.uint(), n = 0; count > 0; count--) {
+    const weapon = r.id('items', (n += r.uint()))
+    const element = readItem(r)
+    build.unequipped[weapon] = { ...readLoadout(r), element } satisfies WeaponLoadout
+  }
+  return build
+}
 
-/** Code of the share link of a build, in the current format. */
-export function encodeShareCode(build: Build): string {
+const CURRENT = 2
+const WRITE = writeV2
+const READERS: Record<number, (r: Reader) => Build> = { 1: readV1, 2: readV2 }
+
+/**
+ * Code of the share link of a build, in the current format. With `withUnequipped`, the loadouts of its unequipped
+ * weapons too; otherwise the code has none.
+ */
+export function encodeShareCode(build: Build, withUnequipped = false): string {
   const w = new Writer()
   w.uint(CURRENT)
-  WRITE(w, build)
+  WRITE(w, withUnequipped ? build : { ...build, unequipped: {} })
   return toBase64Url(new Uint8Array(w.bytes))
 }
 

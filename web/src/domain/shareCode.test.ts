@@ -1,7 +1,7 @@
 import shareIds from '@data/share-ids.json'
 import { describe, expect, it } from 'vitest'
 import { addJoker, CARRIERS, carrierItem, emptyBuild, placeSpell, setElement, setUpgradePoints, setUtility, setWeapon, type Build } from './build'
-import { storedBuild, toBase64Url } from './codec'
+import { fromBase64Url, storedBuild, toBase64Url } from './codec'
 import { equipment, jokers, spells, spellSchools, upgrades } from './gameData'
 import { decodeShareCode, encodeShareCode } from './shareCode'
 
@@ -42,6 +42,19 @@ describe('share links', () => {
     expect(code.length).toBeLessThan(JSON.stringify(storedBuild(fullBuild())).length / 8)
     expect(decodeShareCode(code)).toEqual(fullBuild())
     expect(decodeShareCode(encodeShareCode(emptyBuild()))).toEqual(emptyBuild())
+  })
+
+  it('shares the unequipped weapons only when asked', () => {
+    let build = fullBuild()
+    build = addJoker(build, { carrier: 'main', weapon: 'itemMinigun' }, 'jokerCrackShot')
+    build = setUpgradePoints(build, { carrier: 'main', weapon: 'itemMinigun' }, 'jokerUpgradeDamage', 2)
+    build = setElement(build, 'itemIce', 'itemBow')
+    // Without them: the code of the build without unequipped weapons, which opens with none.
+    expect(encodeShareCode(build)).toBe(encodeShareCode(fullBuild()))
+    expect(decodeShareCode(encodeShareCode(build)).unequipped).toEqual({})
+    const code = encodeShareCode(build, true)
+    expect(fromBase64Url(code)[0]).toBe(2) // format version
+    expect(decodeShareCode(code)).toEqual(build)
   })
 
   it('reads a whole share link too', () => {

@@ -74,6 +74,7 @@
   },
   "dialog": {
     "close": "Close",
+    "withUnequipped": "Also share unequipped weapons",
     "exportTitle": "Share the build",
     "linkHelp": "Send this link : it opens the build in the planner, which adds it to the builds of whoever opens it.",
     "exportHelp": "Or copy this text, to paste it in the planner with Import.",

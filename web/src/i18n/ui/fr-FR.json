@@ -74,6 +74,7 @@
   },
   "dialog": {
     "close": "Fermer",
+    "withUnequipped": "Partager aussi les armes non équipées",
     "exportTitle": "Partager le build",
     "linkHelp": "Envoyez ce lien : il ouvre le build dans le planificateur, qui l'ajoute aux builds de la personne qui l'ouvre.",
     "exportHelp": "Ou copiez ce texte, à coller dans le planificateur avec Importer.",

@@ -185,12 +185,14 @@ the planner cannot offer. Code in `web/src/pages/`, rendered at build time by th
   Keep button, or as soon as it is changed (a copy made with Duplicate is ours too). The flag is saved with the build (`"received": true`).
 - **Share links** (Builds menu, "Share…"): `/#/share/<code>`, where the code is the build as bytes in URL-safe base64
   (`web/src/domain/shareCode.ts`): items, jokers and upgrades are written as their number in `data/share-ids.json`,
-  in varints. About 90 characters for a full build without a name, against 900 for its JSON. Only the equipped
-  weapons are in the code: the loadouts of the unequipped ones stay in the local save. Opening a link
-  adds the build to the saved builds, or reopens the saved copy if an identical one exists (unequipped weapons aside), then replaces the URL
+  in varints. About 90 characters for a full build without a name, against 900 for its JSON. By default only the
+  equipped weapons are in the code (its list of unequipped weapons is empty); a checkbox at the top of the dialog
+  adds the loadouts of the unequipped ones: about 620 characters with all 14 weapons customized to the maximum. Opening a link
+  adds the build to the saved builds, or reopens the saved copy if an identical one exists (whatever its unequipped
+  weapons, when the link carries none), then replaces the URL
   with the build home, so a reload does not add it again.
-- **Link formats**: the code starts with its format version (today 1), which picks the reader. A new format gets the
-  next version, its own writer and reader, and the old readers stay, so that the links already shared still open. A
+- **Link formats**: the code starts with its format version (today 2; format 1, without unequipped weapons, opens
+  with none), which picks the reader. A new format gets the next version, its own writer and reader, and the old readers stay, so that the links already shared still open. A
   test decodes a link of format 1 written once and for all. The first links (compressed JSON, same address) are
   no longer read: their code does not start with a known version, so they show an error.
 - Ids missing from the table (only a hand-edited saved build can have one: ids removed from the game stay in it) are

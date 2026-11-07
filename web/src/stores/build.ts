@@ -76,8 +76,9 @@ export const useBuildStore = defineStore('build', () => {
     build.value = ops.clearSpellSlot(build.value, slot)
   }
 
-  function exportText(): string {
-    return encodeShareCode(build.value)
+  /** Share code of the build; with `withUnequipped`, the loadouts of its unequipped weapons too. */
+  function exportText(withUnequipped = false): string {
+    return encodeShareCode(build.value, withUnequipped)
   }
 
   /** Loads a share code or link. Throws a BuildImportError if the text is not one; an invalid build is still loaded. */
