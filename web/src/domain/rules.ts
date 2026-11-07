@@ -1,5 +1,5 @@
 // Progression rules that are not in data/progression.json, each marked confirmed or assumed with its source
-// (see docs/game-mechanics.md, "Prestige", and docs/build-planner.md, "Open questions").
+// (see docs/game-mechanics.md, "Prestige").
 import { progression } from './gameData'
 
 export type RuleStatus = 'confirmed' | 'assumed'
@@ -44,15 +44,11 @@ export const RULES = {
     status: 'confirmed',
     source: 'patch notes V644 (6 bonus points); wikily.gg build planner (cost)',
   },
-  /**
-   * Slots and points bought at the prestige shop can be used right away, whatever the level: only what levels
-   * cannot give is bought, and the level shown is the one needed for the rest. Open question 1 in
-   * docs/build-planner.md: the shop logic is in a Blueprint (UI_PrestigeShop) we cannot read.
-   */
-  prestigeBonusesUsableAtAnyLevel: {
+  /** A carrier that prestiges must reach the max level: a build that needs a prestige needs level 100. */
+  prestigeNeedsMaxLevel: {
     value: true,
-    status: 'assumed',
-    source: 'not verified in game',
+    status: 'confirmed',
+    source: 'game (checked by the maintainer, 2026-11-07)',
   },
   /** Elements of a sidearm (spell school ids): all 4 are available on every sidearm. */
   sidearmElements: {

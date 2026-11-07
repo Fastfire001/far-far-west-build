@@ -27,9 +27,7 @@ The planner:
 - **validates** the build: upgrade points (26 per carrier and a cap per stat), joker budget (16 per carrier), copies
   (`max_equip`), joker compatibility with their carrier, no duplicate spell;
 - **shows the minimum level and the number of prestiges needed** for each carrier (hero, main weapon, sidearm), from
-  the upgrade points and joker slots used, and the Unique jokers chosen (level of the challenge that unlocks them).
-  As long as a rule used by this computation is not confirmed (see "Open questions"), the result is shown with a
-  warning;
+  the upgrade points and joker slots used, and the Unique jokers chosen (level of the challenge that unlocks them);
 - **shows the base cooldown of each spell** (hand-entered, see `docs/game-mechanics.md`).
 
 Out of scope:
@@ -85,10 +83,11 @@ Routes are in `web/src/router.ts`, one view per screen in `web/src/views/`:
 - **All data comes from the game files** (`bin/extract-game`), except the prestige rules and the hand-entered
   `data/manual.json`. See `docs/game-mechanics.md`.
 - Progression rules that are not in `data/progression.json` (points per level, prestige shop) are grouped in
-  `web/src/domain/rules.ts`, each marked confirmed or assumed, with its source.
+  `web/src/domain/rules.ts`, each with its source.
 - **Minimum level and prestiges**: only what levels cannot give is bought at the prestige shop (beyond 14 joker slots
-  or 20 upgrade points); the level shown is the one needed for the rest. The result is marked "assumed" until open
-  question 1 is settled.
+  or 20 upgrade points). The game only allows a prestige at level 100 (checked in game on 2026-11-07): as soon as a
+  carrier needs a prestige, its minimum level is 100. Otherwise, it is the level needed for its upgrades, joker slots
+  and Unique jokers.
 - **Level of Unique jokers**: the level comes from the challenge id (`challengeLvl35…` or `challengeLevel35…`, both
   spellings exist), the weapon from `available_on` (a single carrier per Unique). Do not derive the weapon from the
   challenge id: the Revolver is written `ItemRevolver` there, while its id is `itemPistol`.

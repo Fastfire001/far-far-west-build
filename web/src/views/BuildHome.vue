@@ -22,7 +22,6 @@ const { problemText } = useProblemText()
 
 const build = computed(() => store.build)
 const errors = computed(() => store.problems.filter((p) => p.severity === 'error'))
-const anyAssumed = computed(() => CARRIERS.some((c) => store.requirements[c].assumed))
 const keys = computed(() => spellKeys(locale.value))
 
 function onRename(event: Event) {
@@ -117,8 +116,6 @@ function onRename(event: Event) {
           <RouterLink :to="problemRoute(build, problem)">{{ problemText(build, problem) }}</RouterLink>
         </li>
       </ul>
-
-      <p v-if="anyAssumed" class="assumed"><span class="assumed-mark">*</span> {{ t('home.assumed') }}</p>
     </aside>
   </main>
 </template>
@@ -284,14 +281,6 @@ kbd {
   z-index: 1;
 }
 .problems a:hover {
-  color: var(--accent);
-}
-.assumed {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  margin: 1.25rem 0 0;
-}
-.assumed-mark {
   color: var(--accent);
 }
 .sr-only {

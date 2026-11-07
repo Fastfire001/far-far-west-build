@@ -59,7 +59,7 @@ const jokerRows = computed(() =>
       <span v-if="item" class="level">
         <b>{{ t('game.level_short', { lvl: requirements.level }) }}</b>
         <span>
-          {{ t('home.prestiges', requirements.prestiges) }}<span v-if="requirements.assumed" class="assumed-mark">*</span>
+          {{ t('home.prestiges', requirements.prestiges) }}
         </span>
       </span>
     </header>
@@ -175,9 +175,6 @@ const jokerRows = computed(() =>
 .level > span {
   color: var(--text-muted);
   font-size: 0.85rem;
-}
-.assumed-mark {
-  color: var(--accent);
 }
 h3 {
   border-bottom: 1px solid var(--line);

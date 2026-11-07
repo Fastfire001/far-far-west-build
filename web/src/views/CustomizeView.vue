@@ -51,7 +51,7 @@ function openJokers() {
         <h1>{{ carrierName(store.build, carrier) }}</h1>
         <p class="level">
           {{ t('customize.minLevel', { level: requirements.level }) }} ·
-          {{ t('home.prestiges', requirements.prestiges) }}<span v-if="requirements.assumed" class="assumed-mark">*</span>
+          {{ t('home.prestiges', requirements.prestiges) }}
         </p>
       </header>
 
@@ -118,9 +118,6 @@ function openJokers() {
             {{ language.gameName(unique.joker) }} : {{ t('game.unlocked_at_weapon_level', { level: unique.level }) }}
           </li>
         </ul>
-        <p v-if="requirements.assumed" class="assumed">
-          <span class="assumed-mark">*</span> {{ t('home.assumed') }}
-        </p>
       </section>
     </section>
 
@@ -254,13 +251,6 @@ function openJokers() {
   margin: 0.25rem 0;
 }
 .bought {
-  color: var(--accent);
-}
-.assumed {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-.assumed-mark {
   color: var(--accent);
 }
 .jokers {
