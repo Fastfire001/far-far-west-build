@@ -8,7 +8,7 @@ import { RULES } from './rules'
 export interface Loadout {
   /** Upgrade id → points (> 0). */
   upgrades: Record<string, number>
-  /** Joker id → copies (> 0). */
+  /** Joker id → copies (> 0), in the order the jokers were added. */
   jokers: Record<string, number>
 }
 
@@ -149,9 +149,16 @@ export function rename(build: Build, name: string): Build {
   return { ...build, name }
 }
 
+/**
+ * Sets the count of an id. The ids keep their order: an id already there stays in its place, a new one goes last
+ * (the order in which jokers were added is shown everywhere and kept by share links).
+ */
 function setCount(counts: Record<string, number>, id: string, count: number): Record<string, number> {
-  const { [id]: _, ...others } = counts
-  return count > 0 ? { ...others, [id]: count } : others
+  if (count <= 0) {
+    const { [id]: _, ...others } = counts
+    return others
+  }
+  return { ...counts, [id]: count }
 }
 
 export function setUpgradePoints(build: Build, target: Target, upgrade: string, points: number): Build {

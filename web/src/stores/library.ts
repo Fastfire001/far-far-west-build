@@ -179,7 +179,8 @@ export const useLibraryStore = defineStore('library', () => {
 
   /** Opens a build received by a share link: the saved copy if one is identical, otherwise a new received build. */
   function openShared(build: Build) {
-    // Compared in their stored form, where the keys always come in the same order, and only on what the link carries:
+    // Compared in their stored form, where the fields always come in the same order (the order of the jokers is part
+    // of the build: a copy with the same jokers in another order is another build), and only on what the link carries:
     // a link without the unequipped weapons matches a saved copy whatever its unequipped weapons.
     const key = (b: Build) => JSON.stringify(restoreBuild(storedBuild(b)))
     const json = key(build)
