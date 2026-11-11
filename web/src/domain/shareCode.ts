@@ -4,8 +4,10 @@
 // meaning after a game update.
 //
 // To add a format: write its writer and reader below, add the reader to READERS under the next version and make
-// CURRENT and WRITE point to the new format. Keep the old readers, so that the links already shared still open.
-// Codes of format 1 have no unequipped weapons: they open with none.
+// CURRENT and WRITE point to the new format. Keep the old readers, so that the links already shared still open (the
+// old writers can go: only the current format is written).
+// Codes of format 1 have no unequipped weapons: they open with none. Codes of formats 1 and 2 have the jokers by
+// increasing number: they open in that order.
 import shareIds from '@data/share-ids.json'
 import { CARRIERS, emptyBuild, type Build, type Loadout, type WeaponLoadout } from './build'
 import { BuildImportError, fromBase64Url, restoreBuild, storedBuild, toBase64Url } from './codec'
@@ -21,6 +23,12 @@ class Writer {
   uint(n: number) {
     for (; n >= 0x80; n = Math.floor(n / 0x80)) this.bytes.push((n % 0x80) | 0x80)
     this.bytes.push(n)
+  }
+
+  /** A varint too large for a number. */
+  bigUint(n: bigint) {
+    for (; n >= 0x80n; n /= 0x80n) this.bytes.push(Number(n % 0x80n) | 0x80)
+    this.bytes.push(Number(n))
   }
 
   text(value: string) {
@@ -40,6 +48,16 @@ class Reader {
     for (let scale = 1; this.pos < this.bytes.length && scale < 2 ** 35; scale *= 0x80) {
       const byte = this.bytes[this.pos++]!
       n += (byte % 0x80) * scale
+      if (byte < 0x80) return n
+    }
+    return fail()
+  }
+
+  bigUint(): bigint {
+    let n = 0n
+    for (let scale = 1n; this.pos < this.bytes.length; scale *= 0x80n) {
+      const byte = this.bytes[this.pos++]!
+      n += BigInt(byte % 0x80) * scale
       if (byte < 0x80) return n
     }
     return fail()
@@ -89,37 +107,46 @@ function writeGaps(w: Writer, numbers: number[], extra?: (n: number) => void) {
   numbers.reduce((previous, n) => (w.uint(n - previous), extra?.(n), n), 0)
 }
 
+/** Numbers and values of the known ids, in their order. */
+const known = <T>(kind: Kind, values: Record<string, T>) =>
+  Object.entries(values).flatMap(([id, value]) => {
+    const n = number(kind, id)
+    return n === undefined ? [] : [[n, value] as const]
+  })
+
+// Format 2: format 1, then the unequipped weapons by increasing item number: their count, then for each the gap to
+// the previous weapon's number, its element (item number + 1, or 0) and its loadout as in format 1.
+//
+// Format 3: format 2, with after the jokers of each loadout, when it has at least 2 different ones, their order in
+// the build: its rank among the k! orders of its k jokers, as one varint (0 when they come by increasing number).
+// The rank is a number in a mixed base: taking the jokers in their order, each gives a digit, its position among
+// the jokers not placed yet (by increasing number), in base k, then k - 1… About 1 byte per 2 jokers, where a
+// position per joker would take 1 byte each.
+
 function writeLoadout(w: Writer, loadout: Loadout) {
-  const known = (kind: Kind, counts: Record<string, number>) =>
-    Object.entries(counts).flatMap(([id, count]) => {
-      const n = number(kind, id)
-      return n === undefined ? [] : [[n, count] as const]
-    })
   const points = new Map(known('upgrades', loadout.upgrades))
   writeGaps(w, [...points.keys()].sort((a, b) => a - b), (n) => w.uint(points.get(n)!))
-  const copies = known('jokers', loadout.jokers).flatMap(([n, count]) => Array<number>(count).fill(n))
+  const jokers = known('jokers', loadout.jokers)
+  const copies = jokers.flatMap(([n, count]) => Array<number>(count).fill(n))
   writeGaps(w, copies.sort((a, b) => a - b))
+  if (jokers.length < 2) return
+  const left = jokers.map(([n]) => n).sort((a, b) => a - b)
+  let rank = 0n
+  for (const [n] of jokers) {
+    const position = left.indexOf(n)
+    rank = rank * BigInt(left.length) + BigInt(position)
+    left.splice(position, 1)
+  }
+  w.bigUint(rank)
 }
 
-function writeV1(w: Writer, build: Build) {
+function writeV3(w: Writer, build: Build) {
   w.text(build.name)
   for (const id of [build.utility, build.main.weapon, build.sidearm.weapon, build.sidearm.element]) writeItem(w, id)
   w.uint(build.spells.length)
   build.spells.forEach((id) => writeItem(w, id))
   for (const carrier of CARRIERS) writeLoadout(w, build[carrier])
-}
-
-// Format 2: format 1, then the unequipped weapons by increasing item number: their count, then for each the gap to
-// the previous weapon's number, its element (item number + 1, or 0) and its loadout as in format 1.
-
-function writeV2(w: Writer, build: Build) {
-  writeV1(w, build)
-  const weapons = new Map(
-    Object.entries(build.unequipped).flatMap(([id, loadout]) => {
-      const n = number('items', id)
-      return n === undefined ? [] : [[n, loadout] as const]
-    }),
-  )
+  const weapons = new Map(known('items', build.unequipped))
   writeGaps(w, [...weapons.keys()].sort((a, b) => a - b), (n) => {
     writeItem(w, weapons.get(n)!.element)
     writeLoadout(w, weapons.get(n)!)
@@ -131,7 +158,8 @@ function readItem(r: Reader): string | null {
   return n === 0 ? null : r.id('items', n - 1)
 }
 
-function readLoadout(r: Reader): Loadout {
+/** Loadout of formats 1 and 2 (jokers by increasing number, one entry per copy). */
+function readLoadoutV1(r: Reader): Loadout {
   const result: Loadout = { upgrades: {}, jokers: {} }
   for (let count = r.uint(), n = 0; count > 0; count--) result.upgrades[r.id('upgrades', (n += r.uint()))] = r.uint()
   for (let count = r.uint(), n = 0; count > 0; count--) {
@@ -141,7 +169,27 @@ function readLoadout(r: Reader): Loadout {
   return result
 }
 
-function readV1(r: Reader): Build {
+/** Loadout of format 3: that of format 1, then the order of its jokers. */
+function readLoadoutV3(r: Reader): Loadout {
+  const result = readLoadoutV1(r)
+  const left = Object.keys(result.jokers) // by increasing number
+  if (left.length < 2) return result
+  // Digits of the rank, from the last joker (base 1) to the first (base k).
+  let rank = r.bigUint()
+  const positions: number[] = []
+  for (let base = 1; base <= left.length; base++) {
+    positions.unshift(Number(rank % BigInt(base)))
+    rank /= BigInt(base)
+  }
+  if (rank !== 0n) fail()
+  const order = positions.map((position) => left.splice(position, 1)[0]!)
+  result.jokers = Object.fromEntries(order.map((id) => [id, result.jokers[id]!]))
+  return result
+}
+
+type LoadoutReader = (r: Reader) => Loadout
+
+function readEquipped(r: Reader, readLoadout: LoadoutReader): Build {
   const build = emptyBuild(r.text())
   build.utility = readItem(r)
   build.main.weapon = readItem(r)
@@ -152,8 +200,8 @@ function readV1(r: Reader): Build {
   return build
 }
 
-function readV2(r: Reader): Build {
-  const build = readV1(r)
+function readWithUnequipped(r: Reader, readLoadout: LoadoutReader): Build {
+  const build = readEquipped(r, readLoadout)
   for (let count = r.uint(), n = 0; count > 0; count--) {
     const weapon = r.id('items', (n += r.uint()))
     const element = readItem(r)
@@ -162,9 +210,13 @@ function readV2(r: Reader): Build {
   return build
 }
 
-const CURRENT = 2
-const WRITE = writeV2
-const READERS: Record<number, (r: Reader) => Build> = { 1: readV1, 2: readV2 }
+const CURRENT = 3
+const WRITE = writeV3
+const READERS: Record<number, (r: Reader) => Build> = {
+  1: (r) => readEquipped(r, readLoadoutV1),
+  2: (r) => readWithUnequipped(r, readLoadoutV1),
+  3: (r) => readWithUnequipped(r, readLoadoutV3),
+}
 
 /**
  * Code of the share link of a build, in the current format. With `withUnequipped`, the loadouts of its unequipped

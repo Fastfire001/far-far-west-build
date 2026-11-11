@@ -78,6 +78,17 @@ describe('build operations', () => {
     expect(build.main.jokers).toEqual({})
   })
 
+  it('keeps the jokers in the order they were added', () => {
+    let build = emptyBuild()
+    for (const joker of ['jokerCrackShot', 'jokerBracing', 'jokerCrackShot', 'jokerA', 'jokerBracing']) build = addJoker(build, 'hero', joker)
+    expect(Object.keys(build.hero.jokers)).toEqual(['jokerCrackShot', 'jokerBracing', 'jokerA'])
+    // Removing a copy keeps the joker in its place; removing the last one drops it, and adding it again puts it last.
+    build = removeJoker(build, 'hero', 'jokerCrackShot')
+    expect(Object.keys(build.hero.jokers)).toEqual(['jokerCrackShot', 'jokerBracing', 'jokerA'])
+    build = addJoker(removeJoker(build, 'hero', 'jokerCrackShot'), 'hero', 'jokerCrackShot')
+    expect(Object.keys(build.hero.jokers)).toEqual(['jokerBracing', 'jokerA', 'jokerCrackShot'])
+  })
+
   it('moves a spell instead of duplicating it', () => {
     let build = placeSpell(emptyBuild(), 0, 'itemSpellFireBall')
     build = placeSpell(build, 2, 'itemSpellFireBall')
