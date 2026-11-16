@@ -183,7 +183,12 @@ The game serializes its properties in "unversioned" mode (no names or types) and
 therefore cannot decode the joker table: `build_game_data.py` decodes it itself, with the order and type of the
 `S_PlayerJokers` fields hard-coded (`JOKER_ROW`). If a game update changes this struct, the script stops with an
 error. To find the new order: the fields are serialized in `S_PlayerJokers.uasset` as pairs of FNames (type, name),
-which can be read back with the package's name map (the extractor's `names:` mode).
+which can be read back with the package's name map (the extractor's `names:` mode). The name map gives the fields
+but not their order: the row header gives their count, and the values must be checked against the previous
+extraction. In 0.3.0.11, `isEnabled` moved to the front and `isAffectedByLuck` (bool, false everywhere) was added at
+the end: with the new field first instead, the table still decoded to its end but every joker came out disabled. The
+same update added work-in-progress Luck rows (`jokerUpgradeLuck`, `jokerLuckySeven`…, disabled), some with a literal
+text (FText history 0) instead of a string table entry.
 
 **Icons.** A joker's or an upgrade's row names its texture (field `icon`, an index in the import map of
 `DT_PlayerJokers`, which the extractor's `imports:` mode resolves). An item's row names its Blueprint
