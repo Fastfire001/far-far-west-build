@@ -17,13 +17,13 @@ extract_dir, out_dir, icons_dir = sys.argv[1:4]
 
 # Fields of S_PlayerJokers, in serialization order.
 JOKER_ROW = [
-    ("name", "text"), ("description", "text"), ("epic", "bool"), ("value", "double"),
+    ("isEnabled", "bool"), ("name", "text"), ("description", "text"), ("epic", "bool"), ("value", "double"),
     ("displayValueAsFlat", "bool"), ("maxAvailable", "int"), ("rarity", "byte"), ("requiredAmountSlots", "int"),
     ("buyPrice", "int"), ("sellPrice", "int"), ("associatedChallenge", "name"), ("canBeBought", "bool"),
     ("canBeGambled", "bool"), ("canBeRandomlyLooted", "bool"), ("canBeLootedInSolo", "bool"),
     ("canBeDroppedInGame", "bool"), ("icon", "object"), ("upgradeColor", "linear_color"),
     ("availableOnItems", "array_name"), ("updatePlayerHealValueInGame", "double"),
-    ("updatePlayerShieldPointsValueInGame", "double"), ("isEnabled", "bool"),
+    ("updatePlayerShieldPointsValueInGame", "double"), ("isAffectedByLuck", "bool"),
 ]
 # Fields of S_PlayerItems, in serialization order.
 ITEM_ROW = [("associatedItemBlueprint", "object")]
@@ -139,6 +139,9 @@ class Reader:
         history = self.unpack("b")
         if history == -1:  # culture invariant string
             return self.fstring() if self.unpack("i") else ""
+        if history == 0:  # literal text, outside any string table: namespace, key, then the source string
+            self.fstring(), self.fstring()
+            return self.fstring()
         if history == 11:  # string table entry
             return {"table": self.name(), "key": self.fstring()}
         raise ValueError(f"unsupported FText history type {history} at {self.pos}")
